@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-hostchannel.html 
+sidebar: sidebar 
+keywords: set, host, channel 
+summary: Der Befehl set hostChannel definiert die Loop-ID für den Host-Kanal. 
+---
+= Hostkanal festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set hostChannel` Der Befehl definiert die Loop-ID für den Host-Kanal.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set hostChannel pass:quotes[[_hostChannelNumber_]]
+preferredID=pass:quotes[_portID_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`hostChannel`
+ a| 
+Die Identifikationsnummer des Host-Kanals, für den Sie die Loop-ID festlegen möchten. Schließen Sie die Host-Kanal-ID-Nummer in eckige Klammern ([ ]).
+
+Verwenden Sie einen Host-Channel-Wert, der für Ihr spezielles Controller-Modell geeignet ist. Ein Controller-Fach unterstützt möglicherweise einen Host-Kanal oder bis zu acht Host-Kanäle. Gültige Host-Channel-Werte sind `a1`, `a2`, `a3`, `a4`, `a5`, `a6`, `a7`, `a8`, `b1`, `b2`, `b3`, `b4`, `b5`, `b6`, `b7`, Oder `b8`.
+
+
+
+ a| 
+`preferredID`
+ a| 
+Die Port-ID für den angegebenen Host-Kanal. Die Port-ID-Werte sind `0` Bis `127`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+6.14 fügt der Host-Kanal-ID ein Update hinzu.
+
+7.15 fügt der Host-Kanal-ID ein Update hinzu.

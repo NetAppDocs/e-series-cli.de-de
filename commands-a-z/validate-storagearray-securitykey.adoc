@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/validate-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: validate, storage array, security key 
+summary: Mit dem Befehl „Validierung von storageArray securityKey“ wird der Sicherheitsschlüssel für ein Storage-Array mit sicherheitsfähigen Laufwerken validiert, um sicherzustellen, dass die Sicherungsdatei des Sicherheitsschlüssels nicht beschädigt ist. 
+---
+= Validierung des Sicherheitsschlüssels des Storage Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `validate storageArray securityKey` Befehl überprüft den Sicherheitsschlüssel für ein Speicherarray mit sicherheitsfähigen Laufwerken, um sicherzustellen, dass die Sicherungsschlüsseldatei nicht beschädigt ist.
+
+
+
+== Unterstützte Arrays
+
+Wenn externes Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die E2800 und E5700 Arrays. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Die Überprüfung des Sicherheitsschlüssels verwendet den Passphrase, mit dem die Datei generiert wird, um den Schlüssel zu entschlüsseln und mit dem im Controller-Speicher (für interne Schlüssel) oder auf dem externen Server (für externe Schlüssel) gewarteten Wert abzugleichen.
+
+[NOTE]
+====
+Dieser Befehl gilt sowohl für das interne als auch für das externe Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[validate storageArray securityKey file="_fileName_" passPhrase="_passPhraseString_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname mit dem Sicherheitsschlüssel. Dateipfad und Dateiname in doppelte Anführungszeichen (" ") einschließen. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können. Schließen Sie den Passphrase in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.70

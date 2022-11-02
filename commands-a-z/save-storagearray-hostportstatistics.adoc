@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/save-storagearray-hostportstatistics.html 
+sidebar: sidebar 
+keywords: save, storage, array, host, port, statistics 
+summary: Mit dem Befehl save storageArray hostPortStatistics werden die Host-Port-Statistiken des Speicherarrays gespeichert. 
+---
+= Speichern Sie die Host-Port-Statistiken des Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray hostPortStatistics` Der Befehl speichert die Portstatistiken des Speicher-Arrays-Hosts.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Security-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit diesem Befehl wird die veraltete Version ersetzt xref:save-storagearray-iscsistatistics.adoc[Speichern Sie iSCSI-Statistiken für Speicher-Arrays], xref:save-storagearray-iserstatistics.adoc[ISER-Statistiken des Speicher-Arrays speichern], und xref:save-storagearray-ibstats.adoc[Speichern Sie InfiniBand-Statistiken für das Speicher-Array] Befehle.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+save storageArray hostPortStatistics [(raw | baseline)] type=(ISCSI| ISER | SRP | NVMEOF) file="filename"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`raw`
+ a| 
+Ermöglicht es Ihnen, die gesammelten Statistiken seit Beginn des Tages abzurufen. Schließen Sie den Parameter in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Ermöglicht das Abrufen der gesammelten Statistiken von dem Zeitpunkt, an dem die Controller`'-Basispläne auf Null zurückgesetzt wurden. Schließen Sie den Parameter in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`type`
+ a| 
+Hiermit können Sie angeben, welcher Statistiktyp gesammelt werden soll. Gültige Auswahlmöglichkeiten: `ISCSI`, `ISER`, `SRP`, und `NVMEOF`.
+
+
+
+ a| 
+`file`
+ a| 
+Hier können Sie den Dateipfad und den Dateinamen angeben, um die Statistiken zu speichern. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Verwenden Sie einen beliebigen Dateinamen mit dem `.csv` Erweiterung.
+
+|===
+[cols="6*"]
+|===
+| Typ | Ethernet MAC, Ethernet TCP/IP, lokaler Initiator (Protokoll), DCBX-Betriebszustand, LLDP TLV, DCBX TLV | Ziel (Protokoll) | InfiniBand-Schnittstelle | NVMe-Subsystem | ASUP-Dateiname 
+
+
+ a| 
+`iscsi`
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+`iser`
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`srp`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`nvmeof`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.41

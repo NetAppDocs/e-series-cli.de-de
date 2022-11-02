@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/show-syncmirror-candidates.html 
+sidebar: sidebar 
+keywords: show, synchronous, mirror, volume, candidates 
+summary: Der Befehl show SyncMirror Candidate gibt Informationen über die Kandidaten-Volumes auf einem Remote-Speicher-Array zurück, die Sie als sekundäre Volumes in einer Konfiguration mit synchronous Mirroring verwenden können. 
+---
+= Anzeige der Kandidaten für synchrones Spiegeln von Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show syncMirror candidates` Der Befehl gibt Informationen zu den Kandidaten-Volumes auf einem Remote-Speicher-Array zurück, die Sie als sekundäre Volumes in einer synchronen Spiegelung-Konfiguration verwenden können.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage Admin“ oder „Storage Monitor“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[show syncMirror candidates primary="_volumeName_"
+remoteStorageArrayName="_storageArrayName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`primary`
+ a| 
+Der Name des lokalen Volumes, den Sie für das primäre Volume im Remote-gespiegelten Paar möchten. Schließen Sie den primären Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Das Remote-Storage-Array, das mögliche Volumes für ein sekundäres Volume enthält. Wenn der Name des Remote-Storage-Arrays Sonderzeichen enthält, müssen Sie auch den Namen des Remote-Storage-Arrays in doppelte Anführungszeichen („ “) einschließen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+5.40

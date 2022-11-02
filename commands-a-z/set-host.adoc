@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/set-host.html 
+sidebar: sidebar 
+keywords: set, host 
+summary: Der Befehl Set Host weist einen Host einer Host-Gruppe zu oder verschiebt einen Host zu einer anderen Hostgruppe. 
+---
+= Legen Sie den Host fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set host` Der Befehl weist einen Host einer Host-Gruppe zu oder verschiebt einen Host zu einer anderen Host-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können auch eine neue Host-Gruppe erstellen und den Host mit diesem Befehl der neuen Host-Gruppe zuweisen. Die von diesem Befehl durchgeführten Aktionen hängen davon ab, ob der Host über individuelle Zuordnungen verfügt oder keine individuellen Zuordnungen enthält.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set host [hostName]
+hostGroup=pass:quotes[("_hostGroupName_"] | none | defaultGroup)
+userLabel=pass:quotes["_newHostName_"]
+hostType=pass:quotes[(_hostTypeIndexLabel_ | _hostTypeIndexNumber_)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, den Sie einer Host-Gruppe zuweisen möchten. Fügen Sie den Hostnamen in eckige Klammern ([ ]) ein. Wenn der Hostname Sonderzeichen oder Zahlen hat, müssen Sie den Hostnamen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name der Host-Gruppe, der Sie den Host zuweisen möchten. (Die folgende Tabelle definiert die Ausführung des Befehls, wenn der Host über individuelle Zuordnungen verfügt oder nicht.) Schließen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen (" "). Der `defaultGroup` Option ist die Host-Gruppe, die den Host enthält, dem das Volume zugeordnet ist.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Hostname. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`hostType`
+ a| 
+Das Indexetikett oder die Nummer des Hosttyps für den Host-Port. Verwenden Sie die `show storageArray hostTypeTable` Befehl zum Generieren einer Liste der verfügbaren Host-Typ-IDs. Wenn der Host-Typ Sonderzeichen hat, setzen Sie den Hosttyp in doppelte Anführungszeichen („ “).
+
+|===
+[cols="3*"]
+|===
+| Parameter Host-Gruppe | Host Hat Individuelle Zuordnungen | Der Host Verfügt Nicht Über Individuelle Zuordnungen 
+
+
+ a| 
+`_hostGroupName_`
+ a| 
+Der Host wird aus der aktuellen Host-Gruppe entfernt und unter der neuen Host-Gruppe platziert, die von definiert wurde `_hostGroupName_`.
+ a| 
+Der Host wird aus der aktuellen Host-Gruppe entfernt und unter der neuen Host-Gruppe platziert, die von definiert wurde `_hostGroupName_`.
+
+
+
+ a| 
+`none`
+ a| 
+Der Host wird als unabhängige Partition aus der Host-Gruppe entfernt und unter dem Stammknoten platziert.
+ a| 
+Der Host wird aus der aktuellen Host-Gruppe entfernt und wird unter die Standardgruppe gesetzt.
+
+
+
+ a| 
+`defaultGroup`
+ a| 
+Der Befehl schlägt fehl.
+ a| 
+Der Host wird aus der aktuellen Host-Gruppe entfernt und wird unter die Standardgruppe gesetzt.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+Für die Namen können Sie eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstriche verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

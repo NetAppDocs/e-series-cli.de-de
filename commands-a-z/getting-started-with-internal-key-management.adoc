@@ -1,0 +1,34 @@
+---
+permalink: commands-a-z/getting-started-with-internal-key-management.html 
+sidebar: sidebar 
+keywords: security key, string, characters, secure enabled, drive, controllers, storage, array, internal, key, management, create, maintain, persistent, memory 
+summary: Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei der Verwendung der internen Schlüsselverwaltung erstellen und pflegen Sie Sicherheitsschlüssel auf dem persistenten Speicher des Controllers. 
+---
+= Erste Schritte mit internem Verschlüsselungsmanagement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei Verwendung des internen Verschlüsselungsmanagements erstellen und warten Sie Sicherheitsschlüssel im persistenten Speicher des Controllers.
+
+In der Online-Hilfe des SANtricity System Managers finden Sie Informationen zur Verwendung interner Sicherheitsschlüssel.
+
+Im Folgenden finden Sie den grundlegenden Workflow zur Verwendung interner Sicherheitsschlüssel:
+
+. *Sicherheitsschlüssel erstellen*
+. *Sicherheitsschlüssel festlegen*
+. *Sicherheitsschlüssel validieren*
+
+
+
+
+== Workflow-Schritte
+
+Mit den folgenden Befehlen beginnen Sie mit internen Sicherheitsschlüsseln:
+
+. Erstellen Sie mit den einen Sicherheitsschlüssel für das Speicherarray `create storageArray securityKey` Befehl. Siehe xref:create-storagearray-securitykey.adoc[Erstellen eines Sicherheitsschlüssels für das Speicherarray].
+. Legen Sie den Sicherheitsschlüssel für das Speicher-Array über fest `set storageArray securityKey` Befehl. Siehe xref:set-storagearray-securitykey.adoc[Festlegen eines Sicherheitsschlüssels für das Speicherarray].
+. Überprüfen Sie den Sicherheitsschlüssel mithilfe des `validate storageArray securityKey` Befehl. Siehe xref:validate-storagearray-securitykey.adoc[Überprüfung eines Sicherheitsschlüssels für Speicherarrays].
+

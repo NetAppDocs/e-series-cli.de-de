@@ -1,0 +1,61 @@
+---
+permalink: get-started/formatting-cli-commands.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands 
+summary: Doppelte Anführungszeichen, die als Teil eines Namens oder Etiketts verwendet werden, müssen bei der Ausführung der CLI-Befehle und der Skriptbefehle auf einem Windows-, Linux- oder Solaris-Betriebssystem besonders berücksichtigt werden. 
+---
+= Formatieren von Regeln für CLI-Befehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Doppelte Anführungszeichen („ “), die als Teil eines Namens oder Labels verwendet werden, müssen bei der Ausführung der CLI-Befehle und der Skriptbefehle auf einem Windows-, Linux- oder Solaris-Betriebssystem besonders berücksichtigt werden.
+
+Wenn doppelte Anführungszeichen (" ") Teil eines Namens oder Wertes sind, müssen Sie vor jedem doppelten Anführungszeichen einen umgekehrten Schrägstrich (\) einfügen.
+
+Beispiel:
+
+[listing]
+----
+-c "set storageArray userLabel=\"Engineering\";"
+----
+In diesem Beispiel ist „Engineering“ der Name des Speicher-Arrays.
+
+Ein zweites Beispiel ist:
+
+[listing]
+----
+-n \"My\"_Array
+----
+In diesem Beispiel ist „My“_Array der Name des Speicher-Arrays.
+
+In einem Skriptbefehl können keine doppelten Anführungszeichen (") als Teil einer Zeichenkette (auch als Zeichenfolge wörtlich bezeichnet) verwendet werden. Sie können beispielsweise den folgenden String nicht eingeben, um den Namen des Speicher-Arrays auf „Finanzen“-Array zu setzen:
+
+[listing]
+----
+-c "set storageArray userLabel=\"\"Finance\"Array\";"
+----
+Wenn Sie in einem Windows-Betriebssystem keine doppelten Anführungszeichen (") um einen Namen verwenden, müssen Sie vor jedem speziellen Skriptzeichen ein Caret ( {caret} ) einfügen. Sonderzeichen sind {caret}, < und >.
+
+Legen Sie bei Verwendung mit den Terminals ein Caret vor jedem speziellen Skriptzeichen ein `-n`, `-o`, `-f`, und `-p`. Um beispielsweise CLI>CLIENT für das Speicherarray anzugeben, geben Sie diese Zeichenfolge ein:
+
+[listing]
+----
+-n CLI^>CLIENT
+----
+Fügen Sie ein Caret ({caret}) vor jedem speziellen Skript-Zeichen ein, wenn es in einem Zeichenstring wörtlich in einem Skriptbefehl verwendet wird. Um beispielsweise den Namen eines Speicherarrays in „FINANZEN“ zu ändern, geben Sie die folgende Zeichenfolge ein:
+
+[listing]
+----
+-c "set storageArray userLabel=\"FINANCE_^|_PAYROLL\";"
+----
+[NOTE]
+====
+Wenn Sie SMcli-Befehle an der Eingabeaufforderung eingeben, wird ein zusätzlicher umgekehrter Schrägstrich angezeigt (`\`) Zeichen ist als Escape-Zeichen im Dateipfadnamen einer ein- oder Ausgabedatei bei Verwendung des Windows-Betriebssystems erforderlich. Der zusätzliche umgekehrter Schrägstrich (`\`) Muss bei der Verwendung von SMcli im sicheren HTTPS-Modus enthalten sein, indem die Option -U zur Angabe eines Benutzer für die rollenbasierte Zugriffsverwaltung bereitgestellt wird. *Beispiel:*
+
+[listing]
+----
+C:\\dir\\subdir\\filename
+----
+====

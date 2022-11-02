@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-isnslisteningport.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, listen, port 
+summary: Der Befehl Set storageArray isnsListeningPort setzt den iSNS Server Listening Port. 
+---
+= Stellen Sie den iSNS-Server-Listening-Port des Speicherarrays ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray isnsListeningPort` Mit dem Befehl wird der Listening-Port des iSNS-Servers festgelegt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray isnsListeningPort=pass:quotes[_listeningPortIPAddress_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+Die IP-Adresse, die Sie für den Listening-Port des iSNS-Servers verwenden möchten. Der Wertebereich für den Listening-Port ist `49152` Bis `65535`. Der Standardwert ist `53205`.
+
+Der Listening-Port befindet sich auf dem Server und führt die folgenden Aktivitäten aus:
+
+* Überwacht eingehende Client-Verbindungsanforderungen
+* Verwaltet den Datenverkehr zum Server
+
+
+Wenn ein Client eine Netzwerksitzung mit einem Server anfordert, erhält der Listener die tatsächliche Anforderung. Wenn die Client-Informationen mit den Listener-Informationen übereinstimmen, gewährt der Listener eine Verbindung zum Datenbankserver.
+
+|===
+
+
+== Hinweise
+
+Ein Listening-Port befindet sich auf dem Datenbankserver und ist für folgende Aktivitäten verantwortlich:
+
+* Zuhören (Überwachung) für eingehende Client-Verbindungsanforderungen
+* Verwalten des Datenverkehrs zum Server
+
+
+Wenn ein Client eine Netzwerksitzung mit einem Server anfordert, erhält ein Listener die tatsächliche Anforderung. Wenn die Client-Informationen mit den Listener-Informationen übereinstimmen, gewährt der Listener eine Verbindung zum Datenbankserver.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

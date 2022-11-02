@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: test, snmp, trap, destination 
+summary: 'Der Befehl Start snmpTrapDestination testet die Verbindung und Identifizierung des Trap-Receivers für eine bestimmte SNMP-Community (Simple Network Management Protocol) oder einen bestimmten Benutzer. Mit diesem Befehl wird das Trap-Ziel getestet, indem eine Trap-Nachricht an den Trap-Empfänger gesendet wird.' 
+---
+= Testen Sie das SNMP-Trap-Ziel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start snmpTrapDestination` Command testet die Verbindung und Identifizierung des Trap-Receivers für eine bestimmte SNMP-Community (Simple Network Management Protocol) oder einen bestimmten Benutzer. Mit diesem Befehl wird das Trap-Ziel getestet, indem eine Trap-Nachricht an den Trap-Empfänger gesendet wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start snmpTrapDestination trapReceiverIP=ipAddress
+    pass:quotes[(communityName="_communityName_" | (userName="_userName_"] [engineId=(local | engineId)]))
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+Die IP-Adresse des SNMP-Managers, an den Sie Trap-Nachrichten senden möchten.
+
+
+
+ a| 
+`communityName`
+ a| 
+Der Name der SNMP-Community, für die Sie Trap-Nachrichten senden möchten.
+
+
+
+ a| 
+`userName`
+ a| 
+Der Name des SNMP-Benutzers, für den Sie Trap-Nachrichten senden möchten.
+
+
+
+ a| 
+`engineId`
+ a| 
+Die Engine-ID des SNMP-Benutzers, für den Sie Trap-Nachrichten senden möchten. Die Engine-ID ist erforderlich, wenn mehr als ein USM-Benutzer mit demselben Benutzernamen vorhanden ist. Der Wert kann „[.code]``local``„ Die Angabe des lokalen SNMP-Agenten ist der autorisierende Agent oder eine sechzimale Ziffernfolge, um eine Remote-SNMP-Agent-Engine-ID anzugeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.30

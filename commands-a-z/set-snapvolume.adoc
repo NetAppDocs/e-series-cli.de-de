@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-snapvolume.html 
+sidebar: sidebar 
+keywords: rename, snapshot, volume 
+summary: Der Befehl set SnapVolume benennt ein vorhandenes Snapshot-Volume neu. 
+---
+= Benennen Sie das Snapshot-Volume um
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapVolume` Befehl benennt ein vorhandenes Snapshot-Volume neu.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapVolumeName_"]] userLabel=pass:quotes["_snapImageVolumeName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapVolume`
+ a| 
+Der Name des Snapshot-Volumes, das Sie umbenennen möchten. Schließen Sie den Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Ein neuer Name, den Sie dem Snapshot-Volumen geben möchten. Schließen Sie den neuen Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

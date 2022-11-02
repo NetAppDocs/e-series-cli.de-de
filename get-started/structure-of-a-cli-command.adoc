@@ -1,0 +1,35 @@
+---
+permalink: get-started/structure-of-a-cli-command.html 
+sidebar: sidebar 
+keywords: structure, cli, commands 
+summary: Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, die in den Wrapper integriert sind. 
+---
+= Struktur der CLI-Befehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, die in den Wrapper integriert sind. Ein CLI-Befehl besteht aus den folgenden Elementen:
+
+* Ein durch den Begriff identifizierter Befehlwrapper `SMcli`
+* Die Kennung des Speicherarrays
+* Klemmen, die den auszuführenden Vorgang definieren
+* Skriptbefehle
+
+
+Der CLI-Befehl Wrapper ist eine Shell, die Speicher-Array-Controller identifiziert, Arbeitsterminals einbettet, Skript-Befehle einbettet und diese Werte an die Skript-Engine weitergibt.
+
+Alle CLI-Befehle haben die folgende Struktur:
+
+[listing]
+----
+SMcli *storageArray terminal script-commands*;
+----
+* `SMcli` Ruft die Befehlszeilenschnittstelle auf.
+* `storageArray` Ist der Name oder die IP-Adresse des Speicherarrays.
+* `terminal` Ist ein CLI-Wert, der die Umgebung und den Zweck für den Befehl definiert.
+* `script-commands` Sind ein oder mehrere Skriptbefehle oder der Name einer Skriptdatei, die Skriptbefehle enthält. (Mit den Skriptbefehlen wird das Speicher-Array konfiguriert und verwaltet.)
+
+
+Wenn Sie eine unvollständige oder ungenaue Eingabe durchführen `SMcli` Zeichenfolge, die nicht über die richtige Syntax, Parameternamen, Optionen oder Terminals verfügt, gibt die Skript-Engine Nutzungsinformationen zurück.

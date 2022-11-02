@@ -1,0 +1,67 @@
+---
+permalink: commands-a-z/set-storagearray-hostconnectivityreporting.html 
+sidebar: sidebar 
+keywords: enable, disable, host, connectivity, report 
+summary: Der Befehl Set storageArray hostConnectivityReporting aktiviert oder deaktiviert die Berichterstellung für Hostkonnektivität auf dem Controller. 
+---
+= Aktiviert oder deaktiviert die Berichterstellung für Hostkonnektivität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray hostConnectivityReporting` Mit Befehl wird die Host-Konnektivitätsberichterstattung am Controller aktiviert oder deaktiviert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray hostConnectivityReporting (enable | disable)
+----
+
+
+== Kontext
+
+Wenn Sie die Berichterstellung für die Host-Konnektivität auf dem Speicher-Array aktivieren, überwacht das Storage-Array fortlaufend die Verbindung zwischen den Controllern des Storage-Arrays und den konfigurierten Hosts und warnt Sie, wenn die Verbindung aufgrund eines losen, beschädigten oder fehlenden Kabels oder anderer Probleme mit dem Host unterbrochen wird. Sie werden auch benachrichtigt, wenn der Host-Typ im Storage Array falsch angegeben ist (was zu Failover-Problemen führen kann).
+
+[NOTE]
+====
+Um die Berichterstellung für Hostkonnektivität zu deaktivieren, müssen Sie zunächst den automatischen Lastausgleich deaktivieren.
+
+====
+[NOTE]
+====
+Sie können die Berichterstellung für Host-Konnektivität aktiviert lassen, wenn der automatische Lastausgleich deaktiviert ist.
+
+====
+[NOTE]
+====
+Berichterstellung für Host-Konnektivität und automatische Lastverteilung nur für die Host-Typen Linux DHALUA, Windows/Windows Clustered und VMware.
+
+====
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.42 Neuer Befehlsparameter.

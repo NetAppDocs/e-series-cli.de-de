@@ -1,0 +1,87 @@
+---
+permalink: commands-category/mirroring-commands.html 
+sidebar: sidebar 
+keywords: commands, mirroring, asynchronous, synchronous, command 
+summary: Spiegelungsbefehle 
+---
+= Spiegelungsbefehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Befehle für asynchrone Spiegelung
+
+link:../commands-a-z/activate-asynchronous-mirroring.html["Aktivieren Sie die asynchrone Spiegelung"]
+
+link:../commands-a-z/add-volume-asyncmirrorgroup.html["Fügen Sie ein Volume zur asynchronen Spiegelgruppe hinzu"]
+
+link:../commands-a-z/stop-asyncmirrorgroup-rolechange.html["Abbrechen der Umkehrung der asynchronen Spiegelgruppe"]
+
+link:../commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html["Überprüfen Sie die Konsistenz der asynchronen Spiegelgruppe"]
+
+link:../commands-a-z/clear-asyncmirrorfault.html["Löschen Sie den asynchronen Spiegelungsfehler"]
+
+link:../commands-a-z/create-asyncmirrorgroup.html["Asynchrone Spiegelgruppe erstellen"]
+
+link:../commands-a-z/deactivate-storagearray.html["Deaktivieren Sie die asynchrone Spiegelung"]
+
+link:../commands-a-z/delete-asyncmirrorgroup.html["Asynchrone Spiegelgruppe löschen"]
+
+link:../commands-a-z/establish-asyncmirror-volume.html["Festlegung des asynchronen gespiegelten Paars"]
+
+link:../commands-a-z/remove-asyncmirrorgroup.html["Entfernen Sie ein unvollständiges, asynchrones gespiegeltes Paar aus asynchroner Spiegelgruppe"]
+
+link:../commands-a-z/remove-volume-asyncmirrorgroup.html["Entfernen Sie ein Volume aus der asynchronen Spiegelgruppe"]
+
+link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Statistiken für asynchrone Spiegelgruppen werden zurückgesetzt"]
+
+link:../commands-a-z/reset-iscsiipaddress.html["ISCSI-IP-Adresse zurücksetzen"]
+
+link:../commands-a-z/resume-asyncmirrorgroup.html["Setzen Sie die asynchrone Spiegelgruppe fort"]
+
+link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Speichern Sie die Statistiken der asynchronen Spiegelgruppe"]
+
+link:../commands-a-z/set-asyncmirrorgroup.html["Legen Sie die asynchrone Spiegelgruppe fest"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Zeigen Sie asynchrone Spiegelgruppen an"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Fortschritt der Synchronisierung der asynchronen Spiegelgruppe anzeigen"]
+
+link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Starten Sie die asynchrone Spiegelsynchronisierung"]
+
+link:../commands-a-z/suspend-asyncmirrorgroup.html["Unterbrechen Sie die asynchrone Spiegelgruppe"]
+
+link:../commands-a-z/diagnose-asyncmirrorgroup.html["Testen Sie die Konnektivität der asynchronen Spiegelgruppe"]
+
+
+
+== Befehle für synchrones Spiegeln
+
+link:../commands-a-z/activate-synchronous-mirroring.html["Aktivieren Sie Synchronous Mirroring"]
+
+link:../commands-a-z/check-syncmirror.html["Überprüfen Sie den Status der synchronen Spiegelung"]
+
+link:../commands-a-z/create-syncmirror.html["Synchrones Spiegeln erstellen"]
+
+link:../commands-a-z/deactivate-storagearray-feature.html["Deaktivieren Sie die synchrone Spiegelung"]
+
+link:../commands-a-z/diagnose-syncmirror.html["Diagnose des synchronen Spiegelns"]
+
+link:../commands-a-z/recreate-storagearray-mirrorrepository.html["Synchrones Spiegeln bei Repository Volume neu erstellen"]
+
+link:../commands-a-z/remove-syncmirror.html["Synchrones Spiegeln entfernen"]
+
+link:../commands-a-z/resume-syncmirror.html["Wiederaufnahme der synchronen Spiegelung"]
+
+link:../commands-a-z/set-syncmirror.html["Legt synchrones Spiegeln fest"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Anzeige der Kandidaten für synchrones Spiegeln von Volumes"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Synchronous Mirroring Volume Synchronisation anzeigen"]
+
+link:../commands-a-z/start-syncmirror-primary-synchronize.html["Synchronisierung der synchronen Spiegelung starten"]
+
+link:../commands-a-z/suspend-syncmirror-primaries.html["Unterbrechen Sie die synchrone Spiegelung"]

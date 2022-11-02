@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/show-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: show, storage, array, dbm, database 
+summary: Der Befehl show storageArray dbmDatabase ruft ab und zeigt Metadaten für die integrierten Backup-Standorte eines Storage-Arrays an. Wenn mehrere Backup-Standorte vorhanden sind, werden Metadaten an jedem Standort angezeigt. 
+---
+= Zeigen Sie die DBM-Datenbank des Speicherarrays an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray dbmDatabase` Befehl ruft Metadaten für die integrierten Backup-Standorte eines Storage-Arrays ab und zeigt sie an. Wenn mehrere Backup-Standorte vorhanden sind, werden Metadaten an jedem Standort angezeigt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray dbmDatabase
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Dieser Befehl gibt die Informationen der Konfigurationsdatenbank in einem Format zurück, das diesem Beispiel ähnelt.
+
+`Configuration Database MetadataLast Host Backup: <date stamp>`
+
+[cols="7*"]
+|===
+| CTL | STANDORT | ÜBERARBEITUNG | ID | GEN-NUMMER | STATUS | ZUGRIFFSMODUS 
+
+
+ a| 
+A
+ a| 
+Cache
+ a| 
+X.Y
+ a| 
+999999
+ a| 
+999999
+ a| 
+LESE-/SCHREIBZUGRIFF
+ a| 
+Optimal
+
+
+
+ a| 
+B
+ a| 
+Cache
+ a| 
+X.Y
+ a| 
+999999
+ a| 
+999999
+ a| 
+LESE-/SCHREIBZUGRIFF
+ a| 
+Optimal
+
+
+
+ a| 
+K. A.
+ a| 
+Festplatte
+ a| 
+X.Y
+ a| 
+999999
+ a| 
+999999
+ a| 
+LESE-/SCHREIBZUGRIFF
+ a| 
+Optimal
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

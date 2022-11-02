@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/delete-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: delete, asynchronous, mirror group 
+summary: Mit dem Befehl delete async MirrorGroup werden eine oder mehrere asynchrone Spiegelgruppen aus dem lokalen Storage-Array und dem Remote-Storage-Array gelöscht. 
+---
+= Asynchrone Spiegelgruppe löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete asyncMirrorGroup` Befehl löscht eine oder mehrere asynchrone Spiegelgruppen aus dem lokalen Speicher-Array und dem Remote-Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Die asynchrone Spiegelgruppe muss leer sein, bevor sie erfolgreich gelöscht werden kann. Sie müssen alle asynchronen gespiegelten Paare aus der asynchronen Spiegelgruppe entfernen, bevor Sie diesen Befehl verwenden.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete (allAsyncMirrorGroups | asyncMirrorGrouppass:quotes[[_"asyncMirrorGroupName"_] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName_1" ... "asyncMirrorGroupName_n"_]])
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie alle asynchronen Spiegelgruppen aus dem lokalen Speicher-Array und dem Remote-Speicher-Array entfernen möchten.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, die Sie löschen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Die Namen mehrerer asynchroner Spiegelgruppen, die Sie löschen möchten. Geben Sie die Namen der asynchronen Spiegelgruppen mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

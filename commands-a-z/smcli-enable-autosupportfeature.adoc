@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/smcli-enable-autosupportfeature.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, emw, management, domain, level, smcli 
+summary: 'Der SMcli Befehl autoSupportFeature aktivieren aktiviert die AutoSupport (ASUP) Funktion für alle verwalteten Storage Arrays und ermöglicht die Übertragung von Meldungen an die technische Support-Website. Nach Aktivierung der ASUP Funktion wird jedes ASUP-fähige Storage-Array automatisch bereit, Support-bezogene Daten zu sammeln und an den technischen Support zu senden. Die Daten können dann für Remote-Fehlerbehebung und Problemanalysen genutzt werden.' 
+---
+= Aktivieren oder Deaktivieren von AutoSupport auf der Ebene der EMW-Verwaltungsdomain (nur SMcli)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli enable autoSupportFeature` Mit dem Befehl wird die AutoSupport-Funktion (ASUP) für alle gemanagten Storage Arrays aktiviert und Meldungen können an den technischen Support-Standort übertragen werden. Nach Aktivierung der ASUP Funktion wird jedes ASUP-fähige Storage-Array automatisch bereit, Support-bezogene Daten zu sammeln und an den technischen Support zu senden. Die Daten können dann für Remote-Fehlerbehebung und Problemanalysen genutzt werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+[NOTE]
+====
+Der Persistent Monitor muss aktiviert sein, damit die AutoSupport-Funktion funktioniert.
+
+====
+[NOTE]
+====
+Kundendaten werden nie an den technischen Support übertragen.
+
+====
+Dieser Befehl wirkt sich auf alle ASUP-fähigen Storage-Arrays in der Managementdomäne aus. Nachdem Sie diese Funktion für die Management-Domäne aktiviert haben, haben Sie die Kontrolle über die Funktionsunterstützung für jedes Storage-Array.
+
+Nach der Aktivierung dieser Funktion können Sie die Funktion AutoSupport OnDemand (falls gewünscht) als nächstes aktivieren und anschließend die Funktion AutoSupport Remote Diagnostics (falls gewünscht) aktivieren.
+
+Sie müssen die drei Funktionen in der folgenden Reihenfolge aktivieren:
+
+. *AutoSupport aktivieren*
+. *AutoSupport OnDemand aktivieren*
+. *AutoSupport-Ferndiagnose aktivieren*
+
+
+
+
+== Syntax
+
+[listing]
+----
+SMcli enable|disable autoSupportFeature
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Verifizierung
+
+Verwenden Sie die `SMcli -autoSupportConfig show` Befehl, um zu sehen, ob Sie die Funktion aktiviert haben. In der Anfangszeile der angezeigten Ausgabe wird der Status „Aktivieren“ angezeigt:
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+----
+
+
+== Minimale Firmware-Stufe
+
+7.86

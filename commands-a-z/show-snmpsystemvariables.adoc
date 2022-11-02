@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/show-snmpsystemvariables.html 
+sidebar: sidebar 
+keywords: show, snmp, mib ii, system, group, variables 
+summary: 'Der Befehl show snmpSystemVariables gibt Informationen über die SNMP-Systemvariablen (Simple Network Management Protocol) zurück. Die Systemvariablen werden in einer Management Information Base II (MIB-II)-Datenbank verwaltet.' 
+---
+= Zeigt SNMP MIB II-Systemgruppenvariablen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show snmpSystemVariables` Der Befehl gibt Informationen zu den SNMP-Systemvariablen (Simple Network Management Protocol) zurück. Die Systemvariablen werden in einer Management Information Base II (MIB-II)-Datenbank verwaltet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin oder -Support-Admin oder Storage-Monitor verfügen.
+
+
+
+== Syntax
+
+[listing]
+----
+show snmpSystemVariables
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Dieser Befehl gibt Informationen zu SNMP-Systemvariablen zurück, die diesem Beispiel ähnlich sind.
+
+[listing]
+----
+SYSTEM VARIABLES
+    Sys Name: NONE
+    Sys Contact: NONE
+    Sys Location: NONE
+----
+
+
+== Minimale Firmware-Stufe
+
+8.30

@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-storagearray-directoryservices-test.html 
+sidebar: sidebar 
+keywords: test, storage, array, directory, server 
+summary: Der Testbefehl „Storage Array DirectoryServices starten“ überprüft die Kommunikation mit allen konfigurierten Verzeichnisservern und validiert die Server-Domänenkonfigurationen. 
+---
+= Testen Sie den Verzeichnisserver des Storage Array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start storageArray directoryServices test` Der Befehl überprüft die Kommunikation mit allen konfigurierten Verzeichnisservern und validiert die Server-Domänenkonfigurationen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gibt einen Fehler zurück, wenn mindestens ein Verzeichnisserver der Domäne noch nicht hinzugefügt wurde.
+
+
+
+== Syntax
+
+[listing]
+----
+
+start storageArray directoryServices test
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "start storageArray directoryServices test;"
+
+<test results for each domain configured are returned>
+
+SMcli completed successfully.
+----

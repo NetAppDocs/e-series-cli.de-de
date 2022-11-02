@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/set-snmpuser-username.html 
+sidebar: sidebar 
+keywords: update, snmpv3, usm, user 
+summary: 'Der Befehl set snmpUser username aktualisiert einen vorhandenen Simple Network Management Protocol (SNMP) USM-Benutzer. Der zu ändernden USM-Benutzer wird mit dem Benutzernamen identifiziert, wenn nur ein Benutzer den Benutzernamen hat. Der Benutzer wird anhand des Benutzernamens und der Engine-ID identifiziert, wenn mehr als ein Benutzer mit demselben Benutzernamen und anderer Engine-ID vorhanden ist.' 
+---
+= SNMPv3 USM-Benutzer aktualisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snmpUser userName` Der Befehl aktualisiert einen vorhandenen SNMP-Benutzer (Simple Network Management Protocol). Der zu ändernden USM-Benutzer wird mit dem Benutzernamen identifiziert, wenn nur ein Benutzer den Benutzernamen hat. Der Benutzer wird anhand des Benutzernamens und der Engine-ID identifiziert, wenn mehr als ein Benutzer mit demselben Benutzernamen und anderer Engine-ID vorhanden ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set snmpUser userName="snmpUserName" [engineId=(local | engineId)]
+[newUserName="newSnmpUserName"] [newEngineId=(local | engineId)]
+[authProtocol=(none | sha | sha256 | sha512) authPassword="authPassword"]
+[privProtocol=(none | aes128) privPassword="privPassword"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userName`
+ a| 
+Der Name des SNMP USM-Benutzers, den Sie aktualisieren möchten. Schließen Sie den SNMP-USM-Benutzernamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`engineId`
+ a| 
+Die Engine-ID des SNMP USM-Benutzers, den Sie aktualisieren möchten. Die Engine-ID ist erforderlich, wenn mehr als ein USM-Benutzer mit demselben Benutzernamen vorhanden ist. Der Wert kann sein `local` Zur Angabe des lokalen SNMP-Agenten ist der autorisierende Agent oder eine sechzimale Ziffernfolge, um eine Remote-SNMP-Agent-Engine-ID anzugeben.
+
+
+
+ a| 
+`newSnmpUserName`
+ a| 
+Der neue Name, den Sie dem SNMP-Benutzer geben möchten. Schließen Sie den SNMP-Benutzernamen in doppelte Anführungszeichen (" "). Der Standardwert ist der zuvor definierte Benutzername für den Benutzer.
+
+
+
+ a| 
+`newEngineId`
+ a| 
+Die neue EngineID, die als Kennung der autoritativen SNMP-Engine-ID für den Benutzer verwendet wird. Der Wert kann „[.Code]local“ sein, um den lokalen SNMP-Agent als autorisierenden Agenten oder eine hexadezimale Ziffernfolge zur Angabe einer Remote-SNMP-Agent-Engine-ID anzugeben. Der Standardwert ist die zuvor definierte Engine-ID für den Benutzer.
+
+
+
+ a| 
+`authProtocol`
+ a| 
+Das für den Benutzer zu verwendenden Authentifizierungsprotokoll (HMAC). Der Wert kann einer der folgenden Werte sein:
+
+* `none` - Keine Authentifizierung von SNMP-Nachrichten (Standard)
+* `sha` - SHA-1-Authentifizierung
+* `sha256` - SHA-256-Authentifizierung
+* `sha512` - SHA-512-Authentifizierung
+
+
+Der Standardwert ist das zuvor definierte Authentifizierungsprotokoll für den Benutzer.
+
+
+
+ a| 
+`authPassword`
+ a| 
+Das Kennwort, das für die Authentifizierung für den Benutzer verwendet werden soll. Muss angegeben werden, wenn das Authentifizierungsprotokoll lautet `sha`, `sha256` Oder `sha512`
+
+
+
+ a| 
+`privProtocol`
+ a| 
+Das Datenschutzprotokoll (Verschlüsselung), das für den Benutzer verwendet werden soll. Der Wert kann einer der folgenden Werte sein:
+
+* `none` - Keine Verschlüsselung von SNMP-Nachrichten (Standard)
+* `aes128` - AES-18-Verschlüsselung
+
+
+Der Standardwert ist das zuvor definierte Datenschutzprotokoll für den Benutzer.
+
+
+
+ a| 
+`privPassword`
+ a| 
+Das Passwort, das für den Datenschutz/die Verschlüsselung des Benutzers verwendet werden soll. Muss angegeben werden, wenn das Datenschutzprotokoll "[.Code]`aes128`" lautet.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.72

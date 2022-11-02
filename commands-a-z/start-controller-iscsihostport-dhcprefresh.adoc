@@ -1,0 +1,131 @@
+---
+permalink: commands-a-z/start-controller-iscsihostport-dhcprefresh.html 
+sidebar: sidebar 
+keywords: start, iscsi, dhcp, refresh 
+summary: Der Befehl Controller starten iscsiHostPort dhcpRefresh initiiert eine Aktualisierung der DHCP-Parameter für die iSCSI-Schnittstelle. 
+---
+= Starten Sie die iSCSI-DHCP-Aktualisierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start controller iscsiHostPort dhcpRefresh` Der Befehl initiiert eine Aktualisierung der DHCP-Parameter für die iSCSI-Schnittstelle.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Wenn die Konfigurationsmethode für die Schnittstelle nicht auf DHCP gesetzt ist, gibt das Verfahren einen Fehler zurück.
+
+
+
+== Syntax
+
+[listing]
+----
+start controller [(a|b)] iscsiHostPort [portLabel] dhcpRefresh
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Bezeichner des Controllers mit den iSCSI-Host-Ports. Gültige Controller-ID-Werte sind `a` Oder `b` Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B.
+
+
+
+ a| 
+`iscsiHostPort`
+ a| 
+Das Host-Port-Label oder die Nummer des iSCSI-Host-Ports, für den Sie die DHCP-Parameter aktualisieren möchten.
+
+Weitere Informationen finden Sie im Folgenden:
+
+ an iSCSI host port label,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“
+
+|===
+
+
+== Identifizieren einer iSCSI-Host-Port-Bezeichnung
+
+Sie müssen eine Bezeichnung für den Host-Port angeben. Führen Sie die folgenden Schritte aus, um die Bezeichnung für den Host-Port anzugeben:
+
+.Schritte
+. Wenn Sie die Portbezeichnung für den iSCSI-Host-Port nicht kennen, führen Sie den aus `show controller` Befehl.
+. Suchen Sie im Abschnitt Host-Schnittstelle der Ergebnisse den Host-Port, den Sie auswählen möchten.
++
+[NOTE]
+====
+Der Port-Name ist der komplette Wert, der für den zurückgegeben wird `Port` Feld.
+
+====
+. Schließen Sie den gesamten Wert des Port-Labels sowohl in Anführungszeichen als auch in eckigen Klammern an: ["portLabel"]. Wenn beispielsweise die Port-Bezeichnung lautet `Ch 2`, Geben Sie den iSCSI-Host-Port wie folgt an:
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Wenn Sie eine Windows-Befehlszeile verwenden und das Etikett eine Pipe enthält, sollte das Zeichen (mit {caret}) entgangen werden. Andernfalls wird es als Befehl interpretiert. Wenn beispielsweise die Port-Bezeichnung lautet `e0b|0b`, Geben Sie den iSCSI-Host-Port wie folgt an:
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Zur Rückwärtskompatibilität kann die iscsiPortNumber, umgeben von geschweiften Klammern [ ] und nicht für Angebote und geschweifte Klammern [“], noch für E2700, E5600 oder EF560 Controller (und andere vorherige Generationen von E-Series oder EF-Series Controllern) verwendet werden. Für diese Controller gelten die gültigen Werte für iscsiPortNumber:
+
+* Für Controller mit integrierten Host Ports ist die Nummerierung 3, 4, 5 oder 6.
+* Bei Controllern mit Host-Ports nur auf einer Host-Schnittstellenkarte beträgt die Nummerierung 1, 2, 3 oder 4.
+
+
+Ein Beispiel für die vorherige Syntax ist wie folgt:
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Hinweise
+
+Dieser Vorgang beendet die iSCSI-Verbindungen für das Portal und bringt das Portal vorübergehend herunter.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+8.10 überarbeitet das Nummerierungssystem für iSCSI-Host-Ports.
+
+8.30 überarbeitet die Identifizierungsmethode für iSCSI-Host-Ports in der E2800.

@@ -1,0 +1,141 @@
+---
+permalink: commands-a-z/create-volumecopy.html 
+sidebar: sidebar 
+keywords: create, volume, copy 
+summary: Mit dem Befehl Create VolumeCopy wird eine Volume-Kopie erstellt und der Vorgang der Volume-Kopie gestartet. Dieser Befehl gilt für Paare von Snapshot-Image-Volume-Kopien. 
+---
+= Erstellung von Volume-Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create volumeCopy` Befehl erstellt eine Volume-Kopie und startet den Vorgang der Volume-Kopie. Dieser Befehl gilt für Paare von Snapshot-Image-Volume-Kopien.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Beim Starten eines Vorgangs für eine Volume-Kopie werden alle vorhandenen Daten auf dem Ziel-Volume überschrieben, der Zieldatenträger ist schreibgeschützt für Hosts und schlägt alle dem Ziel-Volume zugeordneten Snapshot-Image-Volumes fehl, sofern vorhanden. Wenn Sie das Ziel-Volume bereits als Kopie genutzt haben, müssen Sie die Daten nicht mehr benötigen oder gesichert haben.
+
+====
+Dieser Befehl erstellt Volume-Kopien auf zwei Arten:
+
+* Volume-Kopie ohne Snapshot Image, auch als „_offline_ Volume-Kopie“ bezeichnet
+* Volume-Kopie mit Snapshot Image, auch als „_online_ Volume Copy“ bezeichnet
+
+
+Wenn Sie Volume Copy ohne Snapshot-Image verwenden, können Sie erst dann auf das Quell-Volume schreiben, wenn der Kopiervorgang abgeschlossen ist. Wenn Sie in der Lage sein möchten, auf das Quell-Volume zu schreiben, bevor der Kopiervorgang abgeschlossen ist, verwenden Sie Volume Copy mit Snapshot Image. Sie können die Volume-Kopie mit Snapshot-Image über die optionalen Parameter in der Befehlssyntax auswählen.
+
+Nach Abschluss der Volume-Kopie mit Snapshot-Image wird das Snapshot-Image gelöscht und das Snapshot-Volume deaktiviert.
+
+[NOTE]
+====
+Sie können maximal acht Volume-Kopien gleichzeitig erstellen. Wenn Sie versuchen, mehr als acht Volume-Kopien gleichzeitig zu erstellen, geben die Controller den Status „Ausstehend“ zurück, bis eine der laufenden Volume-Kopien beendet wurde und einen Status „abgeschlossen“ ausgibt.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create volumeCopy source=pass:quotes[_"sourceName"_
+target="_targetName_"]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(offline | online)]
+[repositoryPercentOfBase=(20 | 40 | 60 | 120 | default)]
+[repositoryGroupPreference=(sameAsSource | otherThanSource | default)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`source`
+ a| 
+Der Name eines vorhandenen Volumes, das als Quell-Volume verwendet werden soll. Schließen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`target`
+ a| 
+Der Name eines vorhandenen Volumes, das als Ziel-Volume verwendet werden soll. Schließen Sie den Namen des Zielvolumens in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Die Priorität, die Volume-Kopie relativ zur Host-I/O-Aktivität hat. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Die Einstellung, damit Sie auf das Zielvolume schreiben oder nur vom Zielvolume lesen können. Um auf das Zielvolume zu schreiben, setzen Sie diesen Parameter auf `FALSE`. Um das Schreiben auf das Zielvolumen zu verhindern, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+Verwenden Sie diesen Parameter, um eine Volume-Kopie mit einem Snapshot Image zu erstellen. Wenn Sie eine Volume-Kopie mit einem Snapshot-Image erstellen, können Sie weiterhin auf das Quellvolume schreiben, während Sie die Volume-Kopie erstellen. Um eine Volume-Kopie mit einem Snapshot-Image zu erstellen, setzen Sie diesen Parameter auf `online`. Wenn Sie eine Volume-Kopie ohne Snapshot-Image erstellen möchten, setzen Sie diesen Parameter auf `offline`.
+
+Wenn Sie diesen Parameter nicht verwenden, wird die Volume-Kopie ohne Snapshot Image erstellt.
+
+
+
+ a| 
+`repositoryPercentOfBase`
+ a| 
+Dieser Parameter bestimmt die Größe des Repository-Volumes für das Snapshot-Image, wenn Sie eine Volume-Kopie mit einem Snapshot-Image erstellen. Die Größe des Repository-Volumes wird als Prozentsatz des Quell-Volume ausgedrückt, das auch als Basis-Volume bezeichnet wird. Gültige Werte für diesen Parameter sind `20`, `40`, `60`, `120`, und `default`. Der Standardwert ist 20. Wenn Sie diesen Parameter nicht verwenden, verwendet die Firmware einen Wert von 20 Prozent.
+
+Sie müssen den verwenden `copyType` Parameter mit `repositoryPercentOfBase` Parameter.
+
+
+
+ a| 
+`repositoryGroupPreference`
+ a| 
+Dieser Parameter bestimmt, auf welche Volume-Gruppe das Snapshot Image Repository Volume geschrieben wird. Sie haben die folgenden Auswahlmöglichkeiten:
+
+* `sameAsSource` -- das Snapshot-Image-Volumen wird in dieselbe Volumengruppe wie das Quellvolumen geschrieben, wenn Platz verfügbar ist.
+* `otherThanSource` -- Abgepr. Parameter. Verwenden Sie es nicht
+* `default` -- das Snapshot-Image Repository Volumen wird auf jede Volume-Gruppe geschrieben, die Platz hat.
+
+
+Verwenden Sie für beste Performance den `sameAsSource` Option.
+
+Sie müssen den verwenden `copyType` Parameter mit `repositoryGroupPreference` Parameter.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen verwenden, geschieht und Unterstriche für die Namen. Namen können maximal 30 Zeichen lang sein.
+
+Die Kopierpriorität definiert die Menge der Systemressourcen, die zum Kopieren der Daten zwischen dem Quell-Volume und dem Ziel-Volume eines Volume-Kopiepaars verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Kopie die meisten Systemressourcen für das Kopieren von Volumes. Dadurch verringert sich die Performance bei der Übertragung von Host-Daten.

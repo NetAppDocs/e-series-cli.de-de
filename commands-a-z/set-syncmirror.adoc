@@ -1,0 +1,150 @@
+---
+permalink: commands-a-z/set-syncmirror.html 
+sidebar: sidebar 
+keywords: set, synchronous, mirror 
+summary: Der Befehl Set SyncMirror definiert die Eigenschaften für ein Remote-gespiegeltes Paar. 
+---
+= Legt synchrones Spiegeln fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set syncMirror` Der Befehl definiert die Eigenschaften für ein Remote-gespiegeltes Paar.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+[role=(primary | secondary)]
+[syncPriority=(highest | high | medium | low | lowest)]
+[autoResync=(enabled | disabled)]
+[writeOrder=(preserved | notPreserved)]
+[writeMode=(synchronous | asynchronous)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`localVolume`
+ a| 
+Der Name des lokalen Volumes, für das Sie Eigenschaften definieren möchten. Schließen Sie den Namen des primären Datenträgers in eckige Klammern ([ ]). Wenn der Name des primären Volumes Sonderzeichen oder Ziffern hat, müssen Sie den Namen des primären Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`localVolumes`
+ a| 
+Die Namen mehrerer lokaler Volumes, für die Sie Eigenschaften definieren möchten. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`role`
+ a| 
+Die Einstellung, dass das lokale Volume als primäres Volume oder als sekundäres Volume fungiert. Um das Volume als primäres Volume zu definieren, setzen Sie diesen Parameter auf `primary`. Um das Volume als sekundäres Volume zu definieren, setzen Sie diesen Parameter auf `secondary`. Dieser Parameter gilt nur, wenn das Volume Teil einer Spiegelbeziehung ist.
+
+
+
+ a| 
+`syncPriority`
+ a| 
+Die Priorität, die die vollständige Synchronisierung im Verhältnis zur Host-I/O-Aktivität hat. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Die Einstellungen für eine automatische Neusynchronisierung zwischen den primären Volumes und den sekundären Volumes eines Remote-gespiegelten Paares. Dieser Parameter verfügt über die folgenden Werte:
+
+* `enabled` -- Automatische Neusynchronisierung ist eingeschaltet. Sie müssen nichts weiter tun, um das primäre Volume und das sekundäre Volume neu zu synchronisieren.
+* `disabled` -- Automatische Neusynchronisierung ist deaktiviert. Zum erneuten Synchronisieren der primären Volumes und des sekundären Volumes müssen Sie den ausführen `resume syncMirror` Befehl.
+
+
+
+
+ a| 
+`writeOrder`
+ a| 
+Dieser Parameter definiert die Schreibreihenfolge für die Datenübertragung zwischen dem primären Volume und dem sekundären Volume. Gültige Werte sind `preserved` Oder `notPreserved`.
+
+
+
+ a| 
+`writeMode`
+ a| 
+Dieser Parameter definiert, wie das primäre Volume auf das sekundäre Volume schreibt. Gültige Werte sind `synchronous` Oder `asynchronous`.
+
+
+
+ a| 
+`force`
+ a| 
+Die Umkehrung der Rolle ist erzwungen, wenn die Kommunikationsverbindung zwischen den Speicher-Arrays ausfällt und eine Herabstufung oder Herabstufung auf der lokalen Seite zu einem Dual-Primärumszustand oder einer Dual-Sekundärbedingung führt. Um eine Rollenumkehr zu erzwingen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+[NOTE]
+====
+Verwenden Sie die `force` Parameter nur bei Verwendung des `role` Parameter.
+
+====
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+Die Synchronisierungspriorität definiert die Menge der Systemressourcen, die zur Synchronisierung der Daten zwischen den primären Volumes und den sekundären Volumes einer Spiegelbeziehung verwendet werden. Wenn Sie die höchste Prioritätsebene auswählen, verwendet die Datensynchronisierung die meisten Systemressourcen, um die vollständige Synchronisierung durchzuführen. Dadurch verringert sich die Leistung für die Übertragung von Hostdaten.
+
+Der `writeOrder` Parameter gilt nur für asynchronen Schreibmodus und macht sie zu einem Teil einer Konsistenzgruppe. Einstellen des `writeOrder` Parameter an `preserved` Bewirkt, dass das Remote-gespiegelte Paar Daten vom primären Volume in derselben Reihenfolge des Schreibreihenfolge des Hosts an das primäre Volume überträgt. Bei einem Ausfall einer Übertragungsverbindung werden die Daten bis zur vollständigen Synchronisation gepuffert. Diese Aktion kann zusätzlichen System-Overhead erfordern, um die gepufferten Daten zu erhalten, die den Betrieb verlangsamen. Einstellen des `writeOrder` Parameter an `notPreserved` Dies erspart dem System die Möglichkeit, Daten in einem Puffer zu verwalten, doch erfordert dies eine vollständige Synchronisierung, um sicherzustellen, dass das sekundäre Volume über dieselben Daten wie das primäre Volume verfügt.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

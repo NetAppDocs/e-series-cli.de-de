@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/start-storagearray-externalkeymanagement-test.html 
+sidebar: sidebar 
+keywords: test, external key, management, communication 
+summary: 'Der Befehl „Start storageArray External Key Management Test“ verwendet die konfigurierten Anmeldedaten (Zertifikate, Adresse des KMIP-Servers und KMIP-Portnummer), um zu überprüfen, ob das Storage-Array mit dem externen KMIP-Server kommunizieren kann.' 
+---
+= Testen der Kommunikation zum externen Verschlüsselungsmanagement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start storageArray externalKeyManagement test` Mit dem Befehl werden die konfigurierten Anmeldedaten (Zertifikate, Adresse des KMIP-Servers und die KMIP-Port-Nummer) verwendet, um zu überprüfen, ob das Storage-Array in der Lage ist, mit dem externen KMIP-Server zu kommunizieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+start storageArray externalKeyManagement test
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.40

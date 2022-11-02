@@ -1,0 +1,50 @@
+---
+permalink: commands-a-z/show-volumecopy-source-targetcandidates.html 
+sidebar: sidebar 
+keywords: show, volume, copy, target, candidates 
+summary: Der Befehl show VolumeCopy source targetCandidates gibt Informationen zu den Kandidatenvolumes zurück, die Sie als Ziel für einen Kopiervorgang verwenden können. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare. 
+---
+= Kandidaten für Volume-Kopien anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show volumeCopy source targetCandidates` Der Befehl gibt Informationen zu den Kandidatenvolumes zurück, die Sie als Ziel für einen Kopiervorgang des Volumes verwenden können. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show volumeCopy source pass:quotes[["_sourceName_"]] targetCandidates
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`source`
+ a| 
+Der Name des Quell-Volume, für das Sie versuchen, ein Kandidatenzielvolumen zu finden. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===

@@ -1,0 +1,89 @@
+---
+permalink: get-started/formatting-rules-for-script-commands.html 
+sidebar: sidebar 
+keywords: format, rules, script, commands 
+summary: Die Syntax, die für einen bestimmten Skriptbefehl eindeutig ist, wird im Abschnitt Hinweise am Ende der Befehlsbeschreibung jedes Skripts erläutert. 
+---
+= Formatregeln für Skriptbefehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die Syntax, die für einen bestimmten Skriptbefehl eindeutig ist, wird im Abschnitt Hinweise am Ende der Befehlsbeschreibung jedes Skripts erläutert.
+
+*Groß-/Kleinschreibung* -- die Skriptbefehle sind nicht von Groß- und Kleinschreibung abhängig. Sie können die Skriptbefehle in Kleinbuchstaben, Großbuchstaben oder gemischten Groß-/Kleinschreibung eingeben. (In den folgenden Befehlsbeschreibungen kann der gemischte Fall als Hilfe beim Lesen der Befehlsnamen und bei der Erläuterung des Zwecks des Befehls verwendet werden.)
+
+*Leerzeichen* -- Sie müssen Leerzeichen in die Skriptbefehle eingeben, wie sie in den Befehlsbeschreibungen angezeigt werden.
+
+*Eckige Klammern* -- eckige Klammern werden auf zwei Arten verwendet:
+
+* Als Teil der Befehlssyntax.
+* Um anzugeben, dass die Parameter optional sind. Die Beschreibung der einzelnen Parameter gibt an, ob Sie einen Parameterwert in eckige Klammern setzen müssen.
+
+
+*Klammern* -- Klammern in der Befehlssyntax enthalten bestimmte Auswahlmöglichkeiten für einen Parameter. Wenn Sie den Parameter verwenden möchten, müssen Sie einen der in Klammern enthaltenen Werte eingeben. In der Regel fügen Sie keine Klammern in einen Skript-Befehl ein. In einigen Fällen müssen Sie jedoch bei Eingabe von Listen die Liste in Klammern einschließen. Eine solche Liste kann eine Liste der Fach-ID-Werte und Steckplatz-ID-Werte sein. Die Beschreibung der einzelnen Parameter gibt Ihnen an, ob Sie einen Parameterwert in Klammern setzen müssen.
+
+*Vertikale Balken* -- Vertikale Balken in einem Skript-Befehl geben "`oder`" an und trennen die gültigen Werte für den Parameter. Beispiel: Die Syntax für das `raidLevel` Der Parameter in der Befehlsbeschreibung wird wie folgt angezeigt:
+
+[listing]
+----
+ raidLevel=(0 | 1 | 3 | 5 | 6)
+----
+Um die zu verwenden `raidLevel` Geben Sie diesen Wert ein, um RAID-Level 5 festzulegen:
+
+[listing]
+----
+ raidLevel=5
+----
+*Laufwerkspositionen* -- die CLI-Befehle zur Identifikation von Laufwerkpositionen unterstützen sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann eine andere Methode zur Ermittlung eines Speicherorts für ein Laufwerk die ID des Laufwerksfachs angeben, die ID des Fachs auf 0 setzen und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Trennen Sie die ID-Werte durch ein Komma. Wenn Sie mehrere ID-Werte eingeben, trennen Sie jeden Satz von Werten mit einem Leerzeichen.
+
+Es gibt zwei Konventionen zum Angeben von Laufwerken in der CLI. Das Übereinkommen, das Sie verwenden sollten, wird in jedem Befehl angegeben. Ein Übereinkommen verwendet ein Gleichheitszeichen und Klammern:
+
+[listing]
+----
+
+        drive=\(trayID,[drawerID,]slotID\)
+----
+Der zweite Kongress verwendet kein Gleichheitszeichen, sondern ein Paar geschweifte Klammern um die angegebenen Laufwerke:
+
+[listing]
+----
+
+        drive \[trayID,[drawerID,]slotID\]
+----
+Hier einige Beispiele mit Klammern:
+
+[listing]
+----
+(1,1 1,2 1,3 1,4 2,1 2,2 2,3 2,4)
+----
+Oder, für ein Laufwerksfach mit hoher Kapazität, das Beispiel:
+
+[listing]
+----
+(1,1,1 1,2,2 1,3,3 1,4,4 2,1,1 2,2,2 2,3,3 2,4,4)
+----
+*Kursiv formatierte Begriffe* -- kursiv im Befehl geben Sie einen Wert oder Informationen an, die Sie angeben müssen. Beispiel: Wenn Sie auf den kursiven Begriff stoßen:
+
+[listing]
+----
+
+          *numberOfDrives*
+----
+Ersetzen Sie den kursiven Begriff durch einen Wert für die Anzahl der Laufwerke, die Sie mit dem Befehl Skript aufnehmen möchten.
+
+*Semikolon* -- Script-Befehle müssen mit einem Semikolon enden (`;`). Sie können mehrere Skriptbefehle in der Befehlszeile oder in einer Skriptdatei eingeben. Zum Beispiel wird ein Semikolon verwendet, um jeden Skriptbefehl in der folgenden Skriptdatei zu trennen.
+
+[listing]
+----
+create volume drives=(0,2 0,3 1,4 1,5 2,6 2,7) raidLevel=5 userLabel=”v1” capacity=2gb owner=a;
+create volume volumeGroup=2 userLabel=”v2” capacity=1gb owner=b;
+create volume volumeGroup=2 userLabel=”v3” capacity=1gb owner=a;
+----
+[listing]
+----
+create volume drives=(0,4 0,5 1,6 1,7 2,8 2,9) raidLevel=5 userLabel=”v4” capacity=2gb owner=b;
+create volume volumeGroup=3 userLabel=”v5” capacity=1gb owner=a;
+create volume volumeGroup=3 userLabel=”v6” capacity=1gb owner=b;
+----

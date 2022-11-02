@@ -1,0 +1,97 @@
+---
+permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+sidebar: sidebar 
+keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
+summary: 'Mit dem Befehl Set storageArray AutoSupport deliveryMethod wird die Bereitstellungsmethode für das Senden von AutoSupport-Nachrichten an E-Mail (SMTP) eingerichtet.' 
+---
+= Geben Sie die SMTP-Bereitstellungsmethode (E-Mail) an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray autoSupport deliveryMethod` Mit dem Befehl wird die Bereitstellungsmethode zum Senden von AutoSupport-Meldungen an E-Mail (SMTP) eingerichtet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray autoSupport deliveryMethod=email
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Ermöglicht dem Benutzer, die Bereitstellungsmethode für die AutoSupport-Sammlung festzulegen. Gültige Auswahlmöglichkeiten:
+
+* E-Mail
+* HTTP
+* HTTPS
+
+
+[NOTE]
+====
+Wenn die E-Mail-Methode konfiguriert ist, werden AutoSupport OnDemand und Remote Diagnostics deaktiviert.
+
+====
+
+
+ a| 
+`mailRelayServer`
+ a| 
+Ermöglicht dem Benutzer, den Mail-Relay-Server für die AutoSupport-Sammlung anzugeben.
+
+
+
+ a| 
+`senderEmail`
+ a| 
+Ermöglicht dem Benutzer die Angabe der E-Mail-Adresse für die AutoSupport-Sammlung.
+
+|===
+
+
+=== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportConfig deliveryMethod=email mailRelayServer=\"mailserver.company.com\" senderEmail=\"user@company.com\";"
+
+SMcli completed successfully.
+----
+
+
+=== Verifizierung
+
+Senden Sie mit dem eine Testmeldung `_start storageArray autoSupport deliveryTest_` Befehl, um zu überprüfen, ob Ihre Bereitstellungsmethoden korrekt eingerichtet sind.
+
+
+
+== Minimale Firmware-Stufe
+
+8.40

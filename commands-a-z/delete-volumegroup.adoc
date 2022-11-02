@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/delete-volumegroup.html 
+sidebar: sidebar 
+keywords: delete, volume, group, command, entire, associated, support, role 
+summary: Mit dem Befehl „Volume-Gruppe löschen“ wird eine gesamte Volume-Gruppe und ihre zugehörigen Volumes gelöscht. 
+---
+= Volume-Gruppe löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete volumeGroup` Mit dem Befehl wird eine gesamte Volume-Gruppe und die zugehörigen Volumes gelöscht.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[IMPORTANT]
+====
+*Mögliche Beschädigung der Speicher-Array-Konfiguration* -- Alle Daten in der Volume-Gruppe gehen verloren, sobald Sie diesen Befehl ausführen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete volumeGroup [_volumeGroupName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, die Sie löschen möchten. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

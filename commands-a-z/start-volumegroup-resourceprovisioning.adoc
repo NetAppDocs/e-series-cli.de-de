@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-volumegroup-resourceprovisioning.html 
+sidebar: sidebar 
+keywords: start, volume, group, resource, provision 
+summary: Der Befehl „Start VolumeGroup resourceProvisioning“ ermöglicht die Ressourcenbereitstellung für eine bestimmte Volume-Gruppe und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume der Volume-Gruppe. Für die Ressourcenbereitstellung müssen alle Laufwerke in der Volume-Gruppe die DELBE-Funktion von NVMe unterstützen. 
+---
+= Starten Sie Die Ressourcenbereitstellung Der Volume-Gruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volumeGroup resourceProvisioning` Befehl aktiviert die Ressourcenbereitstellung auf einer bestimmten Volume-Gruppe und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume in der Volume-Gruppe. Für die Ressourcenbereitstellung müssen alle Laufwerke in der Volume-Gruppe die DELBE-Funktion von NVMe unterstützen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl auf einem EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Rollen Storage-Admin oder Support-Admin verfügen.
+
+
+
+== Kontext
+
+Um die Ressourcenbereitstellung für eine Volume-Gruppe zu deaktivieren, verwenden Sie den Befehl Full Provisioning mit der Option zum Deaktivieren der Ressourcenbereitstellung. Eine Volume-Gruppe wird bei der Erstellung als Ressource bereitgestellt, wenn alle Laufwerke DELBE-fähig und die Speicher-Arrays sind `resourceProvisionedVolumes` Einstellung lautet `true`.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup[_volumeGroupName_]] resourceProvisioning
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroupName`
+ a| 
+Die Volume-Gruppe, die die Ressourcenbereitstellung aktivieren soll. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+11.73

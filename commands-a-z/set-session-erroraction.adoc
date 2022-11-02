@@ -1,0 +1,120 @@
+---
+permalink: commands-a-z/set-session-erroraction.html 
+sidebar: sidebar 
+keywords: set, session 
+summary: Der Befehl Session errorAction festlegen legt fest, wie die aktuelle Skript-Engine-Sitzung ausgeführt werden soll. 
+---
+= Sitzung einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set session errorAction` Der Befehl legt fest, wie die aktuelle Skript-Engine-Sitzung ausgeführt werden soll.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin, Support-Admin, Sicherheitsadministrator oder Storage-Monitor verfügen.
+
+
+
+== Kontext
+
+Für diesen Befehl stellt eine Sitzung die Dauer für das Ausführen der Befehle dar. Dieser Befehl stellt die Parameter für das Speicher-Array nicht dauerhaft fest.
+
+
+
+== Syntax
+
+[listing]
+----
+set session errorAction=(stop | continue)
+password="storageArrayPassword"
+performanceMonitorInterval=intervalValue
+performanceMonitorIterations=iterationValue
+----
+[listing]
+----
+set session errorAction=(stop | continue)
+password="storageArrayPassword"
+userRole=(admin | monitor)
+performanceMonitorInterval=intervalValue
+performanceMonitorIterations=iterationValue
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`errorAction`
+ a| 
+Die Reaktion der Sitzung, wenn während der Verarbeitung ein Fehler auftritt. Sie können die Sitzung anhalten, wenn ein Fehler auftritt, oder Sie können die Sitzung nach dem Auftreten eines Fehlers fortsetzen. Der Standardwert ist `stop`. (Dieser Parameter definiert die Aktion für Ausführungsfehler, nicht für Syntaxfehler. Einige Fehlerbedingungen können den überschreiben `continue` Wert.)
+
+
+
+ a| 
+`password`
+ a| 
+Das Kennwort für das Speicher-Array. Schließen Sie das Passwort in doppelte Anführungszeichen (" ").
+
+[NOTE]
+====
+Wenn der Clienttyp auf festgelegt ist `https`Dieser Parameter ist veraltet. Das Passwort muss vor der Ausführung des CLI-Befehlsskripts angegeben werden und kann nicht in der Mitte eines Skripts geändert werden.
+
+====
+
+
+ a| 
+`performanceMonitorInterval`
+ a| 
+Häufigkeit des Erfassens von Performance-Daten: Geben Sie einen ganzzahligen Wert für das Abfrageintervall in Sekunden ein, für das Sie Daten erfassen möchten. Der Wertebereich ist `3` Bis `3600` Sekunden. Der Standardwert ist `5` Sekunden.
+
+[NOTE]
+====
+Wenn der Clienttyp auf festgelegt ist `https`Dieser Parameter ist veraltet. Verwenden Sie stattdessen diesen Parameter zusammen mit den einzelnen betroffenen Befehlen, um den Standardwert für das Intervall zu ändern. Die Befehle lauten `save storageArray performanceStats` Und `show drive performanceStats`.
+
+====
+
+
+ a| 
+`performanceMonitorIterations`
+ a| 
+Die Anzahl der zu erfassenden Proben. Geben Sie einen Ganzzahlwert ein. Der Bereich der erfassten Werte ist `1` Bis `3600`. Der Standardwert ist `5`.
+
+[NOTE]
+====
+Wenn der Clienttyp auf festgelegt ist `https`Dieser Parameter ist veraltet. Verwenden Sie stattdessen diesen Parameter zusammen mit den einzelnen betroffenen Befehlen, um den Standardwert für die Iteration zu ändern. Die Befehle lauten `save storageArray performanceStats` Und `show drive performanceStats`.
+
+====
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+Passwörter werden auf jedem Storage-Array in einer Management-Domäne gespeichert. Wenn ein Kennwort noch nicht festgelegt wurde, benötigen Sie kein Kennwort. Das Passwort kann eine beliebige Kombination aus alphanumerischen Zeichen mit maximal 30 Zeichen sein. (Sie können ein Passwort für das Speicherarray mit dem definieren `set storageArray` Befehl.)
+
+Das Abrufintervall und die Anzahl der Iterationen, die Sie angeben, bleiben bis zum Ende der Sitzung wirksam. Nach Beendigung der Sitzung kehren das Abrufintervall und die Anzahl der Iterationen zu den Standardwerten zurück.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20
+
+8.40 - Wenn der Client-Typ auf festgelegt ist `https`, Veraltet `password`, `userRole`, `performanceMonitorInterval`, und `performanceMonitorIterations` Parameter.

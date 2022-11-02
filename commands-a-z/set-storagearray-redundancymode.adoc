@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/set-storagearray-redundancymode.html 
+sidebar: sidebar 
+keywords: set, storage, array, redundancy, mode 
+summary: Der Befehl Set storageArray redundant setzt den Redundanzmodus des Speicherarrays auf Simplex oder Duplex. 
+---
+= Legen Sie den Redundanzmodus für das Storage Array fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray redundancyMode` Durch Befehl wird der Redundanzmodus des Speicherarrays auf Simplex oder Duplex eingestellt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray redundancyMode=(simplex | duplex)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`redundancyMode`
+ a| 
+Nutzung `simplex` Modus, wenn Sie über einen einzelnen Controller verfügen. Nutzung `duplex` Modus bei zwei Controllern.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

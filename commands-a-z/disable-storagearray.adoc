@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/disable-storagearray.html 
+sidebar: sidebar 
+keywords: disable, storage, array, command, storage, feature 
+summary: Mit dem Befehl „deaktivier storageArray“ wird eine Speicherarray-Funktion deaktiviert. 
+---
+= Deaktivieren der Speicher-Array-Funktion
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `disable storageArray` Der Befehl deaktiviert eine Speicherarray-Funktion.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Führen Sie die aus `show storageArray` Befehl, um eine Liste der Feature-IDs für alle aktivierten Funktionen im Storage Array anzuzeigen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[disable storageArray (featurePack | feature=_featureAttributeList_)]
+----
+Bestanden:Angebote[der `_featureAttributeList_`] Kann eine oder mehrere dieser Attributwerte sein. Wenn Sie mehr als einen Attributwert eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+* `driveSecurity`
+
+
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.20 fügt die hinzu `driveSecurity` Alle anderen Attribute zuordnen und entfernen.

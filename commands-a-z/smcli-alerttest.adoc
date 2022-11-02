@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/smcli-alerttest.html 
+sidebar: sidebar 
+keywords: test, alerts 
+summary: Der Befehl SMcli alertTest sendet eine Testwarnung an das Windows-Ereignisprotokoll und alle konfigurierten Syslog-Empfänger. 
+---
+= Testalarme
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli alertTest` Befehl sendet eine Testwarnung an das Windows-Ereignisprotokoll und alle konfigurierten Syslog-Empfänger.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt nur für die E2700 und E5600 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen
+
+====
+
+
+== Syntax
+
+[listing]
+----
+SMcli -alertTest
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

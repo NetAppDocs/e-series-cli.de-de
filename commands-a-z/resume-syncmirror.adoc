@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/resume-syncmirror.html 
+sidebar: sidebar 
+keywords: resume, synchronous, mirroring 
+summary: Mit dem Befehl „Resume SyncMirror“ wird ein synchroner Spiegelungsvorgang fortgesetzt. 
+---
+= Wiederaufnahme der synchronen Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `resume syncMirror` Befehl setzt einen unterbrochenen synchronen Spiegelungsvorgang fort.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+resume syncMirror (primary pass:quotes[[_volumeName_]] |
+primaries pass:quotes[[_volumeName1 ... volumeNameN_]])
+[writeConsistency=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`primary`
+ a| 
+Der Name des primären Volumes, für das Sie einen Vorgang zur synchronen Spiegelung fortsetzen möchten. Schließen Sie den Namen des primären Datenträgers in eckige Klammern ([ ]). Wenn der Name des primären Volumes Sonderzeichen oder Ziffern hat, müssen Sie den Namen des primären Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`primaries`
+ a| 
+Die Namen mehrerer primärer Volumes, für die ein Vorgang zur synchronen Spiegelung fortgesetzt werden soll. Geben Sie die Namen der primären Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn der Name des primären Volumes Sonderzeichen hat oder nur aus Ziffern besteht, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`writeConsistency`
+ a| 
+Die Einstellung zum Identifizieren der Volumes in diesem Befehl, die sich in einer Write-Consistency Group befinden oder separat sind. Wenn sich die Volumes in derselben Konsistenzgruppe befinden sollen, setzen Sie diesen Parameter auf `TRUE`. Wenn die Volumes getrennt sein sollen, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie die einstellen `writeConsistency` Parameter an `TRUE`, Die Volumes müssen sich in einer Write-Consistency Group (oder Gruppen) befinden. Mit diesem Befehl werden alle Write-Consistency Groups fortgesetzt, die die Volumes enthalten. Wenn sich beispielsweise die Volumes A, B und C in einer Write-Konsistenzgruppe befinden und Remote-Gegenstücke A`', B`' und C`' besitzen, befindet sich die `resume syncMirror volume ["A"] writeConsistency=TRUE` Mit dem Befehl werden A-A`', B-B`' und C-C`' fortgesetzt.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

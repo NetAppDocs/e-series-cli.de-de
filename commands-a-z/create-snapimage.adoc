@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/create-snapimage.html 
+sidebar: sidebar 
+keywords: create, snapshot, image 
+summary: Mit dem Befehl „SnapImage erstellen“ wird ein neues Snapshot-Image in einer oder mehreren bestehenden Snapshot-Gruppen erstellt. 
+---
+= Erstellen von Snapshot Images
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create snapImage` Befehl erstellt ein neues Snapshot-Image in einer oder mehreren vorhandenen Snapshot-Gruppen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Bevor Sie ein Snapshot-Image erstellen können, müssen Sie zunächst mindestens eine Snapshot-Gruppe haben, in der Sie das Snapshot-Image platzieren können. Zum Erstellen einer Snapshot-Gruppe verwenden Sie das `create snapGroup` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create snapImage (snapGroup=pass:quotes[_"snapGroupName" |
+snapGroups=("_snapGroupName1"... "snapGroupNamen_"))]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, die das Snapshot-Image enthält. Schließen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`snapGroups`
+ a| 
+Die Namen mehrerer Snapshot-Gruppen, die das Snapshot-Image enthalten. Geben Sie die Namen der Snapshot Gruppen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in Klammern an.
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Ein Snapshot-Image ist ein logisches Point-in-Time-Image des Inhalts eines zugehörigen _base_ Volumes. Das Snapshot Image wird sofort erstellt und zeichnet den Status des Basis-Volumes in diesem Moment auf. Jedes Snapshot-Image wird im Kontext genau einer _Snapshot-Gruppe_ erstellt. Eine Snapshot-Gruppe ist eine Sequenz von Snapshot-Images des zugehörigen Basis-Volume. Eine Snapshot-Gruppe verfügt über ein _Repository Volume_, mit dem alle Daten aus den Snapshot-Images gespeichert werden. Die Snapshot-Images in einer Snapshot-Gruppe haben eine bestimmte Reihenfolge. Die spezifische Reihenfolge der Snapshot-Images ermöglicht die Verwaltung der Snapshot-Images, wie z. B. das Wiederherstellen eines bestimmten Snapshot-Images auf dem Basis-Volume oder das Löschen der nicht mehr benötigten Snapshot-Images.
+
+Das Ergebnis des ErErstellen eines Snapshot-Images einer Konsistenzgruppe ist ein Snapshot Image von jedem Mitglied-Volume der Konsistenzgruppe.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

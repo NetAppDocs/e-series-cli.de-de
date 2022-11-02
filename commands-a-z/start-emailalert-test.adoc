@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/start-emailalert-test.html 
+sidebar: sidebar 
+keywords: test, email, alert, configuration 
+summary: Mit dem Befehl „emailAlert-Test starten“ können Sie die Warnungskonfiguration durch Senden einer Beispielnachricht per E-Mail testen. 
+---
+= Konfiguration von E-Mail-Warnmeldungen testen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start emailAlert test` Mit dem Befehl können Sie die Warnungskonfiguration durch Senden einer Beispiel-E-Mail-Nachricht testen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+
+start emailAlert test
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "start emailAlert test;"
+
+The sample alert message was successfully sent to the email addresses.
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

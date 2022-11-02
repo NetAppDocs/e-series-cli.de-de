@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/set-storagearray-managementinterface.html 
+sidebar: sidebar 
+keywords: set, storage, array, management, interface 
+summary: Der Befehl Set storageArray ManagementInterface ändert die Managementoberfläche des Controllers. Ändern Sie den Typ der Managementoberfläche, um die Vertraulichkeit zwischen dem Storage-Array und seiner Managementsoftware durchzusetzen oder um auf externe Tools zuzugreifen. 
+---
+= Legen Sie die Managementoberfläche für das Storage Array fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray managementInterface` Mit dem Befehl wird die Managementoberfläche des Controllers geändert. Ändern Sie den Typ der Managementoberfläche, um die Vertraulichkeit zwischen dem Storage-Array und seiner Managementsoftware durchzusetzen oder um auf externe Tools zuzugreifen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+
+set storageArray managementInterface restOnly={true | false}
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`restOnly`
+ a| 
+Wenn eingestellt auf `true`, Zeigt an, dass die RESTful-Schnittstelle die einzige zulässige Management-Schnittstelle ist. Diese Schnittstelle erzwingt eine verschlüsselte Verbindung zwischen dem Storage Array und der Management Software.
+
+Wenn eingestellt auf `false`, Zeigt an, dass die ältere Schnittstelle zwischen dem Storage-Array und der Managementsoftware zulässig ist. Diese Schnittstelle ist nicht verschlüsselt.
+
+Einige Tools, die direkt mit der älteren Managementoberfläche wie SANtricity SMI-S Provider oder OnCommand Insight (OCI) kommunizieren, funktionieren nur, wenn das `restOnly` Parameter ist auf festgelegt `false`. Weitere Informationen erhalten Sie vom technischen Support.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray managementInterface restOnly=true;"
+
+SMcli completed successfully.
+----

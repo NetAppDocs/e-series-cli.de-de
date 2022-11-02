@@ -1,0 +1,87 @@
+---
+permalink: commands-a-z/recover-sasport-miswire.html 
+sidebar: sidebar 
+keywords: recover, sas, port, mis-wire 
+summary: Der Befehl sasPort miswire wiederherstellen teilt einem Controller mit, dass eine Korrektur erfolgt ist, um eine Fehlverbindung wiederherzustellen. 
+---
+= Fehlerhafte Verbindung des SAS-Ports wiederherstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recover sasPort miswire` Der Befehl teilt einem Controller mit, dass eine Behebung des Fehlereingriffs erforderlich ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Der Controller kann dann alle deaktivierten SAS-Ports wieder aktivieren, da eine fehlerhafte Leitung erkannt wurde. Führen Sie diesen Befehl aus, nachdem Sie alle SAS-falsch-Kabel-Bedingungen korrigiert haben.
+
+SAS-Fehldrahtbedingungen können eine der folgenden sein:
+
+* Ungültige SAS-Topologien
+* Controller-Host-Port zum Erweiterungsfach-Anschluss
+* Initiator der Topologieverbindung
+* ESM-Fehldraht
+
+
+
+
+== Syntax
+
+[listing]
+----
+recover sasPort miswire
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Wenn ein Fehldrahtzustand erkannt wird, meldet die Controller-Firmware Folgendes:
+
+* Ein kritisches MEL-Ereignis, das auf eine Fehldrahtbedingung hinweist
+* Ein Zustand „`benötigt Aufmerksamkeit`“
+* Eine Wiederherstellungsaktion, die auf das fehlerhafte Kabel hinweist
+
+
+Darüber hinaus meldet der Controller „`Redundanzverlust`“ Informationen für die Laufwerke, ESMs und Fächer, für die er aufgrund der Fehlleitung nur einen Zugriffspfad hat (z. B. die beiden unteren Fächer in einem Speicher-Array). Die Informationen zu Redundanzverlusten sind nicht auf SAS-Topologien beschränkt.
+
+Im Folgenden finden Sie die Ereignisbenachrichtigungen im Zusammenhang mit einer Fehlleitung des SAS-Ports:
+
+* Kabel SAS-Fehlverbindung erkannt
+* HBA mit Laufwerkskanal verbunden
+* Die Antriebskanäle sind verkabelt
+
+
+Wenn der Controller einen oder mehrere SAS-Ports deaktiviert, um die Integrität der SAS-Domäne zu schützen, führen Sie die folgenden Schritte aus, um den Zustand wiederherzustellen:
+
+. Stellen Sie fest, welches Kabel sich an der falschen Stelle befindet, und entfernen Sie es. Wenn die letzte Maßnahme die Installation eines neuen Kabels war, ist dies der wahrscheinlichste Kandidat. Wenn nicht, suchen Sie nach Kabeln, die an Geräte angeschlossen sind, die nicht Teil des Speicher-Arrays sind, oder Kabeln, die zwischen Kanälen angeschlossen sind. Das Wiederherstellungsereignis sollte den Kanal melden, auf dem der Fehldraht erkannt wurde, und möglicherweise das Fach
+. Führen Sie das aus, nachdem Sie ein Kabel entfernt oder das Kabel an die richtige Position gebracht haben `recover sasPort miswire` Befehl. Der Controller versucht, alle SAS-Ports, die bei Erkennung der Fehlleitung deaktiviert wurden, wieder zu aktivieren.
+. Wenn das Kabel, das Sie entfernt oder verschoben haben, um die falsche Leitung zu beheben, vorausgesetzt, dass der Controller nur Zugriff auf den deaktivierten Port hat, kann der Controller den deaktivierten SAS-Port nicht wieder aktivieren. Um die Wiederherstellung abzuschließen, müssen Sie die Fächer im Speicher-Array aus- und wieder einschalten.
+
+
+
+
+== Minimale Firmware-Stufe
+
+8.10

@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/check-syncmirror.html 
+sidebar: sidebar 
+keywords: check, synchronous, mirroring status 
+summary: Der Befehl Check SyncMirror gibt den Status eines Remote-Mirror-Volumes zurück. Mithilfe dieses Befehls können Sie bestimmen, wann der Status des Remote-Mirror-Volumes optimal lautet. 
+---
+= Überprüfen Sie den Status der synchronen Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `check syncMirror` Befehl gibt den Status eines Remote-Mirror-Volumes zurück. Mithilfe dieses Befehls können Sie bestimmen, wann der Status des Remote-Mirror-Volumes optimal lautet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=pass:quotes[_timeoutValue_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`localVolume`
+ a| 
+Der Name eines beliebigen Remote-Mirror-Volumes. Das Remote-Mirror-Volume kann das primäre Volume oder das sekundäre Volume eines Remote-gespiegelten Paars sein. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) einschließen.
+
+
+
+ a| 
+`timeout`
+ a| 
+Das Zeitintervall, in dem die Software den Status des Volumes der Remote-Spiegelung zurücksenden kann. Der Zeitüberschreitungswert beträgt in Minuten.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl wartet, bis der Status optimal wird oder das Timeout-Intervall abläuft. Verwenden Sie diesen Befehl, wenn Sie das Dienstprogramm Asynchronous Synchronous Mirroring ausführen.

@@ -1,0 +1,405 @@
+---
+permalink: commands-a-z/show-storagearray.html 
+sidebar: sidebar 
+keywords: show, storage, array 
+summary: Der Befehl show storageArray gibt Konfigurationsinformationen zum Speicher-Array zurück. 
+---
+= Zeigen Sie das Speicher-Array an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray` Befehl gibt Konfigurationsinformationen zum Speicher-Array zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+Die Parameter geben Wertelisten für die Komponenten und Features im Speicher-Array zurück. Sie können den Befehl mit einem einzelnen Parameter oder mit mehreren Parametern eingeben. Wenn Sie den Befehl ohne Parameter eingeben, wird das gesamte Storage Array-Profil angezeigt (dies sind die gleichen Informationen, wie wenn Sie das eingeben `*profile*` Parameter).
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray
+[autoSupport| autoSupportConfig | profile |
+batteryAge | connections | defaultHostType | healthStatus |
+hostTypeTable | hotSpareCoverage | features | time |
+volumeDistribution | longRunningOperations | summary | preferredVolumeOwners |
+iscsiNegotiationDefaults | unconfiguredIscsiInitiators | autoLoadBalancingEnable |
+cacheMirrorDataAssuranceCheckEnable | hostConnectivityReporting]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`autoLoadBalancingEnable`
+ a| 
+Der Parameter, um den Aktivierstatus der Funktion Automatischer Lastenausgleich zurückzugeben.
+
+[NOTE]
+====
+Wenn die Funktion für den automatischen Lastausgleich aktiviert ist, wird auch die Funktion Host Connectivity Reporting aktiviert.
+
+====
+
+
+ a| 
+`autoSupport`
+ a| 
+[NOTE]
+====
+Dieser Parameter ist nur für E2800 oder E5700 Storage-Arrays gültig, die mit einem ausgeführt werden `https` Client-Typ. Verwenden Sie für E2800 oder E5700 Storage-Arrays mit einem Client-Typ das `autoSupportConfig` Parameter.
+
+====
+
+
+ a| 
+`autoSupportConfig`
+ a| 
+Der Parameter, der Informationen zum aktuellen Status des Vorgangs zum automatischen Erfassen von Support-Daten zurückgibt. Folgende Informationen werden zurückgegeben:
+
+* Gibt an, ob der Vorgang aktiviert oder deaktiviert ist
+* Der Speicherort des Ordners, in dem sich die Supportdatendatei befindet
+
+
+[NOTE]
+====
+Dieser Parameter ist nur für E2800 oder E5700 Storage-Arrays gültig, die mit einem ausgeführt werden `symbol` Client-Typ. Für E2800 oder E5700 Storage-Arrays mit einem `https` Verwenden Sie den Client-Typ `*autoSupport*` Parameter.
+
+====
+
+
+ a| 
+`batteryAge`
+ a| 
+Der Parameter, der den Status, das Alter der Batterie in Tagen und die Anzahl der Tage anzeigt, bis die Batterie ersetzt werden muss. Die Informationen für beide Batterien werden angezeigt.
+
+
+
+ a| 
+`cacheMirrorDataAssuranceCheckEnable`
+ a| 
+Der Parameter, der den Enablement-Status der Data Assurance-Funktion für die Cache-Spiegelung zurückgibt.
+
+
+
+ a| 
+`connections`
+ a| 
+Der Parameter, um eine Liste anzuzeigen, wo sich die Antriebskanal-Ports befinden und wo die Laufwerkskanäle verbunden sind.
+
+
+
+ a| 
+`defaultHostType`
+ a| 
+Der Parameter, um den Standardhosttyp und den Hosttyp-Index anzuzeigen.
+
+
+
+ a| 
+`features`
+ a| 
+Der Parameter, um die Funktionskonfiguration des Speicherarrays anzuzeigen.
+
+
+
+ a| 
+`healthStatus`
+ a| 
+Der Parameter, mit dem der Systemzustand, die logischen Eigenschaften und die Eigenschaften der physischen Komponenten des Speicher-Arrays angezeigt werden.
+
+
+
+ a| 
+`hostConnectivityReporting`
+ a| 
+Der Parameter, um den Enablement-Status der Reporting-Funktion für Hostkonnektivität zurückzugeben.
+
+
+
+ a| 
+`hostTypeTable`
+ a| 
+Der Parameter, der eine Tabelle aller Host-Typen zeigt, die dem Controller bekannt sind. Jede Zeile in der Tabelle enthält einen Host-Typ-Index und die Plattform, die der Host-Typ-Index repräsentiert.
+
+
+
+ a| 
+`hotSpareCoverage`
+ a| 
+Der Parameter, um Informationen darüber anzuzeigen, welche Volumen des Speicher-Arrays Hot-Spare-Abdeckung haben und welche Volumen nicht vorhanden sind.
+
+
+
+ a| 
+`iscsiNegotiationDefaults`
+ a| 
+Der Parameter, der Informationen zu den Einstellungen auf Verbindungsebene zurückgibt, die Initiator-Target-Verhandlung unterliegen.
+
+
+
+ a| 
+`longRunningOperations`
+ a| 
+Der Parameter, der die lang laufenden Vorgänge für jede Volume-Gruppe und jedes Volume im Storage-Array anzeigt.
+
+Der `longRunningOperation` Parameter gibt diese Informationen zurück:
+
+* Name der Volume-Gruppe oder des Volumes
+* Langer Betrieb
+* Status
+* % Abgeschlossen
+* Zeit noch
+
+
+
+
+ a| 
+`preferredVolumeOwners`
+ a| 
+Der Parameter, der den bevorzugten Controller-Eigentümer für jedes Volume im Storage-Array anzeigt.
+
+
+
+ a| 
+`profile`
+ a| 
+Der Parameter, um alle Eigenschaften der logischen Komponenten und die physischen Komponenten anzuzeigen, aus denen das Speicher-Array besteht. Die Informationen werden in mehreren Bildschirmen angezeigt.
+
+[NOTE]
+====
+Der Profilparameter gibt detaillierte Informationen zum Speicher-Array zurück. Die Informationen umfassen mehrere Bildschirme auf einem Display. Möglicherweise müssen Sie die Größe Ihres Anzeigepuffers erhöhen, um alle Informationen anzuzeigen. Da diese Informationen so detailliert sind, sollten Sie die Ausgabe dieses Parameters möglicherweise in einer Datei speichern.
+
+====
+Speichern Sie die Profilausgabe mit dem folgenden Befehl in einer Datei:
+
+[listing]
+----
+c:\...\smX\client>smcli 123.45.67.88
+123.45.67.89 -c "show storagearray profile;"
+-o "c:\folder\storagearray
+profile.txt"
+----
+
+
+ a| 
+`summary`
+ a| 
+Der Parameter, um eine kurze Liste von Informationen zur Speicherarray-Konfiguration anzuzeigen.
+
+
+
+ a| 
+`time`
+ a| 
+Der Parameter, der die aktuelle Zeit anzeigt, zu der beide Controller im Storage-Array eingestellt sind.
+
+
+
+ a| 
+`unconfiguredIscsiInitiators`
+ a| 
+Der Parameter, um eine Liste von Initiatoren zurückzugeben, die vom Storage-Array erkannt, aber noch nicht in der Topologie des Storage-Arrays konfiguriert wurden.
+
+
+
+ a| 
+`volumeDistribution`
+ a| 
+Der Parameter, der den aktuellen Controller-Eigentümer für jedes Volume im Storage-Array anzeigt.
+
+|===
+
+
+== Hinweise
+
+Der `profile` Parameter zeigt detaillierte Informationen zum Storage-Array an. Die Informationen werden auf mehreren Bildschirmen auf einem Bildschirm angezeigt. Möglicherweise müssen Sie die Größe Ihres Anzeigepuffers erhöhen, um alle Informationen anzuzeigen. Da diese Informationen so detailliert sind, sollten Sie die Ausgabe dieses Parameters möglicherweise in einer Datei speichern. Um die Ausgabe in einer Datei zu speichern, führen Sie den aus `show storageArray` Befehl, der wie dieses Beispiel aussieht.
+
+[listing]
+----
+-c "show storageArray profile;" -o "c:\\folder\\storageArrayProfile.txt"
+----
+Die vorherige Befehlssyntax gilt für einen Host, auf dem ein Windows-Betriebssystem ausgeführt wird. Die tatsächliche Syntax variiert je nach Betriebssystem.
+
+Wenn Sie Informationen in einer Datei speichern, können Sie die Informationen als Datensatz Ihrer Konfiguration und als Hilfe bei der Wiederherstellung verwenden.
+
+[NOTE]
+====
+Zwar gibt das Storage-Array-Profil eine große Menge an Daten zurück, die alle klar gekennzeichnet sind. Neu in Version 8.41 sind jedoch die zusätzlichen Verschleißberichte für SSD-Laufwerke in E2800 oder E5700 Storage-Arrays. Während zuvor die Verschleißberichte Informationen über die durchschnittliche Löschanzahl und die verbleibenden Ersatzblöcke enthalten, enthält sie jetzt die prozentuale Haltbarkeit. Bei der verwendeten Ausdauer in Prozent wird die bisher auf die SSD-Laufwerke geschriebene Datenmenge durch das theoretische Gesamtschreiblimit der Laufwerke dividiert.
+
+====
+Der `batteryAge` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+Battery status: Optimal
+    Age: 1 day(s)
+    Days until replacement: 718 day(s)
+----
+Die neueren Controller-Fächer unterstützen das nicht `batteryAge` Parameter.
+
+Der `defaultHostType` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+Default host type: Linux (Host type index 6)
+----
+Der `healthStatus` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+Storage array health status = optimal.
+----
+Der `hostTypeTable` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+NVSRAM HOST TYPE INDEX DEFINITIONS
+HOST TYPE                         ALUA/AVT STATUS   ASSOCIATED INDEXS
+AIX MPIO                          Disabled          9
+AVT_4M                            Enabled           5
+Factory Default                   Disabled          0
+HP-UX                             Enabled           15
+Linux (ATTO)                      Enabled           24
+Linux (DM-MP)                     Disabled          6
+Linux (Pathmanager)               Enabled           25
+Mac OS                            Enabled           22
+ONTAP                             Disabled          4
+SVC                               Enabled           18
+Solaris (v11 or Later)            Enabled           17
+Solaris (version 10 or earlier)   Disabled          2
+VMWare                            Enabled           10 (Default)
+Windows                           Enabled           1
+----
+Der `hotSpareCoverage` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+The following volume groups are not protected: 2, 1
+Total hot spare drives: 0
+   Standby: 0
+   In use: 0
+----
+Der `features` Der Parameter gibt Informationen zurück, die zeigen, welche Funktionen aktiviert, deaktiviert, ausgewertet und für die Installation verfügbar sind. Dieser Befehl gibt die Informationen zu den Funktionen in einem ähnlichen Format zurück:
+
+[listing]
+----
+PREMIUM FEATURE           STATUS
+
+asyncMirror               Trial available
+syncMirror                Trial available/Deactivated
+thinProvisioning          Trial available
+driveSlotLimit            Enabled (12 of 192 used)
+snapImage                 Enabled (0 of 512 used) - Trial version expires m/d/y
+snapshot                  Enabled (1 of 4 used)
+storagePartition          Enabled (0 of 2 used)
+volumeCopy                Enabled (1 of 511 used)
+SSDSupport                Disabled (0 of 192 used) - Feature Key required
+driveSecurity             Disabled - Feature Key required
+enterpriseSecurityKeyMgr  Disabled - Feature Key required
+highPerformanceTier       Disabled - Feature Key required
+----
+Der `time` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+Controller in Slot A
+
+Date/Time: Thu Jun 03 14:54:55 MDT 2004
+Controller in Slot B
+
+Date/Time: Thu Jun 03 14:54:55 MDT 2004
+----
+Der `longRunningOperations` Parameter gibt Informationen in diesem Formular aus:
+
+[listing]
+----
+LOGICAL DEVICES  OPERATION         STATUS        TIME REMAINING
+Volume-2         Volume Disk Copy  10% COMPLETED  5 min
+----
+Die vom zurückgegebenen Informationsfelder `longRunningOperations` Parameter haben folgende Bedeutung:
+
+* `NAME` Ist der Name eines Volumes, das sich derzeit in einem langen Betrieb befindet. Der Volume-Name muss das Präfix „Volume“ haben.
+* `OPERATION` Führt den Vorgang auf, der für die Volume-Gruppe oder das Volume durchgeführt wird.
+* `*% COMPLETE*` Zeigt an, wie viel der lange laufende Vorgang ausgeführt wurde.
+* `STATUS` Kann eine der folgenden Bedeutungen haben:
++
+** Ausstehend -- der lang laufende Vorgang wurde nicht gestartet, beginnt aber nach Abschluss des aktuellen Vorgangs.
+** In Bearbeitung: Der lange laufende Vorgang wurde gestartet und wird von der Benutzeranforderung bis zum Abschluss oder zum Stoppvorgang ausgeführt.
+
+
+* `TIME REMAINING` Gibt die verbleibende Dauer für den laufenden Betrieb an. Die Zeit liegt im „Stunden-Minuten“-Format vor. Bleibt weniger als eine Stunde, werden nur die Minuten angezeigt. Wenn weniger als eine Minute verbleibt, wird die Meldung „[.code]``less than a minute``„ Wird angezeigt.
+
+
+Der `volumeDistribution` Der Parameter gibt Informationen in diesem Formular zurück.
+
+[listing]
+----
+volume name: 10
+     Current owner is controller in slot: A
+
+volume name: CTL 0 Mirror Repository
+     Current owner is controller in slot: A
+
+volume name: Mirror Repository 1
+     Current owner is controller in slot:A
+
+volume name: 20
+     Current owner is controller in slot:A
+
+volume name: JCG_Remote_MirrorMenuTests
+     Current owner is controller in slot:A
+----
+
+
+== Minimale Firmware-Stufe
+
+5.00 fügt die hinzu `defaultHostType` Parameter.
+
+5.43 fügt die hinzu `summary` Parameter.
+
+6.10 fügt die hinzu `volumeDistribution` Parameter.
+
+6.14 fügt die hinzu `connections` Parameter.
+
+7.10 fügt die hinzu `autoSupportConfig` Parameter.
+
+7.77 fügt die hinzu `longRunningOperations` Parameter.
+
+7.83 gibt Informationen zurück, die die Unterstützung für die neuen Funktionen enthalten, die in der Speicherverwaltungssoftware Version 10.83 veröffentlicht wurden. Außerdem wurden die zurückgegebenen Informationen erweitert, um den Status der Funktionen im Speicher-Array anzuzeigen.
+
+8.30 fügt die hinzu `autoLoadBalancingEnable` Parameter.
+
+8.40 fügt die hinzu `autoSupport` Parameter.
+
+8.40 depretiert das `autoSupportConfig` Parameter für E2800 oder E5700 Storage-Arrays, die mit einem ausgeführt werden `https` Client-Typ.
+
+8.41 fügt dem Storage-Array-Profil Verschleißüberwachung für SSD-Laufwerke hinzu. Diese Informationen werden nur für E2800 und E5700 Storage-Arrays angezeigt.
+
+8.42 fügt die hinzu `hostConnectivityReporting` Parameter.
+
+8.63 fügt den Eintrag „Resource-Provisioned Volumes“ unter hinzu `profile` Parameterergebnisse.

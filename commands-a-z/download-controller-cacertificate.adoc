@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/download-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: download, controller, certificate, command, install, root, intermediate, web, servers, validate, array, roles, context 
+summary: Der Download-Controller caCertificate Befehl installiert die Root/Intermediate CA-Zertifikate auf den Web-Servern der Controller, um das signierte Web-Server-Zertifikat zu validieren. 
+---
+= Installieren Sie Root-/Intermediate-CA-Zertifikate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download controller caCertificate` Der Befehl installiert die Root-/Intermediate-CA-Zertifikate auf den Web-Servern der Controller, um das vom Webserver signierte Zertifikat zu validieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Führen Sie diese Aktion für jeden Controller aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+download controller[(a|b)] caCertificate pass:quotes[[alias="_string_"]]
+         pass:quotes[file="_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Hier können Sie den Controller angeben, auf dem Sie das Root-/Intermediate-signiertes Zertifikat installieren möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`alias`
+ a| 
+Ermöglicht die Angabe eines Alias zur Darstellung des Root-/Zwischenzertifikats. Mit diesem Alias werden Informationen zu den Stamm-/Zwischenzertifikaten nachschlagen oder gelöscht. Ein Alias ist mit einem Root-/Zwischenzertifikat verknüpft und muss eindeutig sein.
+
+
+
+ a| 
+`file`
+ a| 
+Ermöglicht die Angabe der Datei, die das Root-/Zwischenzertifikat enthält. Zulässige Erweiterungen sind .pem, .cer, .crt und .der.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "download controller[a] caCertificate alias="myAlias" file="C:\rootCA1.cer";"
+SMcli -n Array1 -c "download controller[b] caCertificate file="C:\rootCA1.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

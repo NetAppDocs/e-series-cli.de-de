@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/show-storagearray-iscsinegotiationdefaults.html 
+sidebar: sidebar 
+keywords: show, storage, array, negotiation, defaults 
+summary: Der Befehl show storageArray iscsiNegotiationDefaults gibt Informationen zu Einstellungen auf Verbindungsebene zurück, die einer Verhandlung von Initiator-Ziel unterliegen. 
+---
+= Zeigen Sie Standards für die Verhandlung von Storage-Arrays an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray iscsiNegotiationDefaults` Befehl gibt Informationen zu den Einstellungen auf Verbindungsebene zurück, die von der Initiator-Zielverhandlung abhängig sind.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray iscsiNegotiationDefaults
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Die zurückgegebenen Informationen umfassen die Standardeinstellungen für das Controller-Fach (d. h. diejenigen Einstellungen, die der Ausgangspunkt für die Verhandlung sind) und die aktuellen aktiven Einstellungen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

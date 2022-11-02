@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/delete-snapimage.html 
+sidebar: sidebar 
+keywords: delete, snapimage, command, snapshot, images, group, support, array, roles 
+summary: Mit dem Befehl delete SnapImage werden ein oder mehrere Snapshot Images aus einer Snapshot-Gruppe gelöscht. 
+---
+= Snapshot Image löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete snapImage` Befehl löscht ein oder mehrere Snapshot-Images aus einer Snapshot-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapImage (snapGroup="snapGroupName" |
+snapGroups=("_snapGroupName1"
+... "snapGroupNamen_"))]
+[deleteCount=numberOfSnapImages]
+[retainCount=numberOfSnapImages]
+[ignoreSnapVolume=(TRUE | FALSE)]
+[snapImageID=OLDEST]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, die das Snapshot-Image enthält, das Sie löschen möchten. Schließen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`snapGroups`
+ a| 
+Die Namen mehrerer Snapshot-Gruppen, die das Snapshot-Image haben, das Sie löschen möchten. Geben Sie die Namen der Snapshot Gruppen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in Klammern an.
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Die Anzahl der Snapshot-Images, die Sie aus der Snapshot-Gruppe löschen möchten. Ganzzahlwerte verwenden.
+
+Mit diesem Parameter wird zuerst das älteste Snapshot-Image gelöscht und die ältesten Snapshot-Images gelöscht, bis die von Ihnen eingegebenen Nummer erreicht wird.
+
+Wenn die Zahl, die Sie eingeben, größer ist als die tatsächliche Anzahl aller Snapshot-Images in der Snapshot-Gruppe, werden alle Snapshot-Images gelöscht. Die Snapshot-Gruppe bleibt leer.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Die Anzahl der Snapshot-Images, die in der Snapshot-Gruppe beibehalten werden sollen. Ganzzahlwerte verwenden.
+
+Mit diesem Parameter werden die letzten Snapshot-Images in der Snapshot-Gruppe beibehalten und ältere Snapshot-Images gelöscht.
+
+Wenn die Anzahl der vorhandenen Snapshot-Images in der Snapshot-Gruppe kleiner als die Zahl ist, die Sie eingeben, wird keine der Snapshot-Images gelöscht.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Verwenden Sie diesen Parameter, um sicherzustellen, dass Sie kein Snapshot-Image löschen, das ein Snapshot-Volume mit dem Snapshot-Image verknüpft ist. Sie können einen dieser Werte verwenden:
+
+* `TRUE` - Verwenden Sie diesen Wert, um das Snapshot-Image zu löschen, obwohl das Snapshot-Image ein Snapshot-Volumen hat.
+* `FALSE` - Verwenden Sie diesen Wert, um das Snapshot-Image zu behalten, wenn das Snapshot-Image ein Snapshot-Volumen hat.
+
+
+Der Standardwert ist `TRUE`.
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Der `snapImageID` Der Parameter akzeptiert nur das `OLDEST` Option. Mit diesem Parameter wird das erste erstellte Snapshot-Image gelöscht.
+
+|===
+
+
+== Hinweise
+
+Sie können das älteste Snapshot-Image aus einem Repository-Volume einer Snapshot-Gruppe löschen. Die Definition eines von Ihnen löschenden Snapshot-Images wird aus dem System entfernt. Der Speicherplatz, der vom Snapshot-Image belegt wird, das Sie aus dem Repository-Volume der Snapshot-Gruppe löschen, wird freigegeben und für die Wiederverwendung innerhalb der Snapshot-Gruppe verfügbar gemacht.
+
+Wenn Sie keine anderen Parameter mit dem verwenden `snapGroup` Parameter oder `snapGroups` Parameter, standardmäßig wird das älteste Snapshot Image gelöscht.
+
+Alle Snapshot-Volumes, die für ein Snapshot Image vorhanden sind, wechseln in den Status „angehalten“, sobald das Snapshot Image gelöscht wird.
+
+Dieser Befehl wird nicht ausgeführt, wenn sich der Controller im Sperrmodus befindet.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

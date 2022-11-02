@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/download-controller-trustedcertificate.html 
+sidebar: sidebar 
+keywords: download, controller, trusted, certificate, command, install, web, servers, validate, array, roles, context 
+summary: Der Download-Controller TrustedCertificate Befehl installiert die vertrauenswürdigen CA-Zertifikate auf den Web-Servern der Controller, um das von LDAP-Server signiertes Zertifikat zu validieren. 
+---
+= Installieren Sie vertrauenswürdige CA-Zertifikate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download controller trustedCertificate` Der Befehl installiert die vertrauenswürdigen CA-Zertifikate auf den Web-Servern der Controller, um das signierte LDAP-Server-Zertifikat zu validieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Führen Sie diese Aktion nur aus, wenn die Zertifizierungsstelle, die die Zertifikate unterzeichnet hat, nicht bekannt oder allgemein vertrauenswürdig ist. Mit dem Befehl wird das CA-Zertifikat auf beiden Controllern installiert.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[download storageArray trustedCertificate [alias=_string_]] pass:quotes[file="_filename_"]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`alias`
+ a| 
+Ermöglicht die Angabe eines Alias für die Darstellung des vertrauenswürdigen CA-Zertifikats. Mit diesem Alias werden Informationen zu vertrauenswürdigen CA-Zertifikaten gefunden oder gelöscht. Ein Alias ist einem vertrauenswürdigen Zertifikat zugeordnet und muss eindeutig sein.
+
+
+
+ a| 
+`file`
+ a| 
+Hier können Sie die Datei angeben, die das vertrauenswürdige CA-Zertifikat enthält. Zulässige Erweiterungen sind .pem, .cer, .crt und .der.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "download storageArray trustedCertificate alias="myAlias"
+   file="C:\rootCA1.cer";"
+SMcli -n Array1 -c "download storageArray trustedCertificate
+   file="C:\rootCA1.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

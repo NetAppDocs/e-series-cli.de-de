@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-storagearray-externalkeymanagement.html 
+sidebar: sidebar 
+keywords: set, external, key, management, set 
+summary: Der Befehl Set storageArray externaliKeyManagement konfiguriert die Adresse und Port-Nummer des externen Schlüsselverwaltungsservers. 
+---
+= Einstellungen für die externe Schlüsselverwaltung festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray externalKeyManagement` Mit dem Befehl werden die Adresse und die Portnummer des externen Verschlüsselungsmanagement-Servers konfiguriert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+set storageArray externalKeyManagement serverAddress=pass:quotes[_serverAddress_]
+serverPort=pass:quotes[_portNumber_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`serverAddress`
+ a| 
+Ermöglicht die Angabe der Adresse des externen Schlüsselverwaltungsservers. Bei der Serveradresse kann es sich um einen vollständig qualifizierten Domänennamen, eine IPv4-Adresse oder eine IPv6-Adresse handeln.
+
+
+
+ a| 
+`serverPort`
+ a| 
+Ermöglicht die Angabe der Portnummer des externen Schlüsselverwaltungsservers.
+
+|===
+
+
+== Beispiel
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray externalKeyManagement serverAddress=192.0.2.1 serverPort=8081;"
+
+   SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

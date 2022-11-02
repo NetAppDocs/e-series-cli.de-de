@@ -1,0 +1,638 @@
+---
+permalink: get-started/recurring-syntax-elements.html 
+sidebar: sidebar 
+keywords: recur, syntax, elements 
+summary: Wiederkehrende Syntaxelemente sind eine allgemeine Kategorie von Parametern und Optionen, die Sie in den Skriptbefehlen verwenden können. 
+---
+= Wiederholte Syntaxelemente
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Wiederkehrende Syntaxelemente sind eine allgemeine Kategorie von Parametern und Optionen, die Sie in den Skriptbefehlen verwenden können. In der folgenden Tabelle sind die Konventionen aufgeführt, die in den wiederkehrenden Syntaxelementen verwendet werden.
+
+[cols="2*"]
+|===
+| Übereinkommen | Definition 
+
+
+ a| 
+`*a | b*`
+ a| 
+Alternative („a“ oder „b“)
+
+
+
+ a| 
+`italicized-words`
+ a| 
+Benutzereingaben zur Erfüllung eines Parameters erforderlich (eine Antwort auf eine Variable)
+
+
+
+ a| 
+`+[ ... ]+` (Eckige Klammern)
+ a| 
+Null oder ein Ereignis (eckige Klammern werden auch als Trennzeichen für einige Befehlsparameter verwendet)
+
+
+
+ a| 
+`+{ ... }+` (Lockige Klammern)
+ a| 
+Null oder mehr Vorkommen
+
+
+
+ a| 
+`(*a | b | c*)`
+ a| 
+Wählen Sie nur eine der Alternativen
+
+|===
+In der folgenden Tabelle sind die wiederkehrenden Syntaxparameter und die Werte aufgeführt, die Sie mit den wiederkehrenden Syntax-Parametern verwenden können.
+
+[cols="2*"]
+|===
+| Wiederkehrende Syntax | Syntaxwert 
+
+
+ a| 
+`_autoconfigure-vols-attr- value-list_`
+ a| 
+{`_autoconfigure-vols-attr-value-pair_` {`_autoconfigure-vols-attr-value-pair_`}
+
+
+
+ a| 
+`_autoconfigure-vols-attr- value-pair_`
+ a| 
+[listing]
+----
+driveType=drive-type | driveMediaType=drive-media-type |
+raidLevel=raid-level | volumeGroupWidth=integer-literal |
+volumeGroupCount=integer-literal | volumesPerGroupCount=integer-literal6|
+hotSpareCount=integer-literal | segmentSize=segment-size-spec | cacheReadPrefetch=(TRUE | FALSE)
+securityType=(none | capable | enabled)7| dataAssurance=(none | enabled)5
+----
+
+
+ a| 
+`_boolean_`
+ a| 
+[listing]
+----
+(TRUE | FALSE)
+----
+
+
+ a| 
+`_cache-flush-modifier- setting_`
+ a| 
+[listing]
+----
+immediate, 0, .25, .5, .75, 1, 1.5, 2, 5, 10, 20, 60, 120, 300, 1200, 3600, infinite
+----
+
+
+ a| 
+`_capacity-spec_`
+ a| 
+`_integer-literal_` `[KB | MB | GB | TB | Bytes]`
+
+
+
+ a| 
+`_count-based-repository- spec_`
+ a| 
+[listing]
+----
+repositoryRAIDLevel =repository-raid-level repositoryDriveCount=integer-literal
+[repositoryVolumeGroupUserLabel =user-label] [driveType=drive-type4
+] [trayLossProtect=(TRUE | FALSE)1] | [drawerLossProtect=(TRUE | FALSE)2] |
+[dataAssurance=(none | enabled)5] |
+----
+
+
+ a| 
+`_create-raid-vol-attr- value-list_`
+ a| 
+{`_create-raid-volume-attribute-value-pair_` {`_create-raid-volume-attribute-value-pair_`}
+
+
+
+ a| 
+`_create-raid-volume- attribute-value-pair_`
+ a| 
+[listing]
+----
+capacity=capacity-spec | owner=(a | b) |
+cacheReadPrefetch=(TRUE | FALSE) | segmentSize=integer-literal |
+usageHint=usage-hint-spec
+----
+
+
+ a| 
+`_create-volume-copy-attr- value-list_`
+ a| 
+{`_create-volume-copy-attr-value-pair_` {`_create-volume-copy-attr-value-pair_`}
+
+
+
+ a| 
+`_create-volume-copy-attr- value-pair_`
+ a| 
+[listing]
+----
+copyPriority=(highest | high | medium | low | lowest) |
+targetReadOnlyEnabled=(TRUE | FALSE) | copyType=(offline | online) |
+repositoryPercentOfBase=(20 | 40 | 60 | 120 | default) |
+repositoryGroupPreference=(sameAsSource | otherThanSource | default)
+----
+
+
+ a| 
+`_drive-media-type_`
+ a| 
+`(HDD | SSD | unknown | allMedia)` _HDD_ bedeutet Festplatte. _SSD_ bedeutet Solid State Disk.
+
+
+
+ a| 
+`_drive-spec_`
+ a| 
+`_trayID,slotID` Oder `trayID,drawerID,slotID_` Ein Laufwerk wird als zwei oder drei ganzzahlige Literalwerte definiert, die durch ein Komma getrennt sind. Fächer mit geringer Dichte erfordern zwei Werte. Die Fächer mit hoher Dichte, die Fächer mit Schubladen haben, benötigen drei Werte.
+
+
+
+ a| 
+`_drive-spec-list_`
+ a| 
+ `_drive-spec_` `_drive-spec_`
+
+
+
+ a| 
+`drive-type`
+ a| 
+`(fibre | SATA | SAS)`
+
+[NOTE]
+====
+Nur SAS-Laufwerke werden für die Firmware-Version 7.86 und höher unterstützt.
+
+====
+
+
+ a| 
+`_error-action_`
+ a| 
+`(stop | continue)`
+
+
+
+ a| 
+`_ethernet-port-options_`
+ a| 
+[listing]
+----
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) |
+IPv6LocalAddress=ipv6-address | IPv6RoutableAddress=ipv6-address |
+IPv6RouterAddress=ipv6-address | IPv4Address=ip-address |
+IPv4ConfigurationMethod= (static | dhcp) | IPv4GatewayIP=ip-address |
+IPv4SubnetMask=ip-address | duplexMode=(TRUE | FALSE) | portSpeed=(autoNegotiate | 10 | 100 |
+1000)
+----
+
+
+ a| 
+`_feature-identifier_`
+ a| 
+[NOTE]
+====
+Alle Funktionen in SANtricity 11.40 sind standardmäßig aktiviert.
+
+====
+
+
+ a| 
+`_filename_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_gid_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_hex-literal_`
+ a| 
+Ein Literal im Bereich 0x00 - 0xFF.
+
+
+
+ a| 
+`_host-card-identifier_`
+ a| 
+`(1 | 2 | 3 | 4)`
+
+
+
+ a| 
+`_host-type_`
+ a| 
+`string-literal`. `integer-literal`
+
+
+
+ a| 
+`_instance-based- repository-spec_`
+ a| 
+[listing]
+----
+(repositoryRAIDLevel =repository-raid-level repositoryDrives= (drive-spec-list)
+[repositoryVolumeGroupUserLabel =user-label] [trayLossProtect=(TRUE | FALSE)1]) |
+[drawerLossProtect=(TRUE | FALSE)2]) | (repositoryVolumeGroup=user-label
+[freeCapacityArea=integer-literal3])
+----
+Geben Sie die an `*repositoryRAIDLevel*` Parameter mit `*repositoryDrives*` Parameter. Geben Sie nicht das RAID-Level oder die Laufwerke mit der Volume-Gruppe an. Legen Sie keinen Wert für das fest `*trayLossProtect*` Parameter, wenn Sie eine Volume-Gruppe angeben.
+
+
+
+ a| 
+`_ip-address_`
+ a| 
+`*(0-255).(0-255).(0-255).(0-255)*`
+
+
+
+ a| 
+`_ipv6-address_`
+ a| 
+`*(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)*`
+
+Sie müssen alle 32 Hexadezimalzeichen eingeben.
+
+
+
+ a| 
+`_iscsi-host-port_`
+ a| 
+[listing]
+----
+(1 | 2 | 3 | 4)
+----
+Die Host-Port-Nummer kann je nach Controller-Typ, den Sie verwenden, 2, 3 oder 4 sein.
+
+
+
+ a| 
+`_iscsi-host-port-options_`
+ a| 
+[listing]
+----
+IPv4Address=ip-address | IPv6LocalAddress=ipv6-address |
+IPv6RoutableAddress=ipv6-address | IPv6RouterAddress=ipv6-address |
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) | enableIPv4Priority=(TRUE | FALSE) |
+enableIPv6Priority=(TRUE | FALSE) | IPv4ConfigurationMethod=(static | dhcp) |
+IPv6ConfigurationMethod= (static | auto) | IPv4GatewayIP=ip-address |
+IPv6HopLimit=integer | IPv6NdDetectDuplicateAddress=integer |
+IPv6NdReachableTime=time-interval | IPv6NdRetransmitTime=time-interval |
+IPv6NdTimeOut=time-interval | IPv4Priority=integer |
+IPv6Priority=integer | IPv4SubnetMask=ip-address |
+IPv4VlanId=integer | IPv6VlanId=integer |
+maxFramePayload=integer | tcpListeningPort=tcp-port-id |
+portSpeed=(autoNegotiate | 1 | 10)
+----
+
+
+ a| 
+`_iscsiSession_`
+ a| 
+[listing]
+----
+[session-identifier]
+----
+
+
+ a| 
+`_nvsram-offset_`
+ a| 
+`_hex-literal_`
+
+
+
+ a| 
+`_nvsramBitSetting_`
+ a| 
+`_nvsram-mask, nvsram-value_` = `_0xhexadecimal, 0xhexadecimal_` . `_integer-literal_`
+
+Der `_0xhexadecimal_` Der Wert ist typischerweise ein Wert von 0x00 bis 0xFF.
+
+
+
+ a| 
+`_nvsramByteSetting_`
+ a| 
+`_nvsram-value_` = `_0xhexadecimal_` . `_integer-literal_`
+
+Der `0xhexadecimal` Der Wert ist typischerweise ein Wert von 0x00 bis 0xFF.
+
+
+
+ a| 
+`_portID_`
+ a| 
+[listing]
+----
+(0-127)
+----
+
+
+ a| 
+`_raid-level_`
+ a| 
+[listing]
+----
+(0 | 1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_recover-raid-volume-attr- value-list_`
+ a| 
+{`_recover-raid-volume-attr-value-pair_` {`_recover-raid-volume-attr-value-pair_`}
+
+
+
+ a| 
+`_recover-raid-volume-attr- value-pair_`
+ a| 
+[listing]
+----
+owner=(a|b) |cacheReadPrefetch=(TRUE | FALSE) | dataAssurance=(none | enabled)
+----
+
+
+ a| 
+`_repository-raid-level_`
+ a| 
+[listing]
+----
+(1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_repository-spec_`
+ a| 
+`instance-based-repository-spec` . `count-based-repository-spec`
+
+
+
+ a| 
+`_segment-size-spec_`
+ a| 
+`_integer-literal_` - Alle Kapazitäten sind in Base-2.
+
+
+
+ a| 
+`_serial-number_`
+ a| 
+[listing]
+----
+string-literal
+----
+
+
+ a| 
+`_slotID_`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+[listing]
+----
+(drive=\(trayID,[drawerID,]slotID\)|
+drives=\(trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\) )
+----
+
+
+ a| 
+`_test-devices_`
+ a| 
+[listing]
+----
+controller=(a|b)
+esms=(esm-spec-list)drives=(drive-spec-list)
+----
+
+
+ a| 
+`_test-devices-list_`
+ a| 
+{`_test-devices_` {`_test-devices_`}
+
+
+
+ a| 
+`_time-zone-spec_`
+ a| 
+[listing]
+----
+(GMT+HH:MM | GMT-HH:MM) [dayLightSaving=HH:MM]
+----
+
+
+ a| 
+`_trayID-list_`
+ a| 
+{`_trayID_` {`_trayID_`}
+
+
+
+ a| 
+`_usage-hint-spec_`
+ a| 
+[listing]
+----
+usageHint=(multiMedia | database | fileSystem)
+----
+Der Nutzungshinweis, oder die erwarteten I/O-Merkmale des Volumes werden vom Controller verwendet, um eine geeignete Standard-Volume-Segmentgröße und einen dynamischen Lese-Cache anzugeben. Für Dateisystem und Datenbank wird eine Segmentgröße von 128 KB verwendet. Für Multimedia wird eine Segmentgröße von 256 KB verwendet. Alle drei Nutzungshinweise ermöglichen das dynamische Lese-Prefetch im Cache.
+
+
+
+ a| 
+`_user-label_`
+ a| 
+`_string-literal_`
+
+Gültige Zeichen sind alphanumerisch, der Bindestrich und der Unterstrich.
+
+
+
+ a| 
+`_user-label-list_`
+ a| 
+{`_user-label_` {`_user-label_`}
+
+
+
+ a| 
+`_volumeGroup-number_`
+ a| 
+`_integer-literal_`
+
+
+
+ a| 
+`_wwID_`
+ a| 
+`_string-literal_`
+
+|===
+1damit der Schutz vor einem Verlust des Fachs funktioniert, muss Ihre Konfiguration die folgenden Richtlinien einhalten:
+
+[cols="3*"]
+|===
+| Ebene | Kriterien für den Schutz vor Verlust des Fachs | Mindestanzahl der benötigten Fächer 
+
+
+ a| 
+Disk-Pool
+ a| 
+Der Laufwerk-Pool enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+6
+
+
+
+ a| 
+RAID 6
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+3
+
+
+
+ a| 
+RAID 3 oder RAID 5
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Fach
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Jedes Laufwerk in einem RAID 1-Paar muss in einem separaten Fach untergebracht sein
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Der Schutz vor Laufwerksverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+2damit Schubladenschutz funktioniert, muss Ihre Konfiguration die folgenden Richtlinien einhalten:
+
+[cols="3*"]
+|===
+| Ebene | Kriterien für den Schutz vor Schubladenverlust | Mindestanzahl der benötigten Schubladen 
+
+
+ a| 
+Disk-Pool
+ a| 
+Der Pool umfasst Laufwerke aus allen fünf Schubladen und in jeder Schublade befindet sich eine gleiche Anzahl von Laufwerken. Ein Fach mit 60 Laufwerken kann einen Schubladenschutz erreichen, wenn der Laufwerk-Pool 15, 20, 25, 30, 35, 40, 45, 50, 55 oder 60 Laufwerke.
+ a| 
+5
+
+
+
+ a| 
+RAID 6
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzigen Einschub.
+ a| 
+3
+
+
+
+ a| 
+RAID 3 oder RAID 5
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Einschub.
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Jedes Laufwerk in einem gespiegelten Paar muss sich in einem separaten Fach befinden.
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Der Schutz vor Schubladenverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+Wenn Sie eine Speicherarray-Konfiguration haben, in der eine Volume-Gruppe mehrere Fächer umfasst, müssen Sie sicherstellen, dass die Einstellung für den Schutz vor Schubladenverlust mit der Einstellung zum Schutz vor Laufwerksverlusten funktioniert. Sie können einen Schubladenschutz ohne Schutz gegen Schubladenverlust haben. Sie können keinen Schutz gegen Schubladenverlust ohne Schubladenverlust haben. Wenn der `*trayLossProtect*` Und das `*drawerLossProtect*` Parameter sind nicht auf den gleichen Wert gesetzt, das Speicherarray gibt eine Fehlermeldung aus, und eine Speicherarray-Konfiguration wird nicht erstellt.
+
+3 um festzustellen, ob ein freier Kapazitätsbereich vorhanden ist, führen Sie den aus `show volumeGroup` Befehl.
+
+4 das Standardlaufwerk (Laufwerkstyp) ist `SAS`.
+
+Der `*driveType*` Parameter ist nicht erforderlich, wenn sich nur ein Laufwerkstyp im Speicher-Array befindet. Wenn Sie den verwenden `*driveType*` Parameter. Sie müssen außerdem den verwenden `*hotSpareCount*` Und das `*volumeGroupWidth*` Parameter.
+
+5 Am `*dataAssurance*` Der Parameter bezieht sich auf die Data Assurance (da)-Funktion.
+
+Die Data Assurance (da)-Funktion erhöht die Datenintegrität im gesamten Storage-System. DA ermöglicht es dem Storage-Array, nach Fehlern zu suchen, die auftreten können, wenn Daten zwischen Hosts und Laufwerken verschoben werden. Wenn diese Funktion aktiviert ist, hängt das Speicherarray die Fehlerprüfungscodes (auch zyklische Redundanzprüfungen oder CRCs genannt) an jeden Datenblock im Volume an. Nach dem Verschieben eines Datenblocks ermittelt das Speicher-Array anhand dieser CRC-Codes, ob während der Übertragung Fehler aufgetreten sind. Potenziell beschädigte Daten werden weder auf Festplatte geschrieben noch an den Host zurückgegeben.
+
+Wenn Sie die da-Funktion verwenden möchten, beginnen Sie mit einem Pool oder einer Volume-Gruppe, der nur Laufwerke enthält, die da unterstützen. Erstellen Sie dann da-fähige Volumes. Ordnen Sie diese da-fähigen Volumes schließlich dem Host mithilfe einer E/A-Schnittstelle zu, die für da geeignet ist. Zu den I/O-Schnittstellen, die da unterstützen, gehören Fibre Channel, SAS und iSER over InfiniBand (iSCSI-Erweiterungen für RDMA/IB). DA wird nicht durch iSCSI über Ethernet oder durch die SRP über InfiniBand unterstützt.
+
+[NOTE]
+====
+Wenn alle erforderliche Hardware und die I/O-Schnittstelle als da-fähig sind, können Sie den einstellen `*dataAssurance*` Parameter an `enabled` Und dann mit bestimmten Operationen da verwenden. Sie können beispielsweise eine Volume-Gruppe mit da-fähigen Laufwerken erstellen und anschließend ein Volume in dieser Volume-Gruppe erstellen, die für da aktiviert ist. Andere Vorgänge, bei denen ein DA-fähiges Volume verwendet wird, verfügen über Optionen zur Unterstützung der da-Funktion.
+
+====
+6 Am `*volumesPerGroupCount*` Parameter ist die Anzahl der Volumes mit gleicher Kapazität pro Volume-Gruppe.
+
+7 Am `*securityType*` Mit diesem Parameter können Sie die Sicherheitseinstellung für eine von Ihnen erstellte Volume-Gruppe festlegen. Alle Volumes sind auch auf die von Ihnen gewählte Sicherheitseinstellung eingestellt. Zu den verfügbaren Optionen zum Einstellen der Sicherheitseinstellungen gehören:
+
+* `none` -- die Volume-Gruppe ist nicht sicher.
+* `capable` -- die Volume-Gruppe ist sicherheitsfähig, die Sicherheit wurde jedoch nicht aktiviert.
+* `enabled` -- die Volume-Gruppe ist mit Sicherheit aktiviert.
+
+
+[NOTE]
+====
+Ein Sicherheitsschlüssel für das Speicher-Array muss bereits erstellt werden, wenn Sie festlegen möchten `*securityType=enabled*`. (Verwenden Sie zum Erstellen eines Sicherheitsschlüssels für ein Speicherarray den `create storageArray securityKey` Befehl.)
+
+====

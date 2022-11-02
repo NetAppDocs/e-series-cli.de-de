@@ -1,0 +1,45 @@
+---
+permalink: get-started/firmware-compatibility-levels.html 
+sidebar: sidebar 
+keywords: firmware, compatibility, levels 
+summary: Die Skriptbefehle und die Befehlsparameter werden nicht unter allen Versionen der Controller-Firmware ausgeführt. 
+---
+= Firmware-Kompatibilitätsstufen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die Skriptbefehle und die Befehlsparameter werden nicht unter allen Versionen der Controller-Firmware ausgeführt. Die Skriptbefehle in den folgenden Abschnitten enthalten die Mindestanforderungen an die Firmware, unter denen die Skriptbefehle ausgeführt werden können. In den Skriptbefehlen sind die Firmware-Ebenen unter der Überschrift "`Minimum Firmware Level`" aufgelistet. In dieser Liste wird beschrieben, wie die Informationen über die Firmware-Level interpretiert werden.
+
+* Wenn ein Skript-Befehl keine minimale Controller-Firmware-Ebene aufführt, können der Befehl Skript und alle mit diesem Skript verknüpften Parameter unter einer beliebigen Ebene der Controller-Firmware ausgeführt werden.
+* Eine Controller-Firmware-Nummer ohne erklärende Informationen gibt an, dass sich die Firmware-Ebene des Controllers auf den gesamten Skriptbefehl und alle Parameter für diesen Skriptbefehl bezieht.
+* Eine Controller-Firmware-Nummer, die einem Parameter zugeordnet ist, gibt die minimale Controller-Firmware-Ebene an, unter der der Parameter ausgeführt werden kann.
+
+
+[NOTE]
+====
+Die minimale Controller-Firmware-Ebene gibt an, dass die Software den Befehl freigibt und von der Storage Management Software, die den Verbrauch einfängt, unterstützt. Die CLI-Supportfunktionen sind von der verwendeten Hardware abhängig. Wenn ein Befehl nicht unterstützt eingegeben wird, wird eine Fehlermeldung angezeigt.
+
+====
+
+
+== Beispiele für Firmware-Kompatibilitätsstufen
+
+Der `create hostGroup` Der Befehl hat den folgenden Abschnitt.
+
+*Firmware-Mindestlevel*
+
+8.10
+
+Diese Ebene gibt an, dass der gesamte Skriptbefehl unter mindestens der Controller-Firmware-Version 8.10 ausgeführt wird.
+
+Der `create ssdCache` Der Befehl hat den folgenden Abschnitt.
+
+*Firmware-Mindestlevel*
+
+7.84
+
+8.20.11 - hinzugefügt `*securityType*` Parameter.
+
+Diese Anmerkungen weisen darauf hin, dass der Skriptbefehl und alle Parameter außer `*securityType*` Ausführung unter einer Mindestversion der Controller-Firmware 7.84 Der `*securityType*` Der Parameter wird unter mindestens der Controller-Firmware-Version 8.20_M3 ausgeführt.

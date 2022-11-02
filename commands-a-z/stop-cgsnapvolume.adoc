@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/stop-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: stop, consistency, group, snapshot, volume 
+summary: Mit dem Befehl stop cgSnapVolume wird der Copy-on-Write-Vorgang zur Erstellung eines Snapshot-Volumes der Konsistenzgruppe angehalten. 
+---
+= Stoppen Sie das Snapshot Volume für Konsistenzgruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop cgSnapVolume` Mit dem Befehl wird der Vorgang zum Kopieren auf Schreiben angehalten, um ein Snapshot Volume der Konsistenzgruppe zu erstellen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Um den Kopiervorgang beim Schreiben neu zu starten, verwenden Sie den `resume cgSnapVolume` Befehl.
+
+[NOTE]
+====
+Dieser Befehl löscht kein Snapshot-Volume einer Konsistenzgruppe. Zum Löschen eines Snapshot Volumes von Konsistenzgruppen verwenden Sie das `delete cgSnapVolume` Befehl.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop cgSnapVolume [_snapVolumeName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Der Name des Snapshot-Volumes der Konsistenzgruppe, das Sie mit der Erstellung beenden möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Zahlen hat, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

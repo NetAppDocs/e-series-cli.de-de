@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/remove-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: remove, volume, asynchronous, mirror, group 
+summary: Mit dem Befehl „Volume async cMirrorGroup“ wird ein Mitglied-Volume aus einer vorhandenen asynchronen Spiegelgruppe entfernt. 
+---
+= Entfernen Sie ein Volume aus der asynchronen Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove volume asyncMirrorGroup` Mit dem Befehl wird ein Mitglied-Volume aus einer vorhandenen asynchronen Spiegelgruppe entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Optional können Sie die Repository-Volume-Mitglieder aus der asynchronen Spiegelgruppe löschen.
+
+Dieser Befehl ist nur für das lokale Speicherarray gültig, das die asynchrone Spiegelgruppe enthält, deren Mitgliedsvolume Sie entfernen möchten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+remove volume pass:quotes[[_"volumeName"_]] asyncMirrorGroup=pass:quotes[_"asyncMirrorGroupName"_]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des spezifischen Volumes, das Sie aus der asynchronen Spiegelgruppe entfernen möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, die das Mitglied-Volume enthält, das Sie entfernen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Legt fest, ob alle Repository-Mitglieder aus der asynchronen Spiegelgruppe entfernt werden sollen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/export-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: export, storage, array, security, key, command, save, drive, securitykey, file, context, role 
+summary: Der Befehl Export storageArray securityKey speichert einen Laufwerksicherheitsschlüssel in eine Datei. 
+---
+= Sicherheitsschlüssel für Speicher-Array exportieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `export storageArray securityKey` Befehl speichert einen Laufwerksicherheitsschlüssel in einer Datei.
+
+
+
+== Unterstützte Arrays
+
+Wenn das externe Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die E2800, E5700, EF600 und EF300 Arrays. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Wenn die Schlüsseldatei aus einem Speicher-Array exportiert wird, kann dieser Schlüssel in ein anderes Speicher-Array importiert werden. So können Sie sicherheitsfähige Laufwerke zwischen Storage Arrays verschieben.
+
+[NOTE]
+====
+Dieser Befehl gilt sowohl für das interne als auch für das externe Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+export storageArray securityKey
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[file="_fileName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können. Schließen Sie den Passphrase in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie den Sicherheitsschlüssel speichern möchten. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+|===
+
+
+== Hinweise
+
+Das Speicher-Array, auf das Sie Laufwerke verschieben möchten, muss Laufwerke haben, die eine Kapazität aufweisen, die den Laufwerken entspricht oder größer ist als die Laufwerke, die Sie importieren.
+
+Durch die Controller-Firmware wird eine Sperre erstellt, durch die der Zugriff auf vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) beschränkt wird. FDE-Laufwerke weisen einen Zustand auf, der als „Security-fähig“ bezeichnet wird. Wenn Sie einen Sicherheitsschlüssel erstellen, wird der Status auf „aktiviert“ gesetzt, was den Zugriff auf alle im Speicher-Array vorhandenen FDE-Laufwerke einschränkt.
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Muss zwischen acht und 32 Zeichen lang sein.
+* Darf kein Leerzeichen enthalten.
+* Muss mindestens einen Großbuchstaben enthalten.
+* Muss mindestens einen Kleinbuchstaben enthalten.
+* Muss mindestens eine Zahl enthalten.
+* Muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung und werden aufgefordert, den Befehl erneut zu versuchen.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+7.40

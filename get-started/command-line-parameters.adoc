@@ -1,0 +1,374 @@
+---
+permalink: get-started/command-line-parameters.html 
+sidebar: sidebar 
+keywords: legacy, command line, parameters 
+summary: SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit integrierten Web-Services ist die Möglichkeit zur Interaktion über die Befehlszeile mithilfe eines sicheren HTTPS-Protokolls verfügbar. Diese Controller können stattdessen optional das Symbolprotokoll für Befehlszeileninteraktionen verwenden. 
+---
+= Parameter der Legacy-Kommandozeile
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.53 und ältere Befehlszeilenparameter
+
+SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit integrierten Web-Services ist die Möglichkeit zur Interaktion über die Befehlszeile mithilfe eines sicheren HTTPS-Protokolls verfügbar. Diese Controller können stattdessen optional das Symbolprotokoll für Befehlszeileninteraktionen verwenden. Das Symbolprotokoll ist das einzige unterstützte Protokoll für die E2700 und E5600 Controller. Um vorhandene Skripte zu erhalten und die Übergangszeit zu minimieren, bleiben die CLI-Optionen und Grammatik so weit wie möglich erhalten. Allerdings gibt es einige Unterschiede in den Funktionen der E2800 und E5700 Controller in Bezug auf Sicherheit, Authentifizierung, AutoSupport und Hinweis, die zu einer veralteten CLI-Grammatik für diese Controller führen. In einigen Fällen ist die Grammatik jedoch nur bei Verwendung des neuen HTTPS-Protokolls auf der E2800 oder E5700 veraltet.
+
+Für die neuen Parameter, die nur für das gelten `*https*` Client-Typ. Diese Werte gelten jedoch auch nur für die E2800 oder E5700 Controller.
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`-clientType`
+ a| 
+Dieses Argument erzwingt die Erstellung einer geeigneten Skript-Engine. Verwenden Sie diesen optionalen Parameter mit einem der folgenden Werte:
+
+* `*auto*` - Die Geräteerkennung wird automatisch durchgeführt, um den entsprechenden Skript-Engine-Typ zu erkennen.
+* `*https*` - Eine REST-basierte Skript-Engine wird erstellt.
+* `*symbol*` - Eine Symbol-basierte Skript-Engine wird erstellt.
+
+
+
+
+ a| 
+`-u`
+ a| 
+Befolgen Sie diesen Parameter mit dem `_username_` Variabel. Der Benutzername ist nur für den erforderlich `*https*` Client-Typ. Dieses Argument gilt nicht für das `*symbol*` Clienttyp und wird im Hintergrund ignoriert.
+
+Wenn das Argument Benutzername angegeben ist, wird die Geräteerkennung durchgeführt, um den korrekten Clienttyp zu ermitteln (`*https*` Vs `*symbol*`).
+
+
+
+ a| 
+`-P`
+ a| 
+Dieses Argument erfordert eines von zwei Argumenten:
+
+* `_password_file_` - Enthält das Kennwort zur Authentifizierung.
+* `-` (Ein Strich) - Lesen Sie das Passwort aus `stdin`.
+
+
+Beachten Sie, dass die Ergänzung dieses Arguments auf alle Controller anwendbar ist, unabhängig davon, ob die `*https*` Client-Typ oder `*symbol*` Der Clienttyp wird verwendet.
+
+
+
+ a| 
+`-k`
+ a| 
+Dieses optionale Argument ermöglicht ein `*https*` Der Client muss im unsicheren Modus arbeiten. Das bedeutet, dass das Zertifikat des Speicher-Arrays nicht validiert wird. Wenn diese Option nicht angegeben ist, wird standardmäßig die korrekte Authentifizierung durchgeführt. Dieses Argument gilt nicht für das `*symbol*` Clienttyp und wird im Hintergrund ignoriert.
+
+|===
+
+
+== Befehlszeilenparameter, die nur für E2700 oder E5600 Controller gelten
+
+Da die E2700 und E5600 Controller keine integrierten Alert-Management-Funktionen verfügen, sind diese Befehlszeilenparameter relevant. Diese Parameter gelten nicht für die E2800 oder E5700 Controller.
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`-a`
+ a| 
+Fügt ein einfaches SNMP-Trap-Ziel (Network Management Protocol) oder ein E-Mail-Adresse-Warnungsziel hinzu.
+
+* Wenn Sie ein SNMP-Trap-Ziel hinzufügen, wird die SNMP-Community automatisch als Community-Name für den Trap definiert, und die `*host*` Ist die IP-Adresse oder der DNS-Hostname des Systems, an das der Trap gesendet werden soll.
+* Wenn Sie eine E-Mail-Adresse für ein Warnungsziel hinzufügen, wird die angezeigt `*email-address*` Ist die E-Mail-Adresse, an die die Warnmeldung gesendet werden soll.
+
+
+[NOTE]
+====
+Diese Befehlszeilenoption ist für E2800 und E5700 Storage-Arrays veraltet. Verwenden Sie die RESTful API, den SANtricity System Manager oder die curl-Befehle.
+
+====
+
+
+ a| 
+`-m`
+ a| 
+Gibt den Hostnamen oder die IP-Adresse des E-Mail-Servers an, von dem Benachrichtigungen für E-Mail-Benachrichtigungen gesendet werden.
+
+[NOTE]
+====
+Diese Befehlszeilenoption ist für E2800 und E5700 Storage-Arrays veraltet. Verwenden Sie die RESTful API, den SANtricity System Manager oder die curl-Befehle.
+
+====
+
+
+ a| 
+`-s` (Kleinbuchstaben)
+ a| 
+Zeigt die Alarmeinstellungen in der Konfigurationsdatei an, wenn sie mit dem verwendet werden `-d` Parameter.
+
+[NOTE]
+====
+Diese Befehlszeilenoption ist für E2800 und E5700 Storage-Arrays veraltet. Verwenden Sie die RESTful API, den SANtricity System Manager oder die curl-Befehle.
+
+====
+
+
+ a| 
+`-x` (Kleinbuchstaben)
+ a| 
+Entfernt ein SNMP-Trap-Ziel oder ein E-Mail-Adresse-Warnungsziel. Der `_community_` Ist der SNMP-Community-Name für den Trap, und der `_host_` Ist die IP-Adresse oder der DNS-Hostname des Systems, an das der Trap gesendet werden soll.
+
+[NOTE]
+====
+Diese Befehlszeilenoption ist für E2800 und E5700 Storage-Arrays veraltet. Verwenden Sie die RESTful API, den SANtricity System Manager oder die curl-Befehle.
+
+====
+|===
+
+
+== Befehlszeilenparameter, die sich auf alle Controller beziehen, die mit einem Symbol-Client-Typ ausgeführt werden
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`-R` (Großbuchstaben)
+ a| 
+Definiert die Benutzerrolle für das Passwort. Die Rollen können entweder sein:
+
+* `*admin*` -- der Benutzer hat die Berechtigung, die Speicher-Array-Konfiguration zu ändern.
+* `*monitor*` -- der Benutzer hat die Berechtigung, die Konfiguration des Speicherarrays anzuzeigen, kann aber keine Änderungen vornehmen.
+
+
+Der `*-R*` Der Parameter ist nur gültig, wenn er mit dem verwendet wird `*–p*` Parameter, der angibt, dass Sie ein Passwort für ein Speicher-Array definieren.
+
+Der `*-R*` Parameter ist nur erforderlich, wenn die Funktion mit zwei Kennwörtern im Speicher-Array aktiviert ist. Der `*-R*` Parameter ist unter folgenden Bedingungen nicht erforderlich:
+
+* Die Funktion für zwei Passwörter ist auf dem Speicher-Array nicht aktiviert.
+* Es wird nur eine Administratorrolle festgelegt, und die Überwachungsrolle ist nicht für das Speicherarray festgelegt.
+
+
+|===
+
+
+== Befehlszeilenparameter, die sich für alle Controller und alle Client-Typen anwenden lassen
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Gibt entweder den Hostnamen oder die IP-Adresse (Internet Protocol) an (`_xxx.xxx.xxx.xxx_`) Eines in-Band-gemanagten Storage-Arrays oder eines von Out-of-Band gemanagten Storage-Arrays.
+
+* Wenn Sie ein Storage-Array über einen Host über das in-Band-Storage-Management verwalten, müssen Sie das verwenden `-n` Parameter oder der `-w` Parameter, wenn mehrere Speicher-Arrays mit dem Host verbunden sind.
+* Wenn Sie ein Storage-Array über Out-of-Band-Storage-Management über die Ethernet-Verbindung auf jedem Controller verwalten, müssen Sie das angeben `_host-name-or-IP-address_` Der Controller.
+* Wenn Sie zuvor ein Speicher-Array im Enterprise Management-Fenster konfiguriert haben, können Sie das Speicher-Array mit dem benutzerbereitgestellten Namen angeben `-n` Parameter.
+* Wenn Sie zuvor ein Speicher-Array im Enterprise Management-Fenster konfiguriert haben, können Sie das Speicher-Array mit der Option World Wide Identifier (WWID) angeben `-w` Parameter.
+
+
+
+
+ a| 
+`-A`
+ a| 
+Fügt der Konfigurationsdatei ein Speicherarray hinzu. Wenn Sie den nicht folgen `-A` Parameter mit A `_host-name-or-IP-address_`, Auto-Discovery scannt das lokale Subnetz nach Storage Arrays.
+
+
+
+ a| 
+`-c`
+ a| 
+Gibt an, dass Sie einen oder mehrere Skriptbefehle eingeben, die auf dem angegebenen Speicher-Array ausgeführt werden sollen. Beenden Sie jeden Befehl mit einem Semikolon (`;`). Sie können nicht mehr als einen Ort platzieren `-c` Parameter in derselben Befehlszeile. Sie können mehrere Skriptbefehle nach dem einschließen `-c` Parameter.
+
+
+
+ a| 
+`-d`
+ a| 
+Zeigt den Inhalt der Skript-Konfigurationsdatei an. Der Dateiinhalt hat dieses Format: `_storage-system-name host-name1 host-name2_`
+
+
+
+ a| 
+`-e`
+ a| 
+Führt die Befehle aus, ohne zuerst eine Syntaxprüfung auszuführen.
+
+
+
+ a| 
+`-F` (Großbuchstaben)
+ a| 
+Gibt die E-Mail-Adresse an, von der alle Warnungen gesendet werden.
+
+
+
+ a| 
+`-f` (Kleinbuchstaben)
+ a| 
+Gibt einen Dateinamen an, der Skriptbefehle enthält, die auf dem angegebenen Speicherarray ausgeführt werden sollen. Der `-f` Der Parameter ähnelt dem `-c` Parameter, wobei beide Parameter für die Ausführung von Skriptbefehlen bestimmt sind. Der `-c` Parameter führt einzelne Skriptbefehle aus. Der `-f` Parameter führt eine Datei mit Skriptbefehlen aus. Standardmäßig werden alle Fehler ignoriert, die bei der Ausführung der Skriptbefehle in einer Datei auftreten, und die Datei wird weiterhin ausgeführt. Um dieses Verhalten zu umgehen, verwenden Sie den `set session errorAction=stop` Befehl in der Skriptdatei.
+
+
+
+ a| 
+`-g`
+ a| 
+Gibt eine ASCII-Datei an, die Kontaktinformationen für E-Mail-Absender enthält, die in alle E-Mail-Benachrichtigungen enthalten sind. Bei der CLI wird vorausgesetzt, dass die ASCII-Datei nur Text ist, ohne Trennzeichen oder ein erwartetes Format. Verwenden Sie das nicht `-g` Parameter wenn a `userdata.txt` Datei vorhanden.
+
+
+
+ a| 
+`-h`
+ a| 
+Gibt den Host-Namen an, der den SNMP-Agent ausführt, mit dem das Speicher-Array verbunden ist. Verwenden Sie die `-h` Parameter mit diesen Parametern:
+
+* `-a`
+* `-x`
+
+
+
+
+ a| 
+`-I` (Großbuchstaben)
+ a| 
+Gibt die Art der Informationen an, die in die E-Mail-Benachrichtigungen aufgenommen werden sollen. Sie können folgende Werte auswählen:
+
+* `eventOnly` -- nur die Veranstaltungsinformationen sind in der E-Mail enthalten.
+* `profile` -- die Informationen zu Event- und Array-Profil sind in der E-Mail enthalten.
+
+
+Sie können die Häufigkeit der E-Mail-Lieferungen mit dem festlegen `-q` Parameter.
+
+
+
+ a| 
+`-i` (Kleinbuchstaben)
+ a| 
+Zeigt die IP-Adresse der bekannten Speicherarrays. Verwenden Sie die `-i` Parameter mit `-d` Parameter. Der Dateiinhalt hat dieses Format: `_storage-system-name IP-address1 IPaddress2_`
+
+
+
+ a| 
+`-n`
+ a| 
+Gibt den Namen des Speicherarrays an, auf dem die Skriptbefehle ausgeführt werden sollen. Dieser Name ist optional, wenn Sie ein verwenden `_host-name-or-IP-address_`. Wenn Sie die in-Band-Methode zum Verwalten des Speicher-Arrays verwenden, müssen Sie den verwenden `-n` Parameter, wenn mehr als ein Speicher-Array an der angegebenen Adresse mit dem Host verbunden ist. Der Name des Speicher-Arrays ist erforderlich, wenn der `_host-name-or-IP-address_` Wird nicht verwendet. Der Name des Speicher-Arrays, der für die Verwendung im Enterprise Management-Fenster konfiguriert ist (d. h. der Name ist in der Konfigurationsdatei aufgeführt), darf kein doppelter Name eines anderen konfigurierten Speicher-Arrays sein.
+
+
+
+ a| 
+`-o`
+ a| 
+Gibt einen Dateinamen für den gesamten Ausgabentext an, der auf die Ausführung der Skriptbefehle zurückzuführen ist. Verwenden Sie die `-o` Parameter mit diesen Parametern:
+
+* `-c`
+* `-f`
+
+
+Wenn Sie keine Ausgabedatei angeben, wird der Ausgabentext zur Standardausgabe (stdout). Alle Ausgaben von Befehlen, die keine Skriptbefehle sind, werden an stdout gesendet, unabhängig davon, ob dieser Parameter gesetzt ist.
+
+
+
+ a| 
+`-p`
+ a| 
+Definiert das Passwort für das Speicherarray, auf dem Sie Befehle ausführen möchten. Unter folgenden Bedingungen ist kein Passwort erforderlich:
+
+* Auf dem Speicher-Array wurde kein Passwort festgelegt.
+* Das Passwort wird in einer Skriptdatei angegeben, die Sie ausführen.
+* Sie geben das Passwort mithilfe von an `-c` Parameter und dieser Befehl:
+
+
+[listing]
+----
+set session password=password
+----
+
+
+ a| 
+`-P`
+ a| 
+Dieses Argument erfordert eines von zwei Argumenten:
+
+* `_password_file_` - Enthält das Kennwort zur Authentifizierung.
+* `-`(Dash) - Lesen Sie das Passwort aus `stdin`.
+
+
+Beachten Sie, dass die Ergänzung dieses Arguments auf alle Controller anwendbar ist, unabhängig davon, ob die `*https*` Client-Typ oder `*symbol*` Der Clienttyp wird verwendet.
+
+
+
+ a| 
+`-q`
+ a| 
+Gibt die Häufigkeit an, in der Ereignisbenachrichtigungen empfangen werden sollen, sowie die Art der in den Ereignisbenachrichtigungen zurückgegebenen Informationen. Für jedes kritische Ereignis wird immer eine E-Mail-Benachrichtigung mit mindestens den grundlegenden Ereignisinformationen generiert. Diese Werte gelten für das `-q` Parameter:
+
+* `everyEvent` -- Informationen werden mit jeder E-Mail-Benachrichtigung zurückgegeben.
+* `2` -- Informationen werden nicht mehr als einmal alle zwei Stunden zurückgegeben.
+* `4` -- Informationen werden nicht mehr als einmal alle vier Stunden zurückgegeben.
+* `8` -- Informationen werden nicht mehr als einmal alle acht Stunden zurückgegeben.
+* `12` -- Informationen werden nicht mehr als einmal alle 12 Stunden zurückgegeben.
+* `24` -- Informationen werden nicht mehr als einmal alle 24 Stunden zurückgegeben.
+
+
+Verwenden der `-I` Parameter Sie können den Typ der Informationen in den E-Mail-Warnmeldungen angeben.
+
+* Wenn Sie die einstellen `-I` Parameter an `eventOnly` , Der einzige gültige Wert für den `-q` Parameter lautet `everyEvent`.
+* Wenn Sie die einstellen `-I` Parameter für den `profile` Wert oder der `supportBundle` Wert: Diese Informationen werden in den E-Mails mit der von angegebenen Häufigkeit enthalten `-q` Parameter.
+
+
+
+
+ a| 
+`-quick`
+ a| 
+Reduziert die Zeit, die für die Ausführung eines Einzelbetriebs erforderlich ist. Ein Beispiel für einen einzeilenden Betrieb ist der `recreate snapshot volume` Befehl. Dieser Parameter verkürzt die Zeit, da während der Dauer des Befehls keine Hintergrundprozesse ausgeführt werden. Verwenden Sie diesen Parameter nicht für Vorgänge, bei denen mehr als ein Einzelbetrieb erforderlich ist. Die umfangreiche Verwendung dieses Befehls kann den Controller mit mehr Befehlen überführen, als der Controller verarbeiten kann, was zu einem Ausfall des Betriebs führt. Zudem stehen Status-Updates und Konfigurations-Updates, die normalerweise aus Hintergrundprozessen erfasst werden, der CLI nicht zur Verfügung. Dieser Parameter bewirkt, dass Vorgänge, die von Hintergrundinformationen abhängen, fehlschlagen.
+
+
+
+ a| 
+`-S` (Großbuchstaben)
+ a| 
+Unterdrückt informative Meldungen, die den Fortschritt des Befehls beschreiben, der beim Ausführen von Skript-Befehlen angezeigt wird. (Das Unterdrücken von Informationsmeldungen wird auch als Silent-Modus bezeichnet.) Mit diesem Parameter werden diese Meldungen unterdrückt:
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-v`
+ a| 
+Zeigt den aktuellen globalen Status der bekannten Geräte in einer Konfigurationsdatei an, wenn sie mit dem verwendet werden `-d` Parameter.
+
+
+
+ a| 
+`-w`
+ a| 
+Gibt die WWID des Speicherarrays an. Dieser Parameter ist eine Alternative zum `-n` Parameter. Verwenden Sie die `-w` Parameter mit `-d` Parameter zur Anzeige der WWIDs der bekannten Speicher-Arrays. Der Dateiinhalt hat dieses Format: `_storage-system-name world-wide-ID IP-address1 IP-address2_`
+
+
+
+ a| 
+`-X` (Großbuchstaben)
+ a| 
+Löscht ein Speicher-Array aus einer Konfiguration.
+
+
+
+ a| 
+`-?`
+ a| 
+Zeigt Verwendungsinformationen zu den CLI-Befehlen an.
+
+|===

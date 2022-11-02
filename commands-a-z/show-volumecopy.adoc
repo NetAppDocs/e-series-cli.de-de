@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/show-volumecopy.html 
+sidebar: sidebar 
+keywords: show, volume, copy 
+summary: Der Befehl show VolumeCopy gibt Informationen zu den Vorgängen für Volume-Kopien zurück. 
+---
+= Zeigt Volume-Kopien an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show volumeCopy` Der Befehl gibt Informationen zu Vorgängen beim Volume-Kopieren zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+Dieser Befehl gibt folgende Informationen zu Volume-Kopiervorgängen zurück:
+
+* Der Kopierstatus
+* Der Startzeitstempel
+* Der Zeitstempel für die Fertigstellung
+* Die Kopierpriorität
+* Das Quell-Volume World Wide Identifier (WWID) oder das Ziel-Volume WWID
+* Die Einstellung des Schreibschutzattributs für Zielvolumen
+
+
+Sie können Informationen zu einem bestimmten Volume-Kopie-Paar oder zu allen Volume-Kopie-Paaren im Storage-Array abrufen. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show volumeCopy (allVolumes | source pass:quotes[["_sourceName_"]] |
+target pass:quotes[["_targetName_"]])
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Die Einstellung zur Ausgabe von Informationen zu Volume-Kopiervorgängen für alle Volume-Copy-Paare.
+
+
+
+ a| 
+`source`
+ a| 
+Der Name des Quellvolumens, zu dem Informationen abgerufen werden sollen. Schließen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`target`
+ a| 
+Der Name des Zielvolumens, zu dem Informationen abgerufen werden sollen. Schließen Sie den Namen des Zielvolumens in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]) ein.
+
+|===

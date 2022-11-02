@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/create-cgsnapimage-consistencygroup.html 
+sidebar: sidebar 
+keywords: create, consistency group, snapshot image 
+summary: Er erstellt den Befehl cgSnapImage Consistency Group und erstellt ein neues Snapshot Image für jedes Basis-Volume, das Mitglied einer Snapshot Consistency Group ist. 
+---
+= Erstellen des Snapshot Images von Konsistenzgruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create cgSnapImage consistencyGroup` Befehl erstellt ein neues Snapshot-Image für jedes Basis-Volume, das Mitglied einer Snapshot-Konsistenzgruppe ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create cgSnapImage consistencyGroup=pass:quotes[_"consistencyGroupName"_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Konsistenzgruppe, für die Sie Snapshot Images erstellen. Schließen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen (“ „) ein.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Der Befehl bewirkt, dass alle ausstehenden I/O-Vorgänge für jedes Basis-Volume, das Mitglied der Konsistenzgruppe ist, vor dem Erstellen der Snapshot Images entfernt und ausgesetzt werden. Wenn die Erstellung aller Snapshot-Images nicht für alle Mitglieder der Konsistenzgruppe erfolgreich abgeschlossen werden kann, schlägt der Vorgang fehl und es werden keine neuen Snapshot-Images erstellt.
+
+Normalerweise weisen alle Mitglieder einer Snapshot-Konsistenzgruppe die gleiche Anzahl von Snapshot Images auf. Wenn Sie einer Snapshot-Konsistenzgruppe ein neues Mitglied hinzufügen, fehlen dem neuen Mitglied die Snapshot-Images, die zuvor auf den festgelegten Mitgliedern der Snapshot-Konsistenzgruppe erstellt wurden. Dies ist kein Fehler. Anforderungen zum Löschen oder Rollback von Snapshot-Images, die nur auf einer Untergruppe der Mitglieder der Snapshot-Consistency Group vorhanden sind, wirken sich nur auf die Mitglieder aus, für die das angegebene Snapshot-Image tatsächlich vorhanden ist.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

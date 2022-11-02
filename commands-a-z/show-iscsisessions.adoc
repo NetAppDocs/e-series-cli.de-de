@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/show-iscsisessions.html 
+sidebar: sidebar 
+keywords: show, current, iscsi, sessions 
+summary: Der Befehl Show iscsiSessions gibt Informationen zu einer iSCSI-Sitzung für einen iSCSI-Initiator oder ein iSCSI-Ziel zurück. 
+---
+= Zeigt aktuelle iSCSI-Sitzungen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show iscsiSessions` Der Befehl gibt Informationen zu einer iSCSI-Sitzung für einen iSCSI-Initiator oder ein iSCSI-Ziel zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show iscsiInitiator pass:quotes[["_initiatorName_"] | <"iqn">] iscsiSessions
+----
+[listing, subs="+macros"]
+----
+show iscsiTarget pass:quotes[["_targetName_"] | <"iqn">] iscsiSessions
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`iscsiInitiator`
+ a| 
+Der Name des iSCSI-Initiators, für den Sie Sitzungsinformationen erhalten möchten.
+
+Wenn der iSCSI-Initiator ein Etikett oder einen Alias verwendet, setzen Sie das iSCSI-Initiatornamen oder Alias in doppelten Anführungszeichen („) in eckigen Klammern ([ ]).
+
+Wenn der iSCSI-Initiator einen qualifizierten iSCSI-Namen (IQN) verwendet, schließen Sie den IQN in doppelte Anführungszeichen (" ") in Winkel-Klammern ( ).
+
+
+
+ a| 
+`iscsiTarget`
+ a| 
+Der Name des iSCSI-Ziels, für das Sie Sitzungsinformationen erhalten möchten.
+
+Wenn das iSCSI-Ziel eine Bezeichnung oder einen Alias verwendet, schließen Sie das iSCSI-Ziellabel oder Alias in doppelte Anführungszeichen („ “) in eckigen Klammern ([ ]).
+
+Wenn das iSCSI-Ziel einen iSCSI-qualifizierten Namen (IQN) verwendet, schließen Sie den IQN in doppelte Anführungszeichen (" ") in Winkel-Klammern ( ).
+
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl eingeben, ohne Argumente zu definieren, gibt dieser Befehl Informationen über alle aktuell ausgeführten iSCSI-Sessions aus. Mit dem folgenden Befehl werden Informationen zu allen aktuellen iSCSI-Sitzungen angezeigt:
+
+[listing]
+----
+show iscsiSessions
+----
+Um die zurückgegebenen Informationen einzuschränken, geben Sie einen bestimmten iSCSI-Initiator oder ein bestimmtes iSCSI-Ziel ein. Dieser Befehl gibt dann Informationen über die Sitzung nur für den iSCSI-Initiator oder das iSCSI-Ziel zurück, das Sie benannt haben.
+
+Ein Initiatorname kann eine beliebige Kombination aus alphanumerischen Zeichen von 1 bis 30 Zeichen lang sein. Ein IQN kann bis zu 255 Zeichen lang sein und hat dieses Format:
+
+[listing]
+----
+iqn.yyyy-mm.naming-authority:unique name
+----
+
+
+== Minimale Firmware-Stufe
+
+7.10

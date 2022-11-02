@@ -1,0 +1,56 @@
+---
+permalink: commands-a-z/activate-asynchronous-mirroring.html 
+sidebar: sidebar 
+keywords: activate, asynchronous, mirroring 
+summary: Mit dem Befehl activate storageArray Feature wird die Funktion Asynchronous Mirroring aktiviert. 
+---
+= Aktivieren Sie die asynchrone Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `activate storageArray feature` Befehl aktiviert die Funktion Asynchronous Mirroring.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Nachdem Sie die Funktion zur asynchronen Spiegelung aktiviert haben, müssen Sie eine asynchrone Spiegelgruppe und ein asynchrones gespiegeltes Paar einrichten.
+
+
+
+== Syntax
+
+[listing]
+----
+activate storageArray feature=asyncRemoteMirror
+----
+[listing]
+----
+activate storageArray feature=asyncMirror
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

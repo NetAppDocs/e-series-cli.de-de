@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/start-volumegroup-defragment.html 
+sidebar: sidebar 
+keywords: start, volume, group, defragment 
+summary: Mit dem Befehl „DatenträgerGroup defragment starten“ wird ein Defragment-Vorgang für die angegebene Volume-Gruppe gestartet. 
+---
+= Defragmentieren der Volume-Gruppe starten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volumeGroup defragment` Der Befehl startet einen Defragment-Vorgang in der angegebenen Volume-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Durch das Defragmentieren einer Volume-Gruppe wird ein lang laufender Vorgang gestartet, der nicht beendet werden kann.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] defragment
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, die defragmentieren soll. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Hinweise
+
+Host-I/O-Fehler können zu den Volume-Gruppen mit mehr als 32 Volumes führen. Dieser Vorgang kann auch zum Neustart des internen Controllers führen, da die Zeitüberschreitungsdauer vor Festlegung der Volume-Gruppe endet. Wenn dieses Problem auftritt, setzen Sie den Host-I/O-Betrieb aus und versuchen Sie es erneut.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

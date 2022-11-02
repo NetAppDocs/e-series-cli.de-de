@@ -1,0 +1,130 @@
+---
+permalink: commands-a-z/save-storagearray-keymanagementclientcsr.html 
+sidebar: sidebar 
+keywords: generate, key, management, certificate, sign, request, csr 
+summary: Der Befehl Storage Array keyManagementClientCSR fordert eine generierte CSR für das Speicherarray an, das Sie in einer Datei speichern können. 
+---
+= Signaturanforderung für das Schlüsselmanagement-Zertifikat (CSR) generieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray keyManagementClientCSR` Befehl fordert eine generierte CSR für das Speicher-Array an, das Sie in einer Datei speichern können.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+save storageArray keyManagementClientCSR commonName=pass:quotes["_common_name_"]
+organization=pass:quotes["_organization_"]
+locality=pass:quotes["_locality_"]
+country=pass:quotes["_country_"]
+file=pass:quotes["_file_"]
+[organizationalUnit=pass:quotes["_organizational unit_"]]
+[stateProvince=pass:quotes["_state_province_"]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`commonName`
+ a| 
+Der für diesen Parameter eingegebene Wert muss mit einem der auf dem KMIP-Server definierten Benutzernamen übereinstimmen.
+
+
+
+ a| 
+`organization`
+ a| 
+Mit dieser Option können Sie den vollständigen gesetzlichen Namen des Unternehmens angeben, zu dem das Speicherarray gehört. Kürzen Sie diese nicht und schließen Sie Suffixe wie Inc, Corp oder LLC ein.
+
+
+
+ a| 
+`locality`
+ a| 
+Hier können Sie die Stadt oder den Ort angeben, an dem sich das Speicherarray befindet.
+
+
+
+ a| 
+`country`
+ a| 
+Ermöglicht Ihnen die Angabe des zweistelligen ISO-Codes (International Organization for Standardization) 3166-1 alpha-2, z. B. USA.
+
+
+
+ a| 
+`file`
+ a| 
+Hier können Sie den Datei- und Dateispeicherort angeben, an dem Sie die signierte Zertifikatdatei des Controllers speichern.
+
+
+
+ a| 
+`organizationalUnit`
+ a| 
+Hier können Sie die Abteilung des Unternehmens angeben, die das Zertifikat bearbeitet.
+
+
+
+ a| 
+`stateProvince`
+ a| 
+Hier können Sie den Status oder die Region angeben, in der sich das Speicherarray befindet. Dies sollte nicht gekürzt werden.
+
+|===
+
+
+== Beispiel
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "save storageArray keyManagementClientCSR commonName=pass:quotes["_192.0.2.1_"]
+organization=pass:quotes["_Widgets Are Us_, _Inc_."]
+locality=pass:quotes["_sedgwick_"]
+country=pass:quotes["_US_"]
+file=pass:quotes["_latestCertificate_"]
+organizationalUnit=pass:quotes["_Products Unit_"]
+stateProvince=pass:quotes["_Kansas_"];"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

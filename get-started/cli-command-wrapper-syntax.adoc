@@ -1,0 +1,139 @@
+---
+permalink: get-started/cli-command-wrapper-syntax.html 
+sidebar: sidebar 
+keywords: cli, command, wrapper, syntax 
+summary: In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlsschlüssel aufgeführt. 
+---
+= Wrapper-Syntax für den CLI-Befehl
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlsschlüssel aufgeführt. Die in der Wrapper-Syntax für den CLI-Befehl verwendeten Konventionen werden in der folgenden Tabelle aufgeführt.
+
+[cols="2*"]
+|===
+| Übereinkommen | Definition 
+
+
+ a| 
+`a | b`
+ a| 
+Alternative („a“ oder „b“)
+
+
+
+ a| 
+`_italicized-words_`
+ a| 
+Benutzereingaben zur Erfüllung eines Parameters erforderlich (eine Antwort auf eine Variable)
+
+
+
+ a| 
+`+[ ... ]+` (Eckige Klammern)
+ a| 
+Null oder ein Ereignis (eckige Klammern werden auch als Trennzeichen für einige Befehlsparameter verwendet)
+
+
+
+ a| 
+`+{ ... }+` (Lockige Klammern)
+ a| 
+Null oder mehr Vorkommen
+
+
+
+ a| 
+`(a | b | c)`
+ a| 
+Wählen Sie nur eine der Alternativen
+
+
+
+ a| 
+`a &| b`
+ a| 
+Und/oder. Dies wird für den HTTPS-Client-Modus verwendet, wenn Sie mit einer oder beiden Controller-IP-Adressen verwenden können. Auf diese Weise verwendet SMcli, wenn ein Controller nicht antwortet, die alternative IP-Adresse. Dies deckt auch den Fall ab, wenn beide IP-Adressen erforderlich sind, zum Beispiel für den Download der Firmware.
+
+|===
+[NOTE]
+====
+Um alle CLI-Befehle auszuführen, müssen Sie über Administratorrechte verfügen. Einige CLI-Befehle werden ohne Administratorrechte ausgeführt. Viele Befehle werden jedoch nicht ausgeführt. Wenn der CLI-Befehl nicht ausgeführt wird, weil Sie über keine korrekten Berechtigungen verfügen, gibt die CLI einen Exit-Code von 12 zurück.
+
+====
+
+
+== Beispiel im HTTPS-Client-Modus
+
+Die folgenden Beispiele veranschaulichen das `https` Die Befehlszeilenparameter des Client-Modus werden in beschrieben xref:command-line-parameters.adoc[Befehlszeilenparameter].
+
+[listing]
+----
+SMcli (Controller A host-name-or-IP-address&|
+Controller B host-name-or-IP-address)  -u username -p password -c "commands;" [-clientType (auto | https | symbol)]
+----
+[NOTE]
+====
+Wenn Sie keinen angeben `clientType`, Aber schließen Sie die ein `-u` Option und das `username` Variable, das System verwendet entweder `https` Oder `symbol` Client-Modus, je nachdem, welcher verfügbar ist.
+
+====
+
+
+== Beispiele im Symbol-Client-Modus
+
+Die folgenden Beispiele veranschaulichen das `symbol` Die Befehlszeilenparameter des Client-Modus werden in beschrieben xref:command-line-parameters.adoc[Befehlszeilenparameter].
+
+[listing]
+----
+SMcli **-a** **email:** email-address [host-name-or-IP-address1 [host-name-or-IP-address2]] [**-n** storage-system-name | **-w** wwID | **-h** host-name] [**-I** information-to-include] [**-q** frequency] [**-S**]
+----
+[NOTE]
+====
+Der `-a` Die Befehlszeilenoption wird für das E2800 oder E5700 Storage-Array nicht unterstützt.
+
+====
+[listing]
+----
+SMcli **-x** **email:** email-address [host-name-or-IP-address1 [host-name-or-IP-address2]] [**-n** storage-system-name | **-w** wwID | **-h** host-name] [**-S**]
+----
+[NOTE]
+====
+Der `-x` Die Befehlszeilenoption wird für das E2800 oder E5700 Storage-Array nicht unterstützt.
+
+====
+[listing]
+----
+SMcli (**-a** | **-x**) **trap:** community, host-name-or-IP-address [host-name-or-IP-address1 [host-name-or-IP-address2]] [**-n** storage-system-name | **-w** wwID | **-h** host-name] [**-S**]
+----
+[NOTE]
+====
+Der `-a` Und `-x` Befehlszeilenoptionen werden für das E2800 oder E5700 Storage-Array nicht unterstützt.
+
+====
+[listing]
+----
+SMcli **-d** [**-w**] [**-i**] [**-s**] [**-v**] [**-S**]
+----
+[NOTE]
+====
+Der `-s` Die Befehlszeilenoption wird für das E2800 oder E5700 Storage-Array nicht unterstützt.
+
+====
+[listing]
+----
+SMcli host-name-or-IP-address **-F** email-address [**-g** contactInfoFile] [**-S**]
+----
+[listing]
+----
+SMcli **-A** [host-name-or-IP-address [host-name-or-IP-address]] [**-S**]
+----
+[listing]
+----
+SMcli **-X **(**-n** storage-system-name | **-w** wwID | **-h** host-name)
+----
+[listing]
+----
+SMcli **-?**
+----

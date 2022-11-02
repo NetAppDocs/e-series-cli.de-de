@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-asyncmirrorgroup-synchronize.html 
+sidebar: sidebar 
+keywords: start, asynchronous, mirror, synchronization 
+summary: Der Befehl async cMirrorGroup starten startet die Synchronisierung der asynchronen Spiegelung. 
+---
+= Starten Sie die asynchrone Spiegelsynchronisierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start asyncMirrorGroup synchronize` Befehl startet die Synchronisierung des asynchronen Mirroring.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start asyncMirrorGroup pass:quotes[["_asyncMirrorGroupName_"]] synchronize [deleteRecoveryPointIfNecessary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, für die die Synchronisierung gestartet werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([" "]).
+
+
+
+ a| 
+`deleteRecoveryPointIfNecessary`
+ a| 
+Der Parameter zum Löschen des Wiederherstellungspunkts, wenn die wiederherstellbaren Synchronisierungsdaten den Zeitschwellenwert für die Wiederherstellung überschritten haben. Der Zeitpunkt der Wiederherstellung wird aus dem Zeitpunkt gemessen, zu dem die Daten im primären Storage Array eingefroren wurden.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84
+
+8.10 fügt die hinzu `deleteRecoveryPointIfNecessary` Parameter.

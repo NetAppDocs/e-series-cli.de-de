@@ -1,0 +1,59 @@
+---
+permalink: get-started/naming-conventions.html 
+sidebar: sidebar 
+keywords: name, conventions 
+summary: Namen können maximal 30 Zeichen lang sein. 
+---
+= Namenskonventionen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* Namen können maximal 30 Zeichen lang sein.
+* Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen der folgenden Komponenten verwenden:
++
+** Storage-Arrays durchführt
+** Hostgruppen
+** Hosts
+** Volume-Gruppen
+** Dynamic Disk Pools
+** Volumes
+** HBA-Host-Ports
+
+
+* Sie müssen eindeutige Namen verwenden. Wenn Sie keine eindeutigen Namen verwenden, gibt die Controller-Firmware einen Fehler aus.
+* Wenn der Name mehrere Wörter, Bindestriche oder Unterstriche enthält, müssen Sie den Namen in doppelte Anführungszeichen („` `") einschließen. In einigen Verwendungen müssen Sie auch den Namen mit eckigen Klammern umgeben ([ ]). Die Beschreibung der einzelnen Parameter gibt an, ob Sie einen Parameter in doppelte Anführungszeichen, eckige Klammern oder beide einschließen müssen.
+* Die Zeichenfolge für das Namenszeichen darf keine neue Zeile enthalten.
+* Unter Windows-Betriebssystemen müssen Sie den Namen neben anderen Trennzeichen zwischen zwei umgekehrten Schrägstrichen (\\) umschließen. Der folgende Name wird beispielsweise in einem Befehl verwendet, der unter einem Windows-Betriebssystem ausgeführt wird:
++
+[listing]
+----
+[\“Engineering\”]
+----
+* Bei einem UNIX-Betriebssystem und bei Verwendung in einer Skriptdatei wird der Name wie im folgenden Beispiel angezeigt:
++
+[listing]
+----
+[“Engineering”]
+----
+* Wenn Sie einen World Wide Identifier (WWID) eines HBA-Host-Ports eingeben, müssen Sie bei einigen Anwendungen die WWID mit doppelten Anführungszeichen umschließen. Bei anderen Anwendungen müssen Sie die WWID mit Winkelklammern umschließen (<>). Die Beschreibung des WWID-Parameters gibt an, ob Sie die WWID in doppelte Anführungszeichen oder Winkelklammern einschließen müssen.
+
+
+
+
+== Eingabe numerischer Namen
+
+Wenn die Speicherverwaltungssoftware ein Speicher-Array automatisch konfiguriert, weist die Speicherverwaltungssoftware Namen zu, die aus numerischen Zeichen bestehen. Namen, die nur aus numerischen Zeichen bestehen, sind gültige Namen. Numerische Zeichennamen müssen jedoch anders behandelt werden als Namen, die mit alphabetischen Zeichen beginnen.
+
+* Namen, die nur Zahlen sind, z. B. 1 oder 2
+* Namen, die mit einer Zahl beginnen, z. B. 1Disk oder 32Volume
+* `[\“1\”]`
+* `[\“1Disk\”]`
+
+
+[NOTE]
+====
+Wenn Sie Zweifel an der Gültigkeit eines Namens haben, verwenden Sie sowohl doppelte Anführungszeichen als auch eckige Klammern. Die Verwendung beider Funktionen stellt sicher, dass der Name funktioniert und keine Probleme bei der Verarbeitung verursacht.
+
+====

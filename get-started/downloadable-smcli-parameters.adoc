@@ -1,0 +1,279 @@
+---
+permalink: get-started/downloadable-smcli-parameters.html 
+sidebar: sidebar 
+keywords: downloadable, smcli, command line, parameters 
+summary: 'Die Version SANtricity OS 11.60 beinhaltet die Möglichkeit, die http-basierte Version von CLI (auch als sichere CLI oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.' 
+---
+= Herunterladbare SMcli-Befehlszeilenparameter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.60 und neuere herunterladbare SMcli-Befehlszeilenparameter
+
+Die Version SANtricity OS 11.60 bietet die Möglichkeit, die http-basierte Version von CLI (auch als „Sichere CLI“ oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren. Diese SMcli-Version kann als Download heruntergeladen werden und ist auf EF600, EF300, E5700, EF570, E2800, Und EF280 Controller. Um den SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* > *System* und *Add-ons* > *Befehlszeilenschnittstelle*.
+
+
+NOTE: Eine Java Runtime Environment (JRE), Version 8 und höher, muss auf dem Managementsystem verfügbar sein, auf dem Sie die CLI-Befehle ausführen möchten.
+
+Wie bei früheren Versionen der SMcli verfügt der SMcli, der über den SANtricity System Manager heruntergeladen werden kann, über einen einzigartigen Satz an Parametern. Informationen zur Verwendung von Befehlszeilenparametern für SANtricity OS 11.53 und ältere Versionen finden Sie unter xref:./get-started/command-line-parameters.adoc[Parameter der Legacy-Kommandozeile]
+
+
+
+=== Multi-Faktor-Authentifizierung
+
+Wenn SAML (Security Assertion Markup Language) aktiviert ist, können nur Access Tokens mit der CLI verwendet werden. Wenn SAML nicht aktiviert ist, können Benutzername/Passwort oder Access Token verwendet werden. Access Tokens können über den SANtricity System Manager generiert werden.
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`-t`
+ a| 
+Definiert das Zugriffstoken, das zur Authentifizierung mit einem Speicherarray verwendet werden soll. Ein Access Token ist ein Ersatz für die Lieferung von Benutzername und Passwort.
+
+
+
+ a| 
+`-T` (Großbuchstaben)
+ a| 
+Dieses Argument erfordert eines von zwei Argumenten:
+
+* `access_token-file` - Enthält das Zugriffstoken, das zur Authentifizierung verwendet werden soll
+* `-(dash)` - Lesen Sie das Zugriffstoken von stdin
+
+
+
+
+ a| 
+`-u`
+ a| 
+Befolgen Sie diesen Parameter mit dem `_username_` Variabel. Dieser Parameter ist immer dann erforderlich, wenn kein Zugriffstoken verwendet wird.
+
+
+
+ a| 
+`-p`
+ a| 
+Definiert das Passwort für das Speicherarray, auf dem Sie Befehle ausführen möchten. Unter folgenden Bedingungen ist kein Passwort erforderlich:
+
+* Auf dem Speicher-Array wurde kein Passwort festgelegt.
+* Das Passwort wird in einer Skriptdatei angegeben, die Sie ausführen.
+
+
+
+
+ a| 
+`-P` (Großbuchstaben)
+ a| 
+Dieses Argument erfordert eines von zwei Argumenten:
+
+* `_password_file_` - Enthält das Kennwort zur Authentifizierung.
+* `-` (Ein Strich) - Lesen Sie das Passwort aus `stdin`.
+
+
+|===
+
+
+=== Allgemeine Befehlszeilenparameter des HTTPS-Modus
+
+Der herunterladbare SMcli unterstützt nur den HTTPS-Modus. Im Folgenden finden Sie häufig verwendete Befehlszeilenparameter für den HTTPS-Modus.
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Gibt entweder den Hostnamen oder die IP-Adresse (Internet Protocol) an (`_xxx.xxx.xxx.xxx_`) Eines Out-of-Band-gemanagten Storage-Arrays.
+
+Wenn Sie das Out-of-Band-Storage-Management über die Ethernet-Verbindung auf jedem Controller verwalten, müssen Sie den angeben `_host-name-or-IP-address_` Der Controller.
+
+
+
+ a| 
+`-k`
+ a| 
+Dieses optionale Argument ermöglicht ein `*https*` Der Client muss im unsicheren Modus arbeiten. Das bedeutet, dass das Zertifikat des Speicher-Arrays nicht validiert wird. Wenn diese Option nicht angegeben ist, wird die korrekte Validierung durchgeführt.
+
+
+NOTE: Weitere Informationen zum Verwalten von Zertifikaten für Speicherarrays finden Sie unter ,Verwalten von Befehlszeilenparametern für gespeicherte Zertifikate.
+
+
+
+ a| 
+`-e`
+ a| 
+Führt die Befehle aus, ohne zuerst eine Syntaxprüfung auszuführen.
+
+
+
+ a| 
+`-L` (Großbuchstaben)
+ a| 
+Zeigt die rechtlichen Hinweise für herunterladbare SMcli an.
+
+
+
+ a| 
+`-n`
+ a| 
+Gibt die lokal gespeicherte Bezeichnung an, auf der die Skriptbefehle ausgeführt werden sollen. Dies ist bei Verwendung optional `_host-name-or-IP-address_`. Das lokal gespeicherte Etikett ist erforderlich, wenn der `_host-name-or-IP-address_` Wird nicht verwendet.
+
+
+NOTE: Weitere Informationen zur Verwendung lokal gespeicherter Etiketten zum Managen von Storage-Arrays finden Sie unter ,Verwalten von Befehlszeilenparametern für gespeicherte Arrays.
+
+
+
+ a| 
+`-o`
+ a| 
+Gibt einen Dateinamen für den gesamten Ausgabentext an, der auf die Ausführung der Skriptbefehle zurückzuführen ist. Verwenden Sie die `-o` Parameter mit diesen Parametern:
+
+* `-c`
+* `-f`
+
+
+Wenn Sie keine Ausgabedatei angeben, wird der Ausgabentext zur Standardausgabe ausgegeben  `stdout`). Alle Ausgaben von Befehlen, die keine Skriptbefehle sind, werden an gesendet `stdout`, Unabhängig davon, ob dieser Parameter eingestellt ist.
+
+
+
+ a| 
+`-S` (Großbuchstaben)
+ a| 
+Unterdrückt informative Meldungen, die den Fortschritt des Befehls beschreiben, der beim Ausführen von Skript-Befehlen angezeigt wird. (Das Unterdrücken von Informationsmeldungen wird auch als Silent-Modus bezeichnet.) Mit diesem Parameter werden diese Meldungen unterdrückt:
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-version`
+ a| 
+Zeigt die herunterladbare SMcli-Version an
+
+
+
+ a| 
+`-?`
+ a| 
+Zeigt Verwendungsinformationen zu den CLI-Befehlen an.
+
+|===
+
+
+=== Managen von gespeicherten Arrays
+
+Mit den folgenden Befehlszeilenparametern können Sie gespeicherte Arrays über Ihre lokal gespeicherte Bezeichnung verwalten.
+
+
+NOTE: Die lokal gespeicherte Bezeichnung stimmt möglicherweise nicht mit dem tatsächlichen Speicher-Array-Namen überein, der im SANtricity-System-Manager angezeigt wird.
+
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`SMcli storageArrayLabel show all`
+ a| 
+Zeigt alle lokal gespeicherten Beschriftungen und die zugehörigen Adressen an
+
+
+
+ a| 
+`SMcli storageArrayLabel show label <LABEL>`
+ a| 
+Zeigt die Adressen an, die der lokal gespeicherten Bezeichnung zugeordnet sind `<LABEL>`
+
+
+
+ a| 
+`SMcli storageArrayLabel delete all`
+ a| 
+Löscht alle lokal gespeicherten Beschriftungen
+
+
+
+ a| 
+`SMcli storageArrayLabel delete label <LABEL>`
+ a| 
+Löscht die lokal gespeicherte Bezeichnung mit dem Namen `<LABEL>`
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] storageArrayLabel add label <LABEL>`
+ a| 
+* Fügt eine lokal gespeicherte Bezeichnung mit Namen hinzu `<LABEL>` Mit den angegebenen Adressen
+* Updates werden nicht direkt unterstützt. Löschen Sie zum Aktualisieren die Beschriftung und fügen Sie sie erneut hinzu.
+
+
+
+NOTE: Der SMcli kontaktiert nicht das Speicherarray, wenn ein lokal gespeicherter Etikett hinzugefügt wird.
+
+|===
+[cols="2*"]
+|===
+| Parameter | Definition 
+
+
+ a| 
+`SMcli localCertificate show all`
+ a| 
+Zeigt alle lokal gespeicherten vertrauenswürdigen Zertifikate an
+
+
+
+ a| 
+`SMcli localCertificate show alias <ALIAS>`
+ a| 
+Zeigt ein lokal gespeichertes vertrauenswürdiges Zertifikat mit dem Alias an `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate delete all`
+ a| 
+Löscht alle lokal gespeicherten vertrauenswürdigen Zertifikate
+
+
+
+ a| 
+`SMcli localCertificate delete alias <ALIAS>`
+ a| 
+Löscht ein lokal gespeichertes vertrauenswürdiges Zertifikat mit dem Alias `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate trust file <CERT_FILE> alias <ALIAS>`
+ a| 
+* Speichert ein Zertifikat, dem der Alias vertraut sein soll `<ALIAS>`
+* Das Zertifikat, auf das Sie vertrauen können, wird in einem separaten Vorgang vom Controller heruntergeladen, z. B. über einen Webbrowser
+
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] localCertificate trust`
+ a| 
+* Stellt eine Verbindung zu jeder Adresse her und speichert das im vertrauenswürdigen Zertifikatspeicher zurückgegebene Zertifikat
+* Der Hostname oder die angegebene IP-Adresse wird als Alias für jedes auf diese Weise gespeicherte Zertifikat verwendet
+* Benutzer sollte überprüfen, ob das Zertifikat auf den Controllern vertrauenswürdig ist, bevor Sie diesen Befehl ausführen
+* Für höchste Sicherheit sollte der Vertrauensbefehl verwendet werden, der eine Datei nimmt, um sicherzustellen, dass sich das Zertifikat nicht zwischen der Benutzervalidierung und dem Ausführen dieses Befehls geändert hat
+
+
+|===

@@ -1,0 +1,189 @@
+---
+permalink: commands-a-z/create-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: create, asynchronous, mirror, group 
+summary: Mit dem Befehl create async MirrorGroup wird eine neue, leere asynchrone Spiegelgruppe sowohl auf dem lokalen Storage-Array als auch im Remote-Storage-Array erstellt. 
+---
+= Asynchrone Spiegelgruppe erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create asyncMirrorGroup` Befehl erstellt eine neue, leere asynchrone Spiegelgruppe sowohl auf dem lokalen Storage-Array als auch auf dem Remote-Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Eine asynchrone Spiegelgruppe ist ein Container, der mehrere gespiegelte Paare aufnehmen kann, so dass sie als eine Einheit gemanagt werden können. Sie erstellen eine asynchrone Spiegelgruppe, um die Synchronisierungseinstellungen für alle gespiegelten Paare innerhalb der Gruppe zu definieren. Jedes gespiegelte Paar in einer asynchronen Spiegelgruppe verwendet dieselben Synchronisierungseinstellungen, dieselbe primäre und sekundäre Rolle und denselben Schreibmodus.
+
+Die asynchrone Spiegelgruppe ist dem lokalen Speicher-Array und dem Remote-Speicher-Array zugeordnet, das zur Spiegelung verwendet wird. Das lokale Storage Array ist die primäre Seite der asynchronen Spiegelgruppe, während das Remote Storage Array die sekundäre Seite der asynchronen Spiegelgruppe ist. Alle Volumes, die der asynchronen Spiegelgruppe auf dem lokalen Speicher-Array hinzugefügt wurden, behalten die primäre Rolle in der Spiegelbeziehung. Anschließend übernehmen alle Volumes, die zur asynchronen Spiegelgruppe auf dem Remote-Storage-Array hinzugefügt wurden, die sekundäre Rolle in der Spiegelbeziehung.
+
+Stellen Sie sicher, dass Sie die ausführen `Create Asynchronous Mirror Group` Befehl auf dem lokalen Speicher-Array. Die Erstellung von asynchronen Spiegelgruppen wird vom Speicher-Array initiiert, der die Volumes enthält, die die primäre Rolle in der Spiegelbeziehung besitzen. Sie verwenden das `Create Asynchronous Mirror Group` Befehl zum Festlegen der Identität des Remote-Speicher-Arrays, das die Volumes enthält, die die sekundäre Rolle in der Spiegelbeziehung enthalten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create asyncMirrorGroup userLabel=pass:quotes[_"asyncMirrorGroupName"_]
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_] | remoteStorageArrayWWN=pass:quotes[_"wwID"_])
+[remotePassword=pass:quotes[_"password"_]
+interfaceType=(FC | iSCSI)
+[syncInterval=pass:quotes[_integer_](minutes | hours | days)]
+[warningSyncThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningRecoveryThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningThresholdPercent=pass:quotes[_percentValue_]]
+[autoResync=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name der neuen asynchronen Spiegelgruppe, die Sie erstellen möchten. Schließen Sie den neuen asynchronen Spiegelgruppe-Namen in doppelte Anführungszeichen (" ").
+
+Der Name muss auf den lokalen und Remote-Speicher-Arrays eindeutig sein.
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Der Name des Remote-Speicher-Arrays, auf dem Sie die asynchrone Spiegelgruppe spiegeln. Schließen Sie den Namen des Speicher-Arrays in doppelte Anführungszeichen („ “).
+
+Das Remote-Speicher-Array muss denselben Verbindungstyp aufweisen wie das lokale Speicher-Array.
+
+
+
+ a| 
+`remoteStorageArrayWWN`
+ a| 
+Der World Wide Identifier (WWID) des Remote-Speicherarrays, auf dem Sie die asynchrone Spiegelgruppe spiegeln. Sie können zur Identifizierung des Storage-Arrays die WWID anstelle des Storage Array-Namens verwenden. Schließen Sie die WWID in Winkel-Klammern (< >).
+
+Das Remote-Speicher-Array muss denselben Verbindungstyp aufweisen wie das lokale Speicher-Array.
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Das Kennwort für das Remote-Speicher-Array. Verwenden Sie diesen Parameter, wenn das Remote-Speicher-Array passwortgeschützt ist. Schließen Sie das Passwort in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Geben Sie an, welchen Verbindungstyp verwendet werden soll: Fibre Channel Fabric oder die iSCSI Schnittstelle. (Die Standardeinstellung ist Fibre Channel.) Das lokale Speicher-Array und das Remote-Speicher-Array müssen über eine geeignete Fibre-Channel-Fabric- oder iSCSI-Schnittstelle verbunden sein.
+
+
+
+ a| 
+`syncInterval`
+ a| 
+Geben Sie die Zeitspanne zwischen dem automatischen Senden von Updates geänderter Daten vom lokalen Speicher-Array an das Remote-Speicher-Array an. Sie können die Dauer in Minuten, Stunden oder Tagen angeben.
+
+[NOTE]
+====
+Fügen Sie keinen Raum zwischen der Ganzzahl und der Zeitdauer hinzu.
+
+====
+Beispiel: `10minutes`
+
+
+
+ a| 
+`warningSyncThreshold`
+ a| 
+Geben Sie die Wartezeit an, bis eine Warnung ausgelöst wird, wenn die Synchronisierung aller Volumes innerhalb der asynchronen Spiegelgruppe länger als die festgelegte Zeit dauert. Sie können die Dauer in Minuten, Stunden oder Tagen angeben.
+
+[NOTE]
+====
+Fügen Sie keinen Raum zwischen der Ganzzahl und der Zeitdauer hinzu.
+
+====
+Beispiel: `30minutes`
+
+
+
+ a| 
+`warningRecoveryThreshold`
+ a| 
+Geben Sie die Wartezeit an, bis eine Warnung ausgelöst wird, wenn die automatische Datenaktualisierung für das Point-in-Time-Image auf dem Remote-Speicher-Array älter als die festgelegte Zeit ist. Definieren Sie den Schwellenwert ab Ende der vorherigen Aktualisierung. Sie können die Dauer in Minuten, Stunden oder Tagen angeben.
+
+[NOTE]
+====
+Sie müssen festlegen, dass der Schwellenwert für den Wiederherstellungspunkt doppelt so groß ist wie der Schwellenwert für das Synchronisierungsintervall.
+
+====
+[NOTE]
+====
+Fügen Sie keinen Raum zwischen der Ganzzahl und der Zeitdauer hinzu.
+
+====
+Beispiel: `60minutes`
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Geben Sie die Wartezeit an, bis eine Warnung ausgelöst wird, wenn die Kapazität eines Spiegelspeicher-Volumes den definierten Prozentsatz erreicht. Definieren Sie den Schwellenwert um den Prozentsatz (%) der verbleibenden Kapazität.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Die Einstellungen für die automatische Neusynchronisierung zwischen den primären Volumes und den sekundären Volumes eines asynchronen gespiegelten Paares innerhalb einer asynchronen Spiegelgruppe. Dieser Parameter verfügt über die folgenden Werte:
+
+* `enabled` -- Automatische Neusynchronisierung ist eingeschaltet. Sie müssen nichts weiter tun, um das primäre Volume und das sekundäre Volume neu zu synchronisieren.
+* `disabled` -- Automatische Neusynchronisierung ist deaktiviert. Zum erneuten Synchronisieren des primären Volumes und des sekundären Volumes müssen Sie den ausführen `resume asyncMirrorGroup` Befehl.
+
+
+|===
+
+
+== Hinweise
+
+* Die Funktion Asynchronous Mirroring muss auf den lokalen und Remote-Storage-Arrays aktiviert sein, die für Spiegelaktivitäten verwendet werden.
+* Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+* Die lokalen und Remote-Speicher-Arrays müssen über eine Fibre Channel Fabric- oder iSCSI-Schnittstelle verbunden sein.
+* Passwörter werden auf jedem Storage-Array in einer Management-Domäne gespeichert. Wenn ein Kennwort noch nicht festgelegt wurde, benötigen Sie kein Kennwort. Das Passwort kann eine beliebige Kombination aus alphanumerischen Zeichen mit maximal 30 Zeichen sein. (Sie können ein Passwort für das Speicherarray mit dem definieren `set storageArray` Befehl.)
+* Je nach Konfiguration gibt es eine maximale Anzahl von asynchronen Spiegelgruppen, die Sie auf einem Storage-Array erstellen können.
+* Asynchrone Spiegelgruppen werden leer erstellt und später gespiegelte Paare hinzugefügt. Zu einer asynchronen Spiegelgruppe können nur gespiegelte Paare hinzugefügt werden. Jedes gespiegelte Paar ist genau einer asynchronen Spiegelgruppe zugeordnet.
+* Der asynchrone Mirroring-Prozess wird in einem definierten Synchronisierungsintervall gestartet. Regelmäßige, zeitpunktgenaue Images werden repliziert, da nur die geänderten Daten kopiert werden, nicht das gesamte Volume.
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

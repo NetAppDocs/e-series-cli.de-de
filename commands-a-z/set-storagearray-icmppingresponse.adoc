@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/set-storagearray-icmppingresponse.html 
+sidebar: sidebar 
+keywords: set, storage, array, icmp, response 
+summary: Der Befehl Set storageArray icmpPingResponse gibt die Standardwerte für verhandelbare Einstellungen für Sitzungen und Verbindungen zurück, die den Ausgangspunkt für die Verhandlungen des Speicher-Arrays darstellen. 
+---
+= Festlegen der ICMP-Antwort für das Speicherarray
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray icmpPingResponse` Befehl gibt die Standardwerte für die verhandelbaren Einstellungen für Sitzungen und Verbindungen zurück, die den Ausgangspunkt für das Speicher-Array für Verhandlungen darstellen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray icmpPingResponse=(TRUE | FALSE)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`icmpPingResponse`
+ a| 
+Dieser Parameter schaltet Echoanforderungsmeldungen ein oder aus. Setzen Sie den Parameter auf `TRUE` So aktivieren Sie Echoanforderungsmeldungen. Setzen Sie den Parameter auf `FALSE` So deaktivieren Sie Echoanforderungsmeldungen.
+
+|===
+
+
+== Hinweise
+
+Das Internet Control Message Protocol (ICMP) wird von Betriebssystemen in einem Netzwerk verwendet, um Fehlermeldungen, Testpakete und Informationsmeldungen im Zusammenhang mit der IP zu senden, z. B. ein angeforderter Dienst ist nicht verfügbar oder ein Host oder Router konnte nicht erreicht werden. Der ICMP-Antwortbefehl sendet ICMP Echo Request-Meldungen und erhält ICMP Echo Response-Meldungen, um zu ermitteln, ob ein Host erreichbar ist und welche Zeit es dauert, bis Pakete von und zu diesem Host gelangen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

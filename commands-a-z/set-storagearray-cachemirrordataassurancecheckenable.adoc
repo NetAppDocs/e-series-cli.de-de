@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html 
+sidebar: sidebar 
+keywords: set, storage, array, enable, disable, cache, mirror, data, assurance, check 
+summary: Mit dem Befehl set storageArray cacheMirrorDataAssuranceCheckEnable können Sie die Prüfung der Data Assurance von Cache Mirror aktivieren oder deaktivieren. 
+---
+= Legen Sie das Speicher-Array fest, um die Data Assurance-Prüfung für Cache-Spiegelungen zu aktivieren oder zu deaktivieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray cacheMirrorDataAssuranceCheckEnable` Mit dem Befehl können Sie die Prüfung der Data Assurance-Überprüfung der Cache-Spiegelung aktivieren oder deaktivieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.41 Neuer Befehlsparameter.

@@ -1,0 +1,148 @@
+---
+permalink: commands-a-z/set-emailalert.html 
+sidebar: sidebar 
+keywords: configure, email, alert, set 
+summary: Mit dem Befehl set emailAlert wird die E-Mail so konfiguriert, dass sie eine E-Mail an einen bestimmten technischen Support oder eine bestimmte Organisation sendet. Die E-Mail-Benachrichtigung enthält eine Zusammenfassung des Ereignisses, detaillierte Informationen über den betroffenen Speicher und Kontaktinformationen des Kunden. 
+---
+= Konfigurieren Sie Einstellungen für E-Mail-Warnmeldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set emailAlert` Der Befehl konfiguriert die E-Mail zum Senden einer E-Mail an einen bestimmten technischen Support oder eine bestimmte Organisation. Die E-Mail-Benachrichtigung enthält eine Zusammenfassung des Ereignisses, detaillierte Informationen über den betroffenen Speicher und Kontaktinformationen des Kunden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für die E2800, E5700, EF600 und EF300 Storage-Arrays. Der Befehl kann jedoch für E2700 oder E5600 Arrays als SMcli-Befehl und nicht als Skript-Befehl verwendet werden. In diesem Fall gilt der Befehl für alle Arrays in der Management-Domäne.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+set emailAlert
+    serverAddress=pass:quotes["_serverAddress_"] |
+    serverEncryption=pass:quotes[_none_ | _smtps_ | _starttls_ |]
+    serverPort=pass:quotes[_port value_] |
+    serverUsername=pass:quotes["_username_"] |
+    serverPassword=pass:quotes["_password_"] |
+    senderAddress=pass:quotes["_emailAddress_"] |
+    additionalContactInfo=pass:quotes["_filename_"]  |
+    (recipientAddresses=pass:quotes[("_emailAddress1_" ... "_emailAddressN_")] |
+ addRecipientAddresses=pass:quotes[("_emailAddress1_" ... "_emailAddressN_"))]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`serverAddress`
+ a| 
+Ermöglicht die Einstellung der E-Mail-Serveradresse. Bei der E-Mail-Serveradresse kann es sich um einen vollständig qualifizierten Domänennamen, eine IPv4-Adresse oder eine IPv6-Adresse handeln.
+
+
+
+ a| 
+`serverEncryption`
+ a| 
+Die Verschlüsselung für die Kommunikation mit dem Server. Der Wert kann einer der folgenden Werte sein:
+
+* `_none_` - Keine Verschlüsselung
+* `_smtps_` - Erstellen einer SSL/TLS-Verbindung (implizite TLS)
+* `_starttls_` - Erstellen einer unverschlüsselten Verbindung und dann Aufbau einer SSL/TLS-Sitzung (Explicit TLS)
+
+
+
+
+ a| 
+`serverPort`
+ a| 
+Der TCP-Port, über den eine Verbindung zum Server hergestellt werden soll. Der Standardwert hängt vom Verschlüsselungstyp ab.
+
+* `_none_` - Standardeinstellungen für Port 25
+* `_smtps_` - Standardeinstellungen für Port 465
+* `_starttls_` - Standardeinstellungen für Port 587
+
+
+
+
+ a| 
+`serverUsername`
+ a| 
+Der Benutzername, der dem Server Authentifizierungsdaten zur Verfügung stellt. Wenn der Benutzername angegeben wird, muss auch das Passwort angegeben werden.
+
+
+
+ a| 
+`serverPassword`
+ a| 
+Das Kennwort zur Eingabe von Authentifizierungsdaten für den Server. Wenn das Passwort angegeben wird, muss auch der Benutzername angegeben werden.
+
+
+
+ a| 
+`senderAddress`
+ a| 
+Ermöglicht Ihnen, die E-Mail-Adresse des Absenders festzulegen.
+
+
+
+ a| 
+`additionalContactInfo`
+ a| 
+Ermöglicht die Angabe des Dateinamens, der die zusätzlichen Kontaktinformationen enthält, die in der E-Mail-Warnung verwendet werden sollen.
+
+
+
+ a| 
+`recipientAddresses`
+ a| 
+Ermöglicht das Festlegen einer oder mehrerer Empfänger-E-Mail-Adressen. Wenn Sie diese Option verwenden, werden vorhandene E-Mail-Adressen gelöscht. Schließen Sie alle Namen in Klammern an. Schließen Sie jeden dieser Namen in doppelte Anführungszeichen ("). Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+ a| 
+`addRecipientAddresses`
+ a| 
+Ermöglicht das Hinzufügen einer oder mehrerer Empfänger-E-Mail-Adressen zur vorhandenen Liste. Schließen Sie alle Namen in Klammern an. Schließen Sie jeden dieser Namen in doppelte Anführungszeichen ("). Trennen Sie jede der Namen mit einem Leerzeichen.
+
+|===
+
+
+== Beispiele
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "set emailAlert
+   serverAddress="email.server.domain.com"
+    serverEncryption=pass:quotes[("_smtps_")] |
+    serverPort=pass:quotes["_smtps_"] |
+    serverUsername=pass:quotes["_username_"] |
+    serverPassword=pass:quotes["_password_"] |
+   senderAddress=\no-reply@server.domain.com
+   additionalContactInfo="C:\additionalInfo.txt"
+   recipientAddresses=("\person1@email.domain.com" "\person2@email.domain.com");"
+
+SMcli -n Array1 -c "set emailAlert addRecipientAddresses=("\person3@netapp.com");"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40
+
+11.70.1 fügt die hinzu `serverEncryption`, `serverPort`, `serverUsername`, und `serverPassword` Parameter.

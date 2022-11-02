@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/start-storagearray-ocspresponderurl-test.html 
+sidebar: sidebar 
+keywords: start, ocsp, server, url, test 
+summary: 'Der Befehl zum Starten von storageArray ocspResponderUrl Test prüft auf eine offene Verbindung zur angegebenen URL des OCSP-Servers (Online Certificate Status Protocol).' 
+---
+= Starten Sie den OCSP-Server-URL-Test
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start storageArray ocspResponderUrl test` Befehl überprüft auf eine offene Verbindung zur angegebenen URL des OCSP-Servers (Online Certificate Status Protocol).
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`url`
+ a| 
+Die wortwörtliche Zeichenfolge der URL des OCSP-Servers.
+
+[NOTE]
+====
+Wenn Sie keine URL angeben, verwendet der Befehl die OCSP Responder URL, die in den Einstellungen für den Zertifikatsannullierungsverzug gefunden wurde.
+
+====
+|===
+
+
+== Syntax
+
+[listing]
+----
+start storageArray ocspResponderUrl test (url=stringLiteral)
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

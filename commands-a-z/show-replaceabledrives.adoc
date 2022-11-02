@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/show-replaceabledrives.html 
+sidebar: sidebar 
+keywords: show, replaceable, drives 
+summary: Mit dem Befehl ErsatzlaufeLaufwerke anzeigen werden alle austauschbaren Laufwerke in einem Storage-Array angezeigt. 
+---
+= Zeigt austauschbare Laufwerke an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show replaceableDrives` Mit dem Befehl werden alle austauschbaren Laufwerke in einem Speicher-Array angezeigt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Der Befehl gibt für jedes austauschbare Laufwerk im Speicher-Array die folgenden Informationen zurück:
+
+* Die Position des Fachs und die Position des Schlitzes
+* Der Name der Volume-Gruppe, zu der das Laufwerk gehört
+* Der World Wide Name (WWN)
+* Der Status des Laufwerks
+
+
+
+
+== Syntax
+
+[listing]
+----
+show replaceableDrives
+----
+
+
+== Beispielausgabe
+
+[listing]
+----
+Replaceable drive at Tray 0, Slot 3
+                Volume group: 2
+                World-wide name: 5000c50028785aff0000000000000000
+                Status: Removed
+Replaceable drive at Tray 0, Slot 23
+                Volume group: 2
+                World-wide name: 5000c500095d46df0000000000000000
+                Status: Removed
+Replaceable drive at Tray 0, Slot 24
+                Volume group: 2
+                World-wide name: 5000c500287854d70000000000000000
+                Status: Removed
+----
+
+
+== Minimale Firmware-Stufe
+
+7.10

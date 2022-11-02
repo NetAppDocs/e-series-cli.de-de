@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/set-initiator.html 
+sidebar: sidebar 
+keywords: set, initiator 
+summary: Der Befehl Set Initiator aktualisiert das Initiatorobjekt. 
+---
+= Legt den Initiator fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set initiator` Mit dem Befehl wird das Initiator-Objekt aktualisiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit diesem Befehl wird die veraltete Version ersetzt xref:set-iscsiinitiator.adoc[Setzen Sie den iSCSI-Initiator] Befehl.
+
+====
+[NOTE]
+====
+Dieser Befehl ist nur für iSCSI, iSER, NVMe over RoCE, NVMe over InfiniBand und NVMe over Fibre Channel anwendbar.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+
+set initiator (["initiatorName"] | <"initiatorQualifiedName">) ([userLabel="newInitiatorName"] |
+[host="newHostName"] | [chapSecret="newSecurityKey"])
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`initiator`
+ a| 
+Ermöglicht Ihnen die Angabe der Initiator-ID, für die Sie Eigenschaften festlegen möchten. Schließen Sie den Namen in doppelte Anführungszeichen („` "`). Sie müssen den Namen auch in eckigen Klammern ([ ]) umschließen, wenn der Wert ein Benutzeretikett oder Winkel Klammern ( ) ist, wenn der Wert ein qualifizierter Name ist (z.B. iqn oder nqn).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Ermöglicht die Eingabe einer neuen Benutzerbezeichnung für das Initiator-Objekt. Schließen Sie das neue Benutzungsetikett in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Ermöglicht die Eingabe eines neuen Hosts, mit dem der Host-Port verbunden ist. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Ermöglicht die Eingabe eines neuen Sicherheitsschlüssels, den Sie zur Authentifizierung einer Peer-Verbindung verwenden möchten. Schließen Sie den Sicherheitsschlüssel in doppelte Anführungszeichen („ “). Dieser Parameter gilt nur für `iSCSI` Und `iSER` Host-Schnittstellentypen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.41

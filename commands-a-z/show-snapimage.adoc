@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/show-snapimage.html 
+sidebar: sidebar 
+keywords: show, snapshot, image 
+summary: Der Befehl show SnapImage gibt Informationen zu den Snapshot-Images zurück, die ein Benutzer zuvor erstellt hatte. 
+---
+= Zeigen Sie das Snapshot Image an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show snapImage` Der Befehl gibt Informationen zu den Snapshot-Images zurück, die ein Benutzer zuvor erstellt hatte.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax zum Anzeigen eines bestimmten Snapshot Images
+
+[listing, subs="+macros"]
+----
+show (allSnapImages | snapImage pass:quotes[["_snapImageName_"]] |
+snapImages pass:quotes[["_snapImageName1_" ... "_snapImageNamen_"]])
+[summary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allSnapImages`
+ a| 
+Der Parameter, der Informationen zu allen Snapshot-Images im Speicher-Array zurückgibt.
+
+
+
+ a| 
+`snapImage`
+ a| 
+Der Name eines Snapshot-Images, für das Sie Informationen abrufen möchten. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` -- Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` -- Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`snapImages`
+ a| 
+Die Namen mehrerer Snapshot-Images, für die Sie Informationen abrufen möchten. Geben Sie die Namen der Snapshot-Images unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Dieser Parameter gibt eine kurze Liste von Informationen über die Snapshot-Bilder zurück.
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise Snapshot-Image 12345 in einer Snapshot-Gruppe mit dem Namen SnapGroup1 anzeigen möchten, würden Sie diesen Befehl verwenden:
+
+[listing]
+----
+show snapImage ["snapGroup1:12345"];
+----
+Um das aktuellste Snapshot-Image in einer Snapshot-Gruppe mit dem Namen SnapGroup1 anzuzeigen, verwenden Sie diesen Befehl:
+
+[listing]
+----
+show snapImage ["snapGroup1:newest"];
+----
+Verwenden Sie den folgenden Befehl, um die Snapshot-Images in mehreren Snapshot-Konsistenzgruppen anzuzeigen, die die Namen SnapGroup1, SnapGroup2 und SnapGroup3 haben:
+
+[listing]
+----
+show snapImages ["snapGroup1:12345 snapGroup2:newest snapGroup3:oldest"];
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

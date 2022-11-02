@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/set-disk-pool-modify-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool, modify 
+summary: 'Mit dem Befehl set Disk Pool wird der Speicherplatz zu einem Disk Pool (Dynamic Capacity Expansion oder DCE) erweitert oder der Controller-Eigentumsrechte für den gesamten Disk Pool geändert.' 
+---
+= Legen Sie den Laufwerk-Pool fest (ändern Sie den Laufwerk-Pool).
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set diskPool` Mit Befehl werden einem Disk Pool (Dynamic Capacity Expansion oder DCE) Kapazitäten hinzugefügt oder die Controller-Eigentumsrechte für den gesamten Festplatten-Pool geändert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Diese beiden Vorgänge schließen sich gegenseitig aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set diskPool pass:quotes[[_diskPoolName_]]
+(addDrives=pass:quotes[[_trayID1_,_drawerID1_,_slotID1_ ... _trayIDn_,_drawerIDn_,_slotIDn_]] |
+addCapacity=pass:quotes[(_diskPoolCapacity_))]
+[owner=(a| b)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, den Sie ändern möchten. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]). Wenn der Disk-Pool-Name Sonderzeichen hat oder nur aus Ziffern besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Die Laufwerke, die Sie dem Laufwerk-Pool hinzufügen möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID des Laufwerks an, das Sie hinzufügen möchten. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID des Laufwerks an, das Sie hinzufügen möchten. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`. Die Steckplatz-ID-Werte sind `1` Bis `24`. Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+[NOTE]
+====
+Diese Funktion hat eine maximale Anzahl von 12 Laufwerken.
+
+====
+
+
+ a| 
+`addCapacity`
+ a| 
+Die Menge an zusätzlicher Speicherkapazität, die Sie dem Laufwerk-Pool hinzufügen möchten. Dieser Parameter wählt automatisch die Laufwerke aus, die der Kapazität entsprechen, die Sie hinzufügen möchten. Die Kapazität wird in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Dem Controller, der den Disk-Pool besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Wenn Sie keinen Eigentümer angeben, bestimmt die Controller-Firmware den Eigentümer.
+
+|===
+
+
+== Hinweise
+
+Volumes, die sich bereits im Festplatten-Pool befinden, bleiben online und für I/O-Vorgänge verfügbar, während Sie neue Laufwerke hinzufügen. Der Laufwerk-Pool muss vollständig sein, bevor Sie die Kapazität hinzufügen. Wenn der Laufwerk-Pool nicht vollständig ist, führen Sie den aus `set diskPool complete` Befehl, bevor Sie neue Laufwerke hinzufügen.
+
+Geben Sie zum Hinzufügen von Kapazität einzelne Laufwerke mit an `addDrives` Parameter oder eine Menge an Laufwerkskapazität mit `addCapacity` Parameter. Wenn Sie verwenden `addDrives`, Der Host muss den Laufwerkssatz validieren, bevor der Vorgang ausgeführt werden kann. Wenn Sie den verwenden `addCapacity` Parameter. Die von Ihnen angegebene Kapazität dient als minimale Kapazität, die hinzugefügt werden soll. Die bewerteten Laufwerke haben den besten Abgleich mit der Servicequalität und einer Kapazität, die größer oder gleich der von Ihnen angegebenen ist, werden genutzt. Wenn kein Kandidat mit einer minimalen Übereinstimmung verfügbar ist oder die angegebene Laufwerksliste nicht verfügbar ist oder Attributfehler erkannt werden, schlägt der Vorgang fehl.
+
+Mit diesem Befehl können Sie auch die Eigentumsrechte an einem Laufwerk-Pool von einem Controller im Speicher-Array an einen anderen ändern. Wenn Sie diesen Befehl zum Ändern der Eigentümerschaft verwenden, wird sich dies mit dem Befehl zum Hinzufügen von Laufwerken oder zum Hinzufügen von Kapazität ausschließen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

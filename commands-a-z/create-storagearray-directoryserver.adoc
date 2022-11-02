@@ -1,0 +1,138 @@
+---
+permalink: commands-a-z/create-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: create, storage, array, directory server 
+summary: Mit dem Befehl create storageArray directoryServer können Sie einen neuen Verzeichnisserver hinzufügen, der zur Authentifizierung und Autorisierung von Benutzern verwendet werden soll. 
+---
+= Verzeichnisserver für Speicher-Array erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create storageArray directoryServer` Mit Befehl können Sie einen neuen Verzeichnisserver hinzufügen, der zur Authentifizierung und Autorisierung von Benutzern verwendet werden soll.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+create storageArray directoryServer
+       [domainId=pass:quotes[_"domainId"_
+       domainNames=(_"domainName1"..."domainNameN"_)
+       serverUrl="_serverUrl"_]
+       [bindAccount=pass:quotes[_"username_" bindPassword="_password_"]]
+       searchBaseDN=pass:quotes[_"distinguishedName"_
+       usernameAttribute="_attributeName_"
+       groupAttributes=("_attrName1"..."attrNameN_")]
+        [skipConfigurationTest={true | false}]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`domainId`
+ a| 
+Ermöglicht die Angabe einer eindeutigen ID für diese Domäne. Wenn nicht angegeben, wird eine eindeutige GUID generiert.
+
+
+
+ a| 
+`domainNames`
+ a| 
+Ermöglicht die Angabe eines oder mehrerer gültiger Domänennamen für den Verzeichnisserver. Wenn Sie mehrere Namen eingeben, trennen Sie die Werte durch ein Leerzeichen.
+
+
+
+ a| 
+`serverUrl`
+ a| 
+Ermöglicht die Angabe der URL für den Zugriff auf den LDAP-Server in Form von ldap[s]://hostAddress:Port. Wenn das LDAPS-Protokoll verwendet wird, stellen Sie sicher, dass die Root-/Zwischenzertifikate zur Validierung des signierten Zertifikats des Verzeichnisservers mithilfe der Zertifikatbefehle importiert werden.
+
+
+
+ a| 
+`bindAccount`
+ a| 
+Ermöglicht die Angabe des Benutzernamens oder der Bindungs-ID, die als Bindungskonto verwendet werden soll.
+
+
+
+ a| 
+`bindPassword`
+ a| 
+Ermöglicht die Angabe des Kennworts, das als Bindungspasswort verwendet werden soll.
+
+
+
+ a| 
+`searchBaseDN`
+ a| 
+Ermöglicht die Angabe der Suchbasis Distinguished Name, um nach LDAP-Benutzerobjekten zu suchen, um die Gruppenmitgliedschaft zu bestimmen.
+
+
+
+ a| 
+`usernameAttribute`
+ a| 
+Hier können Sie das Attribut angeben, das zum Suchen nach Benutzerobjekten zur Bestimmung der Gruppenmitgliedschaft verwendet werden soll. Wenn angegeben, muss der String die Variable enthalten `+{uid}+` Dieser wird durch den Benutzernamen ersetzt, der bei der Anmeldung verwendet wird. Beispiel: `+sAMAccountName={uid}+`
+
+
+
+ a| 
+`groupAttributes`
+ a| 
+Ermöglicht es Ihnen, ein oder mehrere Gruppenattribute festzulegen, die verwendet werden, um nach Gruppen-Distinguished-Namen zu suchen. Mithilfe von Distinguished Names können Sie die Gruppenmitgliedschaft für das Rollenzuordnung festlegen.
+
+[NOTE]
+====
+Wenn Sie mehrere Gruppen eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+====
+[NOTE]
+====
+Mit diesem Parameter werden vorhandene Gruppen gelöscht.
+
+====
+
+
+ a| 
+`skipConfigurationTest`
+ a| 
+Ermöglicht ihnen, den Konfigurationstest zu überspringen, bevor die Konfiguration gespeichert wird. Die Standardeinstellung lautet `false`.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+SMcli -n Array1 -c "create storageArray directoryServer
+domainNames=("company.com") serverUrl="ldap://hqldap.company.com:389"
+bindAccount="dummyBindDN" bindPassword="dummyPassword"
+searchBaseDN="OU=_Users,DC=hq, DC=company,DC=com"
+usernameAttributes="sAMAccountName={uid}" groupAttributes="memberOf";"
+
+SMcli completed successfully.
+----

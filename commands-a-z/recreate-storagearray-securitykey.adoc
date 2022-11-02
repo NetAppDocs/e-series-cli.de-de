@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/recreate-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: recreate, external, security key 
+summary: Der Befehl reproduzieren storageArray securityKey erzeugt einen Storage Array-Sicherheitsschlüssel für die Verwendung mit der externen Sicherheitsschlüsselverwaltungsfunktion. 
+---
+= Externen Sicherheitsschlüssel neu erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recreate storageArray securityKey` Der Befehl generiert einen Sicherheitsschlüssel für das Storage-Array erneut, um diesen mit der Funktion für das externe Sicherheitsschlüsselmanagement zu verwenden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+recreate storageArray securityKey
+passPhrase=pass:quotes[_"passPhraseString"_
+file="_fileName"_]
+[deleteOldKey=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können. Schließen Sie den Passphrase in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname mit dem Sicherheitsschlüssel. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+
+
+ a| 
+`deleteOldKey`
+ a| 
+Setzen Sie diesen Parameter auf `TRUE` So löschen Sie den alten Sicherheitsschlüssel vom externen Schlüsselverwaltungsserver, nachdem der neue Sicherheitsschlüssel erstellt wurde. Die Standardeinstellung lautet `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Die Passphrase muss zwischen acht und 32 Zeichen lang sein.
+* Der Passphrase muss mindestens einen Großbuchstaben enthalten.
+* Der Passphrase muss mindestens einen Kleinbuchstaben enthalten.
+* Der Passphrase muss mindestens eine Zahl enthalten.
+* Der Passphrase muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. < > @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+7.70
+
+11.73 fügt die hinzu `deleteOldKey` Parameter.

@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/delete-host.html 
+sidebar: sidebar 
+keywords: delete, host 
+summary: Mit dem Befehl delete Host wird ein oder mehrere Hosts gelöscht. 
+---
+= Host löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete host` Befehl löscht einen oder mehrere Hosts.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete host pass:quotes[[_hostName_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, den Sie löschen möchten. Fügen Sie den Hostnamen in eckige Klammern ([ ]) ein. Wenn der Hostname Sonderzeichen enthält, müssen Sie den Hostnamen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Ein Host ist ein Computer, der mit dem Speicherarray verbunden ist und über die Host-Ports des Hosts auf die Volumes im Speicher-Array zugreift.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20

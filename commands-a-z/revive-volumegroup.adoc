@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/revive-volumegroup.html 
+sidebar: sidebar 
+keywords: revive, volume, group 
+summary: Der Befehl „VolumeGroup neu beleben“ zwingt die angegebene Volume-Gruppe und die zugehörigen ausgefallenen Laufwerke auf den optimalen Zustand. 
+---
+= Volume-Gruppe neu beleben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `revive volumeGroup` Der Befehl erzwingt die angegebene Volume-Gruppe und die zugehörigen ausgefallenen Laufwerke zum optimalen Status.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Möglicher Verlust des Datenzugriffs* -- die korrekte Verwendung dieses Befehls hängt von der Datenkonfiguration auf allen Laufwerken in der Volume-Gruppe ab. Versuchen Sie niemals, ein Laufwerk wiederzubeleben, es sei denn, Sie werden durch technischen Support überwacht.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+revive volumeGroup pass:quotes[[_volumeGroupName_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, die auf den optimalen Status eingestellt werden soll. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

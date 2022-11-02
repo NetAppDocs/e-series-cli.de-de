@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/delete-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: delete, command, snmptrapdestination, existing, simple, network, management, protocol, trap, destination, previous, create, registered 
+summary: 'Der Befehl delete snmpTrapDestination löscht ein vorhandenes SNMP-Trap-Ziel (Simple Network Management Protocol), das Sie zuvor mit dem Befehl create snmpTrapDestination erstellt und registriert haben.' 
+---
+= Deaktivieren Sie das SNMP-Trap-Ziel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete snmpTrapDestination` Befehl löscht ein vorhandenes SNMP-Trap-Ziel (Simple Network Management Protocol), das Sie zuvor mit dem erstellt und registriert haben `create snmpTrapDestination` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snmpTrapDestination trapReceiverIP=_ipAddress_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+Die IP-Adresse des SNMP-Managers, von dem Sie das Senden von Trap-Nachrichten beenden möchten.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.30

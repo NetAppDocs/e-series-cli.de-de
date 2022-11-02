@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/start-ssdcache-performancemodeling.html 
+sidebar: sidebar 
+keywords: start, ssd, cache, performance, model 
+summary: Der Befehl „Start ssdCache Performance ceModeling“ startet die Leistungsmodellierung für den SSD-Cache. 
+---
+= Start der SSD-Cache-Performance-Modellierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start ssdCache performanceModeling` Befehl startet die Performance-Modellierung für den SSD-Cache.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Die Performance-Modellierung überwacht und misst I/O-Aktivitäten für einen Zeitraum und schätzt die Performance für verschiedene SSD-Cache-Größen. Die Performance wird anhand von zwei Metriken geschätzt: Cache-Trefferquote und durchschnittliche Reaktionszeit. Die Daten zur Leistungsmodellierung stehen erst zur Verfügung, wenn Sie den Vorgang mit dem beenden `stop ssdCache performanceModeling` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start ssdCache pass:quotes[[_ssdCacheName_]] performanceModeling
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, für den Sie die Performance modellieren möchten Schließen Sie den SSD-Cache-Namen in eckige Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den SSD-Cache-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Die Leistungsmodellierung endet und die Daten zur Leistungsmodellierung stehen zur Verfügung, wenn eine der folgenden Bedingungen eintritt:
+
+* Führen Sie die aus `stop ssdCache performanceModeling` Befehl.
+* Abrufen der Daten zur Performance-Modellierung mit der Storage-Management Software.
+
+
+Die Leistungsmodellierung endet, aber es stehen keine Daten zur Verfügung, wenn eine der folgenden Bedingungen eintritt:
+
+* Sie booten den Controller neu.
+* Sie nehmen alle Änderungen an der SSD-Cache-Konfiguration vor.
+* Der Status des SSD-Caches ändert sich.
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

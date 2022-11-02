@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/set-snapvolume-converttoreadwrite.html 
+sidebar: sidebar 
+keywords: set, read-only, snapshot, volume, read/write, volume 
+summary: Der Befehl set SnapVolume convertToReadWrite ändert ein Snapshot-Volume, das ein schreibgeschütztes Volume ist, in ein Snapshot-Volumen, das Lese-/Schreib-Volumen ist. 
+---
+= Legen Sie den schreibgeschützten Snapshot-Datenträger auf Lese-/Schreib-Volumen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapVolume convertToReadWrite` Befehl ändert ein Snapshot-Volumen, das ein schreibgeschütztes Volumen ist, in ein Snapshot-Volumen, das Lese-/Schreib-Volumen ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Mit diesem Befehl können Sie auch ein neues Repository-Volume für das Lese-/Schreib-Volume identifizieren oder ein Warnniveau für das Repository-Volume mit vollem Limit festlegen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapImageVolumeName_"]] convertToReadWrite
+[(repositoryVolume="repos_xxxx" |
+repositoryVolume=pass:quotes[(_volumeGroupName_] [capacity=pass:quotes[_capacityValue_]])
+repositoryVolume=pass:quotes[(_diskPoolName_] [capacity=pass:quotes[_capacityValue_]))]]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapVolume`
+ a| 
+Der Name des Snapshot-Volumens, den Sie von schreibgeschützt zu lesen/schreiben ändern möchten. Schließen Sie die Snapshot-Volume-Kennung in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]).
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Der Name des Repository-Volumes, das Sie für das Schreib-/Lese-Volume verwenden möchten.
+
+Es stehen zwei Optionen zur Verfügung, um den Namen eines Repository-Volumes festzulegen:
+
+* Ein vorhandenes Repository-Volume verwenden: Name
+* Erstellen Sie ein neues Repository-Volume, wenn Sie diesen Befehl ausführen
+
+
+Der Name eines vorhandenen Repository-Volumes besteht aus zwei Teilen:
+
+* Der Begriff „Repos“
+* Eine vierstellige numerische Kennung, die die Speicherverwaltungssoftware dem Namen des Repository-Volumes zuweist
+
+
+Schließen Sie den Namen des vorhandenen Repository-Volumes in doppelte Anführungszeichen (" ").
+
+Wenn Sie bei Ausführung dieses Befehls ein neues Repository-Volume erstellen möchten, müssen Sie entweder den Namen einer Volume-Gruppe oder eines Laufwerk-Pools eingeben, in dem das Repository-Volume erstellt werden soll. Optional können Sie auch die Kapazität des Repository-Volumes festlegen. Wenn Sie die Kapazität definieren möchten, können Sie die folgenden Werte verwenden:
+
+* Ein ganzzahliger Wert, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Ein Dezimaltrennzeichen, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Eine bestimmte Größe für das Repository-Volume erhalten. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+Wenn Sie die Kapazitätsoption nicht nutzen, setzt die Storage-Managementsoftware die Kapazität auf 20 Prozent der Kapazität des Basis-Volume.
+
+Bei Ausführung dieses Befehls erstellt die Speichermanagementsoftware das Repository-Volume für das Snapshot-Volume.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Der Prozentsatz der Kapazität des Repository-Volumes, mit der Sie eine Warnung erhalten, dass das Snapshot-Image-Repository-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Der Standardwert ist 75.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+Der Name des Repository-Volumes wird automatisch von der Speicherverwaltungssoftware und der Firmware beim Erstellen einer neuen Snapshot-Gruppe erstellt. Sie können das Repository-Volume nicht umbenennen, da durch das Umbenennen des Repository-Volumes die Verknüpfung mit den Snapshot-Images unterbrochen wird.
+
+Ein Repository-Volume für Snapshot-Gruppen ist ein erweiterbares Volume, das als verkettete Sammlung von bis zu 16 Standard-Volume-Einheiten strukturiert ist. Zu Beginn weist ein erweiterbares Repository Volume nur ein einziges Element auf. Die Kapazität des erweiterbaren Repository Volumes entspricht genau der des einzelnen Elements. Sie können die Kapazität eines erweiterbaren Repository-Volumes erhöhen, indem Sie ihm zusätzliche Standard-Volumes hinzufügen. Die zusammengesetzte, erweiterbare Repository-Volume-Kapazität wird dann zur Summe der Kapazitäten aller verketteten Standard-Volumes.
+
+Ein Snapshot Gruppen-Repository Volume muss eine Mindestkapazitätsanforderung erfüllen, die aus der Summe der folgenden ergibt:
+
+* 32 MB zur Unterstützung eines festen Overheads für die Snapshot-Gruppe und für die Copy-on-Write-Verarbeitung.
+* Kapazität für die Rollback-Verarbeitung, die 1/5000. Der Kapazität des Basis-Volumes beträgt.
+
+
+Die minimale Kapazität wird durch die Controller-Firmware und die Storage-Managementsoftware durchgesetzt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

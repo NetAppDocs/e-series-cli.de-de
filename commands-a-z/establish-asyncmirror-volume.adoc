@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/establish-asyncmirror-volume.html 
+sidebar: sidebar 
+keywords: establish, asynmirror, volume, asynchronous, mirrored, remote, storage, array, secondary, existing 
+summary: Mit dem Befehl async Mirror Volume einrichten wird ein asynchrones gespiegeltes Paar auf dem Remote Storage-Array abgeschlossen, indem ein sekundäres Volume zu einer bestehenden asynchronen Spiegelgruppe hinzugefügt wird. 
+---
+= Festlegung des asynchronen gespiegelten Paars
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `establish asyncMirror volume` Der Befehl schließt ein asynchrones gespiegeltes Paar auf dem Remote-Storage-Array durch Hinzufügen eines sekundären Volumes zu einer vorhandenen asynchronen Spiegelgruppe ab.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Bevor Sie diesen Befehl ausführen, muss die asynchrone Spiegelgruppe vorhanden sein und das primäre Volume in der asynchronen Spiegelgruppe vorhanden sein. Wenn dieser Befehl erfolgreich abgeschlossen ist, wird die asynchrone Spiegelung zwischen dem primären Volume und dem sekundären Volume gestartet.
+
+Die beiden Volumes, die ein asynchrones gespiegeltes Paar umfassen, funktionieren als einzelne Einheit. Über ein asynchrones gespiegeltes Paar können Sie Aktionen auf dem gesamten gespiegelten Paar gegenüber den beiden individuellen Volumes durchführen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[establish asyncMirror volume="_secondaryVolumeName_"]
+pass:quotes[asyncMirrorGroup="_asyncMirrorGroupName_"]
+pass:quotes[primaryVolume="_primaryVolumeName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines vorhandenen Volumes auf dem Remote-Storage-Array, das Sie für das sekundäre Volume verwenden möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name einer vorhandenen asynchronen Spiegelgruppe, die Sie verwenden möchten, um das asynchrone gespiegelte Paar zu enthalten. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`primaryVolume`
+ a| 
+Der Name eines vorhandenen Volumes auf dem lokalen Speicher-Array, das Sie für das primäre Volume verwenden möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Ein asynchrones gespiegeltes Paar besteht aus zwei Volumes, einem primären Volume und einem sekundären Volume, die identische Kopien derselben Daten enthalten. Das gespiegelte Paar ist Teil einer asynchronen Spiegelgruppe, die es dem gespiegelten Paar ermöglicht, gleichzeitig mit allen anderen gespiegelten Paaren innerhalb der asynchronen Spiegelgruppe zu synchronisieren.
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Bei Auswahl des primären Volume und des sekundären Volumes muss das sekundäre Volume größer oder gleich dem primären Volume sein. Die RAID-Ebene des sekundären Volumes muss nicht mit dem primären Volume identisch sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

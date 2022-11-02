@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/show-diskpool.html 
+sidebar: sidebar 
+keywords: show, disk pool 
+summary: Der Befehl show diskPool gibt Informationen zu einem Laufwerk-Pool zurück. 
+---
+= Zeigen Sie den Festplattenpool an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show diskPool` Befehl gibt Informationen über einen Laufwerk-Pool zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gibt diese Informationen über einen Laufwerk-Pool zurück:
+
+* Der Status (z. B. optimal, online, offline)
+* Die Gesamtkapazität
+* Die unveränderbare Kapazität, nutzbare Kapazität und nicht nutzbare Kapazität
+* Die genutzte Kapazität, freie Kapazität und Prozentsatz voll
+* Der aktuelle Besitzer (die Steuerung in Steckplatz A oder die Steuerung in Steckplatz B)
+* Laufwerkmedium (SAS)
+* Der Laufwerkstyp (HDD oder SSD)
+* Der Schnittstellentyp des Laufwerks (Fibre Channel, iSCSI, InfiniBand, SAS)
+* Schutz vor Verlust des Fachs (ja oder nein)
+* Secure-fähig: Gibt an, ob der Laufwerk-Pool aus allen sicheren Laufwerken besteht. Sichere Laufwerke können entweder FDE- oder FIPS-Laufwerke sein.
+* Secure - gibt an, ob die Laufwerksicherheit im Laufwerkpool aktiviert ist (dies wird als sicher aktiviert bezeichnet).
+* Die verbleibenden Kapazitätsbenachrichtigungen (kritisch und frühzeitiger Warnung)
+* Die Prioritätseinstellungen
+* Den damit verbundenen Volumes und der freien Kapazität
+* Die zugehörigen Laufwerke
+* Data Assurance-Funktionen und das Vorhandensein von Volumes, die Data Assurance unterstützen
+* Funktionen für die Ressourcenbereitstellung
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[show diskPool [_diskPoolName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, für den Sie Informationen abrufen. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]). Wenn der Disk-Pool-Name Sonderzeichen oder Ziffern hat, müssen Sie den Disk-Pool-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Verwenden Sie diesen Befehl, um den Laufwerkspool-Inhalt des Speicher-Array-Profils anzuzeigen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

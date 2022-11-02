@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/recover-disabled-driveports.html 
+sidebar: sidebar 
+keywords: recover, disable, drive ports 
+summary: Der Befehl drivePorts wiederherstellen stellt deaktivierte Laufwerksanschlüsse wieder her. 
+---
+= Deaktivierte Laufwerksanschlüsse wiederherstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recover disabled drivePorts` Befehl stellt deaktivierte Laufwerksports wieder her.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+recover disabled drivePorts;
+----
+
+
+== Beispiele
+
+[listing]
+----
+recover disabled drivePorts;
+----

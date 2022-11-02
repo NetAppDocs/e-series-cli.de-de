@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/reset-drive.html 
+sidebar: sidebar 
+keywords: reset, drive 
+summary: Der Befehl zum Zurücksetzen des Laufwerks schaltet ein Laufwerk in einer Volume-Gruppe oder einem Festplatten-Pool aus, um die Wiederherstellung eines Laufwerks zu unterstützen, das inkonsistent oder nicht optimal verhält. 
+---
+= Antrieb zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset drive` Die aus- und wieder-Einschaltzyklen eines Laufwerks in einer Volume-Gruppe oder einem Festplatten-Pool erleichtern das Recovery eines Laufwerks, das inkonsistentes oder nicht optimales Verhalten zeigt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Durch das aus- und Wiedereinschalten eines Laufwerks können Sie einige Fehler löschen, die zu inkonsistenten oder nicht optimalen Verhaltensweisen führen. Dadurch wird der Austausch eines Laufwerks vermieden, wenn nur ein vorübergehender, nicht tödlicher Fehler auftritt und das Laufwerk betriebsbereit bleiben kann. Das Zurücksetzen eines Laufwerks auf diese Weise verringert Unterbrechungen und vermeidet den Austausch eines Laufwerks.
+
+Wenn das Problem durch aus- und Wiedereinschalten des Laufwerks nicht behoben werden kann, werden die Daten vom Laufwerk kopiert und das Laufwerk wird zum Austausch heruntergefahren.
+
+[NOTE]
+====
+Dieser Befehl kann nicht für von Pliant hergestellte SSD-Laufwerke verwendet werden. Verwenden Sie die `show storageArray profile` Befehl oder das `show drive` Befehl zum Anzeigen des Herstellers der Laufwerke.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+reset drive([trayID,[drawerID,]slotID] | <"wwID">)
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`drive`
+ a| 
+Der World Wide Identifier (WWID) des Laufwerks, das ersetzt werden soll. Schließen Sie die WWID in doppelte Anführungszeichen (" ") innerhalb der Winkel Klammern (< >).
+
+|===
+
+
+== Hinweise
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0` , Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Nach dem aus- und Wiedereinschalten des Laufwerks muss der Controller überprüfen, ob das Laufwerk funktionsfähig ist, bevor es wieder in die Verwendung eingefügt werden kann. Wenn das Laufwerk nicht verifiziert werden kann, ist es als ausgefallenes Laufwerk markiert. Beim aus- und Wiedereinschalten eines ausgefallenen Laufwerks sind globale Hot-Spare-Festplatten und eine vollständige Kopie nach ihrer Wartung auf ein Ersatzlaufwerk erforderlich.
+
+Ausgefallene Laufwerke können in einem Zeitraum von 24 Stunden nicht mehr als einmal durch ein aus- und Wiedereinschalten zurückgesetzt werden, und in manchen Fällen kann das Zurücksetzen nicht mehr als einmal erfolgen. Schwellenwerte und Zähler für Energiezyklen von Laufwerken werden im persistenten Storage aufbewahrt und sind in State-Erfassungsdaten enthalten. Informationsereignisse werden protokolliert, wenn ein Laufwerk aus- und wieder eingeschaltet wird.
+
+
+
+== Minimale Firmware-Stufe
+
+8.20

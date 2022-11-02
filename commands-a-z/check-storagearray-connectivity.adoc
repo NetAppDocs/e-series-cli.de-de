@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/check-storagearray-connectivity.html 
+sidebar: sidebar 
+keywords: check, storage array, connectivity 
+summary: Der Befehl „Check storageArray Connectivity“ überprüft, ob das lokale Speicher-Array und das Remote-Speicher-Array über einen Kommunikationspfad verfügen und zeigt die Verbindungsdetails zwischen dem lokalen und dem Remote-Speicher-Array an. 
+---
+= Prüfen Sie die Verbindung zum Speicher-Array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `check storageArray connectivity` Mit dem Befehl wird sichergestellt, dass das lokale Speicher-Array und das Remote-Speicher-Array über einen Kommunikationspfad verfügen und die Verbindungsdetails zwischen dem lokalen und dem Remote-Speicher-Array angezeigt werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Bevor Sie eine asynchrone Spiegelgruppe erstellen, sollten Sie prüfen, ob das lokale Speicher-Array und das Remote-Speicher-Array miteinander kommunizieren können. Wenn Sie diesen Befehl ausführen, fragt das System auf allen geeigneten Host-Ports nach dem Remote-Speicher-Array ab, welche Ports mit dem Remote-Speicher-Array verbunden sind. Das Ergebnis des Tests ist eine Liste aller Ports im lokalen Speicher-Array sowie eine Liste der Port-Adressen für Remote-Speicher-Arrays, auf die über diesen Port zugegriffen werden kann.
+
+[NOTE]
+====
+Die Konnektivität wird über alle möglichen Kanäle getestet, und wenn es sich um eine Dual-Controller-Konfiguration handelt, wird die Konnektivität von jedem Controller überprüft. Es kann bis zu 20 Minuten dauern, bis die Konnektivität zwischen zwei Storage-Arrays überprüft wird.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+check storageArray connectivity
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_]|
+remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Der Name des Remote-Speicher-Arrays, für das Sie die Verbindung prüfen. Schließen Sie den Namen des Speicher-Arrays in doppelte Anführungszeichen („ “).
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+Der World Wide Identifier (WWID) des Speicherarrays, für das Sie die Konnektivität prüfen. Sie können zur Identifizierung des Storage-Arrays die WWID anstelle des Storage Array-Namens verwenden. Schließen Sie die WWID in Winkel-Klammern ( ).
+
+|===
+
+
+== Hinweise
+
+Bevor eine Spiegelung zwischen zwei Storage Arrays hergestellt werden kann, müssen sie über eine Fibre Channel-Verbindung oder eine iSCSI-Verbindung angeschlossen werden.
+
+Das asynchrone Fibre Channel Mirroring muss auf beiden Storage Arrays aktiviert sein, bevor sie zur Spiegelung oder Konnektivitätsprüfung miteinander kommunizieren können.
+
+Wenn das lokale Speicher-Array iSCSI unterstützt, ist die Verbindung über iSCSI aktiviert. Wenn das lokale Speicher-Array Fibre Channel unterstützt und Spiegelung über Fibre Channel aktiviert wurde, ist die Konnektivität über Fibre Channel aktiviert. Wenn das lokale Speicher-Array iSCSI oder Fibre Channel nicht unterstützt, wird eine Fehlermeldung angezeigt und der Vorgang abgebrochen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

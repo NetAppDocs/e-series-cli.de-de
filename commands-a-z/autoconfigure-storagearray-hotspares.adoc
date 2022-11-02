@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/autoconfigure-storagearray-hotspares.html 
+sidebar: sidebar 
+keywords: autoconfigure, storage, array, hot spares, supported, roles, syntax, parameters, minimum firmware level 
+summary: Der Befehl „AutoConfigure storageArray HotSpares“ definiert und konfiguriert die Hot Spares in einem Storage Array automatisch. Sie können diesen Befehl jederzeit ausführen. Dieser Befehl bietet die beste Hot-Spare-Abdeckung für ein Speicher-Array. 
+---
+= Automatische Konfiguration von Hot Spares für Speicher-Array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `autoConfigure storageArray hotSpares` Befehl definiert und konfiguriert die Hot Spares in einem Storage Array automatisch. Sie können diesen Befehl jederzeit ausführen. Dieser Befehl bietet die beste Hot-Spare-Abdeckung für ein Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+autoConfigure storageArray hotSpares
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Wenn Sie den ausführen `autoconfigure storageArray hotSpares` Der Befehl, die Controller-Firmware bestimmt die Anzahl der Hot Spares, die erstellt werden sollen, basierend auf der Gesamtzahl und dem Typ der Laufwerke im Storage Array. Bei SAS-Laufwerken erstellt die Controller-Firmware ein Hot Spare für das Storage Array und einen zusätzlichen Hot Spare für alle 60 Laufwerke im Speicher-Array.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

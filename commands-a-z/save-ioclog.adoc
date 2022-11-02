@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/save-ioclog.html 
+sidebar: sidebar 
+keywords: save, input, output, controller, ioc, dump 
+summary: Mit dem Befehl „IOCLog speichern“ werden die IOC Dumps von den Controllern in einem Speicher-Array in eine Datei auf einem Host gespeichert. 
+---
+= Speichern Sie den I/O-Dump (Input Output Controller)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save IOCLog` Der Befehl speichert die IOC Dumps von den Controllern in einem Speicher-Array in einer Datei auf einem Host.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save IOCLog [file=pass:quotes["_filename_"]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, auf den Sie den IOC-Dump speichern. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+[listing]
+----
+file="C:\Array Backups\IOCcoredump1.7z"
+----
+Dieser Befehl speichert die Daten in einer komprimierten Datei und fügt die Dateierweiterung hinzu `.7z` In die gespeicherte Datei. Der Standardname der Datei, der die IOC-bezogenen Daten für Controller im Speicher-Array enthält, verwendet den WWN des Speicher-Arrays.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl ruft von beiden Controllern die IOC Dump-Protokolldaten und die IOC Dump-Metadaten ab. Mit einem 7zip-Dateiformat werden die abgerufenen Daten archiviert und in einer einzigen Datei mit einem gewünschten Dateinamen komprimiert. Die Archivdatei 7zip enthält Folgendes:
+
+* Dateiname+"IOCLog"+[A natürlich B].gz -- die IOC-Protokolle von Controller A oder Controller B abgerufen, falls verfügbar
+* Dateiname+"IOCLogInfo"+[A B].txt -- das IOC protokolliert Metadateninformationen, die von Controller A oder Controller B abgerufen wurden. Wenn die IOC-Protokolldaten nicht von einem Controller abgerufen werden können, enthält die Datei Metadata .txt die Fehlerbedingung und den Grund.
+
+
+Die folgenden Fehlerbedingungen sind:
+
+* Die Controller-Plattform und HIC unterstützen keinen IOC Dump.
+* Die Controller haben keine IOC Dump-Daten gesammelt.
+
+
+Die komprimierten Protokolle befinden sich nicht in einem vom Menschen lesbaren Format. Sie müssen die Protokolle an den technischen Support senden, um ausgewertet zu werden.
+
+
+
+== Minimale Firmware-Stufe
+
+8.20

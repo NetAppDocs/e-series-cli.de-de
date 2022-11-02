@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/set-storagearray-localusername.html 
+sidebar: sidebar 
+keywords: set, storage, array, local, user, password, symbol 
+summary: Mit dem Befehl set storageArray localUsername und dem Befehl set storageArray Symbol können Sie ein Passwort für einen lokalen Benutzernamen oder ein Symbol-Passwort für eine bestimmte Rolle festlegen. 
+---
+= Lokales Benutzerpasswort oder Symbolkennwort für das Speicher-Array festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray localUsername` Befehl und das `set storageArray symbol` Mit diesem Befehl können Sie ein Passwort für einen lokalen Benutzernamen oder ein Symbol-Passwort für eine bestimmte Rolle festlegen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin, Support-Admin, Sicherheitsadministrator oder Storage-Monitor verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray (localUsername=pass:quotes[{ _admin_ | _storage_ | _security_ | _support_ | _monitor_}]
+| symbol [userRole={admin | monitor}])
+password="string" adminPassword="string"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`localUsername`
+ a| 
+Ermöglicht Ihnen, den Benutzer zum Ändern des Kennworts anzugeben. Gültige Auswahlmöglichkeiten: `admin`, `storage`, `support`, `monitor`, und `security`.
+
+
+
+ a| 
+`symbol`
+ a| 
+Ermöglicht das Ändern des Symbolkennworts. Gültige Auswahlmöglichkeiten: `admin` Und `monitor`.
+
+[NOTE]
+====
+Dies ist der Ersatz-Befehl für die veraltete `set storageArray password` Befehl.
+
+====
+
+
+ a| 
+`password`
+ a| 
+Ermöglicht das Festlegen des Kennworts für die Rolle.
+
+
+
+ a| 
+`adminPassword`
+ a| 
+Ermöglicht die Angabe des Admin-Passworts, das zum Festlegen eines neuen Passworts erforderlich ist.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray localUsername=storage password="newPassword" adminPassword="theAdminPassword";"
+SMcli -n Array1 -c "set storageArray localUsername=admin password="newAdminPassword" adminPassword="theAdminPassword";"
+SMcli -n Array1 -c "set storageArray symbol userRole=admin password="newSymbolPassword" adminPassword="theAdminPassword";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40 fügt den Befehl hinzu.

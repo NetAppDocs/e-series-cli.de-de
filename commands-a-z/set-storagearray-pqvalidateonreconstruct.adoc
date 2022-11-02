@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/set-storagearray-pqvalidateonreconstruct.html 
+sidebar: sidebar 
+keywords: set, storage, array, pq validation, reconstruct 
+summary: Der Befehl Set storageArray pqValidateOnReconstruct setzt den P/Q-Validierungsstatus des Speicherarrays auf die Rekonstruktion. Wenn diese Funktion aktiviert ist, werden die Daten sowohl mit Data+P als auch mit Data+Q rekonstruiert und die Ergebnisse auf Konsistenz geprüft, bevor das weitere Vorgehen bestimmt wird. 
+---
+= PQ-Validierung des Speicher-Arrays bei rekonstruieren festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray pqValidateOnReconstruct` Durch den Befehl wird der P/Q-Validierungsstatus des Storage-Arrays auf die Rekonstruktion festgelegt. Wenn diese Funktion aktiviert ist, werden die Daten sowohl mit Data+P als auch mit Data+Q rekonstruiert und die Ergebnisse auf Konsistenz geprüft, bevor das weitere Vorgehen bestimmt wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Diese Funktion gilt für Festplatten-Pools und RAID 6-Volume-Gruppen mit doppelter Parität. In diesem Fall existiert in der Volume-Gruppe oder im Festplatten-Pool nach wie vor Redundanz, wenn ein Laufwerk ausfällt. So kann die Konsistenz der Daten und der Parität während der Rekonstruktion geprüft werden. Wenn während der Rekonstruktion eine Inkonsistenz gefunden wird und Data Assurance für das Volume aktiviert ist, kann die Inkonsistenz möglicherweise ermittelt werden, sodass Daten mit den verbleibenden Laufwerken wiederhergestellt werden können. Wenn diese Funktion aktiviert ist und Data Assurance nicht für das Volume aktiviert ist oder die Inkonsistenz nicht auf einem einzelnen Laufwerk isoliert werden kann, wird der rekonstruierte Block als unlesbar markiert.
+
+Die Validierung kann die Rekonstruktionszeit für SSD-Laufwerke verlängern, damit diese Funktion basierend auf dem Medientyp aktiviert oder deaktiviert werden kann. Wenn diese Funktion für einen bestimmten Medientyp aktiviert ist, wird sie auf alle Pools und RAID 6-Volume-Gruppen angewendet, die diesen Medientyp verwenden.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray pqValidateOnReconstruct (enable | disable) driveMediaType=(hdd | ssd | allMedia)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`pqValidateOnReconstruct`
+ a| 
+Ändert die P/Q-Validierung auf Rekonstruktionsfähigkeit.
+
+
+
+ a| 
+`enable` Oder `disable`
+ a| 
+Aktiviert oder deaktiviert die P/Q-Validierung bei der Rekonstruktion.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Der Laufwerkmedientyp, mit dem die P/Q-Validierung auf die Rekonstruktionsfähigkeit eingestellt werden soll. Folgende Laufwerktypen werden unterstützt:
+
+* `hdd` Gibt an, dass Sie den Validierungsstatus auf Festplattenlaufwerken festlegen möchten
+* `ssd` Gibt an, dass Sie den Validierungsstatus auf Solid State Disks festlegen möchten
+* `allMedia` Gibt an, dass Sie den Validierungsstatus auf allen Medien im Speicher-Array festlegen möchten.
+
+
+|===
+
+
+== Beispiel für den Laufwerkstyp, der als Festplattenlaufwerke angegeben ist
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray pqValidateOnReconstruct enable driveMediaType=hdd;"
+
+SMcli completed successfully.
+----
+
+
+== Beispiel mit dem Laufwerkstyp, der als Solid State-Laufwerke angegeben ist
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray pqValidateOnReconstruct disable driveMediaType=ssd;"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

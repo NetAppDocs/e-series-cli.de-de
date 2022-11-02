@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-volume-initialization.html 
+sidebar: sidebar 
+keywords: start, volume, initialization 
+summary: Der Befehl Start Volume Initialize startet die Formatierung eines Volumes in einem Speicher-Array. 
+---
+= Starten Sie die Volume-Initialisierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volume initialize` Der Befehl beginnt die Formatierung eines Volumes in einem Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Beim Formatieren eines Volumens wird ein lang laufender Vorgang gestartet, der nicht gestoppt werden kann.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volume [_volumeName_]] initialize
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, das formatiert werden soll. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Zahlen hat, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

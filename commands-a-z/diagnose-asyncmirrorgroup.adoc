@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/diagnose-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: diagnose, command, tests, possible, communication, problems, local, storage, array, remote, asynchronous, mirror, group 
+summary: Der Befehl Diagnose Async MirrorGroup testet mögliche Kommunikationsprobleme zwischen dem lokalen Speicher-Array und dem Remote-Speicher-Array, das mit einer asynchronen Spiegelgruppe verknüpft ist. 
+---
+= Testen Sie die Konnektivität der asynchronen Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `diagnose asyncMirrorGroup` Mit Befehl werden mögliche Kommunikationsprobleme zwischen dem lokalen Speicher-Array und dem Remote-Speicher-Array getestet, das einer asynchronen Spiegelgruppe zugeordnet ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose asyncMirrorGroup [_asyncMirrorGroupName_]]
+testID=(all | connectivity | latency | bandwidth | portConnections)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name einer vorhandenen asynchronen Spiegelgruppe, die Sie testen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der asynchronen Spiegelgruppe in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`testID`
+ a| 
+Die Kennung für den Diagnosetest, den Sie ausführen möchten. Die Kennung und die entsprechenden Tests lauten wie folgt:
+
+* *Alle* -- führt alle Tests aus, die mit diesem Befehl verbunden sind.
+* *Konnektivität* -- überprüft, ob die beiden Controller einen Kommunikationspfad haben. Der Konnektivitätstest sendet eine Controller-übergreifende Meldung zwischen den Storage Arrays und validiert dann, dass die entsprechende asynchrone Spiegelgruppe im Remote-Storage-Array vorhanden ist. Es validiert außerdem, dass die Volume-Mitglieder der asynchronen Spiegelgruppe auf dem Remote-System die Volume-Mitglieder der asynchronen Spiegelgruppe auf dem lokalen System entsprechen.
+* *Latenz* -- sendet einen SCSI-Befehl für die Testeinheit an jedes Volume im Remote-Speicher-Array, das mit der asynchronen Spiegelgruppe verbunden ist, um die minimale, durchschnittliche und maximale Latenz zu testen.
+* *Bandwidth* -- sendet zwei Inter-Controller-Nachrichten an das Remote-Speicher-Array, um die minimale, durchschnittliche und maximale Bandbreite sowie die ausgehandelte Verbindungsgeschwindigkeit des Ports auf dem Controller zu testen, der den Test durchführt.
+* *Port Connections* -- zeigt den Port, der für die Spiegelung auf dem lokalen Speicher-Array verwendet wird, und den Port, der die gespiegelten Daten auf dem Remote-Speicher-Array empfängt.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

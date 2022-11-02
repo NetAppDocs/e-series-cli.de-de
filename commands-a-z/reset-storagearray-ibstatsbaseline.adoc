@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-ibstatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, infiniband, statistics, baseline 
+summary: Mit dem Befehl „Reset storageArray ibStatsBaseline“ wird die InfiniBand Statistics Baseline für das Speicher-Array auf 0 zurückgesetzt. 
+---
+= Zurücksetzen der Baseline-InfiniBand-Statistiken für das Speicher-Array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset storageArray ibStatsBaseline` Der Befehl setzt die Baseline der InfiniBand-Statistiken für das Speicher-Array auf 0 zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+[NOTE]
+====
+Dieser Befehl ist veraltet und wird von ersetzt xref:reset-storagearray-hostportstatisticsbaseline.adoc[Zurücksetzen der Baseline-Statistiken für den Host-Port des Speicher-Arrays] Befehl.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+reset storageArray ibStatsBaseline
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Dieser Befehl setzt nicht die in der Hardware und Firmware erhalten gewartete RAW-Anzahl zurück. Stattdessen erstellt die Firmware einen Snapshot der aktuellen Zählerwerte und verwendet diese Werte, um beim Abrufen der Statistiken Unterschiede in den Zählungen zu melden. Die neue Baseline-Zeit wird auf beide Controller angewendet, so dass die Anzahl der Controller miteinander synchronisiert wird. Wenn ein Controller zurückgesetzt wird, ohne dass der andere Controller zurückgesetzt wird, werden die Zähler nicht mehr synchronisiert. Der Client erkennt, dass die Controller nicht synchronisiert werden, da die Zeitstempeldaten, die zusammen mit den Statistiken gemeldet werden, für beide Controller nicht identisch sind.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+8.41 dieser Befehl ist veraltet.

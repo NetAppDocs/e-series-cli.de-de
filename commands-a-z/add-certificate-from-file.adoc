@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/add-certificate-from-file.html 
+sidebar: sidebar 
+keywords: add certificate file, supported arrays, syntax, parameters, minimum firmware level 
+summary: Mit dem Befehl Zertifikat aus Datei hinzufügen können Sie ein Zertifikat aus der Datei nehmen und es dem Vertrauensspeicher des CLI-Pakets hinzufügen. Das hinzugefügte Zertifikat wird nur vom CLI-Paket verwendet. 
+---
+= Zertifikat aus Datei hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Add certificate from file` Mit dem Befehl können Sie ein Zertifikat aus der Datei nehmen und zum Vertrauensspeicher des CLI-Pakets hinzufügen. Das hinzugefügte Zertifikat wird nur vom CLI-Paket verwendet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`filename`
+ a| 
+Ermöglicht die Angabe des Dateinamens, der das Zertifikat enthält.
+
+
+
+ a| 
+`user specified alias`
+ a| 
+Ermöglicht die Angabe eines Zertifikats über den benutzerdefinierten Alias.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

@@ -1,0 +1,52 @@
+---
+section: get-started
+title: Los geht's
+entries:
+- title: Formatierung von Befehlen
+  entries:
+  - title: Überblick
+    url: "/get-started/overview-format-commands.html"
+  - title: CLI-Struktur
+    entries:
+    - title: Struktur der CLI-Befehle
+      url: "/get-started/structure-of-a-cli-command.html"
+    - title: Interaktiver Modus
+      url: "/get-started/interactive-mode.html"
+    - title: CLI-Wrapper-Syntax
+      url: "/get-started/cli-command-wrapper-syntax.html"
+    - title: Herunterladenbare SMcli-Parameter
+      url: "/get-started/downloadable-smcli-parameters.html"
+    - title: Parameter für veraltete CLI
+      url: "/get-started/command-line-parameters.html"
+  - title: Befehlsstruktur des Skripts
+    entries:
+    - title: Struktur eines Skriptbefehls
+      url: "/get-started/structure-of-a-script-command.html"
+    - title: Übersicht über Skriptbefehle
+      url: "/get-started/synopsis-of-the-script-commands.html"
+    - title: Wiederholte Syntaxelemente
+      url: "/get-started/recurring-syntax-elements.html"
+  - title: Namenskonventionen
+    url: "/get-started/naming-conventions.html"
+  - title: Formatregeln
+    entries:
+    - title: CLI-Befehle
+      url: "/get-started/formatting-cli-commands.html"
+    - title: Skriptbefehle
+      url: "/get-started/formatting-rules-for-script-commands.html"
+    - title: Windows PowerShell
+      url: "/get-started/formatting-cli-commands-in-windows-powershell.html"
+  - title: Detaillierte Fehlerberichterstellung
+    url: "/get-started/detailed-error-reporting.html"
+  - title: Exit-Status
+    url: "/get-started/exit-status.html"
+  - title: Fügen Sie Kommentare zu einer Skriptdatei hinzu
+    url: "/get-started/adding-comments-to-a-script-file.html"
+  - title: Befehlsrichtlinien für Skript
+    url: "/get-started/usage-guidelines.html"
+  - title: Firmware-Kompatibilitätsstufen
+    url: "/get-started/firmware-compatibility-levels.html"
+- title: SMcli HTTPS-Modus
+  url: "/get-started/new-https-mode.html"
+- title: Migration von Volume-Gruppen
+  url: "/get-started/learn-about-volume-group-migration.html"

@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/set-storagearray-loginbanner.html 
+sidebar: sidebar 
+keywords: set, storage, array, login, banner 
+summary: Mit dem Befehl set storageArray loginBanner können Sie eine Textdatei hochladen, die als Anmeldebanner verwendet werden soll. Der Bannertext kann eine Empfehlung und eine Einwilligungsmeldung enthalten, die Benutzern angezeigt wird, bevor sie Sitzungen in SANtricity System Manager einrichten oder bevor sie Befehle ausführen. 
+---
+= Anmeldebanner für Storage-Arrays festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray loginBanner` Mit dem Befehl können Sie eine Textdatei hochladen, die als Anmeldebanner verwendet werden kann. Der Bannertext kann eine Empfehlung und eine Einwilligungsmeldung enthalten, die Benutzern angezeigt wird, bevor sie Sitzungen in SANtricity System Manager einrichten oder bevor sie Befehle ausführen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray loginBanner file="path_to_login_banner"
+----
+
+
+== Kontext
+
+Nachdem Sie die Textdatei geladen haben, wird sie im Speicher-Array gespeichert. Der Bannertext wird vor der Anmeldung beim SANtricity System Manager oder vor dem Ausführen von Befehlen angezeigt.
+
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in dem die Anmeldebanner-Textdatei gespeichert wird.
+
+[NOTE]
+====
+Die Anmeldebannerdatei darf nicht leer sein und muss mindestens 5 KB groß sein.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.41

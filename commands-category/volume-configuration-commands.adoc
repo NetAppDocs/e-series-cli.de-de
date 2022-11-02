@@ -1,0 +1,211 @@
+---
+permalink: commands-category/volume-configuration-commands.html 
+sidebar: sidebar 
+keywords: volume, configuration, commands, diskpool, host topology, internet, storage, service, extension, group 
+summary: Befehle für die Volume-Konfiguration 
+---
+= Befehle für die Volume-Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Disk-Pool-Befehle
+
+link:../commands-a-z/create-diskpool.html["Erstellen Sie einen Laufwerkspool"]
+
+link:../commands-a-z/delete-diskpool.html["Laufwerk-Pool löschen"]
+
+link:../commands-a-z/enable-diskpool-security.html["Aktivieren der Festplattenpool-Sicherheit"]
+
+link:../commands-a-z/reduce-disk-pool-capacity.html["Die Kapazität im Laufwerk-Pool wird gesenkt"]
+
+link:../commands-a-z/set-disk-pool.html["Legen Sie den Laufwerk-Pool fest"]
+
+link:../commands-a-z/set-disk-pool-modify-disk-pool.html["Legen Sie den Laufwerk-Pool fest (ändern Sie den Laufwerk-Pool)."]
+
+link:../commands-a-z/show-diskpool.html["Zeigen Sie den Festplattenpool an"]
+
+link:../commands-a-z/start-diskpool-fullprovisioning.html["Starten Sie Disk Pool Full Provisioning"]
+
+link:../commands-a-z/start-diskpool-locate.html["Starten Sie den Datenträgerpool suchen"]
+
+link:../commands-a-z/stop-diskpool-locate.html["Halten Sie den Laufwerk-Pool auf"]
+
+
+
+== Host-Topologiebefehle
+
+link:../commands-a-z/create-host.html["Host erstellen"]
+
+link:../commands-a-z/create-hostgroup.html["Hostgruppe erstellen"]
+
+link:../commands-a-z/create-hostport.html["Erstellen Sie den Host Port"]
+
+link:../commands-a-z/delete-host.html["Host löschen"]
+
+link:../commands-a-z/delete-hostgroup.html["Host-Gruppe löschen"]
+
+link:../commands-a-z/delete-hostport.html["Host-Port löschen"]
+
+link:../commands-a-z/set-host.html["Legen Sie den Host fest"]
+
+link:../commands-a-z/set-hostchannel.html["Hostkanal festlegen"]
+
+link:../commands-a-z/set-hostgroup.html["Legen Sie die Host-Gruppe fest"]
+
+link:../commands-a-z/set-hostport.html["Legen Sie den Host-Port fest"]
+
+link:../commands-a-z/show-allhostports.html["Zeigen Sie Host-Ports an"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Zeigt die Host-Topologie des Storage-Arrays an"]
+
+
+
+== Befehle für den Internet Storage Name Service (iSNS)
+
+link:../commands-a-z/set-storagearray.html["Legen Sie das Speicher-Array fest"]
+
+link:../commands-a-z/set-storagearray-isnsregistration.html["ISNS-Registrierung für Speicher-Array festlegen"]
+
+link:../commands-a-z/set-storagearray-isnsipv4configurationmethod.html["Legen Sie die IP-Server-IPv4-Adresse des Speicher-Arrays fest"]
+
+link:../commands-a-z/set-storagearray-isnsipv6address.html["IPv6-Adresse des Speicher-Array iSNS-Servers festlegen"]
+
+link:../commands-a-z/set-storagearray-isnslisteningport.html["Stellen Sie den iSNS-Server-Listening-Port des Speicherarrays ein"]
+
+link:../commands-a-z/set-storagearray-isnsserverrefresh.html["ISNS-Serveraktualisierung für Speicher-Array festlegen"]
+
+link:../commands-a-z/start-storagearray-isnsserverrefresh.html["Starten Sie die Aktualisierung des Speicher-Array-iSNS-Servers"]
+
+
+
+== ISCSI-Erweiterung für RDMA-Befehle (iSER)
+
+link:../commands-a-z/reset-storagearray-iserstatsbaseline.html["Zurücksetzen des Speicher-Array iSER-Basisplans"]
+
+link:../commands-a-z/save-storagearray-iserstatistics.html["ISER-Statistiken des Speicher-Arrays speichern"]
+
+link:../commands-a-z/set-isertarget.html["ISER-Ziel festlegen"]
+
+
+
+== ISCSI-Befehle
+
+link:../commands-a-z/create-iscsiinitiator.html["ISCSI-Initiator erstellen"]
+
+link:../commands-a-z/delete-iscsiinitiator.html["ISCSI-Initiator löschen"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Diagnose des iSCSI-Hostkabels des Controllers"]
+
+link:../commands-a-z/reset-storagearray-iscsistatsbaseline.html["ISCSI-Basisplan für Speicher-Array zurücksetzen"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Speichern Sie iSCSI-Statistiken für Speicher-Arrays"]
+
+link:../commands-a-z/set-iscsiinitiator.html["Setzen Sie den iSCSI-Initiator"]
+
+link:../commands-a-z/set-iscsitarget.html["Legen Sie die iSCSI-Zieleigenschaften fest"]
+
+link:../commands-a-z/show-iscsisessions.html["Zeigt aktuelle iSCSI-Sitzungen an"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Zeigen Sie Standards für die Verhandlung von Storage-Arrays an"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Zeigt nicht konfigurierte iSCSI-Initiatoren des Speicherarrays an"]
+
+link:../commands-a-z/start-controller-iscsihostport-dhcprefresh.html["Starten Sie die iSCSI-DHCP-Aktualisierung"]
+
+link:../commands-a-z/stop-storagearray-iscsisession.html["Beenden Sie die iSCSI-Sitzung des Speicherarrays"]
+
+
+
+== Volume-Befehle
+
+link:../commands-a-z/check-volume-parity.html["Prüfen Sie die Volume-Parität"]
+
+link:../commands-a-z/create-mapping-volume.html["Volume-Zuordnung Erstellen"]
+
+link:../commands-a-z/clear-volume-reservations.html["Löschen Sie Volume-Reservierungen"]
+
+link:../commands-a-z/clear-volume-unreadablesectors.html["Volumen unlesbare Sektoren löschen"]
+
+link:../commands-a-z/create-raid-volume-automatic-drive-select.html["Erstellen von RAID-Volumes (automatische Laufwerkauswahl)"]
+
+link:../commands-a-z/create-raid-volume-free-extent-based-select.html["RAID-Volume erstellen (freie Erweiterungsauswahl)"]
+
+link:../commands-a-z/create-raid-volume-manual-drive-select.html["Erstellen von RAID-Volumes (Auswahl manueller Laufwerke)"]
+
+link:../commands-a-z/create-volume-diskpool.html["Erstellen Sie ein Volume im Festplatten-Pool"]
+
+link:../commands-a-z/delete-volume.html["Volume löschen"]
+
+link:../commands-a-z/delete-volume-from-disk-pool.html["Löschen des Volumes aus dem Disk-Pool"]
+
+link:../commands-a-z/start-increasevolumecapacity-volume.html["Kapazität des Volumes im Disk-Pool oder Volume-Gruppe erhöhen..."]
+
+link:../commands-a-z/start-volume-initialize.html["Thin Volume initialisieren"]
+
+link:../commands-a-z/recover-volume.html["RAID-Volume wiederherstellen"]
+
+link:../commands-a-z/remove-lunmapping.html["Entfernen der Volume-LUN-Zuordnung"]
+
+link:../commands-a-z/repair-volume-parity.html["Reparatur-Volume-Parität"]
+
+link:../commands-a-z/repair-data-parity.html["Datenparität Reparieren"]
+
+link:../commands-a-z/set-thin-volume-attributes.html["Legen Sie Attribute für Thin Volumes fest"]
+
+link:../commands-a-z/set-volumes.html["Legen Sie Volume-Attribute für ein Volume in einem Laufwerk-Pool fest..."]
+
+link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Volume-Attribute für ein Volume in einer Volume-Gruppe festlegen..."]
+
+link:../commands-a-z/set-volume-logicalunitnumber.html["Legen Sie die Volume-Zuordnung fest"]
+
+link:../commands-a-z/show-volume.html["Thin Volume anzeigen"]
+
+link:../commands-a-z/show-volume-summary.html["Volumen anzeigen"]
+
+link:../commands-a-z/show-volume-actionprogress.html["Zeigt den Fortschritt der Volume-Aktion an"]
+
+link:../commands-a-z/show-volume-performancestats.html["Zeigt Statistiken zur Volume-Performance an"]
+
+link:../commands-a-z/show-volume-reservations.html["Zeigen Sie Volume-Reservierungen an"]
+
+link:../commands-a-z/start-volume-initialization.html["Starten Sie die Volume-Initialisierung"]
+
+
+
+== Befehle für Volume-Gruppen
+
+link:../commands-a-z/create-volumegroup.html["Volume-Gruppe erstellen"]
+
+link:../commands-a-z/delete-volumegroup.html["Volume-Gruppe löschen"]
+
+link:../commands-a-z/enable-volumegroup-security.html["Aktivieren der Sicherheit von Volume-Gruppen"]
+
+link:../commands-a-z/revive-volumegroup.html["Volume-Gruppe neu beleben"]
+
+link:../commands-a-z/set-volumegroup.html["Legen Sie die Volume-Gruppe fest"]
+
+link:../commands-a-z/set-volumegroup-forcedstate.html["Erzwungener Status der Volume-Gruppe festlegen"]
+
+link:../commands-a-z/show-volumegroup.html["Zeigen Sie Volume-Gruppe an"]
+
+link:../commands-a-z/show-volumegroup-exportdependencies.html["Zeigen Sie die Exportabhängigkeiten der Volume-Gruppen an"]
+
+link:../commands-a-z/show-volumegroup-importdependencies.html["Zeigen Sie die Importabhängigkeiten der Volume-Gruppen an"]
+
+link:../commands-a-z/start-volumegroup-defragment.html["Defragmentieren der Volume-Gruppe starten"]
+
+link:../commands-a-z/start-volumegroup-export.html["Starten des Volume-Gruppenexports"]
+
+link:../commands-a-z/start-volumegroup-fullprovisioning.html["Starten Sie Vollprovisionierung Von Volume-Gruppen"]
+
+link:../get-started/learn-about-volume-group-migration.html["Informationen über die Migration von Volume-Gruppen (nur CLI)"]
+
+link:../commands-a-z/start-volumegroup-import.html["Starten Sie den Import der Volume-Gruppe"]
+
+link:../commands-a-z/start-volumegroup-locate.html["Starten Sie die Volume-Gruppe lokalisieren"]
+
+link:../commands-a-z/stop-volumegroup-locate.html["Stoppen Sie die Suche der Volume-Gruppe"]

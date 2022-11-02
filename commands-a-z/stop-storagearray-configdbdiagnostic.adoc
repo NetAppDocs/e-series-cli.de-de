@@ -1,0 +1,58 @@
+---
+permalink: commands-a-z/stop-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: stop, storage, array, configuration, database, diagnostic 
+summary: Mit dem Befehl „stop storageArray configDbDiagnostic“ wird der Diagnosetest angehalten, um die Konfigurationsdatenbank in der Controller-Firmware zu validieren, die mit dem Befehl „Start storageArray config DbDiagnostic“ gestartet wurde. 
+---
+= Die Diagnose der Konfigurationsdatenbank für das Speicher-Array wird angehalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop storageArray configDbDiagnostic` Mit dem Befehl wird der Diagnosetest angehalten, um die Konfigurationsdatenbank in der Controller-Firmware zu validieren, die von gestartet wurde `start storageArray configDbDiagnostic` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+stop storageArray configDbDiagnostic
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Die Controller-Firmware gibt eine Bestätigung aus, dass der Diagnosetest abgebrochen wurde.
+
+Zudem können Sie den Diagnosetest für die Datenbankkonfiguration über die Storage Management Software GUI starten. Sie können den Diagnosetest für die Datenbankkonfiguration jedoch nicht über die Storage Management Software GUI beenden. Wenn Sie einen laufenden Diagnosetest beenden möchten, müssen Sie den verwenden `stop storageArray configDbDiagnostic` Befehl.
+
+Wenn Sie versuchen, den zu verwenden `stop storageArray configDbDiagnostic` Befehl nach der Validierung der Konfiguration des Speicherarrays erhalten Sie keine Meldung, dass die Validierung abgeschlossen ist. Dieses Verhalten wird erwartet.
+
+
+
+== Minimale Firmware-Stufe
+
+7.75
+
+7.77 verfeinert den Einsatz.

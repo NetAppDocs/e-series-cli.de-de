@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/show-storagearray-powerinfo.html 
+sidebar: sidebar 
+keywords: show, storage, array, power, information 
+summary: Der Befehl show storageArray powerInfo gibt Informationen über den Energieverbrauch des gesamten Speicher-Arrays und jedes Tray im Speicher-Array zurück. 
+---
+= Zeigt Informationen zur Stromversorgung des Speicherarrays an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray powerInfo` Der Befehl gibt Informationen über die vom gesamten Storage Array und den einzelnen Trays im Storage Array verbrauchte Energie zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray powerInfo
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Dieser Befehl gibt Informationen zum Stromverbrauch zurück, die diesem Beispiel ähnlich sind.
+
+[listing]
+----
+total power drawn: 310 watts
+number of trays: 1
+tray power input details:
+   tray id  power supply serial number  input power
+   0        0                           160 watts
+   0        1                           150 watts
+----
+
+
+== Minimale Firmware-Stufe
+
+8.10

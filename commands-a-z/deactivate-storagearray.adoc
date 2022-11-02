@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/deactivate-storagearray.html 
+sidebar: sidebar 
+keywords: deactivate, asynchronous, mirroring 
+summary: Mit der Funktion „Storage Array deaktivieren“ wird die Funktion „Asynchronous Mirroring“ deaktiviert. 
+---
+= Deaktivieren Sie die asynchrone Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `deactivate storageArray feature` Deaktiviert die Funktion Asynchronous Mirroring.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Alle bestehenden asynchronen Spiegelgruppen oder asynchronen gespiegelten Paare müssen aus dem lokalen Storage-Array und dem Remote-Storage-Array gelöscht werden, bevor die Funktion zur asynchronen Spiegelung deaktiviert werden kann.
+
+
+
+== Syntax
+
+[listing]
+----
+deactivate storageArray feature=asyncRemoteMirror
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

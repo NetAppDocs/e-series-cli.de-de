@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/suspend-syncmirror-primaries.html 
+sidebar: sidebar 
+keywords: suspend, synchronous, mirror 
+summary: Der Befehl SyncMirror primaries suspendieren unterbricht einen synchronen Spiegelungsvorgang. 
+---
+= Unterbrechen Sie die synchrone Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `suspend syncMirror primaries` Befehl unterbricht einen synchronen Spiegelungsvorgang.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+suspend syncMirror (primary pass:quotes[[_primaryVolumeName_]]
+primaries pass:quotes[[_primaryVolumeName1_ ... _primaryVolumeNameN_])]
+[writeConsistency=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`primary`
+ a| 
+Der Name des primären Volume, für das der Vorgang unterbrochen werden soll. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`primaries`
+ a| 
+Die Namen mehrerer primärer Volumes, für die der Betrieb unterbrochen werden soll. Alle Volumes haben die gleichen Eigenschaften. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen oder Ziffern enthalten, geben Sie die Namen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`writeConsistency`
+ a| 
+Dieser Parameter definiert, ob sich die in diesem Befehl angegebenen Volumes in einer Write-Konsistenzgruppe befinden oder separat sind. Legen Sie für die Volumes in derselben Schreibarchgruppe den Parameter auf fest `TRUE`. Legen Sie für die separaten Volumes diesen Parameter auf fest `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie die einstellen `writeConsistency` Parameter an `TRUE`, Die Volumes müssen sich in einer Write-Consistency Group (oder Gruppen) befinden. Dieser Befehl unterbricht alle Write-Consistency Groups, die die Volumes enthalten. Wenn sich beispielsweise die Volumes A, B und C in einer Write-Konsistenzgruppe befinden und Remote-Gegenstücke A`', B`' und C`' besitzen, dann der Befehl:
+
+[listing]
+----
+suspend syncMirror volume ["A"] writeConsistency=TRUE
+----
+SUSPENDIERT A-A`', B-B`' UND C-C`'. Wenn Sie eine Write-Konsistenzgruppe 1={A, B, C} und Write-Konsistenzgruppe 2={D, E, F} haben, dann geben Sie den Befehl:
+
+[listing]
+----
+suspend syncMirror volumes ["A" "D"] writeConsistency=TRUE
+----
+Unterbricht beide Write-Consistency Groups.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

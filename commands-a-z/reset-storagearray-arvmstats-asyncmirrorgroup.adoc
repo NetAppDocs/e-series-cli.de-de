@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: reset, asynchronous, mirror group, statistics 
+summary: Der Befehl storageArray arvmStats async cMirrorGroup setzt die Synchronisierungsstatistiken für ein oder mehrere Mitglied-Volumes in einer asynchronen Spiegelgruppe auf eine relative 0 zurück. 
+---
+= Statistiken für asynchrone Spiegelgruppen werden zurückgesetzt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset storageArray arvmStats asyncMirrorGroup` Mit dem Befehl werden die Synchronisierungsstatistiken für ein oder mehrere Mitgliedervolumes in einer asynchronen Spiegelgruppe auf relativ 0 zurückgesetzt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+reset storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTime | errors)
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, für die Sie die Synchronisierungsstatistiken zurücksetzen. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der asynchronen Spiegelgruppe in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`volume`
+ a| 
+Dieser Parameter ist optional. Der Name des spezifischen Mitgliedsvolumes in der asynchronen Spiegelgruppe, für die Sie die Synchronisierungsstatistiken zurücksetzen. Wenn kein Volume angegeben wird, werden die Statistiken für jedes Member Volume in der asynchronen Spiegelgruppe zurückgesetzt.
+
+Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`sampleType`
+ a| 
+Dieser Parameter ist optional. Der Standardwert für `sampleType` Ist `all`.
+
+* `all`-- die Daten aller drei Sample-Typen werden zurückgesetzt.
+* `mostRecent` -- Statistiken werden für die letzten 50 Resynchronisatoren zurückgesetzt.
+* `longestSyncTime` -- Statistiken werden für die letzten 20 längsten Resynchronisatoren zurückgesetzt.
+* `errors`-- Statistiken werden für die letzten 20 fehlgeschlagenen Resynchronisatoren zurückgesetzt.
+
+
+|===
+
+
+== Hinweise
+
+Statistiken werden für gespiegelte Volumes in der primären Rolle zurückgesetzt. Die zurücksetzen Statistik enthält folgende Daten:
+
+* Startzeit der Synchronisierung
+* Synchronisationstyp (manuell oder periodisch)
+* Synchronisierungsdauer
+* Anzahl der gesendeten Bytes
+* Maximale und minimale Schreibgeschwindigkeit (für einen einzelnen Schreibvorgang)
+* Maximale und minimale Synchronisierungsdatenrate
+* Gesamte Schreiblzeit
+* Repository-Auslastung (%)
+* Alter des Wiederherstellungspunkts
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

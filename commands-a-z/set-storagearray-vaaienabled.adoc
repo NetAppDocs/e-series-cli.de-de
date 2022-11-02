@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-vaaienabled.html 
+sidebar: sidebar 
+keywords: enable, disable, vaai 
+summary: 'Der Befehl Set storageArray vaaiEnabled aktiviert oder deaktiviert die VMware vStorage API Array-Architektur (VAAI) für ein Storage-Array.' 
+---
+= VAAI aktivieren oder deaktivieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray vaaiEnabled` Befehl aktiviert oder deaktiviert die VMware vStorage API Array-Architektur (VAAI) für ein Storage-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Beim Speicher-Array ist VAAI aktiviert. Verwenden Sie diesen Befehl, um VAAI zu deaktivieren, wenn Sie VAAI nicht ausführen möchten oder wenn VAAI Probleme mit dem Speicher-Array verursacht. Das einzige betroffene Storage Array ist das Storage Array, auf dem der Befehl ausgeführt wird.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray vaaiEnabled=(TRUE | FALSE)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`vaaiEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten von VAAI. Um VAAI zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um VAAI auszuschalten, setzen Sie diesen Parameter auf `FALSE`. Die Standardeinstellung ist, dass VAAI eingeschaltet ist.
+
+|===
+
+
+== Hinweise
+
+[NOTE]
+====
+Mit VAAI können einige Storage-Aufgaben von der Server-Hardware auf ein Storage-Array ausgelagert werden. Durch das verlagern der Storage-Aufgaben auf ein Storage-Array wird die Host-Performance gesteigert, da die vom Host zu leistenden Aufgaben reduziert werden müssen.
+
+====
+[NOTE]
+====
+Zeigen Sie die VAAI-Einstellung mit dem an `show storageArray odxSetting` Name:
+
+====
+
+
+== Minimale Firmware-Stufe
+
+8.20

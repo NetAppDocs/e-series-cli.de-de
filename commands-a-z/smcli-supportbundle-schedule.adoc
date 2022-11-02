@@ -1,0 +1,388 @@
+---
+permalink: commands-a-z/smcli-supportbundle-schedule.html 
+sidebar: sidebar 
+keywords: schedule, automatic, support, bundle, collection, configuration 
+summary: Mit dem Befehl SMcli -supportBundle Schedule wird ein Zeitplan zum Speichern eines Supportpakets auf einem oder mehreren Speicherarrays erstellt oder entfernt. Sie erfassen System- und Konfigurationsdaten in den Support-Paketen, um die Informationen an den technischen Support für Analyse und Diagnose zu übermitteln. 
+---
+= Planen der Konfiguration für die automatische Support-Bundle-Sammlung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli -supportBundle schedule` Befehl erstellt oder entfernt einen Zeitplan zum Speichern eines Support-Pakets auf einem oder mehreren Speicher-Arrays. Sie erfassen System- und Konfigurationsdaten in den Support-Paketen, um die Informationen an den technischen Support für Analyse und Diagnose zu übermitteln.
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+Sie können zwei Arten von Zeitplänen erstellen:
+
+* Täglich/wöchentlich – Verwenden Sie diesen Zeitplan, wenn Sie häufig Daten erfassen müssen, um neue Konfigurationen zu überwachen oder eine bestehende Konfiguration zu beheben.
+* Monatlich/jährlich -- Verwenden Sie diesen Zeitplan, wenn Sie Daten für die Bewertung des Langzeitbetriebs Ihres Speicherarrays sammeln.
+
+
+
+
+== Syntax zum Erstellen eines Tages-/Wochenplans
+
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule enable
+pass:quotes[(all | _storageArrayName_)]
+pass:quotes[startTime=_HH:MM_]
+pass:quotes[startDate=_MM:DD:YYYY_]
+pass:quotes[endDate=_MM:DD:YYYY_]
+daysOfWeek=[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+pass:quotes[data=_pathName_]
+----
+
+
+== Syntax zum Erstellen eines monatlichen/jährlichen Zeitplans
+
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule enable
+pass:quotes[(all | _storageArrayName_)]
+pass:quotes[startTime=_HH:MM_]
+pass:quotes[startDate=_MM:DD:YYYY_]
+pass:quotes[endDate=_MM:DD:YYYY_]
+months=[January February March April May June July August September October
+November December]
+weekNumber=(First|Second|Third|Fourth|Last)
+dayOfWeek=(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)|
+onDays=[1-31] |
+pass:quotes[data=_pathName_]
+----
+
+
+== Syntax zum Entfernen eines Zeitplans
+
+[NOTE]
+====
+Mit diesem Befehl wird der Zeitplan für das Speicher-Array vollständig entfernt. Um die Informationen zu Supportbündeln erneut zu speichern, müssen Sie einen neuen Zeitplan erstellen.
+
+====
+[listing, subs="+macros"]
+----
+SMcli -supportBundle schedule disable
+pass:quotes[(all|_storageArrayName_)]
+----
+
+
+== Parameter
+
+In der folgenden Tabelle sind die Parameter für einen Tages-/Wochenplan aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`enable`
+ a| 
+Aktivieren Sie die automatische Erfassung von Supportpaketen, wenn ein kritisches MEL-Ereignis erkannt wird. Mit diesem Parameter wird das Sammeln von Support Bundle-Daten fortgesetzt, wenn sie ausgesetzt wurden. Sie müssen den Parameter verwenden, wenn Sie einen neuen Zeitplan erstellen oder einen vorhandenen Zeitplan ändern.
+
+
+
+ a| 
+`all`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie einen Erfassungszeitplan für alle vom Host erkannten Speicher-Arrays festlegen möchten.
+
+
+
+ a| 
+`_storageArrayName_`
+ a| 
+Der Name eines bestimmten Speicherarrays, für das Sie einen Zeitplan festlegen möchten.
+
+
+
+ a| 
+`startTime`
+ a| 
+Die Tageszeit, zu der die Sammlung eines Support Bundles beginnen soll. Das Format für die Eingabe der Zeit ist HH:MM, wobei HH die Stunde und MM ist die Minute nach der Stunde. Verwenden Sie einen 24-Stunden-Takt.
+
+Der Standardwert ist 00:00 Uhr. Wenn Sie keine Startzeit eingeben und Sie die Support Bundle-Sammlung aktiviert haben, erfolgt die Erfassung der Daten automatisch um Mitternacht.
+
+
+
+ a| 
+`startDate`
+ a| 
+Ein bestimmtes Datum, an dem Sie mit dem Erfassen von Support-Bundle-Daten beginnen möchten. Das Format zur Eingabe des Datums ist MM:TT:JJ.
+
+Das Standarddatum ist das aktuelle Datum.
+
+
+
+ a| 
+`endDate`
+ a| 
+Ein bestimmtes Datum, an dem Sie das Sammeln von Support-Bundle-Daten beenden möchten. Das Format zur Eingabe des Datums ist MM:TT:JJ.
+
+Der Standardwert ist keine.
+
+Wenn Sie diesen Parameter verwenden, muss dieser mindestens eine Woche nach dem Startdatum liegen und kann in der Vergangenheit nicht auftreten.
+
+
+
+ a| 
+`daysOfWeek`
+ a| 
+Bestimmte Tage oder Wochentage, an denen Sie Support-Bundle-Daten sammeln möchten. Verwenden Sie diesen Parameter, wenn Sie Support-Bundle-Daten an einem oder mehreren Wochentagen sammeln möchten. Beispiel:
+
+[listing]
+----
+daysOfWeek=[Tuesday]
+----
+[listing]
+----
+daysOfWeek=[Monday Wednesday Friday]
+----
+Schließen Sie die Wochentage in eckige Klammern ([ ]). Wenn Sie mehr als einen Tag eingeben, trennen Sie jeden Tag mit einem Leerzeichen.
+
+
+
+ a| 
+`data`
+ a| 
+Der Dateipfad und der Dateiname, auf den Sie die Support-Bundle-Daten speichern möchten. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\data.txt"
+----
+[NOTE]
+====
+Sie können jede beliebige Dateiendung tragen .
+
+====
+Schließen Sie den Dateipfad und den Namen in doppelte Anführungszeichen (" ").
+
+|===
+In der folgenden Tabelle sind die Parameter für einen monatlichen/jährlichen Zeitplan aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`enable`
+ a| 
+Aktivieren Sie die automatische Erfassung von Supportpaketen, wenn ein kritisches MEL-Ereignis erkannt wird. Mit diesem Parameter wird das Sammeln von Support Bundle-Daten fortgesetzt, wenn sie ausgesetzt wurden. Sie müssen den Parameter verwenden, wenn Sie einen neuen Zeitplan erstellen oder einen vorhandenen Zeitplan ändern.
+
+
+
+ a| 
+`all`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie einen Erfassungszeitplan für alle vom Host erkannten Speicher-Arrays festlegen möchten.
+
+
+
+ a| 
+`storageArrayName`
+ a| 
+Der Name eines bestimmten Speicherarrays, für das Sie einen Zeitplan festlegen möchten.
+
+
+
+ a| 
+`startTime`
+ a| 
+Die Tageszeit, zu der die Sammlung eines Support Bundles beginnen soll. Das Format für die Eingabe der Zeit ist HH:MM, wobei HH die Stunde und MM ist die Minute nach der Stunde. Verwenden Sie einen 24-Stunden-Takt.
+
+Der Standardwert ist 00:00 Uhr. Wenn Sie keine Startzeit eingeben und Sie die Support Bundle-Sammlung aktiviert haben, erfolgt die Erfassung der Daten automatisch um Mitternacht.
+
+
+
+ a| 
+`startDate`
+ a| 
+Ein bestimmtes Datum, an dem Sie mit dem Erfassen von Support-Bundle-Daten beginnen möchten. Das Format zur Eingabe des Datums ist MM:TT:JJ.
+
+Das Standarddatum ist das aktuelle Datum.
+
+
+
+ a| 
+`endDate`
+ a| 
+Ein bestimmtes Datum, an dem Sie das Sammeln von Support-Bundle-Daten beenden möchten. Das Format zur Eingabe des Datums ist MM:TT:JJ.
+
+Der Standardwert ist keine.
+
+
+
+ a| 
+`months`
+ a| 
+Bestimmte Monate oder Monate des Jahres, in dem Sie Support Bundle-Daten sammeln möchten. Verwenden Sie diesen Parameter, wenn Sie Support-Bundle-Daten für einen oder mehrere Monate eines Jahres sammeln möchten. Beispiel:
+
+[listing]
+----
+months=[June]
+----
+[listing]
+----
+months=[January April July October]
+----
+Schließen Sie den Monat in eckigen Klammern ([ ]). Wenn Sie mehr als einen Monat eingeben, trennen Sie jeden Monat mit einem Leerzeichen.
+
+
+
+ a| 
+`weekNumber`
+ a| 
+Eine Woche in dem Monat, in dem Sie Support Bundle-Daten sammeln möchten. Beispiel:
+
+[listing]
+----
+weekNumber=first
+----
+
+
+ a| 
+`dayOfWeek`
+ a| 
+Ein bestimmter Wochentag, an dem Sie Support-Bundle-Daten sammeln möchten. Verwenden Sie diesen Parameter, wenn Sie Support-Bundle-Daten nur an einem Tag der Woche sammeln möchten. Beispiel:
+
+[listing]
+----
+dayOfWeek=Wednesday
+----
+
+
+ a| 
+`onDays`
+ a| 
+Bestimmte Tage oder Tage in einem Monat, an dem Sie Support Bundle-Daten sammeln möchten. Beispiel:
+
+[listing]
+----
+onDays=[15]
+----
+[listing]
+----
+onDays=[7 21]
+----
+Schließen Sie den Tag in eckigen Klammern ([ ]). Wenn Sie mehr als einen Tag eingeben, trennen Sie jeden Tag mit einem Leerzeichen.
+
+[NOTE]
+====
+Sie können das nicht verwenden `*onDays*` Parameter mit dem `*weekNumber*` Parameter oder der `*dayOfWeek*` Parameter.
+
+====
+
+
+ a| 
+`data`
+ a| 
+Der Dateipfad und der Dateiname, auf den Sie die Support-Bundle-Daten speichern möchten. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\data.txt"
+----
+[NOTE]
+====
+Sie können jede beliebige Dateiendung tragen .
+
+====
+Schließen Sie den Dateipfad und den Namen in doppelte Anführungszeichen (" ").
+
+|===
+In der folgenden Tabelle werden die Parameter zum Entfernen eines Zeitplans aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`disable`
+ a| 
+Deaktiviert die automatische Sammlung von Supportpaketen und löscht alle zuvor definierten Zeitpläne sofort.
+
+[NOTE]
+====
+Durch Deaktivieren eines Zeitplans wird auch der Zeitplan gelöscht.
+
+====
+
+
+ a| 
+`all`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie einen Erfassungszeitplan für alle vom Host erkannten Speicher-Arrays festlegen möchten.
+
+
+
+ a| 
+`storageArrayName`
+ a| 
+Der Name eines bestimmten Speicherarrays, für das Sie einen Zeitplan festlegen möchten.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie das verwenden `all` Parameter um einen gemeinsamen Zeitplan für alle Speicher-Arrays festzulegen, werden die Zeitpläne für einzelne Speicher-Arrays gelöscht. Wenn für alle Speicher-Arrays ein Zeitplan festgelegt ist, folgen neu erkannte Speicher-Arrays demselben Zeitplan. Wenn ein Zeitplan für alle Speicher-Arrays festgelegt ist und ein Zeitplan für ein einzelnes Speicher-Array festgelegt ist, haben neu erkannte Speicher-Arrays keinen Zeitplan definiert.
+
+Im Folgenden finden Sie Beispiele für die Verwendung dieses Befehls. Das erste Beispiel ist ein täglicher/wöchentlicher Zeitplan, der folgende Kriterien für das Sammeln von Support Bundle-Daten erfüllt:
+
+* Der Name des Speicher-Arrays lautet DevKit4
+* Die Startzeit der Sammlung ist 02:00 (2:00 Uhr morgens).
+* Das Startdatum ist 05:01:2013 Uhr (1. Mai 2013)
+* Die Daten werden montags und freitags jeder Woche erfasst
+* Dieser Zeitplan hat kein Enddatum und kann nur durch Ausführen des gestoppt werden `SMcli -supportBundle schedule disable` Befehl
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable DevKit4 startTime=02:00
+startDate=05:01:2013 endDate=05:10:2014 daysOfWeek=[Monday Friday]
+----
+Das zweite Beispiel ist ein monatlich/jährlich Zeitplan, der folgende Kriterien für die Erfassung von Support Bundle-Daten erfüllt:
+
+* Der Name des Speicherarrays ist eng_stor1
+* Die Startzeit der Sammlung ist 04:00 (4:00 Uhr morgens).
+* Das Startdatum ist 05:01:2013 Uhr (1. Mai 2013)
+* Die Daten werden im März, April, Mai, Juni und August erfasst
+* Die Daten werden an den ersten und 21. Tagen des Monats gesammelt
+* Dieser Zeitplan hat kein Enddatum und kann nur durch Ausführen des gestoppt werden `SMcli -supportBundle schedule disable` Befehl
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable eng_stor1 startTime=04:00
+startDate=05:01:2013 months=[March April May June August] onDays=[1 21]
+----
+Das dritte Beispiel ist ein monatlich/jährlich Zeitplan, der folgende Kriterien für die Erfassung von Support Bundle-Daten erfüllt:
+
+* Der Name des Speicher-Arrays lautet Firmware_2
+* Die Startzeit der Sammlung ist 22:00 (10:00 Uhr nachts)
+* Das Startdatum ist 05:01:2013 Uhr (1. Mai 2013)
+* Die Daten werden im März, April, Mai, Juni und August erfasst
+* Die Daten werden am Freitag der ersten Woche eines jeden Monats gesammelt
+* Dieser Zeitplan endet am 05:10:2014 Uhr (10. Mai 2014)
+
+
+[listing]
+----
+SMcli -supportBundle schedule enable firmware_2 startTime=22:00
+startDate=05:01:2013 endDate=05:10:2014 months=[March April May June August]
+weekNumber=First dayOfWeek=Friday
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

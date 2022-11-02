@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html 
+sidebar: sidebar 
+keywords: check, asynchronous mirror group, consistency 
+summary: Der Befehl Check async cMirrorGroup recoryConsistency erzeugt einen Bericht, der auf der Analyse der Daten im zugrunde liegenden Repository-Volume der angegebenen asynchronen Spiegelgruppe basiert. 
+---
+= Überprüfen Sie die Konsistenz der asynchronen Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `check asyncMirrorGroup repositoryConsistency` Befehl erstellt einen Bericht, der auf der Analyse der Daten im zugrunde liegenden Repository Volume der angegebenen asynchronen Spiegelgruppe basiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+check asyncMirrorGrouppass:quotes[[_asyncMirrorGroupName_]]
+repositoryConsistency localVolume=pass:quotes[[_localVolumeName"_]]
+file=pass:quotes[_"filePath"_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, auf der eine Konsistenzprüfung ausgeführt werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen auch in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`repositoryConsistency`
+ a| 
+Gibt an, dass die asynchrone Spiegelgruppe auf Konsistenz überprüft wird.
+
+
+
+ a| 
+`localVolume`
+ a| 
+Gibt den Namen eines lokalen Volumes an, das an der Spiegelbeziehung beteiligt ist. Sie können ein lokales Volume angeben, das entweder die Quelle oder das Ziel einer Spiegelbeziehung ist. Wenn der Name des lokalen Volumes Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen auch in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie den Bericht speichern möchten, der aus der Konsistenzprüfung stammt. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\repoConsistency.txt"` Dieser Parameter muss nach einem der optionalen Parameter der letzte sein.
+
+|===
+
+
+== Hinweise
+
+Der mit diesem Befehl erzeugte Bericht dient der technischen Unterstützung zur Analyse von Problemen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/remove-volumecopy-target.html 
+sidebar: sidebar 
+keywords: remove, volume, copy 
+summary: Mit dem Befehl „VolumeCopy Target entfernen“ wird ein Volume-Copy-Paar entfernt. 
+---
+= Volume-Kopie entfernen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove volumeCopy target` Befehl entfernt ein Volume Copy Pair.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gilt für Snapshot-Volume-Kopierpaare.
+
+[NOTE]
+====
+Mit der Firmware-Version 7.83 der `copyType=(online | offline)` Parameter wird nicht mehr verwendet.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+remove volumeCopy target pass:quotes[[_targetName_]] [source pass:quotes[[_sourceName_]]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`target`
+ a| 
+Der Name des Zielvolume, das Sie entfernen möchten. Umschließen Sie den Namen des Zielvolumens in eckigen Klammern ([ ]). Wenn der Name des Ziel-Volumes Sonderzeichen hat oder nur aus Zahlen besteht, müssen Sie den Namen des Ziel-Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`source`
+ a| 
+Der Name des Quell-Volumes, das Sie entfernen möchten. Umschließen Sie den Namen des Quellvolumens in eckige Klammern ([ ]). Wenn der Name des Quell-Volumes Sonderzeichen hat oder nur aus Zahlen besteht, müssen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+5.40
+
+7.83 entfernt die `copyType=(online | offline)` Parameter.

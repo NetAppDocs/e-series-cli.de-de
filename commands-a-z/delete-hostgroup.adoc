@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/delete-hostgroup.html 
+sidebar: sidebar 
+keywords: delete, hostgroup, command, support, role 
+summary: Mit dem Befehl „hostGroup löschen“ wird eine Host-Gruppe gelöscht. 
+---
+= Host-Gruppe löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete hostGroup` Befehl löscht eine Host-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Mögliche Beschädigung der Speicher-Array-Konfiguration* -- dieser Befehl löscht alle Host-Definitionen in der Host-Gruppe.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete hostGroup [_hostGroupName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name der Host-Gruppe, die Sie löschen möchten. Fügen Sie den Namen der Host-Gruppe in eckige Klammern ([ ]) ein. Wenn der Name der Host-Gruppe Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Eine Host-Gruppe ist ein optionales topologisches Element, das eine Sammlung von Hosts ist, die den Zugriff auf dieselben Volumes teilen. Die Host-Gruppe ist eine logische Einheit.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20

@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/show-volume-actionprogress.html 
+sidebar: sidebar 
+keywords: show, volume, action, progress 
+summary: Der Befehl show Volume actionProgress gibt Informationen über die Volume-Aktion und die Menge des Langlaufvorgangs zurück, die für einen langfristigen Vorgang auf einem Volume abgeschlossen wurde. 
+---
+= Zeigt den Fortschritt der Volume-Aktion an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show volume actionProgress` Befehl gibt Informationen zur Volume-Aktion und zur Menge des langfristig ausgeführten Vorgangs an, die während eines längeren Betriebs auf einem Volume abgeschlossen wurde.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 7.77 wird das `show volume actionProgress` Befehl ist veraltet. Ersetzen Sie diesen Befehl durch `show storageArray longRunningOperations`.
+
+====
+Die Höhe des Langlaufvorgangs, der abgeschlossen ist, wird als Prozentsatz angezeigt (z. B. 25 bedeutet, dass 25 Prozent des Langlaufvorgangs abgeschlossen sind).
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show volume pass:quotes[[_volumeName_]] actionProgress
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, für das Sie Informationen über einen langen laufenden Vorgang abrufen möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Zahlen hat, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+5.43

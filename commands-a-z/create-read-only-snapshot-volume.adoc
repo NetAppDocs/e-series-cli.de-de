@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/create-read-only-snapshot-volume.html 
+sidebar: sidebar 
+keywords: create, read only, snapshot, volume 
+summary: Der Befehl create SnapVolume erstellt ein schreibgeschütztes Snapshot Volume für die Snapshot Images eines Basis-Volumes. Um ein schreibgeschütztes Snapshot-Volumen in ein Lese-/Schreibvolume zu ändern, verwenden Sie den Befehl set SnapVolume convertToReadWrite. 
+---
+= Erstellen eines schreibgeschützten Snapshot-Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create snapVolume` Befehl erstellt ein schreibgeschütztes Snapshot-Volumen für die Snapshot Images eines Basis-Volumes. Um ein schreibgeschütztes Snapshot-Volumen in ein Lese-/Schreibvolumen zu ändern, verwenden Sie das `set snapVolume convertToReadWrite` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl kann nicht für ein Snapshot-Image verwendet werden, das in der Online-Volume-Kopie verwendet wird.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create snapVolume userLabel=pass:quotes[_"snapVolumeName"_
+snapImageID="_snapCGID:imageID"_]
+readOnly
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie einem Snapshot-Volume geben möchten. Schließen Sie den Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Der Name eines Snapshot Images, das Sie dem neuen schreibgeschützten Snapshot-Volume hinzufügen möchten. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` - Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` - Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`readOnly`
+ a| 
+Mit diesem Parameter wird das Snapshot-Volumen auf schreibgeschützt eingestellt. Dieser Parameter ist tatsächlich ein Boolescher Wert. Im Kontext dieses Befehls ist jedoch immer der Boolesche Wert `TRUE`.
+
+[NOTE]
+====
+Mit dem `readOnly` Parameter, Snapshot-Volumes werden nicht erstellt.
+
+====
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Die Kennung eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt getrennt sind (:):
+
+* Der Name der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise ein schreibgeschütztes Volume mit dem neuesten Snapshot-Image in einer Snapshot-Gruppe mit dem Namen SnapGroup1 erstellen möchten, würden Sie folgenden Befehl verwenden:
+
+[listing]
+----
+create snapVolume userLabel="engData1" snapImageID="snapGroup1:newest" readOnly;
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

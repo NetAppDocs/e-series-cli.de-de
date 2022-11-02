@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/stop-pendingsnapimagecreation.html 
+sidebar: sidebar 
+keywords: stop, snapshot, group, snapshot, images 
+summary: Mit dem Befehl „stop pendingSnapImageCreation“ werden alle ausstehenden Snapshot-Images abgebrochen, die auf einem Snapshot oder einer Snapshot-Konsistenzgruppe erstellt werden sollen. 
+---
+= Beenden Sie die Snapshot-Gruppe, bis Snapshot-Images nicht mehr verfügbar sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop pendingSnapImageCreation` Durch den Befehl werden alle ausstehenden Snapshot Images abgebrochen, die auf einem Snapshot oder einer Snapshot-Konsistenzgruppe erstellt werden sollen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Wenn für die Snapshot-Gruppe keine ausstehenden Snapshot-Images verfügbar sind, wird von der Firmware eine Fehlermeldung angezeigt, und der Befehl wird nicht ausgeführt. Sie können diesen Befehl auf einer Snapshot-Gruppe oder einer Snapshot-Konsistenzgruppe ausführen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+stop (snapGroup pass:quotes[[_snapGroupName_]] |
+consistencyGroup pass:quotes[[_snapConsistencyGroupName_]])
+pendingSnapImageCreation
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, für die Sie ausstehende Snapshot-Images anhalten möchten. Schließen Sie den Namen der Snapshot-Gruppe in eckige Klammern ([ ]). Wenn der Name der Snapshot-Gruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Snapshot Konsistenzgruppe, für die Sie ausstehende Snapshot Images beenden möchten. Schließen Sie den Namen der Snapshot-Konsistenzgruppe in eckige Klammern ([ ]). Wenn der Name der Snapshot-Konsistenzgruppe Sonderzeichen oder Ziffern enthält, müssen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

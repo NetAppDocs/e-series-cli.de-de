@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/suspend-ssdcache.html 
+sidebar: sidebar 
+keywords: suspend, ssd cache 
+summary: Mit dem Befehl ssdCache suspendieren wird die Zwischenspeicherung für alle Volumes, die den SSD-Cache nutzen, vorübergehend angehalten. 
+---
+= Unterbrechen Sie den SSD-Cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `suspend ssdCache` Befehl stoppt das Caching für alle Volumes, die den SSD-Cache verwenden, vorübergehend.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Während das Caching angehalten wird, werden Lesevorgänge auf dem Host über die Basis-Volumes anstatt über den SSD Cache ausgeführt.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[suspend ssdCache [_ssdCacheName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, den Sie aussetzen möchten. Schließen Sie den SSD-Cache-Namen in eckige Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen oder Ziffern hat, müssen Sie den SSD-Cache-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Um das Caching neu zu starten, verwenden Sie den `resume ssdCache` Befehl.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

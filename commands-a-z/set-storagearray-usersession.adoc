@@ -1,0 +1,56 @@
+---
+permalink: commands-a-z/set-storagearray-usersession.html 
+sidebar: sidebar 
+keywords: set, storage, array, user, session 
+summary: Mit dem Befehl set storageArray userSession können Sie in System Manager ein Timeout einstellen, sodass die inaktiven Benutzersitzungen nach einer bestimmten Zeit getrennt werden. 
+---
+= Benutzersitzung für Speicher-Array festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray userSession` Mit Befehl können Sie in System Manager eine Zeitüberschreitung einstellen, so dass die inaktiven Sitzungen des Benutzers nach einer bestimmten Zeit getrennt werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Verwenden Sie diesen Befehl, um eine der folgenden Vorgänge auszuführen:
+
+* Legen Sie für Benutzersitzungen eine Zeitüberschreitung in Sekunden fest. Der Wert für die minimale Zeitüberschreitung beträgt 900 Sekunden (15 Minuten).
+* Deaktivieren Sie die Sitzungszeitpunkte, indem Sie den Wert auf 0 setzen.
+
+
+
+
+== Parameter
+
+Keine.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray userSession sessionTimeout=n
+----
+
+
+== Minimale Firmware-Stufe
+
+8.41

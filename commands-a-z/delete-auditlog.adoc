@@ -1,0 +1,99 @@
+---
+permalink: commands-a-z/delete-auditlog.html 
+sidebar: sidebar 
+keywords: delete, audit, log, records 
+summary: Mit dem Befehl AuditLog löschen werden einige oder alle Datensätze im Prüfprotokoll gelöscht. 
+---
+= Löschen von Audit-Log-Datensätzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete auditLog` Befehl löscht einige oder alle Datensätze im Prüfprotokoll.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+delete auditLog (all | (endRecord=pass:quotes[_timestamp_ | endDate=_date_) |
+ (retentionCount=_integer_))]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`all`
+ a| 
+Ermöglicht das Löschen aller Audit-Log-Datensätze.
+
+
+
+ a| 
+`endRecord`
+ a| 
+Ermöglicht Ihnen, den zu löschenden Enddatensatz anzugeben, beginnend mit dem ältesten Datensatz. Der Wert ist der integrale Wert, der den Zeitstempel des letzten Prüfprotokolls einschließlich darstellt.
+
+
+
+ a| 
+`endDate`
+ a| 
+Ermöglicht das Festlegen des zu löschenden Enddatum, beginnend mit dem ältesten Datensatz. Das Format zur Eingabe des Datums ist MM:TT:YY in der Client-Zeitzone.
+
+[NOTE]
+====
+Die Prüfprotokolle, einschließlich des angegebenen Datums, werden gelöscht.
+
+====
+
+
+ a| 
+`retentionCount`
+ a| 
+Hier können Sie die Anzahl der neuesten Datensätze für das Prüfprotokoll angeben, die beibehalten werden sollen.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete auditLog all;"
+
+SMcli -n Array1 -c "delete auditLog endRecord=1493070393313;"
+
+SMcli -n Array1 -c "delete auditLog endDate=04:30:17;"
+
+SMcli -n Array1 -c "delete auditLog retentionCount=1000;"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

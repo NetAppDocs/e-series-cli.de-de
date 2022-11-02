@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/stop-asyncmirrorgroup-rolechange.html 
+sidebar: sidebar 
+keywords: cancel, asynchronous, mirror, group, role, reversal 
+summary: Der Befehl stop Async MirrorGroup Rolechange bricht eine ausstehende Rollenumkehrung zwischen asynchronen Spiegelgruppen ab. 
+---
+= Abbrechen der Umkehrung der asynchronen Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop asyncMirrorGroup rolechange` Befehl bricht einen ausstehenden Rollenumkehrvorgang zwischen asynchronen Spiegelgruppen ab.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop asyncMirrorGroup [_asyncMirrorGroupName_]] rolechange
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, für die oder die Sie den ausstehenden Rollenumkehrungsvorgang abbrechen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

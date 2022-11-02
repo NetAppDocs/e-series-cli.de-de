@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/repair-volume-parity.html 
+sidebar: sidebar 
+keywords: repair, volume, parity 
+summary: Der Parity-Befehl zum Reparieren des Volume repariert die Paritätsfehler auf einem Volume. 
+---
+= Reparatur-Volume-Parität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `repair volume parity` Befehl repariert die Paritätsfehler auf einem Volume.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[CAUTION]
+====
+Wenn Volume-Paritäts- und Volume-Daten nicht übereinstimmen, sind Volume-Daten unter Umständen fehlerhaft – nicht die Paritäts-Volume. Das Reparieren der Volume-Parität zerstört falls erforderlich die Möglichkeit zur Reparatur defekter Volume-Daten.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+repair volume pass:quotes[[_volumeName_]] parity
+parityErrorFile=pass:quotes[_"filename"_]
+[verbose=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des Datenträgers, für das Sie Parität reparieren. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Der Dateipfad und der Dateiname, der die Paritätsinformationen enthält, die Sie zum Reparieren der Fehler verwenden. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\sup\parfile.txt"`
+
+[NOTE]
+====
+A `parityErrorFile` Ist das Ergebnis eines vorherigen `check volume parity` Betrieb.
+
+====
+
+
+ a| 
+`verbose`
+ a| 
+Die Einstellung zum Erfassen von Fortschrittsdetails, z. B. „Fertigstellungsgrad“, und zum Anzeigen der Informationen, während die Volume-Parität repariert wird. Um Fortschrittsdetails zu erfassen, setzen Sie diesen Parameter auf `TRUE`. Um die Erfassung von Fortschrittsdetails zu verhindern, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

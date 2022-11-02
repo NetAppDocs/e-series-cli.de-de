@@ -1,0 +1,137 @@
+---
+permalink: commands-a-z/set-volumegroup.html 
+sidebar: sidebar 
+keywords: set, volume, group 
+summary: Der Befehl Set VolumeGroup definiert die Eigenschaften für eine Volume-Gruppe. 
+---
+= Legen Sie die Volume-Gruppe fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set volumeGroup` Mit dem Befehl werden die Eigenschaften für eine Volume-Gruppe definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Sie müssen nur einen Vorgang durchführen (Laufwerke hinzufügen, RAID-Level ändern oder die Eigentümerschaft der Volume-Gruppen ändern) pro Befehl. Sie können mit einem einzigen Befehl nicht mehr als eine Operation ausführen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set volumeGroup pass:quotes[[_volumeGroupName_]]
+[addDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]) ]|
+[raidLevel=(0 | 1 | 3 | 5 | 6) ]|
+[owner=(a|b)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, für die Sie Eigenschaften festlegen möchten. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+
+
+ a| 
+`addDrives`
+ a| 
+Der Speicherort des Laufwerks, den Sie der Volume-Gruppe hinzufügen möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Der RAID-Level für die Volume-Gruppe. Gültige Werte sind `0`, `1`, `3`, `5`, Oder `6`.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der die Volume-Gruppe besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A , und `b` Ist der Controller in Steckplatz B. Verwenden Sie diesen Parameter nur, wenn Sie den Eigentümer der Volume-Gruppe ändern möchten.
+
+|===
+
+
+== Hinweise
+
+Host-I/O-Fehler können zu Volume-Gruppen mit mehr als 32 Volumes führen. Dieser Vorgang kann auch zum Neustart des internen Controllers führen, da die Zeitüberschreitungsdauer vor Festlegung der Volume-Gruppe endet. Wenn dieses Problem auftritt, setzen Sie den Host-I/O-Betrieb aus und versuchen Sie es erneut.
+
+Wenn Sie diesen Befehl verwenden, können Sie nur einen der Parameter angeben.
+
+[NOTE]
+====
+Angeben des `addDrives` Parameter oder der `raidLevel` Parameter startet einen lang ausgeführten Vorgang, dessen Vorgang nicht beendet werden kann.
+
+====
+Der `addDrives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Fehlerbehebung
+
+Der Versuch, große Volume-Gruppen durch Hinzufügen von Laufwerken, auch als dynamische Kapazitätserweiterung (DCE) bezeichnet, kann mit der folgenden Meldung fehlschlagen:
+
+`Return code: Error 26 - The modification operation cannot complete because of the number of drives in the volume group and the segment size of the associated volumes. Reduce the segment size of all volumes in the volume group to 128 KB or below using the Change Segment Size option. Then, retry the operation.`
+
+Systeme mit 7.35.xx.xx-Firmware können nicht mit der folgenden Meldung fehlschlagen:
+
+`Return code: Error 462 - A SYMbol procedure could not be carried out because the firmware could not allocate sufficient cache memory. Operation when error occurred: PROC_startVolum`
+
+Zusätzlich zu den oben genannten Meldungen kann es zu einem größeren Ereignis des Ereignisprotokolls (MEL) kommen, bei dem nicht genügend Cache zum Abschluss des DCE-Vorgangs verfügbar ist.
+
+Dieses Problem kann bei jedem Controller, auf dem die 7.xx-Firmware ausgeführt wird, auftreten.
+
+DCE benötigt genügend Speicher, um die vom ursprünglichen Volume gelesenen Daten und die auf das erweiterte Volume zu schreibenden Daten zu puffern. Eine Kombination aus der Anzahl der Laufwerke im Erweiterungsvorgang, der Stripe-Größe und der Aktivierung von Spiegeloperationen kann dazu führen, dass nicht genügend Speicher zur Verfügung steht, um den DCE-Vorgang abzuschließen.
+
+Wenn die oben genannte Situation auftritt, sind mögliche Problemumgehungen wie folgt möglich:
+
+* Erstellen Sie die Volume-Gruppe der gewünschten Größe mithilfe anderer nicht zugewiesener Laufwerke.
+* Löschen Sie die aktuelle Volume-Gruppe, und erstellen Sie dann die Volume-Gruppe mit der gewünschten Anzahl an Laufwerken neu.
+* Verringern Sie die verwendete Segmentgröße, und wiederholen Sie den Vorgang.
+* Wenn möglich, fügen Sie dem Controller zusätzlichen Speicher hinzu, und wiederholen Sie den Vorgang.
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.10 fügt RAID 6-Fähigkeit hinzu.
+
+7.30 entfernt die `availability` Parameter.
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben.

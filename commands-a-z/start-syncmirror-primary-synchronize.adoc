@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-syncmirror-primary-synchronize.html 
+sidebar: sidebar 
+keywords: start, synchronous, mirror, synchronization 
+summary: Der Befehl SyncMirror Primary Sync starten startet die Synchronisierung der synchronen Spiegelung. 
+---
+= Synchronisierung der synchronen Spiegelung starten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start syncMirror primary synchronize` Befehl startet die Synchronisierung der synchronen Spiegelung.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start syncMirror primary ["_volumeName_"]] synchronize
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`primary`
+ a| 
+Der Name des primären Volumes, für das die Synchronisierung gestartet werden soll. Schließen Sie den primären Volumennamen in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]) ein.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

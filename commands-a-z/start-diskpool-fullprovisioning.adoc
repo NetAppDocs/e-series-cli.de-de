@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-diskpool-fullprovisioning.html 
+sidebar: sidebar 
+keywords: start, disk pool, full, provision 
+summary: Mit dem Befehl „Start diskPool fullProvisioning“ wird ein voller Bereitstellungsvorgang für alle Volumes im Disk Pool gestartet und die Ressourcenbereitstellung im Disk Pool wird optional deaktiviert. 
+---
+= Starten Sie Disk Pool Full Provisioning
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start diskPool fullProvisioning` Der Befehl startet einen vollständigen Bereitstellungsvorgang für alle Volumes im Laufwerk-Pool und deaktiviert optional die Ressourcenbereitstellung auf dem Laufwerk-Pool.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+
+
+
+== Kontext
+
+Die Funktion Resource Provisioning verbessert den SSD-Verschleiß und erhöht die Schreib-Performance, da einen größeren Teil der Laufwerksblöcke in einem nicht zugewiesenen Zustand als ein Standard-Volume verbleiben. Ein vom Ressourcen bereitgestelltes Volume ist ein Thick Volume in einer SSD-Volume-Gruppe oder einem Pool, wobei die Laufwerkskapazität zugewiesen (dem Volume zugewiesen) wird, die Laufwerksblöcke bei der Erstellung eines Volumes jedoch wieder aufgehoben (nicht zugewiesen) werden. Die Laufwerksblöcke werden nach Bedarf zugewiesen, um die Schreib-I/OS des Hosts zu vervollständigen. Host-Prozesse zur Zuordnung können Laufwerkblöcke wieder in den nicht zugewiesenen Status zurückversetzen. Die Ressourcen-Bereitstellung eliminiert außerdem die Zeit-gebundene Hintergrundinitialisierung, sodass große Volumes schnell initialisiert werden können.
+
+Über Ressourcen bereitgestellte Volumes werden nur auf SSD-Volume-Gruppen und -Pools unterstützt, wobei alle Laufwerke in der Gruppe oder dem Pool die nicht zugewiesene oder nicht geschriebene DULBE-Fehlerwiederherstellungsfunktion (Logical Block Error Enable) unterstützen. Die Performance-Steigerung variiert je nach Festplattenmodell und Kapazität.
+
+Bei vollständiger Bereitstellung wird sichergestellt, dass alle von den Volumes im Storage-Pool benötigten Blöcke vollständig auf den Laufwerken zugeordnet sind. Dieser Befehl gilt nur für über die Ressourcen bereitgestellte Storage-Pools. Wenn die Option auf `disableResourceProvisioning` Ist nicht auf festgelegt `FALSE`, Dann werden die Volumes weiterhin über eine Ressource bereitgestellt und neue Volumes, die auf dem Speicherpool erstellt werden, werden ressourcenbereitgestellt. Wenn die Option zum Deaktivieren der Ressourcenbereitstellung auf festgelegt ist `TRUE`, Dann werden die Volumes nicht mehr über die Ressourcen bereitgestellt und neue Volumes, die im Speicherpool erstellt werden, werden nicht ressourcenbereit.
+
+
+
+== Syntax
+
+[listing]
+----
+start diskPool[diskPoolName] fullProvisioning [disableResourceProvisioning=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Laufwerk-Pool, den Sie mit dem vollständigen Provisioning-Vorgang starten möchten. Schließen Sie den Disk Pool Namen in eckige Klammern ([ ])
+
+
+
+ a| 
+`disableResourceProvisioning`
+ a| 
+Die Einstellung, die festlegen soll, ob die Ressourcenbereitstellung nach Abschluss des vollständigen Bereitstellungsvorgangs deaktiviert werden soll. Um die Deaktivierung der Ressourcenbereitstellung zu überspringen, setzen Sie dies auf `FALSE`. Der Standardwert ist `TRUE`.
+
+[NOTE]
+====
+Um die Ressourcenbereitstellung in einem Speicherpool und allen zugehörigen Volumes wieder zu aktivieren, verwenden Sie den `Start Disk Pool Resource Provisioning` Befehl.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+11.72

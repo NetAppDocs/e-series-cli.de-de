@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/show-storagearray-unreadablesectors.html 
+sidebar: sidebar 
+keywords: show, storage, array, unreadable, sectors 
+summary: Der Befehl show storageArray unreadableSectors gibt eine Tabelle mit den Adressen aller Sektoren im Speicher-Array zurück, die nicht gelesen werden können. 
+---
+= Speicherarray unlesbare Sektoren anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray unreadableSectors` Befehl gibt eine Tabelle mit den Adressen aller Sektoren im Speicher-Array zurück, die nicht gelesen werden können.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+Die zurückgegebene Tabelle ist mit Spaltenüberschriften für die folgenden Informationen organisiert:
+
+* Datenträger-Benutzeretikett
+* Logical Unit Number (LUN)
+* Zugriff durch (Host oder Host-Gruppe)
+* Datum/Uhrzeit
+* Volume-relative logische Block-Adresse (hexadezimales Format -- 0xnnnnnnnnnnn)
+* Position des Laufwerks (Fach t, Steckplatz s)
+* Laufwerk-relative logische Blockadresse (hexadezimales Format -- 0xnnnnnnnnnnn)
+* Fehlertyp
+
+
+Die Daten werden zunächst nach dem Datenträger-Benutzernamen sortiert und zweitens nach der logischen Blockadresse (LBA). Jeder Eintrag in der Tabelle entspricht einem einzelnen Sektor.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray unreadableSectors
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

@@ -1,0 +1,48 @@
+---
+permalink: commands-a-z/delete-certificates.html 
+sidebar: sidebar 
+keywords: delete, certificates 
+summary: Mit dem Befehl Zertifikate löschen können Sie ein Zertifikat aus dem CLI-Paket-Vertrauensspeicher löschen. 
+---
+= Löschen von Zertifikaten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Delete certificates` Mit dem Befehl können Sie ein Zertifikat aus dem CLI-Paket-Vertrauensspeicher löschen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete localCertificate all | alias pass:quotes[_alias_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`alias`
+ a| 
+Ermöglicht die Angabe eines Zertifikats über den benutzerdefinierten Alias.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

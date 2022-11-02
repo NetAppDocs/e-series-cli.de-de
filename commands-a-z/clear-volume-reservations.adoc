@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/clear-volume-reservations.html 
+sidebar: sidebar 
+keywords: clear, volume, reservations 
+summary: Mit dem Befehl Reservierungen löschen werden persistente Volume-Reservierungen gelöscht. 
+---
+= Löschen Sie Volume-Reservierungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear volume reservations` Befehl löscht Reservierungen für persistente Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+clear (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]]) reservations
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Einstellung zum Löschen von Reservierungen für persistente Volumes auf allen Volumes im Storage-Array
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, für das Sie dauerhafte Reservierungen löschen. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, für die Sie dauerhafte Reservierungen löschen. Geben Sie die Namen der Mitglieder-Volumes mithilfe dieser Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.

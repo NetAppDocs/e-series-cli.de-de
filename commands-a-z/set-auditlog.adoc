@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/set-auditlog.html 
+sidebar: sidebar 
+keywords: set, audit log 
+summary: Mit dem Befehl AuditLog festlegen werden die Einstellungen für das Prüfprotokoll konfiguriert. 
+---
+= Legen Sie die Einstellungen für das Prüfprotokoll fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set auditLog` Befehl konfiguriert die Einstellungen für das Prüfprotokoll.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+set auditLog (logLevel={all | writeOnly} |
+    fullPolicy={overwrite | preventSystemAccess} |
+    pass:quotes[maxRecords=_n_] | pass:quotes[warningThreshold=_n_)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`logLevel`
+ a| 
+Ermöglicht die Angabe der Protokollierungsebene. Gültige Auswahlmöglichkeiten: `all` Und `writeOnly`. Der Standardwert ist `writeOnly`.
+
+
+
+ a| 
+`fullPolicy`
+ a| 
+Ermöglicht die Festlegung der Richtlinie, wenn das Protokoll voll ist. Gültige Auswahlmöglichkeiten: `overwrite` Und `preventSystemAccess`.
+
+
+
+ a| 
+`maxRecords`
+ a| 
+Ermöglicht dem Benutzer, die maximale Anzahl von Datensätzen anzugeben, die dort gespeichert werden sollen `n` Ist eine Ganzzahl, die bei 30000 beginnt und um 50000 endet.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+Mit dieser Option können Sie festlegen, in welchem Prozentsatz eine Warnmeldung gesendet wird, um anzugeben, dass das Prüfprotokoll sich bald voll nähert, wenn die vollständige Richtlinie auf festgelegt ist `preventSystemAccess`. Verwenden Sie ganzzahlige Werte zwischen 0 und 100. Wenn Sie diesen Parameter auf 0 (Null) setzen, werden die Warnmeldungen deaktiviert.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set auditLog logLevel=writeOnly fullPolicy=preventSystemAccess maxRecords=40000 warningThreshold=90;"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

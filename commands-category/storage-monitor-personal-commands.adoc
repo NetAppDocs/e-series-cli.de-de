@@ -1,0 +1,121 @@
+---
+permalink: commands-category/storage-monitor-personal-commands.html 
+sidebar: sidebar 
+keywords: storage, monitor, personnel, commands, asynchronous, autosupport, cache, array, synchronous 
+summary: Personalbefehle für die Speicherüberwachung 
+---
+= Personalbefehle für die Speicherüberwachung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+link:../commands-a-z/show-storagearray-usersession.html["Anzeige der Benutzersitzung des Speicher-Arrays"]
+
+link:../commands-a-z/save-storagearray-loginbanner.html["Anmeldebanner für Storage Array speichern"]
+
+link:../commands-a-z/set-session-erroraction.html["Sitzung einstellen"]
+
+link:../commands-a-z/set-storagearray-localusername.html["Lokales Benutzerpasswort oder Symbolkennwort für das Speicher-Array festlegen"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Fortschritt der Synchronisierung der asynchronen Spiegelgruppe anzeigen"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Zeigen Sie asynchrone Spiegelgruppen an"]
+
+link:../commands-a-z/show-storagearray-autosupport.html["Zeigen der AutoSupport Konfiguration (für E2800 oder E5700 Storage-Arrays)"]
+
+link:../commands-a-z/show-consistencygroup.html["Zeigt die Konsistenzgruppe an"]
+
+link:../commands-a-z/show-cgsnapimage.html["Zeigt das Snapshot Image für Konsistenzgruppen an"]
+
+link:../commands-a-z/show-controller.html["Zeigen Sie den Controller an"]
+
+link:../commands-a-z/show-controller-nvsram.html["Zeigt den Controller-NVSRAM"]
+
+link:../commands-a-z/show-iscsisessions.html["Zeigt aktuelle iSCSI-Sitzungen an"]
+
+link:../commands-a-z/show-diskpool.html["Zeigen Sie den Festplattenpool an"]
+
+link:../commands-a-z/show-alldrives.html["Laufwerk anzeigen"]
+
+link:../commands-a-z/show-drivechannel-stats.html["Zeigen Sie die Drive-Channel-Statistiken an"]
+
+link:../commands-a-z/show-alldrives-downloadprogress.html["Fortschritt des Laufwerks-Downloads anzeigen"]
+
+link:../commands-a-z/show-alldrives-performancestats.html["Zeigt Statistiken zur Laufwerk-Performance an"]
+
+link:../commands-a-z/show-emailalert-summary.html["Konfiguration von E-Mail-Warnmeldungen anzeigen"]
+
+link:../commands-a-z/show-allhostports.html["Zeigen Sie Host-Ports an"]
+
+link:../commands-a-z/show-replaceabledrives.html["Zeigt austauschbare Laufwerke an"]
+
+link:../commands-a-z/show-snapgroup.html["Zeigen Sie die Snapshot-Gruppe an"]
+
+link:../commands-a-z/show-snapimage.html["Zeigen Sie das Snapshot Image an"]
+
+link:../commands-a-z/show-snapvolume.html["Zeigen Sie Snapshot Volumes an"]
+
+link:../commands-a-z/show-allsnmpcommunities.html["Zeigen Sie SNMP-Communitys an"]
+
+link:../commands-a-z/show-snmpsystemvariables.html["Zeigt SNMP MIB II-Systemgruppenvariablen an"]
+
+link:../commands-a-z/show-ssd-cache.html["Zeigt den SSD-Cache an"]
+
+link:../commands-a-z/show-ssd-cache-statistics.html["Zeigt SSD-Cache-Statistiken an"]
+
+link:../commands-a-z/show-storagearray.html["Zeigen Sie das Speicher-Array an"]
+
+link:../commands-a-z/show-storagearray-autoconfiguration.html["Automatische Konfiguration des Speicherarrays anzeigen"]
+
+link:../commands-a-z/show-storagearray-controllerhealthimage.html["Zeigt das Storage-Array-Controller-Zustandsabbild an"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Zeigen Sie die DBM-Datenbank des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-hostconnectivityreporting.html["Anzeige der Host-Konnektivität für das Speicher-Array"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Zeigt die Host-Topologie des Storage-Arrays an"]
+
+link:../commands-a-z/show-storagearray-lunmappings.html["Anzeigen der LUN-Zuordnungen des Speicherarrays"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Zeigen Sie Standards für die Verhandlung von Storage-Arrays an"]
+
+link:../commands-a-z/show-storagearray-odxsetting.html["Zeigen Sie die ODX-Einstellungen für das Storage-Array"]
+
+link:../commands-a-z/show-storagearray-powerinfo.html["Zeigt Informationen zur Stromversorgung des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Zeigt nicht konfigurierte iSCSI-Initiatoren des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-unreadablesectors.html["Speicherarray unlesbare Sektoren anzeigen"]
+
+link:../commands-a-z/show-textstring.html["Zeichenfolge anzeigen"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Anzeige der Kandidaten für synchrones Spiegeln von Volumes"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Synchronous Mirroring Volume Synchronisation anzeigen"]
+
+link:../commands-a-z/show-syslog-summary.html["Zeigt die Syslog-Konfiguration an"]
+
+link:../commands-a-z/show-volume.html["Thin Volume anzeigen"]
+
+link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Zeigt nicht konfigurierte Initiatoren an"]
+
+link:../commands-a-z/show-volume-summary.html["Volumen anzeigen"]
+
+link:../commands-a-z/show-volume-actionprogress.html["Zeigt den Fortschritt der Volume-Aktion an"]
+
+link:../commands-a-z/show-volumecopy.html["Zeigt Volume-Kopien an"]
+
+link:../commands-a-z/show-volumecopy-sourcecandidates.html["Kandidaten für Volume-Kopien anzeigen"]
+
+link:../commands-a-z/show-volumecopy-source-targetcandidates.html["Kandidaten für Volume-Kopien anzeigen"]
+
+link:../commands-a-z/show-volumegroup.html["Zeigen Sie Volume-Gruppe an"]
+
+link:../commands-a-z/show-volumegroup-exportdependencies.html["Zeigen Sie die Exportabhängigkeiten der Volume-Gruppen an"]
+
+link:../commands-a-z/show-volumegroup-importdependencies.html["Zeigen Sie die Importabhängigkeiten der Volume-Gruppen an"]
+
+link:../commands-a-z/show-volume-performancestats.html["Zeigt Statistiken zur Volume-Performance an"]
+
+link:../commands-a-z/show-volume-reservations.html["Zeigen Sie Volume-Reservierungen an"]

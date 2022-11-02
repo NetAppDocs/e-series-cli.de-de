@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/show-syncmirror-synchronizationprogress.html 
+sidebar: sidebar 
+keywords: show, synchronous, mirror, volume, synchronization, progress 
+summary: Der Befehl show SyncMirror SynchronisationProgress gibt den Fortschritt der Datensynchronisierung zwischen dem primären Volume und dem sekundären Volume in einer Konfiguration mit synchronem Spiegeln zurück. 
+---
+= Synchronous Mirroring Volume Synchronisation anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show syncMirror synchronizationProgress` Der Befehl gibt den Fortschritt der Datensynchronisierung zwischen dem primären Volume und dem sekundären Volume in einer Konfiguration mit synchronous Mirroring zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage Admin“ oder „Storage Monitor“ verfügen.
+
+
+
+== Kontext
+
+Dieser Befehl zeigt den Fortschritt als Prozentsatz der abgeschlossenen Datensynchronisierung an.
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `*syncMirror*`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1_... _volumeNameN_]]) synchronizationProgress
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des primären Volumes des Remote-gespiegelten Paares, für das Sie den Synchronisierungsfortschritt prüfen möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen des primären Volumes des Remote-gespiegelten Paares, für das Sie den Synchronisierungsfortschritt prüfen möchten. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+5.40

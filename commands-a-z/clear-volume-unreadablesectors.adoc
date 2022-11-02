@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/clear-volume-unreadablesectors.html 
+sidebar: sidebar 
+keywords: clear, volume, unreadable, sectors 
+summary: Der Befehl Clear Volume unreadableSectors löscht unlesbare Sektorinformationen von einem oder mehreren Bänden. 
+---
+= Volumen unlesbare Sektoren löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear volume unreadableSectors` Der Befehl löscht unlesbare Sektorinformationen von einem oder mehreren Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+clear (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]]) unreadableSectors
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Die Einstellung zum Löschen unlesbarer Sektorinformationen von allen Volumes im Speicher-Array.
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volume, für das Sie unlesbare Sektorinformationen löschen. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, für die Sie unlesbare Sektorinformationen löschen. Geben Sie die Namen der Mitglieder-Volumes mithilfe dieser Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.

@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/show-alldrives-performancestats.html 
+sidebar: sidebar 
+keywords: show, drive, performance, statistics 
+summary: Der Befehl show allDrives performanceStats gibt Informationen zur Laufwerksleistung zurück. 
+---
+= Zeigt Statistiken zur Laufwerk-Performance an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show allDrives performanceStats` Der Befehl gibt Informationen zur Performance des Laufwerks zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gibt für jedes Laufwerk im Speicher-Array die folgenden Informationen zurück:
+
+* Das Speicher-Array, das das Laufwerk oder die Laufwerke enthält
+* Der aktuellen I/O-Latenz
+* Maximale I/O-Latenz
+* Niedrigste I/O-Latenz
+* Der durchschnittlichen I/O-Latenz entspricht
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show (allDrives |drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]) performanceStats
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allDrives`
+ a| 
+Die Einstellung, um Informationen über alle Laufwerke im Speicher-Array zurückzugeben.
+
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+|===
+
+
+== Hinweise
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Der `show drive performanceStats` Befehl gibt die Performance-Statistiken zum Laufwerk zurück, wie im folgenden Beispiel gezeigt:
+
+[listing]
+----
+"Performance Monitor Statistics for Storage Array: remote_pp -
+Date/Time: 10/23/12 3:47:27 PM -
+Polling interval in seconds: 5"
+
+"Objects","Current IO Latency","Maximum IO Latency","Minimum IO Latency",
+"Average IO Latency"
+
+"Capture Iteration: 1","","","",""
+"Date/Time: 10/23/12 3:47:27 PM","","","",""
+"Drive Tray 0, Slot 1","0.0","0.0","0.0","0.0"
+----
+
+
+== Minimale Firmware-Stufe
+
+7.86

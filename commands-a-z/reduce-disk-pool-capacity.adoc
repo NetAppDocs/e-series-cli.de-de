@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/reduce-disk-pool-capacity.html 
+sidebar: sidebar 
+keywords: reduce, disk pool, capacity 
+summary: Der Befehl set Disk Pool reduziert die Kapazität des Disk Pools, indem die Laufwerke logisch aus dem Pool entfernt werden. 
+---
+= Die Kapazität im Laufwerk-Pool wird gesenkt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set diskPool` Befehl reduziert die Kapazität des Disk Pools, indem die Laufwerke logisch aus dem Pool entfernt werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl verwendet die DCR-Funktion (Dynamic Capacity Reduction), mit der Sie ausgewählte Laufwerke aus einem Laufwerk-Pool entfernen und die entfernten Laufwerke nach Bedarf wieder verwenden können.
+
+Die maximale Anzahl von Laufwerken, die Sie in einem einzigen DCR-Vorgang aus einem Laufwerk-Pool entfernen können, beträgt 60. Sie können den Laufwerk-Pool nicht unter die minimale Laufwerk-Pool-Größe reduzieren.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set diskPool pass:quotes[[_diskPoolName_]]
+removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1
+... trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_])
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, für den die Kapazität verringert werden soll. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]).
+
+
+
+ a| 
+`removeDrives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+|===
+
+
+== Hinweise
+
+Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+Sie können ausgewählte Laufwerke aus einem Laufwerk-Pool entfernen, wenn Sie eine separate Gruppe erstellen oder nicht benötigte Kapazität aus dem Speicher-Array entfernen müssen. Die entfernten Laufwerke werden wieder nicht zugewiesenen Laufwerke. Die darauf vorhandenen Daten werden auf die übrigen Laufwerke im Festplatten-Pool verteilt. Die Kapazität des Festplattenpools wird durch die Kapazität der Laufwerke verringert, die Sie entfernen. Das Entfernen von Laufwerken aus einem Festplatten-Pool wird immer als Hintergrundaufgabe durchgeführt und die Volumes bleiben während dieses Vorgangs voll zugänglich. Der Fortschritt des Löschvorgangs wird als Teil des Status „lange laufende Vorgänge“ gemeldet.
+
+Dieser Befehl schlägt fehl, wenn nicht genügend freie Kapazität auf den Laufwerken vorhanden ist, die sich im Festplatten-Pool befinden, um alle Daten zu speichern, die sich auf den Laufwerken, die Sie aus dem Laufwerk-Pool entfernen, waren. Die Reservekapazität im Laufwerk-Pool kann verwendet werden, um Daten zu speichern, die sich auf den Laufwerken, die Sie aus dem Laufwerk-Pool entfernen, abgespeichert haben. Wenn die Reserve-Kapazität jedoch unter den kritischen Schwellenwert fällt, wird ein kritisches Ereignis in das größere Ereignisprotokoll geschrieben.
+
+Eine Verringerung der Größe des Festplatten-Pools kann dazu führen, dass die erforderliche Reservekapazität kleiner wird. In einigen Fällen, um die Wahrscheinlichkeit zu senken, dass dieser Befehl fehlschlägt, reduzieren Sie Ihre Reservekapazität, bevor Sie diesen Befehl ausführen, um die Menge an Speicherplatz zu erhöhen, die für Disk-Pool-Daten verfügbar ist.
+
+Die Controller-Firmware legt fest, wie viele Laufwerke Sie entfernen können und Sie können dann die spezifischen Laufwerke auswählen, die entfernt werden sollen. Die Controller-Firmware basiert auf dem Umfang des freien Speicherplatzes, der für die Aufteilung der Daten auf die verbleibenden Laufwerke benötigt wird, ohne dass Kapazität für Rekonstruktionen genutzt werden muss. Wenn die freie Kapazität des Disk-Pools bereits kleiner als der Wert des reservierten Rekonstruktionslaufwerks ist, lässt der Controller den Start eines DCR-Vorgangs nicht zu.
+
+Ein DCR-Vorgang kann dazu führen, dass die konfigurierte Kapazität einen oder beide der Poolnutzungsschwellenwerte überschreitet. In diesem Fall werden normale Schwellenwertwarnungen ausgegeben.
+
+
+
+== Minimale Firmware-Stufe
+
+8.10

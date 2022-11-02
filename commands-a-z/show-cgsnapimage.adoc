@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/show-cgsnapimage.html 
+sidebar: sidebar 
+keywords: show, consistency, group, snapshot, image 
+summary: Der Befehl show CGSnapImage zeigt ein Snapshot-Image oder mehrere Snapshot-Images an, die sich in einer oder mehreren Snapshot-Konsistenzgruppen befinden. 
+---
+= Zeigt das Snapshot Image für Konsistenzgruppen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show CGSnapImage` Mit dem Befehl wird ein Snapshot Image oder mehrere Snapshot Images angezeigt, die sich in einer oder mehreren Snapshot Konsistenzgruppen befinden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show ((CGSnapImage pass:quotes[[(_CGSnapImageName_ | _CGSnapImageSequenceNumber_)]]) |
+(CGSnapImages pass:quotes[[(_CGSnapImageNumber1_ ... _CGSnapImageNumbern_ |
+_CGSnapImageSequenceNumber1_ ... _CGSnapImageSequenceNumbern_)]]) |
+allCGSnapImages
+[summary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`CGSnapImage` Oder `CGSnapImages`
+ a| 
+Der Name des Snapshot-Images in einer Konsistenzgruppe. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Konsistenzgruppe
+* Eine Kennung für das Snapshot-Image in der Konsistenzgruppe.
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Eine Ganzzahl, die die Sequenznummer des Snapshots in der Konsistenzgruppe ist.
+* `NEWEST` -- verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Konsistenzgruppe erstellt wurde.
+* `OLDEST` -- verwenden Sie diese Option, wenn Sie das früheste Snapshot Image anzeigen möchten, das in der Konsistenzgruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+Sie können mehr als einen Snapshot-Bildnamen oder eine Sequenznummer eingeben. Schließen Sie alle Snapshot-Bildnamen in einen Satz von doppelten Anführungszeichen (" ") in eckigen Klammern ([ ]). Trennen Sie jeden Snapshot-Image-Namen mit einem Leerzeichen.
+
+
+
+ a| 
+`allCGSnapImages`
+ a| 
+Die Einstellung, um alle Snapshot Images aus den Konsistenzgruppen zurückzugeben.
+
+
+
+ a| 
+`summary`
+ a| 
+Die Einstellung, um eine kurze Liste von Informationen über alle Snapshot-Images im Speicher-Array zurückzugeben.
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Snapshot-Konsistenzgruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise Snapshot-Image 12345 in einer Snapshot-Konsistenzgruppe mit dem Namen SnapCGroup1 anzeigen möchten, würden Sie folgenden Befehl verwenden:
+
+[listing]
+----
+show CGsnapImage ["snapCGroup1:12345"];
+----
+Um das aktuellste Snapshot-Image in einer Snapshot-Konsistenzgruppe mit dem Namen SnapCGroup1 anzuzeigen, verwenden Sie diesen Befehl:
+
+[listing]
+----
+show CGsnapImage ["snapCGroup1:newest"];
+----
+Um die Snapshot-Images in mehreren Snapshot-Konsistenzgruppen anzuzeigen, die die Namen SnapCGroup1, SnapCGroup2 und SnapCGroup3 haben, würden Sie folgenden Befehl verwenden:
+
+[listing]
+----
+show CGsnapImages ["snapCGroup1:12345 snapCGroup2:newest snapCGroup3:oldest"];
+----
+Beachten Sie, dass in diesen Beispielen der Name der Snapshot-Konsistenzgruppe durch einen Doppelpunkt (:) von der Kennung des Snapshot-Images getrennt wird.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

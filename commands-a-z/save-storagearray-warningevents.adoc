@@ -1,0 +1,140 @@
+---
+permalink: commands-a-z/save-storagearray-warningevents.html 
+sidebar: sidebar 
+keywords: save, storage, array, events 
+summary: Mit dem Befehl „Speicherarray warningEvents speichern“ werden Ereignisse aus dem großen Ereignisprotokoll in einer Datei gespeichert. 
+---
+= Speichern von Speicher-Array-Ereignissen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray warningEvents` Befehl speichert Ereignisse aus dem Hauptereignisprotokoll in einer Datei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Mit diesem Befehl werden Ereignisse aus dem Hauptereignisprotokoll in einer Datei gespeichert. Sie können die folgenden Ereignisse speichern:
+
+* *Kritische Ereignisse* -- auf dem Speicher-Array ist ein Fehler aufgetreten, der sofort behoben werden muss. Wenn Sie den Fehler nicht sofort beheben, kann es zu einem Verlust des Datenzugriffs kommen.
+* *Warnereignisse* -- auf dem Speicher-Array ist ein Fehler aufgetreten, der zu einer verschlechterten Leistung oder zu einer reduzierten Fähigkeit führt, nach einem anderen Fehler wiederherzustellen. Der Zugriff auf die Daten wurde nicht verloren, aber Sie müssen den Fehler korrigieren, um möglichen Verlust des Datenzugriffs zu verhindern, wenn ein anderer Fehler auftreten würde.
+* *Informationsereignisse* -- ein Ereignis trat auf dem Speicher-Array auf, das den normalen Betrieb nicht beeinträchtigt. Das Ereignis meldet eine Änderung der Konfiguration oder andere Informationen, die bei der Beurteilung der Performance des Storage-Arrays hilfreich sein könnten.
+* *Debug-Ereignisse* -- ein Ereignis ist auf dem Speicher-Array aufgetreten, das Informationen liefert, mit denen Sie die Schritte oder Zustände ermitteln können, die zu einem Fehler geführt haben. Sie können eine Datei mit diesen Informationen an den technischen Support senden, um die Fehlerursache zu ermitteln.
+
+
+[NOTE]
+====
+Einige Storage-Arrays können möglicherweise nicht alle vier Ereignistypen unterstützen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray (allEvents | criticalEvents |
+warningEvents | infoEvents | debugEvents)
+file=pass:quotes["_filename_"]
+[count=pass:quotes[_numberOfEvents_]]
+[forceSave=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allEvents`
+ a| 
+Der Parameter zum Speichern aller Ereignisse in einer Datei.
+
+
+
+ a| 
+`criticalEvents`
+ a| 
+Der Parameter, mit dem nur die kritischen Ereignisse in einer Datei gespeichert werden sollen.
+
+
+
+ a| 
+`warningEvents`
+ a| 
+Der Parameter, mit dem nur die Warnereignisse in einer Datei gespeichert werden sollen.
+
+
+
+ a| 
+`infoEvents`
+ a| 
+Der Parameter, mit dem nur die Informationsereignisse in einer Datei gespeichert werden.
+
+
+
+ a| 
+`debugEvents`
+ a| 
+Der Parameter, um nur die Debug-Ereignisse in einer Datei zu speichern.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den die Ereignisse gespeichert werden sollen. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\events.txt"`
+
+Der Standardname der Datei, die den Inhalt des Hauptereignisprotokolls enthält, lautet `major-event-log.txt`. Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+
+
+ a| 
+`count`
+ a| 
+Die Anzahl der Ereignisse, die in einer Datei gespeichert werden sollen. Wenn Sie keinen Wert für die Zählung eingeben, werden alle Ereignisse, die dem angegebenen Ereignistyp entsprechen, in der Datei gespeichert. Wenn Sie einen Wert für die Zählung eingeben, wird nur die Anzahl der Ereignisse (beginnend mit dem letzten eingegebenen Ereignis) in der Datei gespeichert. Ganzzahlwerte verwenden.
+
+
+
+ a| 
+`forceSave`
+ a| 
+Der Parameter, um das Speichern der Debug-Ereignisse, die Sie möglicherweise aus der Ansicht in eine Datei gefiltert haben, zu erzwingen. Um das Speichern der Ereignisse zu erzwingen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+[NOTE]
+====
+Mit diesem Parameter werden Debug-Ereignisse gespeichert, die aus der SANtricity-Ereignisanzeige herausgefiltert wurden.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.77 fügen Sie diese Parameter hinzu:
+
+* `warningEvents`
+* `infoEvents`
+* `debugEvents`
+* `forceSave`
+

@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-hostport.html 
+sidebar: sidebar 
+keywords: delete, hostport, command, host, port, identification 
+summary: Mit dem Befehl delete hostPort wird eine Host-Port-Identifizierung gelöscht. 
+---
+= Host-Port löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete hostPort` Befehl löscht eine Host-Port-ID.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Identifizierung ist ein Software-Wert, der den physischen Host-Port zum Controller darstellt. Durch Löschen der Identifizierung erkennt der Controller keine Anweisungen und Daten mehr vom Host-Port.
+
+[IMPORTANT]
+====
+Dieser Befehl funktioniert in einer iSCSI-Umgebung nicht, in der die Host-Ports als Initiatoren gelten. Verwenden Sie stattdessen die `delete iscsiInitiator` Befehl. Siehe xref:delete-iscsiinitiator.adoc[ISCSI-Initiator löschen].
+
+====
+
+
+== Syntax
+
+[listing]
+----
+delete hostPort [hostPortName]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`hostPort`
+ a| 
+Der Name des Host-Ports, den Sie löschen möchten. Schließen Sie den Namen des Host-Ports in eckige Klammern ([ ]) an. Wenn der Name des Host-Ports Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen auch in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Ein Host-Port ist eine physische Verbindung auf einem Hostadapter, der sich auf einem Hostcomputer befindet. Ein Host-Port bietet einen Host-Zugriff auf die Volumes in einem Speicher-Array.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20

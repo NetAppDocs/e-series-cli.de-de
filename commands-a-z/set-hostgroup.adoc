@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-hostgroup.html 
+sidebar: sidebar 
+keywords: set, host, group 
+summary: Der Befehl Set hostGroup benennt eine Host-Gruppe. 
+---
+= Legen Sie die Host-Gruppe fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set hostGroup` Mit dem Befehl wird eine Host-Gruppe umbenannt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set hostGroup pass:quotes[[_hostGroupName_]]
+userLabel=pass:quotes["_newHostGroupName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name der Host-Gruppe, die Sie umbenennen möchten. Fügen Sie den Namen der Host-Gruppe in eckige Klammern ([ ]) ein. Wenn der Name der Host-Gruppe Sonderzeichen oder Zahlen hat, müssen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Name für die Host-Gruppe. Schließen Sie den Namen der neuen Host-Gruppe in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

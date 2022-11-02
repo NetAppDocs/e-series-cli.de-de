@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/save-storagearray-iscsistatistics.html 
+sidebar: sidebar 
+keywords: save, storage, array, iscsi, statistics 
+summary: Der Befehl „Save storageArray iscsiStatistics“ speichert die iSCSI-Leistungsstatistiken des Speicherarrays in einer Datei. 
+---
+= Speichern Sie iSCSI-Statistiken für Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray iscsiStatistics` Befehl speichert die iSCSI-Leistungsstatistiken des Speicherarrays in einer Datei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+[NOTE]
+====
+Dieser Befehl ist veraltet und wird von ersetzt xref:save-storagearray-hostportstatistics.adoc[Speichern Sie die Host-Port-Statistiken des Speicher-Arrays] Befehl.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray iscsiStatistics [(raw | baseline)] file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`raw`
+ a| 
+Die gesammelten Statistiken sind sämtliche Statistiken vom Tagesbeginn des Controllers. Schließen Sie den Parameter in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Die Statistiken, die erfasst werden, sind sämtliche Statistiken aus dem Zeitpunkt, an dem die Controller mithilfe des auf null zurückgesetzt wurden `reset storageArray ibStatsBaseline` Befehl. Schließen Sie den Parameter in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Leistungsstatistiken speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\iscsistat.csv"`
+
+Der Standardname der Datei, die die iSCSI-Leistungsstatistiken enthält, lautet `iscsi-statistics.csv`. Sie können jeden beliebigen Dateinamen verwenden, aber Sie müssen den verwenden `.csv` Erweiterung.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie die iSCSI-Baseline-Statistiken seit dem Start des Controllers nicht zurückgesetzt haben, ist die Zeit zum Start des Tages die Standardbasiszeit.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+8.41 dieser Befehl ist veraltet.

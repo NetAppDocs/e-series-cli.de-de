@@ -1,0 +1,191 @@
+---
+permalink: commands-a-z/show-controller.html 
+sidebar: sidebar 
+keywords: show, controller 
+summary: Der Befehl show Controller gibt Informationen zu einem Controller aus. 
+---
+= Zeigen Sie den Controller an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show controller` Mit dem Befehl werden Informationen über einen Controller zurückgegeben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gibt für jeden Controller in einem Storage Array die folgenden Informationen zurück:
+
+* Der Status (Online oder Offline)
+* Die aktuelle Firmware- und NVSRAM-Konfiguration
+* Die ausstehende Firmware-Konfiguration und NVSRAM-Konfiguration (falls vorhanden)
+* Die Board-ID
+* Die Produkt-ID
+* Die Produktversion
+* Die Seriennummer
+* Das Herstellungsdatum
+* Die Cache-Größe oder die Prozessorgröße
+* Das Datum und die Uhrzeit, zu der der Controller eingestellt ist
+* Die zugehörigen Volumes (einschließlich des bevorzugten Inhabers)
+* Der Ethernet-Port
+* Die Schnittstelle des physischen Laufwerks
+* Die Host-Schnittstelle, die sich nur für Fibre Channel-Host-Schnittstellen bezieht
+
+
+
+
+== Syntax
+
+[listing]
+----
+show (allControllers | controller [(a|b)])
+ [summary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allControllers`
+ a| 
+Die Einstellung, um Informationen über beide Controller im Speicher-Array zurückzugeben.
+
+
+
+ a| 
+`controller`
+ a| 
+Die Einstellung, um Informationen über einen bestimmten Controller im Speicher-Array zurückzugeben. Gültige Controller-IDs sind `a` Oder `b` , Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`summary`
+ a| 
+Die Einstellung, um eine kurze Liste von Informationen über beide Controller im Storage-Array zurückzugeben.
+
+|===
+
+
+== Hinweise
+
+Die folgende Liste ist ein Beispiel für die von zurückgegebenen Informationen `show controller` Befehl. Dieses Beispiel zeigt nur, wie die Informationen präsentiert werden und nicht als Best Practice für eine Storage Array-Konfiguration gelten.
+
+[listing]
+----
+Controller in slot A
+
+   Status: Online
+   Current configuration
+      Firmware version: 96.10.21.00
+         Appware version: 96.10.21.00
+         Bootware version: 96.10.21.00
+      NVSRAM version: N4884-610800-001
+   Pending configuration
+      Firmware version: Not applicable
+         Appware version: Not applicable
+         Bootware version: Not applicable
+      NVSRAM version: Not applicable
+      Transferred on: Not applicable
+   Board ID: 4884
+   Product ID: INF-01-00
+   Product revision: 9610
+   Serial number: 1T14148766
+   Date of manufacture: October 14, 2006
+   Cache/processor size (MB): 1024/128
+   Date/Time: Wed Feb 18 13:55:53 MST 2008
+   Associated Volumes (* = Preferred Owner):
+      1*, 2*, CTL 0 Mirror Repository*, Mirror Repository 1*,
+      JCG_Remote_MirrorMenuTests*
+   Ethernet port: 1
+      MAC address: 00:a0:b8:0c:c3:f5
+      Host name: ausctlr9
+      Network configuration: Static
+      IP address: 172.22.4.249
+      Subnet mask: 255.255.255.0
+      Gateway: 172.22.4.1
+      Remote login: Enabled
+   Drive interface: Fibre
+      Channel: 1
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 2
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 3
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Drive interface: Fibre
+      Channel: 4
+      Current ID: 125/0x1
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+   Host interface: Fibre
+      Port: 1
+      Current ID: Not applicable/0xFFFFFFFF
+      Preferred ID: 126/0x0
+      NL-Port ID: 0x011100
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+      Topology: Fabric Attach
+      World-wide port name: 20:2c:00:a0:b8:0c:c3:f6
+      World-wide node name: 20:2c:00:a0:b8:0c:c3:f5
+      Part type: HPFC-5200    revision 10
+   Host interface: Fibre
+      Port: 2
+      Current ID: Not applicable/0xFFFFFFFF
+      Preferred ID: 126/0x0
+      NL-Port ID: 0x011100
+      Maximum data rate: 2 Gbps
+      Current data rate: 1 Gbps
+      Data rate control: Switch
+      Link status: Up
+      Topology: Fabric Attach
+      World-wide port name: 20:2c:00:a0:b8:0c:c3:f7
+      World-wide node name: 20:2c:00:a0:b8:0c:c3:f5
+      Part type: HPFC-5200    revision 10
+----
+Wenn Sie das verwenden `summary` Parameter. Der Befehl gibt die Liste mit Informationen ohne die Laufwerkskanalinformationen und die Host-Kanalinformationen zurück.
+
+Der `show storageArray` Der Befehl gibt außerdem detaillierte Informationen zum Controller aus.
+
+
+
+== Minimale Firmware-Stufe
+
+5.43 fügt die hinzu `summary` Parameter.

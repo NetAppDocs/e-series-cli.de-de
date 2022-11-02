@@ -1,0 +1,639 @@
+---
+permalink: get-started/exit-status.html 
+sidebar: sidebar 
+keywords: exit, status 
+summary: In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt. 
+---
+= Exit-Status
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt.
+
+[cols="3*"]
+|===
+| Statuswert | Fehlername | Bedeutung 
+
+
+ a| 
+0
+ a| 
+ERFOLGREICH
+ a| 
+Der Befehl wurde ohne Fehler beendet.
+
+
+
+ a| 
+1
+ a| 
+UNGÜLTIGE_NUTZUNG
+ a| 
+Der Befehl wurde mit einem Fehler beendet. Es werden auch Informationen über den Fehler angezeigt.
+
+
+
+ a| 
+2
+ a| 
+SCRIPT_FILE_DOES_NOT_EXIT
+ a| 
+Die Skriptdatei existiert nicht.
+
+
+
+ a| 
+3
+ a| 
+FEHLER_OPENING_OUTPUT_FILE
+ a| 
+Beim Öffnen einer Ausgabedatei ist ein Fehler aufgetreten.
+
+
+
+ a| 
+4
+ a| 
+NO_STORAGE_ARRAY_AT_ADDRESS
+ a| 
+Ein Speicher-Array war nicht an der angegebenen Adresse.
+
+
+
+ a| 
+5
+ a| 
+ADDRESSES_AGIVE_DIFFERENT_ARRAYS
+ a| 
+Adressen geben unterschiedliche Speicher-Arrays an.
+
+
+
+ a| 
+6
+ a| 
+NO_SANAME_FOR_HOST_AGENT_CONNECT
+ a| 
+Für den angeschlossenen Host-Agent ist kein Name des Speicher-Arrays vorhanden.
+
+
+
+ a| 
+7
+ a| 
+SANAME_NOT_AT_ADDRESS
+ a| 
+Der Name des Speicher-Arrays war nicht an der angegebenen Adresse.
+
+
+
+ a| 
+8
+ a| 
+SANAME_NOT_UNIQUE
+ a| 
+Der Name des Speicher-Arrays war nicht eindeutig.
+
+
+
+ a| 
+9
+ a| 
+SANAME_NOT_IN_CONFIG_FILES
+ a| 
+Der Name des Speicher-Arrays war nicht in der Konfigurationsdatei.
+
+
+
+ a| 
+10
+ a| 
+NO_MANAGEMENT_CLASS_FOR_SA
+ a| 
+Für das Storage-Array ist keine Management-Klasse vorhanden.
+
+
+
+ a| 
+11
+ a| 
+NO_SA_IN_CONFIG_FILE_FOUND
+ a| 
+Ein Speicher-Array wurde in der Konfigurationsdatei nicht gefunden.
+
+
+
+ a| 
+12
+ a| 
+INTERNER FEHLER
+ a| 
+Ein interner Fehler ist aufgetreten. Dieser Exit-Status gibt an, dass Sie keine Berechtigungen zum Ausführen eines CLI-Befehls über die Befehlszeile besitzen. Sie müssen über Administratorrechte verfügen, um alle CLI-Befehle von einer Befehlszeile aus auszuführen.
+
+
+
+ a| 
+13
+ a| 
+UNGÜLTIGE_SCRIPT_SYNTAX
+ a| 
+Ungültige Skript-Syntax gefunden.
+
+
+
+ a| 
+14
+ a| 
+KOMMUNIKATION NICHT MÖGLICH
+ a| 
+Der Controller konnte nicht mit dem Speicher-Array kommunizieren.
+
+
+
+ a| 
+15
+ a| 
+DUPLIKAT_ARGUMENT
+ a| 
+Es wurde ein doppeltes Argument eingegeben.
+
+
+
+ a| 
+16
+ a| 
+EXECUTION_ERROR
+ a| 
+Ein Ausführungsfehler ist aufgetreten.
+
+
+
+ a| 
+17
+ a| 
+NO_HOST_AT_ADDRESS
+ a| 
+Ein Host war nicht an der angegebenen Adresse.
+
+
+
+ a| 
+18
+ a| 
+WWNAME_NOT_IN_CONFIG_FILES
+ a| 
+Die WWID war nicht in der Konfigurationsdatei.
+
+
+
+ a| 
+19
+ a| 
+WWNAME_NOT_AT_ADDRESS
+ a| 
+Die WWID war nicht an der Adresse.
+
+
+
+ a| 
+20
+ a| 
+UNKNOWN_IP
+ a| 
+Eine unbekannte IP-Adresse wurde angegeben.
+
+
+
+ a| 
+21
+ a| 
+PM_CONFIG_FILE_CORRUPTED
+ a| 
+Die Konfigurationsdatei des Ereignismonitors wurde beschädigt.
+
+
+
+ a| 
+22
+ a| 
+KANN NICHT_ZU_COMMUNICATE_TO_PM
+ a| 
+Das Speicher-Array konnte nicht mit dem Event Monitor kommunizieren.
+
+
+
+ a| 
+23
+ a| 
+UNEXIST_ALERT
+ a| 
+Der Controller konnte keine Alarmeinstellungen schreiben.
+
+
+
+ a| 
+24
+ a| 
+FALSCHER_ORGANISATOR_KNOTEN
+ a| 
+Der falsche Organisator-Knoten wurde angegeben.
+
+
+
+ a| 
+25
+ a| 
+CMD_NOT_AVAILABLE
+ a| 
+Der Befehl war nicht verfügbar.
+
+
+
+ a| 
+26
+ a| 
+DEVICE_NOT_IN_CONFIG_FILE
+ a| 
+Das Gerät war nicht in der Konfigurationsdatei.
+
+
+
+ a| 
+27
+ a| 
+FEHLER_AKTUALISIEREN_CONFIG_FILE
+ a| 
+Beim Aktualisieren der Konfigurationsdatei ist ein Fehler aufgetreten.
+
+
+
+ a| 
+28
+ a| 
+UNBEKANNTER_HOST_FEHLER
+ a| 
+Ein unbekannter Host-Fehler ist aufgetreten.
+
+
+
+ a| 
+29
+ a| 
+ABSENDER_KONTAKT_DATEI_NICHT_GEFUNDEN
+ a| 
+Die Kontaktinformationsdatei des Absenders wurde nicht gefunden.
+
+
+
+ a| 
+30
+ a| 
+READ_SENDER_KONTAKT_DATEI_FEHLGESCHLAGEN
+ a| 
+Die Kontaktdatei des Absenders konnte nicht gelesen werden.
+
+
+
+ a| 
+31
+ a| 
+USERDATA_FILE_EXISTS
+ a| 
+Der `userdata.txt` Datei vorhanden.
+
+
+
+ a| 
+32
+ a| 
+BAD_E-MAIL_INFORMATION_TO_INCLUDE
+ a| 
+Eine ist ungültig `-I` Der Wert in der E-Mail-Benachrichtigung wurde angegeben.
+
+
+
+ a| 
+33
+ a| 
+BAD_E-MAIL_FREQUENZ
+ a| 
+Eine ist ungültig `-f` Der Wert in der E-Mail-Benachrichtigung wurde angegeben.
+
+
+
+ a| 
+34
+ a| 
+OPTION_ENTFERNT
+ a| 
+Der `-r` Option wird nicht mehr unterstützt.
+
+
+
+ a| 
+35
+ a| 
+UNKNOWN_ALERT_PRIORITY
+ a| 
+Es wurde ein ungültiger Schweregrad für Meldungen angegeben.
+
+
+
+ a| 
+36
+ a| 
+PASSWORT_ERFORDERLICH
+ a| 
+Für den Vorgang muss entweder das Administrator- oder das Monitor-Passwort festgelegt werden.
+
+
+
+ a| 
+37
+ a| 
+UNGÜLTIGES_MONITOR_PASSWORT
+ a| 
+Der Vorgang kann nicht abgeschlossen werden, da ein ungültiges Monitor-Kennwort eingegeben wurde.
+
+
+
+ a| 
+38
+ a| 
+UNGÜLTIGES_ADMIN_PASSWORT
+ a| 
+Der Vorgang kann nicht abgeschlossen werden, da ein ungültiges Administratorpasswort eingegeben wurde.
+
+
+
+ a| 
+39
+ a| 
+ÜBERSCHRITTEN_MAX_CHARS_FOR_PASSWORD
+ a| 
+Das angegebene Passwort überschreitet das Zeichenlimit.
+
+
+
+ a| 
+40
+ a| 
+UNGÜLTIGES_MONITOR_TOKEN
+ a| 
+Der `-R` Der Monitor wird für dieses Array nicht unterstützt. Verwenden Sie eine gültige Rolle, und versuchen Sie den Vorgang erneut.
+
+
+
+ a| 
+41
+ a| 
+ASUP_CONFIG_FEHLER
+ a| 
+Beim Schreiben in die AutoSupport-Konfigurationsdatei bzw. beim Lesen aus dieser Datei ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.
+
+
+
+ a| 
+42
+ a| 
+MAIL_SERVER_UNBEKANNT
+ a| 
+Host-Adresse oder E-Mail-Server-Adresse ist falsch.
+
+
+
+ a| 
+43
+ a| 
+ASUP_SMTP_REPLY_ADDRESS_REQUIRED
+ a| 
+Beim Versuch des ASUP-Konfigurationstests wurden keine gesunden ASUP-aktivierten Arrays erkannt.
+
+
+
+ a| 
+44
+ a| 
+NO_ASUP_ARRAYS_DETECTED
+ a| 
+Eine Antwortanforderung ist erforderlich, wenn der ASUP Bereitstellungstyp SMTP ist.
+
+
+
+ a| 
+45
+ a| 
+ASUP_INVALID_MAIL_RELAIS_SERVER
+ a| 
+ASUP-Mail-Relay-Server konnte nicht validiert werden.
+
+
+
+ a| 
+46
+ a| 
+ASUP_INVALID_SENDER_E-MAIL
+ a| 
+Die angegebene Absender-E-Mail-Adresse ist kein gültiges Format.
+
+
+
+ a| 
+47
+ a| 
+ASUP_INVALID_PAC_SCRIPT
+ a| 
+Die PAC-Skriptdatei (Proxy Auto-Configuration) ist keine gültige URL.
+
+
+
+ a| 
+48
+ a| 
+ASUP_INVALID_PROXY_SERVER_HOST_ADDRESS
+ a| 
+Die angegebene Host-Adresse wurde nicht gefunden oder befindet sich in einem falschen Format.
+
+
+
+ a| 
+49
+ a| 
+ASUP_INVALID_PROXY_SERVER_PORT_NUMBER
+ a| 
+Die angegebene Port-Nummer ist ein ungültiges Format.
+
+
+
+ a| 
+50
+ a| 
+ASUP_INVALID_AUTHENTICATION_PARAMETER
+ a| 
+Der angegebene Benutzername oder das angegebene Passwort ist ungültig.
+
+
+
+ a| 
+51
+ a| 
+ASUP_INVALID_DAILY_TIME_PARAMETER
+ a| 
+Der angegebene tägliche Zeitparameter ist ungültig.
+
+
+
+ a| 
+52
+ a| 
+ASUP_INVALID_DAY_OF_WEEK_PARAMETER
+ a| 
+Der `-dayOfWeek` Die eingegebenen Parameter sind ungültig.
+
+
+
+ a| 
+53
+ a| 
+ASUP_INVALID_WEEKLY_TIME_PARAMETER
+ a| 
+Der wöchentliche Zeitparameter ist ungültig.
+
+
+
+ a| 
+54
+ a| 
+ASUP_INVALID_SCHEDULE_PARSING
+ a| 
+Die angegebenen Planungsinformationen konnten nicht erfolgreich analysiert werden.
+
+
+
+ a| 
+55
+ a| 
+ASUP_INVALID_SA_SPECIFIED
+ a| 
+Ungültiger Speicher-Array-Spezifikator angegeben.
+
+
+
+ a| 
+56
+ a| 
+ASUP_INVALID_INPUT_ARCHIVE
+ a| 
+Das eingegebene Archiv ist ungültig. Der Parameter für das Eingabearchiv muss in Form von angegeben sein ``-inputArchive=<n>``Wo Ist eine Ganzzahl zwischen 0 und 5.
+
+
+
+ a| 
+57
+ a| 
+ASUP_INVALID_OUTPUT_LOG
+ a| 
+Ein gültiges Ausgabeprotokoll wurde nicht angegeben.
+
+
+
+ a| 
+58
+ a| 
+ASUP_TRANSMISSION_FILE_COPY_ERROR
+ a| 
+Beim Versuch, die AutoSupport-Übertragungsprotokoll-Datei zu kopieren, ist ein Fehler aufgetreten. Das Übertragungsprotokoll ist entweder nicht vorhanden oder es ist ein I/O-Fehler beim Versuch, seine Daten zu kopieren.
+
+
+
+ a| 
+59
+ a| 
+ASUP_DUPLICATE_NAMED_ARRAYS
+ a| 
+Es wurde mehr als ein Storage-Array mit demselben Namen gefunden. Bitte versuchen Sie den Befehl mit dem World-Wide-Name Parameter erneut. `-w <WWID>`.
+
+
+
+ a| 
+60
+ a| 
+ASUP_NO_SPECIFIED_ARRAY_FOUND
+ a| 
+Das angegebene Speicher-Array mit dem Parameter -n <Storage-System-Name> ist nicht vorhanden oder wird für diesen Befehl nicht unterstützt.
+
+
+
+ a| 
+61
+ a| 
+ASUP_NO_SPECIFIED_WWID_FOUND
+ a| 
+Das angegebene Speicher-Array mit dem `-w <WWID>` Der Parameter ist nicht vorhanden oder wird für diesen Befehl nicht unterstützt.
+
+
+
+ a| 
+62
+ a| 
+ASUP_FILTERED_TRANSMISSION_LOG_ERROR
+ a| 
+Beim Versuch, das gefilterte Übertragungsprotokoll zu erhalten, ist ein unbekannter Fehler aufgetreten.
+
+
+
+ a| 
+63
+ a| 
+ASUP_TRANSMISSION_ARCHIVE_DOES_NOT_EXIT
+ a| 
+Das mit dem spezifizierte AutoSupport Input Archive Transmission Log``-inputArchive=<n>`` Der Parameter ist nicht vorhanden.
+
+
+
+ a| 
+64
+ a| 
+KEIN_VALID_REST_CLIENT_DUND
+ a| 
+Kommunikation mit dem Speicher-Array über HTTPS nicht möglich.
+
+
+
+ a| 
+65
+ a| 
+UNGÜLTIGE_CLI_VERSION
+ a| 
+Die Client-CLI-Version ist nicht mit der CLI-Version kompatibel, die auf dem Speicher-Array ausgeführt wird.
+
+
+
+ a| 
+66
+ a| 
+UNGÜLTIGES_USERNAME_ODER_PASSWORD
+ a| 
+Der eingegebene Benutzername oder das eingegebene Passwort ist ungültig.
+
+
+
+ a| 
+67
+ a| 
+NICHT VERTRAUENSWÜRDIGE_VERBINDUNG
+ a| 
+Es konnte keine sichere Verbindung zum Speicher-Array hergestellt werden.
+
+
+
+ a| 
+68
+ a| 
+UNGÜLTIGE_PASSWORD_-DATEI
+ a| 
+Die Kennwortdatei wurde nicht gefunden oder kann nicht gelesen werden.
+
+|===

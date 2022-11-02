@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/show-allhostports.html 
+sidebar: sidebar 
+keywords: show, host, ports 
+summary: Der Befehl show allHostPorts gibt Informationen über konfigurierte Host-Ports zurück. 
+---
+= Zeigen Sie Host-Ports an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show allHostPorts` Befehl gibt Informationen zu konfigurierten Host-Ports zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Bei allen Host-Ports, die mit einem Speicher-Array verbunden sind, gibt dieser Befehl folgende Informationen aus:
+
+* Die Host-Port-ID
+* Der Name des Host-Ports
+* Der Host-Typ
+
+
+
+
+== Syntax
+
+[listing]
+----
+show allHostPorts
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Dieser Befehl gibt Informationen über den HBA-Host-Port zurück, die diesem Beispiel ähnlich sind.
+
+[listing]
+----
+HOST PORT IDENTIFIER     HOST PORT NAME  HOST TYPE
+12:34:56:54:33:22:22:22  Jupiter1        Solaris
+12:34:56:78:98:98:88:88  Pluto1          Windows 2000/Server 2003 Clustered
+54:32:12:34:34:55:65:66  Undefined       Undefined
+----
+
+
+== Minimale Firmware-Stufe
+
+5.40

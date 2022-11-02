@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/add-array-label.html 
+sidebar: sidebar 
+keywords: add array label, supported, syntax, parameters, minimum firmware level 
+summary: Mit dem Befehl Array-Bezeichnung hinzufügen können Sie der Konfiguration ein Speicher-Array mit einer benutzerdefinierten Bezeichnung hinzufügen. Auf diese Weise können spätere Befehle das Speicher-Array anhand der benutzerdefinierten Bezeichnung und nicht anhand von IP-Adresse oder Hostname adressieren. 
+---
+= Fügen Sie eine Array-Bezeichnung hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Add array label` Mit dem Befehl können Sie der Konfiguration ein Speicher-Array mit einer benutzerdefinierten Bezeichnung hinzufügen. Auf diese Weise können spätere Befehle das Speicher-Array anhand der benutzerdefinierten Bezeichnung und nicht anhand von IP-Adresse oder Hostname adressieren.
+
+
+
+== Unterstützte Arrays
+
+[NOTE]
+====
+Die angegebene benutzerdefinierte Bezeichnung muss nicht mit dem Namen des Speicher-Arrays übereinstimmen, der in System Manager angezeigt wird. Dies ist ein lokales Etikett, das ausschließlich zur Verweisen auf das Speicher-Array über die CLI verwendet wird.
+
+====
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`Address`
+ a| 
+Hier können Sie die IP-Adresse (IPv4 oder IPv6) oder den vollqualifizierten Hostnamen für das Speicherarray angeben.
+
+[NOTE]
+====
+Der `Address2` Wert ist optional.
+
+====
+
+
+ a| 
+`userDefinedString`
+ a| 
+Ermöglicht die Angabe einer Bezeichnung für das Speicherarray.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

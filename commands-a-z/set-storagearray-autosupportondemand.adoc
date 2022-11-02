@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/set-storagearray-autosupportondemand.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, ondemand, feature, individual, E2800, E5700, arrays 
+summary: Der Befehl Set storageArray autoSupportOnDemand schaltet die AutoSupport OnDemand Funktion ein oder aus. Mit dieser Funktion kann der technische Support die AutoSupport-Datenübertragung koordinieren und die erneute Übermittlung fehlender Support-Daten anfordern. 
+---
+= Aktivieren oder deaktivieren Sie die AutoSupport OnDemand-Funktion
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray autoSupportOnDemand` Befehl schaltet die AutoSupport OnDemand-Funktion ein oder aus. Mit dieser Funktion kann der technische Support die AutoSupport-Datenübertragung koordinieren und die erneute Übermittlung fehlender Support-Daten anfordern.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Bevor Sie diese Funktion aktivieren, müssen Sie zuerst die AutoSupport-Funktion auf dem Speicher-Array aktivieren. Nachdem Sie diese Funktion aktiviert haben, können Sie die AutoSupport-Funktion für die Ferndiagnose (falls gewünscht) aktivieren.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray autoSupportOnDemand (enable | disable)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`enable | disable`
+ a| 
+Ermöglicht dem Benutzer, die AutoSupport OnDemand-Funktion zu aktivieren oder zu deaktivieren. Wenn AutoSupport deaktiviert ist, wird die Aktion Aktivieren fehlerhaft und der Benutzer wird aufgefordert, die Aktivierung zunächst zu aktivieren. Wenn die Funktion „Remote Diagnostics“ aktiviert ist, wird die Funktion „Deaktivieren“ auch die Funktion „Remote Diagnostics“ deaktiviert.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportOnDemand enable;"
+
+SMcli completed successfully.
+----
+
+
+== Verifizierung
+
+Verwenden Sie die `show storageArray autoSupport` Befehl, um zu sehen, ob Sie die Funktion aktiviert haben. Die ersten beiden Zeilen der angezeigten Ausgabe zeigen den Status aktivieren der AutoSupport-Funktion, gefolgt von der AutoSupport OnDemand-Funktion:
+
+[listing]
+----
+The AutoSupport is enabled on this storage array.
+The AutoSupport OnDemand feature is enabled on this storage array.
+The AutoSupport Remote Diagnostics feature is enabled on this storage array.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

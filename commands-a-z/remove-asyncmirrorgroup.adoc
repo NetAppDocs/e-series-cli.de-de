@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/remove-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: remove, incomplete, asynchronous, mirror, pair, group 
+summary: Mit dem Befehl async MirrorGroup entfernen wird ein verwaister gespiegeltes Paar-Volume auf dem Storage-Array entfernt. 
+---
+= Entfernen Sie ein unvollständiges, asynchrones gespiegeltes Paar aus asynchroner Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove asyncMirrorGroup` Befehl entfernt ein verwaies gespiegeltes Paar-Volume auf dem Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Ein verwaistes gespiegeltes Paar-Volume ist vorhanden, wenn ein Mitglied-Volume in einer asynchronen Spiegelgruppe auf einer Seite der asynchronen Spiegelgruppe entfernt wurde (entweder auf der primären oder sekundären Seite), nicht jedoch auf der anderen Seite.
+
+Verwaiste gespiegelte Paarvolumen werden erkannt, wenn die Kommunikation zwischen den Controllern wiederhergestellt wird und die beiden Seiten der Spiegelkonfiguration die Spiegelparameter abgleichen.
+
+Verwenden Sie diesen Befehl, wenn die Mirror-Beziehung erfolgreich im lokalen oder Remote-Speicher-Array entfernt wurde, jedoch aufgrund eines Kommunikationsproblems nicht im entsprechenden Speicher-Array entfernt werden kann.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+remove asyncMirrorGroup pass:quotes[[_"asyncMirrorGroupName"_]]
+incompleteMirror volume=pass:quotes[_"volumeName"_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, die das verwaiste Volume enthält, das Sie entfernen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name des verwaisten Volumes, das Sie aus der asynchronen Spiegelgruppe entfernen möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

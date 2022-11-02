@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/revive-drive.html 
+sidebar: sidebar 
+keywords: revive, drive 
+summary: Mit dem Befehl Revive Drive wird das angegebene Laufwerk in den optimalen Zustand versetzt. 
+---
+= Fahren Sie erneut beleben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `revive drive` Der Befehl zwingt das angegebene Laufwerk zum optimalen Status.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Möglicher Verlust des Datenzugriffs* -- die korrekte Verwendung dieses Befehls hängt von der Datenkonfiguration auf allen Laufwerken in der Volume-Gruppe ab. Versuchen Sie niemals, ein Laufwerk wiederzubeleben, es sei denn, Sie werden durch technischen Support überwacht.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+revive drive pass:quotes[[_trayID_],pass:quotes[[_drawerID,_]]pass:quotes[_slotID_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+|===
+
+
+== Hinweise
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Minimale Firmware-Stufe
+
+5.43
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben.

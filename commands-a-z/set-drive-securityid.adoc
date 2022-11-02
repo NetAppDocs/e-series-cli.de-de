@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/set-drive-securityid.html 
+sidebar: sidebar 
+keywords: set, fips, drive, security, identifier 
+summary: Mit dem Befehl Laufwerk Securityid setzen Sie ein FIPS-Laufwerk auf die ursprünglichen Herstellereinstellungen zurück. 
+---
+= Legen Sie die FIPS-Laufwerk-Sicherheitskennung fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set drive securityID` Mit dem Befehl wird ein FIPS-Laufwerk auf die ursprünglichen Herstellereinstellungen zurückgesetzt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl setzt ein FIPS-Laufwerk zurück auf die ursprünglichen Herstellereinstellungen und löscht alle vorhandenen Laufwerkdaten. Dieser Vorgang ist komplett irreversibel. Dies kann erforderlich sein, wenn das Laufwerk aufgrund einer ungültigen oder fehlenden Sicherheitsschlüsseldatei oder eines unbekannten Passphrase gesperrt ist. Alle vorhandenen Laufwerkdaten werden gelöscht.
+
+====
+Verwenden Sie zum Löschen eines FDE-Laufwerks den `start secureErase` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] securityID="string"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`securityID`
+ a| 
+Die Sicherheits-ID des zu löschende Laufwerks in String-Form. Dieser String kann maximal 32 Zeichen lang sein. Die Form der Sicherheits-ID ist je nach Hersteller unterschiedlich.
+
+[NOTE]
+====
+Um die Sicherheits-ID zu finden, entfernen Sie das Laufwerk und lesen Sie die Sicherheits-ID auf dem Etikett des Behälters.
+
+====
+|===
+
+
+== Hinweise
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Beispiel
+
+[listing]
+----
+set drive [1,31,4] securityID="V2zdvLTdGWdWyTALGHns";
+----
+
+
+== Minimale Firmware-Stufe
+
+8.25

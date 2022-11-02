@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/set-storagearray-time.html 
+sidebar: sidebar 
+keywords: set, storage, array, time 
+summary: Mit dem Befehl Set storageArray Time werden die Uhren auf beiden Controllern in einem Storage Array festgelegt, indem die Controller-Uhren mit der Uhr des Hosts synchronisiert werden, von dem Sie diesen Befehl ausführen. 
+---
+= Legen Sie die Zeit für das Storage-Array fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray time` Mit Befehl werden die Uhren auf beiden Controllern in einem Speicher-Array festgelegt, indem die Controller-Uhren mit der Uhr des Hosts synchronisiert werden, von dem Sie diesen Befehl ausführen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray time
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

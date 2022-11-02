@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/delete-snmpuser-username.html 
+sidebar: sidebar 
+keywords: delete, user, name, command, simple, network, management, protocol, create, register, effective, unregister, trap, destination, associate, remove 
+summary: 'Der Befehl delete snmpUser username löscht einen vorhandenen einfachen Network Management Protocol (SNMP) USM-Benutzer, den Sie zuvor mit dem Befehl "create snmpUser" erstellt und registriert haben. Wenn Sie einen SNMP-Benutzer löschen, wird die Registrierung des Benutzers effektiv aufgehoben. Alle mit diesem Benutzer verknüpften Trap-Ziele werden ebenfalls entfernt.' 
+---
+= Aufheben der Registrierung von SNMPv3 USM-Benutzern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete snmpUser userName` Befehl löscht einen vorhandenen einfachen Network Management Protocol (SNMP) USM-Benutzer, den Sie zuvor mit dem „[.code]``create snmpUser``„, Befehl. Wenn Sie einen SNMP-Benutzer löschen, wird die Registrierung des Benutzers effektiv aufgehoben. Alle mit diesem Benutzer verknüpften Trap-Ziele werden ebenfalls entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snmpUser userName="_snmpUserName_" [engineId=(local | engineId)]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userName`
+ a| 
+Der Name des SNMP USM-Benutzers, den Sie löschen möchten. Schließen Sie den SNMP-USM-Benutzernamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`engineId`
+ a| 
+Die Engine-ID des SNMP USM-Benutzers, den Sie aktualisieren möchten. Die Engine-ID ist erforderlich, wenn mehr als ein USM-Benutzer mit demselben Benutzernamen vorhanden ist. Der Wert kann „[.code]``_local_``„ Die Angabe des lokalen SNMP-Agenten ist der autorisierende Agent oder eine sechzimale Ziffernfolge, um eine Remote-SNMP-Agent-Engine-ID anzugeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.72

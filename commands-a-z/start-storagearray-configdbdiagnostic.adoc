@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/start-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: start, storage, array, configuration, database, diagnostic 
+summary: Mit dem Befehl „Start storageArray configDbDiagnostic“ wird eine Konsistenzprüfung für eine Konfigurationsdatenbank ausgeführt. 
+---
+= Starten Sie die Diagnose der Konfigurationsdatenbank des Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start storageArray configDbDiagnostic` Mit dem Befehl wird eine Konsistenzprüfung für eine Konfigurationsdatenbank ausgeführt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+start storageArray configDbDiagnostic
+[sourceLocation=(disk | onboard) |
+diagnosticType=(fileSystem | mirror) |
+controller[(a|b)]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`sourceLocation`
+ a| 
+Dieser Parameter gibt den Speicherort der Datenbank an.
+
+* `disk` Gibt an, dass Daten direkt aus der Datenbank auf dem Laufwerk stammen
+* `onboard` Zeigt an, dass die Daten vom RPA-Speicherort stammen
+
+
+Der Standardspeicherort ist `disk`.
+
+
+
+ a| 
+`diagnosticType`
+ a| 
+Der Umfang des Diagnosetests, den Sie in der Datenbank ausführen möchten. Sie können eine der folgenden Testebenen ausführen:
+
+`fileSystem` -- Diese Option überprüft die strukturelle Integrität der Datenbank.
+
+`mirror` -- die Tests, die mit dieser Option ausgeführt werden, variieren je nach dem Wert des `sourceLocation` Parameter:
+
+* Wenn der `*sourceLocation*` Parameter ist auf festgelegt `disk`, Der Peer-Controller leitet eine Blockprüfung ein.
+* Wenn der `*sourceLocation*` Parameter ist auf festgelegt `onboard` , Der Peer-Controller leitet eine Datensatzprüfung ein.
+
+
+[NOTE]
+====
+Sie können die ausführen `mirror` Option nur über eine Befehlszeile oder über den Skript-Editor. Diese Option steht nicht über die Storage Management Software GUI zur Verfügung. Der `mirror` Option startet einen langen laufenden Vorgang, der nicht beendet werden kann.
+
+====
+Der Standardwert ist `fileSystem`.
+
+
+
+ a| 
+`controller`
+ a| 
+Der Controller mit der Datenbank, auf der Sie die Diagnosetests ausführen möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl führt eine Konsistenzprüfung für eine Konfigurationsdatenbank aus. Alle Datenbankdatensätze werden überprüft. Fehlerdaten werden automatisch in eine Datei im Datenordner auf dem Datenträger geschrieben. Sie müssen keine Ausgabedatei angeben.
+
+[NOTE]
+====
+Ausführen einer Konsistenzprüfung mit dem `diagnosticType` Parameter auf gesetzt `mirror` Und mit dem `sourceLocation` Parameter auf gesetzt `onboard` Kann dazu führen, dass der Vorgang für lange Zeit ausgeführt wird. Dies kann nachteilige Auswirkungen auf die I/O-Verarbeitung des Hosts haben. Dieser Vorgang sollte nur unter Anleitung der Support-Organisation erfolgen.
+
+====
+Nach Abschluss des Diagnosetests liefert die Controller-Firmware ein der folgenden Ergebnisse:
+
+* `Diagnosis completed without errors. No ZIP file created.`
+* `Diagnosis completed with errors. Refer to the ZIP file created at:`
++
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+
+
+Wenn der Diagnosetest eine Inkonsistenz in der Konfigurationsdatenbank feststellt, führt die Controller-Firmware die folgenden Aktionen aus:
+
+* Gibt eine Beschreibung der Inkonsistenz zurück
+* Speichert eine ZIP-Datei mit RAW-Binärdaten
+
+
+Die Controller-Firmware speichert die ZIP-Datei an diesem Speicherort:
+
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+Sie können die Binärdaten verwenden, um die Ursache des Problems zu ermitteln, oder Sie können die Datei mit den Binärdaten an den technischen Support senden.
+
+Um den Diagnosetest für die Datenbankkonfiguration zu beenden, verwenden Sie das `stop storageArray configDbDiagnostic` Befehl.
+
+Zudem können Sie den Diagnosetest für die Datenbankkonfiguration über die Storage Management Software GUI starten. Sie können den Diagnosetest für die Datenbankkonfiguration jedoch nicht über die Storage Management Software GUI beenden. Wenn Sie einen laufenden Diagnosetest beenden möchten, müssen Sie den verwenden `stop storageArray configDbDiagnostic` Befehl.
+
+
+
+== Minimale Firmware-Stufe
+
+7.75
+
+7.83 fügt folgende Parameter hinzu:
+
+* `sourceLocation`
+* `diagnosticType`
+* `controller`
+

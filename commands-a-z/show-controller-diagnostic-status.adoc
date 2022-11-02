@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/show-controller-diagnostic-status.html 
+sidebar: sidebar 
+keywords: show, controller, diagnostic, status 
+summary: Der Befehl show Controller gibt den Status der Controller-Diagnose zurück, die mit dem Diagnosebefehl „Start“ gestartet wurde. 
+---
+= Zeigt den Controller-Diagnosestatus an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show controller` Der Befehl gibt den Status der Controller-Diagnose zurück, die von gestartet wurde `start controller diagnostic` Befehl.
+
+Wenn die Diagnose abgeschlossen ist, werden alle Ergebnisse der Diagnosetests angezeigt. Wenn die Diagnosetests noch nicht abgeschlossen sind, werden nur die Ergebnisse der durchgeführten Tests angezeigt. Die Ergebnisse des Tests werden auf dem Terminal angezeigt, oder Sie können die Ergebnisse in eine Datei schreiben.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Die Einstellung, um Informationen über einen bestimmten Controller im Speicher-Array zurückzugeben. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Der Name der Datei, die die Ergebnisse der Diagnosetests enthält. Dieser Befehl fügt dem Dateinamen nicht automatisch eine Dateierweiterung hinzu. Sie müssen eine Erweiterung hinzufügen, wenn Sie den Dateinamen eingeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.70 fügt die Fähigkeit für den Diagnosestatus des Controllers hinzu.

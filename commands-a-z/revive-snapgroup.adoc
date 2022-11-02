@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/revive-snapgroup.html 
+sidebar: sidebar 
+keywords: revive, snapshot, group 
+summary: Der Befehl „Revive SnapGroup“ zwingt die angegebene Snapshot-Gruppe zum optimalen Status. 
+---
+= Snapshot-Gruppe neu beleben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `revive snapGroup` Der Befehl erzwingt die angegebene Snapshot-Gruppe zum optimalen Status.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Wenn die Snapshot-Gruppe sich nicht im Fehlerzustand befindet, zeigt die Firmware eine Fehlermeldung an, und führt diesen Befehl nicht aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+revive snapGroup pass:quotes[[_snapGroupName_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, die Sie auf den optimalen Status setzen möchten. Schließen Sie den Namen der Snapshot-Gruppe in eckige Klammern ([ ]). Wenn der Name der Snapshot-Gruppe Sonderzeichen hat oder nur aus Zahlen besteht, müssen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

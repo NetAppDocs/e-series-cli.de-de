@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/recopy-volumecopy-target.html 
+sidebar: sidebar 
+keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
+summary: Mit dem Befehl „reciopy VolumeCopy“ wird ein Kopiervorgang mit einem vorhandenen Volume-Copy-Paar neu gestartet. 
+---
+= Volume-Kopie erneut kopieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recopy volumeCopy target` Der Befehl initiiert einen Vorgang der Volume-Kopie erneut mit einem vorhandenen Volume-Kopie-Paar.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 7.83 der `copyType=(online | offline)` Parameter wird nicht mehr verwendet.
+
+====
+Dieser Befehl gilt für Paare von Snapshot-Image-Volume-Kopien.
+
+Dieser Befehl funktioniert mit Volume Copy Pairs, die Sie mit einem Snapshot Image Volume erstellt haben.
+
+[NOTE]
+====
+Beim Starten eines Vorgangs für eine Volume-Kopie werden alle vorhandenen Daten auf dem Ziel-Volume überschrieben, der Zieldatenträger ist schreibgeschützt für Hosts und schlägt alle dem Ziel-Volume zugeordneten Snapshot-Image-Volumes fehl, sofern vorhanden. Wenn Sie das Ziel-Volume bereits als Kopie genutzt haben, müssen Sie die Daten nicht mehr benötigen oder gesichert haben.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+recopy volumeCopy target [targetName]
+[source [sourceName]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`target`
+ a| 
+Der Name des Ziel-Volume, für das Sie einen Vorgang der Volume-Kopie erneut initiieren möchten. Umschließen Sie den Namen des Zielvolumens in eckigen Klammern ([ ]). Wenn der Name des Ziel-Volumes Sonderzeichen enthält, müssen Sie den Namen des Zielvolumens in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`source`
+ a| 
+Der Name des Quell-Volume, für das Sie einen Vorgang der Volume-Kopie erneut initiieren möchten. Umschließen Sie den Namen des Quellvolumens in eckige Klammern ([ ]). Wenn der Name des Quell-Volumes Sonderzeichen enthält, müssen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Die Priorität, die die Volume-Kopie relativ zur Host-I/O-Aktivität hat. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Die Einstellung, damit Sie auf das Zielvolume schreiben oder nur vom Zielvolume lesen können. Um auf das Zielvolume zu schreiben, setzen Sie diesen Parameter auf `FALSE`. Um das Schreiben auf das Zielvolumen zu verhindern, setzen Sie diesen Parameter auf `TRUE`.
+
+|===
+
+
+== Hinweise
+
+Die Kopierpriorität definiert die Menge der Systemressourcen, die zum Kopieren der Daten zwischen dem Quell-Volume und dem Ziel-Volume eines Volume-Kopiepaars verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Kopie die meisten Systemressourcen, um die Volume-Kopie durchzuführen. Dadurch verringert sich die Performance bei der Übertragung von Host-Daten.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.83 entfernt die `copyType=(online | offline)` Parameter.

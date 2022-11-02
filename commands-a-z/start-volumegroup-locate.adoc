@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-volumegroup-locate.html 
+sidebar: sidebar 
+keywords: start, volume, group, locate 
+summary: Mit dem Befehl „Volume-Gruppe starten“ werden die Laufwerke identifiziert, die logisch gruppiert sind, um die angegebene Volume-Gruppe zu bilden, indem die Anzeigeleuchten auf den Laufwerken blinkt. 
+---
+= Starten Sie die Volume-Gruppe lokalisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volumeGroup locate` Der Befehl identifiziert die Laufwerke, die logisch gruppiert sind, um die angegebene Volume-Gruppe zu bilden, indem die Kontrollleuchten auf den Laufwerken blinkt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Verwenden Sie die `stop volumeGroup locate` Befehl zum Ausschalten der Kontrollleuchten auf den Laufwerken.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] locate
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, für die Sie die Laufwerke suchen möchten, die zu dieser Volume-Gruppe gehören. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.16

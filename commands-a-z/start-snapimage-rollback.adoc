@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/start-snapimage-rollback.html 
+sidebar: sidebar 
+keywords: start, snapshot, image, rollback 
+summary: Mit dem Befehl „SnapImage Rollback starten“ wird ein Rollback-Vorgang für eine Reihe von Snapshot-Images gestartet. 
+---
+= Starten Sie das Rollback von Snapshot Image
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start snapImage rollback` Befehl startet einen Rollback-Vorgang für eine Reihe von Snapshot-Images.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Der Inhalt des Basis-Volumes ändert sich sofort, um den Point-in-Time-Inhalt des ausgewählten Snapshot-Image-Volumes anzupassen. Das Basisvolumen ist nach Abschluss des Rollback-Vorgangs sofort für Lese-/Schreibanfragen verfügbar. Um die Zurücksetzung eines Snapshot-Images zu beenden, verwenden Sie den `stop rollback snapImage` Befehl.
+
+Das Repository-Volume, das mit dem Snapshot-Image verknüpft ist, verfolgt weiterhin alle neuen Änderungen zwischen dem Basis-Volume und dem Snapshot-Image-Volume, die nach Abschluss des Rollback-Vorgangs auftreten.
+
+[NOTE]
+====
+Dieser Befehl kann nicht für Snapshot-Images verwendet werden, die an der Online-Volume-Kopie beteiligt sind.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start snapImage ["_snapImageName_"]] rollback
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapImage`
+ a| 
+Der Name des Snapshot-Images. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` -- Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` -- Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise einen Rollback-Vorgang für Snapshot Image 12345 in einer Snapshot-Gruppe mit dem Namen SnapGroup1 starten möchten, verwenden Sie den folgenden Befehl:
+
+[listing]
+----
+start snapImage ["snapGroup1:12345"] rollback;
+----
+Um einen Rollback-Vorgang für das aktuellste Snapshot-Image in einer Snapshot-Gruppe mit dem Namen SnapGroup1 zu starten, verwenden Sie diesen Befehl:
+
+[listing]
+----
+start snapImage ["snapGroup1:newest"]rollback;
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

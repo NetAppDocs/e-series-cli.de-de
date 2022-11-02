@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-drivechannel-locate.html 
+sidebar: sidebar 
+keywords: stop, drive, channel, locate 
+summary: Mit dem Befehl „Stop driveChannel Locate“ werden die Anzeigeleuchten an den Laufwerksfächern ausgeschaltet, die durch den Befehl „Start driveChannel Locate“ eingeschaltet wurden. 
+---
+= Stoppen Sie die Position des Laufwerkskanals
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop driveChannel locate` Mit Befehl werden die Kontrollleuchten der Laufwerksfächer ausgeschaltet, die vom eingeschaltet wurden `start driveChannel locate` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+stop driveChannel locate
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

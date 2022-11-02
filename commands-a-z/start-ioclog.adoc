@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/start-ioclog.html 
+sidebar: sidebar 
+keywords: start, input, output, controller, ioc, dump 
+summary: Der Befehl Start IOCLog erzeugt einen Dump des IOC-Protokolls der Datenübertragung zwischen einem Host und einem Controller. 
+---
+= Starten Sie den I/O-Dump (Input Output Controller)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start IOCLog` Befehl erzeugt einen Dump des IOC-Protokolls der Datenübertragung zwischen einem Host und einem Controller.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Controller werden als „a“ oder „b“ bezeichnet. Jeder Controller kann bis zu vier Hostkanäle haben; jeder Kanal ist eindeutig durch eine Zahl von 1 bis 4 gekennzeichnet.
+
+
+
+== Syntax
+
+[listing]
+----
+start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
+[overwrite=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller-channel identifiers`
+ a| 
+Dieser Parameter gibt den Controller und den Host-Kanal an, von dem aus der IOC-Dump erstellt werden soll. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Host-Kanäle haben numerische Kennungen. Schließen Sie die Controller-Kennung und die Host-Kanal-ID in eckige Klammern ([ ]).
+
+Gültige Controller-Kennung und Host-Kanal-Werte sind `a1`, `a2`, `a3`, `a4`, `b1`, `b2`, `b3`, `b4`.
+
+Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+
+
+ a| 
+`overwrite`
+ a| 
+Dieser Parameter bewirkt, dass der neue IOC-Log-Dump einen vorhandenen Dump überschreibt. Um den vorhandenen Dump zu überschreiben, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl erzeugt ein Debug-Protokoll vom IOC des ausgewählten Controllers und speichert die Daten komprimiert in einem persistenten Speicherpuffer auf dem Controller. Sie können die Daten aus dem Debug-Protokoll mit abrufen `save IOCLog` Befehl. Der Controller gibt einen Fehler für die folgenden Bedingungen aus:
+
+* Die Controller-Plattform und HIC unterstützen keinen IOC Dump.
+* Der angegebene Controller hat einen ausstehenden IOC-Dump und der Überschreibungsparameter ist false.
+* Die angegebene Controller-ID oder Kanalkennung befindet sich außerhalb des gültigen Bereichs.
+
+
+
+
+== Minimale Firmware-Stufe
+
+8.20

@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/set-volumecopy-target.html 
+sidebar: sidebar 
+keywords: set, volume, copy 
+summary: Der Befehl Set VolumeCopy Target definiert die Eigenschaften für ein Volume-Copy-Paar. 
+---
+= Legen Sie die Volume-Kopie fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set volumeCopy target` Mit dem Befehl werden die Eigenschaften für ein Volume-Copy-Paar definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 7.83 der `copyType=(online | offline)` Parameter wird nicht mehr verwendet.
+
+====
+Dieser Befehl gilt für Snapshot-Volume-Kopierpaare.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set volumeCopy target pass:quotes[[_targetName_]]
+source pass:quotes[[_sourceName_]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(online | offline)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`target`
+ a| 
+Der Name des Volumes, auf das die Daten kopiert werden. Umschließen Sie den Namen des Zielvolumens in eckigen Klammern ([ ]). Wenn der Name des Ziel-Volumes Sonderzeichen oder Zahlen hat, müssen Sie den Namen des Zielvolumens in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`source`
+ a| 
+Der Name des Volumes, aus dem die Daten kopiert werden. Umschließen Sie den Namen des Quellvolumens in eckige Klammern ([ ]). Wenn der Name des Quell-Volumes Sonderzeichen oder Zahlen hat, müssen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+Die Priorität, die die Volume-Kopie relativ zur Host-I/O-Aktivität hat. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+Die Einstellung, damit Sie auf das Zielvolume schreiben oder nur vom Zielvolume lesen können. Um auf das Zielvolume zu schreiben, setzen Sie diesen Parameter auf `FALSE`. Um das Schreiben auf das Zielvolumen zu verhindern, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+[NOTE]
+====
+Dieser Parameter wurde veraltet.
+
+====
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+
+
+== Minimale Firmware-Stufe
+
+5.40
+
+7.83 entfernt die `copyType=(online | offline)` Parameter.

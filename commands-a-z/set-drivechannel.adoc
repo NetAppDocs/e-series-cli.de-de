@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/set-drivechannel.html 
+sidebar: sidebar 
+keywords: set, drive, channel, status 
+summary: Der Befehl set driveChannel definiert die Leistung des Antriebskanals. 
+---
+= Den Status des Antriebskanals festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set driveChannel` Der Befehl definiert die Leistung des Laufwerkskanals.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
+status=(optimal | degraded)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`driveChannel`
+ a| 
+Die Identifikationsnummer des Laufwerkskanals, für den Sie den Status festlegen möchten. Gültige Werte für den Laufwerkskanal sind `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`. Schließen Sie die Nummer des Laufwerkskanals in eckige Klammern ([ ]).
+
+
+
+ a| 
+`status`
+ a| 
+Der Zustand des Antriebskanals. Sie können den Laufwerkskanalstatus auf einstellen `optimal` Oder `degraded`.
+
+|===
+
+
+== Hinweise
+
+Verwenden Sie die `optimal` Option, um einen Laufwerkskanal zurück in den optimalen Zustand zu verschieben. Verwenden Sie die `degraded` Option, wenn der Laufwerkskanal Probleme aufweist und das Speicher-Array zusätzliche Zeit für Datentransfers benötigt.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.15 fügt die Aktualisierung der Laufwerkskanalkennung hinzu.

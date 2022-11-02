@@ -1,0 +1,150 @@
+---
+permalink: commands-a-z/set-tray-serviceallowedindicator.html 
+sidebar: sidebar 
+keywords: set, tray, service, action, allowed, indicator 
+summary: 'Der Befehl Set Tray serviceAllowedIndicator schaltet die Kontrollleuchte Service Action AllowedIndicator an einem Power-Fan-Behälter, einem Interconnect-Batterie-Behälter oder einem Environmental Services Module (ESM) Behälter ein oder aus.' 
+---
+= Legen Sie die Anzeige für die zulässige Aktion für die Fachwartung fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set tray serviceAllowedIndicator` Befehl schaltet die Kontrollleuchte „Serviceaktion zulässig“ an einem Aktivkohlebehälter, einem Behälter mit Verbindungskatterien oder einem Behälter mit einem Umweltdienstmodul (ESM) ein oder aus.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus.
+
+Zum ein- oder Ausschalten der Kontrollleuchte „Serviceaktion zulässig“ am Controller-Behälter verwenden Sie den `set controller serviceAllowedIndicator` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]]
+(powerFan [(left | right | top | bottom)] |
+interconnect |
+esm [(left | right | top | bottom)]) |
+battery [(left | right)] |
+fanCanister [(left | right)]  |
+powerCanister [(top | bottom)] |
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`tray`
+ a| 
+Das Fach, in dem sich der Lüfter-Behälter, der Verbindungsbehälter, der ESM-Behälter oder der Batteriebehälter befinden. Die Werte für Fach-ID sind `0` Bis `99`. Legen Sie den Wert für die Fach-ID in eckige Klammern ([ ]) ein. Wenn Sie keinen Wert für die Fach-ID eingeben, ist die Fach-ID des Controller-Fachs der Standardwert.
+
+
+
+ a| 
+`powerFan`
+ a| 
+Die Anzeigeleuchte „Serviceaktion zulässig“ am Lüfter-Behälter, den Sie ein- oder ausschalten möchten. Gültige Kennungen des Power-Fan-Behälters sind `left`, `right`, `top`, Oder `bottom`. Schließen Sie die Power-Fan-Behälter-ID in eckige Klammern ([ ]).
+
+
+
+ a| 
+`interconnect`
+ a| 
+Die Kontrollleuchte „Wartungsmaßnahme zulässig“ für den Behälter mit Verbindungsbatterie.
+
+
+
+ a| 
+`esm`
+ a| 
+Die Kontrollleuchte „Wartungsmaßnahme zulässig“ für einen ESM-Behälter. Gültige ESM-Kanister-Kennungen sind `left`, `right`, `top`, Oder `bottom`.
+
+
+
+ a| 
+`battery`
+ a| 
+Die Kontrollleuchte Wartungsmaßnahme zulässig für eine Batterie. Gültige Akku-IDs sind `left` Oder `right`.
+
+
+
+ a| 
+`fanCanister`
+ a| 
+Die Kontrollleuchte „Wartungsmaßnahme zulässig“ für einen Lüfterbehälter. Gültige Lüfterbehälter-Kennungen sind `left` Oder `right`.
+
+
+
+ a| 
+`powerCanister`
+ a| 
+Die Kontrollleuchte „Wartungsmaßnahme zulässig“ für einen Aktivkohlebehälter. Gültige Power-Kanister-Kennungen sind `top` Oder `bottom`.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Die Einstellung zum ein- und Ausschalten der Kontrollleuchte Serviceaktion zulässig. Um die Anzeigeleuchte Serviceaktion zulässig einzuschalten, setzen Sie diesen Parameter auf `on`. Um die Anzeigeleuchte „Serviceaktion erlaubt“ auszuschalten, setzen Sie diesen Parameter auf `off`.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl wurde ursprünglich für die Verwendung mit dem CE6998-Controller-Fach definiert Dieser Befehl wird nicht von Controller-Fächern unterstützt, die vor der Einführung des CE6998-Controller-Fachs geliefert wurden
+
+
+
+== Beispiel
+
+Mit diesem Befehl wird die Anzeigeleuchte „Serviceaktion zulässig“ für das linke ESM in Fach 5 mit der IP-Adresse 155.155.155.155 eingeschaltet.
+
+[listing]
+----
+SMcli 123.145.167.214 123.145.167.215 -c "set tray [5]
+ESM [left] serviceAllowedIndicator=on;"
+----
+
+
+== Minimale Firmware-Stufe
+
+6.14 fügt folgende Parameter hinzu:
+
+* `powerFan`
+* `interconnect`
+
+
+6.16 fügt folgende Parameter hinzu:
+
+* `tray`
+* `esm`
+
+
+7.60 fügt die Kennungen hinzu `top` Und `bottom`.
+
+7.60 fügt die hinzu `powerCanister` Und `fanCanister` Parameter.

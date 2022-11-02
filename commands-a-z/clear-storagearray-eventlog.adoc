@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/clear-storagearray-eventlog.html 
+sidebar: sidebar 
+keywords: clear, storage array, event log 
+summary: Der Befehl storageArray eventlog löschen löscht das Ereignisprotokoll im Speicher-Array, indem die Daten im Ereignisprotokollpuffer gelöscht werden. 
+---
+= Löschen Sie das Ereignisprotokoll des Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear storageArray eventLog` Befehl löscht das Ereignisprotokoll im Speicher-Array durch Löschen der Daten im Ereignisprotokollpuffer.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Mögliche Schäden an der Speicher-Array-Konfiguration* -- Sobald Sie diesen Befehl ausführen, wird das vorhandene Ereignisprotokoll im Speicher-Array gelöscht.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+clear storageArray eventLog
+----
+
+
+== Parameter
+
+Keine.

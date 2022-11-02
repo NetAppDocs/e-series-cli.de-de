@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/show-storagearray-revocationchecksettings.html 
+sidebar: sidebar 
+keywords: show, certificate, revocation, check, set 
+summary: Mit dem Befehl show storageArray revocationCheckSettings können Sie die Einstellungen für den Zertifikatsannullierung des Speicherarrays anzeigen. 
+---
+= Zeigen Sie die Einstellungen für die Überprüfung des Zertifikatsannulfs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray revocationCheckSettings` Mit dem Befehl können Sie die Einstellungen für den Zertifikatsperrbefehl für das Speicher-Array anzeigen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Parameter
+
+Keine.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray revocationCheckSettings
+----
+
+
+=== Beispiel
+
+[listing]
+----
+SMcli -n Array1 c "show storageArray revocationCheckSettings;"
+Revocation Checking: Disabled
+OCSP Responder Server URL: https://ocspResponderURL.com
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

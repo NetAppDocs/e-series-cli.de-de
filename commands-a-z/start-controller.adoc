@@ -1,0 +1,148 @@
+---
+permalink: commands-a-z/start-controller.html 
+sidebar: sidebar 
+keywords: start, controller, trace 
+summary: Der Befehl Start Controller startet eine Operation, die Debug-Trace-Informationen in einer komprimierten Datei speichert. 
+---
+= Controller-Trace starten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start controller` Befehl startet eine Operation, die Debug-Trace-Informationen in einer komprimierten Datei speichert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Debug-Trace-Informationen können vom technischen Support verwendet werden, um zu analysieren, wie gut ein Speicher-Array ausgeführt wird.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start controller [(a
+ | b
+ | both)] trace
+dataType=(current | flushed | currentFlushed | all)
+forceFlush=(TRUE | FALSE)
+pass:quotes[file="_fileName_]"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller, für den Sie die Trace-Debug-Informationen sammeln möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A , und `b` Ist der Controller in Steckplatz B. Sie können auch gleichzeitig Debug für beide Controller sammeln, indem Sie eingeben `both` . Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+
+
+ a| 
+`dataType`
+ a| 
+Der Datentyp, den Sie erfassen möchten:
+
+* `current` -- ruft die aktuellen DQ-Spuren ab
+* `flushed` -- ruft alle gesperrten DQ-Spuren ab
+* `currentFlushed` -- ruft sowohl die aktuelle DQ-Spur als auch die gespült DQ-Spur ab
+* `all` -- ruft die aktuelle DQ-Spur, gespült DQ-Spur und alle Plattform DQ-Spuren ab
+
+
+[NOTE]
+====
+Wenn `dataType=flushed` Und `forceFlush=True`, Eine Fehlermeldung gibt an, dass beim Abrufen nur aktive Spuren in den Puffer gespült werden können.
+
+====
+
+
+ a| 
+`*forceFlush*`
+ a| 
+Die Einstellung zum Verschieben der DQ-Informationen im aktuellen Puffer in den gespütterten Puffer, wenn die DQ-Trace-Informationen vom definiert wurden `dataType` Parameter wird abgerufen. Um die Flush erzwingen zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Flush erzwingen zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`.
+
+[NOTE]
+====
+Wenn `dataType=flushed` Und `forceFlush=True`, Eine Fehlermeldung gibt an, dass beim Abrufen nur aktive Spuren in den Puffer gespült werden können.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in dem die DQ-Trace-Informationen gespeichert werden sollen. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" ").
+
+Informationen zum Benennen der Dateien finden Sie im Abschnitt Hinweise.
+
+|===
+
+
+== Hinweise
+
+Die DQ-Trace-Informationen werden in eine komprimierte Datei mit einer Erweiterung von .zip geschrieben. Der Dateiname ist eine Kombination aus einem benutzerdefinierten Dateinamen und der Speicher-Array-Kennung (BESAGTE). Dem Dateinamen wird auch eine Konstante von "dq" hinzugefügt. Der vollständige Dateiname enthält das folgende Formular:
+
+[listing]
+----
+user_defined_file_name-SAID-dq.zip
+----
+Die komprimierte Datei enthält die in dieser Tabelle aufgeführten Informationen.
+
+[cols="3*"]
+|===
+| Dateiname | Verzeichnis | Kommentare 
+
+
+ a| 
+`user_provided_file_name-SAID-A.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+Die DQ-Trace-Daten, die von Controller A. abgerufen wurden
+
+
+
+ a| 
+`user_provided_file_name-SAID-B.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+Die DQ-Trace-Daten, die von Controller B. abgerufen wurden
+
+
+
+ a| 
+`user_provided_file_name-SAID-trace_description.xm`
+ a| 
+`SAID/timestamp/`
+ a| 
+Die Beschreibungsdatei in einem XML-Format, das die DQ-Dateiattribute für zukünftige Data Mining beschreibt.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.75

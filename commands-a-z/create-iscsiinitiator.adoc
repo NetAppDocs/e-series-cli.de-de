@@ -1,0 +1,93 @@
+---
+permalink: commands-a-z/create-iscsiinitiator.html 
+sidebar: sidebar 
+keywords: create, iscsi, initiator 
+summary: Der Befehl „Create iscsiInitiator“ erstellt ein neues iSCSI-Initiator-Objekt. 
+---
+= ISCSI-Initiator erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create iscsiInitiator` Befehl erstellt ein neues iSCSI-Initiator-Objekt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+[NOTE]
+====
+Dieser Befehl ist veraltet und wird von ersetzt xref:create-initiator.adoc[Erstellen des Initiators] Befehl.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create iscsiInitiator iscsiName=pass:quotes[_"iscsiID"_
+userLabel="_name_"
+host="_hostName"_]
+[chapSecret=pass:quotes[_"securityKey"_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`iscsiName`
+ a| 
+Die Standardkennung des iSCSI-Initiators. Schließen Sie die Kennung in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie für den iSCSI-Initiator verwenden möchten. Schließen Sie den Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, in dem der iSCSI-Initiator installiert ist. Schließen Sie den Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Der Sicherheitsschlüssel, den Sie zur Authentifizierung einer Peer-Verbindung verwenden möchten. Schließen Sie den Sicherheitsschlüssel in doppelte Anführungszeichen („ “).
+
+|===
+
+
+== Hinweise
+
+Challenge Handshake Authentication Protocol (CHAP) ist ein Protokoll, das den Peer einer Verbindung authentifiziert. CHAP basiert auf den Gleichgesinnten, die ein _secret_ teilen. Ein Geheimnis ist ein Sicherheitsschlüssel, der einem Kennwort ähnelt.
+
+Verwenden Sie die `chapSecret` Parameter zum Einrichten der Sicherheitsschlüssel für Initiatoren, die eine gegenseitige Authentifizierung erfordern.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+8.41 dieser Befehl ist veraltet.

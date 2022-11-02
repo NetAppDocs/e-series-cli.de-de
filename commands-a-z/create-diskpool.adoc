@@ -1,0 +1,324 @@
+---
+permalink: commands-a-z/create-diskpool.html 
+sidebar: sidebar 
+keywords: create, disk pool 
+summary: Der Befehl Create diskPool erstellt basierend auf den angegebenen Parametern einen neuen Laufwerk-Pool. 
+---
+= Erstellen Sie einen Laufwerkspool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create diskPool` Befehl erstellt auf Basis der angegebenen Parameter einen neuen Festplattenpool.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können den Laufwerk-Pool erstellen, indem Sie entweder eine Liste von Laufwerken oder einen Laufwerkstyp eingeben, den Sie für den Laufwerk-Pool verwenden möchten.
+
+[NOTE]
+====
+Wenn Sie eine Liste der Laufwerke eingeben, stellen Sie sicher, dass alle Laufwerke die gleiche Kapazität haben. Wenn die Laufwerke nicht die gleiche Kapazität haben, meldet jedes Laufwerk im Laufwerk-Pool die Kapazität gleich dem kleinsten Laufwerk.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create diskPool
+(drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1 ... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN)_]|
+driveType=(fibre | SATA | SAS | NVMe4K))
+ userLabel=pass:quotes[_"diskPoolName"_]
+[driveCount=pass:quotes[_driveCountValue_]]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[warningThreshold=(pass:quotes[_warningThresholdValue_] | default)]
+[criticalThreshold=(pass:quotes[_criticalThresholdValue_] | default)]
+[criticalPriority=(highest|high|medium|low|lowest)]
+[backgroundPriority=(highest|high|medium|low|lowest)]
+[degradedPriority=(highest|high|medium|low|lowest)]
+[securityType=(none | capable | enabled )]
+[secureDrives=(fips | fde )]
+[driveMediaType=(hdd | ssd | allMedia | unknown)]
+[dataAssurance=(none|enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drives`
+ a| 
+Die Laufwerke, die Sie dem Laufwerk-Pool zuweisen möchten, den Sie erstellen möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie für den neuen Laufwerk-Pool angeben möchten. Schließen Sie den Disk-Pool-Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`driveCount`
+ a| 
+Der `driveCount` Parameter beschränkt die Disk-Pool-Kandidaten auf die angegebene Zahl. Bei Verwendung dieses Parameters ist der Mindestwert, den Sie für Festplattenlaufwerke eingeben können, 11. Bei SSD-Laufwerken können Sie den Mindestwert 8 eingeben.
+
+[NOTE]
+====
+SSD Pools mit einer `driveCount` Weniger als 11 sind auf RAID 1-Volumes beschränkt.
+
+====
+
+
+ a| 
+`warningThreshold`
+ a| 
+Der Prozentsatz der Storage-Kapazität, mit der Sie eine Warnung erhalten, dass sich der Laufwerk-Pool bald voll befindet. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 60 60 Prozent. Für den besten Betrieb muss der Wert für diesen Parameter kleiner sein als der Wert für das `criticalThreshold` Parameter.
+
+Gültige Werte liegen zwischen 0 und 100.
+
+Der Standardwert ist 50.
+
+Wenn Sie diesen Parameter auf 0 (Null) setzen, werden Warnmeldungen deaktiviert.
+
+Wenn Sie dies auf einstellen `default`, Der Warnungsschwellenwert wird von der Controller-Firmware bestimmt.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+Der Prozentsatz der Storage-Kapazität, mit der Sie eine kritische Warnmeldung erhalten, dass sich der Laufwerk-Pool bald voll nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Für eine optimale Operation muss der Wert für diesen Parameter größer sein als der Wert für das `warningThreshold` Parameter.
+
+Gültige Werte liegen zwischen 0 und 100.
+
+Der Standardwert ist 85 Prozent.
+
+Wenn Sie diesen Parameter auf 0 (Null) setzen, werden sowohl Warnmeldungen als auch kritische Warnmeldungen deaktiviert.
+
+Wenn Sie dies auf einstellen `default`, Der Schwellenwert für kritische Warnmeldungen wird durch die Controller-Firmware bestimmt.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+Die Priorität für Rekonstruktionsvorgänge für kritische Ereignisse im Disk Pool. Beispielsweise wird die Festplattenpool-Rekonstruktion nach mindestens zwei Laufwerksausfällen durchgeführt.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `highest`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+Priorität für Hintergrundvorgänge im Laufwerk-Pool.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `low`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+Priorität für heruntergestuften Aktivitäten im Laufwerk-Pool. Beispielsweise wird die Festplatten-Pool-Rekonstruktion nach dem Ausfall eines Laufwerks unterstützt.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `high`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Die Einstellung zum Festlegen des Sicherheitsniveaus beim Erstellen des Laufwerkpools. Alle Volume-Kandidaten für den Disk-Pool verfügen über den angegebenen Sicherheitstyp.
+
+Diese Einstellungen sind gültig:
+
+* `none` -- die Volume-Kandidaten sind nicht sicher.
+* `capable` -- die Volume-Kandidaten sind in der Lage, die Sicherheit eingestellt zu haben, aber die Sicherheit wurde nicht aktiviert.
+* `enabled` -- die Volume-Kandidaten haben die Sicherheit aktiviert.
+
+
+Der Standardwert ist `none`.
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Der Typ der sicheren Laufwerke, die in der Volume-Gruppe verwendet werden sollen. Diese Einstellungen sind gültig:
+
+* `fips` -- nur Laufwerke mit FIPS-2-konform zu verwenden.
+* `fde` - Zur Verwendung von FDE-konformen Laufwerken.
+
+
+[NOTE]
+====
+Verwenden Sie diesen Parameter zusammen mit dem `securityType` Parameter. Wenn Sie angeben `none` Für das `securityType` Parameter, der Wert des `secureDrives` Der Parameter wird ignoriert, da nicht sichere Festplattenpools keine sicheren Laufwerkstypen angegeben werden müssen.
+
+====
+[NOTE]
+====
+Dieser Parameter wird ignoriert, es sei denn, Sie verwenden auch das `driveCount` Parameter. Wenn Sie die Laufwerke angeben, die für den Laufwerk-Pool verwendet werden sollen, anstatt eine Anzahl bereitzustellen, geben Sie den entsprechenden Laufwerkstyp in der Auswahlliste basierend auf dem gewünschten Sicherheitstyp an.
+
+====
+
+
+ a| 
+`driveMediaType`
+ a| 
+Der Laufwerkstyp, den Sie für den Laufwerk-Pool verwenden möchten.
+
+Sie müssen diesen Parameter verwenden, wenn Sie mehr als einen Laufwerkstyp im Speicher-Array haben.
+
+Diese Datenträger sind gültig:
+
+* `hdd` -- Verwenden Sie diese Option, wenn Sie Festplatten haben.
+* `ssd` -- Verwenden Sie diese Option, wenn Sie Solid-State Disks haben.
+* `unknown` -- Verwenden Sie diese Option, wenn Sie nicht sicher sind, welche Arten von Datenträgern in der Laufwerksschublade sind
+* `allMedia` -- Verwenden Sie diese Option, wenn Sie alle Arten von Datenträgern verwenden möchten, die sich in der Laufwerksschublade befinden
+
+
+Der Standardwert ist `hdd`.
+
+[NOTE]
+====
+Die Controller-Firmware kann nicht zusammen verwendet werden `hdd` Und `ssd` Laufwerk-Medien im selben Laufwerk-Pool, unabhängig von der gewählten Einstellung.
+
+====
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+Die Einstellung zur Angabe, ob Ressourcen-Provisioning-Funktionen aktiviert sind. Um die Ressourcenbereitstellung zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Der Standardwert ist `TRUE`.
+
+|===
+
+
+== Hinweise
+
+Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+Wenn die angegebenen Parameter von keinem der verfügbaren Kandidatenlaufwerke erfüllt werden können, schlägt der Befehl fehl. Normalerweise werden alle Laufwerke, die mit den Attributen der Service-Qualität übereinstimmen, als die besten Kandidaten zurückgegeben. Wenn Sie jedoch eine Laufwerksliste angeben, stimmen einige der als Kandidaten zurückgegebenen verfügbaren Laufwerke möglicherweise nicht mit der Qualität der Serviceattribute überein.
+
+Wenn Sie keinen Wert für einen optionalen Parameter angeben, wird ein Standardwert zugewiesen.
+
+
+
+== Laufwerke
+
+Wenn Sie das verwenden `driveType` Parameter: Alle nicht zugewiesenen Laufwerke, die von diesem Laufwerkstyp sind, werden zum Erstellen des Festplattenpools verwendet. Wenn Sie die Anzahl der vom gefundenen Laufwerke begrenzen möchten `driveType` Parameter im Disk-Pool können Sie die Anzahl der Laufwerke mit angeben `driveCount` Parameter. Sie können das verwenden `driveCount` Parameter nur dann, wenn Sie den verwenden `driveType` Parameter.
+
+Der `drives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Wenn Sie Spezifikationen für ein Laufwerksfach mit hoher Kapazität eingeben, jedoch kein Laufwerksfach verfügbar ist, gibt die Storage Management Software eine Fehlermeldung aus.
+
+
+
+== Schwellenwerte für Disk Pool-Warnmeldungen
+
+Jeder Disk Pool verfügt über zwei nach und nach schwerwiegende Alarmstufen, mit denen Sie die Benutzer informieren, wenn die Speicherkapazität des Disk Pools voll ist. Der Schwellenwert für eine Warnmeldung ist ein Prozent der genutzten Kapazität zur gesamten nutzbaren Kapazität im Laufwerk-Pool. Die Warnmeldungen lauten wie folgt:
+
+* Warnung -- Dies ist die erste Alarmstufe. Dieses Level gibt an, dass die genutzte Kapazität in einem Laufwerk-Pool nahezu voll ist. Wenn der Schwellenwert für die Warnmeldung erreicht wird, wird eine Warnmeldung benötigt und ein Ereignis an die Storage Management Software gesendet. Der Warnschwellenwert wird durch den kritischen Schwellenwert ersetzt. Der Standardwarnungsschwellenwert beträgt 50 Prozent.
+* Kritisch -- Dies ist die schwerste Alarmstufe. Dieses Level gibt an, dass die genutzte Kapazität in einem Laufwerk-Pool nahezu voll ist. Wenn der Schwellenwert für die kritische Warnmeldung erreicht wird, wird eine Warnmeldung generiert und ein Ereignis an die Storage Management Software gesendet. Der Warnschwellenwert wird durch den kritischen Schwellenwert ersetzt. Der Standardschwellenwert für die kritische Warnmeldung liegt bei 85 Prozent.
+
+
+Um effektiv zu sein, muss der Wert für eine Warnmeldung immer kleiner als der Wert für eine kritische Warnmeldung sein. Wenn der Wert für die Warnmeldung mit dem Wert für eine kritische Warnmeldung identisch ist, wird nur die kritische Warnmeldung gesendet.
+
+
+
+== Hintergrundvorgänge für den Disk Pool
+
+Disk-Pools unterstützen die folgenden Hintergrundvorgänge:
+
+* Rekonstruktion
+* Instant Availability Format (IAF)
+* Formatieren
+* Dynamische Kapazitätserweiterung (DCE)
+* Dynamische Volume-Erweiterung (DVE) (bei Disk Pools ist DVE zwar kein Hintergrundvorgang, DVE wird aber als synchroner Vorgang unterstützt).
+
+
+Disk Pools müssen keine Hintergrundbefehle in die Warteschlange stellen. Sie können mehrere Hintergrundbefehle nacheinander starten, aber wenn mehr als ein Hintergrundvorgang gleichzeitig gestartet wird, verzögert sich die Ausführung von Befehlen, die Sie zuvor gestartet haben. Die unterstützten Hintergrundvorgänge haben die folgenden relativen Prioritätsstufen:
+
+. Rekonstruktion
+. Formatieren
+. IAF
+. DCE
+
+
+
+
+== Sicherheitstyp
+
+Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
+
+Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müssen einen Sicherheitsschlüssel für das Speicher-Array erstellen. Verwenden Sie die `create storageArray securityKey` Befehl zum Erstellen eines Speicherarray-Sicherheitsschlüssels. Diese Befehle beziehen sich auf den Sicherheitsschlüssel:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Sichere Laufwerke
+
+Sichere Laufwerke können entweder vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) oder FIPS-Laufwerke (Federal Information Processing Standard) sein. Verwenden Sie die `secureDrives` Parameter, um den Typ der zu verwendenden sicheren Laufwerke anzugeben. Die Werte, die Sie verwenden können, sind `fips` Und `fde`.
+
+
+
+== Beispielbefehl
+
+[listing]
+----
+create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=capable secureDrives=fips;
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.20 fügt folgende Parameter hinzu:
+
+* `trayLossProtect`
+* `drawerLossProtect`
+
+
+8.25 fügt die hinzu `secureDrives` Parameter.
+
+8.63 fügt die hinzu `resourceProvisioningCapable` Parameter.
+
+11.73 aktualisiert die `driveCount` Parameter.

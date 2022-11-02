@@ -1,0 +1,105 @@
+---
+permalink: commands-a-z/clear-asyncmirrorfault.html 
+sidebar: sidebar 
+keywords: clear, asynchronous mirroring, fault 
+summary: Der Befehl clear async MirrorFault löscht einen „Tickky“-Fehler bei der asynchronen Spiegelung von einer oder mehreren asynchronen Spiegelgruppen und von einem oder mehreren asynchronen Spiegelgruppenmitgliedern-Volumes. 
+---
+= Löschen Sie den asynchronen Spiegelungsfehler
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear asyncMirrorFault` Befehl löscht einen asynchronen Spiegelungsfehler von einer oder mehreren asynchronen Spiegelgruppen und von einem oder mehreren asynchronen Spiegelgruppe Mitglieder-Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Eine asynchrone Spiegelgruppe und seine Mitglieder-Volumes können auf asynchrone Spiegelung „klebrige“ Fehler stoßen, die zu einem bestimmten Zeitpunkt auftreten, aber die Funktionalität der Spiegelungen nicht beeinträchtigen. Diese Art von Fehlern muss überprüft werden, erfordert jedoch möglicherweise keine Änderungen an der Konfiguration.
+
+Eine asynchrone Spiegelgruppe und ihre Mitglied-Volumes können möglicherweise mehr als einen verknüpften Haftfehler haben. Dieser Befehl löscht alle Fehler, die mit der asynchronen Spiegelgruppe und seinem Mitglied-Volume verbunden sind. Wenn jedoch eine asynchrone Spiegelgruppe einen Fehler hat und eines ihrer Mitgliedsvolumes einen Fehler hat, löscht das Löschen des Fehlers auf der asynchronen Spiegelgruppe den Fehler auf dem Mitgliedsvolume nicht.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+clear asyncMirrorFault(all |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName1"
+... "asyncMirrorGroupNameN"_]] |
+volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]])
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`all`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie alle Fehler bei der asynchronen Spiegelung aus allen asynchronen Spiegelgruppen und allen asynchronen Spiegelgruppe-Mitgliedsvolumes löschen möchten.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, aus der der asynchrone Spiegelungsfehler gelöscht werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Die Namen mehrerer asynchroner Spiegelgruppen, aus denen Sie den Fehler der asynchronen Spiegelung löschen möchten. Geben Sie die Namen der asynchronen Spiegelgruppen mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name des spezifischen Mitgliedsvolume (in einer asynchronen Spiegelgruppe), aus dem Sie den Fehler der asynchronen Spiegelung löschen möchten. Umschließen Sie den Namen des Mitgliedsvolumes in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Mitgliedsvolumes (in einer asynchronen Spiegelgruppe), aus denen Sie den Fehler der asynchronen Spiegelung löschen möchten. Geben Sie die Namen der Mitglieder-Volumes mithilfe dieser Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

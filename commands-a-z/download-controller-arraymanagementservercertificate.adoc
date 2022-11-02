@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/download-controller-arraymanagementservercertificate.html 
+sidebar: sidebar 
+keywords: download, controller, array, management, server, certificate, command, install 
+summary: Der Download-Controller arrayManagementServerCertificate Befehl installiert das Serverzertifikat auf dem Controller. 
+---
+= Vom Server signiertes Zertifikat installieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download controller arrayManagementServerCertificate` Befehl installiert das Serverzertifikat auf dem Controller.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Führen Sie diese Aktion für jeden Controller mithilfe des für den Controller geltenden signierten Zertifikats durch. Das signierte Zertifikat muss die IP-/DNS-Namen des Controllers enthalten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+download controller [(a|b)] pass:quotes[arrayManagementServerCertificate file="_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Ermöglicht dem Benutzer, den Controller anzugeben, für den Sie das vom Server signierte Zertifikat installieren möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Ermöglicht dem Benutzer die Angabe des Dateipfads und des Dateinamens, der das signierte Zertifikat enthält. Die zulässigen Nebenstellen sind .cer, .crt, .der.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "download controller [a] arrayManagementServerCertificate
+   file="C:\serverSignedCertificateA.cer";"
+
+SMcli -n Array1 -c "download controller [b] arrayManagementServerCertificate
+   file="C:\serverSignedCertificateB.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

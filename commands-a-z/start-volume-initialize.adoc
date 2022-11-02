@@ -1,0 +1,175 @@
+---
+permalink: commands-a-z/start-volume-initialize.html 
+sidebar: sidebar 
+keywords: initialize, thin volume 
+summary: Der Befehl Start Volume Initialize initialisiert oder initialisiert ein Thin Volume neu. 
+---
+= Thin Volume initialisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volume initialize` Befehl initialisiert oder initialisiert ein Thin Volume neu.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Aktion hängt von den verwendeten Parametern ab:
+
+* Wird mit diesem Befehl ohne einen der optionalen Parameter verwendet, werden die Daten auf dem Thin Volume gelöscht. Die Kapazität des Repository-Volume ist nicht betroffen.
+* Dieser Befehl wird mit einem der optionalen Parameter verwendet und führt zu einer Neuinitialisierung und zu Aktionen des Repository-Volumes.
+
+
+[NOTE]
+====
+Durch das Initialisieren eines Thin-Volumes wird ein lang laufender Vorgang gestartet, der nicht gestoppt werden kann.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volume [_volumeName_]] initialize
+pass:quotes[[existingRepositoryLabel=_existingRepositoryName_]]
+pass:quotes[[diskPool=_diskPoolName_ capacity=_capacityValue_]]
+[retainRepositoryMembers=(TRUE|FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des Volume, auf dem Sie die Initialisierung starten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Zahlen enthält, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Dieser Parameter ersetzt das Repository-Volume durch das angegebene Kandidatenvolume.
+
+* Der angegebene Wert ist ein vorhandenes Repository-Volume-Benutzeretikett. Das angegebene Volume muss ein nicht verwendetes Repository-Volume mit dem Namen in der richtigen Form sein.
+* Wenn sich das neu angegebene Repository-Volume in einem anderen Laufwerk-Pool befindet, ändert das Thin Volume die Eigentümerschaft in diesen Pool.
+* Das alte Repository-Volume wird standardmäßig gelöscht.
+
+
+Wenn der vorhandene Name des Repository-Volumes Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen des Datenträgers in doppelte Anführungszeichen („ “) einschließen.
+
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, in dem Sie ein neues Repository-Volume mit der angegebenen Kapazität erstellen möchten. Wenn der Disk-Pool-Name Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Disk-Pool-Namen in doppelte Anführungszeichen („ “) setzen.
+
+Sie müssen diesen Parameter mit dem verwenden `capacity` Parameter zum Erstellen eines neuen Repository-Volumes mit der angegebenen Kapazität.
+
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe, die Sie für das erstellte Repository-Volume festlegen möchten. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+Die minimale physische Kapazität beträgt 4 GB.
+
+Die maximale physische Kapazität beträgt 257 TB.
+
+Sie müssen diesen Parameter mit dem verwenden `diskPool` Parameter zum Erstellen eines neuen Repository-Volumes mit der angegebenen Kapazität.
+
+
+
+ a| 
+`retainRepositoryMembers`
+ a| 
+Wenn dieser Parameter auf festgelegt ist `TRUE`, Das alte Projektarchiv bleibt erhalten. Standardmäßig wird das alte Repository gelöscht. Dieser Parameter wird ignoriert, wenn das vorhandene Repository wiederverwendet wird.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie kein Volume mit angeben `volume` Parameter: Dieser Befehl setzt die Metadaten im Repository zurück und bewirkt, dass das Thin Volume für den Host leer angezeigt wird. Wenn Sie ein Volume mit angeben `*volume*` Parameter: Dieses Volume wird entweder durch ein neu erstelltes Volume oder durch ein vorhandenes Volume ersetzt, wenn Sie ein Volume mit angeben `existingRepositoryLabel` Parameter. Wenn Sie ein vorhandenes Volume mit angeben `existingRepositoryLabel` Parameter, der sich in einem anderen Laufwerk-Pool befindet, ändert das Thin Volume die Eigentümerschaft in den neuen Laufwerk-Pool.
+
+Die Volume-Parameter des Thin Volume, wie z. B. virtuelle Kapazität, Quota- und Warnungsschwellenwert, behalten ihre vorherigen Werte bei, nachdem Sie das Thin Volume neu initialisiert haben.
+
+[NOTE]
+====
+Das sofortige Verfügbarkeitsformat (IAF) gilt nicht für Volumes über 64 TB.
+
+====
+In der folgenden Tabelle werden die Kapazitätsgrenzen für ein Thin Volume aufgeführt.
+
+[cols="2*"]
+|===
+| Art der Kapazität | Größe 
+
+
+ a| 
+Minimale virtuelle Kapazität
+ a| 
+32 MB
+
+
+
+ a| 
+Maximale virtuelle Kapazität
+ a| 
+256 TB
+
+
+
+ a| 
+Minimale physische Kapazität
+ a| 
+4 GB
+
+
+
+ a| 
+Maximale physische Kapazität
+ a| 
+257 TB
+
+|===
+Thin Volumes unterstützen alle Operationen der Standard-Volumes mit folgenden Ausnahmen:
+
+* Sie können die Segmentgröße eines Thin-Volumes nicht ändern.
+* Sie können die vorlesende Redundanzprüfung für ein Thin Volume nicht aktivieren.
+* Sie können kein Thin Volume als Zielvolume in einer Volume-Kopie verwenden.
+* Bei einem synchronen Spiegeln kann kein Thin Volume verwendet werden.
+
+
+Wenn Sie ein Thin Volume zu einem Standard-Volume ändern möchten, erstellen Sie mithilfe des Vorgangs Volume Copy eine Kopie des Thin Volume. Das Ziel einer Volume-Kopie ist immer ein Standard-Volume.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.30 erhöht die maximale Kapazität eines Thin Volumes auf 256 TB.

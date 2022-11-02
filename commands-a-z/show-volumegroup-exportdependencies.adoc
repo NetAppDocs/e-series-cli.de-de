@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/show-volumegroup-exportdependencies.html 
+sidebar: sidebar 
+keywords: show, volume, group, export, dependencies 
+summary: Der Befehl Show VolumeGroup ExportAbhängigkeiten zeigt eine Liste der Abhängigkeiten für die Laufwerke in einer Volume-Gruppe an, die von einem Storage Array zu einem zweiten Storage Array verschoben werden sollen. 
+---
+= Zeigen Sie die Exportabhängigkeiten der Volume-Gruppen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show volumeGroup exportDependencies` Der Befehl zeigt eine Liste der Abhängigkeiten für die Laufwerke in einer Volume-Gruppe an, die von einem Storage Array auf ein zweites Storage Array verschoben werden sollen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[show volumeGroup [_volumeGroupName_]] exportDependencies
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, für die Exportabhängigkeiten angezeigt werden sollen. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl dreht die Laufwerke in einer Volume-Gruppe, liest den DACstore und zeigt eine Liste der Importabhängigkeiten für die Volume-Gruppe an. Die Volume-Gruppe muss sich in einem exportierten Zustand oder in einem Forced-Status befinden.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

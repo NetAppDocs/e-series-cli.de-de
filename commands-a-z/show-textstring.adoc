@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/show-textstring.html 
+sidebar: sidebar 
+keywords: show, str 
+summary: Der Befehl show textstring zeigt eine Textzeichenfolge aus einer Skriptdatei an. Dieser Befehl ähnelt dem Echo-Befehl in MS-DOS und UNIX. 
+---
+= Zeichenfolge anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show textstring` Befehl zeigt eine Zeichenfolge aus einer Skriptdatei an. Dieser Befehl ähnelt dem `echo` Befehl in MS-DOS und UNIX.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[show "_textString_"]
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Schließen Sie den String in doppelte Anführungszeichen (" ").
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-controller-service-action-allowed-indicator.html 
+sidebar: sidebar 
+keywords: set, controller, service, action, allowed, indicator 
+summary: Mit dem Befehl Set Controller wird die Anzeigeleuchte Service Action allowed an einem Controller in einem Controller-Fach oder in einem Controller-Laufwerksfach ein- oder ausgeschaltet 
+---
+= Die Anzeige für die zulässige Controllerwartung einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set controller` Mit Befehl wird die Anzeigeleuchte „Service Action allowed“ an einem Controller in einem Controller-Fach oder in einem Controller-Laufwerksfach ein- oder ausgeschaltet
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage Arrays – einschließlich der E2700 und E5600 Arrays.
+
+
+
+== Kontext
+
+Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus. (Zum ein- oder Ausschalten der Kontrollleuchte „Wartungsmaßnahme zulässig“ am Lüfter-Behälter oder am Behälter mit der Verbindungsbatterie verwenden Sie den `set tray serviceAllowedIndicator` Befehl.)
+
+[NOTE]
+====
+Dieser Befehl gilt nur für die E2700, E5600 oder EF560 (und andere Vorgängergenerationen von E-Series oder EF-Series Controllern). Das E2800 Controller-Fach verfügt über eine einzelne Warn-Anzeige, die nur leuchtet, wenn 1) ein Fehler auftritt, und 2) die ausgefallene Komponente kann sicher entfernt werden.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+set controller [(a| b)]
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller mit der Anzeigeleuchte „Serviceaktion zulässig“, die Sie einschalten oder ausschalten möchten. Gültige Controller-IDs sind `a` Oder `b` , Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Controller-Firmware einen Syntaxfehler aus.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Die Einstellung zum ein- und Ausschalten der Kontrollleuchte Serviceaktion zulässig. Um die Anzeigeleuchte Serviceaktion zulässig einzuschalten, setzen Sie diesen Parameter auf `on`. Um die Anzeigeleuchte „Serviceaktion erlaubt“ auszuschalten, setzen Sie diesen Parameter auf `off`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.14

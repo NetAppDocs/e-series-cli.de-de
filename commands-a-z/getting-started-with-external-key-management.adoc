@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/getting-started-with-external-key-management.html 
+sidebar: sidebar 
+keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
+summary: Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei Verwendung der externen Schlüsselverwaltung erstellen und warten Sie Sicherheitsschlüssel auf einem Schlüsselverwaltungsserver 
+---
+= Erste Schritte mit externem Verschlüsselungsmanagement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei Verwendung der externen Schlüsselverwaltung erstellen und warten Sie Sicherheitsschlüssel auf einem Schlüsselverwaltungsserver
+
+In der Online-Hilfe des SANtricity System Managers finden Sie Informationen zur Verwendung von externen Verschlüsselungsmanagement-Servern und Sicherheitsschlüsseln.
+
+Im Folgenden finden Sie den grundlegenden Workflow zur Implementierung externer Sicherheitsschlüssel:
+
+. *Erstellen Sie eine Zertifikatsignierungsanforderung*
+. *Client- und Serverzertifikate vom KMIP-Server*
+. *Installieren Sie das Clientzertifikat*
+. *IP-Adresse und Portnummer des KMIP-Servers festlegen*
+. *Testen Sie die Kommunikation mit KMIP-Server*
+. *Erstellen Sie einen Speicherarray-Sicherheitsschlüssel*
+. *Überprüfung des Sicherheitsschlüssels*
+
+
+
+
+== Workflow-Schritte
+
+Sowohl das Zertifikatsmanagement als auch das externe Verschlüsselungsmanagement sind neue Sicherheitsfunktionen mit der Version SANtricity11.40. Nutzen Sie folgende grundlegende Schritte für den Einstieg:
+
+. Generieren Sie mithilfe des eine Zertifikatsignierungsanforderung `save storageArray keyManagementClientCSR` Befehl. Siehe xref:save-storagearray-keymanagementclientcsr.adoc[Signaturanforderung für das Key Management-Zertifikat generieren].
+. Fordern Sie vom KMIP-Server einen Client und ein Serverzertifikat an.
+. Installieren Sie das Client-Zertifikat mithilfe der `download storageArray keyManagementCertificate` Befehl mit dem `certificateType` Parameter auf gesetzt `client`. Siehe xref:download-storagearray-keymanagementcertificate.adoc[Externes Verschlüsselungsmanagementzertifikat für das Speicher-Array installieren].
+. Installieren Sie das Serverzertifikat mithilfe der `download storageArray keyManagementCertificate` Befehl mit dem `certificateType` Parameter auf gesetzt `server`. Siehe xref:download-storagearray-keymanagementcertificate.adoc[Externes Verschlüsselungsmanagementzertifikat für das Speicher-Array installieren].
+. Legen Sie die IP-Adresse und die Portnummer des Schlüsselverwaltungsservers mithilfe des fest `set storageArray externalKeyManagement` Befehl. Siehe xref:set-storagearray-externalkeymanagement.adoc[Einstellungen für die externe Schlüsselverwaltung festlegen].
+. Testen Sie die Kommunikation mit dem externen Verschlüsselungsmanagement-Server mithilfe des `start storageArray externalKeyManagement test` Befehl. Siehe xref:start-storagearray-externalkeymanagement-test.adoc[Testen der Kommunikation zum externen Verschlüsselungsmanagement].
+. Erstellen Sie einen Sicherheitsschlüssel mit dem `create storageArray securityKey` Befehl. Siehe xref:create-storagearray-securitykey.adoc[Sicherheitsschlüssel erstellen].
+. Überprüfen Sie den Sicherheitsschlüssel mithilfe des `validate storageArray securityKey` Befehl. Siehe xref:validate-storagearray-securitykey.adoc[Überprüfung des internen oder externen Sicherheitsschlüssels].
+

@@ -1,0 +1,377 @@
+---
+permalink: commands-a-z/set-volumes.html 
+sidebar: sidebar 
+keywords: set, volume, attributes, disk pool 
+summary: Der Befehl Set Volumes definiert die Eigenschaften für ein Volume in einem Laufwerk-Pool. 
+---
+= Legen Sie Volume-Attribute für ein Volume in einem Festplatten-Pool fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set volumes` Befehl definiert die Eigenschaften für ein Volume in einem Laufwerk-Pool.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Bei Konfigurationen mit Festplatten-Pools aus mehr als 32 Volumes kann der Vorgang aufgrund des Ablaufs der Zeitüberschreitung des Hosts vor dem Abschluss des Vorgangs zu Host-I/O-Fehlern oder Neustarts der internen Controller führen. Wenn Host I/O-Fehler oder ein Neustart des internen Controllers auftreten, versetzen Sie den Host in den Ruhezustand und versuchen Sie den Vorgang erneut.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
+pass:quotes[addCapacity = _capacityValue_][KB|MB|GB|TB|Bytes] |
+pass:quotes[cacheFlushModifier=_cacheFlushModifierValue_] |
+cacheReadPrefetch = (TRUE | FALSE) |
+cacheWithoutBatteryEnabled=(TRUE | FALSE) |
+mediaScanEnabled=(TRUE | FALSE) |
+mirrorCacheEnabled=(TRUE | FALSE) |
+preReadRedundancyCheck = (TRUE | FALSE) |
+readCacheEnabled=(TRUE | FALSE) |
+redundancyCheckEnabled = (TRUE | FALSE) |
+pass:quotes[segmentSize = _segmentSizeValue_]
+pass:quotes[userLabel = _userlabelValue_]
+writeCacheEnabled=(TRUE | FALSE) |
+dataAssuranceDisabled=(TRUE | FALSE)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Mit diesem Parameter werden die Eigenschaften für alle Volumes im Speicher-Array festgelegt.
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name des Volumes, für das Sie Eigenschaften definieren möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`volume`
+ a| 
+Der World Wide Identifier (WWID) des Volumens, für das Sie Eigenschaften definieren möchten. Schließen Sie die WWID in doppelte Anführungszeichen (" ") innerhalb der Winkel Klammern (< >).
+
+[NOTE]
+====
+Wenn Sie diesen Befehl ausführen, verwenden Sie keine Doppelpunkt-Separatoren in der WWID.
+
+====
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, für die Sie Eigenschaften definieren möchten. Alle Volumes haben die gleichen Eigenschaften. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen oder Ziffern enthalten, geben Sie die Namen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`addCapacity`
+ a| 
+Die Einstellung zur Erhöhung der Speichergröße (Kapazität) des Volumes, für das Sie Eigenschaften definieren. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`. Der Standardwert ist `bytes`.
+
+Dieser Parameter ist für Thin Volumes nicht gültig.
+
+
+
+ a| 
+`cacheFlushModifier`
+ a| 
+Die maximale Zeit, die die Daten des Volume im Cache verbleiben, bevor die Daten in den physischen Storage verschoben werden. Gültige Werte sind im Abschnitt Hinweise aufgeführt.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`cacheWithoutBatteryEnabled`
+ a| 
+Die Einstellung zum ein- und Ausschalten des Zwischenspeicherns ohne Batterien. Um das Caching ohne Batterien einzuschalten, setzen Sie diesen Parameter auf `TRUE`. Um das Caching ohne Batterien auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`mediaScanEnabled`
+ a| 
+Die Einstellung zum ein- und Ausschalten des Medienscans für die Lautstärke. Um den Medienscan zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Medienscan auszuschalten, setzen Sie diesen Parameter auf `FALSE`. (Wenn die Medienüberprüfung auf Speicherarray-Ebene deaktiviert ist, hat dieser Parameter keine Auswirkung.)
+
+
+
+ a| 
+`mirrorCacheEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Spiegelcache. Um den Spiegelcache einzuschalten, setzen Sie diesen Parameter auf `TRUE`. Um den Spiegelcache auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der das Volume besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Slota, und `b` Ist der Controller in Steckplatz B. Verwenden Sie diesen Parameter nur, wenn Sie den Volume-Eigentümer ändern möchten.
+
+
+
+ a| 
+`preReadRedundancyCheck`
+ a| 
+Die Einstellung zum ein- oder Ausschalten der vorlesenden Redundanzprüfung. Wenn Sie die vorgelesene Redundanzprüfung aktivieren, wird die Konsistenz der RAID-Redundanzdaten bei den Stripes mit den Lesedaten überprüft. Die Überprüfung der Redundanz vor dem Lesen wird nur bei Lesevorgänge durchgeführt. Um die Überprüfung der vorlesenden Redundanz zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um die Überprüfung der vorlesenden Redundanz zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`.
+
+[NOTE]
+====
+Verwenden Sie diesen Parameter nicht auf nicht-redundanten Volumes, z. B. RAID 0-Volumes.
+
+====
+
+
+ a| 
+`readCacheEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Lese-Caches. Um den Lese-Cache zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Lese-Cache auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`redundancyCheckEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten der Redundanzprüfung während eines Medienscans. Um die Redundanzprüfung zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um die Redundanzprüfung auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Name, den Sie ein vorhandenes Volume angeben möchten. Schließen Sie den neuen Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`writeCacheEnabled`
+ a| 
+Die Einstellung zum Einschalten der Schreib-Cache-Fähigkeit.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+Sie können diese Parameter auf jeweils nur ein Volume anwenden:
+
+* `addCapacity`
+* `segmentSize`
+* `userLabel`
+
+
+
+
+== Kapazitäten und Segmentgrößen hinzufügen
+
+Einstellen des `addCapacity` Parameter oder der `segmentSize` Parameter startet einen lang ausgeführten Vorgang, dessen Vorgang nicht beendet werden kann. Diese Vorgänge, die lange laufen, werden im Hintergrund ausgeführt und verhindern nicht, dass Sie andere Befehle ausführen. Um den Fortschritt von lang laufenden Vorgängen anzuzeigen, verwenden Sie den `show volume actionProgress` Befehl.
+
+
+
+== Modifikator für Cachespülung
+
+In dieser Tabelle sind gültige Werte für den Modifikator Cache Flush aufgeführt.
+
+[cols="2*"]
+|===
+| Wert | Beschreibung 
+
+
+ a| 
+`Immediate`
+ a| 
+Die Daten werden nach dem Einspeichern im Cache gespeichert.
+
+
+
+ a| 
+`.25`
+ a| 
+Die Daten werden nach 250 ms gespült.
+
+
+
+ a| 
+`.5`
+ a| 
+Die Daten werden nach 500 ms gespült.
+
+
+
+ a| 
+`.75`
+ a| 
+Die Daten werden nach 750 ms gespült.
+
+
+
+ a| 
+`1`
+ a| 
+Die Daten werden nach 1 s gespült
+
+
+
+ a| 
+`1.5`
+ a| 
+Die Daten werden nach 1500 ms gespült.
+
+
+
+ a| 
+`2`
+ a| 
+Die Daten werden nach 2 s gespült
+
+
+
+ a| 
+`5`
+ a| 
+Die Daten werden nach 5 s gespült
+
+
+
+ a| 
+`10`
+ a| 
+Die Daten werden nach 10 s gespült
+
+
+
+ a| 
+`20`
+ a| 
+Die Daten werden nach 20 s gespült
+
+
+
+ a| 
+`60`
+ a| 
+Die Daten werden nach 60 s (1 Min.) gespült.
+
+
+
+ a| 
+`120`
+ a| 
+Die Daten werden nach 120 s (2 Min.) gespült.
+
+
+
+ a| 
+`300`
+ a| 
+Die Daten werden nach 300 s (5 Min.) gespült.
+
+
+
+ a| 
+`1200`
+ a| 
+Die Daten werden nach 1200 s (20 Min.) gespült.
+
+
+
+ a| 
+`3600`
+ a| 
+Die Daten werden nach 3600 s (1 Std.) gespült.
+
+
+
+ a| 
+`Infinite`
+ a| 
+Daten im Cache unterliegen keinem Alter oder Zeitpunkt. Die Daten werden nach anderen vom Controller verwalteten Kriterien gespült.
+
+|===
+
+
+== Cache ohne Akku aktiviert
+
+Schreib-Cache ohne Batterien ermöglicht die Fortsetzung des Schreib-Caching, wenn die Controller-Batterien vollständig entladen, nicht vollständig geladen oder nicht vorhanden sind. Wenn Sie diesen Parameter auf einstellen `TRUE` Ohne unterbrechungsfreie Stromversorgung (USV) oder andere Backup-Stromversorgung können Daten verloren gehen, wenn die Stromversorgung des Speicher-Arrays ausfällt. Dieser Parameter hat keine Auswirkung, wenn die Schreibzwischenspeicherung deaktiviert ist.
+
+
+
+== Priorität für Änderungen
+
+Die Änderungspriorität definiert die Anzahl der Systemressourcen, die beim Ändern der Volume-Eigenschaften verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Änderung die meisten Systemressourcen, was die Performance für die Übertragung von Hostdaten verringert.
+
+
+
+== Cache-Lese-Prefetch
+
+Der `cacheReadPrefetch` Parameter ermöglicht es dem Controller, zusätzliche Datenblöcke in den Cache zu kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host vom Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Die Konfigurationseinstellungen für das Storage Array, das Sie verwenden, bestimmen die Anzahl der zusätzlichen Datenblöcke, die der Controller in den Cache liest. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`.
+
+
+
+== Segmentgröße
+
+Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
+
+Wenn Sie einen Wert für die Segmentgröße eingeben, wird der Wert anhand der unterstützten Werte geprüft, die der Controller zur Laufzeit zur Verfügung stellt. Wenn der eingegebene Wert ungültig ist, gibt der Controller eine Liste mit gültigen Werten zurück. Wenn Sie ein einzelnes Laufwerk für eine einzelne Anforderung verwenden, können andere Laufwerke gleichzeitig für die Bedienung anderer Anfragen verwendet werden.
+
+Befindet sich ein Volume in einer Umgebung, in der ein einzelner Benutzer große Dateneinheiten (wie Multimedia) überträgt, so wird die Performance maximiert, wenn eine einzelne Datentransferanfrage über ein einziges Daten-Stripe bedient wird. (Ein Daten-Stripe ist die Segmentgröße, die mit der Anzahl der Laufwerke in der Volume-Gruppe multipliziert wird, die für den Datentransfer verwendet werden.) In diesem Fall werden mehrere Laufwerke für dieselbe Anfrage genutzt, allerdings wird auf jedes Laufwerk nur einmal zugegriffen.
+
+Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern oder Dateisystemen zu erzielen, legen Sie die Segmentgröße so fest, dass die Anzahl der Laufwerke minimiert wird, die zur Erfüllung einer Datentransferanfrage erforderlich sind.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

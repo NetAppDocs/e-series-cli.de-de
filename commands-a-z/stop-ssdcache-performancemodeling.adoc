@@ -1,0 +1,123 @@
+---
+permalink: commands-a-z/stop-ssdcache-performancemodeling.html 
+sidebar: sidebar 
+keywords: stop, ssd, cache, performance, model 
+summary: Mit dem Befehl stop ssdCache performanceModeling wird der Betrieb der Leistungsmodellierung gestoppt und die Daten zur Leistungsmodellierung für den SSD-Cache angezeigt. 
+---
+= Stoppen Sie die Performance-Modellierung des SSD-Caches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop ssdCache performanceModeling` Mit dem Befehl wird der Performance-Modellierungsvorgang angehalten und die Daten für die Performance-Modellierung für den SSD-Cache angezeigt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Bevor Sie diesen Befehl ausführen, müssen Sie den Vorgang zur Leistungsmodellierung mit dem starten `start ssdCache performanceModeling` Befehl. Optional können Sie die Daten in einer Datei speichern.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[stop ssdCache [_ssdCacheName_]] performanceModeling pass:quotes[[file="_filename_"]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, für den Sie die Modellierung der Performance beenden möchten. Schließen Sie den SSD-Cache-Namen in eckige Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen oder Ziffern hat, müssen Sie den SSD-Cache-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Leistungsmodellierungsdaten speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\ssdcacheperf.csv"`
+
+Sie können jeden beliebigen Dateinamen verwenden, aber Sie müssen den verwenden `.csv` Erweiterung.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl gibt die Informationen zur Performance-Modellierung zurück, die diesem Beispiel ähnlich sind. Die Größe des Monitors bestimmt, wie die Informationen umschließt und wie die Informationen angezeigt werden.
+
+[listing]
+----
+SSD Cache Name: my_cache
+Start time: 4/18/12 2:38:26  PM IST
+Stop time: 4/18/12 2:38:45 PM IST
+Duration : 00:00:19
+
+SSD Cache Performance Modeling Data (Response Time):
+
+                        SSD Reads            HDD Reads           HDD Writes
+            Overall     Avg.                 Avg.                Avg.
+Cache       Response    Response    % of    Response    % of    Response    % of
+Capacity    Time        Time        I/Os    Time        I/Os    Time        I/Os
+186 GB      0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+372 GB      0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+557 GB *    0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+558 GB      0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+744 GB      0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+931 GB      0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+1117 GB     0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+1303 GB     0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+1489 GB     0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+1675 GB     0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+1862 GB     0 ms        0 ms        0.0 %   0 ms        0.0 %   0 ms        0.0 %
+
+* = Current SSD cache physical capacity.
+
+
+SSD Cache Performance Modeling Data (Cache Hit %):
+
+Cache Capacity    Cache Hit %
+186 GB            0 %
+372 GB            0 %
+557 GB *          0 %
+558 GB            0 %
+744 GB            0 %
+931 GB            0 %
+1117 GB           0 %
+1303 GB           0 %
+1489 GB           0 %
+1675 GB           0 %
+1862 GB           0 %
+* = Current SSD cache physical capacity.
+----
+
+
+== Minimale Firmware-Stufe
+
+7.84

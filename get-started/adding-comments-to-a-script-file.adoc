@@ -1,0 +1,36 @@
+---
+permalink: get-started/adding-comments-to-a-script-file.html 
+sidebar: sidebar 
+keywords: add, comments, script file 
+summary: Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen oder einem Befehl. Sie können auf drei Arten Kommentare zu einer Skriptdatei hinzufügen. 
+---
+= Fügen Sie Kommentare zu einer Skriptdatei hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen oder einem Befehl. Sie können Kommentare zu einer Skriptdatei auf drei Arten hinzufügen:
+
+* Text nach zwei Schrägstrichen hinzufügen (`//` ) Als Kommentar, bis ein Zeilenende erreicht ist. Wenn die Skript-Engine nach der Verarbeitung eines Kommentars kein Zeilenende im Skript findet, wird eine Fehlermeldung angezeigt und der Skriptvorgang beendet. Dieser Fehler tritt normalerweise auf, wenn ein Kommentar am Ende eines Skripts platziert wird und Sie vergessen haben, die *Enter*-Taste zu drücken.
++
+[listing]
+----
+// Deletes the existing configuration.
+set storageArray resetConfiguration=true;
+----
+* Fügen Sie Text zwischen hinzu `/*` Und `*/` Als Kommentar. Wenn die Skript-Engine nicht sowohl eine Start-Kommentar-Notation als auch eine endende Kommentarnotation findet, wird eine Fehlermeldung angezeigt, und der Script-Vorgang wird beendet.
++
+[listing]
+----
+/* Deletes the existing configuration */
+set storageArray resetConfiguration=true;
+----
+* Verwenden Sie die `show` Anweisung zum Einbetten von Kommentaren in eine Skriptdatei, die während der Ausführung der Skriptdatei angezeigt werden soll. Schließen Sie den Text an, der mit doppelten Anführungszeichen („` `") angezeigt werden soll.
++
+[listing]
+----
+show “Deletes the existing configuration”;
+set storageArray resetConfiguration=true;
+----
+

@@ -1,0 +1,153 @@
+---
+permalink: commands-a-z/save-controller-arraymanagementcsr.html 
+sidebar: sidebar 
+keywords: generate, web server, certificate, sign, request, csr 
+summary: 'Der Befehl SAVE Controller arrayManagementCSR erzeugt eine Zertifikatsignierungsanforderung (CSR) für den Controller.' 
+---
+= Zertifikatssignierungsanforderung für Webserver generieren (CSR)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save controller arrayManagementCSR` Befehl generiert eine Zertifikatsignierungsanforderung (CSR) für den Controller.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Der CSR muss von einer Zertifizierungsstelle (CA) unterzeichnet werden. Das resultierende signierte Zertifikat wird auf dem Webserver des Controllers installiert, sodass Browser beim Versuch, das Array zu verwalten, automatisch dem Webserver des Controllers vertrauen können. Führen Sie diese Aktion für jeden Controller aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+save controller [(a|b)] arrayManagementCSR
+     commonName=pass:quotes["_ipOrDnsName_"]
+     [alternateIPAddresses=pass:quotes[(_ipvX1_..._ipvXN_)]]
+     [alternateDnsNames=pass:quotes[("_dnsName1_"..."_dnsNameN_")]]
+     organization=pass:quotes["_organizationName_"]
+     [organizationalUnit=pass:quotes["_organizationalUnitName_"]]
+     locality=pass:quotes["_cityOrLocality_"]
+     [stateProvince=pass:quotes["_stateOrRegion_"]]
+     country=pass:quotes["_string_"]
+     file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Ermöglicht Ihnen, den Controller anzugeben, für den Sie die CSR erstellen möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`commonName`
+ a| 
+Ermöglicht Ihnen die Angabe der IP-Adresse oder des DNS-Namens des Controllers. Dies muss genau mit dem übereinstimmen, was im Browser eingegeben wird, um auf System Manager zuzugreifen (enthalten Sie kein http:// nor https://) oder es wird ein Fehler bei der Namensabweichung auftreten.
+
+
+
+ a| 
+`alternateIPAddresses`
+ a| 
+Ermöglicht die Angabe weiterer IP-Adressen oder Aliase für den Controller. Schließen Sie alle IP-Adressen in Klammern. Wenn Sie mehrere IP-Adressen eingeben, trennen Sie diese mit einem Leerzeichen.
+
+
+
+ a| 
+`alternateDnsNames`
+ a| 
+Ermöglicht Ihnen die Angabe zusätzlicher DNS-Namen für den Controller. Schließen Sie alle DNS-Namen in Klammern. Wenn Sie mehrere Namen eingeben, trennen Sie sie mit einem Leerzeichen.
+
+
+
+ a| 
+`organization`
+ a| 
+Mit dieser Option können Sie den vollständigen gesetzlichen Namen des Unternehmens angeben, zu dem das Speicherarray gehört. Kürzen Sie diese nicht und schließen Sie Suffixe wie Inc, Corp oder LLC ein.
+
+
+
+ a| 
+`organizationalUnit`
+ a| 
+Ermöglicht dem Benutzer, die Abteilung des Unternehmens festzulegen, die das Zertifikat verarbeitet.
+
+
+
+ a| 
+`locality`
+ a| 
+Hier können Sie die Stadt oder den Ort angeben, an dem sich das Speicherarray befindet.
+
+
+
+ a| 
+`stateProvince`
+ a| 
+Hier können Sie den Status oder die Region angeben, in der sich das Speicherarray befindet. Dies sollte nicht gekürzt werden.
+
+
+
+ a| 
+`country`
+ a| 
+Ermöglicht Ihnen, den zweistelligen ISO-Code (International Organization for Standardization) Ihres Landes anzugeben, z. B. in den USA.
+
+
+
+ a| 
+`file`
+ a| 
+Hiermit können Sie die Datei angeben, für die die CSR-Datei des Controllers gespeichert werden soll.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "save controller [a] arrayManagementCSR
+   commonName="ictd0702s05c01-a.ict.englab.xyz.com"
+   alternateIPAddresses=(10.113.174.190 10.113.174.191)
+   alternateDnsNames=("ictd0702s05c01-b.ict.englab.xyz.com")
+   organization="Company"
+   locality="Wichita"
+   stateProvince="Kansas"
+   country="US"
+   file="C:\storage_array_csr.csr";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

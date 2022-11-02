@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/set-hostport.html 
+sidebar: sidebar 
+keywords: set, host, port 
+summary: Der Befehl set hostPort ändert die Eigenschaften für einen Host-Port. 
+---
+= Legen Sie den Host-Port fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set hostPort` Befehl ändert die Eigenschaften für einen Host-Port.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl funktioniert in einer iSCSI-Umgebung nicht, in der die Host-Ports als Initiatoren gelten. Verwenden Sie stattdessen die `set iscsiInitiator` Befehl. Siehe xref:set-iscsiinitiator.adoc[Setzen Sie den iSCSI-Initiator].
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set hostPort pass:quotes[[_portLabel_]] userLabel=pass:quotes[_newPortLabel_]
+[host=pass:quotes[_hostName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`hostPort`
+ a| 
+Der Name des Host-Ports, für den Sie den Hosttyp ändern möchten oder für den Sie einen neuen Namen erstellen möchten. Schließen Sie den Namen des Host-Ports in eckige Klammern ([ ]). Wenn der Name des Host-Ports Sonderzeichen oder Zahlen hat, schließen Sie den Namen des Host-Ports in doppelte Anführungszeichen („ “) in eckigen Klammern.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Name, den Sie dem Host-Port angeben möchten. Schließen Sie den neuen Namen des Host-Ports in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, für den Sie einen HBA- oder HCA-Host-Port definieren. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

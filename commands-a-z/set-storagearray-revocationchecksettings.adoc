@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/set-storagearray-revocationchecksettings.html 
+sidebar: sidebar 
+keywords: set, certificate, revocation, check, set 
+summary: 'Mit dem Befehl Set storageArray revocationCheckSettings können Sie die Überprüfung von Annullierungen aktivieren oder deaktivieren und einen OCSP-Server (Online Certificate Status Protocol) konfigurieren.' 
+---
+= Legen Sie die Einstellungen für die Überprüfung des Zertifikatsperrufs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray revocationCheckSettings` Mit dem Befehl können Sie die Überprüfung von Annullierungen aktivieren oder deaktivieren und einen OCSP-Server (Online Certificate Status Protocol) konfigurieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Der OCSP-Server prüft, ob Zertifikate, die die Zertifizierungsstelle (CA) vor ihrem geplanten Ablaufdatum widerrufen hat. Möglicherweise möchten Sie die Überprüfung des Widerrufs aktivieren, wenn die CA ein Zertifikat nicht ordnungsgemäß ausgestellt hat oder wenn ein privater Schlüssel gefährdet ist.
+
+[NOTE]
+====
+Stellen Sie sicher, dass ein DNS-Server auf beiden Controllern konfiguriert ist, wodurch Sie einen vollständig qualifizierten Domänennamen für den OCSP-Server verwenden können.
+
+====
+Nachdem Sie die Überprüfung des Widerrufs aktiviert haben, weist das Speicher-Array eine versuchte Verbindung zu einem Server mit einem widerrufenen Zertifikat auf.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray revocationCheckSettings ([revocationCheckEnable = boolean] &| [ocspResponderUrl=stringLiteral])
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`revocationCheckEnable`
+ a| 
+Auf einstellen `true` So aktivieren Sie die Überprüfung des Zertifikatsannuls.
+
+
+
+ a| 
+`ocspResponderUrl`
+ a| 
+Die URL des OCSP-Responder-Servers, der für die Überprüfung des Zertifikatsannullierungsabrufs verwendet werden soll.
+
+[NOTE]
+====
+Wenn Sie eine OCSP-Antwortadresse angeben, wird die OCSP-Adresse, die in der Zertifikatsdatei gefunden wurde, überschrieben.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.42

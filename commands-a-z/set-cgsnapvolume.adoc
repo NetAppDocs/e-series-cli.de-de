@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: set, consistency, group, snapshot, volume 
+summary: Der Befehl set cgSnapVolume erstellt einen eindeutigen Namen für ein Snapshot Volume einer Konsistenzgruppe. 
+---
+= Legen Sie das Snapshot Volume für Konsistenzgruppen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set cgSnapVolume` Befehl erstellt einen eindeutigen Namen für ein Snapshot Volume einer Konsistenzgruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set cgSnapVolume pass:quotes[[_cgSnapVolumeName_]]
+userLabel=pass:quotes["_cgSnapVolumeName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Der Name des Konsistenzgruppenvolume, das Sie umbenennen möchten. Schließen Sie den Namen des Snapshot-Volumes der Konsistenzgruppe in eckigen Klammern ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Name, den Sie dem Snapshot-Volume in der Konsistenzgruppe geben möchten. Schließen Sie den neuen Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

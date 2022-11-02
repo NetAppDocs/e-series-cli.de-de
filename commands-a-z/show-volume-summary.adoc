@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/show-volume-summary.html 
+sidebar: sidebar 
+keywords: show, volume 
+summary: Der Befehl show Volume summary gibt Informationen zu einem Volume zurück. 
+---
+= Volumen anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show volume summary` Befehl gibt Informationen zu einem Volume zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+Für die Volumes in einem Speicher-Array gibt dieser Befehl folgende Informationen aus:
+
+* Der Anzahl der Volumes
+* Der Name
+* Der Status
+* Der Kapazität
+* RAID-Level
+* Die Volume-Gruppe, in der sich das Volume befindet
+* Details
++
+** Die Volume-ID
+** Die Subsystem-ID
+** Der Laufwerkstyp (SAS)
+** Schutz vor Verlust des Fachs
+** Der bevorzugte Besitzer
+** Der aktuelle Eigentümer
+** Segmentgröße
+** Die Änderungspriorität
+** Der Status des Lese-Caches (aktiviert oder deaktiviert)
+** Der Status des Schreib-Caches (aktiviert oder deaktiviert)
+** Schreib-Cache ohne Batteriestatus (aktiviert oder deaktiviert)
+** Der Schreib-Cache mit Mirror-Status (aktiviert oder deaktiviert)
+** Der Schreib-Cache wird nach einiger Zeit bereinigt
+** Die Einstellung für den Cache-Lesevorgang-Prefetch (WAHR oder FALSCH)
+** Der Status zum Scannen von Medien im Hintergrund aktivieren (aktiviert oder deaktiviert)
+** Medien-Scan mit Redundanzprüfstatus (aktiviert oder deaktiviert)
+
+
+* Die Spiegelungs-Repository-Volumes
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]]) summary
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Dieser Parameter gibt Performance-Statistiken zu allen Volumes im Storage Array zurück.
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, für das Sie Informationen abrufen möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Zahlen hat, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, für die Sie Informationen abrufen möchten. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen oder Ziffern enthalten, geben Sie die Namen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Die Einstellung, um eine kurze Liste von Informationen über die Volumes zurückzugeben.
+
+|===

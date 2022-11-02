@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/set-storagearray-learncycledate-controller.html 
+sidebar: sidebar 
+keywords: set, storage, array, controller, battery, learn, cycle 
+summary: Mit dem Befehl Set storageArray learnCycleDate Controller wird der Lernzyklus für den Controller-Akku eingestellt. 
+---
+= Lernzyklus für Speicher-Array-Controller einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray learnCycleDate controller` Befehl setzt die Lernzyklen der Controller-Batterie.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Um für jeden Controller im Storage Array individuelle Lernzyklen festzulegen, senden Sie diesen Befehl an beide Controller.
+
+====
+[NOTE]
+====
+Die Lernzyklen sind nicht miteinander verknüpft, sodass eine Unterbrechung des Lernzyklus eines Controllers den Lernzyklus für die Batterie des anderen Controllers nicht beeinträchtigt.
+
+====
+[NOTE]
+====
+Ein Lernzyklus kann mehrere Stunden in Anspruch nehmen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray learnCycleDate (controller[(a| b)] )
+pass:quotes[(daysToNextLearnCycle=_numberOfDays_ |
+day=_dayOfTheWeek_)] pass:quotes[time=_HH:MM_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`*controller*`
+ a| 
+Der Controller, für den Sie einen Akku-Lernzyklus festlegen möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Controller-Firmware einen Syntaxfehler aus.
+
+[NOTE]
+====
+Wenn dieser Parameter weggelassen wird, wird der Lernzyklus für beide Controller-Batterien in einem Dual-Controller-Array eingestellt.
+
+====
+
+
+ a| 
+`daysToNextLearnCycle`
+ a| 
+Gültige Werte sind `0` Bis `7`, Wo `0` Ist sofort und `7` Ist in sieben Tagen. Der `daysToNextLearnCycle` Der Parameter erfolgt bis zu sieben Tage nach dem nächsten geplanten Lernzyklus.
+
+
+
+ a| 
+`day`
+ a| 
+Gültige Werte für das `day` Der Parameter enthält die Wochentage (`Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, und `Saturday`). Durch das Festlegen des Tages wird der nächste Lernzyklus am angegebenen Tag nach dem aktuell geplanten Lernzyklus geplant.
+
+
+
+ a| 
+`time`
+ a| 
+Die Zeit im 24-Stunden-Format, z. B. 8:00 Uhr Wird eingegeben als `08:00`. Um 9 Uhr Wird eingegeben als `21:00`, Und 9:30 Uhr Wird eingegeben als `21:30`.
+
+|===
+
+
+== Beispiel
+
+[listing]
+----
+set storageArray learnCycleDate controller [a] daysToNextLearnCycle=4 time=08:30;
+----
+
+
+== Hinweise
+
+Sie können festlegen, dass der Lernzyklus nur einmal innerhalb eines siebentägigen Zeitraums stattfindet.
+
+Der `time` Parameter wählt eine bestimmte Zeit aus, die Sie den Lernzyklus ausführen möchten. Wenn kein Wert eingegeben wird, verwendet der Befehl einen Standardwert von `00:00` (Mitternacht).
+
+Wenn sich der angegebene Tag und die angegebene Zeit in der Vergangenheit befinden, findet der nächste Lernzyklus am angegebenen nächsten möglichen Tag statt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.15
+
+8.30 - hinzugefügt die `controller` Parameter.

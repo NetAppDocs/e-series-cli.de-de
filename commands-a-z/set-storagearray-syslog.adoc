@@ -1,0 +1,102 @@
+---
+permalink: commands-a-z/set-storagearray-syslog.html 
+sidebar: sidebar 
+keywords: update, storage, array, syslog, configuration 
+summary: Mit dem Befehl set storageArray syslog können Sie die Adresse, das Protokoll oder die Portnummer des Syslog-Servers ändern. 
+---
+= Syslog-Konfiguration des Storage-Arrays wird aktualisiert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray syslog` Mit dem Befehl können Sie die Adresse, das Protokoll oder die Portnummer des Syslog-Servers ändern.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray syslog id="<id>"
+serverAddress="<address>"
+port=<port> protocol=("udp" | "tcp" | "tls")
+components=(componentName=("auditLog") ...)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`serverAddress`
+ a| 
+Syslog-Empfänger-Hostname oder IP-Adresse.
+
+
+
+ a| 
+`port`
+ a| 
+Anschlussnummer des Syslog-Empfängers.
+
+
+
+ a| 
+`protocol`
+ a| 
+Syslog-Übertragungsprotokoll: Zulässige Werte sind UDP, TCP oder TLS.
+
+
+
+ a| 
+`components`
+ a| 
+Liste der Komponenteneinträge, die auf dem Syslog-Server protokolliert werden. Aktuell werden nur Audit-Protokolle unterstützt.
+
+
+
+ a| 
+`componentName`
+ a| 
+Komponentenname; derzeit wird nur „AuditLog“ unterstützt.
+
+|===
+
+
+=== Beispiel
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray syslog
+id=\"331998fe-3154-4489-b773-b0bb60c6b48e\"
+serverAddress=\"192.168.2.1\" port=514 protocol=\"udp\"
+components=(componentName=\"auditLog\");"
+ID: 331998fe-3154-4489-b773-b0bb60c6b48e Server Address: 192.168.2.1
+Port: 514 Protocol: udp
+Components
+1. Component Name: auditLog
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

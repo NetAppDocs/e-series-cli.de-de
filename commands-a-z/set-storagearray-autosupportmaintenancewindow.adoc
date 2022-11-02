@@ -1,0 +1,93 @@
+---
+permalink: commands-a-z/set-storagearray-autosupportmaintenancewindow.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, maintenance, window, individual, E2800, E5700, arrays 
+summary: Mit dem Befehl „Set storageArray autoSupportInstandhaltungWindows“ wird die Funktion für das AutoSupport-Wartungsfenster aktiviert oder deaktiviert. 
+---
+= Aktivieren oder Deaktivieren des AutoSupport Wartungsfensters (für einzelne E2800 oder E5700 Arrays)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray autoSupportMaintenanceWindow` Befehl schaltet die Funktion für das AutoSupport-Wartungsfenster ein oder aus.
+
+Verwenden Sie ein Wartungsfenster, um die automatische Ticketerstellung bei Fehlerereignissen zu unterdrücken. Im normalen Betriebsmodus eröffnet das Storage Array bei einem Problem AutoSupport einen Fall beim technischen Support. Wenn AutoSupport in ein Wartungsfenster gelegt wird, wird diese Funktion unterdrückt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray autoSupportMaintenanceWindow (enable | disable)
+    emailAddresses=("emailAddress1" "emailAddress2" ...)
+    [duration=<duration_in_hours>];
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`emailAddresses`
+ a| 
+Die Liste der E-Mail-Adressen, um eine Bestätigungs-E-Mail zu erhalten, dass das Wartungsfenster bearbeitet wurde. Sie können bis zu fünf E-Mail-Adressen angeben.
+
+
+
+ a| 
+`duration`
+ a| 
+Optional Die Dauer (in Stunden) für die Aktivierung des Wartungsfensters. Wenn keine Angabe erfolgt, wird die maximal unterstützte Dauer (72 Stunden) verwendet.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow enable
+      emailAddresses=\"me@company.com\" duration=5;"
+
+SMcli completed successfully.
+----
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow enable
+      emailAddresses=(\"me1@company.com\" \"me2@company.com\");"
+
+SMcli completed successfully.
+----
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoSupportMaintenanceWindow disable
+      emailAddresses=(\"me1@company.com\" \"me2@company.com\" \"me3@company.com\"
+      \"me4@company.com\" \"me5@company.com\");"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

@@ -1,0 +1,421 @@
+---
+permalink: commands-a-z/create-raid-volume-manual-drive-select.html 
+sidebar: sidebar 
+keywords: create, raid, volume, manual, drive, select 
+summary: Mit dem Befehl „Create Volume“ werden eine neue Volume-Gruppe und ein neues Volume erstellt und die Laufwerke für das Volume festgelegt. 
+---
+= Erstellen von RAID-Volumes (Auswahl manueller Laufwerke)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create volume` Mit dem Befehl werden eine neue Volume-Gruppe und ein neues Volume erstellt und Sie können die Laufwerke für das Volume angeben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create volume drives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1 ... trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupName"_]]
+raidLevel=(0 | 1 | 3 | 5 | 6)
+userLabel=pass:quotes[_"volumeName"_]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+
+----
+[listing, subs="+macros"]
+----
+create volume drives=pass:quotes[_(trayID1,_]pass:quotes[[_drawerID1,_]pass:quotes[_slotID1 ... trayIDn_],pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_)]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupName"_]]
+raidLevel=(0 | 1 | 5 | 6)
+userLabel=pass:quotes[_"volumeName"_]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drives`
+ a| 
+Die Laufwerke, die Sie dem Volume zuweisen möchten, das Sie erstellen möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`volumeGroupUserLabel`
+ a| 
+Der Name, den Sie der neuen Volume-Gruppe geben möchten. Schließen Sie den Namen der Volume-Gruppe in doppelte Anführungszeichen (" ").
+
+[NOTE]
+====
+Wenn Sie für die Volume-Gruppe keine Benutzerbezeichnung angeben, weist die Controller-Firmware einer Nummer zu.
+
+====
+
+
+ a| 
+`raidLevel`
+ a| 
+Der RAID-Level der Volume-Gruppe, die das Volume enthält. Gültige Werte sind `0`, `1`, `3`, `5`, Oder `6`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie dem neuen Volume geben möchten. Schließen Sie den neuen Volumennamen in doppelte Anführungszeichen (" ").
+
+[NOTE]
+====
+Dieser Parameter ist erforderlich.
+
+====
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe des Volumes, die Sie dem Storage-Array hinzufügen. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der das Volume besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Wenn Sie keinen Eigentümer angeben, bestimmt die Controller-Firmware den Eigentümer.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Die Menge der Daten (in KB), die der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor er Daten auf das nächste Laufwerk schreibt. Gültige Werte sind``4 (SSD only)``/, `16`, `32`, `64`, `128`, `256`, Oder `512`.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Die Einstellungen für beide `cacheReadPrefetch` Und das `segmentSize` Als Standardwerte einzulegener Parameter. Die Standardwerte basieren auf dem typischen I/O-Nutzungsmuster der Applikation, die das Volume verwendet. Gültige Werte sind `fileSystem`, `dataBase`, Oder `multiMedia`.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+Die Einstellung zum erzwingen des Schutzes von Fach-Verlust beim Erstellen des Repository. Um den Schutz gegen den Verlust des Fachs durchzusetzen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+Die Einstellung zum Schutz vor Schubladenverlust beim Erstellen des gespiegelten Repository-Volumes. Um den Schutz vor Schubladenverlust durchzusetzen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Die Einstellung, um sicherzustellen, dass die Reservekapazität für zukünftige Segmentgrößen zugewiesen wird. Dieser Standardwert ist `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Die Einstellung zum Festlegen des Sicherheitsniveaus beim Erstellen der Volume-Gruppen und aller zugehörigen Volumes. Diese Einstellungen sind gültig:
+
+* `none` -- die Volume-Gruppe und die Volumen sind nicht sicher.
+* `capable` -- die Volume-Gruppe und die Volumes sind in der Lage, die Sicherheit einzustellen, aber die Sicherheit wurde nicht aktiviert.
+* `enabled` -- die Volume-Gruppe und die Volumes haben die Sicherheit aktiviert.
+
+
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+Die Einstellung zur Angabe, ob Ressourcen-Provisioning-Funktionen aktiviert sind. Um die Ressourcenbereitstellung zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Der Standardwert ist `TRUE`.
+
+
+
+ a| 
+`mapping`
+ a| 
+Mit diesem Parameter können Sie das Volume einem Host zuordnen. Wenn Sie später zuordnen möchten, setzen Sie diesen Parameter auf `none`. Wenn Sie jetzt zuordnen möchten, setzen Sie diesen Parameter auf `default`. Das Volume ist allen Hosts zugeordnet, die auf den Speicherpool zugreifen können. Der Standardwert ist `none`.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Ein Wert von 0 oder der nicht eingestellte Parameter verwendet die Standardblockgröße.
+
+|===
+
+
+== Hinweise
+
+Der `drives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Wenn Sie die einstellen `raidLevel` Parameter auf RAID-Ebene 1:
+
+* Es gibt eine gerade Anzahl von Laufwerken in der Gruppe, nach RAID 1 Definition
+* Die erste Hälfte der Gruppe ist in der aufgelisteten Reihenfolge (und in Stripe-Reihenfolge) primäre Laufwerke
+* Die zweite Hälfte der Gruppe, in aufgelisterter Reihenfolge (und in Streifenreihenfolge), sind die entsprechenden Spiegellaufwerke
+
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
+
+Wenn Sie mit dem keine Kapazität angeben `capacity` Parameter verwendet wird die gesamte Laufwerkskapazität, die in der Volume-Gruppe verfügbar ist. Wenn Sie keine Kapazitätseinheiten angeben, `bytes` Wird als Standardwert verwendet.
+
+
+
+== Schutz vor Verlust des Fachs und Schutz vor Schubladenverlust
+
+Damit der Schutz vor Verlust des Fachs funktioniert, muss Ihre Konfiguration die folgenden Richtlinien einhalten:
+
+|===
+| Ebene | Kriterien für den Schutz vor Verlust des Fachs | Mindestanzahl der benötigten Fächer 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Der Laufwerk-Pool enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+6
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` Oder `RAID 5`
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Fach
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Jedes Laufwerk in einem RAID 1-Paar muss in einem separaten Fach untergebracht sein
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Der Schutz vor Laufwerksverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+Damit der Schubladenschutz funktioniert (in Umgebungen mit hoher Dichte), muss die Konfiguration die folgenden Richtlinien erfüllen:
+
+|===
+| Ebene | Kriterien für den Schutz vor Schubladenverlust | Mindestanzahl der benötigten Schubladen 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Der Pool umfasst Laufwerke aus allen fünf Schubladen und in jeder Schublade befindet sich eine gleiche Anzahl von Laufwerken. Ein Fach mit 60 Laufwerken kann einen Schubladenschutz erreichen, wenn der Laufwerk-Pool 15, 20, 25, 30, 35, 40, 45, 50, 55 oder 60 Laufwerke.
+ a| 
+5
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzigen Einschub.
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` Oder `RAID 5`
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Einschub.
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Jedes Laufwerk in einem gespiegelten Paar muss sich in einem separaten Fach befinden.
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Der Schutz vor Schubladenverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+
+
+== Segmentgröße
+
+Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
+
+Wenn Sie einen Wert für die Segmentgröße eingeben, wird der Wert anhand der unterstützten Werte geprüft, die der Controller zur Laufzeit zur Verfügung stellt. Wenn der eingegebene Wert ungültig ist, gibt der Controller eine Liste mit gültigen Werten zurück. Wenn Sie ein einzelnes Laufwerk für eine einzelne Anforderung verwenden, können andere Laufwerke gleichzeitig für die Bedienung anderer Anfragen verwendet werden. Befindet sich ein Volume in einer Umgebung, in der ein einzelner Benutzer große Dateneinheiten (wie Multimedia) überträgt, so wird die Performance maximiert, wenn eine einzelne Datentransferanfrage über ein einziges Daten-Stripe bedient wird. (Ein Daten-Stripe ist die Segmentgröße, die mit der Anzahl der Laufwerke in der Volume-Gruppe multipliziert wird, die für den Datentransfer verwendet werden.) In diesem Fall werden mehrere Laufwerke für dieselbe Anfrage genutzt, allerdings wird auf jedes Laufwerk nur einmal zugegriffen.
+
+Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern oder Dateisystemen zu erzielen, legen Sie die Segmentgröße so fest, dass die Anzahl der Laufwerke minimiert wird, die zur Erfüllung einer Datentransferanfrage erforderlich sind.
+
+
+
+== Verwendungshinweis
+
+[NOTE]
+====
+Sie müssen keinen Wert für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter. Wenn Sie keinen Wert eingeben, verwendet die Controller-Firmware das `usageHint` Parameter mit `fileSystem` Als Standardwert. Geben Sie einen Wert für das ein `usageHint` Parameter und ein Wert für das `cacheReadPrefetch` Parameter oder ein Wert für das `segmentSize` Parameter verursacht keinen Fehler. Der Wert, den Sie für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter hat Priorität über den Wert für das `usageHint` Parameter. Die Einstellungen für Segmentgröße und Cache-Lese-Prefetch für verschiedene Nutzungshinweise sind in der folgenden Tabelle aufgeführt:
+
+====
+|===
+| Nutzungshinweis | Segmentgröße einstellen | Dynamische Cache-Einstellungen für das Lesen in der Prefetch-Einstellung 
+
+
+ a| 
+File-System
+ a| 
+128 KB
+ a| 
+Aktiviert
+
+
+
+ a| 
+Datenbank
+ a| 
+128 KB
+ a| 
+Aktiviert
+
+
+
+ a| 
+Multimedia
+ a| 
+256 KB
+ a| 
+Aktiviert
+
+|===
+
+
+== Cache-Lese-Prefetch
+
+Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
+
+Sie müssen keinen Wert für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter. Wenn Sie keinen Wert eingeben, verwendet die Controller-Firmware das `usageHint` Parameter mit `fileSystem` Als Standardwert. Geben Sie einen Wert für das ein `usageHint` Parameter und ein Wert für das `cacheReadPrefetch` Parameter oder ein Wert für das `segmentSize` Parameter verursacht keinen Fehler. Der Wert, den Sie für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter hat Priorität über den Wert für das `usageHint` Parameter.
+
+
+
+== Sicherheitstyp
+
+Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
+
+Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müssen einen Sicherheitsschlüssel für das Speicher-Array erstellen. Verwenden Sie die `create storageArray securityKey` Befehl zum Erstellen eines Speicherarray-Sicherheitsschlüssels. Diese Befehle beziehen sich auf den Sicherheitsschlüssel:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.10 fügt RAID Level 6-Fähigkeit und den hinzu `dssPreAllocate` Parameter.
+
+7.50 fügt die hinzu `securityType` Parameter.
+
+7.60 fügt die Benutzereingabe _drawerID_ und die hinzu `drawerLossProtect` Parameter.
+
+7.75 fügt die hinzu `dataAssurance` Parameter.
+
+8.63 fügt die hinzu `resourceProvisioningCapable` Parameter.
+
+11.70 fügt die hinzu `blockSize` Parameter.

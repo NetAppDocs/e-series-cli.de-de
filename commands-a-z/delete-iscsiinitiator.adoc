@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/delete-iscsiinitiator.html 
+sidebar: sidebar 
+keywords: delete, initiator, command, specific, object, supported, array, role 
+summary: Der Befehl delete iscsiInitiator löscht ein bestimmtes iSCSI-Initiator-Objekt. 
+---
+= ISCSI-Initiator löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete iscsiInitiator` Befehl löscht ein bestimmtes iSCSI-Initiator-Objekt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+[IMPORTANT]
+====
+Dieser Befehl ist veraltet und wird von ersetzt xref:delete-initiator.adoc[Initiator löschen] Befehl.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+delete iscsiInitiator (<"iscsiID"> | ["name"])
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`iscsiInitiator`
+ a| 
+Die Kennung des iSCSI-Initiators, den Sie löschen möchten. Die Kennung des iSCSI-Initiators kann eine iSCSI-ID oder ein eindeutiger Name sein.
+
+Schließen Sie eine iSCSI-ID in doppelte Anführungszeichen (“ „) in Winkelklammern (< >).
+
+Schließen Sie den Namen in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+8.41 dieser Befehl ist veraltet.

@@ -1,0 +1,50 @@
+---
+permalink: commands-a-z/show-array-label.html 
+sidebar: sidebar 
+keywords: show, array, label 
+summary: Der Befehl Array-Bezeichnung anzeigen gibt Informationen darüber zurück, ob ein Speicher-Array-Label definiert wurde oder alle vorhandenen Speicher-Array-Labels. 
+---
+= Array-Beschriftung anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Show array label` Der Befehl gibt Informationen darüber zurück, ob ein Storage-Array-Label oder alle vorhandenen Storage-Array-Labels definiert wurden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl bezieht sich auf die EF600 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[show storageArrayLabel label _userDefinedString_]
+show storageArrayLabel all
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userDefinedString`
+ a| 
+Ermöglicht die Angabe einer benutzerdefinierten Bezeichnung für das Speicher-Array.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

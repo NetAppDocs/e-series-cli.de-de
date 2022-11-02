@@ -1,0 +1,98 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-summary.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, groups 
+summary: Mit dem Befehl asyncMirrorGroup Summary zeigen werden Konfigurationsinformationen für eine oder mehrere asynchrone Spiegelgruppen angezeigt. 
+---
+= Zeigen Sie asynchrone Spiegelgruppen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show asyncMirrorGroup summary` Mit dem Befehl werden Konfigurationsinformationen für eine oder mehrere asynchrone Spiegelgruppen angezeigt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Dieser Befehl zeigt auch die asynchronen gespiegelten Paare an, die mit jeder asynchronen Spiegelgruppe verbunden sind, einschließlich unvollständiger asynchroner gespiegelter Paare.
+
+Mit diesem Befehl können Sie den Fortschritt der periodischen Datensynchronisierung auf allen gespiegelten Paaren innerhalb der asynchronen Spiegelgruppe anzeigen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show (allAsyncMirrorGroups |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_asyncMirrorGroupName1_ ... _asyncMirrorGroupNameN_]])
+[summary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie die Eigenschaften für alle asynchronen Spiegelgruppen anzeigen möchten.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name einer asynchronen Spiegelgruppe, für die Konfigurationsinformationen und der Fortschritt der regelmäßigen Datensynchronisierung angezeigt werden sollen. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der asynchronen Spiegelgruppe in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+Die Namen mehrerer asynchroner Spiegelgruppen, für die Sie Informationen abrufen möchten. Geben Sie die Namen der asynchronen Spiegelgruppen mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Namen der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern enthalten, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Mit diesem Parameter wird eine kurze Liste von Informationen zum Synchronisierungsfortschritt einer oder mehrerer asynchroner Spiegelgruppen angezeigt.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

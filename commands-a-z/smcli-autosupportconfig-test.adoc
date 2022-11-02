@@ -1,0 +1,102 @@
+---
+permalink: commands-a-z/smcli-autosupportconfig-test.html 
+sidebar: sidebar 
+keywords: test, autosupport, configuration 
+summary: Verwenden Sie den Testbefehl SMcli -autoSupportConfig, um die AutoSupport-Konfiguration zu testen, indem Sie eine Testmeldung senden. Dieser Befehl wird in der Management-Domäne ausgeführt. Die Storage-Management-Software wählt ein Auto-Support-fähiges Array in der Management-Domäne, das Beispieldaten für die Testmeldung enthält. 
+---
+= Testen Sie die AutoSupport-Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Verwenden Sie die `SMcli -autoSupportConfig test` Befehl zum Testen der AutoSupport Konfiguration durch Senden einer Testmeldung. Dieser Befehl wird in der Management-Domäne ausgeführt. Die Storage-Management-Software wählt ein Auto-Support-fähiges Array in der Management-Domäne, das Beispieldaten für die Testmeldung enthält.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+[NOTE]
+====
+Der Persistent Monitor sollte auf der Management Station ausgeführt werden, um geplante oder ereignisgesteuerte AutoSupport-Meldungen zu senden. Starten Sie den Dienst, bevor Sie diesen Befehl verwenden.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+SMcli -autoSupportConfig test reply-toEmail<address>
+----
+
+
+== Parameter
+
+In der folgenden Tabelle werden die Parameter zum Senden einer AutoSupport-Testmeldung aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`test`
+ a| 
+Erforderlicher Parameter für den Befehl. Erfordert keinen Wert.
+
+
+
+ a| 
+`reply-toEmail`
+ a| 
+Ermöglicht dem Benutzer, die Antwort-an-E-Mail-Adresse für die AutoSupport-Meldungen vom SMTP-Bereitstellungstyp anzugeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.25
+
+
+
+== Beispiel für Tests mit HTTP/HTTPS-Bereitstellung
+
+Im Folgenden finden Sie Beispiele für die Verwendung dieses Befehls bei Verwendung eines HTTP- oder HTTPS-Bereitstellungstyps, bei dem Sie keine E-Mail-Adresse für die Zustellung angeben.
+
+[listing]
+----
+SMcli -autoSupportConfig test
+The sample AutoSupport message was successfully sent to the ASUP gateway.
+
+SMcli completed successfully.
+----
+
+
+== Beispiel für Tests mit SMTP-Übertragung
+
+Im Folgenden finden Sie Beispiele für die Verwendung dieses Befehls. Wenn Sie eine SMTP-Bereitstellungsmethode verwenden, können Sie die verwenden `reply-toEmail` Parameter zum Angeben der Zieladresse.
+
+[listing]
+----
+SMcli -autoSupportConfig test reply-toEmail:user@netapp.com
+The sample AutoSupport message was successfully sent to the ASUP gateway.
+
+An email has been sent to 'user@netapp.com', please check the mailbox
+for delivery confirmation.
+
+SMcli completed successfully.
+----

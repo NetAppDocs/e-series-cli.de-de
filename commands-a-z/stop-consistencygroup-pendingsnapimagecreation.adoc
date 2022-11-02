@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html 
+sidebar: sidebar 
+keywords: stop, snapshot, images, consistency, group 
+summary: Der Befehl „stop konsistent“ Group pendeningSnapImageCreation stoppt alle ausstehenden Snapshot-Images, die auf einer Snapshot-Konsistenzgruppe erstellt werden sollen. 
+---
+= Beenden Sie ausstehende Snapshot Images auf Konsistenzgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop consistencyGroup pendingSnapImageCreation` Mit dem Befehl werden alle ausstehenden Snapshot-Images angehalten, die auf einer Snapshot-Konsistenzgruppe erstellt werden sollen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Wenn für die Snapshot-Konsistenzgruppe keine ausstehenden Snapshot-Images vorhanden sind, wird auf der Storage-Managementsoftware eine Fehlermeldung angezeigt, und der Befehl wird nicht ausgeführt.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+stop consistencyGroup pass:quotes[[_consistencyGroupName_]]pendingSnapImageCreation
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroupName`
+ a| 
+Der Name der Konsistenzgruppe, für die Sie einen ausstehenden Snapshot-Vorgang beenden möchten. Schließen Sie den Namen der Konsistenzgruppe in eckige Klammern ([ ]). Wenn der Name der Konsistenzgruppe Sonderzeichen oder Ziffern enthält, müssen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen („ „ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

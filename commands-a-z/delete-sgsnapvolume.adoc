@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/delete-sgsnapvolume.html 
+sidebar: sidebar 
+keywords: delte, snapvolume, command, snapshot, consistency, group, optionally, repository, members 
+summary: Mit dem Befehl delete sgSnapVolume wird das Snapshot Volume einer Konsistenzgruppe gelöscht. Optional können Sie auch die Repository-Mitglieder löschen. 
+---
+= Löschen des Snapshot Volumes der Konsistenzgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete sgSnapVolume` Mit dem Befehl wird das Snapshot Volume einer Konsistenzgruppe gelöscht. Optional können Sie auch die Repository-Mitglieder löschen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete cgSnapVolume ["_snapVolumeName_"]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Der Name des Snapshot-Volumes der Konsistenzgruppe, das Sie löschen möchten. Schließen Sie den Namen des Snapshot-Volumes der Konsistenzgruppe in doppelte Anführungszeichen („ ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Der Parameter zum Speichern oder Löschen der Mitgliedvolumes. Um die Mitgliedsvolumes zu speichern, setzen Sie diesen Parameter auf `TRUE`. Um die Mitgliedsvolumes zu löschen, setzen Sie diesen Parameter auf `FALSE`. Der Standardwert ist `TRUE`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

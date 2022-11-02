@@ -1,0 +1,126 @@
+---
+permalink: commands-a-z/download-drive-firmware.html 
+sidebar: sidebar 
+keywords: download, drive, firmware, array, support, role, context, level 
+summary: Mit dem Befehl der Laufwerk-Firmware wird ein Firmware-Image auf ein Laufwerk heruntergeladen. 
+---
+= Laden Sie die Laufwerk-Firmware herunter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download drive firmware` Mit Befehl wird ein Firmware-Image auf ein Laufwerk heruntergeladen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[CAUTION]
+====
+*Mögliche Schäden an der Konfiguration des Speicherarrays* -- das fehlerhafte Herunterladen der Laufwerk-Firmware kann zu Schäden an den Laufwerken oder zu einem Verlust des Datenzugriffs führen.
+
+====
+[NOTE]
+====
+Der `content` Der Parameter ist veraltet. Verwenden Sie die `firmware` Parameter stattdessen.
+
+====
+Dieser Befehl dient zum Herunterladen eines Firmware-Images auf jeweils nur ein Festplattenmodell. Wenn Sie diesen Befehl in einem Skript verwenden, stellen Sie sicher, dass Sie diesen Befehl nur einmal verwenden. Wenn Sie diesen Befehl mehr als einmal verwenden, kann der Vorgang fehlschlagen. Sie können Firmware-Images auf alle Laufwerke eines Speicher-Arrays gleichzeitig mit dem herunterladen `download storageArray driveFirmware` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
+ [online|offline] firmware file="filename"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`online` Oder `offline`
+ a| 
+Wählen Sie `online` Um einen Online-Download der Laufwerk-Firmware durchzuführen, wählen Sie andernfalls aus `offline`. Der Standardwert ist `offline`.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname der Datei, die das Firmware-Image enthält. Schließen Sie den Dateipfad und den Dateinamen des Firmware-Images in doppelte Anführungszeichen („ “). Beispiel:
+
+`file="C:\Program Files\CLI\dnld\drvfrm.dlp"`
+
+Gültige Dateinamen haben ein `.dlp` Erweiterung.
+
+
+
+ a| 
+`firmware`
+ a| 
+Zeigt an, dass die Controller-Firmware heruntergeladen wird.
+
+|===
+
+
+== Hinweise
+
+Bevor Sie versuchen, die Laufwerk-Firmware herunterzuladen, ergreifen Sie folgende Vorsichtsmaßnahmen:
+
+* Es sei denn, Sie verwenden das `online` Parameter, beenden Sie alle I/O-Aktivitäten zum Speicher-Array, bevor Sie das Firmware-Image herunterladen. Der `download drive firmware` Befehl ohne das `online` Der Parameter blockiert alle E/A-Aktivitäten, bis der Download abgeschlossen oder fehlschlägt. Stellen Sie jedoch vorsorglich sicher, dass alle I/O-Aktivitäten, die sich auf das Laufwerk auswirken könnten, angehalten werden.
+* Stellen Sie sicher, dass die Firmware-Bilddatei mit dem Laufwerksfach kompatibel ist Wenn Sie eine Firmware-Bilddatei herunterladen, die nicht mit dem ausgewählten Laufwerksfach kompatibel ist, kann das Laufwerksfach möglicherweise nicht mehr verwendet werden.
+* Nehmen Sie beim Herunterladen der Laufwerk-Firmware keine Konfigurationsänderungen am Speicher-Array vor. Wenn Sie eine Konfigurationsänderung vornehmen, kann der Firmware-Download fehlschlagen und die ausgewählten Laufwerke unbrauchbar machen.
+* Bei Aktualisierungsanfragen der Online-Laufwerk-Firmware, die mit diesem Befehl ausgegeben werden, entfernt der Controller RAID 0 Laufwerke der Volume-Gruppe aus der Liste der Laufwerke, auf die neue Firmware heruntergeladen wird. Der Rückgabestatus des einzelnen Laufwerks wird auf festgelegt `Never Attempted With Reason`.
+
+
+Wenn Sie die Firmware auf die Laufwerke herunterladen, müssen Sie den vollständigen Pfad und den Dateinamen zum Firmware-Image angeben, das auf Ihrem System gespeichert ist.
+
+Verwenden Sie können `download drive` Befehl zum Testen der Firmware auf einem Laufwerk, bevor Sie die Firmware auf allen Laufwerken in einem Speicher-Array installieren. Der Download gibt einen der folgenden Status zurück:
+
+* Erfolgreich
+* Nicht Erfolgreich Mit Grund
+* Nie Mit Vernunft Versucht
+
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Minimale Firmware-Stufe
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben.
+
+8.25 fügt die hinzu `online` Parameter.

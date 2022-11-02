@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/show-storagearray-controllerhealthimage.html 
+sidebar: sidebar 
+keywords: show, storage, array, controller, health, image 
+summary: Der Befehl show storageArray ControllerHealthImage zeigt Details des Controller-Zustandsabbilds im Controller-Cache an, sofern ein Controller-Zustandsabbild verfügbar ist, auf Storage-Arrays, die das Controller-Zustandsabbild unterstützen. 
+---
+= Zeigt das Storage-Array-Controller-Zustandsabbild an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray controllerHealthImage` Befehl zeigt Details zum Controller-Zustandsabbild im Controller-Cache an, falls ein Controller-Zustandsabbild verfügbar ist, auf Storage Arrays, die das Controller-Zustandsabbild unterstützen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 8.20 der `coreDump` Parameter wird durch das ersetzt `controllerHealthImage` Parameter.
+
+====
+Wenn das Speicher-Array die Funktion für das Integritätsabbild des Controllers nicht unterstützt, gibt dieser Befehl einen Fehler aus.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray controllerHealthImage
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.20 ersetzt die `coreDump` Parameter mit `controllerHealthImage` Parameter.

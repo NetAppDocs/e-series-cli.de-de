@@ -1,0 +1,104 @@
+---
+permalink: get-started/learn-about-volume-group-migration.html 
+sidebar: sidebar 
+keywords: volume, group, migration, learn, data, access, export, import, component 
+summary: Erfahren Sie mehr über die Migration von Volume-Gruppen 
+---
+= Erfahren Sie mehr über die Migration von Volume-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[CAUTION]
+====
+Wenn die Volume-Gruppe aus NVMe- oder FIPS-fähigen Laufwerken besteht, müssen der Sicherheitsschlüssel und der Passphrase vom Quell-Array aufgezeichnet/gespeichert werden, um die Laufwerke freizuschalten, bevor die Migration zum Ziel-Array beginnen kann. Wenn der Sicherheitsschlüssel und der Passphrase nicht bekannt sind und/oder die Datenintegrität nicht erforderlich ist, kann eine Sicherheitslöschung durchgeführt werden. Unterschiedliche Verschlüsselungssicherheitslaufwerke werden auf E-Series Storage-Systemen nicht unterstützt. Weitere Informationen zum Entsperren von Laufwerken mit einem Sicherheitsschlüssel, zum Löschen von FIPS-Laufwerken und zum Entsperren oder Zurücksetzen von gesperrten NVMe-Laufwerken finden Sie in der Online-Hilfe von SANtricity System Manager.
+
+====
+Bei der Volume-Gruppenmigration können Sie eine Volume-Gruppe exportieren, sodass Sie die Volume-Gruppe in ein anderes Storage-Array importieren können. Sie können auch eine Volume-Gruppe exportieren, sodass Sie die Daten offline speichern können.
+
+[NOTE]
+====
+*Möglicher Verlust des Datenzugriffs* -- Sie müssen eine Volume-Gruppe exportieren, bevor Sie die Volume-Gruppe verschieben oder die Volume-Gruppe importieren.
+
+====
+
+
+== Volume-Gruppe exportieren
+
+Der Vorgang „Volume-Gruppe exportieren“ bereitet die Laufwerke in der Volume-Gruppe auf das Entfernen vor. Sie können die Laufwerke für Offline-Speicher entfernen oder die Volume-Gruppe in ein anderes Speicher-Array importieren. Nachdem Sie die Volume-Gruppe für den Export abgeschlossen haben, sind alle Laufwerke offline. Alle zugehörigen Volumes oder Nodes mit freier Kapazität werden nicht mehr in der Storage-Managementsoftware angezeigt.
+
+
+
+== Nicht exportierbare Komponenten
+
+Sie müssen alle nicht exportierbaren Komponenten entfernen, bevor Sie den Vorgang für die Gruppe des Exportvolumes abschließen können. Sie müssen diese Komponenten entfernen:
+
+* Ständige Reservierungen
+* Zuordnungen
+* Volume-Kopien-Paare
+* Remote-gespiegelte Paare
+* Spiegelungs-Repositorys
+
+
+
+
+== Grundlegende Exportschritte für eine Volume-Gruppe
+
+Der Export einer Volume-Gruppe umfasst diese Schritte auf dem Speicher-Array _source_.
+
+. Speichern Sie die Konfiguration des Speicher-Arrays.
+. Beenden Sie alle E/A-Vorgänge
+. Sichern Sie die Daten auf den Volumes in der Volume-Gruppe.
+. Heben Sie die Bereitstellung der Dateisysteme auf den Volumes in der Volume-Gruppe auf, oder trennen Sie sie.
+. Suchen Sie die Volume-Gruppe, und benennen Sie die Laufwerke mit den Namen des Quell- und Zielspeicherarrays, dem Namen der Volume-Gruppe und der Gesamtzahl der Laufwerke in der Volume-Gruppe.
+. Platzieren Sie die Volume-Gruppe offline.
+. Um einen ordnungsgemäßen Luftstrom innerhalb des Fachs zu gewährleisten, sollten Sie leere Laufwerksgehäuse oder neue Laufwerke beschaffen, damit Sie die Laufwerke austauschen können, nachdem Sie die Laufwerke entfernt haben, die der zu exportierenden Volume-Gruppe zugeordnet sind.
+
+
+Der Export einer Volume-Gruppe umfasst diese Schritte auf dem _Target_ Storage Array.
+
+. Stellen Sie sicher, dass das Ziel-Speicher-Array über verfügbare Laufwerksschächte verfügt.
+. Vergewissern Sie sich, dass das Ziel-Speicher-Array die Laufwerke unterstützt, die Sie importieren möchten.
+. Vergewissern Sie sich, dass das Ziel-Storage-Array die neuen Volumes unterstützen kann.
+. Stellen Sie sicher, dass auf dem Controller die aktuelle Firmware-Version installiert ist.
+. Vergewissern Sie sich, dass das Ziel-Speicher-Array RAID Level 6 unterstützt, wenn Sie eine RAID Level 6-Volume-Gruppe exportieren.
+. Vergewissern Sie sich, dass die neueste Version der Storage Management Software auf dem Ziel-Storage-Array installiert ist.
+. Wenn Sie eine Volume-Gruppe mit aktivierter Laufwerksicherheit exportieren, stellen Sie sicher, dass die Laufwerksicherheit auf dem Ziel-Speicher-Array aktiviert ist.
+
+
+
+
+== Volume-Gruppe importieren
+
+Der Vorgang „Volume-Gruppe importieren“ fügt die importierte Volume-Gruppe dem Ziel-Speicher-Array hinzu. Nach Abschluss des Vorgangs „Volume-Gruppe importieren“ verfügen alle Laufwerke über den optimalen Status. Alle zugehörigen Volumes oder Nodes mit freier Kapazität werden nun in der Storage-Managementsoftware angezeigt, die auf dem Ziel-Storage-Array installiert ist.
+
+
+
+== Grundlegende Importschritte für eine Volume-Gruppe
+
+[NOTE]
+====
+Sie müssen alle Laufwerke der Volume-Gruppe in das Fach einfügen, bevor die Volume-Gruppe importiert werden kann.
+
+====
+Der Import einer Volume-Gruppe umfasst die folgenden Schritte auf dem _Target_ Storage Array:
+
+. Legen Sie die exportierten Laufwerke in die verfügbaren Laufwerksschächte ein.
+. Im Importbericht finden Sie eine Übersicht über die Volume-Gruppe, die Sie importieren.
+. Auf nicht importierbare Komponenten prüfen.
+. Bestätigen Sie, dass Sie mit dem Importvorgang fortfahren möchten.
+
+
+
+
+== Nicht importierbare Komponenten
+
+Einige Komponenten können während des Vorgangs „Volume-Gruppe importieren“ nicht importiert werden. Diese Komponenten werden während des Verfahrens entfernt:
+
+* Ständige Reservierungen
+* Zuordnungen
+* Volume-Kopien-Paare
+* Remote-gespiegelte Paare
+* Spiegelungs-Repositorys
+

@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/save-drivechannel-faultdiagnostics-file.html 
+sidebar: sidebar 
+keywords: save, drive, channel, fault, isolation, diagnostic, status 
+summary: Mit dem Befehl driveChannel faultDiagnostics file speichern werden die Diagnosedaten des Laufwerkanals für die Fehlereingrenzung gespeichert, die vom Befehl Start driveChannel faultDiagnostics zurückgegeben werden. 
+---
+= Diagnosestatus des Laufwerkanals für die Fehlereingrenzung speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save driveChannel faultDiagnostics file` Durch den Befehl werden die Diagnosedaten der Laufwerk-Channel-Fehlereingrenzung gespeichert, die von zurückgegeben werden `start driveChannel faultDiagnostics` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 8.10 wird das `save driveChannel faultDiagnostics` Befehl ist veraltet.
+
+====
+Sie können die Diagnosedaten als Standardtext oder als XML-Datei speichern.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in dem Sie die Ergebnisse des Diagnose-Tests für die Fehlereingrenzung auf dem Laufwerkskanal speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\sup\fltdiag.txt"`
+
+Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+|===
+
+
+== Hinweise
+
+Eine Dateierweiterung wird nicht automatisch an die gespeicherte Datei angehängt. Sie müssen die entsprechende Formatdateierweiterung für die Datei angeben. Wenn Sie eine Dateierweiterung von angeben `.txt`, Die Ausgabe wird in einem Textdateiformat. Wenn Sie eine Dateierweiterung von angeben `.xml` , Die Ausgabe wird in einem XML-Dateiformat.
+
+
+
+== Minimale Firmware-Stufe
+
+7.15 ermöglicht die Einführung dieser neuen Funktion für veraltete Controller-Fächer.

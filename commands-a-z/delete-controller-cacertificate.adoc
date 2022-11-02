@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/delete-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: remove, install, root, intermediate, ca, certificates 
+summary: Der Befehl delete Controller caCertificate entfernt das installierte Root- oder Intermediate CA-Zertifikat vom angegebenen Controller. 
+---
+= Installierte Root-/Intermediate-CA-Zertifikate entfernen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete controller caCertificate` Mit dem Befehl wird das installierte Root/Intermediate CA-Zertifikat vom angegebenen Controller entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+
+delete controller [(a|b)] caCertificate aliases=("alias1" ... "aliasN")
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Hier können Sie den Controller angeben, von dem Sie das signierte Zertifikat löschen möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`aliases`
+ a| 
+Ermöglicht es Ihnen, ein oder mehrere CA-Zertifikate anzugeben, die unter Verwendung der Aliasnamen gelöscht werden sollen oder alle anzugeben. Die Aliase müssen vom Controller stammen, für den das Zertifikat gelöscht wird. Schließen Sie alle Aliase in Klammern. Wenn Sie mehrere Alias eingeben, trennen Sie sie mit einem Leerzeichen.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete controller[a] caCertificate aliases=("myAlias" "anotherAlias");"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

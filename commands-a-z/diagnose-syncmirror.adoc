@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/diagnose-syncmirror.html 
+sidebar: sidebar 
+keywords: diagnose, syncmirror, command, test, connection, specified, primary, volumes, mirror, storage, array, synchronous, feature, enabled 
+summary: Über den Befehl Diagnosis SyncMirror wird die Verbindung zwischen den angegebenen primären Volumes und den Spiegelvolumes auf einem Storage Array getestet, wobei die Funktion zur synchronen Spiegelung aktiviert ist. 
+---
+= Diagnose des synchronen Spiegelns
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `diagnose syncMirror` Mit dem Befehl wird die Verbindung zwischen den angegebenen primären Volumes und den Spiegelvolumes auf einem Storage-Array getestet, wobei die Funktion zum synchronen Spiegeln aktiviert ist.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose syncMirror (_primary [primaryVolumeName_]] |pass:quotes[primaries ["_primaryVolumeName1_]" ... pass:quotes[_"primaryVolumeNameN"_]])
+testID=connectivity
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`primary`
+ a| 
+Der Name des primären Volumes des Remote-Spiegelpaares, das Sie testen möchten. Schließen Sie den Namen des primären Datenträgers in eckige Klammern ([ ]). Wenn der Name des primären Volumes Sonderzeichen hat oder nur aus Zahlen besteht, müssen Sie den primären Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`primaries`
+ a| 
+Sie können mehrere Volume-Namen eingeben. Schließen Sie alle Volume-Namen in einen Satz eckiger Klammern ([ ]). Schließen Sie jeden Volumennamen in doppelte Anführungszeichen (" "). Trennen Sie jeden Volume-Namen mit einem Leerzeichen.
+
+Die Namen mehrerer Volumes, die Sie als primäre Volumes verwenden möchten. Geben Sie die Namen der primären Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

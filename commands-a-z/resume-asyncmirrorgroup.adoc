@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/resume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: resume, asynchronous, mirror, group 
+summary: Mit dem Befehl „Async MirrorGroup“ wird die Datenübertragung zwischen allen gespiegelten Paaren in einer asynchronen Spiegelgruppe fortgesetzt. 
+---
+= Setzen Sie die asynchrone Spiegelgruppe fort
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `resume asyncMirrorGroup` Mit dem Befehl wird die Datenübertragung zwischen allen gespiegelten Paaren in einer asynchronen Spiegelgruppe fortgesetzt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Daten, die während der Aussetzung der asynchronen Spiegelgruppe auf die primären Volumes geschrieben wurden, werden sofort auf die sekundären Volumes geschrieben. Die regelmäßige Synchronisierung wird fortgesetzt, wenn ein Intervall für die automatische Synchronisierung festgelegt wurde.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+resume asyncMirrorGroup pass:quotes[[_"asyncMirrorGroupName"_]]
+[deleteRecoveryPointIfNecessary]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, für die die Synchronisierung gestartet werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]").
+
+
+
+ a| 
+`deleteRecoveryPointIfNecessary`
+ a| 
+Der Parameter zum Löschen des Wiederherstellungspunkts, wenn die wiederherstellbaren Synchronisierungsdaten den Zeitschwellenwert für die Wiederherstellung überschritten haben. Der Zeitpunkt der Wiederherstellung wird aus dem Zeitpunkt gemessen, zu dem die Daten im primären Storage Array eingefroren wurden.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84
+
+8.10 fügt die hinzu `deleteRecoveryPointIfNecessary` Parameter.

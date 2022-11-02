@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/save-storagearray-autoloadbalancestatistics-file.html 
+sidebar: sidebar 
+keywords: save, auto-load, balance, statistics 
+summary: Der Befehl save storageArray autoLoadBalance Statistics file ermöglicht einen automatisierten I/O Workload-Ausgleich und sorgt dafür, dass eingehender I/O-Datenverkehr von den Hosts dynamisch verwaltet und auf beiden Controllern ausgeglichen wird. 
+---
+= Statistiken zum automatischen Lastenausgleich speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray autoLoadBalanceStatistics file` Befehl bietet einen automatischen I/O-Workload-Ausgleich und sorgt dafür, dass eingehender I/O-Datenverkehr von den Hosts auf beiden Controllern dynamisch gemanagt und ausgeglichen wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl speichert die Statistiken zum automatischen Lastausgleich des Speicherarrays in einer Datei. Diese Statistiken zeigen den Änderungsverlauf der Eigentumsrechte für jedes Volume im Array an.
+
+[NOTE]
+====
+Senden Sie diese Datei zur Interpretation an den technischen Support.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+ save storageArray autoLoadBalanceStatistics file=pass:quotes["_filename_"]
+(numberOfDays=pass:quotes[_numberOfDays_]);
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`storageArray`
+ a| 
+Gibt an, dass dieser Befehl auf einem Speicher-Array funktioniert.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Statistiken zum automatischen Lastenausgleich speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`numberOfDays`
+ a| 
+Die Anzahl der zu speicherenden Tage. Dieser Parameter ist optional und der Standardwert ist 0, der alle verfügbaren Daten anzeigt.
+
+|===
+
+
+== Beispiel
+
+[listing]
+----
+SMcli -n Array1 -c "save storageArray autoLoadBalanceStatistics file="filename" numberOfDays=30;"
+----
+[NOTE]
+====
+Eine aktive Bedingung „Drive Lost Primary Path“ führt dazu, dass der automatische Lastausgleich nicht in der Lage ist, Workloads auszugleichen. Diese Bedingung muss inaktiv sein, um sicherzustellen, dass die Workloads durch die Funktion Automatischer Lastenausgleich ausgeglichen werden.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+8.30

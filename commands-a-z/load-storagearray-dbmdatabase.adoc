@@ -1,0 +1,117 @@
+---
+permalink: commands-a-z/load-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: load, storage array, database, command, management 
+summary: 'Der Befehl Load storageArray dbmDatabase stellt ein Datenbank-Management (DBM)-Datenbank-Image wieder her, indem das Image aus einer Datei oder aus dem Cache abgerufen wird.' 
+---
+= Laden der Speicher-Array-DBM-Datenbank
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `load storageArray dbmDatabase` Mit Befehl wird ein Datenbank-Management (DBM)-Datenbank-Image wiederhergestellt, indem das Image aus einer Datei oder aus dem Cache abgerufen wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl stellt eine Speicher-Array-DBM-Datenbank auf die genaue Konfiguration wieder her, die existierte, als das Datenbank-Image mit erfasst wurde `save storageArray dbmDatabase` Befehl. Die Daten in einer Datei enthalten Daten für die RAID-Konfiguration, Volume-Gruppen und Festplatten-Pools.
+
+Bevor Sie diesen Befehl mit dem verwenden `file` Option: Sie müssen zuerst eine gültige Zeichenfolge (einen Sicherheitscode) vom technischen Support erhalten. Um einen Prüfer zu erhalten, verwenden Sie den `save storageArray dbmValidatorInfo` Befehl zum Generieren einer XML-Datei, die validator-Informationen enthält. Der technische Support verwendet die XML-Datei, um die für diesen Befehl erforderliche Validator-Zeichenfolge zu generieren.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+load storageArray dbmDatabase
+pass:quotes[((file="_filename_" validator="_validatorValue_") | sourceLocation=onboard)]
+[controller [(a|b)]]
+[contentType= all]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname der DBM-Datenbank, die Sie hochladen möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Array Backups\DBMbackup_03302010.dbm"` Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+
+
+ a| 
+`validator`
+ a| 
+Der alphanumerische Sicherheitscode, der benötigt wird, um ein Speicher-Array auf eine vorhandene Konfiguration wiederherzustellen.
+
+Der Prüfer muss vom technischen Support profitieren. Um den Validierer abzurufen, generieren Sie die erforderliche XML-Datei für die Validierungsdaten, indem Sie den ausführen `save storageArray dbmValidatorInfo` Befehl. Nachdem die XML-Datei mit den Validierungsdaten verfügbar ist, wenden Sie sich an den technischen Support, um den Validierer zu erhalten.
+
+Schließen Sie den Validierer in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`sourceLocation`
+ a| 
+Dieser Parameter gibt den Speicherort an, von dem Backup-Datenbankinformationen abgerufen werden sollen. Der Parameter muss für die Konsistenz enthalten sein, der einzige zulässige Wert ist jedoch `onboard`.
+
+
+
+ a| 
+`controller`
+ a| 
+Dieser Parameter gibt den Controller an, von dem ausschließlich Daten abgerufen werden. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn der `controller` Parameter ist nicht angegeben, Daten können von einem der Controller abgerufen werden.
+
+Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B.
+
+
+
+ a| 
+`contentType`
+ a| 
+Dieser Parameter gibt den Inhaltstyp der abzurufenden Daten an.
+
+Dieser Parameter ist auf festgelegt `all` Standardmäßig werden alle Daten einschließlich Disk Pool Konfigurationsdaten abgerufen.
+
+|===
+
+
+== Hinweise
+
+Je nach Größe des Datenbank-Images kann die Wiederherstellung der Datenbank bis zu 30 Minuten dauern. Die Host-Software zeigt die Controller erst dann in einem optimalen Zustand an, wenn alle Aktionen zum Laden des Datenbank-Images auf den Controllern abgeschlossen sind.
+
+
+
+== Minimale Firmware-Stufe
+
+7.75
+
+7.83 fügt folgende Parameter hinzu:
+
+* `sourceLocation`
+* `controller`
+* `contentType`
+

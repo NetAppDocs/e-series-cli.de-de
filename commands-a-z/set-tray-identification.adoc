@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-tray-identification.html 
+sidebar: sidebar 
+keywords: set, tray, identification 
+summary: Mit dem Befehl Fach einstellen wird die Fach-ID eines Controller-Fachs, eines Controller-Laufwerksfachs oder eines Laufwerksfachs in einem Speicher-Array festgelegt. 
+---
+= Legen Sie die Tray-ID fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set tray` Mit Befehl wird die Fach-ID eines Controller-Fachs, eines Controller-Laufwerksfachs oder eines Laufwerksfachs in einem Storage-Array festgelegt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl ist nur für Controller-Fächer, Controller-Laufwerksfächer oder Laufwerksfächer gültig, für die Sie über die Controller-Firmware festlegen können. Sie können diesen Befehl nicht für Controller-Fächer, Controller-Laufwerksfächer oder Laufwerksfächer mit Fach-ID verwenden, die Sie mit einem Switch festgelegt haben.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`tray`
+ a| 
+Seriennummer des Controller-Fachs, des Controller-Laufwerksfachs oder des Laufwerksfachs, für das Sie die Fach-ID einstellen. Seriennummern können eine beliebige Kombination aus alphanumerischen Zeichen und beliebiger Länge sein. Schließen Sie die Seriennummer in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`id`
+ a| 
+Der Wert für die Controller-Fach-ID, die ID für das Controller-Laufwerksfach oder die Laufwerksfach-ID. Die Werte für Fach-ID sind `0` Bis `9` Oder `10` Bis `99`.
+
+[NOTE]
+====
+Gehen Sie bei den DE5600, DE1600 und DE6600 Gehäusen vor der Seriennummer mit dem Textstring „SN“ und einem Leerzeichen vor. Beispiel: `SN SV23802522`.
+
+====
+[NOTE]
+====
+Sie müssen den Wert der Fach-ID nicht in Klammern setzen.
+
+====
+[NOTE]
+====
+Fachwerte von `00` Bis `09` Werden vom Verantwortlichen abgelehnt. Nutzung `0` Bis `9` Um diese Werte anzugeben.
+
+====
+|===
+
+
+== Hinweise
+
+Mit diesem Befehl wurde das CE6998-Controller-Fach ursprünglich unterstützt Die Controller-Fächer der Serie CE6998 können mit einer Vielzahl von Laufwerksfächern verbunden werden, einschließlich derjenigen, deren Fach-IDs durch Switches festgelegt sind. Beim Anschließen eines Controller-Fachs der Serie CE6998 an Laufwerksfächer, deren Fach-IDs durch Switches festgelegt sind, sind die gültigen Werte für Fach-IDs für das Controller-Fach `80` Bis `99`. In diesem Bereich werden Konflikte mit Fach-IDs vermieden, die für die angeschlossenen Laufwerksfächer verwendet werden.

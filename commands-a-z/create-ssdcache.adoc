@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-ssdcache.html 
+sidebar: sidebar 
+keywords: create, ssd, cache 
+summary: 'Der Befehl create ssdCache erstellt einen Lese-Cache für ein Speicher-Array unter Verwendung von Solid State Disks (SSDs).' 
+---
+= Erstellen Sie den SSD-Cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create ssdCache` Befehl erstellt einen Lese-Cache für ein Storage-Array, das Solid State Disks (SSDs) verwendet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Durch die Verwendung hochperformanter SSDs zum Caching von Lesedaten wird die I/O-Performance und Reaktionszeiten der Applikation verbessert und bietet kontinuierliche Performance-Verbesserungen für unterschiedliche Workloads, insbesondere für Workloads mit hohem IOP-Durchsatz. SSD-Cache maximiert die Nutzung kostspieliger schneller SSDs. SSD-Cache funktioniert zusätzlich zum primären Cache im DRAM-Controller. Beim Controller-Cache werden die Daten nach dem Lesen eines Hosts im DRAM gespeichert. Bei SSD-Cache werden die Daten aus den vom Benutzer angegebenen Basis-Volumes kopiert und dann auf SSDs zwischengespeichert.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create ssdCache userLabel=pass:quotes[_"ssdCacheName"_]
+drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,[drawerIDn,_]]pass:quotes[_slotIDn_)]
+[updateExistingVolumes=(TRUE|FALSE)]
+[securityType=(none|capable|enabled)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie den neuen SSD-Cache benennen möchten. Schließen Sie den SSD-Cache-Namen in doppelte Anführungszeichen (“ „).
+
+
+
+ a| 
+`drives`
+ a| 
+Die Laufwerke, die Sie zum Erstellen des SSD-Caches verwenden möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`updateExistingVolumes`
+ a| 
+Dieser optionale Parameter gibt an, ob der SSD-Cache für alle vorhandenen Volumes im Storage-Array aktiviert werden soll. Um den SSD-Cache für alle vorhandenen Volumes zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Wenn Sie den SSD-Cache für einzelne Volumes später aktivieren möchten, setzen Sie diesen Parameter auf `FALSE`. Der Standardwert ist `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Dieser optionale Parameter gibt beim Erstellen eines SSD-Caches die Sicherheitsstufe an. Diese Einstellungen sind gültig:
+
+* `none` - Der SSD-Cache ist nicht sicher.
+* `capable` - Der SSD-Cache ist in der Lage, die Sicherheitsstufe festzulegen, aber die Sicherheit wurde nicht aktiviert.
+* `enabled` - Im SSD-Cache ist die Sicherheit aktiviert.
+
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für den Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Ein Storage-Array kann nur einen SSD-Cache verwenden.
+
+Nur Volumes, die mit Festplatten erstellt wurden, können den SSD-Cache verwenden. Sie können den SSD-Cache auf Snapshot-Images nicht aktivieren.
+
+Wenn alle SSDs im SSD-Cache Data Assurance (da)-fähig sind und die da-Funktion aktiviert ist, wird da automatisch für den SSD-Cache aktiviert und kann nicht deaktiviert werden. Darüber hinaus können Sie keinen SSD-Cache, der nicht als DA-fähig ist, hinzufügen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84
+
+8.20 _M3 - FDE-Laufwerke werden jetzt unterstützt. Hinzugefügt die `securityType` Parameter.

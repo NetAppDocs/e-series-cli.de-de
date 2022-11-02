@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/remove-lunmapping.html 
+sidebar: sidebar 
+keywords: remove, volume, lun map 
+summary: 'Mit dem Befehl „lunMapping entfernen“ wird die Zuordnung der Logical Unit Number (LUN) oder Namespace ID (NSID) von einem oder mehreren Volumes entfernt.' 
+---
+= Entfernen der Volume-LUN-Zuordnung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove lunMapping` Mit dem Befehl wird die Zuordnung der Logical Unit Number (LUN) oder Namespace ID (NSID) von einem oder mehreren Volumes entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
+(host=pass:quotes[_"hostName_" | hostGroup=(_"hostGroupName"_] | defaultGroup)
+----
+
+
+== Syntax für das Entfernen einer LUN oder NSID-Zuordnung von mehreren Volume-LUNs oder NSID-Zuordnungen
+
+[listing, subs="+macros"]
+----
+remove (allVolumes | volumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+lunMapping
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, aus dem Sie die LUN- oder NSID-Zuordnung entfernen. Schließen Sie den Volumennamen doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`accessVolume`
+ a| 
+Mit diesem Parameter wird das Zugriffsvolume entfernt.
+
+
+
+ a| 
+`allVolumes`
+ a| 
+Mit diesem Parameter wird die LUN-Zuordnung von allen Volumes entfernt.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, aus denen Sie die LUN- oder NSID-Zuordnung entfernen. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, dem das Volume zugeordnet ist. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+Dieser Parameter funktioniert nur, wenn Sie die LUN- oder NSID-Zuordnung von einem Volume entfernen.
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name der Host-Gruppe, die den Host enthält, dem das Volume zugeordnet ist. Schließen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen (" "). Der `defaultGroup` Der Wert ist die Host-Gruppe, die den Host enthält, dem das Volume zugeordnet ist.
+
+Dieser Parameter funktioniert nur, wenn Sie die LUN- oder NSID-Zuordnung von einem Volume entfernen.
+
+|===
+
+
+== Hinweise
+
+Das Zugriffs-Volume ist das Volume in einer SAN-Umgebung, das für die Kommunikation zwischen der Storage-Managementsoftware und dem Storage-Array-Controller verwendet wird. Das Zugriffs-Volume verwendet eine LUN- oder NSID-Adresse und verbraucht 20 MB Speicherplatz, der nicht zur Speicherung von Anwendungsdaten verfügbar ist. Ein Zugriffs-Volume ist nur für bandinterne gemanagte Storage-Arrays erforderlich.
+
+[NOTE]
+====
+*Das Entfernen eines Zugriffsvolumens kann Ihre Konfiguration beschädigen* -- der Agent nutzt die Zugriffsvolumes zur Kommunikation mit einem Speicher-Array. Wenn Sie eine Zuordnung eines Zugriffs-Volumes für ein Speicher-Array von einem Host entfernen, auf dem ein Agent ausgeführt wird, kann die Speicherverwaltungssoftware das Speicher-Array nicht mehr über den Agenten verwalten.
+
+====
+Sie müssen den verwenden `host` Und das `hostGroup` Parameter, wenn Sie ein Volume ohne Zugriff oder ein Zugriffs-Volume angeben. Die Skript-Engine ignoriert den `host` Parameter oder der `hostGroup` Parameter, wenn Sie den verwenden `allVolumes` Parameter oder der `volumes` Parameter.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

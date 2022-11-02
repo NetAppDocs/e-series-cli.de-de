@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/set-tray-drawer.html 
+sidebar: sidebar 
+keywords: set, drawer, service, action, allowed, indicator 
+summary: Mit dem Befehl Fach einstellen wird die Anzeigeleuchte Wartungsmaßnahme zulässig an einem Fach, in dem Laufwerke eingelegt sind, ein- oder ausgeschaltet. 
+---
+= Anzeige für zulässige Aktion für Schubladendienst einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set tray drawer` Mit dem Befehl wird die Anzeigeleuchte Serviceaktion zulässig in einem Fach, in dem Laufwerke enthalten sind, ein- oder ausgeschaltet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Schubladen werden in Laufwerksfächern mit hoher Kapazität verwendet. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Verwenden Sie diesen Befehl nur für Laufwerksfächer, die Schubladen verwenden. Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]] drawer pass:quotes[[_drawerID_]]
+serviceAllowedIndicator=(on | off | forceOnWarning)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`tray`
+ a| 
+Das Fach, in dem sich die Schublade befindet. Die Werte für Fach-ID sind `0` Bis `99` . Legen Sie den Wert für die Fach-ID in eckige Klammern ([ ]) ein. Wenn Sie keinen Wert für die Fach-ID eingeben, ist die Fach-ID des Controller-Fachs der Standardwert.
+
+
+
+ a| 
+`drawer`
+ a| 
+Die Position der Schublade, für die Sie die Anzeigeleuchte „Serviceaktion zulässig“ einschalten oder ausschalten möchten. Werte für Schublade-ID sind `1` Bis `5`. Legen Sie den Wert der Schublade-ID in eckige Klammern ([ ]) ein.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+Die Einstellung zum ein- und Ausschalten der Kontrollleuchte Serviceaktion zulässig. Um die Anzeigeleuchte Serviceaktion zulässig einzuschalten, setzen Sie diesen Parameter auf `on`. Um die Anzeigeleuchte „Serviceaktion erlaubt“ auszuschalten, setzen Sie diesen Parameter auf `off`.
+
+Weitere Informationen zur Verwendung von `forceOnWarning`, Siehe Hinweise.
+
+|===
+
+
+== Hinweise
+
+Bevor Sie diesen Befehl eingeben können, muss das Laufwerksfach die folgenden Bedingungen erfüllen:
+
+* Das Laufwerksfach darf nicht über der Temperatur liegen.
+* Die Lüfter müssen den Status „optimal“ aufweisen.
+* Alle Komponenten des Laufwerksfachs müssen eingesetzt sein.
+* Die Volumes in der Laufwerksschublade können nicht beeinträchtigt sein. Wenn Sie Laufwerke aus der Laufwerksschublade entfernen und ein Volume sich bereits im beeinträchtigten Zustand befindet, kann das Volume ausfallen.
+
+
+[NOTE]
+====
+Geben Sie diesen Befehl nicht aus, wenn Sie eine dieser Bedingungen nicht erfüllen können.
+
+====
+Alle Volumes mit Laufwerken in der betroffenen Laufwerksschublade werden überprüft, um sicherzustellen, dass die Volumes vor dem Senden des Befehls einen Schubladenverlust haben. Wenn auf den Volumes ein Schubladenverlust geschützt ist, wird der Befehl Serviceaktion festlegen zulässig ausgeführt, ohne dass die I/O-Aktivität auf dem Volume angehalten wird.
+
+Wenn ein Volume in der betroffenen Schublade keinen Schubladenschutz hat, müssen Sie die E/A-Aktivität dieser Volumes beenden. Es wird eine Warnung angezeigt, die angibt, dass dieser Befehl nicht ausgeführt werden sollte.
+
+Zum ein- oder Ausschalten der Anzeigeleuchte „Serviceaktion zulässig“ für das gesamte Laufwerksfach mit hoher Kapazität verwenden Sie den `set tray serviceAllowedIndicator` Befehl.
+
+
+
+== Verwendung des Parameters forceOnWarning
+
+Wenn Sie eine Komponente zum Entfernen vorbereiten und die Warnung überschreiben möchten, dass die Volumes keinen Schubladenschutz haben, geben Sie diesen Parameter ein:
+
+[listing]
+----
+serviceAllowedIndicator=forceOnWarning
+----
+Der `forceOnWarning` Parameter sendet die Anforderung, das Entfernen einer Komponente zur Controller-Firmware vorzubereiten, und erzwingt das `set drawer serviceAllowedIndicator` Befehl zum Fortfahren.
+
+[NOTE]
+====
+Dieser Parameter markiert alle Laufwerke in der Schublade, auf die nicht zugegriffen werden kann, und kann zu fehlerhaften Volumes und einer komplexen Wiederherstellung führen, einschließlich der Notwendigkeit, den Host neu zu starten. Verwenden Sie diesen Parameter mit Vorsicht.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+7.60

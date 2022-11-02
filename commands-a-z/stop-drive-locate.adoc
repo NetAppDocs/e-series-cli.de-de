@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-drive-locate.html 
+sidebar: sidebar 
+keywords: stop, drive, locate 
+summary: Mit dem Befehl zum Suchen von Stopp-Laufwerken wird die Anzeigeleuchte auf dem Laufwerk ausgeschaltet, das durch den Befehl zum Suchen des Startlaufwerks eingeschaltet wurde. 
+---
+= Halten Sie die Fahrt auf der Suche
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop drive locate` Befehl schaltet die Anzeigeleuchte auf dem Laufwerk aus, das vom eingeschaltet wurde `start drive locate` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+stop drive locate
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

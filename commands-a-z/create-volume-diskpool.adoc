@@ -1,0 +1,260 @@
+---
+permalink: commands-a-z/create-volume-diskpool.html 
+sidebar: sidebar 
+keywords: create, volume, disk pool 
+summary: Der Befehl Create Volume diskPool erstellt ein neues Standard-RAID-Volume oder ein Thin-Volume in einem vorhandenen Laufwerk-Pool. 
+---
+= Erstellen Sie ein Volume im Festplatten-Pool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create volume diskPool` Befehl erstellt ein neues Standard-RAID-Volume oder ein Thin-Volume in einem vorhandenen Laufwerk-Pool.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Einige Parameter zur Erstellung eines Standard-RAID-Volumes in einer Volume-Gruppe sind nicht für die Erstellung von Volumes beliebiger Typen in einem Laufwerk-Pool kompatibel. Wenn Sie ältere Skripte zur Erstellung von Volumes in Disk Pools verwenden, stellen Sie sicher, dass alle Parameter für Disk Pools gültig sind. Ungültige Parameter verhindern, dass die Skripte ordnungsgemäß ausgeführt werden und führen zu einem Fehler.
+
+====
+
+
+== Syntax zum Erstellen eines Standard-Volumes
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[raidLevel=(1 | 6)]
+[blockSize=requestedBlockSizeValue]
+----
+
+
+== Syntax für die Erstellung eines Thin Provisioning Volume
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, in dem das neue Volume erstellt werden soll. Schließen Sie den Disk-Pool-Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie dem neuen Volume geben möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe des von Ihnen erstellten Volumes.
+
+Für ein Standard-RAID-Volume wird die Kapazität zugewiesen, die dem Volume zugewiesen wird.
+
+Bei einem Thin Volume wird der Wert der virtuellen Kapazität, der von dem Thin Volume ausgesetzt wird, offengelegt.
+
+Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`. Im Folgenden sind Beispiele für die Syntax aufgeführt:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`thinProvisioned`
+ a| 
+Dieser Parameter ermöglicht Thin Provisioning für das neue Volume. Um Thin Provisioning zu verwenden, setzen Sie diesen Parameter auf `TRUE`. Wenn Sie Thin Provisioning nicht möchten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+NOTE: Thin Provisioning ist für Volumes auf RAID1-Ebene nicht verfügbar.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der das Volume besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Wenn Sie keinen Eigentümer angeben, bestimmt die Controller-Firmware den Eigentümer.
+
+
+
+ a| 
+`mapping`
+ a| 
+Mit diesem Parameter können Sie das Volume einem Host zuordnen. Wenn Sie später zuordnen möchten, setzen Sie diesen Parameter auf `none`. Wenn Sie jetzt zuordnen möchten, setzen Sie diesen Parameter auf `default`. Das Volume ist allen Hosts zugeordnet, die auf den Speicherpool zugreifen können.
+
+Der Standardwert ist `none`.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Dieser Parameter gibt ein vorhandenes Repository für ein Thin-Volume an. Ein Repository Volume verfügt über die physische Kapazität für ein Thin Volume. Dieser Parameter gilt nur für Thin Provisioning. Wenn Sie den verwenden `existingRepositoryLabel` Parameter, Sie dürfen den nicht verwenden `newRepositoryCapacity` Parameter.
+
+
+
+ a| 
+`newRepositoryCapacity`
+ a| 
+Mit diesem Parameter wird ein neues Repository für ein Thin Volume erstellt. Ein Repository Volume verfügt über die physische Kapazität für ein Thin Volume. Verwenden Sie diesen Parameter nur, wenn Sie den Wert des festlegen `thinProvisioned` Parameter an `TRUE`.
+
+Größe ist in Einheiten von definiert `MB`, `GB`, Oder `TB`. Im Folgenden sind Beispiele für die Syntax aufgeführt:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+Der Standardwert ist 50 Prozent der virtuellen Kapazität.
+
+
+
+ a| 
+`repositoryMaxCapacity`
+ a| 
+Mit diesem Parameter wird die maximale Kapazität für ein Repository für ein Thin Volume definiert. Verwenden Sie diesen Parameter nur, wenn Sie den Wert des festlegen `thinProvisioned` Parameter an `TRUE`.
+
+Größe ist in Einheiten von definiert `MB`, `GB`, Oder `TB`. Im Folgenden sind Beispiele für die Syntax aufgeführt:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Der Prozentsatz der Thin-Volume-Kapazität, bei der Sie eine Warnung erhalten, dass das Thin-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent.
+
+Gültige Werte liegen zwischen 1 und 100.
+
+Wenn Sie diesen Parameter auf 100 setzen, werden Warnmeldungen deaktiviert.
+
+
+
+ a| 
+`repositoryExpansionPolicy`
+ a| 
+Mit diesem Parameter wird die Erweiterungsrichtlinie auf festgelegt `automatic` Oder `manual`. Wenn Sie die Richtlinie von ändern `automatic` Bis `manual`, Der maximale Kapazitätswert (Quota) ändert sich an die physische Kapazität des Repository Volumes.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Legt die RAID-Ebene für das im Festplatten-Pool erstellte Volume fest. Um RAID1 anzugeben, setzen Sie auf `1`. Um RAID 6 festzulegen, setzen Sie auf `6`. Wenn die RAID-Ebene nicht festgelegt ist, wird RAID 6 standardmäßig für den Festplatten-Pool verwendet.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Der Wert von `0` Oder der nicht eingestellte Parameter verwendet die Standardblockgröße.
+
+|===
+
+
+== Hinweise
+
+Jeder Volume-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+Für Thin Volumes, die `capacity` Der Parameter gibt die virtuelle Kapazität des Volume und das an `repositoryCapacity` Parameter gibt die Kapazität des als Repository-Volume erstellten Volumes an. Verwenden Sie die `existingRepositoryLabel` Parameter, um ein vorhandenes, nicht verwendetes Repository-Volume anzugeben, anstatt ein neues Volume zu erstellen.
+
+Die besten Ergebnisse bei der Erstellung eines Thin-Volumes sind zu erzielen, wenn das Repository-Volume bereits in einem vorhandenen Laufwerk-Pool vorhanden oder erstellt werden muss. Wenn Sie beim Erstellen von Thin Volumes keine optionalen Parameter angeben, versucht die Speicherverwaltungssoftware, das Repository-Volume zu erstellen. Das erstrebenswerteste Kandidaten-Volume ist ein Repository Volume, das bereits vorhanden ist und das sich innerhalb der Größenanforderungen befindet. Das nächste wünschenswerteste Kandidaten-Volume ist ein neues Repository-Volume, das im freien Umfang des Festplattenpools erstellt wird.
+
+Repository-Volumes für Thin Volumes können nicht in Volume-Gruppen erstellt werden.
+
+
+
+== Data Assurance Management
+
+Die Data Assurance (da)-Funktion erhöht die Datenintegrität im gesamten Storage-System. DA ermöglicht es dem Storage-Array, nach Fehlern zu suchen, die auftreten können, wenn Daten zwischen Hosts und Laufwerken verschoben werden. Wenn diese Funktion aktiviert ist, hängt das Speicherarray die Fehlerprüfungscodes (auch zyklische Redundanzprüfungen oder CRCs genannt) an jeden Datenblock im Volume an. Nach dem Verschieben eines Datenblocks ermittelt das Speicher-Array anhand dieser CRC-Codes, ob während der Übertragung Fehler aufgetreten sind. Potenziell beschädigte Daten werden weder auf Festplatte geschrieben noch an den Host zurückgegeben.
+
+Wenn Sie die da-Funktion verwenden möchten, beginnen Sie mit einem Pool oder einer Volume-Gruppe, der nur Laufwerke enthält, die da unterstützen. Erstellen Sie dann da-fähige Volumes. Ordnen Sie diese da-fähigen Volumes schließlich dem Host mithilfe einer E/A-Schnittstelle zu, die für da geeignet ist. Zu den I/O-Schnittstellen, die da unterstützen, gehören Fibre Channel, SAS und iSER over InfiniBand (iSCSI-Erweiterungen für RDMA/IB). DA wird nicht durch iSCSI über Ethernet oder durch die SRP über InfiniBand unterstützt.
+
+[NOTE]
+====
+Wenn alle Laufwerke für da-fähig sind, können Sie den einstellen `dataAssurance` Parameter an `enabled` Und dann mit bestimmten Operationen da verwenden. Sie können beispielsweise eine Volume-Gruppe mit da-fähigen Laufwerken erstellen und anschließend ein Volume in dieser Volume-Gruppe erstellen, die für da aktiviert ist. Andere Vorgänge, bei denen ein DA-fähiges Volume verwendet wird, verfügen über Optionen zur Unterstützung der da-Funktion.
+
+====
+Wenn `dataAssurance` Parameter ist auf festgelegt `enabled`, Nur Data Assurance-fähige Laufwerke werden für Volume-Kandidaten in Betracht gezogen werden, andernfalls werden sowohl Data Assurance-fähige als auch nicht Data Assurance-fähige Laufwerke berücksichtigt. Ist nur Data Assurance-Laufwerke verfügbar, wird das neue Volume mit aktivierten Data Assurance-Laufwerken erstellt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.70 fügt die hinzu `_raidLevel_` Und `_blockSize` Parameter.

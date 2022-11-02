@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/change-ssd-cache-application-type.html 
+sidebar: sidebar 
+keywords: ssd cache application type 
+summary: Mit dem Befehl Set ssdCache wird der Anwendungstyp geändert, der dem SSD-Cache zugeordnet ist. Der Applikationstyp kann Web-Server, Datenbank oder Multimedia sein. Durch die Änderung des Applikationstyps werden die Blockgröße, die Größe des Unterblocks geändert, der Schwellenwert für das Lesen befüllt und der Schreibschwellenwert für die Volumes, die dem SSD-Cache zugrunde liegen, befüllt. 
+---
+= Ändern Sie den Applikationstyp für den SSD-Cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set ssdCache` Befehl ändert den Applikationstyp, der dem SSD-Cache zugeordnet ist. Der Applikationstyp kann Web-Server, Datenbank oder Multimedia sein. Durch die Änderung des Applikationstyps werden die Blockgröße, die Größe des Unterblocks geändert, der Schwellenwert für das Lesen befüllt und der Schreibschwellenwert für die Volumes, die dem SSD-Cache zugrunde liegen, befüllt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set ssdCache pass:quotes[[_ssdCacheName_]]usageHint=(webServer|dataBase|fileSystem)
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, für den Sie den Applikationstyp ändern möchten. Schließen Sie den SSD-Cache-Namen in eckige Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den SSD-Cache-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Die Werte basieren auf dem typischen I/O-Nutzungsmuster der Applikation, die den SSD-Cache verwendet. Gültige Werte sind `webServer`, `dataBase`, Oder `fileSystem`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

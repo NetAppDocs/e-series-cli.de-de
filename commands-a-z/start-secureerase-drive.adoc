@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/start-secureerase-drive.html 
+sidebar: sidebar 
+keywords: start, fde, secure, drive, erase 
+summary: 'Mit dem Befehl „Start secureErase“ werden alle Daten von einem oder mehreren Full Disk Encryption (FDE) Laufwerken gelöscht, sodass sie als FDE-Laufwerke wiederverwendet werden können.' 
+---
+= Starten Sie das Löschen des sicheren FDE-Laufwerks
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start secureErase drive` Durch den Befehl werden alle Daten von einem oder mehreren Full Disk Encryption (FDE)-Laufwerken entfernt, damit sie als FDE-Laufwerke wiederverwendet werden können.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Führen Sie diesen Befehl nur aus, wenn die FDE-Laufwerke nicht mehr zu einer sicheren Volume-Gruppe oder einem Laufwerk-Pool gehören oder wenn der Sicherheitsschlüssel unbekannt ist.
+
+[NOTE]
+====
+Um ein FIPS-Laufwerk zu löschen, wenn das Laufwerk gesperrt ist und der Sicherheitsschlüssel zum Entsperren nicht verfügbar ist, verwenden Sie den `set drive securityID` Befehl.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+[start secureErase (drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]])
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+[NOTE]
+====
+Die Laufwerksliste kann nicht alle Laufwerke im Speicher-Array enthalten, oder der Befehl wird abgelehnt. Um alle Laufwerke zu sichern, führen Sie diesen Befehl zweimal aus und geben die Laufwerksliste in zwei verschiedenen Gruppen an.
+
+====
+|===
+
+
+== Hinweise
+
+Durch die Controller-Firmware wird eine Sperre erstellt, durch die der Zugriff auf FDE-Laufwerke eingeschränkt wird. FDE-Laufwerke weisen einen Zustand auf, der als „Security-fähig“ bezeichnet wird. Wenn Sie einen Sicherheitsschlüssel erstellen, wird der Status auf „aktiviert“ gesetzt, was den Zugriff auf alle im Speicher-Array vorhandenen FDE-Laufwerke einschränkt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.40

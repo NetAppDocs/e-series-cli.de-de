@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storagearray-usersession.html 
+sidebar: sidebar 
+keywords: display, storage, array, user, session 
+summary: Mit dem Befehl show storageArray userSession können Sie den Sitzungszeitzeitraum für System Manager anzeigen. 
+---
+= Anzeige der Benutzersitzung des Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray userSession` Mit dem Befehl können Sie den Zeitraum für das Sitzungszeitlimit von System Manager anzeigen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin oder -Support-Admin oder Storage-Monitor verfügen.
+
+
+
+== Parameter
+
+Keine.
+
+
+
+== Syntax
+
+[listing]
+----
+show storageArray userSession
+----
+
+
+== Minimale Firmware-Stufe
+
+8.41

@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/download-tray-firmware-file.html 
+sidebar: sidebar 
+keywords: download, tray, firmware, file, command, environmental, service, module, array, role, context 
+summary: 'Mit dem Befehl der Download Tray Firmware File wird die Firmware des Environmental Services Module (ESM) heruntergeladen.' 
+---
+= Laden Sie die Firmware von Umweltkarten herunter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download tray firmware file` Mit dem Befehl wird die ESM-Firmware (Environmental Services Module) heruntergeladen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[IMPORTANT]
+====
+Auf von System Manager gemanagten Duplex-Systemen (z. B. E2800) wird ein IOM-Auto-Synchronisierungsdienst ausgeführt, der auf den Controllern automatisch die IOM-Firmware mit der Version synchronisiert, die im SANtricity OS Bundle enthalten ist, das auf den Controllern geladen ist. Wenn die IOM-Firmware nicht auf die in den Controllern geladene Version zurückgesetzt werden soll, müssen Sie diesen Service deaktivieren. Der EAM-Dienst für die automatische Synchronisierung kann mithilfe des System Managers oder DER REST-API ausgesetzt werden. Achten Sie beim Anhalten dieses Dienstes darauf, dass durch das Auslassen der automatischen Synchronisierung die IOM-Firmware auf dem neuesten Stand ist.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+download (allTrays | tray [trayID])
+pass:quotes[firmware file="_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allTrays`
+ a| 
+Dieser Parameter lädt neue Firmware auf alle kompatiblen Fächer im Speicher-Array herunter. Das ausgewählte Firmware-Paket bestimmt, welche Fächer kompatibel sind. Nicht kompatible Fächer werden übersprungen. Es wird keine Fehlermeldung zu inkompatiblen Fächern angezeigt.
+
+
+
+ a| 
+`tray`
+ a| 
+Das Laufwerksfach, in dem die ESM-Karte enthalten ist, auf die Sie neue Firmware laden möchten. Die Werte für Fach-ID sind `0` Bis `99`. Legen Sie den Wert für die Fach-ID in eckige Klammern ([ ]) ein.
+
+[NOTE]
+====
+In der Fach-ID kann keine führende Null vorhanden sein. Wenn beispielsweise die angezeigte Fach-ID „02“ lautet, muss dieser Befehl als [2] und nicht als [02] angegeben werden.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname der Datei, die das Firmware-Image enthält. Schließen Sie den Dateipfad und den Dateinamen des Firmware-Images in doppelte Anführungszeichen („ “). Beispiel:
+
+`file="C:\Program Files\CLI\dnld\esmfrm.esm"`
+
+Gültige Dateinamen haben ein `.esm` Erweiterung.
+
+|===
+
+
+== Hinweise
+
+Der `tray` Parameter lädt neue Firmware in ein bestimmtes Laufwerksfach Wenn Sie die neue Firmware auf mehr als ein Laufwerksfach herunterladen müssen, aber nicht auf alle Laufwerksfächer, müssen Sie diesen Befehl für jedes Laufwerksfach eingeben
+
+
+
+== Minimale Firmware-Stufe
+
+5.20

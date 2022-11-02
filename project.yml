@@ -1,0 +1,53 @@
+---
+settings:
+  name: SANtricity commands
+  internal:
+    pdf_enabled: false
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  pdf:
+    zip-level: 1
+    zip-filename: santricity-commands.zip
+  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+sidebar:
+  entries:
+  - title: SANtricity CLI-Dokumentation
+    url: "/index.html"
+  - title: Was ist neu
+    url: "/whats-new.html"
+  - section: get-started
+  - section: commands-category
+  - section: commands-a-z
+  - title: Rechtliche Hinweise
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Übersicht über CLI
+      url: get-started/overview-format-commands.html
+    - title: CLI-Befehlsstruktur
+      url: get-started/structure-of-a-cli-command.html
+  - title: E-Series Dokumentation
+    links:
+    - title: E-Series Systemdokumentation
+      url: https://docs.netapp.com/us-en/e-series/index.html
+    - title: SANtricity System Manager 11.7
+      url: https://docs.netapp.com/us-en/e-series-santricity/system-manager/index.html
+    - title: SANtricity Unified Manager 5
+      url: https://docs.netapp.com/us-en/e-series-santricity/unified-manager/index.html
+  - title: Tools-Support
+    links:
+    - title: NetApp Interoperabilitätsmatrix
+      url: http://mysupport.netapp.com/matrix/
+    - title: NetApp Knowledge Base
+      url: https://kb.netapp.com/
+    - title: Active IQ (Anmeldung erforderlich)
+      url: https://activeiq.netapp.com/?source=aiqnsspage
+    - title: E-Series/SANtricity Downloads (Anmeldung erforderlich)
+      url: https://mysupport.netapp.com/site/downloads#E
+product-family:
+  name: E-Series
+  repo: e-series-family

@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/save-controller-nvsram-file.html 
+sidebar: sidebar 
+keywords: save, controller, nvsram 
+summary: Mit dem Befehl Save Controller NVSRAM file wird ein ausgewählter Satz von NVSRAM-Controllerbereichen in einer Datei gespeichert. 
+---
+= Controller NVSRAM speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save controller NVSRAM file` Befehl speichert einen ausgewählten Satz von NVSRAM-Controller-Regionen in einer Datei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save controller [(a|b)] NVSRAM file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller mit den NVSRAM-Werten, die Sie speichern möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die NVSRAM-Werte speichern möchten. Schließen Sie den Namen der NVSRAM-Datei in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\nvsramb.txt"`
+
+Der Standardname der Datei, die die NVSRAM-Werte enthält, lautet `nvsram-data.txt`. Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

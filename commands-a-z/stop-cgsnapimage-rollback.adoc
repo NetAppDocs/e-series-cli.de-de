@@ -1,0 +1,111 @@
+---
+permalink: commands-a-z/stop-cgsnapimage-rollback.html 
+sidebar: sidebar 
+keywords: stop, consistency, group, snapshot, rollback 
+summary: Mit dem Befehl „STOP cgSnapImage Rollback“ wird ein Rollback-Vorgang auf Basis-Volumes in einer Snapshot-Consistency Group beendet. 
+---
+= Anhalten des Rollbacks von Snapshots der Konsistenzgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop cgSnapImage rollback` Befehl stoppt einen Rollback-Vorgang auf Basis-Volumes der Mitglieder in einer Snapshot Consistency Group.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Wenn ein Snapshot-Rollback-Vorgang für Konsistenzgruppen abgebrochen wird, bleibt das Basis-Volume unbestimmt und enthält möglicherweise ungültige oder inkonsistente Daten. Das damit verbundene Snapshot-Volume für Konsistenzgruppen wird deaktiviert und kann nicht verwendet werden.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop cgSnapImage["_snapCGID:imageID_"]] rollback
+memberVolumeSet pass:quotes[("_memberVolumeName1_" ... "_memberVolumeNamen_")]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Der Name des Snapshot-Images der Konsistenzgruppe, für das Sie einen Rollback-Vorgang beenden möchten. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` -- Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` -- Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`memberVolumeSet`
+ a| 
+Der Name eines oder mehrerer Member-Basis-Volumes in einer Konsistenzgruppe, die einen Rollback-Vorgang anhalten soll. Schließen Sie jeden Namen des Basis-Volumes der Mitglieder in doppelte Anführungszeichen (" ") in Klammern ein.
+
+Sie können mehr als einen Basisvolume für Mitglieder eingeben. Schließen Sie alle Namen des Basisvolumes der Mitglieder in einen Satz eckiger Klammern ([ ]). Schließen Sie jeden Basisvolumennamen jedes Mitglieds in doppelte Anführungszeichen (" "). Trennen Sie den Namen jedes Basis-Volume für Mitglieder mit einem Leerzeichen.
+
+Wenn der `memberVolumeSet` Parameter wird nicht verwendet, wenn der Rollback-Prozess angehalten wird, gilt dies für alle Mitglied-Volumes der Konsistenzgruppe.
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise einen Rollback-Vorgang für das neueste Snapshot Image in einer gesamten Konsistenzgruppe mit dem Namen „CG1“ beenden möchten, verwenden Sie den folgenden Befehl:
+
+[listing]
+----
+stop cgSnapImage ["CG1:newest"] rollback;
+----
+Um einen Rollback-Vorgang für das Snapshot-Image 12345 für Mitglieder des Basis-Volumes mVol1, mVol2 und mVol3 in einer Konsistenzgruppe mit dem Namen „CG2“ zu beenden, würden Sie den folgenden Befehl verwenden:
+
+[listing]
+----
+stop cgSnapImage ["CG2:12345"] rollback memberVolumeset=("memVol1 memVol2 memVol3");
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

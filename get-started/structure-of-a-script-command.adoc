@@ -1,0 +1,161 @@
+---
+permalink: get-started/structure-of-a-script-command.html 
+sidebar: sidebar 
+keywords: structure, script command 
+summary: Alle Skriptbefehle haben die folgende Struktur. 
+---
+= Struktur eines Skriptbefehls
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Alle Skriptbefehle haben die folgende Struktur:
+
+[listing]
+----
+
+      *command operand-data* (*statement-data*)
+----
+* `command` Gibt die durchzuführenden Maßnahmen an.
+* `operand-data` Stellt die Objekte dar, die einem Speicher-Array zugeordnet sind, das Sie konfigurieren oder verwalten möchten.
+* `statement-data` Stellt die für die Ausführung des Befehls erforderlichen Informationen bereit.
+
+
+Die Syntax für `_operand-data_` Hat die folgende Struktur:
+
+[listing]
+----
+(*object-type* | all *object-types* | [*qualifier*] (*object-type* [*identifier*] (*object-type* [*identifier*] | *object-types* [*identifier-list*])))
+----
+Ein Objekt kann auf vier verschiedene Arten identifiziert werden:
+
+* Objekttyp: Verwendet, wenn der Befehl kein bestimmtes Objekt referenziert.
+* `*all*` Parameterpräfix – Verwenden Sie, wenn der Befehl alle Objekte des angegebenen Typs im Speicher-Array referenziert (z. B. `*allVolumes*`).
+* Eckige Klammern -- Verwenden Sie, wenn Sie einen Befehl für ein bestimmtes Objekt ausführen, um das Objekt zu identifizieren (z. B. `*volume [engineering]*`).
+* Eine Liste der Kennungen -- Verwenden Sie, um eine Untergruppe von Objekten anzugeben. Schließen Sie die Objektkennungen in eckige Klammern an (z. B. `*volumes [sales engineering marketing]*`).
+
+
+Ein Qualifier ist erforderlich, wenn Sie zusätzliche Informationen zur Beschreibung der Objekte angeben möchten.
+
+In dieser Tabelle sind der Objekttyp und die Kennungen aufgeführt, die jedem Objekttyp zugeordnet sind.
+
+[cols="2*"]
+|===
+| Objekttyp | Kennung 
+
+
+ a| 
+`*controller*`
+ a| 
+A oder b
+
+
+
+ a| 
+`*drive*`
+ a| 
+Verwenden Sie für Gehäuse mit Schubladen die Fach-ID, die Fach-ID und die Steckplatz-ID. Alternativ können Sie einfach die Fach-ID und die Steckplatz-ID angeben.
+
+
+
+ a| 
+`*replacementDrive*`
+ a| 
+Verwenden Sie für Gehäuse mit Schubladen die Fach-ID, die Fach-ID und die Steckplatz-ID. Alternativ können Sie einfach die Fach-ID und die Steckplatz-ID angeben.
+
+
+
+ a| 
+`*driveChannel*`
+ a| 
+Antriebskanalkennung
+
+
+
+ a| 
+`*host*`
+ a| 
+Benutzungsetikett
+
+
+
+ a| 
+`*hostChannel*`
+ a| 
+Host-Kanal-ID
+
+
+
+ a| 
+`*hostGroup*`
+ a| 
+Benutzungsetikett
+
+
+
+ a| 
+`*hostPort*`
+ a| 
+Benutzungsetikett
+
+
+
+ a| 
+`*iscsiInitiator*`
+ a| 
+Benutzername oder iSCSI Qualified Name (IQN)
+
+
+
+ a| 
+`*iscsiTarget*`
+ a| 
+Benutzerbezeichnung oder IQN
+
+
+
+ a| 
+`*storageArray*`
+ a| 
+Keine Angabe
+
+
+
+ a| 
+`*tray*`
+ a| 
+Fach-ID
+
+
+
+ a| 
+`*volume*`
+ a| 
+Volume User Label oder Volume World Wide Identifier (WWID) (`set` Nur Befehl)
+
+
+
+ a| 
+`*volumeCopy*`
+ a| 
+Benutzer-Label für das Zielvolumen und optional die Benutzungsbezeichnung des Quell-Volume
+
+
+
+ a| 
+`*volumeGroup*`
+ a| 
+Benutzungsetikett
+
+Gültige Zeichen sind alphanumerisch, ein Bindestrich und ein Unterstrich.
+
+|===
+Anweisungsdaten sind in Form von:
+
+* Parameter = Wert (z. B. `*raidLevel=5*`)
+* Parametername (z. B. `*batteryInstallDate*`)
+* Operation-Name (z. B. `*redundancyCheck*`)
+
+
+Ein benutzerdefinierter Eintrag (z. B. Benutzerbeschriftung) wird als Variable bezeichnet. In der Syntax wird sie kursiv angezeigt (z. B. `trayID` Oder `volumeGroupName`).

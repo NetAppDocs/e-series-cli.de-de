@@ -1,0 +1,163 @@
+---
+permalink: commands-a-z/show-alldrives.html 
+sidebar: sidebar 
+keywords: show, drive 
+summary: Der Befehl show allDrives gibt Informationen über die Laufwerke im Speicher-Array zurück. 
+---
+= Laufwerk anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show allDrives` Der Befehl gibt Informationen zu den Laufwerken im Speicher-Array zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl gibt für jedes Laufwerk im Speicher-Array die folgenden Informationen zurück:
+
+* Gesamtzahl der Laufwerke
+* Laufwerkstyp (SAS oder NVMe4K)
+* Informationen zum BasiLaufwerk:
++
+** Die Position des Fachs und die Position des Schlitzes
+** Der Status
+** Der Kapazität
+** Datenübertragungsrate
+** Die Produkt-ID
+** Die Firmware-Version
+
+
+* Informationen über den Verschleiß von SSD-Laufwerken (diese Informationen gelten nur für E2800 und E5700/EF570 und werden nicht angezeigt, wenn das Array keine SSD-Laufwerke enthält):
++
+** Die durchschnittliche Löschanzahl.
+** Die freien Blöcke.
+** Die verwendete prozentuale Ausdauer (neu in der Version 11.41). Bei der verwendeten Ausdauer in Prozent wird die bisher auf die SSD-Laufwerke geschriebene Datenmenge durch das theoretische Gesamtschreiblimit der Laufwerke dividiert.
+
+
+* Informationen zum Laufwerkskanal:
++
+** Die Position des Fachs und die Position des Schlitzes
+** Der bevorzugte Kanal
+** Der redundante Kanal
+
+
+* Hot-Spare-Abdeckung
+* Details für jedes Laufwerk
++
+[NOTE]
+====
+Für NVMe-Laufwerke ist das Datum der Herstellung nicht verfügbar.
+
+====
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show ((allDrives
+[driveMediaType=(HDD | SSD | unknown | allMedia)] |
+[driveType=( SAS | NVMe4K)]) |
+(drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]))
+summary
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allDrives`
+ a| 
+Die Einstellung, um Informationen über alle Laufwerke im Speicher-Array zurückzugeben.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Der Laufwerkstyp, für den Sie Informationen abrufen möchten. Die folgenden Werte sind gültige Laufwerktypen:
+
+* `HDD` -- Verwenden Sie diese Option, wenn Sie Festplatten in der Laufwerksschublade haben
+* `SSD` -- Verwenden Sie diese Option, wenn Sie Solid State-Laufwerke in der Laufwerksschublade haben
+* `unknown` -- Verwenden Sie diese Option, wenn Sie nicht sicher sind, welche Arten von Datenträgern in der Laufwerksschublade sind
+* `allMedia` -- Verwenden Sie diese Option, wenn Sie alle Arten von Datenträgern verwenden möchten, die sich in der Laufwerksschublade befinden
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Der Laufwerkstyp, für den Sie Informationen abrufen möchten. Sie können keine unterschiedlichen Laufwerkstypen verwenden.
+
+Gültige Laufwerkstypen:
+
+* `SAS`
+* `NVMe4K`
+
+
+Wenn Sie keinen Laufwerkstyp angeben, wird standardmäßig mit dem Befehl ein beliebiger Typ festgelegt.
+
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`summary`
+ a| 
+Die Einstellung zum Zurückgeben des Status, der Kapazität, der Datenübertragungsrate, der Produkt-ID und der Firmware-Version für die angegebenen Laufwerke.
+
+|===
+
+
+== Hinweise
+
+Um Informationen über den Typ und den Speicherort aller Laufwerke im Speicher-Array zu ermitteln, verwenden Sie den `allDrives` Parameter.
+
+Um die Informationen über die SAS-Laufwerke im Speicher-Array zu bestimmen, verwenden Sie den `driveType` Parameter.
+
+Um den Laufwerkstyp an einem bestimmten Ort zu bestimmen, verwenden Sie den `drive` Parameter und geben Sie die Fach-ID und die Steckplatz-ID für das Laufwerk ein.
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Minimale Firmware-Stufe
+
+5.43
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben und der `driveMediaType` Parameter.
+
+8.41 fügt Informationen zu Verschleißberichten in Form des prozentualen Anteils der Lebensdauer für SSD-Laufwerke in einem E2800, E5700 oder EF570 System hinzu.

@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/save-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: retrieve, installed, ca, certificates 
+summary: Der Befehl „Controller speichern caCertificate“ ruft die installierten CA-Zertifikate vom angegebenen Controller ab. In den abgerufenen Zertifikaten enthalten sind alle angeforderten CA-Zertifikate vom Web-Server des Controllers. 
+---
+= Abrufen der installierten CA-Zertifikate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save controller caCertificate` Der Befehl ruft die installierten CA-Zertifikate vom angegebenen Controller ab. In den abgerufenen Zertifikaten sind alle angeforderten CA-Zertifikate vom Webserver des Controllers enthalten.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+save controller[(a|b)] caCertificate [all | aliases=pass:quotes[("_alias1_" ... "_aliasN_")]]
+ path="fileLocation"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Hier können Sie den Controller angeben, auf dem Sie die Root-/Zwischenzertifikate abrufen möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`all`
+ a| 
+Hiermit können Sie den Abruf aller importierten Zertifikate angeben, um die signierte Zertifikatskette aufzulösen. Vom Benutzer installierte Zertifikate umfassen wichtige Managementzertifikate.
+
+
+
+ a| 
+`aliases`
+ a| 
+Ermöglicht die Angabe, welches vom Benutzer installierte Root-/Zwischenzertifikat nach Alias abgerufen werden soll. Schließen Sie alle Aliase in Klammern. Wenn Sie mehrere Alias eingeben, trennen Sie sie mit einem Leerzeichen.
+
+
+
+ a| 
+`path`
+ a| 
+Hier können Sie den lokalen Speicherort angeben, um die Stammzertifikate der Controller`' zu speichern.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "save controller[a] caCertificate all path="C:\";"
+
+SMcli -n Array1 -c "save controller[b] caCertificate aliases=("myAlias" "anotherAlias") path="C:\";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/save-storage-array-diagnostic-data.html 
+sidebar: sidebar 
+keywords: save, storage, array, diagnostic, data 
+summary: 'Mit dem Befehl „Save storageArray DiagnosticData“ werden die Diagnosedaten des Speicher-Arrays entweder von den Controllern oder von den Umgebungsdienstmodulen (ESMs) in einer Datei gespeichert.' 
+---
+= Speichern von Diagnosedaten des Storage-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray diagnosticData` Mit dem Befehl werden die Diagnosedaten des Speicher-Arrays entweder von den Controllern oder von den Environmental Services Modules (ESMs) in einer Datei gespeichert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können den Dateiinhalt zu einem späteren Zeitpunkt überprüfen. Sie können die Datei auch an den technischen Support senden, um sie zu überprüfen.
+
+Nachdem Sie die Diagnosedaten gespeichert haben, können Sie die NVSRAM-Register zurücksetzen, die die Diagnosedaten enthalten, so dass die alten Daten überschrieben werden können. Verwenden Sie die `reset storageArray diagnosticData` Befehl zum Zurücksetzen der Diagnoseregister.
+
+[NOTE]
+====
+Führen Sie diesen Befehl nur mit Unterstützung des technischen Supports aus.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray diagnosticData [(controller | tray)]
+file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diagnosticData`
+ a| 
+Mit diesem Parameter können Sie die Diagnosedaten entweder von den Controllern oder von den ESMs herunterladen.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, zu dem Sie die Diagnosedaten des Speicherarrays speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\sadiag.zip"`
+
+Dieser Befehl speichert die Daten automatisch in eine komprimierte Datei; dieser Befehl fügt jedoch nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Sie müssen das angeben `.zip` Erweiterung bei der Eingabe des Dateinamens.
+
+|===
+
+
+== Hinweise
+
+In Versionen dieses Befehls vor 7.77 war die Benutzeroption `esm` Statt `tray`. Ab 7.77 `tray` Ersetzt `esm`. Die Verwendung von `esm` Wird noch unterstützt, aber für beste Kompatibilität mit zukünftigen Versionen, ersetzen `esm` Mit `tray`.
+
+
+
+== Minimale Firmware-Stufe
+
+6.16
+
+7.77 `tray` Ersetzt `esm`.

@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/import-storagearray-securitykey-file.html 
+sidebar: sidebar 
+keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
+summary: 'Der Befehl Import storageArray securityKey File entsperrt ein oder mehrere Full Disk Encryption (FDE)-Laufwerke, die Sie von einem Storage Array auf ein anderes Storage Array verschoben haben.' 
+---
+= Importieren des Sicherheitsschlüssels für das Storage-Array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `import storageArray securityKey file` Befehl entsperrt ein oder mehrere Laufwerke mit vollständiger Festplattenverschlüsselung (Full Disk Encryption, FDE), die Sie von einem Storage Array auf ein anderes Storage Array verschoben haben.
+
+
+
+== Unterstützte Arrays
+
+Wenn das externe Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die E2800, E5700, EF600 oder EF300 Arrays. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Nur die Laufwerke mit dem passenden Sicherheitsschlüssel sind entsperrt. Sobald die Sperre aufgehoben ist, wird der Sicherheitsschlüssel für das neue Storage Array angewendet.
+
+[NOTE]
+====
+Dieser Befehl gilt sowohl für das interne als auch für das externe Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+import storageArray securityKey file="fileName"
+passPhrase="passPhraseString"
+[forceOverwrite=(TRUE|FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, der den ursprünglichen Sicherheitsschlüssel der importierten FDE-Laufwerke hat. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Die Zeichenkette, die die Authentifizierung für den Sicherheitsschlüssel bereitstellt.
+
+
+
+ a| 
+`forceOverwrite`
+ a| 
+Wenn dieser Parameter auf festgelegt ist `TRUE`, Durch den Import wird das Überschreiben des FDE-Schlüssels erzwungen, wenn der Import normalerweise nicht zulässig wäre, z. B. wenn ein Controller fehlt oder ausfällt. Standardmäßig ist der Parameter Force Overwrite auf FALSE gesetzt.
+
+|===
+
+
+== Hinweise
+
+Durch die Controller-Firmware wird eine Sperre erstellt, durch die der Zugriff auf FDE-Laufwerke eingeschränkt wird. FDE-Laufwerke weisen einen Zustand auf, der als „Security-fähig“ bezeichnet wird. Wenn Sie einen Sicherheitsschlüssel erstellen, wird der Status auf „aktiviert“ gesetzt, was den Zugriff auf alle im Speicher-Array vorhandenen FDE-Laufwerke einschränkt.
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Muss zwischen acht und 32 Zeichen lang sein.
+* Muss mindestens einen Großbuchstaben enthalten.
+* Muss mindestens einen Kleinbuchstaben enthalten.
+* Muss mindestens eine Zahl enthalten.
+* Muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. < > @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung und werden aufgefordert, den Befehl erneut zu versuchen.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+7.40
+
+8.40 fügte hinzu, dass ein Sicherheitsschlüssel für ein externes Storage-Array importiert werden kann
+
+11.70.1 fügte die hinzu `forceOverwrite` Parameter.

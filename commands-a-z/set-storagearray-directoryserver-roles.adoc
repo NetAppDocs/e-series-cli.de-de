@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/set-storagearray-directoryserver-roles.html 
+sidebar: sidebar 
+keywords: set, storage, array, directory, server, role, map 
+summary: Mit dem Befehl Set storageArray directoryServer roles können Sie Rollenzuordnungen für einen bestimmten Verzeichnisserver definieren. Mit diesen Rollenzuordnungen werden Benutzer authentifiziert, die versuchen, verschiedene SMcli-Befehle auszuführen. 
+---
+= Legen Sie die Rollenzuordnung für den Verzeichnisserver des Speicherarrays fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray directoryServer roles` Mit Befehl können Sie Rollenzuordnungen für einen bestimmten Verzeichnisserver definieren. Mit diesen Rollenzuordnungen werden Benutzer authentifiziert, die versuchen, verschiedene SMcli-Befehle auszuführen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Was Sie benötigen
+
+Die folgenden Rollen sind verfügbar, um zugeordnet zu werden:
+
+* *Storage Admin* -- Vollzugriff auf die Speicherobjekte (z. B. Volumes und Disk Pools), aber kein Zugriff auf die Sicherheitskonfiguration.
+* *Security Admin* -- Zugriff auf die Sicherheitskonfiguration in Access Management, Zertifikatverwaltung, Audit Log Management und die Möglichkeit, die alte Management-Schnittstelle (Symbol) ein- oder auszuschalten.
+* *Support Admin* -- Zugriff auf alle Hardware-Ressourcen auf dem Speicher-Array, Ausfalldaten, MEL-Ereignisse und Controller-Firmware-Upgrades. Kein Zugriff auf Speicherobjekte oder die Sicherheitskonfiguration.
+* *Monitor* -- schreibgeschützter Zugriff auf alle Speicherobjekte, aber kein Zugriff auf die Sicherheitskonfiguration.
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+set storageArray directoryServer pass:quotes[["_domainId_"]]
+    groupDN=pass:quotes["_groupDistinguishedName_"] roles=pass:quotes[("_role1_"..."_roleN_")]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`directoryServer`
+ a| 
+Ermöglicht Ihnen die Angabe der Domäne anhand ihrer ID, für die Sie Rollenzuordnungen einrichten möchten.
+
+
+
+ a| 
+`groupDN`
+ a| 
+Ermöglicht die Angabe des Distinguished Name (DN) der Gruppe, der der Zuordnungsliste hinzugefügt werden soll.
+
+
+
+ a| 
+`roles`
+ a| 
+Ermöglicht das Festlegen einer oder mehrerer Rollen für die Benutzer in der definierten Gruppe. Wenn Sie mehrere Rollen eingeben, trennen Sie die Werte mit einem Leerzeichen. Gültige Auswahlmöglichkeiten:
+
+* `storage.monitor`
+* `storage.admin`
+* `security.admin`
+* `support.admin`
+
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    groupDN="CN=ng-hsg-bc-madridsecurity,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com"
+                    roles=("storage.monitor" "security.admin" "storage.admin");"
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    groupDN="CN=ng-epg-engr-manageability,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com"
+                    roles=("support.admin");"
+
+SMcli completed successfully.
+----

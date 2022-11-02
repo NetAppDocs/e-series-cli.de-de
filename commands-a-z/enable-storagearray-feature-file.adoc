@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/enable-storagearray-feature-file.html 
+sidebar: sidebar 
+keywords: enable, storage, array, feature, file, command, permanent, upgrade, trial period 
+summary: Mit dem Befehl „Storage Array Feature File“ aktivieren wird eine Funktion für ein permanentes Upgrade auf das Speicher-Array oder einen Testzeitraum aktiviert. 
+---
+= Aktivieren Sie Storage Array-Funktion
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `enable storageArray feature file` Mit dem Befehl wird eine Funktion für ein permanentes Upgrade auf das Speicher-Array oder eine Testphase aktiviert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl führt eine der folgenden Aktionen aus:
+
+* Aktiviert einen Funktionstaste für ein permanentes Upgrade einer Funktion
+* Aktiviert einen Funktionstaste für ein permanentes Upgrade eines Funktionsacks
+* Aktiviert eine Funktion für einen Testzeitraum
+
+
+Ein Funktionspaket ist ein vordefinierter Satz an Funktionen, wie z. B. Storage Partitioning und Synchronous Mirroring. Diese Funktionen werden für den Komfort der Benutzer kombiniert. Wenn Benutzer ein Feature Pack installieren, werden alle Funktionen des Feature Packs gleichzeitig installiert.
+
+Jede Funktion wird von einem Lizenzschlüssel verwaltet, der für eine bestimmte Funktion oder ein bestimmtes Funktionspaket und ein bestimmtes Storage-Array erzeugt wird. Der Lizenzschlüssel wird als Datei ausgeliefert, die Sie ausführen, um die Lizenz für die Funktion anzuwenden.
+
+Um festzustellen, welche Funktionen auf dem Speicher-Array geladen sind, führen Sie den aus `show storageArray features` Befehl. Der `show storageArray features` Der Befehl führt alle auf dem Speicher-Array installierten Funktionen auf, die für einen Testzeitraum ausgewertet werden können, welche Funktionen aktiviert sind und welche Funktionen deaktiviert sind.
+
+
+
+== Syntax zum Aktivieren eines Feature-Schlüssels
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray feature file="_filename_"]
+----
+Der `file` Parameter identifiziert den Dateipfad und den Dateinamen einer gültigen Funktionsschlüsseldatei. Schließen Sie den Dateipfad und den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\dnld\ftrkey.key"
+----
+Gültige Dateinamen für Feature-Key-Dateien enden mit einem `.key` Erweiterung.
+
+Für jedes Feature, das Sie aktivieren möchten, benötigen Sie eine Feature Key-Datei.
+
+
+
+== Syntax zum Aktivieren eines Funktionspacks
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray featurePack file="_filename_"]
+----
+Der `file` Der Parameter identifiziert den Dateipfad und den Dateinamen einer gültigen Feature Pack-Datei. Schließen Sie den Dateipfad und den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\dnld\ftrpk.key"
+----
+Gültige Dateinamen für Feature-Key-Dateien enden mit einem `.key` Erweiterung.
+
+
+
+== Syntax, um eine Funktion für einen Testzeitraum zu aktivieren
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray feature=_featureAttributeList_]
+----
+Um eine Funktion für einen Testzeitraum zu bewerten, können Sie einen oder mehrere der folgenden Attributwerte für das eingeben `featureAttributeList`. Wenn Sie mehr als einen Attributwert eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+* `driveSecurity`
+
+
+
+
+== Minimale Firmware-Stufe
+
+8.25 entfernt alle Attribute, die nicht mehr gültig sind.

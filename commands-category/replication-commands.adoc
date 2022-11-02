@@ -1,0 +1,145 @@
+---
+permalink: commands-category/replication-commands.html 
+sidebar: sidebar 
+keywords: replication, commands, consistency group, command, repository volume, 
+summary: Replikationsbefehle 
+---
+= Replikationsbefehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Befehle von Konsistenzgruppen
+
+link:../commands-a-z/set-consistencygroup-addcgmembervolume.html["Mitglied der Konsistenzgruppe hinzufügen"]
+
+link:../commands-a-z/create-consistencygroup.html["Erstellen einer Konsistenzgruppe"]
+
+link:../commands-a-z/create-cgsnapimage-consistencygroup.html["Erstellen des Snapshot Images von Konsistenzgruppen"]
+
+link:../commands-a-z/create-cgsnapvolume.html["Erstellen eines Snapshot Volume für Konsistenzgruppen"]
+
+link:../commands-a-z/create-mapping-cgsnapvolume.html["Erstellen einer Volume-Zuordnung von Konsistenzgruppen für Snapshot"]
+
+link:../commands-a-z/delete-consistencygroup.html["Löschen der Konsistenzgruppe"]
+
+link:../commands-a-z/delete-cgsnapimage-consistencygroup.html["Löschen des Snapshot Images der Konsistenzgruppe"]
+
+link:../commands-a-z/delete-sgsnapvolume.html["Löschen des Snapshot Volumes der Konsistenzgruppe"]
+
+link:../commands-a-z/remove-member-volume-from-consistency-group.html["Entfernen Sie das Mitglied-Volume aus der Konsistenzgruppe"]
+
+link:../commands-a-z/resume-cgsnapvolume.html["Setzen Sie das Snapshot-Volumen der Konsistenzgruppe fort"]
+
+link:../commands-a-z/set-consistency-group-attributes.html["Legen Sie die Attribute für Konsistenzgruppen fest"]
+
+link:../commands-a-z/set-cgsnapvolume.html["Legen Sie das Snapshot Volume für Konsistenzgruppen fest"]
+
+link:../commands-a-z/show-consistencygroup.html["Zeigt die Konsistenzgruppe an"]
+
+link:../commands-a-z/show-cgsnapimage.html["Zeigt das Snapshot Image für Konsistenzgruppen an"]
+
+link:../commands-a-z/start-cgsnapimage-rollback.html["Starten Sie das Rollback von Consistency Group Snapshot"]
+
+link:../commands-a-z/stop-cgsnapimage-rollback.html["Anhalten des Rollbacks von Snapshots der Konsistenzgruppe"]
+
+link:../commands-a-z/stop-cgsnapvolume.html["Stoppen Sie das Snapshot Volume für Konsistenzgruppen"]
+
+link:../commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html["Beenden Sie ausstehende Snapshot Images auf Konsistenzgruppe"]
+
+
+
+== Befehle für die Analyse von Repository-Volumes
+
+link:../commands-a-z/check-repositoryconsistency.html["Prüfen Sie die Repository-Konsistenz"]
+
+
+
+== Befehle der Snapshot-Gruppe
+
+link:../commands-a-z/create-snapgroup.html["Erstellen Sie eine Snapshot-Gruppe"]
+
+link:../commands-a-z/delete-snapvolume.html["Snapshot Volume löschen"]
+
+link:../commands-a-z/revive-snapgroup.html["Snapshot-Gruppe neu beleben"]
+
+link:../commands-a-z/set-snapgroup.html["Legen Sie die Attribute für Snapshot-Gruppen fest"]
+
+link:../commands-a-z/set-snapgroup-mediascanenabled.html["Legen Sie den Medienscan für Snapshot-Gruppen fest"]
+
+link:../commands-a-z/set-snapgroup-increase-decreaserepositorycapacity.html["Legen Sie die Kapazität des Volume für das Snapshot-Gruppen-Repository fest"]
+
+link:../commands-a-z/set-snapgroup-enableschedule.html["Legen Sie den Zeitplan für Snapshot-Gruppen fest"]
+
+link:../commands-a-z/set-volume-ssdcacheenabled.html["Legen Sie den SSD-Cache für ein Volume fest"]
+
+link:../commands-a-z/show-snapgroup.html["Zeigen Sie die Snapshot-Gruppe an"]
+
+link:../commands-a-z/stop-pendingsnapimagecreation.html["Beenden Sie die Snapshot-Gruppe, bis Snapshot-Images nicht mehr verfügbar sind"]
+
+
+
+== Befehle für das Snapshot Image
+
+link:../commands-a-z/create-snapimage.html["Erstellen von Snapshot Images"]
+
+link:../commands-a-z/delete-snapimage.html["Snapshot Image löschen"]
+
+link:../commands-a-z/resume-snapimage-rollback.html["Setzen Sie das Rollback von Snapshot-Bildern fort"]
+
+link:../commands-a-z/show-snapimage.html["Zeigen Sie das Snapshot Image an"]
+
+link:../commands-a-z/start-snapimage-rollback.html["Starten Sie das Rollback von Snapshot Image"]
+
+link:../commands-a-z/stop-snapimage-rollback.html["Stoppen Sie das Rollback von Snapshot-Bildern"]
+
+
+
+== Befehle für Snapshot Volume
+
+link:../commands-a-z/create-read-only-snapshot-volume.html["Erstellen eines schreibgeschützten Snapshot-Volumes"]
+
+link:../commands-a-z/create-snapshot-volume.html["Erstellen eines Snapshot Volume"]
+
+link:../commands-a-z/delete-snapgroup.html["Snapshot-Gruppe löschen"]
+
+link:../commands-a-z/set-snapvolume.html["Benennen Sie das Snapshot-Volume um"]
+
+link:../commands-a-z/resume-snapvolume.html["Setzen Sie das Snapshot-Volumen wieder ein"]
+
+link:../commands-a-z/revive-snapvolume.html["Snapshot Volumen neu beleben"]
+
+link:../commands-a-z/set-snapvolume-converttoreadwrite.html["Legen Sie den schreibgeschützten Snapshot-Datenträger auf Lese-/Schreib-Volumen fest"]
+
+link:../commands-a-z/set-snapvolume-mediascanenabled.html["Legen Sie den Datenträger-Scan für Snapshot-Volumes fest"]
+
+link:../commands-a-z/set-snapvolume-increase-decreaserepositorycapacity.html["Legen Sie die Kapazität des Snapshot Volume-Repository fest"]
+
+link:../commands-a-z/set-volume-ssdcacheenabled.html["Legen Sie den SSD-Cache für ein Volume fest"]
+
+link:../commands-a-z/show-snapvolume.html["Zeigen Sie Snapshot Volumes an"]
+
+link:../commands-a-z/stop-snapvolume.html["Stoppen Sie das Snapshot Volume"]
+
+
+
+== Befehle für Volume-Kopien
+
+link:../commands-a-z/create-volumecopy.html["Erstellung von Volume-Kopien"]
+
+link:../commands-a-z/recopy-volumecopy-target.html["Volume-Kopie erneut kopieren"]
+
+link:../commands-a-z/remove-volumecopy-target.html["Volume-Kopie entfernen"]
+
+link:../commands-a-z/set-volumecopy-target.html["Legen Sie die Volume-Kopie fest"]
+
+link:../commands-a-z/show-volumecopy.html["Zeigt Volume-Kopien an"]
+
+link:../commands-a-z/show-volumecopy-sourcecandidates.html["Kandidaten für Volume-Kopien anzeigen"]
+
+link:../commands-a-z/show-volumecopy-source-targetcandidates.html["Kandidaten für Volume-Kopien anzeigen"]
+
+link:../commands-a-z/stop-volumecopy-target-source.html["Stoppen Sie die Volume-Kopie"]

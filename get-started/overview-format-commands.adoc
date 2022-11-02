@@ -1,0 +1,21 @@
+---
+permalink: get-started/overview-format-commands.html 
+sidebar: sidebar 
+keywords: overview, cli 
+summary: 'Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mit der Storage Arrays konfiguriert und überwacht werden können.' 
+---
+= Übersicht über CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mit der Storage Arrays konfiguriert und überwacht werden können. Mit der CLI können Sie Befehle von einer Betriebssystemaufforderung wie DOS ausführen `C:` Eingabeaufforderung, ein Linux-Betriebssystempfad oder ein Solaris-Betriebssystem-Pfad.
+
+Die CLI ermöglicht Ihnen direkten Zugriff auf eine Skript-Engine, die in der Storage Management Software ein Dienstprogramm ist. Die Skript-Engine führt Befehle aus, die die Speicher-Arrays konfigurieren und verwalten. Die Skript-Engine liest die Befehle entweder über eine Skriptdatei oder direkt über die Befehlszeile aus und führt die von den Befehlen angegebenen Vorgänge aus.
+
+Mit den Skriptbefehlen wird ein Speicher-Array konfiguriert und verwaltet. Die Skriptbefehle unterscheiden sich von den CLI-Befehlen. Sie können einzelne Skriptbefehle eingeben oder eine Datei mit Skriptbefehlen ausführen. Wenn Sie einen einzelnen Skriptbefehl eingeben, binden Sie den Befehl Skript in einen CLI-Befehl ein. Wenn Sie eine Datei mit Skriptbefehlen ausführen, binden Sie den Dateinamen in den CLI-Befehl ein.
+
+Einige in diesem Dokument beschriebene Softwarefunktionen sind für Ihr E-Series Storage-System möglicherweise nicht verfügbar. Wenn Sie Fragen zu verfügbaren Funktionen haben, wenden Sie sich an Ihren Account-Ansprechpartner.
+
+Die CLI ist eine Funktion der SANtricity Storage Manager-Software.

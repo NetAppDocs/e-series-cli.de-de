@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/set-snapvolume-increase-decreaserepositorycapacity.html 
+sidebar: sidebar 
+keywords: set, snapshot, volume, repository, capacity 
+summary: Der Befehl set SnapVolume enceise/DecreadeRepositoryCapacität erhöht oder verringert die Kapazität eines Snapshot Volume Repository Volumes. 
+---
+= Legen Sie die Kapazität des Snapshot Volume-Repository fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapVolume increase/decreaseRepositoryCapacity` Befehl erhöht oder verringert die Kapazität eines Snapshot Volume Repository Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax für Vergrößerung der Kapazität
+
+[listing, subs="+macros"]
+----
+set snapVolume[“snapVolumeName”] increaseRepositoryCapacity
+(repositoryVolumes="repos_xxxx" |
+repositoryVolumes=pass:quotes[(_volumeGroupName_] [capacity=pass:quotes[_capacityValue_]] |
+repositoryVolumes=pass:quotes[(_diskPoolName_] [capacity=pass:quotes[_capacityValue_]])
+----
+
+
+== Syntax für die Reduzierung der Kapazität
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapVolumeName_"]] decreaseRepositoryCapacity
+count=pass:quotes[_numberOfVolumes_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapVolume`
+ a| 
+Der Name des Snapshot-Volumes, für das Sie Eigenschaften festlegen. Schließen Sie die Snapshot-Volume-Kennung in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]).
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Der Name des Repository-Volumes, für das die Kapazität erhöht werden soll. Zum Repository Volume wird ein verfügbares Standard-Volume hinzugefügt, um die Kapazität des Repository Volumes zu erhöhen.
+
+Es stehen zwei Optionen zur Verfügung, um den Namen eines Repository-Volumes festzulegen:
+
+* Ein vorhandenes Repository-Volume verwenden: Name
+* Erstellen Sie ein neues Repository-Volume, wenn Sie diesen Befehl ausführen
+
+
+Der Name eines vorhandenen Repository-Volumes besteht aus zwei Teilen:
+
+* Der Begriff „Repos“
+* Eine vierstellige numerische Kennung, die Sie dem Namen des Repository-Volumes zuweisen
+
+
+Schließen Sie den Namen des vorhandenen Repository-Volumes in doppelte Anführungszeichen (" ").
+
+Wenn Sie bei Ausführung dieses Befehls ein neues Repository-Volume erstellen möchten, müssen Sie entweder den Namen einer Volume-Gruppe oder eines Laufwerk-Pools eingeben, in dem das Repository-Volume erstellt werden soll. Optional können Sie auch die Kapazität des Repository-Volumes festlegen. Wenn Sie die Kapazität definieren möchten, können Sie die folgenden Werte verwenden:
+
+* Ein ganzzahliger Wert, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Ein Dezimaltrennzeichen, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Eine bestimmte Größe für das Repository-Volume erhalten. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+Wenn Sie die Kapazitätsoption nicht nutzen, setzt die Storage-Managementsoftware die Kapazität auf 20 Prozent der Kapazität des Basis-Volume.
+
+Schließen Sie den Namen des neuen Repository-Volumes in Klammern an.
+
+
+
+ a| 
+`count`
+ a| 
+Die Anzahl der Volumes, die Sie entfernen möchten. Ganzzahlwerte verwenden.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Ein Snapshot-Repository-Volume ist ein erweiterbares Volume, das als verkettete Sammlung von bis zu 16 Standard-Volume-Einheiten strukturiert ist. Zu Beginn weist ein erweiterbares Repository Volume nur ein einziges Element auf. Die Kapazität des erweiterbaren Repository Volumes entspricht genau der des einzelnen Elements. Sie können die Kapazität eines erweiterbaren Repository-Volumes erhöhen, indem Sie ihm zusätzliche Standard-Volumes hinzufügen. Die zusammengesetzte, erweiterbare Repository-Volume-Kapazität wird dann zur Summe der Kapazitäten aller verketteten Standard-Volumes.
+
+Ein Snapshot Gruppen-Repository Volume muss eine Mindestkapazitätsanforderung erfüllen, die aus der Summe der folgenden ergibt:
+
+* 32 MB zur Unterstützung eines festen Overheads für die Snapshot-Gruppe und für die Copy-on-Write-Verarbeitung.
+* Kapazität für die Rollback-Verarbeitung, die 1/5000. Der Kapazität des Basis-Volumes beträgt.
+
+
+Die minimale Kapazität wird durch die Controller-Firmware und die Storage-Managementsoftware durchgesetzt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

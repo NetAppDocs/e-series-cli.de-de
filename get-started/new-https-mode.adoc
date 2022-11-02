@@ -1,0 +1,154 @@
+---
+permalink: get-started/new-https-mode.html 
+sidebar: sidebar 
+keywords: new, smcli, https mode 
+summary: Der neue SMcli kann im HTTPS-Modus mit zusätzlichen Sicherheitsfunktionen betrieben werden. 
+---
+= SMcli HTTPS-Modus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der SMcli kann in einem betrieben werden `*https*` Modus mit zusätzlichen Sicherheitsfunktionen.
+
+[NOTE]
+====
+Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können Sie kein Upgrade auf die neueste Version von SANtricity über die alte CLI durchführen. Upgrades von SANtricity 11.52 auf neuere Versionen können nur über SMcli durchgeführt werden.
+
+====
+Wenn Sie die Version 11.42 der CLI verwenden, wird die Skript-Engine in einem der folgenden Modi erstellt:
+
+* `*https*` -- Es wird eine REST-basierte Skript-Engine mit zusätzlichen Sicherheitsfunktionen erstellt.
+* `*symbol*` -- eine Symbol-basierte Skript-Engine wird erstellt.
+
+
+Neue Sicherheitsfunktionen in verfügbar `*https*` Kunde:
+
+* Für erweiterte Sicherheit ist eine Zertifikatauthentifizierung unter Verwendung vertrauenswürdiger Zertifikate erforderlich. Sie können das verwenden `-k` Option zum Verwenden eines selbstsignierten Zertifikats und Ausführen von Befehlen im unsicheren Modus.
+* Sie können die rollenbasierte Zugriffsverwaltung verwenden, wobei verschiedene Sicherheitsberechtigungen unterschiedlichen Rollen zugewiesen sind. Verwenden Sie die `-u` Option zum Ausführen von Befehlen mit einem Argument für den Benutzernamen.
+* Kennwortargumente, die zuvor in verfügbar waren `*symbol*` Modus kann auch in verwendet werden `*https*` Modus zum Festlegen eines Kennworts für eine bestimmte Benutzerrolle. Der `-p` Mit der Option wird das Passwort in der Befehlszeile oder in angegeben `-P` Option kann ein Kennwort aus einer Datei oder von einlesen `stdin`.
+
+
+Dieses Thema enthält mehrere Beispiele zur Veranschaulichung der neuen Befehlszeilenparameter:
+
+
+
+== Vorgänge, für die ein Passwort erforderlich ist, der HTTPS-Client-Modus und ein vertrauenswürdiges Zertifikat sind, werden auf dem Array installiert
+
+Im folgenden Beispiel werden sowohl die Optionen für Benutzername als auch Kennwort angegeben, und auf dem Array wird ein vertrauenswürdiges Zertifikat installiert.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Vorgänge, die ein Passwort, einen HTTPS-Client-Modus und kein vertrauenswürdiges Zertifikat erfordern, werden auf dem Array installiert
+
+Im folgenden Beispiel werden sowohl der Benutzername als auch die Kennwortoptionen angegeben, auf dem Array wird jedoch kein vertrauenswürdiges Zertifikat installiert, und der `-k` Option wurde nicht verwendet. Das Beispiel zeigt die Ausgabe, die zurückgegeben wird.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Unable to establish a secure connection to the storage array as we were unable to confirm the connection is secure.
+Please configure the storage array to use a trusted security certificate. If the problem persists, contact Technical Support.
+
+SMcli failed.
+----
+
+
+== Vorgänge, die ein Passwort, einen https-Client-Modus und kein vertrauenswürdiges Zertifikat benötigen, jedoch für selbstsigniertes Zertifikat -k verwenden
+
+Im folgenden Beispiel, wie im vorhergehenden Beispiel, werden sowohl die Optionen für Benutzername als auch Kennwort angegeben, es wird jedoch kein vertrauenswürdiges Zertifikat auf dem Array installiert. In diesem Fall jedoch die `-k` Die Option wurde verwendet, um ein selbstsigniertes Zertifikat zu verwenden.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+----
+In diesem Beispiel verwenden Sie die `*symbol*` Für den erfolgreichen Abschluss des Befehls ist im Client-Modus nur die Passwort-Option erforderlich.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -p adminPassword -c "set storageArray cacheBlockSize=4;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Schreibgeschützten Betrieb, Symbol-Client-Modus
+
+In diesem Beispiel in `*symbol*` Client-Modus, kein Benutzername oder Passwort angegeben. Dies ist nur erfolgreich für schreibgeschützte Vorgänge abgeschlossen.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1  -c "show allVolumes;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+STANDARD/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Schreibgeschützte Vorgänge, HTTP-Client-Modus
+
+Im folgenden Beispiel, auch mit einer schreibgeschützten Operation, aber in `*https*` Client-Modus, Benutzername und Passwort sind erforderlich, und wird zusammen mit bereitgestellt `-k` Um ein selbstsigniertes Zertifikat anzunehmen. Der `*https*` Im Client-Modus ist sogar für Lesevorgänge ein Passwort erforderlich.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "show allVolumes;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+THICK/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----

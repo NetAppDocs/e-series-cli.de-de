@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/remove-array-label.html 
+sidebar: sidebar 
+keywords: remove, array, label 
+summary: Mit dem Befehl Array-Beschriftung entfernen können Sie eine benutzerdefinierte Bezeichnung für ein Speicher-Array entfernen. 
+---
+= Entfernen Sie die Array-Beschriftung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Remove array label` Mit diesem Befehl können Sie eine benutzerdefinierte Bezeichnung für ein Speicher-Array entfernen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete storageArrayLabel label pass:quotes[_userDefinedString_]
+delete storageArrayLabel all
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userDefinedString`
+ a| 
+Ermöglicht die Angabe einer benutzerdefinierten Bezeichnung für das Speicher-Array.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

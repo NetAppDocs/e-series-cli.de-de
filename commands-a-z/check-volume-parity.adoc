@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/check-volume-parity.html 
+sidebar: sidebar 
+keywords: check, volume, parity 
+summary: Mit dem Befehl zum Überprüfen der Volume-Parität wird ein Volume auf Paritäts- und Medienfehler geprüft und anschließend die Ergebnisse der Prüfung in eine Datei geschrieben. 
+---
+= Prüfen Sie die Volume-Parität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `check volume parity` Der Befehl überprüft ein Volume auf Paritäts- und Medienfehler und schreibt dann die Ergebnisse der Prüfung in eine Datei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+check volume pass:quotes[[_volumeName_]] parity
+[parityErrorFile=pass:quotes[_filename_]]
+[mediaErrorFile=pass:quotes[_filename_]]
+[priority=(highest | high | medium | low | lowest)]
+[startingLBA=pass:quotes[_LBAvalue_]]
+[endingLBA=pass:quotes[_LBAvalue_]]
+[verbose=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des spezifischen Volumes, für das Sie die Parität prüfen möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie die Kennung in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Paritäts-Fehlerinformationen speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\parerr.txt"`
+
+Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+
+
+ a| 
+`mediaErrorFile`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Medienfehlerinformationen speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\mederr.txt"`
+
+Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+
+
+ a| 
+`priority`
+ a| 
+Die Priorität, die die Paritätsprüfung im Verhältnis zur I/O-Aktivität des Hosts hat. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.Die niedrigste Prioritätsrate führt zu einer Verbesserung der System-Performance, die Paritätsprüfung dauert jedoch länger. Die höchste Prioritätsstufe bietet zwar einen Vorteil bei der Paritätsprüfung, doch könnte die System-Performance beeinträchtigt werden.
+
+
+
+ a| 
+`startingLBA`
+ a| 
+Die erste logische Blockadresse.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+Die letzte logische Blockadresse.
+
+
+
+ a| 
+`verbose`
+ a| 
+Die Einstellung zum Erfassen von Fortschrittsdetails, z. B. „Fertigstellungsgrad“, und zum Anzeigen der Informationen, wenn die Volume-Parität gescannt wird. Um Fortschrittsdetails zu erfassen, setzen Sie diesen Parameter auf `TRUE`. Um die Erfassung von Fortschrittsdetails zu verhindern, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Die erste logische Blockadresse und die endliche logische Blockadresse sind für sehr große LUNs oder Namespaces mit einem einzigen Volume nützlich. Die Durchführung einer Volume-Paritätsprüfung auf einem sehr großen einzelnen Volume LUN oder Namespace kann sehr viel Zeit in Anspruch nehmen. Durch die Definition der Anfangsadresse und der Endadresse der Datenblöcke lässt sich die Zeit verkürzen, die eine Volume-Paritätsprüfung erforderlich ist.

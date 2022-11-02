@@ -1,0 +1,142 @@
+---
+permalink: commands-a-z/smcli-autosupportconfig-show.html 
+sidebar: sidebar 
+keywords: display, autosupport, bundle, collection, set 
+summary: Mit dem Befehl SMcli -autoSupportConfig show werden die Einstellungen zur AutoSupport Bundle-Sammlung für die Management-Domäne angezeigt. Diese Einstellungen gelten für alle Storage Arrays in Ihrer Management-Domäne, für die Sie AutoSupport aktiviert haben. 
+---
+= Zeigen Sie die Einstellungen für die AutoSupport Bundle-Sammlung an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli -autoSupportConfig show` Mit dem Befehl werden die AutoSupport Bundle-Erfassungseinstellungen für die Management-Domäne angezeigt. Diese Einstellungen gelten für alle Storage Arrays in Ihrer Management-Domäne, für die Sie AutoSupport aktiviert haben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+Mit der Ausgabe des Befehls über diesen Befehl werden die folgenden Konfigurationsinformationen angezeigt:
+
+* Der Aktivierungsstatus für diese Managementdomäne der AutoSupport-Funktion, der Funktion AutoSupport OnDemand und der Funktion AutoSupport Remote Diagnostics
+* Lieferparameter, die von der konfigurierten Liefermethode abhängig sind:
++
+** Bereitstellungsmethode ist SMTP: Zieladresse, E-Mail-Relay-Server und Absender-E-Mail-Adresse werden angezeigt
+** Die Liefermethode lautet HTTP oder HTTPS:
++
+*** Direkte Verbindung – Ziel-IP-Adresse wird angezeigt
+*** Proxy-Serververbindung: Host-Adresse, Portnummer und Authentifizierungsdetails werden angezeigt
+*** Automatische Proxy-Konfigurationsskript (PAC)-Verbindung – der Speicherort des Skripts wird angezeigt
+
+
+
+
+* Eine Tabelle, in der für jedes Storage-Array der Name des Arrays aufgeführt wird, unabhängig davon, ob es sich um ein ASUP-fähiges Array, die Seriennummern des Chassis und die IP-Adressen für die Controller im Array handelt
+
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+[NOTE]
+====
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+SMcli -autoSupportConfig show
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.25
+
+
+
+== Beispielausgabe für den Aktivierungsstatus
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+The AutoSupport OnDemand feature is de-activated on this storage management station.
+The AutoSupport Remote Diagnostics feature is de-activated on this storage management station.
+----
+
+
+== Beispielausgabe für die SMTP-Bereitstellungsmethode
+
+[listing]
+----
+Delivery method: SMTP
+Destination email address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Mail relay server: server.eng.netapp.com
+Sender email address:  user@netapp.com
+----
+
+
+== Beispielausgabe für die HTTP- oder HTTPS-Ausgabemethode mit direkter Verbindung
+
+[listing]
+----
+Delivery method:  HTTP
+Destination IP address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Connection:  Direct
+----
+
+
+== Beispielausgabe für die HTTP-Bereitstellungsmethode mit Proxy-Verbindung
+
+[listing]
+----
+Connection:  Proxy server
+Host Address:  10.227.76.123
+Port number: 8080
+Authentication required: Yes
+User name: admin
+Password: **********
+----
+
+
+== Beispielausgabe für die HTTP-Bereitstellungsmethode mit einem automatischen Proxy-Konfigurationsskript (PAC)
+
+[listing]
+----
+Connection: Automatic proxy configuration script (PAC)
+Script location: http://esgweb.eng.netapp.com/~user/proxy.pac
+----
+
+
+== Beispielausgabe für Array-Tabelle (alle Bereitstellungsmethoden)
+
+[listing]
+----
+
+Name  AutoSupport Capable   Chassis Serial Number   IP Address
+SA_1  Yes (enabled)         SX94500434              10.113.173.123, 10.113.173.456
+SA_2  Yes (disabled)        SX94607107              10.113.174.789, 10.113.174.345
+SA_3  No                    Not available           10.113.59.58, 10.113.59.59
+----

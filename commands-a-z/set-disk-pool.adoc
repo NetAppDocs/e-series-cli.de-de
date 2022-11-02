@@ -1,0 +1,203 @@
+---
+permalink: commands-a-z/set-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool 
+summary: Mit dem Befehl Set diskPool werden die Attribute festgelegt, die einem Laufwerk-Pool auf der Grundlage der angegebenen Parameter zugeordnet sind. 
+---
+= Legen Sie den Laufwerk-Pool fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set diskPool` Mit dem Befehl werden die Attribute festgelegt, die einem Laufwerk-Pool auf der Grundlage der angegebenen Parameter zugeordnet sind.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set (diskPool pass:quotes[[_diskPoolName_]] |
+diskPools pass:quotes[[_diskPoolName1_ ... _diskPoolNameN_]] | allDiskPools)
+[reservedDriveCount=pass:quotes[_reservedDriveCountValue_]]
+[warningThreshold=(warningThresholdValue | default)]
+[criticalThreshold=(criticalThresholdValue | default)]
+[criticalPriority=(highest | high | medium |low |lowest)]
+[degradedPriority=(highest |high |medium |low |lowest)]
+[backgroundPriority=(highest | high | medium |low |lowest)]
+[userLabel=pass:quotes[_diskPoolName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPool`
+ a| 
+Der Name des Laufwerk-Pools, für den Sie Attribute festlegen. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]). Wenn der Disk-Pool-Name Sonderzeichen hat oder nur aus Ziffern besteht, müssen Sie den Disk-Pool-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`diskPools`
+ a| 
+Die Namen mehrerer Disk Pools, für die Sie Attribute festlegen möchten. Geben Sie die Namen der Disk-Pools unter Verwendung dieser Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Disk-Pool-Namen Sonderzeichen oder Zahlen haben, geben Sie die Namen unter Verwendung folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`allDiskPools`
+ a| 
+Dieser Parameter legt Attribute für alle Festplattenpools im Speicher-Array fest.
+
+
+
+ a| 
+`reservedDriveCount`
+ a| 
+Dieser Parameter reserviert auf jedem Laufwerk im Festplatten-Pool Speicherplatz, der ausschließlich für die Rekonstruktion ausgefallener Laufwerke verwendet werden soll. Jede Einheit in dieser Anzahl stellt die Kapazität dar, ein ausgefallenes Laufwerk im Rest des Festplatten-Pools zu rekonstruieren.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+Der Prozentsatz der Kapazität des Festplattenpools, mit der Sie eine Warnmeldung erhalten, dass sich der Laufwerk-Pool bald voll befindet. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Für den besten Betrieb muss der Wert für diesen Parameter kleiner sein als der Wert für das `criticalThreshold` Parameter.
+
+Gültige Werte liegen zwischen 0 und 100.
+
+Der Standardwert ist 50.
+
+Setzen Sie diesen Parameter auf `0` Deaktiviert Warnmeldungen.
+
+Wenn Sie dies auf einstellen `default`, Der Warnungsschwellenwert wird von der Controller-Firmware bestimmt.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+Der Prozentsatz der Kapazität des Festplattenpools, mit der Sie eine kritische Warnmeldung erhalten, dass sich der Laufwerk-Pool bald voll befindet. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Für eine optimale Operation muss der Wert für diesen Parameter größer sein als der Wert für das `warningThreshold` Parameter.
+
+Gültige Werte liegen zwischen 0 und 100.
+
+Der Standardwert ist 85 Prozent.
+
+Setzen Sie diesen Parameter auf `0` Deaktiviert sowohl Warnmeldungen als auch kritische Alarme.
+
+Wenn Sie dies auf einstellen `default`, Der Schwellenwert für kritische Warnmeldungen wird durch die Controller-Firmware bestimmt.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+Die Priorität für Rekonstruktionsvorgänge für kritische Ereignisse im Disk Pool. Beispielsweise wird die Festplattenpool-Rekonstruktion nach mindestens zwei Laufwerksausfällen durchgeführt.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `highest`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+Die Priorität für Rekonstruktionsvorgänge für beeinträchtigte Ereignisse im Festplatten-Pool. Beispielsweise wird die Festplatten-Pool-Rekonstruktion nach dem Ausfall eines Laufwerks ausgeführt.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `high`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+Priorität für Hintergrundvorgänge im Laufwerk-Pool.
+
+Gültige Werte sind `highest`, `high`, `medium`, `low`, und `lowest`. Der Standardwert ist `low`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der neue Name, den Sie den Laufwerk-Pool angeben möchten. Schließen Sie den Disk-Pool-Namen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+Es kann eine beliebige Anzahl an Festplatten-Pools angegeben werden. Wenn Sie mehrere Laufwerk-Pools auswählen, setzen Sie einen Wert für das ein `userLabel` Verursacht einen Fehler.
+
+Wenn Sie keinen Wert für einen optionalen Parameter angeben, wird ein Standardwert zugewiesen.
+
+
+
+== Schwellenwerte für Disk Pool-Warnmeldungen
+
+Jeder Disk Pool verfügt über zwei nach und nach schwerwiegende Alarmstufen, mit denen Sie die Benutzer informieren, wenn die Speicherkapazität des Disk Pools voll ist. Der Schwellenwert für eine Warnmeldung ist ein Prozent der genutzten Kapazität zur gesamten nutzbaren Kapazität im Laufwerk-Pool. Folgende Meldungen sind zu beachten:
+
+* Warnung -- Dies ist die erste Alarmstufe, dass die genutzte Kapazität in einem Laufwerk-Pool sich der vollen Höhe nähert. Wenn der Schwellenwert für die Warnmeldung erreicht wird, wird eine Warnmeldung benötigt und ein Ereignis an die Storage Management Software gesendet. Der Warnschwellenwert wird durch den kritischen Schwellenwert ersetzt. Der Standardwarnungsschwellenwert beträgt 50 Prozent.
+* Kritisch -- Dies ist die schwerwiegendsten Warnmeldungen, dass die genutzte Kapazität in einem Disk-Pool voll wird. Wenn der Schwellenwert für die kritische Warnmeldung erreicht wird, wird eine Warnmeldung generiert und ein Ereignis an die Storage Management Software gesendet. Der Warnschwellenwert wird durch den kritischen Schwellenwert ersetzt. Der Standardschwellenwert für die kritische Warnmeldung liegt bei 85 Prozent.
+
+
+Um wirksam zu sein, muss der Wert für eine Warnmeldung immer kleiner als der Wert für eine kritische Warnmeldung sein. Wenn der Wert für die Warnmeldung mit dem Wert für eine kritische Warnmeldung identisch ist, wird nur die kritische Warnmeldung gesendet.
+
+
+
+== Hintergrundvorgänge für den Disk Pool
+
+Disk-Pools unterstützen die folgenden Hintergrundvorgänge:
+
+* Rekonstruktion
+* Instant Availability Format (IAF)
+* Formatieren
+* Dynamische Kapazitätserweiterung (DCE)
+* Dynamische Kapazitätsreduzierung (DCR)
+* Dynamische Volume-Erweiterung (DVE) (bei Disk Pools ist DVE zwar kein Hintergrundvorgang, DVE wird aber als synchroner Vorgang unterstützt).
+
+
+Disk Pools müssen keine Hintergrundbefehle in die Warteschlange stellen. Sie können mehrere Hintergrundbefehle nacheinander starten, aber wenn mehr als ein Hintergrundvorgang gleichzeitig gestartet wird, verzögert sich die Ausführung von Befehlen, die Sie zuvor gestartet haben. Die relative Priorität für die unterstützten Hintergrundvorgänge lautet:
+
+. Rekonstruktion
+. Formatieren
+. IAF
+. DCE/DCR
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

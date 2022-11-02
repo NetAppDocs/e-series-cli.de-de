@@ -1,0 +1,47 @@
+---
+permalink: commands-a-z/activate-storagearray-firmware.html 
+sidebar: sidebar 
+keywords: activate, storage array, firmware, syntax, parameter, minimum, level 
+summary: Mit dem Befehl activate storageArray Firmware wird die Firmware aktiviert, die Sie zuvor in den ausstehenden Konfigurationsbereich auf den Controllern im Speicher-Array heruntergeladen haben. 
+---
+= Aktivieren der Speicher-Array-Firmware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `activate storageArray firmware` Mit dem Befehl wird die Firmware aktiviert, die Sie zuvor in den ausstehenden Konfigurationsbereich auf den Controllern im Speicher-Array heruntergeladen haben.
+
+
+
+== Syntax
+
+[listing]
+----
+activate storageArray firmware
+[healthCheckMelOverride=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`healthCheckMelOverride`
+ a| 
+Die Einstellung, die die Ergebnisse der Integritätsprüfung des Major-Ereignisprotokolls (MEL) außer Kraft setzt. DIE MEL-Validierung erfolgt weiterhin; sie wird nicht umgangen. Wenn die MEL-Prüfung fehlschlägt, können Sie den Fehler umgehen, indem Sie diesen Parameter verwenden, wenn Sie den Befehl ausführen.
+
+Vor einer Aktivierung überprüft der Controller das Ereignisprotokoll, um festzustellen, ob ein Ereignis eingetreten ist, das die erfolgreiche Aktivierung der neuen Controller-Firmware verhindert. Wenn ein solches Ereignis aufgetreten ist, aktiviert der Controller normalerweise keine neue Firmware.
+
+Mit diesem Parameter wird der Controller gezwungen, neue Firmware zu aktivieren. Der Standardwert ist `FALSE`. Setzen Sie diesen Wert auf `TRUE` Wenn Sie den Controller dazu zwingen möchten, die neue Controller-Firmware zu aktivieren.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.10 fügt die hinzu `healthCheckMelOverride` Parameter.

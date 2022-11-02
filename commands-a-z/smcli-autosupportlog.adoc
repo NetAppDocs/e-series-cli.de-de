@@ -1,0 +1,119 @@
+---
+permalink: commands-a-z/smcli-autosupportlog.html 
+sidebar: sidebar 
+keywords: capture, view, autosupport, log 
+summary: Mit dem Befehl SMcli -autoSupportLog können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar. 
+---
+= Erfassen oder Anzeigen eines AutoSupport-Protokolls
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli -autoSupportLog` Mit dem Befehl können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+Mit diesem Befehl können Sie zwei Protokolltypen anzeigen:
+
+* Aktuelles Protokoll: Zeigen Sie das Protokoll an, das zu diesem Zeitpunkt erfasst wurde.
+* Archivprotokoll – Anzeigen des Protokolls aus einer archivierten Datei.
+
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+SMcli -autoSupportLog pass:quotes[(all|-n "_storageArrayName_" | -w "_wwID_")]
+pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]
+----
+
+
+== Parameter
+
+In der folgenden Tabelle werden die Befehlsparameter aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`all`
+ a| 
+Verwenden Sie diesen Parameter, wenn Sie ein Übertragungsprotokoll für alle Speicher-Arrays in der Managementdomäne mit AutoSupport aktivierter AutoSupport-Funktion erstellen möchten.
+
+
+
+ a| 
+`_n_`
+ a| 
+Der Name des Speicher-Arrays, für das ein AutoSupport-Protokoll angezeigt werden soll.
+
+
+
+ a| 
+`_w_`
+ a| 
+Der World Wide Identifier (WWID) des Speicherarrays, für das ein AutoSupport-Protokoll angezeigt werden soll.
+
+
+
+ a| 
+`inputArchive`
+ a| 
+Hiermit können Sie das archivierte AutoSupport-Protokoll angeben, in dem sich die Archivdatei befindet `_n_`, Eine Ganzzahl zwischen 0 und 5.
+
+[NOTE]
+====
+Wenn Sie diesen Parameter nicht verwenden, wählen Sie das aktuelle AutoSupport-Protokoll aus (das zu diesem Zeitpunkt erfasst wurde).
+
+====
+
+
+ a| 
+`outputLog`
+ a| 
+Hier können Sie den Dateinamen des AutoSupport-Ausgabedatenprotokolls festlegen.
+
+[NOTE]
+====
+Dieser Parameter ist erforderlich.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.25
+
+
+
+== Beispiel
+
+[listing]
+----
+SMcli -autosupportLog -n StorageArrayName inputArchive=0 outputLog=ASUPTransmissionLog
+----
+
+
+== Verifizierung
+
+Zeigen Sie das angeforderte AutoSupport-Protokoll an. Dies befindet sich im Client-Verzeichnis, in dem die Speicherverwaltungssoftware installiert wurde.

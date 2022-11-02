@@ -1,0 +1,58 @@
+---
+permalink: commands-a-z/stop-volumecopy-target-source.html 
+sidebar: sidebar 
+keywords: stop, volume, copy 
+summary: Mit dem Befehl stop VolumeCopy Zielquelle wird ein Kopiervorgang angehalten. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare. 
+---
+= Stoppen Sie die Volume-Kopie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop volumeCopy target source` Mit dem Befehl wird ein Kopiervorgang angehalten. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[stop volumeCopy target [_targetName_]] source pass:quotes[[_sourceName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`target`
+ a| 
+Der Name des Zielvolume, für das Sie einen Kopiervorgang beenden möchten. Umschließen Sie den Namen des Zielvolumens in eckigen Klammern ([ ]). Wenn der Name des Ziel-Volumes Sonderzeichen oder Zahlen hat, müssen Sie den Namen des Zielvolumens in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`source`
+ a| 
+Der Name des Quell-Volume, für das Sie einen Vorgang der Volume-Kopie anhalten möchten. Umschließen Sie den Namen des Quellvolumens in eckige Klammern ([ ]). Wenn der Name des Quell-Volumes Sonderzeichen oder Zahlen hat, müssen Sie den Namen des Quell-Volumes in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===

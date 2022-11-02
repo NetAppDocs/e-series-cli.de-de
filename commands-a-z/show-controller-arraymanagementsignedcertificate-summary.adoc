@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/show-controller-arraymanagementsignedcertificate-summary.html 
+sidebar: sidebar 
+keywords: show, signed, certificate 
+summary: Der Befehl show Controller arrayManagementSignedCertificate Summary zeigt die aktuelle signierte Zertifikatszusammenfassung des angegebenen Controllers an. 
+---
+= Zeigt ein signiertes Zertifikat an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show controller arrayManagementSignedCertificate summary` Der Befehl zeigt die aktuelle signierte Zertifikatsübersicht vom angegebenen Controller an.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+
+show controller [(a|b)] arrayManagementSignedCertificate summary
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Hier können Sie den Controller angeben, auf dem Sie die Root-/Zwischenzertifikate abrufen möchten. Gültige Controller-IDs sind A oder b, wobei A der Controller in Steckplatz A ist und b der Controller in Steckplatz B ist Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+|===
+
+
+== Beispiel
+
+Die Probenausgabe kann sich von den unten dargestellten unterscheiden.
+
+[listing]
+----
+
+SMcli -n Array1 -c "show controller[a] arrayManagementSignedCertificate all summary;"
+
+============================
+Controller A Signed Certificate
+============================
+Subject DN:   CN=Corp Issuing CA 1
+Issuer DN:    CN=Corp Root CA
+Start:        <date>
+Expire:       <date>
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

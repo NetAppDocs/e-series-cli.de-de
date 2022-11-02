@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/show-storagearray-syslog.html 
+sidebar: sidebar 
+keywords: display, storage, array, syslog, configuration 
+summary: Mit dem Befehl show storageArray syslog können Sie die Konfiguration eines Syslog-Servers anzeigen, der zum Speichern von Audit-Protokollen verwendet wird. Zu den Konfigurationsinformationen gehört eine Server-ID sowie Adresse, Protokoll und Portnummer. 
+---
+= Anzeige der Syslog-Konfiguration des Speicherarrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show storageArray syslog` Mit dem Befehl können Sie die Konfiguration eines Syslog-Servers anzeigen, der zum Speichern von Audit-Protokollen verwendet wird. Zu den Konfigurationsinformationen gehört eine Server-ID sowie Adresse, Protokoll und Portnummer.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+
+show storageArray syslog (allServers | id="<id>")
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+Alle Server
+ a| 
+Zeigt alle Syslog-Konfigurationen an.
+
+
+
+ a| 
+id
+ a| 
+Zeigt die Syslog-Konfiguration mit der übereinstimmenden ID an.
+
+|===
+
+
+=== Beispiele
+
+[listing]
+----
+SMcli -n Array1 -c "show storageArray syslog allServers;"
+SMcli -n Array1 -c "show storageArray syslog id=\"331998fe-3154-4489-b773-b0bb60c6b48e\";"
+
+ID:             331998fe-3154-4489-b773-b0bb60c6b48e
+Server Address: 192.168.2.1.com
+Port:           514
+Protocol:       udp
+Components
+1. Component Name: auditLog
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.42

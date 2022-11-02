@@ -1,0 +1,40 @@
+---
+permalink: commands-a-z/clear-alldrivechannels-stats.html 
+sidebar: sidebar 
+keywords: clear, drive channel, statistics 
+summary: Mit dem Befehl Alle löschen DriveChannels stats werden die Statistiken für alle Laufwerkskanäle zurückgesetzt. 
+---
+= Löschen Sie die Laufwerkskanalstatistiken
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear allDriveChannels stats` Mit Befehl werden die Statistiken für alle Laufwerkskanäle zurückgesetzt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+clear allDriveChannels stats
+----
+
+
+== Parameter
+
+Keine.

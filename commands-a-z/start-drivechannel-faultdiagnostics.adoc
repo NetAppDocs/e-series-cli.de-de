@@ -1,0 +1,145 @@
+---
+permalink: commands-a-z/start-drivechannel-faultdiagnostics.html 
+sidebar: sidebar 
+keywords: start, drive channel, fault, isolation, diagnostics 
+summary: Mit dem Befehl driveChannel faultDiagnostics starten werden die Fehlerdiagnose für den Laufwerkskanal ausgeführt und die Ergebnisse gespeichert. 
+---
+= Diagnose der Fehlereingrenzung des Antriebskanals starten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start driveChannel faultDiagnostics` Mit dem Befehl wird die Fehlerdiagnose für den Laufwerkskanal ausgeführt und die Ergebnisse gespeichert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 8.10 wird das `start driveChannel faultDiagnostics` Befehl ist veraltet.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
+controller [(a|b)] faultDiagnostics
+testDevices=[all |
+controller=(a|b) |
+esms=pass:quotes[[_trayID1_ (left | right), ... , _trayIDN_] (left | right)] |
+drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]
+|[dataPattern=(fixed | pseudoRandom) |
+patternNumber=[pass:quotes[(_0xhexadecimal_ | _number_)]] |
+pass:quotes[maxErrorCount=_integer_] |
+pass:quotes[testIterations=_integer_] |
+pass:quotes[timeout=_timeInterval_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`driveChannel`
+ a| 
+Die Identifikationsnummer des zu lokelenden Laufwerkskanals. Gültige Werte für die Identifikationsnummer für den Laufwerkskanal sind `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`. Schließen Sie die ID-Nummer des Laufwerkskanals in eckige Klammern ([ ]).
+
+
+
+ a| 
+`controller`
+ a| 
+Der Bezeichner des Controllers, den Sie testen möchten. Gültige Controller-ID-Werte sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]).
+
+
+
+ a| 
+`testDevices`
+ a| 
+Die Kennungen der Geräte (Controller, Umgebungsdienstmodul [ESMs] oder Laufwerke), die getestet werden sollen. Sie können angeben `all` Oder geben Sie die spezifischen Kennungen für die Geräte ein, die Sie diagnostizieren möchten.die `controller` Identifikatoren sind `a` Oder `b`, Wo `a` Ist das RAID-Controller-Modul in Steckplatz A, und `b` Ist das RAID-Controller-Modul in Steckplatz B
+
+Der `esms` Kennungen sind Fach-ID und links oder rechts, wobei Fach-ID einen Wert zwischen 0 und 99 hat und links oder rechts beim Anzeigen des Laufwerksfachs von hinten bestimmt werden.
+
+Der `drive` Zu den Kennungen gehört eine Tray-ID, eine Schubladenkennung, wenn das Fach über Schubladen verfügt, und eine Schlitzkennung.
+
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`dataPattern`
+ a| 
+Die Wiederholbarkeit, die Sie testen möchten.
+
+
+
+ a| 
+`patternNumber`
+ a| 
+Das hexadezimale Datenmuster, das Sie zum Ausführen des Tests verwenden möchten. Diese Zahl kann eine beliebige Hexadezimalzahl sein zwischen `0000` Bis `FFFF`. Sie müssen Platz nehmen `0x` Vor, um eine hexadezimale Zahl anzugeben.
+
+
+
+ a| 
+`maxErrorCount`
+ a| 
+Die Anzahl der Fehler, die akzeptiert werden sollen, bevor der Test beendet wird.
+
+
+
+ a| 
+`testIterations`
+ a| 
+Die Anzahl der Wiederholungen des Tests.
+
+
+
+ a| 
+`timeout`
+ a| 
+Die Zeitspanne in Minuten, die Sie den Test ausführen möchten.
+
+|===
+
+
+== Hinweise
+
+Sie können mehrere Gerätetypen eingeben, die getestet werden sollen, und Sie können mehrere Testtypen eingeben, die ausgeführt werden sollen.
+
+Verwenden Sie die `save driveChannel faultDiagnostics` Befehl und das `stop driveChannel faultDiagnostics` Befehl mit dem `start driveChannel faultDiagnostics` Befehl. Diese Befehle sind erforderlich, um die Diagnosetestergebnisse in einer Datei zu speichern und den Diagnosetest zu beenden.
+
+Beispiele für gültig `patternNumber` Einträge sind `0xA5A5`, `0x3C3C`, `8787`, und `1234`.
+
+Sie können diesen Befehl auch jederzeit beenden, indem Sie auf drücken `Ctrl+C`.
+
+
+
+== Minimale Firmware-Stufe
+
+7.15

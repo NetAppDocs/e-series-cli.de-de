@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/save-storagearray-controllerhealthimage.html 
+sidebar: sidebar 
+keywords: save, storage, array, controller, health, image 
+summary: Der Befehl Storage Array ControllerHealthImage speichern speichert ein Controller-Zustandsabbild in einer bestimmten Datei auf einem Host für Storage-Arrays, die die Funktion für das Controller-Zustandsabbild unterstützen. 
+---
+= Speichern des Storage Array Controller-Zustandsabbilds
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray controllerHealthImage` Der Befehl speichert ein Controller-Zustandsabbild in einer angegebenen Datei auf einem Host für Storage-Arrays, die die Funktion des Controller-Zustandsabbilds unterstützen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 8.20 der `coreDump` Parameter wird durch das ersetzt `controllerHealthImage` Parameter.
+
+====
+Wenn das Storage-Array die Funktion für das Integritätsabbild des Controllers nicht unterstützt, gibt der Befehl einen Fehler aus.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray controllerHealthImage file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, zu dem Sie das Integritätsabbild des Controllers speichern. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+[listing]
+----
+file="C:\Array Backups\DBMbackup_03302010.core"
+----
+|===
+
+
+== Hinweise
+
+Eine Zustand-Image-Datei des Controllers kann ein bis zwei Gigabyte groß sein und das Speichern dauert mehrere Minuten. Neben dem Speichern des Zustandsabbilds des Controllers generiert dieser Befehl eine XML-Deskriptordatei, die auf den Metadaten des Controller-Integritätsabbilds basiert. Diese Deskriptordatei wird im ZIP-Dateiformat auf demselben Pfad wie das Integritätsbild des Controllers gespeichert. Im folgenden Beispiel wird das XML-Format für die Deskriptordatei gezeigt.
+
+[listing]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+- <DPLcontrollerHealthImageInfo>
+<dplcontrollerHealthImageTag>sometag#</dplcontrollerHealthImageTag>
+<captureTime>12/22/10 3:58:53 PM IST</captureTime>
+- <StorageArrayData>
+<ArraySAID>600a0b80006e006a000000004c65efc1</ArraySAID>
+<ManagementApiVersion>devmgr.v1083api01.Manager</ManagementApiVersion>
+<fwVersion>07.83.01.00</fwVersion>
+<platformType>7091</platformType>
+</StorageArrayData>
+<fullcontrollerHealthImageCtlr>controllerserialNumber1
+     </fullcontrollerHealthImageCtlr>
+<fullcontrollerHealthImageSize>fullCaptureSize</fullcontrollerHealthImageSize>
+<altcontrollerHealthImageCtlr>controllerserialNumber2</altcontrollerHealthImage
+     Ctlr>
+<altcontrollerHealthImageSize>altCaptureSize</altcontrollerHealthImageSize>
+<triggerReason>Exception</triggerReason>-<DPLcontrollerHealthImageDetail>
+<dplcontrollerHealthImageReason>DPLcontrollerHealthImageReason
+     </dplcontrollerHealthImageReason>
+- <fwLocation >
+<filename>filename</filename>
+<lineNumber>line#</lineNumber>
+</fwLocation >
+<panicReason>panicString</panicReason>
+</DPLcontrollerHealthImageDetail>
+</DPLcontrollerHealthImageInfo>
+----
+Wenn Sie ein Controller-Zustandsabbild aus dem Controller-Cache zu einem Host abrufen, wird auf dem Controller ein Flag gesetzt, um anzugeben, dass das Controller-Zustandsabbild nicht abgerufen werden muss. Diese Einstellung bleibt 48 Stunden lang bestehen. Wenn ein neues Controller-Zustandsabbild während dieses Zeitraums stattfindet, wird das neue Controller-Zustandsabbild im Controller Cache gespeichert und alle vorherigen Daten des Controller-Integritätsabbilds im Cache überschrieben.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.20 ersetzt die `coreDump` Parameter mit `controllerHealthImage` Parameter.

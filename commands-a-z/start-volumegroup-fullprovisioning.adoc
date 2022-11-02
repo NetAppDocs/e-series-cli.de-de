@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-volumegroup-fullprovisioning.html 
+sidebar: sidebar 
+keywords: start, volume, group, full provision 
+summary: Mit dem Befehl „Start volumeGroup fullProvisioning“ wird ein voller Bereitstellungsvorgang für alle Volumes im Disk-Pool gestartet und optional die Ressourcenbereitstellung auf der Volume-Gruppe deaktiviert. 
+---
+= Starten Sie Vollprovisionierung Von Volume-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volumeGroup fullProvisioning` Der Befehl startet einen vollständigen Bereitstellungsvorgang für alle Volumes im Laufwerk-Pool und deaktiviert optional die Ressourcenbereitstellung auf der Volume-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+
+
+
+== Kontext
+
+Die Funktion Resource Provisioning verbessert den SSD-Verschleiß und erhöht die Schreib-Performance, da einen größeren Teil der Laufwerksblöcke in einem nicht zugewiesenen Zustand als ein Standard-Volume verbleiben. Ein vom Ressourcen bereitgestelltes Volume ist ein Thick Volume in einer SSD-Volume-Gruppe oder einem Pool, wobei die Laufwerkskapazität zugewiesen (dem Volume zugewiesen) wird, die Laufwerksblöcke bei der Erstellung eines Volumes jedoch wieder aufgehoben (nicht zugewiesen) werden. Die Laufwerksblöcke werden nach Bedarf zugewiesen, um die Schreib-I/OS des Hosts zu vervollständigen. Host-Prozesse zur Zuordnung können Laufwerkblöcke wieder in den nicht zugewiesenen Status zurückversetzen. Die Ressourcen-Bereitstellung eliminiert außerdem die Zeit-gebundene Hintergrundinitialisierung, sodass große Volumes schnell initialisiert werden können.
+
+Über Ressourcen bereitgestellte Volumes werden nur auf SSD-Volume-Gruppen und -Pools unterstützt, wobei alle Laufwerke in der Gruppe oder dem Pool die nicht zugewiesene oder nicht geschriebene DULBE-Fehlerwiederherstellungsfunktion (Logical Block Error Enable) unterstützen. Die Performance-Steigerung variiert je nach Festplattenmodell und Kapazität.
+
+Das vollständige Bereitstellungsformat stellt sicher, dass alle von den Volumes der Volume-Gruppe benötigten Blöcke vollständig auf den Laufwerken zugeordnet sind. Dieser Befehl gilt nur für die über die Ressourcen bereitgestellte Volume-Gruppe. Wenn die Option auf `disableResourceProvisioning` Ist nicht auf festgelegt `FALSE`, Dann werden die Volumes weiterhin über eine Ressource bereitgestellt und neue Volumes, die auf der Volume-Gruppe erstellt werden, werden über eine Ressource bereitgestellt. Wenn die Option zum Deaktivieren der Ressourcenbereitstellung auf festgelegt ist `TRUE`, Dann werden die Volumes nicht mehr über die Ressourcen bereitgestellt und neue Volumes, die auf der Volume-Gruppe erstellt werden, werden nicht über eine Ressource bereitgestellt.
+
+
+
+== Syntax
+
+[listing]
+----
+start volumeGroup[volumeGroupName] fullProvisioning [disableResourceProvisioning=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Die Volume-Gruppe, die Sie mit dem vollständigen Provisioning-Vorgang starten möchten. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ])
+
+
+
+ a| 
+`disableResourceProvisioning`
+ a| 
+Die Einstellung, die festlegen soll, ob die Ressourcenbereitstellung nach Abschluss des vollständigen Bereitstellungsvorgangs deaktiviert werden soll. Um die Deaktivierung der Ressourcenbereitstellung zu überspringen, setzen Sie dies auf `FALSE`. Der Standardwert ist `TRUE`.
+
+[NOTE]
+====
+Um die Ressourcenbereitstellung in einer Volume-Gruppe und allen zugehörigen Volumes erneut zu aktivieren, verwenden Sie den `Start Volume Group Resource Provisioning` Befehl.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+11.72

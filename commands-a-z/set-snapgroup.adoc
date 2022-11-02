@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/set-snapgroup.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, attributes 
+summary: Der Befehl set snapGroup definiert die Eigenschaften für eine Snapshot-Gruppe. 
+---
+= Legen Sie die Attribute für Snapshot-Gruppen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapGroup` Mit dem Befehl werden die Eigenschaften für eine Snapshot-Gruppe definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+[userLabel=pass:quotes["_snapGroupName_"]] |
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages) |
+[repositoryFullLimit=pass:quotes[_percentValue_] |
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]] |
+[rollbackPriority=(lowest | low | medium | high | highest)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, für die Sie Eigenschaften festlegen. Schließen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Den neuen Namen, den Sie der Snapshot-Gruppe geben möchten. Verwenden Sie diesen Parameter, wenn Sie die Snapshot-Gruppe umbenennen möchten. Schließen Sie den neuen Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Wie soll die Snapshot-Image-Verarbeitung fortgesetzt werden, wenn die Repository-Volumes für die Snapshot-Image-Gruppe voll sind? Sie können festlegen, dass Schreibzugriffe auf das Basis-Volume fehlschlagen (`failBaseWrites`) Oder löschen Sie die Snapshot-Bilder  `purgeSnapImages`). Die Standardaktion ist `purgeSnapImages`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Der Prozentsatz der Kapazität des Repository-Volumes, mit der Sie eine Warnung erhalten, dass das Snapshot-Image-Repository-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Der Standardwert ist 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Die maximale Anzahl von Snapshot-Images, die Sie automatisch löschen möchten, wenn Sie die Snapshot-Images für eine vollständige Repository-Richtlinie gelöscht haben. Ganzzahlwerte verwenden. Der Standardwert ist 32.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+Mit diesem Parameter bestimmen Sie, ob den Rollback-Vorgang Systemressourcen auf Kosten der Systemleistung zugewiesen werden sollen. Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest` Der Wert von `high` Zeigt an, dass der Rollback-Vorgang über alle anderen Host-I/O-Operationen priorisiert wird Der Wert von `lowest` Zeigt an, dass der Rollback-Vorgang mit minimalen Auswirkungen auf den Host-I/O durchgeführt werden sollte
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere Parameter angeben. Sie müssen jedoch nicht alle Parameter verwenden.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

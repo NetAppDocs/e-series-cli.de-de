@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/set-storagearray-isnsserverrefresh.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, refresh 
+summary: Der Befehl Set storageArray isnsServerRefresh aktualisiert die Netzwerkaddress-Informationen für den iSNS-Server. 
+---
+= ISNS-Serveraktualisierung für Speicher-Array festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray isnsServerRefresh` Mit dem Befehl werden die Netzwerkaddress-Informationen für den iSNS-Server aktualisiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl ist nur für IPv4 gültig.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray isnsServerRefresh
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Wenn der DHCP-Server nicht voll in Betrieb ist oder wenn der DHCP-Server nicht reagiert, kann die Aktualisierung zwei bis drei Minuten dauern.
+
+Der `set storageArray isnsServerRefresh` Befehl gibt einen Fehler aus, wenn Sie die Konfigurationsmethode nicht auf DHCP festgelegt haben. Um die Konfigurationsmethode auf DHCP einzustellen, verwenden Sie das `set storageArray isnsIPV4ConfigurationMethod` Befehl.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

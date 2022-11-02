@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/clear-storagearray-recoverymode.html 
+sidebar: sidebar 
+keywords: clear, storage array, recovery, mode 
+summary: Der Befehl „RecoveryMode löschen“ zwingt ein Storage-Array dazu, den Wiederherstellungsmodus zu beenden. 
+---
+= Löschen Sie den Wiederherstellungsmodus für Speicher-Arrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear storageArray recoveryMode` Durch den Befehl wird ein Speicherarray zum Beenden des Recovery-Modus gezwungen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+clear storageArray recoveryMode
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+[NOTE]
+====
+Der Recovery-Modus wird während des Tagesstart-Betriebs aktiviert, wenn die Systemkonfiguration gelöscht wird und eine gültige Onboard-Sicherung verfügbar ist. Dieser Modus wird entweder durch Wiederherstellen der Systemkonfiguration von einem Backup-Speicherort oder durch Löschen der vorhandenen Backups an Bord beendet. Während der Recovery-Modus in Kraft ist, wird eine besondere Aufmerksamkeit erforderlich, und der Recovery Guru ist über die Benutzeroberfläche verfügbar. Die Systemkonfiguration ist jedoch während des Wiederherstellungsmodus leer.
+
+====
+[NOTE]
+====
+Wenn Sie das Speicher-Array in eine frühere Konfiguration zurückversetzen möchten, müssen Sie die Konfiguration aus dem Backup wiederherstellen, bevor Sie den Wiederherstellungsmodus beenden. Sie müssen Validierungsprüfungen oder technischen Support durchführen, um sicherzustellen, dass die Wiederherstellung erfolgreich war. Nachdem festgestellt wurde, dass die Wiederherstellung erfolgreich war, kann der Wiederherstellungsmodus gelöscht werden.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+7.83

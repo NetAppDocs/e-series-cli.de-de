@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/delete-volume-from-disk-pool.html 
+sidebar: sidebar 
+keywords: delete, volume, command, normal, thin, disk pool, roles, support 
+summary: Mit dem Befehl delete Volume werden entweder normale oder Thin Volumes aus einem Laufwerk-Pool gelöscht. 
+---
+= Löschen des Volumes aus dem Disk-Pool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete volume` Mit dem Befehl werden entweder normale oder Thin Volumes aus einem Laufwerk-Pool gelöscht.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Mit diesem Befehl können Sie auch alle Zeitpläne für das Volume löschen. Wenn Sie den Zeitplan löschen, wird das Volume nicht gelöscht.
+
+====
+*Mögliche Schäden an der Speicher-Array-Konfiguration* -- Alle Daten im Volume gehen verloren, sobald Sie diesen Befehl ausführen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete (allVolumes |
+volume [volumeName] |
+pass:quotes[volumes ["_volumeName1_" ... "_volumeNameN_"]]
+[force=(TRUE | FALSE)]
+[schedule]
+[retainRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Mit diesem Parameter werden alle Volumes in einem Laufwerk-Pool gelöscht.
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines bestimmten Volumes, das gelöscht werden soll. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, die gelöscht werden sollen. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`force`
+ a| 
+Mit diesem Parameter können Sie das sofortige Löschen eines Volumes erzwingen, auch wenn die Controller andere Vorgänge ausführen. Um das Löschen eines Volumes sofort zu erzwingen, setzen Sie diesen Parameter auf `TRUE`. Um zu warten, bis die Controller die Ausführung anderer Vorgänge abgeschlossen haben, verwenden Sie diesen Parameter nicht oder setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`schedule`
+ a| 
+Mit diesem Parameter werden alle Zeitpläne gelöscht, die sich auf ein bestimmtes Laufwerk-Pool-Volume beziehen. Nur der Zeitplan wird gelöscht, das Disk-Pool-Volume bleibt erhalten.
+
+
+
+ a| 
+`retainRepositoryMembers`
+ a| 
+Wenn Sie ein Thin-Volume löschen, wird das zugehörige Repository-Volume standardmäßig gelöscht. Allerdings, wenn der `retainRepositoryMembers` Ist auf festgelegt `TRUE`, Das Repository-Volume bleibt erhalten. Bei normalen Volumes hat dieser Parameter keine Auswirkung.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie das verwenden `allVolumes` Parameter: Dieser Befehl löscht Volumes, bis alle Volumes entfernt wurden oder bis ein Fehler aufgetreten ist. Wenn ein Fehler auftritt, wird mit diesem Befehl nicht versucht, die verbleibenden Volumes zu löschen. Das Löschen von Volumes aus verschiedenen Volume-Gruppen ist möglich. Alle leeren Volume-Gruppen werden gelöscht, wenn Sie das festlegen `removeVolumeGroup` Parameter an `TRUE`.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

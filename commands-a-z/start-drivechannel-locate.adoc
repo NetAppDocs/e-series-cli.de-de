@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/start-drivechannel-locate.html 
+sidebar: sidebar 
+keywords: start, drive, channel, locate 
+summary: Der Befehl Start driveChannel Locate identifiziert die Laufwerksfächer, die mit einem bestimmten Laufwerkskanal verbunden sind, indem die Anzeigeleuchten für das Laufwerksfach eingeschaltet werden, das mit dem Laufwerkskanal verbunden ist. 
+---
+= Starten Sie den Laufwerkskanal suchen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start driveChannel locate` Der Befehl identifiziert die Laufwerksfächer, die mit einem bestimmten Laufwerkskanal verbunden sind, indem die Kontrollleuchten für das Laufwerksfach, das mit dem Laufwerkskanal verbunden ist, eingeschaltet werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Verwenden Sie die `stop driveChannel locate` Befehl zum Ausschalten der Kontrollleuchten auf dem Laufwerksfach
+
+
+
+== Syntax
+
+[listing]
+----
+start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] locate
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`driveChannel`
+ a| 
+Die Identifikationsnummer des zu lokelenden Laufwerkskanals. Gültige Werte für die Identifikationsnummer für den Laufwerkskanal sind `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`. Schließen Sie die ID-Nummer des Laufwerkskanals in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.15 fügt der Laufwerkskanalkennung ein Update hinzu.

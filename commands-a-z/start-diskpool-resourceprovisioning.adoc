@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-diskpool-resourceprovisioning.html 
+sidebar: sidebar 
+keywords: start, disk pool, resource, provision 
+summary: Der Befehl „Start diskPool resourceProvisioning“ ermöglicht die Ressourcenbereitstellung auf einem bestimmten Laufwerk-Pool und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume im Laufwerk-Pool. Für die Ressourcenbereitstellung müssen alle Laufwerke im Festplatten-Pool die NVMe-DULBE-Funktion unterstützen. 
+---
+= Starten Sie Disk Pool Resource Provisioning
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start diskPool resourceProvisioning` Befehl ermöglicht die Ressourcenbereitstellung auf einem bestimmten Laufwerk-Pool und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume im Laufwerk-Pool. Für die Ressourcenbereitstellung müssen alle Laufwerke im Festplatten-Pool die NVMe-DULBE-Funktion unterstützen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+
+
+
+== Kontext
+
+Um die Ressourcenbereitstellung auf einem Laufwerk-Pool zu deaktivieren, verwenden Sie den Befehl Full Provisioning mit der Option zum Deaktivieren der Ressourcenbereitstellung. Ein Laufwerk-Pool wird bei der Erstellung bereitgestellt, wenn alle Laufwerke DELBE-fähig und Speicher-Arrays sind `resourceProvisionedVolumes` Einstellung lautet `true`.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start diskPoolpass:quotes[[_diskPoolName_]] resourceProvisioning
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPoolName`
+ a| 
+Der Laufwerk-Pool, den Sie die Ressourcen-Provisioning-Funktion aktivieren möchten. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+11.73

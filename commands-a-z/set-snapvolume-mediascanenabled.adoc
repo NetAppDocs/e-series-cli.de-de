@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/set-snapvolume-mediascanenabled.html 
+sidebar: sidebar 
+keywords: set, snapshot, volume, media, scan 
+summary: Mit dem Befehl sSet SnapVolume mediaScanEnabled wird ein Medien-Scan auf den Laufwerken ausgeführt, die für ein Snapshot-Volume verwendet wurden. 
+---
+= Legen Sie den Datenträger-Scan für Snapshot-Volumes fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapVolume mediaScanEnabled` Mit dem Befehl wird ein Medien-Scan auf den Laufwerken ausgeführt, die für ein Snapshot-Volume verwendet wurden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Optional können Sie auch eine Redundanzprüfung der Daten durchführen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapVolumeName_"]]
+mediaScanEnabled=(TRUE | FALSE) [redundancyCheckEnabled=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapVolume`
+ a| 
+Der Name des Snapshot-Volumes, für das Sie Eigenschaften festlegen. Schließen Sie die Snapshot-Volume-Kennung in doppelte Anführungszeichen (" ") innerhalb von eckigen Klammern ([ ]).
+
+
+
+ a| 
+`mediaScanEnabled`
+ a| 
+Die Einstellung zum ein- und Ausschalten des Medienscans für die Snapshot-Lautstärke. Um den Medienscan zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Medienscan auszuschalten, setzen Sie diesen Parameter auf `FALSE`. (Wenn die Medienüberprüfung auf Speicherarray-Ebene deaktiviert ist, hat dieser Parameter keine Auswirkung.)
+
+
+
+ a| 
+`redundancyCheckEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten der Redundanzprüfung während eines Medienscans. Um die Redundanzprüfung zu aktivieren, setzen Sie diesen Parameter auf `TRUE` . Um die Redundanzprüfung auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group 
+summary: Mit dem Befehl delete ConsistencyGroup wird eine Snapshot Consistency Group gelöscht. 
+---
+= Löschen der Konsistenzgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete consistencyGroup` Mit dem Befehl wird eine Snapshot Konsistenzgruppe gelöscht.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Dieser Befehl funktioniert auf zwei Arten:
+
+* Sie können sowohl die Konsistenzgruppe als auch die Repository-Volumes löschen, die von der Konsistenzgruppe enthalten sind.
+* Sie können nur die Konsistenzgruppe löschen, und die Repository Volumes, die von der Konsistenzgruppe enthalten sind, bleiben erhalten.
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete consistencyGroup pass:quotes[[_"consistencyGroupName"_]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Snapshot-Konsistenzgruppe, die Sie löschen möchten. Schließen Sie den Namen der Snapshot-Konsistenzgruppe in doppelte Anführungszeichen („ ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Die Einstellung zum Löschen oder Aufbewahren der Repository-Volumes. Um die Repository-Volumes zu löschen, setzen Sie diesen Parameter auf `TRUE`. Um die Repository-Volumes beizubehalten, setzen Sie diesen Parameter auf `FALSE`. Die Standardeinstellung ist `FALSE`.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

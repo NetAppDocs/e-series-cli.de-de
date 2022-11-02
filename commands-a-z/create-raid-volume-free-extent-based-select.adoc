@@ -1,0 +1,253 @@
+---
+permalink: commands-a-z/create-raid-volume-free-extent-based-select.html 
+sidebar: sidebar 
+keywords: create, raid, volume, free, extent, based, select 
+summary: Der Befehl Create Volume erstellt ein Volume im freien Speicherplatz einer Volume-Gruppe. 
+---
+= RAID-Volume erstellen (freie Erweiterungsauswahl)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create volume` Befehl erstellt ein Volume im freien Speicherplatz einer Volume-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create volume volumeGroup=pass:quotes[_"volumeGroupName"_
+userLabel="_volumeName"_]
+[freeCapacityArea=pass:quotes[_freeCapacityIndexNumber_]]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[dataAssurance=(none | enabled)]
+[blockSize=blockSizeValue]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name einer bestimmten Volume-Gruppe in Ihrem Storage-Array. Schließen Sie den Namen der Volume-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie dem neuen Volume geben möchten. Schließen Sie den neuen Volumennamen in doppelte Anführungszeichen (" ").
+
+[NOTE]
+====
+Dieser Parameter ist erforderlich.
+
+====
+
+
+ a| 
+`freeCapacityArea`
+ a| 
+Die Indexnummer des freien Speicherplatzes in einer vorhandenen Volume-Gruppe, die Sie zum Erstellen des neuen Volumes verwenden möchten. Freie Kapazität wird als freie Kapazität zwischen vorhandenen Volumes in einer Volume-Gruppe definiert. Eine Volume-Gruppe kann zum Beispiel die folgenden Bereiche haben: Volume 1, freie Kapazität, Volume 2, freie Kapazität, Volume 3, Freie Kapazität: Um die freie Kapazität nach Band 2 zu verwenden, geben Sie diese Indexnummer ein:
+
+`freeCapacityArea=2`
+
+[NOTE]
+====
+Führen Sie die aus `show volumeGroup` Befehl, um zu bestimmen, ob der freie Speicherplatz vorhanden ist.
+
+====
+[NOTE]
+====
+Wenn dieser Parameter nicht angegeben wird, wird das Volume im Bereich der freien Kapazität mit der niedrigsten Nummer erstellt, in dem die Kapazität für das Volumen ausreichend ist.
+
+====
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe des Volumes, die Sie dem Storage-Array hinzufügen. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der das Volume besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Wenn Sie keinen Eigentümer angeben, bestimmt die Controller-Firmware den Eigentümer.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Die Menge der Daten (in KB), die der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor er Daten auf das nächste Laufwerk schreibt. Gültige Werte sind `8`, `16`, `32`, `64`, `128`, `256`, Oder `512`.
+
+
+
+ a| 
+`usageHint`
+ a| 
+Die Einstellungen für beide `cacheReadPrefetch` Und das `segmentSize` Als Standardwerte einzulegener Parameter. Die Standardwerte basieren auf dem typischen I/O-Nutzungsmuster der Applikation, die das Volume verwendet. Gültige Werte sind `fileSystem`, `dataBase`, Oder `multiMedia`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Die Einstellung, um sicherzustellen, dass die Reservekapazität für zukünftige Segmentgrößen zugewiesen wird. Der Standardwert ist `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Die Einstellung zum Festlegen des Sicherheitsniveaus beim Erstellen der Volume-Gruppen und aller zugehörigen Volumes. Diese Einstellungen sind gültig:
+
+`none` -- die Volume-Gruppe und die Volumen sind nicht sicher.
+
+`capable` -- die Volume-Gruppe und die Volumes sind in der Lage, die Sicherheit einzustellen, aber die Sicherheit wurde nicht aktiviert.
+
+`enabled` -- die Volume-Gruppe und die Volumes haben die Sicherheit aktiviert.
+
+
+
+ a| 
+`mapping`
+ a| 
+Mit diesem Parameter können Sie das Volume einem Host zuordnen. Wenn Sie später zuordnen möchten, setzen Sie diesen Parameter auf `none`. Wenn Sie jetzt zuordnen möchten, setzen Sie diesen Parameter auf `default`. Das Volume ist allen Hosts zugeordnet, die auf den Speicherpool zugreifen können. Der Standardwert ist `none`.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Ein Wert von 0 oder der nicht eingestellte Parameter verwendet die Standardblockgröße.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
+
+Wenn Sie mit dem keine Kapazität angeben `capacity` Parameter, wird die gesamte verfügbare Kapazität im freien Kapazitätsbereich der Volume-Gruppe verwendet. Wenn Sie keine Kapazitätseinheiten angeben, `bytes` Wird als Standardwert verwendet.
+
+
+
+== Segmentgröße
+
+Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
+
+Wenn Sie einen Wert für die Segmentgröße eingeben, wird der Wert anhand der unterstützten Werte geprüft, die der Controller zur Laufzeit zur Verfügung stellt. Wenn der eingegebene Wert ungültig ist, gibt der Controller eine Liste mit gültigen Werten zurück. Wenn Sie ein einzelnes Laufwerk für eine einzelne Anforderung verwenden, können andere Laufwerke gleichzeitig für die Bedienung anderer Anfragen verwendet werden. Befindet sich ein Volume in einer Umgebung, in der ein einzelner Benutzer große Dateneinheiten (wie Multimedia) überträgt, so wird die Performance maximiert, wenn eine einzelne Datentransferanfrage über ein einziges Daten-Stripe bedient wird. (Ein Daten-Stripe ist die Segmentgröße, die mit der Anzahl der Laufwerke in der Volume-Gruppe multipliziert wird, die für den Datentransfer verwendet werden.) In diesem Fall werden mehrere Laufwerke für dieselbe Anfrage genutzt, allerdings wird auf jedes Laufwerk nur einmal zugegriffen.
+
+Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern oder Dateisystemen zu erzielen, legen Sie die Segmentgröße so fest, dass die Anzahl der Laufwerke minimiert wird, die zur Erfüllung einer Datentransferanfrage erforderlich sind.
+
+
+
+== Verwendungshinweis
+
+[NOTE]
+====
+Sie müssen keinen Wert für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter. Wenn Sie keinen Wert eingeben, verwendet die Controller-Firmware das `usageHint` Parameter mit `fileSystem` Als Standardwert. Geben Sie einen Wert für das ein `usageHint` Parameter und ein Wert für das `cacheReadPrefetch` Parameter oder ein Wert für das `segmentSize` Parameter verursacht keinen Fehler. Der Wert, den Sie für das eingeben `cacheReadPrefetch` Parameter oder der `segmentSize` Parameter hat Priorität über den Wert für das `usageHint` Parameter. Die Einstellungen für Segmentgröße und Cache-Lese-Prefetch für verschiedene Nutzungshinweise sind in der folgenden Tabelle aufgeführt:
+
+====
+|===
+| Nutzungshinweis | Segmentgröße einstellen | Dynamische Cache-Einstellungen für das Lesen in der Prefetch-Einstellung 
+
+
+ a| 
+File-System
+ a| 
+128 KB
+ a| 
+Aktiviert
+
+
+
+ a| 
+Datenbank
+ a| 
+128 KB
+ a| 
+Aktiviert
+
+
+
+ a| 
+Multimedia
+ a| 
+256 KB
+ a| 
+Aktiviert
+
+|===
+
+
+== Cache-Lese-Prefetch
+
+Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
+
+
+
+== Sicherheitstyp
+
+Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
+
+Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müssen einen Sicherheitsschlüssel für das Speicher-Array erstellen. Verwenden Sie die `create storageArray securityKey` Befehl zum Erstellen eines Speicherarray-Sicherheitsschlüssels. Diese Befehle beziehen sich auf den Sicherheitsschlüssel:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.10 fügt die hinzu `dssPreAllocate` Parameter.
+
+7.50 fügt die hinzu `securityType` Parameter.
+
+7.75 fügt die hinzu `dataAssurance` Parameter.
+
+11.70 fügt die hinzu `blockSize` Parameter.

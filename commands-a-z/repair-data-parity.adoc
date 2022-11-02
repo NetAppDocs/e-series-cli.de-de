@@ -1,0 +1,117 @@
+---
+permalink: commands-a-z/repair-data-parity.html 
+sidebar: sidebar 
+keywords: repair, data, parity 
+summary: Der Befehl Reparieren Data Parity repariert Datenparitätsfehler. 
+---
+= Datenparität Reparieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Repair Data Parity` Befehl repariert Datenparitätsfehler.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Bevor Sie diesen Befehl verwenden, informieren Sie sich mithilfe des NetApp Supports über die betroffene Firmware, Laufwerke und RAID Stripe.
+
+
+
+== Syntax
+
+[listing]
+----
+repair volume[volumeName] parity
+   [startingLBA=LBAvalue]
+   [endingLBA=LBAvalue]
+   [repairMethods=(repairMethod . . . repairMethod)]
+           Space delimited list where possible repair methods are: reconstruct, unmap, updateP, updateQ, updateData, and writeZeros
+   [repairPI=(TRUE|FALSE)]
+   [suspectDrives=(trayID1,[drawerID1,]slotID1 . . . trayIDn,[drawerIDn,]slotIDn)]
+   [timeout=(0-65535)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des Datenträgers, für das Sie Parität reparieren. Umschließen Sie den Volumennamen in eckigen Klammern ([ ])
+
+
+
+ a| 
+`startingLBA`
+ a| 
+Die erste logische Blockadresse.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+Die letzte logische Blockadresse.
+
+
+
+ a| 
+`repairMethods`
+ a| 
+Die Methode zur Reparatur des Paritätsfehlers. Folgende Methoden stehen zur Verfügung:
+
+* Rekonstruieren: Rekonstruiert Laufwerke, die unter angegeben sind `suspectDrives` Parameter.
+* Unmap: For R5/R6 dulbe Volumes, used to make a R5/R6 RAID Stripe unaufgehoben
+* UpdateP: Wird verwendet, um den Datenparitätsfehler-Typ zu beheben.
+* UpdateQ: Wird verwendet, um die Datenparität nicht übereinstimmenden Typ zu beheben.
+* UpdateData: Wird verwendet, um den Datenparitätsfehler Typ zu beheben.
+* WriteZeros: Für R5/R6-Dumbe-Volumen, verwendet, wenn ein unerwarteter RAID5/6-Stripe mit einer Mischung aus zugeordneten und nicht zugeordneten Daten gefunden wird. Nimmt die nicht zugeordneten Blöcke im Stripe ein und schreibt Nullen darauf und aktualisiert anschließend die Parität
+
+
+
+
+ a| 
+`repairPI`
+ a| 
+Setzen Sie AUF TRUE, um PI in dem Umfang zu reparieren, der bei startingLBA beginnt.
+
+
+
+ a| 
+`suspectDrives`
+ a| 
+Wird zur Angabe der Laufwerke für die Rekonstruktion verwendet.
+
+
+
+ a| 
+`timeout`
+ a| 
+Die Zeitspanne in Minuten, die Sie den Vorgang ausführen möchten.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.63

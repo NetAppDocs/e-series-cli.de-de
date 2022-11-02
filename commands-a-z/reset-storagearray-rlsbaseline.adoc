@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/reset-storagearray-rlsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, rls, baseline 
+summary: 'Mit dem Befehl „Reset storageArray RLSBaseline“ wird die Referenz zum Leselink (RLS) für alle Geräte zurückgesetzt, indem alle RLS-Werte auf 0 gesetzt werden.' 
+---
+= RLS-Basisplan für Speicher-Array zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset storageArray RLSBaseline` Befehl setzt die Referenz für den Status der Leseverbindung (RLS) für alle Geräte zurück, indem alle RLS-Werte auf 0 gesetzt werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+reset storageArray RLSBaseline
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+5.00

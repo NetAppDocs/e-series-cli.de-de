@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/suspend-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: suspend, asynchronous, mirror, group 
+summary: Der Befehl suspendieren async cMirrorGroup unterbricht die Synchronisierung von Daten auf allen gespiegelten Paaren auf der Ebene der asynchronen Spiegelgruppe. 
+---
+= Unterbrechen Sie die asynchrone Spiegelgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `suspend asyncMirrorGroup` Befehl unterbricht die Synchronisation der Daten auf allen gespiegelten Paaren auf der Ebene der asynchronen Spiegelgruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Das `suspend` Durch Befehl können Performance-Beeinträchtigungen der Host-Applikation reduziert werden, die auftreten können, während geänderte Daten des lokalen Storage-Arrays in das Remote Storage Array kopiert werden.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, für die die Synchronisierung der Daten unterbrochen werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der asynchronen Spiegelgruppe in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Hinweise
+
+Wenn sich eine asynchrone Spiegelgruppe in einem ausgehängten Zustand befindet, wird nicht versucht, Daten von den primären Volumes in die sekundären Volumes der gespiegelten Paare zu kopieren. Alle Schreibvorgänge auf der primären Seite der asynchronen Spiegelgruppe werden dauerhaft in ihren verbundenen Spiegelarchiv-Volumes protokolliert. Nachdem die asynchrone Spiegelgruppe wieder aufgenommen wurde, werden nur die geänderten Bereiche der primären Volumes auf die sekundären Volumes geschrieben.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

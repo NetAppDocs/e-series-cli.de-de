@@ -1,0 +1,114 @@
+---
+permalink: commands-a-z/set-snapgroup-enableschedule.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, schedule 
+summary: Mit dem Befehl set snapGroup enableSchedule wird der Zeitplan für die Erstellung von Snapshot-Images für eine Snapshot-Gruppe festgelegt. 
+---
+= Legen Sie den Zeitplan für Snapshot-Gruppen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapGroup enableSchedule` Mit dem Befehl wird der Zeitplan für das Erstellen von Snapshot-Images für eine Snapshot-Gruppe definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+enableSchedule=(TRUE | FALSE)
+schedule (immediate | snapshotSchedule)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, für die Sie Eigenschaften festlegen. Schließen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`enableSchedule`
+ a| 
+Verwenden Sie diesen Parameter, um die Fähigkeit zum Planen eines Snapshot-Vorgangs zu aktivieren oder zu deaktivieren. Um die Snapshot-Planung zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um die Snapshot-Planung zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Der `enableSchedule` Und das `schedule` Mit diesem Parameter können Sie das Erstellen von Snapshot-Images für eine Snapshot-Gruppe planen. Mithilfe dieser Parameter können Sie Snapshots täglich, wöchentlich oder monatlich (nach Tag oder nach Datum) planen. Der `enableSchedule` Der Parameter aktiviert oder deaktiviert die Möglichkeit, Snapshots zu planen. Wenn Sie die Planung aktivieren, verwenden Sie das `schedule` Parameter, der definiert werden soll, wann die Snapshots ausgeführt werden sollen.
+
+In dieser Liste wird erläutert, wie die Optionen für das verwendet werden `schedule` Parameter:
+
+* `immediate` -- Sobald Sie den Befehl eingeben, wird ein Snapshot-Image erstellt und ein Copy-on-Write-Vorgang beginnt.
+* `startDate` -- Ein bestimmtes Datum, an dem Sie ein Snapshot-Image erstellen und einen Copy-on-Write-Vorgang durchführen möchten. Das Format zur Eingabe des Datums ist `MM:DD:YY` . Wenn Sie kein Startdatum angeben, wird das aktuelle Datum verwendet. Ein Beispiel für diese Option ist `startDate=06:27:11`.
+* `scheduleDay` -- Ein Tag der Woche, an dem Sie ein Snapshot-Image erstellen und einen Copy-on-Write-Vorgang durchführen möchten. Sie können die folgenden Werte eingeben: `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `sunday`, und `all`. Ein Beispiel für diese Option ist `scheduleDay=wednesday`.
+* `startTime` -- die Zeit eines Tages, zu dem Sie ein Snapshot-Image erstellen möchten und mit der Durchführung eines Copy-on-Write-Vorgangs beginnen möchten. Das Format zur Eingabe der Zeit ist `HH:MM`, Wo `HH` Ist die Stunde und `MM` Ist die Minute nach der Stunde. Verwenden Sie einen 24-Stunden-Takt. Beispiel: 2:00 am Nachmittag ist 14:00. Ein Beispiel für diese Option ist `*startTime=14:27*`.
+*  `scheduleInterval` -- eine Zeit, in Minuten, die Sie mindestens zwischen Copy-on-Write-Operationen haben möchten. Möglicherweise können Sie einen Zeitplan erstellen, in dem sich überlappende Vorgänge beim Kopieren auf Schreiben aufgrund der Dauer eines Kopiervorgangs ausführen. Mit dieser Option können Sie sicherstellen, dass zwischen Copy-on-Write-Vorgängen Zeit bleibt. Der Maximalwert für das `scheduleInterval` Option ist 1440 Minuten. Ein Beispiel für diese Option ist `*scheduleInterval=180*`.
+* `endDate` -- Ein bestimmtes Datum, an dem Sie das Erstellen eines Snapshot-Images beenden und den Kopiervorgang beim Schreiben beenden möchten. Das Format zur Eingabe des Datums ist `MM:DD:YY`. Ein Beispiel für diese Option ist `*endDate=11:26:11*`.
+* `noEndDate` -- Verwenden Sie diese Option, wenn Sie nicht möchten, dass Ihre geplante Copy-on-Write-Operation beendet wird Wenn Sie später beschließen, die Vorgänge zum Kopieren auf Schreiben zu beenden, müssen Sie das erneut eingeben `set snapGroup` Befehl und geben Sie ein Enddatum an.
+* `timesPerDay` -- die Anzahl der Zeiten, die der Zeitplan an einem Tag laufen soll. Ein Beispiel für diese Option ist `timesPerDay=4`.
+* `timeZone` -- mit diesem Parameter definieren Sie die Zeitzone, in der das Speicher-Array arbeitet. Sie können die Zeitzone auf zwei Arten definieren:
++
+** `GMT±HH:MM` -- der Zeitzonenversatz von GMT. Geben Sie den Offset in Stunden und Minuten ein. Beispielsweise ist GMT-06:00 die zentrale Zeitzone in den USA.
+** `Text string` -- Standard-Zeitzonentext-Strings. Zum Beispiel: "America/Chicago" oder "Australia/Brisbane". Bei Zeitzonentext-Strings wird die Groß-/Kleinschreibung beachtet. Wenn Sie eine falsche Textzeichenfolge eingeben, wird die GMT-Zeit verwendet. Schließen Sie die Textzeichenfolge in doppelte Anführungszeichen ein.
+
+
+
+
+Der Code-String zum Definieren eines Zeitplans ähnelt den folgenden Beispielen:
+
+[listing]
+----
+enableSchedule=true schedule startTime=14:27
+----
+[listing]
+----
+enableSchedule=true schedule scheduleInterval=180
+----
+[listing]
+----
+enableSchedule=true schedule timeZone=GMT-06:00
+----
+[listing]
+----
+enableSchedule=true schedule timeZone="America/Chicago"
+----
+Wenn Sie auch den verwenden `scheduleInterval` Die Option, die Firmware wird zwischen dem ausgewählt `timesPerDay` Option und das `scheduleInterval` Option durch Auswahl des niedrigsten Werts der beiden Optionen. Die Firmware berechnet einen ganzzahligen Wert für das `scheduleInterval` Option durch Aufteilung 1440 durch die `scheduleInterval` Von Ihnen festgelegte Optionswert. Beispiel: 1440/180 = 8. Die Firmware vergleicht dann das `timesPerDay` Integer-Wert mit dem berechneten Wert `scheduleInterval` Ganzzahlwert und verwendet den kleineren Wert.
+
+Um einen Zeitplan zu entfernen, verwenden Sie den `delete volume` Befehl mit dem `schedule` Parameter. Der `delete volume` Befehl mit dem `schedule` Mit dem Parameter wird nur der Zeitplan gelöscht, nicht das Snapshot-Volume.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+7.86 fügt die hinzu `scheduleDate` Option und das `month` Option.

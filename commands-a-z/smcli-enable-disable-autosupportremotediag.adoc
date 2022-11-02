@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/smcli-enable-disable-autosupportremotediag.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, remote, diagnostics, feature, emw, management, domain, level, smcli 
+summary: Mit dem Befehl SMcli Enable AutoSupport Remote Diag deaktivieren wird die Funktion AutoSupport Remote Diagnostics aktiviert bzw. deaktiviert. Mit dieser Funktion kann der technische Support per Fernzugriff Support-Daten anfordern, um Probleme zu diagnostizieren. 
+---
+= Aktivieren oder Deaktivieren der AutoSupport-Ferndiagnosefunktion auf der Ebene der EMW-Verwaltungsdomäne (nur SMcli)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli enable|disable autoSupportRemoteDiag` Mit dem Befehl wird die AutoSupport-Ferndiagnosefunktion ein- oder ausgeschaltet. Mit dieser Funktion kann der technische Support per Fernzugriff Support-Daten anfordern, um Probleme zu diagnostizieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+[NOTE]
+====
+Dieser Befehl wirkt sich auf alle ASUP-fähigen Storage-Arrays in der Managementdomäne aus.
+
+====
+Bevor Sie diese Funktion aktivieren, aktivieren Sie zunächst die AutoSupport-Funktion und dann die AutoSupport OnDemand-Funktion in der Management-Domäne.
+
+Sie müssen die drei Funktionen in dieser Reihenfolge aktivieren.
+
+. *AutoSupport aktivieren*
+. *AutoSupport OnDemand aktivieren*
+. *AutoSupport-Ferndiagnose aktivieren*
+
+
+
+
+== Syntax
+
+[listing]
+----
+SMcli enable|disable autoSupportRemoteDiag
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Verifizierung
+
+Verwenden Sie die `SMcli -autoSupportConfig show` Befehl, um zu sehen, ob Sie die Funktion aktiviert haben. In den ersten drei Zeilen der angezeigten Ausgabe wird der Enable-Status der AutoSupport-Funktion angezeigt, gefolgt von der AutoSupport OnDemand-Funktion, gefolgt vom Status der AutoSupport-Ferndiagnosefunktion:
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management
+station.
+The AutoSupport OnDemand feature is activated on this storage management
+station.
+The AutoSupport Remote Diagnostics feature is activated on this storage
+management station.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.25

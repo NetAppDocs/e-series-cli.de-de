@@ -1,0 +1,239 @@
+---
+permalink: commands-a-z/recover-volume.html 
+sidebar: sidebar 
+keywords: recover, raid, volume 
+summary: Mit dem Befehl „Datenträger wiederherstellen“ wird ein RAID-Volume mit den angegebenen Eigenschaften erstellt, ohne dass eine der Benutzerdatenbereiche auf den Laufwerken initialisiert werden muss. 
+---
+= RAID-Volume wiederherstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recover volume` Befehl erstellt ein RAID-Volume mit den angegebenen Eigenschaften, ohne einen der Benutzerdatenbereiche auf den Laufwerken zu initialisieren.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Parameterwerte werden aus der Datendatei des Wiederherstellungsprofils abgeleitet (`recovery-profile.csv`) Für das Speicher-Array. Sie können das Recovery Volume in einer vorhandenen Volume-Gruppe erstellen oder eine neue Volume-Gruppe mit diesem Befehl erstellen.
+
+[NOTE]
+====
+Sie können diesen Befehl nur über eine Befehlszeile ausführen. Dieser Befehl kann nicht über den GUI-Skripteditor ausgeführt werden. Sie können ein Volume nicht mit der Storage-Management-GUI wiederherstellen.
+
+====
+[NOTE]
+====
+Sie können diesen Befehl nicht für DDP-Volumes (Dynamic Disk Pool) verwenden.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+recover volume (drive=pass:quotes[(_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_])) |
+(drives=pass:quotes[_trayID1_,pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,_]pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_])) |
+volumeGroup=pass:quotes[_volumeGroupName_]))
+[newVolumeGroup=pass:quotes[_volumeGroupName_]]
+userLabel=pass:quotes["_volumeName_" volumeWWN="_volumeWWN_"
+capacity=_volumeCapacity_
+offset=_offsetValue_
+raidLevel=(0 | 1 | 3 | 5 | 6)
+segmentSize=_segmentSizeValue_
+dssPreAllocate=(TRUE | FALSE)
+SSID=_subsystemVolumeID_]
+[owner=(a|b)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+[hostUnmapEnabled=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Die Laufwerke, die Sie der Volume-Gruppe zuweisen möchten, die das Volume enthalten soll, das Sie wiederherstellen möchten. Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name einer vorhandenen Volume-Gruppe, in der Sie das Volume erstellen möchten. (Um die Namen der Volume-Gruppen in Ihrem Speicher-Array zu bestimmen, führen Sie den aus `show storageArray profile` Befehl.)
+
+
+
+ a| 
+`newVolumeGroup`
+ a| 
+Der Name, den Sie einer neuen Volume-Gruppe hinzufügen möchten. Schließen Sie den Namen der neuen Volume-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name des Volumes, das wiederhergestellt werden soll. Das Benutzungsetikett hat zwei Teile:
+
+* Der Name des Volume. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+* Der weltweite Name des Volumes, `volumeWWN`, In Form einer 16-Byte-Kennung, zum Beispiel 60080E500017B4320000000049887D77. Schließen Sie die Kennung in doppelte Anführungszeichen (" ").
+
+
+Sie müssen sowohl den Volumennamen als auch den World Wide Name des Volumes eingeben. Sie müssen zunächst den Namen des Datenträgers eingeben. Beispiel:
+
+[listing]
+----
+userLabel="engdata"
+volumeWWN=60080E500017B4320000000049887D77
+----
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe des Volumes, die Sie dem Storage-Array hinzufügen. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+
+ a| 
+`offset`
+ a| 
+Die Anzahl der Blöcke vom Anfang der Volume-Gruppe zum Anfang des referenzierten Volumes.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Der RAID-Level der Volume-Gruppe, die die Laufwerke enthält. Gültige Werte sind `0`, `1`, `3`, `5`, Oder `6`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Die Menge der Daten (in KB), die der Controller auf ein einzelnes Laufwerk in einer Volume-Gruppe schreibt, bevor er Daten auf das nächste Laufwerk schreibt. Gültige Werte sind `8`, `16`, `32`, `64`, `128`, `256`, Oder `512`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+Einstellung zum ein- oder Ausschalten der Zuweisung von Volume-Speicherkapazität für zukünftige Änderungen der Segmentgröße. Um die Zuweisung zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um die Zuweisung auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`SSID`
+ a| 
+Die Speicher-Array-Subsystem-Kennung eines Volumes. Verwenden Sie die `show volume` Befehl zum Bestimmen der Speicher-Array-Subsystem-ID.
+
+
+
+ a| 
+`owner`
+ a| 
+Der Controller, der das Volume besitzt. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Wenn Sie keinen Eigentümer angeben, bestimmt die Controller-Firmware den Eigentümer.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`hostUnmapEnabled`
+ a| 
+Wenn dieser Parameter auf festgelegt ist `True`, Ein Host darf Befehle zum Aufheben der Zuordnung zum Volume ausgeben. Befehle zur Zuordnung sind nur für Volumes mit Ressource zulässig.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Diese Einstellung ist die Volume-Blockgröße in Byte.
+
+|===
+
+
+== Hinweise
+
+Die Speichermanagement-Software erfasst Wiederherstellungsprofile der überwachten Speicher-Arrays und speichert die Profile auf einer Speicherverwaltungsstation.
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Wenn Sie versuchen, ein Volume mit wiederherzustellen `drive` Parameter oder der `drives` Parameter und die Laufwerke sind nicht zugewiesen. Der Controller erstellt automatisch eine neue Volume-Gruppe. Verwenden Sie die `newVolumeGroup` Parameter zur Angabe eines Namens für die neue Volume-Gruppe.
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
+
+
+
+== Vorauszuweisen von Storage-Kapazität
+
+Der `dssPreAllocate` Mit diesem Parameter können Sie in einem Volume Kapazität zum Speichern von Informationen zuweisen, die zur Neuerstellung eines Volumes verwendet werden. Wenn Sie die einstellen `dssPreallocate` Parameter an `TRUE`, Die Zuweisungslogik für Speicherplatz in der Controller-Firmware weist den Speicherplatz in einem Volume vorab zu, damit sich zukünftige Änderungen der Segmentgröße ergeben. Der vorzugewiesene Speicherplatz ist die maximal zulässige Segmentgröße. Der `dssPreAllocate` Parameter ist erforderlich, um eine ordnungsgemäße Wiederherstellung von Volume-Konfigurationen zu ermöglichen, die nicht aus der Controller-Datenbank abgerufen werden können. Um die Vorzuweisungsfunktion auszuschalten, setzen Sie `dssPreAllocate` Bis `FALSE`.
+
+
+
+== Segmentgröße
+
+Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
+
+Wenn Sie einen Wert für die Segmentgröße eingeben, wird der Wert anhand der unterstützten Werte geprüft, die der Controller zur Laufzeit zur Verfügung stellt. Wenn der eingegebene Wert ungültig ist, gibt der Controller eine Liste mit gültigen Werten zurück. Wenn Sie ein einzelnes Laufwerk für eine einzelne Anforderung verwenden, können andere Laufwerke gleichzeitig für die Bedienung anderer Anfragen verwendet werden.
+
+Befindet sich ein Volume in einer Umgebung, in der ein einzelner Benutzer große Dateneinheiten (wie Multimedia) überträgt, so wird die Performance maximiert, wenn eine einzelne Datentransferanfrage über ein einziges Daten-Stripe bedient wird. (Ein Daten-Stripe ist die Segmentgröße, die mit der Anzahl der Laufwerke in der Volume-Gruppe multipliziert wird, die für den Datentransfer verwendet werden.) In diesem Fall werden mehrere Laufwerke für dieselbe Anfrage genutzt, allerdings wird auf jedes Laufwerk nur einmal zugegriffen.
+
+Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern oder Dateisystemen zu erzielen, legen Sie die Segmentgröße so fest, dass die Anzahl der Laufwerke minimiert wird, die zur Erfüllung einer Datentransferanfrage erforderlich sind.
+
+
+
+== Cache-Lese-Prefetch
+
+Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host angefordert werden, von der Festplatte in den Cache. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Die Konfigurationseinstellungen für das Storage Array, das Sie verwenden, bestimmen die Anzahl der zusätzlichen Datenblöcke, die der Controller in den Cache liest. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`.
+
+
+
+== Minimale Firmware-Stufe
+
+5.43
+
+7.10 fügt RAID-6-Level-Fähigkeit und die hinzu `newVolumeGroup` Parameter.
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben.
+
+7.75 fügt die hinzu `dataAssurance` Parameter.
+
+8.78 fügt die hinzu `hostUnmapEnabled` Parameter.
+
+11.70.1 fügt die hinzu `blockSize` Parameter.

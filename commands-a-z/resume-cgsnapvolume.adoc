@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/resume-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: resume, consistency, group, snapshot, volume 
+summary: Mit dem Befehl cgSnapVolume fortsetzen wird ein Copy-on-Write-Vorgang neu gestartet, um ein Snapshot-Volumen von Konsistenzgruppen zu erstellen, das Sie mit dem Befehl stop cgSnapVolume angehalten haben. 
+---
+= Setzen Sie das Snapshot-Volumen der Konsistenzgruppe fort
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `resume cgSnapVolume` Mit dem Befehl wird ein Copy-on-Write-Vorgang neu gestartet, um ein Snapshot-Volume der Konsistenzgruppe zu erstellen, das Sie mit dem angehalten haben `stop cgSnapVolume` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+resume cgSnapVolume pass:quotes[[_"snapVolumeName"_]]
+cgSnapImage=pass:quotes[_"snapImageName"_]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Der Name des Snapshot-Volumes der Konsistenzgruppe, das Sie fortsetzen möchten. Schließen Sie den Namen des Snapshot-Volumes der Konsistenzgruppe in doppelte Anführungszeichen („ ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Der Name des Snapshot-Images in einer Konsistenzgruppe, die Sie neu starten. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Konsistenzgruppe
+* Eine Kennung für das Snapshot-Image in der Konsistenzgruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Eine Ganzzahl, die die Sequenznummer des Snapshots in der Konsistenzgruppe ist.
+* `NEWEST` - Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Konsistenzgruppe erstellt wurde.
+* `OLDEST` - Verwenden Sie diese Option, wenn Sie das früheste Snapshot Image anzeigen möchten, das in der Konsistenzgruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Konsistenzgruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise einen Vorgang zum Kopieren auf Schreiben für Snapshot Image 12345 neu starten möchten, der sich in Snapshot Konsistenzgruppe Snapgroup1 in einem Snapshot Volume der Konsistenzgruppe mit dem Namen SnapVol1 befindet, würden Sie folgenden Befehl verwenden:
+
+[listing]
+----
+resume cgSnapVolume ["snapVol1"] cgSnapImage=["snapgroup1:12345"]
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

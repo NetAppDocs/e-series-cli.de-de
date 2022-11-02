@@ -1,0 +1,202 @@
+---
+permalink: commands-a-z/set-thin-volume-attributes.html 
+sidebar: sidebar 
+keywords: set, thin, volume, attributes 
+summary: Der Befehl Set Volume definiert die Eigenschaften für ein Thin Volume. 
+---
+= Legen Sie Attribute für Thin Volumes fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set volume` Mit dem Befehl werden die Eigenschaften für ein Thin-Volume definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Mit den Parametern können Sie Eigenschaften für ein oder mehrere Thin Volumes definieren.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set (volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
+[newCapacity=pass:quotes[_capacityValue_]]
+[repositoryMaxCapacity=pass:quotes[_capacityValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[addRepositoryCapacity=capacity-spec][hostReportingPolicy=(standard | thin)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des Volumes, für das Sie Eigenschaften definieren möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen oder Ziffern hat, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`volume`
+ a| 
+Der World Wide Identifier (WWID) des Volumens, für das Sie Eigenschaften definieren möchten. Schließen Sie die WWID in doppelte Anführungszeichen (" ") innerhalb der Winkel Klammern (< >).
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, für die Sie Eigenschaften definieren möchten. Alle Volumes haben die gleichen Eigenschaften. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`newCapacity`
+ a| 
+Mit diesem Parameter wird die virtuelle Kapazität des Thin-Volumes erhöht. Die virtuelle Kapazität ist der Wert, den das Volume einem Host meldet, der dem Volume zugeordnet ist. Werte, die kleiner oder gleich der vorhandenen Kapazität sind, verursachen einen Fehler. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+Die minimale virtuelle Kapazität beträgt 32 MB.
+
+Die maximale virtuelle Kapazität beträgt 63 TB.
+
+
+
+ a| 
+`repositoryMaxCapacity*`
+ a| 
+Mit diesem Parameter wird die maximale Kapazität des Repository-Volume festgelegt. Der Wert darf nicht kleiner sein als die physische Kapazität des Repository-Volumes. Wenn der neue Wert die Kapazität auf ein Niveau unterhalb des Warnungsschwellenwerts verringert, gibt der Befehl eine Fehlermeldung aus.
+
+[NOTE]
+====
+Der Befehl `repositoryMaxCapacity` Funktioniert mit `repositoryExpansionPolicy=automatic`.
+
+====
+
+
+ a| 
+`repositoryExpansionPolic*`
+ a| 
+Mit diesem Parameter wird die Erweiterungsrichtlinie auf festgelegt `automatic` Oder `manual`.Wenn Sie die Richtlinie aus ändern `automatic` Bis `manual`, Der maximale Kapazitätswert (Quota) ändert sich an die physische Kapazität des Repository Volumes.
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Der Prozentsatz der Thin-Volume-Kapazität, bei der Sie eine Warnung erhalten, dass das Thin-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent.
+
+Gültige Werte liegen zwischen 1 und 100.
+
+Wenn Sie diesen Parameter auf 100 setzen, werden Warnmeldungen deaktiviert.
+
+
+
+ a| 
+`addRepositoryCapacity`
+ a| 
+Dieser Parameter weist die Kapazität aus dem freien Umfang des Laufwerk-Pools zu. Wenn nicht genügend Speicherplatz verfügbar ist, schlägt der Befehl fehl.
+
+[NOTE]
+====
+Der Befehl `addRepositoryCapacity` Funktioniert mit `repositoryExpansionPolicy=manual`.
+
+====
+
+
+ a| 
+`*hostReportingPolicy*`
+ a| 
+Dieser Parameter ändert die Art und Weise, wie das Thin-Volume dem Host gemeldet wird. Gültige Werte sind `standard` Oder `thin`.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
+
+In der folgenden Tabelle werden die Kapazitätsgrenzen für ein Thin Volume aufgeführt.
+
+[cols="2*"]
+|===
+| Art der Kapazität | Größe 
+
+
+ a| 
+Minimale virtuelle Kapazität
+ a| 
+32 MB
+
+
+
+ a| 
+Maximale virtuelle Kapazität
+ a| 
+63 TB
+
+
+
+ a| 
+Minimale physische Kapazität
+ a| 
+4 GB
+
+
+
+ a| 
+Maximale physische Kapazität
+ a| 
+64 TB
+
+|===
+Thin Volumes unterstützen alle Operationen der Standard-Volumes mit folgenden Ausnahmen:
+
+* Sie können die Segmentgröße eines Thin-Volumes nicht ändern.
+* Sie können die vorlesende Redundanzprüfung für ein Thin Volume nicht aktivieren.
+* Sie können kein Thin Volume als Zielvolume in einer Volume-Kopie verwenden.
+* Bei einem synchronen Spiegeln kann kein Thin Volume verwendet werden.
+
+
+Wenn Sie ein Thin Volume zu einem Standard-Volume ändern möchten, erstellen Sie mithilfe des Vorgangs Volume Copy eine Kopie des Thin Volume. Das Ziel einer Volume-Kopie ist immer ein Standard-Volume.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

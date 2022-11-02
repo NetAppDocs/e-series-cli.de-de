@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/set-storagearray-resourceprovisionedvolumes.html 
+sidebar: sidebar 
+keywords: set, storage, array, resource, provisioned, volumes 
+summary: Mit dem Befehl Set storageArray resourceProvisionedVolumes wird die DULBE-Funktion deaktiviert. 
+---
+= Legen Sie Volumes Fest, Die Mit Storage Array-Ressourcen Bereitgestellt Werden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray resourceProvisionedVolumes` Durch den Befehl wird die DULBE-Funktion deaktiviert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+
+
+
+== Kontext
+
+Die Ressourcenbereitstellung ist eine verfügbare Funktion, mit der große Volumes schnell initialisiert werden können.
+
+Ein bereitgestellter Ressourcen-Volume ist ein Thick Volume in einer SSD-Volume-Gruppe oder einem Pool, wobei bei der Erstellung des Volume die Laufwerkskapazität (dem Volume zugewiesen) zugewiesen wird, die Laufwerksblöcke jedoch deaktiviert (nicht zugewiesen). Bei einem Volume, das für die Ressource bereitgestellt wird, gibt es keine zeitgebundene Hintergrundinitialisierung. Stattdessen wird jeder RAID-Stripe nach dem ersten Schreibvorgang auf einen Volume-Block im Stripe initialisiert
+
+Über Ressourcen bereitgestellte Volumes werden nur auf SSD-Volume-Gruppen und -Pools unterstützt, wobei alle Laufwerke in der Gruppe oder dem Pool die nicht zugewiesene oder nicht geschriebene DULBE-Fehlerwiederherstellungsfunktion (Logical Block Error Enable) unterstützen. Bei der Erstellung eines über die Ressource bereitgestellten Volumes werden alle dem Volume zugewiesenen Festplattenblöcke wieder zugewiesen (Zuordnung). Die Deallokung von Blöcken kann die SSD-Abnutzung verbessern und die maximale Schreib-Performance erhöhen. Die Verbesserung variiert je nach Modell und Kapazität der Laufwerke.
+
+
+
+== Syntax
+
+[listing]
+----
+set storageArray resourceProvisionedVolumes=(enable|disable)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`resourceProvisionedVolumes`
+ a| 
+Die Einstellung zur Angabe, ob Ressourcen-Provisioning-Funktionen aktiviert sind. Um die Ressourcenbereitstellung zu deaktivieren, setzen Sie diesen Parameter auf `disable`. Der Standardwert ist `enable`.
+
+[NOTE]
+====
+Eine Änderung dieses Wertes gilt nur für Volume-Gruppen und Pools, die zukünftig erstellt werden. Der Wert vorhandener Volume-Gruppen und -Pools wird nicht geändert.
+
+====
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.63

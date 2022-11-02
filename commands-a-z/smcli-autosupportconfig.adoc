@@ -1,0 +1,177 @@
+---
+permalink: commands-a-z/smcli-autosupportconfig.html 
+sidebar: sidebar 
+keywords: specify, autosupport, delivery, method 
+summary: Mit dem Befehl SMcli -autoSupportConfig wird die Bereitstellungsmethode für das Senden von AutoSupport-Meldungen eingerichtet. 
+---
+= Geben Sie die AutoSupport-Bereitstellungsmethode an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli -autoSupportConfig` Mit dem Befehl wird die Bereitstellungsmethode für das Senden von AutoSupport Meldungen eingerichtet.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+Sie können zwei Hauptarten von Bereitstellungsmethoden für das Senden von AutoSupport-Meldungen erstellen:
+
+* SMTP -- Verwenden Sie diese Methode, wenn Sie E-Mail als Bereitstellungsmethode für das Senden von AutoSupport-Nachrichten verwenden möchten.
+* HTTP/HTTPS: Verwenden Sie diese Methode, wenn Sie AutoSupport-Meldungen mit den HTTP- oder HTTPS-Protokollen senden möchten. Sie müssen HTTPS verwenden, wenn Sie AutoSupport OnDemand oder AutoSupport Remote Diagnostics verwenden möchten.
+
+
+
+
+== Syntax für SMTP-Bereitstellungsmethode
+
+[listing]
+----
+SMcli -autoSupportConfig deliveryMethod=SMTP
+mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>
+----
+
+
+== Parameter für die SMTP-Bereitstellungsmethode
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Ermöglicht die Angabe der Bereitstellungsmethode der AutoSupport-Meldungen. Gültige Auswahl ist SMTP. Im nächsten Abschnitt dieses Themas finden Sie Informationen über die Verwendung von HTTP oder HTTPS, die ebenfalls gültig sind.
+
+
+
+ a| 
+`mailRelayServer`
+ a| 
+Ermöglicht die Angabe des Mail-Relay-Servers für die AutoSupport-Meldungen.
+
+
+
+ a| 
+`senderMail`
+ a| 
+Ermöglicht die Angabe der Absender-E-Mail-Adresse für die AutoSupport-Nachrichten.
+
+|===
+
+
+== Syntax für HTTP/HTTPS-Bereitstellungsmethoden
+
+[listing]
+----
+SMcli -autoSupportConfig deliveryMethod={HTTP|HTTPS}
+ {direct|proxyConfigScript=<proxyConfigScript>| proxyServer
+hostAddress:<address>portNumber=<portNumber> [userName=<userName>password=<password>]}
+----
+
+
+== Parameter für die HTTP/HTTPS-Bereitstellungsmethoden
+
+In der folgenden Tabelle sind die Parameter für die HTTP/HTTPS-Bereitstellungsmethoden aufgeführt.
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Ermöglicht die Angabe der Bereitstellungsmethode der AutoSupport-Meldungen. Gültige Optionen sind HTTPS und HTTP (siehe vorheriger Abschnitt zur Verwendung von SMTP, was ebenfalls gültig ist).
+
+
+
+ a| 
+`direct`
+ a| 
+Sie können über die HTTPS- oder HTTP-Protokolle eine direkte Verbindung zu den technischen Zielunterstützungssystemen herstellen.
+
+
+
+ a| 
+`proxyConfigScript`
+ a| 
+Ermöglicht die Angabe des Speicherorts einer PAC-Skriptdatei (Proxy Auto-Configuration).
+
+
+
+ a| 
+`proxyServer`
+ a| 
+Ermöglicht die Angabe der HTTP(s) Proxy-Server-Details, die für die Verbindung mit dem technischen Zielunterstützungssystem erforderlich sind.
+
+
+
+ a| 
+`hostAddress`
+ a| 
+Die Host-IP-Adresse des Proxyservers.
+
+
+
+ a| 
+`portNumber`
+ a| 
+Die Portnummer des Proxyservers. Dieser Parameter ist erforderlich, wenn der proxyserver-Parameter verwendet wird.
+
+
+
+ a| 
+`userName`
+ a| 
+Der Benutzername. Dieser Parameter ist erforderlich.
+
+
+
+ a| 
+`password`
+ a| 
+Das Authentifizierungspasswort. Dieser Parameter ist erforderlich.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.25
+
+
+
+== Beispiele
+
+[listing]
+----
+SMcli –autoSupportConfig deliveryMethod=SMTP
+mailRelayServer:server.eng.netapp.com
+senderEmail:user@netapp.com
+----
+[listing]
+----
+SMcli -autoSupportConfig deliveryMethod=HTTPS
+proxyServer hostAddress:10.117.12.112 portNumber=8080
+userName=user password=0987654321
+----
+
+
+== Verifizierung
+
+Senden Sie mit dem eine Testmeldung `SMcli -autoSupportConfig test` Befehl, um zu überprüfen, ob Ihre Bereitstellungsmethoden korrekt eingerichtet sind.

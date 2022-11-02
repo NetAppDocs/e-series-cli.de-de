@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/start-storagearray-controllerhealthimage-controller.html 
+sidebar: sidebar 
+keywords: start, storage, array, controller, health, image 
+summary: Der Befehl „Storage Array ControllerHealthImage Controller starten“ erstellt ein Storage-Array Controller-Zustandsabbild auf Storage Arrays, die das Controller-Zustandsabbild unterstützen. 
+---
+= Starten des Storage-Array-Controller-Integritätsabbilds
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start storageArray controllerHealthImage controller` Befehl erstellt auf Storage Arrays ein Storage-Array-Controller-Zustandsabbild, das die Funktion des Controller-Zustandsabbilds unterstützt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 8.20 der `coreDump` Parameter wird durch das ersetzt `controllerHealthImage` Parameter.
+
+====
+[NOTE]
+====
+Verwenden Sie diesen Befehl nur unter Anleitung des technischen Supports.
+
+====
+Wenn das Storage-Array die Funktion für das Integritätsabbild des Controllers nicht unterstützt, gibt der Befehl einen Fehler aus.
+
+
+
+== Syntax
+
+[listing]
+----
+start storageArray controllerHealthImage controller [(a|b)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Dieser Parameter gibt den Controller an, von dem das Systemzustandabbild des Controllers erstellt werden soll. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+|===
+
+
+== Hinweise
+
+Dieser Befehl erzwingt den ausgewählten Controller, seinen Core-Daten in den Cache zu werfen. Verwenden Sie die `save storageArray controllerHealthImage` Befehl zum Speichern einer Kopie der Cache-Daten in einer Host-Datei.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.20 ersetzt die `coreDump` Parameter mit `controllerHealthImage` Parameter.

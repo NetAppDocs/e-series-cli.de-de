@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, group, synchronization, progress 
+summary: Der Befehl show async cMirrorGroup SynchronisationProgress zeigt den Fortschritt der periodischen Synchronisierung der asynchronen Spiegelgruppe zwischen dem lokalen und dem Remote-Speicher-Array an. 
+---
+= Fortschritt der Synchronisierung der asynchronen Spiegelgruppe anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show asyncMirrorGroup synchronizationProgress` Der Befehl zeigt den Status der Synchronisierung der asynchronen Spiegelgruppe zwischen dem lokalen und dem Remote-Speicher-Array an.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Dieser Befehl gibt den Fortschritt der Datensynchronisierung für alle gespiegelten Paare innerhalb der asynchronen Spiegelgruppe zurück. Dieser Befehl zeigt den Fortschritt als Prozentsatz der abgeschlossenen Datensynchronisierung an.
+
+[NOTE]
+====
+Es gibt zwei Arten der Synchronisierung: Die erste Synchronisierung und die periodische Synchronisierung. Der anfängliche Synchronisierungsfortschritt für die asynchrone Spiegelgruppe wird im Dialogfeld *long running Operations* und durch Ausführen des angezeigt `show storageArray longRunningOperations` Befehl.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+[synchronizationProgress]
+[summary]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name einer asynchronen Spiegelgruppe, für die die Synchronisierung der asynchronen Spiegelgruppe zwischen dem lokalen und dem Remote-Speicher-Array angezeigt werden soll. Schließen Sie den Namen der asynchronen Spiegelgruppe in eckige Klammern ([ ]). Wenn der Name der asynchronen Spiegelgruppe Sonderzeichen oder Ziffern hat, müssen Sie den Namen der asynchronen Spiegelgruppe in doppelten Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`synchronizationProgress`
+ a| 
+Dieser Parameter zeigt den periodischen Synchronisierungsfortschritt der asynchronen Spiegelgruppe an.
+
+
+
+ a| 
+`summary`
+ a| 
+Mit diesem Parameter wird eine kurze Liste von Informationen zur Synchronisierung der asynchronen Spiegelgruppe zwischen dem lokalen und dem Remote-Speicher-Array angezeigt.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

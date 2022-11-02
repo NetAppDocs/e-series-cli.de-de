@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/set-snapgroup-mediascanenabled.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, media, scan 
+summary: Mit dem Befehl sSet snapGroup mediaScanEnabled wird ein Medien-Scan auf einer Snapshot-Gruppe ausgeführt. 
+---
+= Legen Sie den Medienscan für Snapshot-Gruppen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snapGroup mediaScanEnabled` Mit dem Befehl wird ein Medienscan auf einer Snapshot-Gruppe ausgeführt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+mediaScanEnabled=(TRUE | FALSE)
+redundancyCheckEnabled=(TRUE | FALSE)
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapGroup`
+ a| 
+Der Name der Snapshot-Gruppe, auf der Sie einen Medienscan ausführen möchten. Schließen Sie den Namen der Snapshot-Gruppe in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`mediaScanEnabled`
+ a| 
+Die Einstellung zum ein- und Ausschalten des Medienscans für die Lautstärke. Um den Medienscan zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den Medienscan auszuschalten, setzen Sie diesen Parameter auf `FALSE`. (Wenn die Medienüberprüfung auf Speicherarray-Ebene deaktiviert ist, hat dieser Parameter keine Auswirkung.)
+
+
+
+ a| 
+`redundancyCheckEnabled`
+ a| 
+Die Einstellung zum ein- oder Ausschalten der Redundanzprüfung während eines Medienscans. Um die Redundanzprüfung zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um die Redundanzprüfung auszuschalten, setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

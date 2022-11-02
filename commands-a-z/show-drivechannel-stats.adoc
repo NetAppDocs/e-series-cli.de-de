@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/show-drivechannel-stats.html 
+sidebar: sidebar 
+keywords: show, drive channel, statistics 
+summary: Der Befehl show driveChannel stats zeigt die kumulative Datenübertragung für den Laufwerkskanal und Fehlerinformationen an. 
+---
+= Zeigen Sie die Drive-Channel-Statistiken an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show driveChannel stats` Der Befehl zeigt die kumulative Datenübertragung für den Laufwerkskanal und Fehlerinformationen an.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Wenn der Controller einen Laufwerkskanal automatisch beeinträchtigt hat, wird mit diesem Befehl auch die Intervallstatistiken angezeigt. Wenn Sie diesen Befehl verwenden, können Sie Informationen zu einem bestimmten Laufwerkskanal, mehreren Laufwerkskanälen oder allen Laufwerkskanälen anzeigen.
+
+
+
+== Syntax
+
+[listing]
+----
+show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
+   driveChannels [1 2 3 4 5 6 7 8] |
+   allDriveChannels) stats
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`driveChannel`
+ a| 
+Die Identifikationsnummer des Laufwerkskanals, für den Informationen angezeigt werden sollen. Gültige Werte für den Laufwerkskanal sind `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`. Schließen Sie den Laufwerkskanal in eckige Klammern ([ ]).
+
+Verwenden Sie diesen Parameter, wenn Sie die Statistiken nur für einen Laufwerkskanal anzeigen möchten.
+
+
+
+ a| 
+`driveChannels`
+ a| 
+Die Identifikationsnummern mehrerer Laufwerkskanäle, für die Informationen angezeigt werden sollen. Gültige Werte für den Laufwerkskanal sind `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`. Schließen Sie die Laufwerkskanäle in eckigen Klammern ([ ]) mit dem durch Leerzeichen getrennten Laufwerkskanalwert.
+
+Verwenden Sie diesen Parameter, wenn Sie die Statistiken für mehr als einen Laufwerkskanal anzeigen möchten.
+
+
+
+ a| 
+`allDriveChannels`
+ a| 
+Die Kennung, die alle Laufwerkskanäle auswählt.
+
+|===
+
+
+== Hinweise
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.15 fügt der Laufwerkskanalkennung ein Update hinzu.

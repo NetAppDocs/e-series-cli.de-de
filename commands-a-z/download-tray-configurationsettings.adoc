@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/download-tray-configurationsettings.html 
+sidebar: sidebar 
+keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
+summary: Mit dem Befehl zum Herunterladen von Tray ConfigurationSettings werden die werkseitigen Standardeinstellungen auf alle Laufwerksfächer in einem Speicher-Array oder in ein bestimmtes Laufwerksfach in einem Speicher-Array heruntergeladen. 
+---
+= Laden Sie die Einstellungen für die Fachkonfiguration herunter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download tray configurationSettings` Mit Befehl werden die Werkseinstellungen auf alle Laufwerksfächer in einem Speicher-Array oder in ein bestimmtes Laufwerksfach in einem Speicher-Array heruntergeladen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (allTrays | tray [_trayID_]] configurationSettings
+pass:quotes[file="_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allTrays`
+ a| 
+Dieser Parameter lädt neue Firmware auf alle Fächer im Speicher-Array herunter.
+
+
+
+ a| 
+`tray`
+ a| 
+Das Laufwerksfach, in dem die ESM-Karte enthalten ist, auf die Sie neue Firmware laden möchten. Die Werte für Fach-ID sind `0` Bis `99`. Legen Sie den Wert für die Fach-ID in eckige Klammern ([ ]) ein.
+
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname der Datei, die das Firmware-Image enthält. Schließen Sie den Dateipfad und den Dateinamen des Firmware-Images in doppelte Anführungszeichen („ “). Beispiel:
+
+`file="C:\Program Files\CLI\dnld\trayset.dlp"`
+
+Gültige Dateinamen haben ein `.dlp` Erweiterung.
+
+|===
+
+
+== Hinweise
+
+Der `tray` Parameter lädt die werkseitigen Standardeinstellungen in ein bestimmtes Laufwerksfach Wenn Sie die werkseitigen Standardeinstellungen auf mehr als ein Laufwerksfach herunterladen müssen, jedoch nicht auf alle Laufwerksfächer, müssen Sie diesen Befehl für jedes Laufwerksfach eingeben
+
+
+
+== Minimale Firmware-Stufe
+
+7.75

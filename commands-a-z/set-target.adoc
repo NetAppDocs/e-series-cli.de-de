@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/set-target.html 
+sidebar: sidebar 
+keywords: set, target, properties 
+summary: Der Befehl set target ändert die Eigenschaften für ein iSCSI/iSER-Ziel, einschließlich Authentifizierungsmethode und Alias-Name. 
+---
+= Legen Sie die Zieleigenschaften fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set target` Durch den Befehl werden die Eigenschaften für ein iSCSI/iSER-Ziel geändert, einschließlich Authentifizierungsmethode und Alias-Name.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit diesem Befehl wird die veraltete Version ersetzt xref:set-isertarget.adoc[ISER-Ziel festlegen] Und xref:set-iscsitarget.adoc[Legen Sie die iSCSI-Zieleigenschaften fest] Befehle.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+
+set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod=(none | chap chapSecret="newSecurityKey") | targetAlias="newAliasName")
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`target`
+ a| 
+Ermöglicht die Angabe, welches Ziel Sie festlegen möchten. Sie können entweder den Alias-Namen des Ziels oder den qualifizierten Namen (z. B. iqn) angeben. Setzen Sie die Zielkennung in doppelte Anführungszeichen (" "). Sie müssen die Kennung auch in eckigen Klammern ([ ]) umschließen, wenn es sich um einen Alias oder Winkel Klammern ( ) handelt, wenn es sich um einen qualifizierten Namen handelt.
+
+
+
+ a| 
+`authenticationMethod`
+ a| 
+Ermöglicht das Festlegen der Authentifizierungsmittel für Ihre Sitzung. Gültige Auswahlmöglichkeiten: `none` Oder `chap`.
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Ermöglicht die Eingabe des Sicherheitsschlüssels zur Authentifizierung einer Peer-Verbindung. Dies gilt nur, wenn `authenticationMethod` Ist auf festgelegt `chap`.
+
+
+
+ a| 
+`targetAlias`
+ a| 
+Ermöglicht die Angabe des neuen Aliasnamens für das Ziel. Schließen Sie den Namen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.41

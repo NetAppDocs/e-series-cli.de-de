@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-sasphybaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, sas, phy, baseline 
+summary: 'Mit dem Befehl storageArray SASPHYBaseline zurücksetzen wird die SAS Physical Layer (SAS PHY) Baseline für alle Geräte zurückgesetzt und die Fehlerliste wird aus der .csv-Datei entfernt.' 
+---
+= Zurücksetzen des Speicher-Array-SAS-PHY-Basisplans
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset storageArray SASPHYBaseline` Mit dem Befehl wird die Basislinie der SAS-physikalischen Schicht (SAS PHY) für alle Geräte zurückgesetzt und die Fehlerliste wird aus dem entfernt `.csv` Datei:
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Der `.csv` Die Datei wird erzeugt, wenn Sie den ausführen `save storageArray SASPHYCounts` Befehl.
+
+[NOTE]
+====
+Der vorherigen Version des `reset storageArray SASPHYBaseline` Befehl gelöscht Fehleranzahl für alle Geräte außer den Laufwerken. Der `reset storageArray SASPHYBaseline` Mit dem Befehl werden jetzt die SAS-PHY-Basis für die Laufwerke sowie die anderen Geräte zurückgesetzt. Alle Fehler werden aus dem gelöscht `.csv` Datei:
+
+====
+
+
+== Syntax
+
+[listing]
+----
+reset storageArray SASPHYBaseline
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.83 setzt die SAS-PHY-Basislinie für Laufwerke zurück.

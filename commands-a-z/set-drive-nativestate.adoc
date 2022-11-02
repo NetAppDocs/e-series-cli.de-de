@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/set-drive-nativestate.html 
+sidebar: sidebar 
+keywords: set, foreign, drive, native 
+summary: 'Mit dem Befehl set Drive NativeState werden die fehlenden (ausländischen) Laufwerke wieder in ihre ursprüngliche Volume-Gruppe aufgenommen und in die Volume-Gruppe im neuen Storage Array integriert.' 
+---
+= Fremdlaufwerk auf nativ einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set drive nativeState` Durch den Befehl werden die fehlenden (ausländischen) Laufwerke wieder in ihre ursprüngliche Volume-Gruppe hinzugefügt und sie in die Volume-Gruppe im neuen Storage Array integriert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Ein Laufwerk gilt als nativ, wenn es Teil einer Volume-Gruppe in einem Storage-Array ist. Ein Laufwerk gilt als fremd, wenn es nicht zu einer Volume-Gruppe in einem Speicher-Array gehört oder nicht mit den Laufwerken einer Volume-Gruppe importiert wird, die in ein neues Speicher-Array übertragen werden. Bei letzterem Fehler wird eine unvollständige Volume-Gruppe auf dem neuen Speicher-Array erstellt.
+
+Verwenden Sie diesen Vorgang nur für die Notfallwiederherstellung: Wenn ein oder mehrere Laufwerke aus dem Status eines Fremdlaufwerks geändert werden müssen und in den Status eines nativen Laufwerks innerhalb der ursprünglichen Volume-Gruppe zurückgeführt werden müssen.
+
+[NOTE]
+====
+*Mögliche Datenkorruption oder Datenverlust* -- mit diesem Befehl aus anderen als dem zuvor genannten Gründen kann es zu Datenverlust ohne Benachrichtigung.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set (drive=pass:quotes[(_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_)] | drives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)] |
+allDrives) nativeState
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`drive` Oder `drives`
+ a| 
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit den Controllern E2800, E5700, EF600 und EF300 kompatibel und verfügen über Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`allDrives`
+ a| 
+Die Einstellung, um alle Laufwerke auszuwählen.
+
+|===
+
+
+== Hinweise
+
+Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10
+
+7.60 fügt die hinzu `drawerID` Benutzereingaben.

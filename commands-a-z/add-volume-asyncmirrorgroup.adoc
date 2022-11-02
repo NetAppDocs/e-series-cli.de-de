@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/add-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: add volume, asynchronous, mirror group, supported arrays, roles, context, syntax, parameter, minimum firmware level 
+summary: Mit dem Befehl add Volume async MirrorGroup wird eine primäre Volume zu einer asynchronen Spiegelgruppe hinzugefügt. 
+---
+= Fügen Sie ein Volume zur asynchronen Spiegelgruppe hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `add volume asyncMirrorGroup` Befehl fügt ein primäres Volume zu einer asynchronen Spiegelgruppe hinzu.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Dieser Befehl ist nur für das lokale Speicher-Array gültig, das die asynchrone Spiegelgruppe enthält, der Sie das primäre Volume hinzufügen möchten. Eine asynchrone Spiegelgruppe verfügt über ein Repository-Volume, mit dem Daten aller zeitpunktgenauen Images gespeichert werden, die Teil der asynchronen Spiegelgruppe sind. Jedes primäre Volume in der asynchronen Spiegelgruppe verfügt über ein entsprechendes Spiegelvolume auf einem Remote Storage Array.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[add volume="_volumeName_" asyncMirrorGroup="_asyncMirrorGroupName_"
+remotePassword="_password_"
+(repositoryVolume="repos_xxxx" |
+repositoryVolume=(_volumeGroupName_ ]pass:quotes[[capacity=_capacityValue_])]
+repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityValue_]))
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volume`
+ a| 
+Der Name des primären Volumes, das zur asynchronen Spiegelgruppe hinzugefügt werden soll. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Der Name der asynchronen Spiegelgruppe, die das primäre Volume enthält, das Sie hinzufügen möchten. Schließen Sie den Namen der asynchronen Spiegelgruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Dieser Parameter ist optional. Verwenden Sie diesen Parameter, wenn das Remote-Speicher-Array passwortgeschützt ist. Schließen Sie das Passwort in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Der Name des Repository-Volumes, das die geänderten Daten des primären Volume enthält.
+
+Es stehen zwei Optionen zur Verfügung, um den Namen eines Repository-Volumes festzulegen:
+
+* Ein vorhandenes Repository-Volume verwenden: Name.
+* Erstellen Sie ein neues Repository-Volume, wenn Sie diesen Befehl ausführen.
+
+
+Der Name eines vorhandenen Repository-Volumes besteht aus zwei Teilen:
+
+* Der Begriff Umpos.
+* Eine vierstellige numerische Kennung, die die Speicherverwaltungssoftware dem Namen des Repository-Volumes zuweist.
+
+
+Schließen Sie den Namen des vorhandenen Repository-Volumes in doppelte Anführungszeichen (" ").
+
+Wenn Sie bei Ausführung dieses Befehls ein neues Repository-Volume erstellen möchten, müssen Sie entweder den Namen einer Volume-Gruppe oder eines Laufwerk-Pools eingeben, in dem das Repository-Volume erstellt werden soll. Optional können Sie auch die Kapazität des Repository-Volumes festlegen. Wenn Sie die Kapazität definieren möchten, können Sie die folgenden Werte verwenden:
+
+* Ein ganzzahliger Wert, der einen Prozentsatz der Basis-Volume-Kapazität darstellt.
+* Ein Dezimaltrennzeichen, der einen Prozentsatz der Basis-Volume-Kapazität darstellt.
+* Eine bestimmte Größe für das Repository-Volume erhalten. Größe ist in Einheiten von definiert `bytes` , `KB` , `MB` , `GB` , Oder `TB` .
+
+
+Wenn Sie keine Kapazitätsableitung festlegen, setzt die Storage-Management-Software die Kapazität auf 20 Prozent der primären Volume-Kapazität.
+
+Die Storage-Managementsoftware erstellt das Repository-Volume und verknüpft das Repository-Volume mit dem primären Volume.
+
+|===
+
+
+== Hinweise
+
+* Die Funktion zur asynchronen Spiegelung muss auf den lokalen und Remote Storage-Arrays aktiviert sein, die für Spiegelaktivitäten verwendet werden.
+* Die lokalen und Remote-Speicher-Arrays müssen über eine geeignete Fibre Channel Fabric- oder iSCSI-Schnittstelle verbunden sein.
+* Das Remote-Speicher-Array muss ein Volume mit einer Kapazität haben, die größer oder gleich der Kapazität des primären Volumes im lokalen Speicher-Array ist. Das Volume auf dem Remote-Speicher-Array wird als Spiegelvolume verwendet.
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/save-storagearray-loginbanner.html 
+sidebar: sidebar 
+keywords: save, storage, array, login, banner 
+summary: Mit dem Befehl „Storage Array loginBanner speichern“ können Sie ein Anmeldebanner auf Ihrem lokalen Computer speichern. Der Bannertext kann eine Benachrichtigung und eine Einwilligungsmeldung enthalten, die Benutzern vor der Einrichtung von Sitzungen angezeigt wird. 
+---
+= Anmeldebanner für Storage Array speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray loginBanner` Mit Befehl können Sie ein Anmeldebanner auf Ihrem lokalen Computer speichern. Der Bannertext kann eine Benachrichtigung und eine Einwilligungsmeldung enthalten, die Benutzern vor der Einrichtung von Sitzungen angezeigt wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Ein Benutzer mit einer beliebigen Rolle kann diesen Befehl ausführen.
+
+
+
+== Syntax
+
+[listing]
+----
+save storageArray loginBanner file="file_name"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Name der Anmeldebannerdatei.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.41

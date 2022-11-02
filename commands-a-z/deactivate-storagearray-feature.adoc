@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/deactivate-storagearray-feature.html 
+sidebar: sidebar 
+keywords: deactivate, synchronous, mirror 
+summary: Mit dem Befehl „deactivate storageArray Feature“ wird die Funktion für das synchrone Spiegeln deaktiviert, das Mirror-Repository Volume zerlegt und der Controller-Eigentümer des sekundären Volume freigegeben. 
+---
+= Deaktivieren Sie die synchrone Spiegelung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `deactivate storageArray feature` Befehl deaktiviert die Funktion für die synchrone Spiegelung, zerlegt das Mirror-Repository Volume und gibt den Controller-Eigentümer des sekundären Volume frei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Admin“ oder „Support-Admin“ verfügen.
+
+
+
+== Kontext
+
+Der für das sekundäre Volume dedizierte Controller-Host-Port ist für Hostdatenübertragungen verfügbar.
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+deactivate storageArray feature=syncMirror
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10

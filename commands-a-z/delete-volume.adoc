@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/delete-volume.html 
+sidebar: sidebar 
+keywords: delete, volume, command, one, standard, volume, supported, array, role 
+summary: Mit dem Befehl delete Volume wird ein oder mehrere Standard-Volumes gelöscht. 
+---
+= Volume löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete volume` Befehl löscht ein oder mehrere Standard-Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Mögliche Schäden an der Speicher-Array-Konfiguration* -- Alle Daten im Volume gehen verloren, sobald Sie diesen Befehl ausführen.
+
+====
+[NOTE]
+====
+Wenn ein Volume eine bestimmte Größe überschreitet (derzeit 128 TB), wird das Löschen im Hintergrund ausgeführt, sodass der freigegebene Speicherplatz möglicherweise nicht sofort verfügbar ist.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+delete (allVolumes) |
+volume [volumeName] |
+volumes [volumeName1 ... volumeNameN]
+[removeVolumeGroup=(TRUE | FALSE)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allVolumes`
+ a| 
+Mit diesem Parameter werden alle Volumes in einem Speicher-Array gelöscht.
+
+
+
+ a| 
+`volume`
+ a| 
+Der Name eines Volumes, das gelöscht werden soll. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen hat oder nur aus Ziffern besteht, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`volumes`
+ a| 
+Die Namen mehrerer Volumes, die gelöscht werden sollen. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`removeVolumeGroup`
+ a| 
+Durch das Löschen des letzten Volumes in einer Volume-Gruppe wird die Volume-Gruppe nicht gelöscht. Sie können über eine eigenständige Volume-Gruppe verfügen (minus beliebige Volumes). Um die eigenständige Volume-Gruppe zu entfernen, setzen Sie diesen Parameter auf `TRUE`. Um die Standalone-Volume-Gruppen intakt zu halten, setzen Sie diesen Parameter auf `FALSE`.
+
+
+
+ a| 
+`force`
+ a| 
+Mit diesem Parameter können Sie das sofortige Löschen eines Volumes erzwingen, auch wenn die Controller andere Vorgänge ausführen. Um das Löschen eines Volumes sofort zu erzwingen, setzen Sie diesen Parameter auf `TRUE`. Um zu warten, bis die Controller die Ausführung anderer Vorgänge abgeschlossen haben, verwenden Sie diesen Parameter nicht oder setzen Sie diesen Parameter auf `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie das verwenden `allVolumes` Parameter: Dieser Befehl löscht Volumes, bis alle Volumes entfernt wurden oder bis ein Fehler aufgetreten ist. Wenn ein Fehler auftritt, wird mit diesem Befehl nicht versucht, die verbleibenden Volumes zu löschen. Das Löschen von Volumes aus verschiedenen Volume-Gruppen ist möglich. Alle leeren Volume-Gruppen werden gelöscht, wenn Sie das festlegen `removeVolumeGroup` Parameter an `TRUE`.
+
+Wenn Sie eine gesamte Volume-Gruppe löschen möchten, können Sie auch den verwenden `delete volumeGroup` Befehl.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.10 fügt die hinzu `removeVolumeGroup` Parameter.

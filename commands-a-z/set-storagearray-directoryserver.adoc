@@ -1,0 +1,161 @@
+---
+permalink: commands-a-z/set-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: set, storage, array, directory, server 
+summary: Der Befehl Set storageArray DirectoryServer aktualisiert die Konfiguration des Verzeichnisservers. 
+---
+= Verzeichnisserver für Speicher-Array festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray directoryServer` Befehl aktualisiert die Konfiguration des Verzeichnisservers.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+set storageArray directoryServer ["domainId"]
+    (domainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |
+     addDomainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |
+     serverUrl=pass:quotes["_serverUrl_"] |
+     bindAccount=pass:quotes["_username_"] bindPassword=pass:quotes["_password_"] |
+     searchBaseDN=pass:quotes["_distinguishedName_"] |
+     usernameAttribute=pass:quotes["_attributeName_"] |
+     groupAttributes=pass:quotes[("_attrName1_"..."_attrNameN_")] |
+     addGroupAttributes=pass:quotes[("_attrName1_"..."_attrNameN_"))]
+    [skipConfigurationTest={true | false}]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`directoryServer`
+ a| 
+Ermöglicht die Angabe der Domänen-ID zur Aktualisierung der Einstellungen.
+
+
+
+ a| 
+`domainNames`
+ a| 
+Ermöglicht das Festlegen eines oder mehrerer gültiger Domänennamen für den Verzeichnisserver. Wenn Sie mehrere Namen eingeben, trennen Sie die Werte durch ein Leerzeichen. Mit dieser Option werden vorhandene Domänennamen gelöscht.
+
+
+
+ a| 
+`addDomainNames`
+ a| 
+Ermöglicht das Hinzufügen eines oder mehrerer gültiger Domänennamen für den Verzeichnisserver. Wenn Sie mehrere Namen eingeben, trennen Sie die Werte durch ein Leerzeichen.
+
+
+
+ a| 
+`serverUrl`
+ a| 
+Ermöglicht die Angabe der Server-URL.
+
+
+
+ a| 
+`bindAccount`
+ a| 
+Ermöglicht Ihnen die Angabe des Benutzernamens, der als Bindungskonto verwendet werden soll.
+
+
+
+ a| 
+`bindPassword`
+ a| 
+Ermöglicht die Angabe des Kennworts, das als Bindungspasswort verwendet werden soll.
+
+
+
+ a| 
+`searchBaseDN`
+ a| 
+Hier können Sie den angegebenen Namen der Suchbasis angeben, um nach LDAP-Benutzerobjekten zu suchen, um die Gruppenmitgliedschaft zu bestimmen.
+
+
+
+ a| 
+`usernameAttribute`
+ a| 
+Hier können Sie das Attribut angeben, das zum Suchen nach Benutzerobjekten zur Bestimmung der Gruppenmitgliedschaft verwendet werden soll. Wenn angegeben, muss der String die Variable enthalten `+{uid}+` Dieser wird durch den Benutzernamen ersetzt, der bei der Anmeldung verwendet wird. Beispiel: `+sAMAccountName={uid}+`
+
+
+
+ a| 
+`groupAttributes`
+ a| 
+Ermöglicht es Ihnen, ein oder mehrere Gruppenattribute festzulegen, die verwendet werden, um nach Gruppen-Distinguished-Namen zu suchen. Mithilfe von Distinguished Names können Sie die Gruppenmitgliedschaft für das Rollenzuordnung festlegen.
+
+[NOTE]
+====
+Wenn Sie mehrere Gruppen eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+====
+[NOTE]
+====
+Mit diesem Parameter werden vorhandene Gruppen gelöscht.
+
+====
+
+
+ a| 
+`addGroupAttributes`
+ a| 
+Ermöglicht Ihnen, ein oder mehrere Gruppenattribute hinzuzufügen, die verwendet werden, um nach Gruppen-Distinguished Names zu suchen. Mithilfe von Distinguished Names wird die Gruppenmitgliedschaft für die Zwecke der Rollenzuordnung festgelegt.
+
+[NOTE]
+====
+Wenn Sie mehrere Gruppen eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+====
+
+
+ a| 
+`skipConfigurationTest`
+ a| 
+Ermöglicht ihnen, den Konfigurationstest zu überspringen, bevor die Konfiguration gespeichert wird. Die Standardeinstellung lautet `false`.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+     serverUrl="ldaps://hqldap.eng.mycompany.com:636";"
+
+SMcli -n Array1 -c "set storageArray directoryServer ["domain1"]
+                    bindAccount="bindDN2" bindPassword="thePassword2"
+                    searchBaseDN="OU=_Users,DC=hq,DC=mycompany,DC=com"
+                    usernameAttribute="sAMAccountName" groupAttributes=("memberOf");"
+
+SMcli completed successfully.
+----

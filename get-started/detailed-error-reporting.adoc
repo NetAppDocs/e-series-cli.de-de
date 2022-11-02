@@ -1,0 +1,32 @@
+---
+permalink: get-started/detailed-error-reporting.html 
+sidebar: sidebar 
+keywords: detailed, error, report 
+summary: Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine Datei geschrieben. 
+---
+= Detaillierte Fehlerberichterstellung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine Datei geschrieben. Eine detaillierte Fehlerberichterstellung unter der CLI funktioniert wie folgt:
+
+* Wenn die CLI die Ausführung von CLI-Befehlen und Skriptbefehlen beenden muss, werden Fehlerdaten erfasst und gespeichert, bevor die CLI beendet wird.
+* Die CLI speichert die Fehlerdaten, indem die Daten in einen Standarddateinamen geschrieben werden.
+* Die CLI speichert die Daten automatisch in einer Datei. Zum Speichern der Fehlerdaten sind keine speziellen Befehlszeilenoptionen erforderlich.
+* Sie müssen keine Aktion ausführen, um die Fehlerdaten in einer Datei zu speichern.
+* Die CLI hat keine Vorschrift, um das Überschreiben einer vorhandenen Version der Datei mit Fehlerdaten zu vermeiden.
+
+
+Bei der Fehlerverarbeitung werden Fehler wie zwei Typen angezeigt:
+
+* Terminal-Fehler oder Syntaxfehler, die Sie eingeben können.
+* Ausnahmen, die aufgrund eines Betriebsfehlers auftreten.
+
+
+Wenn in der CLI eine oder beide Fehlertypen aufgeführt werden, schreibt die CLI Informationen, die den Fehler direkt auf die Kommandozeile beschreiben und setzt einen Rückgabecode ein. Je nach Return-Code kann die CLI auch zusätzliche Informationen darüber schreiben, welches Terminal den Fehler verursacht hat. Die CLI schreibt auch Informationen darüber, was in der Befehlssyntax zu erwarten war, damit Sie alle Syntax-Fehler identifizieren können, die Sie eingegeben haben.
+
+Wenn während der Ausführung eines Befehls eine Ausnahme auftritt, erfasst die CLI den Fehler. Am Ende der Ausführung des Befehls (nachdem die Befehlsinformationen in die Befehlszeile geschrieben wurden) speichert die CLI automatisch die Fehlerinformationen in einer Datei.
+
+Der Name der Datei, in der die Fehlerinformationen gespeichert werden, lautet `excprpt.txt`. Die CLI versucht, die einzugeben `excprpt.txt` Datei im Verzeichnis, das von der Systemeigenschaft angegeben wird `devmgr.datadir`. Wenn die CLI aus irgendeinem Grund die Datei nicht in das von angegebene Verzeichnis legen kann `devmgr.datadir`, Die CLI speichert die `excprpt.txt` Datei in demselben Verzeichnis, aus dem die CLI läuft. Sie können den Dateinamen oder den Speicherort nicht ändern. Der `excprpt.txt` Die Datei wird jedes Mal überschrieben, wenn eine Ausnahme eintritt. Wenn Sie die Informationen im speichern möchten `excprpt.txt` Datei, Sie müssen die Informationen in eine neue Datei oder ein neues Verzeichnis kopieren.

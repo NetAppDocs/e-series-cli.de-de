@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/smcli-enable-disable-autosupportondemand.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, ondemand, feature, emw, management, domain, level, smcli 
+summary: Der SMcli enable deaktivierenSupport OnDemand-Befehl schaltet die AutoSupport OnDemand-Funktion ein oder aus. Mit dieser Funktion kann der technische Support die AutoSupport-Datenübertragung koordinieren und die erneute Übermittlung fehlender Support-Daten anfordern. 
+---
+= Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion auf Ebene der EMW-Verwaltungsdomäne (nur SMcli)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `SMcli enable|disable autoSupportOnDemand` Befehl schaltet die AutoSupport OnDemand-Funktion ein oder aus. Mit dieser Funktion kann der technische Support die AutoSupport-Datenübertragung koordinieren und die erneute Übermittlung fehlender Support-Daten anfordern.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+Bevor Sie diese Funktion aktivieren, müssen Sie zuerst die AutoSupport-Funktion in der Management-Domäne aktivieren. Nachdem Sie diese Funktion aktiviert haben, können Sie die AutoSupport-Funktion für die Ferndiagnose (falls gewünscht) aktivieren. Die AutoSupport-Funktionen für die Ferndiagnose sind standardmäßig aktiviert, wenn die AutoSupport-OnDemand-Funktion aktiviert ist.
+
+
+
+== Syntax
+
+[listing]
+----
+SMcli enable|disable autoSupportOnDemand
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Verifizierung
+
+Verwenden Sie die `SMcli -autoSupportConfig show` Befehl, um zu sehen, ob Sie die Funktion aktiviert haben. Die ersten beiden Zeilen der angezeigten Ausgabe zeigen den Status aktivieren der AutoSupport-Funktion, gefolgt von der AutoSupport OnDemand-Funktion:
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management
+station.
+The AutoSupport OnDemand feature is activated on this storage
+management station.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.25

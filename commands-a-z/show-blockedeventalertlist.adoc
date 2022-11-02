@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/show-blockedeventalertlist.html 
+sidebar: sidebar 
+keywords: show, blocked, events 
+summary: Der Befehl Show blockedEventAlertList gibt eine Liste von Ereignissen zurück, die derzeit durch den Befehl set blockEventAlert blockiert sind. Bei den Ereignissen in dieser Liste handelt es sich um Ereignisse, die keine Benachrichtigungen senden, die Sie mit den Alarmterminals und -Parametern konfiguriert haben, d. h. E-Mail-, Syslog- und Trap-Benachrichtigungen. 
+---
+= Blockierte Ereignisse anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show blockedEventAlertList` Der Befehl gibt eine Liste von Ereignissen zurück, die derzeit vom blockiert sind `set blockEventAlert` Befehl. Bei den Ereignissen in dieser Liste handelt es sich um Ereignisse, die keine Benachrichtigungen senden, die Sie mit den Alarmterminals und -Parametern konfiguriert haben, d. h. E-Mail-, Syslog- und Trap-Benachrichtigungen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt nur für die E2700 und E5600 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+show blockedEventAlertList
+----
+
+
+== Beispiel
+
+Die Ausgabe verfügt über eine Zeile für jedes blockierte Ereignis, in der der Ereignistyp im hexadezimalen Format aufgeführt wird, gefolgt von einer Beschreibung des Ereignisses. Im Folgenden finden Sie ein Beispiel für die Ausgabe:
+
+[listing]
+----
+Executing Script...
+0x280D Enclosure Failure
+0x282B Tray Redundancy Lost
+Script execution complete.
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Minimale Firmware-Stufe
+
+8.10

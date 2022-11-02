@@ -1,0 +1,116 @@
+---
+permalink: commands-a-z/disable-storagearray-externalkeymanagement-file.html 
+sidebar: sidebar 
+keywords: disable, storage, array, external, management, file, command, disable, security, key, full, disk, encryption, drives 
+summary: Der Befehl „disable storageArray externaliKeyManagement file“ deaktiviert die Verwaltung externer Sicherheitsschlüssel für ein Speicherarray mit vollständigen Festplatten. 
+---
+= Deaktivieren Sie die Verwaltung der externen Sicherheitsschlüssel
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `disable storageArray externalKeyManagement file` Mit dem Befehl wird die Verwaltung externer Sicherheitsschlüssel für ein Speicher-Array mit vollständigen Festplatten-Verschlüsselung deaktiviert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+disable storageArray externalKeyManagement
+pass:quotes[file="_fileName_"]
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[saveFile=(_TRUE_ | _FALSE_)]
+----
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ermöglicht das interne Verschlüsselungsmanagement als alternative Form der Laufwerkssicherheit.
+
+====
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in dem die interne Sicherheitsschlüsseldatei gespeichert wird. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[IMPORTANT]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können.
+
+
+
+ a| 
+`saveFile`
+ a| 
+Überprüft und speichert den Sicherheitsschlüssel in einer Datei. Auf einstellen `FALSE` So speichern und überprüfen Sie den Sicherheitsschlüssel nicht in einer Datei. Der Standardwert ist `TRUE`.
+
+|===
+
+
+== Hinweise
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Muss zwischen acht und 32 Zeichen lang sein.
+* Kein Leerzeichen.
+* Muss mindestens einen Großbuchstaben enthalten.
+* Muss mindestens einen Kleinbuchstaben enthalten.
+* Muss mindestens eine Zahl enthalten.
+* Muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+8.40
+
+8.70 fügt die hinzu `saveFile` Parameter.

@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/add-drives-to-ssd-cache.html 
+sidebar: sidebar 
+keywords: add drives ssd cache, supported arrays, syntax, parameters, minimum firmware level 
+summary: 'Der Befehl set ssdCache erhöht die Kapazität eines vorhandenen SSD-Caches durch Hinzufügen weiterer Solid State Disks (SSDs).' 
+---
+= Fügen Sie Laufwerke zum SSD-Cache hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set ssdCache` Befehl erhöht die Kapazität eines vorhandenen SSD-Caches durch Hinzufügen weiterer Solid State Disks (SSDs).
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+[NOTE]
+====
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[set ssdCache [_ssdCacheName_]]
+pass:quotes[addDrives=(_trayID1_,[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn_,]pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, dem Sie SSDs hinzufügen möchten. Umschließen Sie den Namen in eckigen Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Die Laufwerke, die Sie dem SSD-Cache hinzufügen möchten.Geben Sie für Laufwerksfächer mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+|===
+
+
+== Hinweise
+
+Der SSD-Cache kann eine beliebige Anzahl von SSDs enthalten. Die maximale Größe des SSD-Cache beträgt 5 TB, ist aber je nach Größe des primären Caches des Controllers kleiner.
+
+
+
+== Minimale Firmware-Stufe
+
+7.84

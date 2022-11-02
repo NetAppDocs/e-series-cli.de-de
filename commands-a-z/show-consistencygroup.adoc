@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/show-consistencygroup.html 
+sidebar: sidebar 
+keywords: show, consistency, group 
+summary: Der Befehl show konsequente Group gibt Informationen über eine oder mehrere Konsistenzgruppen zurück. 
+---
+= Zeigt die Konsistenzgruppe an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show consistencyGroup` Mit dem Befehl werden Informationen über eine oder mehrere Konsistenzgruppen zurückgegeben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+show (allConsistencyGroups | consistencyGroup pass:quotes[[_consistencyGroupName_]] |
+consistencyGroups pass:quotes[[_consistencyGroupName1_ ... _consistencyGroupNameN_]])
+[(summary | schedule)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allConsistencyGroups`
+ a| 
+Diese Einstellung gibt Informationen zu allen Konsistenzgruppen im Speicher-Array zurück.
+
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Konsistenzgruppe, für die Sie Informationen abrufen. Schließen Sie den Namen der Konsistenzgruppe in eckige Klammern ([ ]). Wenn der Name der Konsistenzgruppe Sonderzeichen oder Ziffern enthält, müssen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen („ „ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`consistencyGroups`
+ a| 
+Die Namen mehrerer Konsistenzgruppen, für die Sie Informationen abrufen. Alle Volumes haben die gleichen Eigenschaften. Geben Sie die Namen der Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Mit dieser Einstellung wird eine kurze Liste von Informationen über die Konsistenzgruppen angezeigt.
+
+
+
+ a| 
+`schedule`
+ a| 
+Dieser Parameter gibt Informationen über beliebige Zeitpläne für eine Konsistenzgruppe aus.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83

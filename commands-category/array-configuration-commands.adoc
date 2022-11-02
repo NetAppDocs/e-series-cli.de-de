@@ -1,0 +1,405 @@
+---
+permalink: commands-category/array-configuration-commands.html 
+sidebar: sidebar 
+keywords: configuration, commands, array, controller, health, image, hostport, feature, management 
+summary: Befehle für die Array-Konfiguration 
+---
+= Befehle für die Array-Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Data Assurance-Befehle für Cache-Spiegelung
+
+link:../commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html["Legen Sie den Speicher-Array fest, um Cache-Spiegeldaten zu aktivieren oder zu deaktivieren"]
+
+link:../commands-a-z/show-storagearray-cachemirrordataassurancecheckenable.html["Zeigen Sie die Data Assurance-Überprüfung der Cache-Spiegelung des Storage Arrays an"]
+
+
+
+== Controller-Befehle
+
+link:../commands-a-z/clear-alldrivechannels-stats.html["Löschen Sie die Laufwerkskanalstatistiken"]
+
+link:../commands-a-z/diagnose-controller.html["Controller-Diagnose"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Diagnose des iSCSI-Hostkabels des Controllers"]
+
+link:../commands-a-z/enable-controller-datatransfer.html["Controller-Datentransfer aktivieren"]
+
+link:../commands-a-z/reset-controller.html["Controller zurücksetzen"]
+
+link:../commands-a-z/save-controller-nvsram-file.html["Controller NVSRAM speichern"]
+
+link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Diagnosestatus des Laufwerkanals für die Fehlereingrenzung speichern"]
+
+link:../commands-a-z/set-controller.html["Stellen Sie den Controller ein"]
+
+link:../commands-a-z/set-controller-dnsservers.html["Legen Sie die Controller-DNS-Einstellungen fest"]
+
+link:../commands-a-z/set-controller-ntpservers.html["Legen Sie die Controller-NTP-Einstellungen fest"]
+
+link:../commands-a-z/set-controller-service-action-allowed-indicator.html["Die Anzeige für die zulässige Controllerwartung einstellen"]
+
+link:../commands-a-z/set-drivechannel.html["Den Status des Antriebskanals festlegen"]
+
+link:../commands-a-z/set-hostchannel.html["Hostkanal festlegen"]
+
+link:../commands-a-z/show-controller.html["Zeigen Sie den Controller an"]
+
+link:../commands-a-z/show-controller-diagnostic-status.html["Zeigt den Controller-Diagnosestatus an"]
+
+link:../commands-a-z/show-controller-nvsram.html["Zeigt den Controller-NVSRAM"]
+
+link:../commands-a-z/show-drivechannel-stats.html["Zeigen Sie die Drive-Channel-Statistiken an"]
+
+link:../commands-a-z/start-controller.html["Controller-Trace starten"]
+
+link:../commands-a-z/start-drivechannel-faultdiagnostics.html["Diagnose der Fehlereingrenzung des Antriebskanals starten"]
+
+link:../commands-a-z/start-drivechannel-locate.html["Starten Sie den Laufwerkskanal suchen"]
+
+link:../commands-a-z/start-controller-iscsihostport-dhcprefresh.html["Starten Sie die iSCSI-DHCP-Aktualisierung"]
+
+link:../commands-a-z/stop-drivechannel-faultdiagnostics.html["Diagnose der Fehlereingrenzung des Antriebskanals stoppen"]
+
+link:../commands-a-z/stop-drivechannel-locate.html["Stoppen Sie die Position des Laufwerkskanals"]
+
+
+
+== Befehle für das Controller-Zustandsabbild
+
+link:../commands-a-z/save-storagearray-controllerhealthimage.html["Speichern des Storage Array Controller-Zustandsabbilds"]
+
+link:../commands-a-z/set-storagearray-controllerhealthimageallowoverwrite.html["Festlegen des Integritätsabbilds des Speicher-Array-Controllers für Überschreibung"]
+
+link:../commands-a-z/show-storagearray-controllerhealthimage.html["Zeigt das Storage-Array-Controller-Zustandsabbild an"]
+
+link:../commands-a-z/start-storagearray-controllerhealthimage-controller.html["Starten des Storage-Array-Controller-Integritätsabbilds"]
+
+
+
+== Konfigurationsbefehle für den Host-Port des Controllers
+
+link:../commands-a-z/create-hostport.html["Erstellen Sie den Host Port"]
+
+link:../commands-a-z/create-initiator.html["Erstellen des Initiators"]
+
+link:../commands-a-z/delete-initiator.html["Initiator löschen"]
+
+link:../commands-a-z/set-initiator.html["Legt den Initiator fest"]
+
+link:../commands-a-z/reset-storagearray-hostportstatisticsbaseline.html["Zurücksetzen der Baseline-Statistiken für den Host-Port des Speicher-Arrays"]
+
+link:../commands-a-z/save-storagearray-hostportstatistics.html["Speichern Sie die Host-Port-Statistiken des Speicher-Arrays"]
+
+link:../commands-a-z/set-controller-hostport.html["Legen Sie die Eigenschaften des Controller-Host-Ports fest"]
+
+link:../commands-a-z/set-target.html["Legen Sie die Zieleigenschaften fest"]
+
+link:../commands-a-z/set-controller-iscsihostport.html["Legen Sie die Netzwerkeigenschaften für den iSCSI-Host-Port fest"]
+
+link:../commands-a-z/set-iscsiinitiator.html["Setzen Sie den iSCSI-Initiator"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Zeigt nicht konfigurierte iSCSI-Initiatoren des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Zeigt nicht konfigurierte Initiatoren an"]
+
+
+
+== Laufwerkbefehle
+
+link:../commands-a-z/download-drive-firmware.html["Laden Sie die Laufwerk-Firmware herunter"]
+
+link:../commands-a-z/recover-disabled-driveports.html["Deaktivierte Laufwerksanschlüsse wiederherstellen"]
+
+link:../commands-a-z/replace-drive-replacementdrive.html["Laufwerk austauschen"]
+
+link:../commands-a-z/revive-drive.html["Fahren Sie erneut beleben"]
+
+link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Diagnosestatus des Laufwerkanals für die Fehlereingrenzung speichern"]
+
+link:../commands-a-z/save-alldrives-logfile.html["Laufwerksprotokoll speichern"]
+
+link:../commands-a-z/set-drive-hotspare.html["Setzen Sie das Laufwerk-Hot-Spare ein"]
+
+link:../commands-a-z/set-drive-serviceallowedindicator.html["Legen Sie die Anzeige für die zulässige Laufwerkswartung fest"]
+
+link:../commands-a-z/set-drive-operationalstate.html["Legen Sie den Laufwerksstatus fest"]
+
+link:../commands-a-z/set-drive-securityid.html["Legen Sie die FIPS-Laufwerk-Sicherheitskennung fest"]
+
+link:../commands-a-z/set-drive-nativestate.html["Fremdlaufwerk auf nativ einstellen"]
+
+link:../commands-a-z/show-alldrives.html["Laufwerk anzeigen"]
+
+link:../commands-a-z/show-alldrives-downloadprogress.html["Fortschritt des Laufwerks-Downloads anzeigen"]
+
+link:../commands-a-z/show-alldrives-performancestats.html["Zeigt Statistiken zur Laufwerk-Performance an"]
+
+link:../commands-a-z/show-replaceabledrives.html["Zeigt austauschbare Laufwerke an"]
+
+link:../commands-a-z/start-drivechannel-faultdiagnostics.html["Diagnose der Fehlereingrenzung des Antriebskanals starten"]
+
+link:../commands-a-z/start-drive-initialize.html["Starten Sie die Laufwerkinitialisierung"]
+
+link:../commands-a-z/start-drive-locate.html["Starten Sie die Laufwerklokalisiert"]
+
+link:../commands-a-z/start-drive-reconstruct.html["Starten Sie die Rekonstruktion des Laufwerks"]
+
+link:../commands-a-z/start-secureerase-drive.html["Starten Sie das sichere Löschen des Laufwerks"]
+
+link:../commands-a-z/stop-drivechannel-faultdiagnostics.html["Diagnose der Fehlereingrenzung des Antriebskanals stoppen"]
+
+link:../commands-a-z/stop-drive-locate.html["Halten Sie die Fahrt auf der Suche"]
+
+
+
+== Management-Befehle
+
+link:../commands-a-z/disable-storagearray.html["Deaktivieren der Speicher-Array-Funktion"]
+
+link:../commands-a-z/enable-storagearray-feature-file.html["Aktivieren Sie Storage Array-Funktion"]
+
+link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Speicherarray auf Aktivieren oder Deaktivieren des automatischen Lastverteilungsabwuchtes einstellen..."]
+
+link:../commands-a-z/show-storagearray.html["Zeigen Sie das Speicher-Array an"]
+
+
+
+== Input Output Controller (IOC) Dump-Befehle
+
+link:../commands-a-z/save-ioclog.html["Speichern Sie den I/O-Dump (Input Output Controller)"]
+
+link:../commands-a-z/start-ioclog.html["Starten Sie den I/O-Dump (Input Output Controller)"]
+
+
+
+== MBD-Befehle (Falschverhalten des Laufwerks)
+
+link:../commands-a-z/replace-drive-replacementdrive.html["Laufwerk austauschen"]
+
+link:../commands-a-z/reset-drive.html["Antrieb zurücksetzen"]
+
+link:../commands-a-z/set-drive-operationalstate.html["Legen Sie den Laufwerksstatus fest"]
+
+link:../commands-a-z/stop-drive-replace.html["Antrieb stoppen Austauschen"]
+
+
+
+== ODX-Befehle (Offloaded Data Transfer)
+
+link:../commands-a-z/set-storagearray-odxenabled.html["Aktivieren oder Deaktivieren von ODX"]
+
+link:../commands-a-z/set-storagearray-vaaienabled.html["VAAI aktivieren oder deaktivieren"]
+
+link:../commands-a-z/show-storagearray-odxsetting.html["Zeigen Sie die ODX-Einstellungen für das Storage-Array"]
+
+
+
+== Befehle für die Analyse von Repository-Volumes
+
+link:../commands-a-z/check-repositoryconsistency.html["Prüfen Sie die Repository-Konsistenz"]
+
+
+
+== Sitzungsbefehle
+
+link:../commands-a-z/set-session-erroraction.html["Sitzung einstellen"]
+
+
+
+== Befehle des Storage Array
+
+link:../commands-a-z/activate-storagearray-firmware.html["Aktivieren der Speicher-Array-Firmware"]
+
+link:../commands-a-z/add-certificate-from-array.html["Fügen Sie Zertifikat aus dem Array hinzu"]
+
+link:../commands-a-z/add-certificate-from-file.html["Zertifikat aus Datei hinzufügen"]
+
+link:../commands-a-z/autoconfigure-storagearray.html["Speicher-Array automatisch konfigurieren"]
+
+link:../commands-a-z/autoconfigure-storagearray-hotspares.html["Automatische Konfiguration von Hot Spares für Speicher-Array"]
+
+link:../commands-a-z/clear-storagearray-configuration.html["Löschen Sie die Konfiguration des Speicherarrays"]
+
+link:../commands-a-z/clear-storagearray-eventlog.html["Löschen Sie das Ereignisprotokoll des Speicher-Arrays"]
+
+link:../commands-a-z/clear-storagearray-firmwarependingarea.html["Löschen Sie den ausstehenden Bereich der Speicher-Array-Firmware"]
+
+link:../commands-a-z/clear-storagearray-recoverymode.html["Löschen Sie den Wiederherstellungsmodus für Speicher-Arrays"]
+
+link:../commands-a-z/create-storagearray-securitykey.html["Sicherheitsschlüssel für Speicher-Array erstellen"]
+
+link:../commands-a-z/delete-certificates.html["Löschen von Zertifikaten"]
+
+link:../commands-a-z/disable-storagearray-externalkeymanagement-file.html["Deaktivieren Sie die Verwaltung der externen Sicherheitsschlüssel"]
+
+link:../commands-a-z/disable-storagearray.html["Deaktivieren der Speicher-Array-Funktion"]
+
+link:../commands-a-z/download-storagearray-drivefirmware-file.html["Firmware des Speicherarrays herunterladen"]
+
+link:../commands-a-z/download-storagearray-firmware.html["Laden Sie die Speicher-Array-Firmware/NVSRAM herunter"]
+
+link:../commands-a-z/download-storagearray-nvsram.html["NVSRAM des Storage-Arrays herunterladen"]
+
+link:../commands-a-z/enable-storagearray-externalkeymanagement-file.html["Externes Sicherheits-Verschlüsselungsmanagement"]
+
+link:../commands-a-z/set-storagearray-hostconnectivityreporting.html["Aktiviert oder deaktiviert die Berichterstellung für Hostkonnektivität"]
+
+link:../commands-a-z/enable-storagearray-feature-file.html["Aktivieren Sie Storage Array-Funktion"]
+
+link:../commands-a-z/export-storagearray-securitykey.html["Sicherheitsschlüssel für Speicher-Array exportieren"]
+
+link:../commands-a-z/import-storagearray-securitykey-file.html["Importieren des Sicherheitsschlüssels für das Storage-Array"]
+
+link:../commands-a-z/load-storagearray-dbmdatabase.html["Laden der Speicher-Array-DBM-Datenbank"]
+
+link:../commands-a-z/recreate-storagearray-securitykey.html["Externen Sicherheitsschlüssel neu erstellen"]
+
+link:../commands-a-z/reset-storagearray-diagnosticdata.html["Diagnosedaten des Speicher-Arrays zurücksetzen"]
+
+link:../commands-a-z/reset-storagearray-ibstatsbaseline.html["Zurücksetzen der Baseline-InfiniBand-Statistiken für das Speicher-Array"]
+
+link:../commands-a-z/reset-storagearray-iscsistatsbaseline.html["ISCSI-Basisplan für Speicher-Array zurücksetzen"]
+
+link:../commands-a-z/reset-storagearray-rlsbaseline.html["RLS-Basisplan für Speicher-Array zurücksetzen"]
+
+link:../commands-a-z/reset-storagearray-sasphybaseline.html["Zurücksetzen des Speicher-Array-SAS-PHY-Basisplans"]
+
+link:../commands-a-z/reset-storagearray-socbaseline.html["Zurücksetzen der SOC-Baseline des Speicherarrays"]
+
+link:../commands-a-z/reset-storagearray-volumedistribution.html["Volume-Verteilung des Speicherarrays zurücksetzen"]
+
+link:../commands-a-z/save-storagearray-configuration.html["Speicherarray-Konfiguration speichern"]
+
+link:../commands-a-z/save-storagearray-dbmdatabase.html["Speicher-Array-DBM-Datenbank speichern"]
+
+link:../commands-a-z/save-storagearray-dbmvalidatorinfo.html["Speicherarray DBM Validator Information file speichern"]
+
+link:../commands-a-z/save-storage-array-diagnostic-data.html["Speichern von Diagnosedaten des Storage-Arrays"]
+
+link:../commands-a-z/save-storagearray-warningevents.html["Speichern von Speicher-Array-Ereignissen"]
+
+link:../commands-a-z/save-storagearray-firmwareinventory.html["Speicherarray-Firmware-Inventar speichern"]
+
+link:../commands-a-z/save-storagearray-ibstats.html["Speichern Sie InfiniBand-Statistiken für das Speicher-Array"]
+
+link:../commands-a-z/save-storagearray-iscsistatistics.html["Speichern Sie iSCSI-Statistiken für Speicher-Arrays"]
+
+link:../commands-a-z/save-storagearray-performancestats.html["Speichern Sie Performance-Statistiken für das Storage Array"]
+
+link:../commands-a-z/save-storagearray-rlscounts.html["RLS-Anzahl des Speicher-Arrays speichern"]
+
+link:../commands-a-z/save-storagearray-sasphycounts.html["Speichern Sie die Anzahl der SAS-PHY-Speicher-Arrays"]
+
+link:../commands-a-z/save-storagearray-soccounts.html["Speicherarray-SOC-Anzahl speichern"]
+
+link:../commands-a-z/save-storagearray-statecapture.html["Speicherarray-Statuserfassung speichern"]
+
+link:../commands-a-z/save-storagearray-supportdata.html["Speichern Sie die Supportdaten für das Storage-Array"]
+
+link:../commands-a-z/set-storagearray.html["Legen Sie das Speicher-Array fest"]
+
+link:../commands-a-z/set-storagearray-icmppingresponse.html["Festlegen der ICMP-Antwort für das Speicherarray"]
+
+link:../commands-a-z/set-storagearray-isnsipv4configurationmethod.html["Legen Sie die IP-Server-IPv4-Adresse des Speicher-Arrays fest"]
+
+link:../commands-a-z/set-storagearray-isnsipv6address.html["IPv6-Adresse des Speicher-Array iSNS-Servers festlegen"]
+
+link:../commands-a-z/set-storagearray-isnslisteningport.html["Stellen Sie den iSNS-Server-Listening-Port des Speicherarrays ein"]
+
+link:../commands-a-z/set-storagearray-isnsserverrefresh.html["ISNS-Serveraktualisierung für Speicher-Array festlegen"]
+
+link:../commands-a-z/set-storagearray-learncycledate-controller.html["Lernzyklus für das Storage-Array einstellen"]
+
+link:../commands-a-z/set-storagearray-pqvalidateonreconstruct.html["PQ-Validierung des Speicher-Arrays bei rekonstruieren festlegen"]
+
+link:../commands-a-z/set-storagearray-redundancymode.html["Legen Sie den Redundanzmodus für das Storage Array fest"]
+
+link:../commands-a-z/set-storagearray-resourceprovisionedvolumes.html["Legen Sie Volumes Fest, Die Mit Storage Array-Ressourcen Bereitgestellt Werden"]
+
+link:../commands-a-z/set-storagearray-securitykey.html["Sicherheitsschlüssel für das Storage-Array festlegen"]
+
+link:../commands-a-z/set-storagearray-time.html["Legen Sie die Zeit für das Storage-Array fest"]
+
+link:../commands-a-z/set-storagearray-traypositions.html["Stellen Sie die Positionen der Speicherarrays ein"]
+
+link:../commands-a-z/set-storagearray-unnameddiscoverysession.html["Legen Sie die nicht benannte Ermittlungssitzung für das Speicher-Array fest"]
+
+link:../commands-a-z/show-certificates.html["Zertifikate anzeigen"]
+
+link:../commands-a-z/show-storagearray.html["Zeigen Sie das Speicher-Array an"]
+
+link:../commands-a-z/show-storagearray-autoconfiguration.html["Automatische Konfiguration des Speicherarrays anzeigen"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Zeigen Sie die DBM-Datenbank des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-hostconnectivityreporting.html["Anzeige der Host-Konnektivität für das Speicher-Array"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Zeigt die Host-Topologie des Storage-Arrays an"]
+
+link:../commands-a-z/show-storagearray-lunmappings.html["Anzeigen der LUN-Zuordnungen des Speicherarrays"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Zeigen Sie Standards für die Verhandlung von Storage-Arrays an"]
+
+link:../commands-a-z/show-storagearray-odxsetting.html["Zeigen Sie die ODX-Einstellungen für das Storage-Array"]
+
+link:../commands-a-z/show-storagearray-powerinfo.html["Zeigt Informationen zur Stromversorgung des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Zeigt nicht konfigurierte iSCSI-Initiatoren des Speicherarrays an"]
+
+link:../commands-a-z/show-storagearray-unreadablesectors.html["Speicherarray unlesbare Sektoren anzeigen"]
+
+link:../commands-a-z/show-textstring.html["Zeichenfolge anzeigen"]
+
+link:../commands-a-z/start-storagearray-autosupport-manualdispatch.html["Starten Sie den Speicher-Array-AutoSupport-Handbuch Entsendung"]
+
+link:../commands-a-z/start-storagearray-configdbdiagnostic.html["Starten Sie die Diagnose der Konfigurationsdatenbank des Speicher-Arrays"]
+
+link:../commands-a-z/start-storagearray-isnsserverrefresh.html["Starten Sie die Aktualisierung des Speicher-Array-iSNS-Servers"]
+
+link:../commands-a-z/start-storagearray-locate.html["Starten Sie die Speicherarray-Suche"]
+
+link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Die Diagnose der Konfigurationsdatenbank für das Speicher-Array wird angehalten"]
+
+link:../commands-a-z/stop-storagearray-drivefirmwaredownload.html["Beenden Sie den Download der Speicher-Array-Laufwerk-Firmware"]
+
+link:../commands-a-z/stop-storagearray-iscsisession.html["Beenden Sie die iSCSI-Sitzung des Speicherarrays"]
+
+link:../commands-a-z/stop-storagearray-locate.html["Halten Sie die Position des Speicherarrays an"]
+
+link:../commands-a-z/validate-storagearray-securitykey.html["Validierung des Sicherheitsschlüssels des Storage Arrays"]
+
+
+
+== Fachbefehle
+
+link:../commands-a-z/download-tray-firmware-file.html["Laden Sie die Firmware von Umweltkarten herunter"]
+
+link:../commands-a-z/download-tray-configurationsettings.html["Laden Sie die Einstellungen für die Fachkonfiguration herunter"]
+
+link:../commands-a-z/save-alltrays-logfile.html["Fach-Protokoll speichern"]
+
+link:../commands-a-z/set-tray-drawer.html["Anzeige für zulässige Aktion für Schubladendienst einstellen"]
+
+link:../commands-a-z/set-tray-attribute.html["Legen Sie das Fach-Attribut fest"]
+
+link:../commands-a-z/set-tray-identification.html["Legen Sie die Tray-ID fest"]
+
+link:../commands-a-z/set-tray-serviceallowedindicator.html["Legen Sie die Anzeige für die zulässige Aktion für die Fachwartung fest"]
+
+link:../commands-a-z/start-tray-locate.html["Start Fach suchen"]
+
+link:../commands-a-z/stop-tray-locate.html["Stellen Sie die Position des Fachs ein"]
+
+
+
+== Nicht kategorisierte Befehle
+
+link:../commands-a-z/recover-sasport-miswire.html["Fehlerhafte Verbindung des SAS-Ports wiederherstellen"]
+
+link:../commands-a-z/show-textstring.html["Zeichenfolge anzeigen"]

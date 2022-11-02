@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/set-event-alert.html 
+sidebar: sidebar 
+keywords: set, event, alert, filter 
+summary: Über die Befehle für die festgelegte Ereigniswarnung wird die Ereignisbenachrichtigung verwaltet, indem sie die Benachrichtigung deaktiviert oder aktivieren, die in Bezug auf ein bestimmtes alertable Ereignis zusammenhängt. Um eine Benachrichtigung über ein bestimmtes alertable Ereignis zu verhindern, blockieren Sie es. Um die Benachrichtigung über ein bestimmtes alertable Ereignis zu aktivieren, heben Sie die Sperrung des Ereignisses auf. 
+---
+= Filter für Ereignisbenachrichtigung einstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set event alert` Befehle verwalten die Meldungsbenachrichtigung durch Deaktivierung oder Aktivierung der Benachrichtigung im Zusammenhang mit einem bestimmten alertable Ereignis. Um eine Benachrichtigung über ein bestimmtes alertable Ereignis zu verhindern, blockieren Sie es _. Um die Benachrichtigung über ein bestimmtes alertable Ereignis zu aktivieren, entblocken Sie es.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt nur für die E2700 und E5600 Storage-Arrays.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Befehl über eine Befehlszeile ausführen. Sie können diesen Befehl nicht aus dem Skript-Editor in der Speicher-Management-Software ausführen
+
+====
+
+
+== Kontext
+
+Wenn Sie ein Storage-Array definieren, können Sie Alarme konfigurieren und das Management der Ereignismeldungen festlegen. Wenn Sie das Speicher-Array so konfiguriert haben, dass Warnungen gesendet werden, wird eine Benachrichtigung an einen bestimmten Empfänger gesendet, wenn ein alertabbares Ereignis auftritt. Diese Benachrichtigung kann eine oder alle der folgenden Arten sein:
+
+* E-Mail
+* Syslog
+* SNMP-Trap-Benachrichtigungen
+
+
+Die CLI-Befehle zur Ereigniswarnung funktionieren auf einem einzelnen Speicher-Array. Wenn Sie die Befehle auf einem Storage Array ausführen, ist nur das Storage Array von den Befehlen betroffen. Andere Storage Arrays, für die der CLI-Befehl nicht ausgeführt wurde, haben das Standardverhalten.
+
+[NOTE]
+====
+Durch das Blockieren einer Event-Meldung wird nicht verhindert, dass das Ereignis am Systemereignisprotokoll gesendet wird. Alle Events werden weiterhin im Ereignisprotokoll veröffentlicht.
+
+====
+[NOTE]
+====
+Nicht alarmbare Ereignisse können mit diesem Befehl nicht alertable ausgeführt werden.
+
+====
+
+
+== Syntax zum Blockieren einer Ereigniswarnung
+
+[listing, subs="+macros"]
+----
+set blockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Syntax zum Entsperren einer Ereigniswarnung
+
+[listing, subs="+macros"]
+----
+set unBlockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`_eventType_`
+ a| 
+Dieser Parameter ist der ganzzahlige Wert des Ereignisses. Geben Sie den Ereigniswert in einem hexadezimalen Format ein, z. B. 0x280D. Beginnen Sie den hexadezimalen Wert immer mit *0x*, um anzugeben, dass er sich im hexadezimalen Format befindet. Wenn Sie 0x nicht verwenden, wird der Wert als Dezimalzahl interpretiert und in einen Hexadezimalwert konvertiert, bevor der Befehl „Block“ oder „Unblocking“ angewendet wird. Dies kann dazu führen, dass ein falsches Ereignis blockiert oder entblockiert wird.
+
+Wenn Sie ein ungültiges Ereignis eingeben, wird ein Fehler angezeigt.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.10

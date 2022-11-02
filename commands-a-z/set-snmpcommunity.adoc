@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/set-snmpcommunity.html 
+sidebar: sidebar 
+keywords: update, snmp, community 
+summary: 'Der Befehl set snmpCommunity erstellt einen neuen Namen für eine bestehende SNMP-Community (Simple Network Management Protocol).' 
+---
+= SNMP-Community aktualisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snmpCommunity` Befehl erstellt einen neuen Namen für eine bestehende Simple Network Management Protocol (SNMP)-Community.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snmpCommunity communityName=pass:quotes["_snmpCommunityName_"]
+newCommunityName=pass:quotes["_newSnmpCommunityName_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`communityName`
+ a| 
+Der Name der vorhandenen SNMP-Community, die Sie umbenennen möchten. Schließen Sie den SNMP-Community-Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`newCommunityName`
+ a| 
+Der neue Name, den Sie der SNMP-Community geben möchten. Schließen Sie den SNMP-Community-Namen in doppelte Anführungszeichen (" ").
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.30

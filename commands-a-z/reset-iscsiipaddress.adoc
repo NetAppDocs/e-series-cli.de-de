@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/reset-iscsiipaddress.html 
+sidebar: sidebar 
+keywords: reset, iscsi, ip address 
+summary: Mit dem Befehl Reset iscsiIpAddress wird die IP-Adresse des Remote-Speicher-Arrays zurückgesetzt, um die Verbindung zum lokalen Speicher-Array wiederherzustellen. 
+---
+= ISCSI-IP-Adresse zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset iscsiIpAddress` Mit dem Befehl wird die IP-Adresse des Remote-Speicher-Arrays zurückgesetzt, um die Verbindung mit dem lokalen Speicher-Array wiederherzustellen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
+
+[NOTE]
+====
+Wenn Sie den Befehl für das E2800, das E5700 Array, ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+
+====
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Mit diesem Befehl können Sie das lokale Speicher-Array darüber informieren, dass sich die iSCSI-IP-Adresse des Remote-Speicher-Arrays geändert hat und aktualisiert werden muss.
+
+Beim Einrichten einer asynchronen Spiegelbeziehung mit einer iSCSI-Verbindung speichern sowohl die lokalen als auch die Remote-Speicher-Arrays einen Datensatz der IP-Adresse des Remote-Speicher-Arrays in der Konfiguration zur asynchronen Spiegelung. Wenn sich die IP-Adresse eines iSCSI-Ports ändert, tritt auf dem Remote-Speicher-Array, das versucht, diesen Port zu verwenden, ein Kommunikationsfehler auf.
+
+Das Speicher-Array mit der geänderten IP-Adresse sendet eine Nachricht an jedes Remote-Speicher-Array, das mit den asynchronen Spiegelgruppen verknüpft ist, die für die Spiegelung über eine iSCSI-Verbindung konfiguriert sind. Speicher-Arrays, die diese Meldung erhalten, aktualisieren automatisch ihre Remote-Ziel-IP-Adresse.
+
+Wenn das Storage-Array mit der geänderten IP-Adresse seine Controller-übergreifende Meldung nicht an ein Remote-Storage-Array senden kann, sendet das System eine Warnmeldung über das Verbindungsproblem. Verwenden Sie die `reset` Befehl zum erneuten Herstellen der Verbindung mit dem lokalen Speicher-Array.
+
+
+
+== Syntax
+
+[listing]
+----
+reset (remoteStorageArrayName="storageArrayName" | remoteStorageArrayWwid=<wwID>)
+iscsiIpAddress
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Der Name für das Remote-Speicher-Array, für das Sie die iSCSI-IP-Adresse zurücksetzen. Schließen Sie den Namen des Speicher-Arrays in doppelte Anführungszeichen („ “).
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+Der World Wide Identifier (WWID) des Speicherarrays, für das Sie die iSCSI-IP-Adresse zurücksetzen. Sie können zur Identifizierung des Storage-Arrays die WWID anstelle des Storage Array-Namens verwenden. Schließen Sie die WWID in Winkel-Klammern ( ).
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

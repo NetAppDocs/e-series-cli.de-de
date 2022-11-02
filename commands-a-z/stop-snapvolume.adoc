@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/stop-snapvolume.html 
+sidebar: sidebar 
+keywords: stop, snapshot, volume 
+summary: Der Befehl stop SnapVolume stoppt einen Snapshot-Volumenvorgang. 
+---
+= Stoppen Sie das Snapshot Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `stop snapVolume` Befehl stoppt einen Snapshot-Volume-Vorgang.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop snapVolume ["_snapVolumeName_"]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`snapVolume`
+ a| 
+Der Name des Snapshot-Volumes, das Sie beenden möchten. Schließen Sie den Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/create-mapping-volume.html 
+sidebar: sidebar 
+keywords: create, volume, map 
+summary: Mit dem Befehl Create Mapping Volume wird eine logische Zuordnung von einem Volume zu einem Host oder einer Host-Gruppe erstellt. 
+---
+= Volume-Zuordnung Erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create mapping volume` Befehl erstellt eine logische Zuordnung von einem Volume zu einem Host oder einer Host-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create mapping volume=pass:quotes[_"VolumeName"_
+(host="_hostName_" | hostGroup=("_hostGroupName_"] | defaultGroup))
+logicalUnitNumber=lun
+mapWaitPeriod=mapWaitPeriodValue
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`Volume`
+ a| 
+Der Name des Volumes, für das Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Der Name eines Hosts, auf den Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name einer Host-Gruppe, der Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen (" "). Wenn Sie den verwenden `defaultGroup` Schlüsselwort: Schließen Sie es nicht in Anführungszeichen ein.
+
+
+
+ a| 
+`logicalUnitNumber`
+ a| 
+Die logische Nummer oder Namespace-ID, die Sie verwenden möchten, um einem bestimmten Host zuzuordnen. Dieser Parameter weist den Host auch einer Host-Gruppe zu.
+
+[NOTE]
+====
+Die angegebene Nummer der logischen Einheit oder Namespace-ID darf nicht bereits verwendet werden und muss sich innerhalb des vom Host-Betriebssystem unterstützten Bereichs befinden. Es wird kein Fehler geben, wenn Sie das Volume einer logischen Gerätenummer oder Namespace-ID zuordnen, die nicht vom Host unterstützt wird, aber der Host kann nicht auf das Volume zugreifen.
+
+====
+
+
+ a| 
+`mapWaitPeriod`
+ a| 
+Blockiert die Zuordnung, bis der Befehl abgeschlossen werden kann oder es Zeit außer Betrieb nimmt, um die Interaktion zu beeinträchtigen. Wenn kein Wert eingegeben wird, besteht das Standardverhalten darin, die Aktion zu scheitern, wenn das Volume nicht sofort zugeordnet werden kann.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.83
+
+8.63 fügt den Parameter mapWaitPeriod hinzu.

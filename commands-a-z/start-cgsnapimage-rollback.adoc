@@ -1,0 +1,112 @@
+---
+permalink: commands-a-z/start-cgsnapimage-rollback.html 
+sidebar: sidebar 
+keywords: start, consistency, group, snapshot, rollback 
+summary: Mit dem Befehl cgSnapImage Rollback starten wird ein Rollback-Vorgang für die Mitgliederbasis-Volumes in einer Snapshot-Consistency Group gestartet. 
+---
+= Starten Sie das Rollback von Consistency Group Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start cgSnapImage rollback` Befehl startet einen Rollback-Vorgang zu den Basisvolumes der Mitglieder in einer Snapshot Consistency Group.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Der Inhalt der Basis-Volumes ändert sich sofort, um den Point-in-Time-Inhalt des Snapshot-Volumes der Konsistenzgruppe anzupassen. Die Basis-Volumes stehen nach Abschluss des Rollback-Vorgangs sofort für Lese-/Schreibanfragen zur Verfügung.
+
+Das Repository-Volume, das mit dem Snapshot-Volume der Konsistenzgruppe verknüpft ist, verfolgt weiterhin alle neuen Änderungen zwischen dem Basis-Volume und dem Snapshot-Volume der Konsistenzgruppe, die nach Abschluss des Rollback-Vorgangs auftreten.
+
+Um einen Rollback-Vorgang für die Basisvolumes der Mitglieder zu beenden, verwenden Sie das `stop cgSnapImage rollback` Befehl.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start cgSnapImage pass:quotes[["_snapCGID:imageID_"]] rollback
+memberVolumeSet pass:quotes[("_memberVolumeName1_" ... "_memberVolumeNameN_")]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Der Name des Snapshot-Images der Konsistenzgruppe, für das Sie einen Rollback-Vorgang starten möchten. Der Name eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe.
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` -- Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` -- Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`memberVolumeSet`
+ a| 
+Der Name eines oder mehrerer Basisvolumes eines Mitglieds in einer Konsistenzgruppe, die Sie zurücksetzen möchten. Schließen Sie jeden Namen des Basis-Volumes der Mitglieder in doppelte Anführungszeichen (" ") in Klammern ein.
+
+Sie können mehrere Volume-Namen eingeben. Schließen Sie alle Volume-Namen in einen Satz eckiger Klammern ([ ]). Schließen Sie jeden Volumennamen in doppelte Anführungszeichen (" "). Trennen Sie jeden Volume-Namen mit einem Leerzeichen.
+
+Wenn der `memberVolumeSet` Parameter wird nicht verwendet der Rollback-Prozess gilt für alle Mitglied-Volumes der Konsistenzgruppe.
+
+|===
+
+
+== Hinweise
+
+Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
+
+* Die Kennung der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise einen Rollback-Vorgang für das neueste Snapshot Image in einer gesamten Konsistenzgruppe mit dem Namen „CG1“ starten möchten, verwenden Sie den folgenden Befehl:
+
+[listing]
+----
+start cgSnapImage ["CG1:newest"] rollback;
+----
+Um einen Rollback-Vorgang für das Snapshot-Image 12345 für Mitglieder von Basis-Volumes mVol1, mVol2 und mVol3 in einer Konsistenzgruppe mit dem Namen „CG2“ zu starten, würden Sie folgenden Befehl verwenden:
+
+[listing]
+----
+start cgSnapImage ["CG2:12345"] rollback memberVolumeset=("memVol1 memVol2 memVol3");
+----
+
+
+== Minimale Firmware-Stufe
+
+7.83

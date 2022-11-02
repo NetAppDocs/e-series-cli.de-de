@@ -1,0 +1,53 @@
+---
+permalink: commands-category/performance-tuning-commands.html 
+sidebar: sidebar 
+keywords: performance, tuning, commands, automatic, load balance, cache commands 
+summary: Befehle zur Performance-Optimierung 
+---
+= Befehle zur Performance-Optimierung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Befehle für automatischen Lastausgleich
+
+link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Statistiken zum automatischen Lastenausgleich speichern"]
+
+link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Legen Sie fest, dass das Speicherarray den automatischen Lastausgleich aktiviert oder deaktiviert"]
+
+
+
+== SSD-Cache-Befehle
+
+link:../commands-a-z/add-drives-to-ssd-cache.html["Fügen Sie Laufwerke zum SSD-Cache hinzu"]
+
+link:../commands-a-z/change-ssd-cache-application-type.html["Ändern Sie den Applikationstyp für den SSD-Cache"]
+
+link:../commands-a-z/create-ssdcache.html["Erstellen Sie den SSD-Cache"]
+
+link:../commands-a-z/delete-ssdcache.html["Löschen des SSD-Caches"]
+
+link:../commands-a-z/remove-drives-from-ssd-cache.html["Entfernen Sie Laufwerke aus dem SSD-Cache"]
+
+link:../commands-a-z/rename-ssd-cache.html["Umbenennen des SSD-Caches"]
+
+link:../commands-a-z/resume-ssdcache.html["Setzen Sie den SSD-Cache wieder ein"]
+
+link:../commands-a-z/set-volume-ssdcacheenabled.html["Legen Sie den SSD-Cache für ein Volume fest"]
+
+link:../commands-a-z/show-ssd-cache.html["Zeigt den SSD-Cache an"]
+
+link:../commands-a-z/show-ssd-cache-statistics.html["Zeigt SSD-Cache-Statistiken an"]
+
+link:../commands-a-z/start-ssdcache-locate.html["Starten Sie die SSD-Cache-Suche"]
+
+link:../commands-a-z/start-ssdcache-performancemodeling.html["Start der SSD-Cache-Performance-Modellierung"]
+
+link:../commands-a-z/stop-ssdcache-locate.html["Stoppen Sie die Suche im SSD-Cache"]
+
+link:../commands-a-z/stop-ssdcache-performancemodeling.html["Stoppen Sie die Performance-Modellierung des SSD-Caches"]
+
+link:../commands-a-z/suspend-ssdcache.html["Unterbrechen Sie den SSD-Cache"]

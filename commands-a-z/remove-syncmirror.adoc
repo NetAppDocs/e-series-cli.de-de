@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/remove-syncmirror.html 
+sidebar: sidebar 
+keywords: remove, synchronous, mirror 
+summary: Der Befehl Remove SyncMirror entfernt die gespiegelte Beziehung zwischen dem primären Volume und dem sekundären Volume in einem Remote-gespiegelten Paar. 
+---
+= Synchrones Spiegeln entfernen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove syncMirror` Mit dem Befehl wird die gespiegelte Beziehung zwischen dem primären Volume und dem sekundären Volume in einem Remote-gespiegelten Paar entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese Feature-ID ist nicht mehr gültig und wird durch ersetzt `syncMirror`.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+remove syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`localVolume`
+ a| 
+Der Name des primären Volumes (des Volumes auf dem lokalen Speicher-Array), das Sie entfernen möchten. Umschließen Sie den Volumennamen in eckige Klammern ([ ]). Wenn der Volume-Name Sonderzeichen hat oder nur aus Ziffern besteht, müssen Sie den Volume-Namen in doppelte Anführungszeichen („ “) in eckige Klammern setzen.
+
+
+
+ a| 
+`localVolumes`
+ a| 
+Die Namen mehrerer primärer Volumes (die Volumes auf dem lokalen Speicher-Array), die Sie entfernen möchten. Geben Sie die Namen der primären Volumes mithilfe folgender Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+Wenn der Name des primären Volumes Sonderzeichen hat oder nur aus Ziffern besteht, geben Sie die Namen unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

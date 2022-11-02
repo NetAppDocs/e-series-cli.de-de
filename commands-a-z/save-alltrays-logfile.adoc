@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/save-alltrays-logfile.html 
+sidebar: sidebar 
+keywords: save, tray log 
+summary: Mit dem Befehl „allTrays logfile speichern“ werden die Protokollsensdaten in einer Datei gespeichert. 
+---
+= Fach-Protokoll speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save allTrays logFile` Befehl speichert die Protokollsense-Daten in einer Datei.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Protokollsense-Daten werden für jedes Fach von den Umweltkarten verwaltet Nicht alle Umweltkarten enthalten Protokollsense-Daten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save allTrays logFile=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`*logFile*`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Protokollsense-Daten speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\traylogdat.txt"`
+
+Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.50

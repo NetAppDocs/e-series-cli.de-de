@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/save-storagearray-autosupport-log.html 
+sidebar: sidebar 
+keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
+summary: Mit dem Befehl Storage Array AutoSupport log speichern können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar. 
+---
+= Abrufen eines AutoSupport-Protokolls
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray autoSupport log` Mit dem Befehl können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Mit diesem Befehl können Sie zwei Protokolltypen anzeigen:
+
+* Aktuelles Protokoll -- Zeigen Sie das Protokoll, das zu diesem Zeitpunkt erfasst wurde.
+* Archivprotokoll -- Anzeigen des Protokolls aus einer archivierten Datei.
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray autoSupport log [inputArchive=n]
+file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`inputArchive`
+ a| 
+Hiermit können Sie das archivierte AutoSupport-Protokoll angeben, in dem sich die Archivdatei befindet `n`, Eine Ganzzahl, die bei 0 beginnt.
+
+[NOTE]
+====
+Wenn Sie diesen Parameter nicht verwenden, wählen Sie das aktuelle AutoSupport-Protokoll aus (das zu diesem Zeitpunkt erfasst wurde).
+
+====
+
+
+ a| 
+`file`
+ a| 
+Ermöglicht Ihnen die Angabe des Dateinamens für das ASUP-Übertragungsprotokoll der Ausgabe.
+
+[NOTE]
+====
+Dieser Parameter ist erforderlich.
+
+====
+|===
+
+
+=== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "save storageArray autoSupport log inputArchive=0 file=\"ASUPTransmissionLog\";"
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

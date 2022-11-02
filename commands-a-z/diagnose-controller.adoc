@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/diagnose-controller.html 
+sidebar: sidebar 
+keywords: diagnose, controller, command, run, diagnostic, tests, arrays, roles, context 
+summary: Mit dem Befehl Diagnose-Controller werden Diagnosetests auf dem Controller ausgeführt. 
+---
+= Controller-Diagnose
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `diagnose controller` Mit dem Befehl werden Diagnosetests auf dem Controller ausgeführt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Diagnosetests bestehen aus Loopback-Tests, bei denen Daten auf die Laufwerke geschrieben und von den Laufwerken gelesen werden.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+diagnose controller [(a| b)]
+loopbackDriveChannel=(allchannels | (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8))
+testID=(1 | 2 | 3 | discreteLines)
+pass:quotes[[patternFile="_filename_"]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller, auf dem Sie die Diagnosetests ausführen möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+
+
+ a| 
+`loopbackDriveChannel`
+ a| 
+Die Laufwerkskanäle, auf denen Sie die Diagnosetests ausführen möchten. Sie können die Diagnose entweder auf allen Kanälen ausführen oder einen bestimmten Kanal auswählen, auf dem die Diagnose ausgeführt werden soll. Wenn Sie einen bestimmten Kanal auswählen, sind gültige Werte für die Laufwerkskanäle `1`, `2`, `3`, `4`, `5`, `6`, `7`, Oder `8`.
+
+
+
+ a| 
+`testID`
+ a| 
+Die Kennung für den Diagnosetest, den Sie ausführen möchten. Die Kennung und die entsprechenden Tests lauten wie folgt:
+
+* `1` -- Lesetest
+* `2` -- Schreib-Test
+* `3` -- Data-Loop-Back-Test
+* `discreteLines` -- Einzellinien-Diagnosetest
+
+
+
+
+ a| 
+`patternFile`
+ a| 
+Der Dateipfad und der Dateiname, der ein Datenmuster enthält, das Sie als Testdaten verwenden möchten. Schließen Sie den Dateinamen des Datenmusters in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\sup\patfile.txt"`
+
+|===
+
+
+== Hinweise
+
+Wenn Sie einen Datenschleifentest ausführen, können Sie optional eine Datei mit einem Datenmuster angeben. Wenn Sie keine Datei angeben, stellt die Controller-Firmware ein Standardmuster bereit.
+
+Diskrete Linien sind Steuerleitungen und Statuslinien, die zwischen zwei Controllern in einem Controller-Fach verbunden sind Mit dem Diagnosetest für diskrete Linien kann jeder Controller überprüfen, ob Steuersignalübergänge an den Steuereingängen des alternativen Controllers beobachtet werden können. Der Diagnosetest für diskrete Linien wird nach jedem aus- und Wiedereinschalten oder jedem Controller-Reset automatisch ausgeführt. Sie können den Diagnosetest für diskrete Linien ausführen, nachdem Sie eine Komponente ersetzt haben, die den ersten Diagnosetest für diskrete Linien fehlgeschlagen hat. Der Diagnosetest für diskrete Linien gibt eine der folgenden Meldungen zurück:
+
+* Wenn der Diagnosetest für diskrete Linien erfolgreich ausgeführt wird, wird folgende Meldung angezeigt:
++
+[listing]
+----
+The controller discrete lines successfully passed the diagnostic
+test. No failures were detected.
+----
+* Wenn der Diagnosetest für diskrete Linien fehlschlägt, wird folgende Meldung angezeigt:
++
+[listing]
+----
+One or more controller discrete lines failed the diagnostic test.
+----
+* Wenn die CLI den Diagnosetest für separate Zeilen nicht ausführen kann, gibt die CLI Fehler 270 zurück. Dies bedeutet, dass der Diagnosetest für diskrete Linien nicht gestartet oder abgeschlossen werden konnte.
+
+
+
+
+== Minimale Firmware-Stufe
+
+6.10 fügt den Lesetest, den Schreibtest und den Datenschleifentest hinzu.
+
+6.14 fügt den Diagnosetest für diskrete Linien hinzu.
+
+7.30 fügt die aktualisierte Laufwerkskanalkennung hinzu.

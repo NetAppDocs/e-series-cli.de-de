@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-ssdcache-locate.html 
+sidebar: sidebar 
+keywords: start, ssd, cache, locate 
+summary: 'Der Befehl Start ssdCache Locate identifiziert die Solid State Disks (SSDs), die logisch gruppiert sind, um den SSD-Cache zu bilden, indem die Kontrollleuchten auf den SSDs blinken.' 
+---
+= Starten Sie die SSD-Cache-Suche
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start ssdCache locate` Der Befehl identifiziert die Solid State Disks (SSDs), die logisch gruppiert sind, um den SSD-Cache zu bilden, indem die Kontrolllampen auf den SSDs blinkt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Support-Administrator“ verfügen.
+
+
+
+== Kontext
+
+Verwenden Sie die `stop ssdCache locate` Befehl zum Ausschalten der Kontrollleuchten auf den Laufwerken.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+start ssdCache pass:quotes[[_ssdCacheName_]] locate
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`ssdCache`
+ a| 
+Der Name des SSD-Caches, den Sie suchen möchten. Schließen Sie den SSD-Cache-Namen in eckige Klammern ([ ]). Wenn der SSD-Cache-Name Sonderzeichen enthält oder nur aus Zahlen besteht, müssen Sie den SSD-Cache-Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.84

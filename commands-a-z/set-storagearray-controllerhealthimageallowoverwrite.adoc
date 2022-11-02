@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-controllerhealthimageallowoverwrite.html 
+sidebar: sidebar 
+keywords: set, storage, array, controller, health, image, allow, overwrite 
+summary: Der Befehl Set storageArray ControllerHealthImageAllowOverWrite setzt ein Flag auf einen Controller, um ein vorhandenes Controller-Zustandsabbild auf Storage Arrays zu überschreiben, die die Funktion des Controller-Zustandsabbilds unterstützen. 
+---
+= Festlegen des Integritätsabbilds des Speicher-Array-Controllers für Überschreibung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray controllerHealthImageAllowOverWrite` Befehl setzt ein Flag auf einem Controller, um es einem neuen Controller-Zustandsabbild zu ermöglichen, ein vorhandenes Controller-Zustandsabbild auf Storage Arrays zu überschreiben, die die Funktion des Controller-Zustandsabbilds unterstützen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Wenn das Storage-Array die Funktion für das Integritätsabbild des Controllers nicht unterstützt, gibt der Befehl einen Fehler aus.
+
+[NOTE]
+====
+Mit der Firmware-Version 8.20 der `coreDumpAllowOverWrite` Parameter wird durch das ersetzt `controllerHealthImageAllowOverWrite` Parameter.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+set storageArray controllerHealthImageAllowOverWrite
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Wenn das Controller-Zustandsabbild abgerufen wird, nimmt das `allow overwrite` Flag ist gesetzt. Wenn das Controller-Zustandsabbild nicht abgerufen wird, läuft das Image innerhalb von 48 Stunden ab, danach läuft `allow overwrite` Flag ist gesetzt. Wenn Sie das verwenden `set storageArray controllerHealthImageAllowOverWrite` Befehl zum Festlegen des `allow overwrite` Flag: Auf die 48-Stunden-Verfallfrist wird verzichtet, als ob das Bild abgerufen worden wäre.
+
+
+
+== Minimale Firmware-Stufe
+
+7.86
+
+8.20 ersetzt die `*coreDumpAllowOverWrite*` Parameter mit `controllerHealthImageAllowOverWrite` Parameter.

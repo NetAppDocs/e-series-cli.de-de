@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/show-certificates.html 
+sidebar: sidebar 
+keywords: show, certificates 
+summary: Mit dem Befehl Zertifikate anzeigen können Sie die Zertifikate anzeigen, die im CLI-Paket Trust Store installiert sind. 
+---
+= Zertifikate anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `Show certificates` Mit dem Befehl können Sie die Zertifikate anzeigen, die auf dem CLI-Paket Trust Store installiert sind.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl bezieht sich auf die EF600 Storage-Arrays.
+
+
+
+== Syntax
+
+[listing]
+----
+show localCertificate all | alias alias
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`alias`
+ a| 
+Ermöglicht die Angabe eines Zertifikats über den benutzerdefinierten Alias.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.60

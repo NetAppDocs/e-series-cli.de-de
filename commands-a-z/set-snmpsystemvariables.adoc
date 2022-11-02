@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-snmpsystemvariables.html 
+sidebar: sidebar 
+keywords: update, snmp, mib, system, group, variables 
+summary: 'Der Befehl set snmpSystemVariables ändert die Systemvariablen für das Simple Network Management Protocol (SNMP).' 
+---
+= Aktualisieren Sie SNMP MIB II Systemgruppenvariablen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set snmpSystemVariables` Befehl ändert die Systemvariablen für das Simple Network Management Protocol (SNMP).
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Die folgenden Systemvariablen werden in einer Management Information Base II (MIB-II)-Datenbank verwaltet:
+
+* Der Name des Systems
+* Name des Systemkontakts
+* Standort des Systems
+
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set snmpSystemVariables
+[sysName=pass:quotes[_newSystemName_]]
+[sysContact=pass:quotes[_contactName_]]
+[sysLocation=pass:quotes[_systemLocation_]]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`sysName`
+ a| 
+Der neue Name, den Sie dem SNMP-System geben möchten. Verwenden Sie für den Systemnamen Standard-SNMP- und MIB-Konventionen. Schließen Sie den SNMP-Systemnamen in eckigen Klammern ([ ]) an.
+
+
+
+ a| 
+`sysContact`
+ a| 
+Der Name der Kontaktperson für das verwaltete System mit Informationen zur Kontaktaufnahme mit dieser Person. Schließen Sie den SNMP-Kontaktnamen in eckige Klammern ([ ]).
+
+
+
+ a| 
+`sysLocation`
+ a| 
+Der physische Standort des Systems, z. B. „3rd flr“. Schließen Sie die Position des SNMP-Systems in eckigen Klammern ([ ]) an.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.30

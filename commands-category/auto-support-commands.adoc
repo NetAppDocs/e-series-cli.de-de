@@ -1,0 +1,67 @@
+---
+permalink: commands-category/auto-support-commands.html 
+sidebar: sidebar 
+keywords: support, commands, bundle, collection, autosupport 
+summary: Auto-Support-Befehle 
+---
+= Auto-Support-Befehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== AutoSupport Bundle Erfassungs-Befehle für die E2700 und E5600
+
+link:../commands-a-z/smcli-autosupportlog.html["Erfassen oder Anzeigen eines AutoSupport-Protokolls"]
+
+link:../commands-a-z/smcli-autosupportconfig-show.html["Zeigen Sie die Einstellungen für die AutoSupport Bundle-Sammlung an"]
+
+link:../commands-a-z/smcli-autosupportschedule-show.html["Zeigen Sie den Zeitplan für die Erfassung von AutoSupport-Meldungen an"]
+
+link:../commands-a-z/smcli-enable-autosupportfeature.html["Aktivieren oder Deaktivieren von AutoSupport auf der Ebene der EMW-Verwaltungsdomain..."]
+
+link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion auf Ebene der EMW-Verwaltungsdomäne (nur SMcli)"]
+
+link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand Remote-Diagnose-Funktion unter..."]
+
+link:../commands-a-z/smcli-autosupportschedule-reset.html["Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen"]
+
+link:../commands-a-z/smcli-supportbundle-schedule.html["Planen der Konfiguration für die automatische Support-Bundle-Sammlung"]
+
+link:../commands-a-z/smcli-autosupportconfig.html["Geben Sie die AutoSupport-Bereitstellungsmethode an"]
+
+link:../commands-a-z/smcli-autosupportconfig-test.html["Testen Sie die AutoSupport-Konfiguration"]
+
+
+
+== AutoSupport-Befehle für alle Storage Arrays
+
+link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Aktivieren oder Deaktivieren von AutoSupport (nur für E2800, E5700 Arrays)"]
+
+link:../commands-a-z/save-storagearray-supportdata.html["Speichern Sie die Supportdaten für das Storage-Array"]
+
+
+
+== AutoSupport-Befehle für E2800, E5700
+
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Aktivieren oder Deaktivieren des AutoSupport Wartungsfensters (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand Funktion (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport Remote Diagnostics Funktion (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zurücksetzen des AutoSupport Nachrichtenüberfassungszeitplans (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/show-storagearray-autosupport.html["Zeigen der AutoSupport Konfiguration (für E2800 oder E5700 Storage-Arrays)"]
+
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Festlegen eines AutoSupport Nachrichtenüberfassungsplans (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Angabe der AutoSupport HTTP(S)-Bereitstellungsmethode (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Festlegen der Bereitstellungsmethode für die E-Mail (SMTP) (für einzelne E2800 oder E5700 Arrays)"]
+
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen von AutoSupport-Bereitstellungseinstellungen (für einzelne E2800 oder E5700 Arrays)"]

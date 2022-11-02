@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/save-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: save, storage, array, dbm, database 
+summary: Der Befehl save storageArray dbmDatabase sichert RAID-Konfigurationsdaten oder alle Daten in einer Datei auf dem Host. Sie können mehrere Datenstandorte und Controller angeben. 
+---
+= Speicher-Array-DBM-Datenbank speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray dbmDatabase` Mit dem Befehl werden die RAID-Konfigurationsdaten oder alle Daten in einer Datei auf dem Host gesichert. Sie können mehrere Datenstandorte und Controller angeben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+save storageArray dbmDatabase
+[sourceLocation=(disk | onboard)]
+[controller [(a|b)]]
+[contentType= all]
+ file="fileName"
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie die Datenbank speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\dbmdata.zip"`
+
+Dieser Parameter muss nach einem der optionalen Parameter der letzte sein.
+
+Dieser Befehl erstellt eine ZIP-Datei und Sie müssen keine Dateierweiterung angeben.
+
+
+
+ a| 
+`sourceLocation`
+ a| 
+Dieser Parameter gibt den Speicherort an, von dem Informationen zur Backup-Datenbank erfasst werden sollen.
+
+* `disk` Gibt an, dass Daten direkt aus der Datenbank auf dem Laufwerk stammen
+* `onboard` Zeigt an, dass die Daten vom RPA-Speicherort stammen
+
+
+Der Standardspeicherort ist `onboard`.
+
+
+
+ a| 
+`controller`
+ a| 
+Dieser Parameter gibt den Controller an, von dem die Daten ausschließlich abgerufen werden, wenn `sourceLocation` Ist auf festgelegt `onboard`. Wenn der `controller` Parameter ist nicht angegeben, Daten können von einem der Controller abgerufen werden.
+
+Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B.
+
+
+
+ a| 
+`contentType`
+ a| 
+Dieser Parameter gibt den Inhaltstyp der abzurufenden Daten an.
+
+Dieser Parameter ist auf festgelegt `all` Standardmäßig werden alle Daten einschließlich Disk Pool Konfigurationsdaten abgerufen.
+
+|===
+
+
+== Hinweise
+
+Die Daten, die Sie mit diesem Befehl auf dem Host speichern, können bei Bedarf auf dem Controller wiederhergestellt werden. Ein Validierer ist jedoch erforderlich, um Daten aus der Datei auf dem Host wiederherzustellen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.75
+
+7.83 fügt folgende Parameter hinzu:
+
+* `sourceLocation`
+* `controller`
+* `contentType`
+

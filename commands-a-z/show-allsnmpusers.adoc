@@ -1,0 +1,119 @@
+---
+permalink: commands-a-z/show-allsnmpusers.html 
+sidebar: sidebar 
+keywords: show, snmpv3, usm, user 
+summary: 'Der Befehl show allsnmpUsers gibt Informationen über die für das Speicher-Array definierten USM-Benutzer des Simple Network Management (SNMP) zurück.' 
+---
+= Zeigt den SNMPv3-USM-Benutzer an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show allsnmpUsers` Der Befehl gibt Informationen zu den für das Speicherarray definierten USM-Benutzern des Simple Network Management (SNMP) zurück.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+show (allSnmpUsers |
+    snmpUser userName="snmpUsername" |
+    snmpUsers [snmpUserName1 ... snmpUserNameN])
+    [summary]
+----
+[NOTE]
+====
+Dieser Befehl gibt SNMP-Benutzerinformationen zurück, die den folgenden ähneln
+
+[listing]
+----
+SNMP USERS------------------------------
+
+SUMMARY
+
+   Total SNMP Users: 2
+   Total SNMP Trap Destinations: 1
+
+DETAILS
+
+   SNMP User: TestUser1
+   SNMP Engine ID: local
+   SNMP Permission: Read Only
+   SNMP Authentication Protocol: sha
+   SNMP Privacy Protocol: aes128
+
+      Associated Trap Destination:
+
+      Trap Receiver IP Address  Send Authentication Failure Traps
+      10.113.173.133            false
+
+   SNMP User: TestUser2
+   SNMP Engine ID: local
+   SNMP Permission: Read Only
+   SNMP Authentication Protocol: sha256
+   SNMP Privacy Protocol: none
+
+      Associated Trap Destination:
+----
+====
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`allSnmpUsers`
+ a| 
+Dieser Parameter gibt Informationen zu allen SNMP-Benutzern im Speicher-Array zurück.
+
+
+
+ a| 
+`userName`
+ a| 
+Der Name des SNMP-Benutzers, für den Sie Informationen abrufen möchten. Schließen Sie den SNMP-Benutzernamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`snmpUsers`
+ a| 
+Die Namen mehrerer SNMP-Benutzer, für die Sie Informationen abrufen möchten. Geben Sie die Namen der SNMP-Benutzer unter Verwendung der folgenden Regeln ein:
+
+* Schließen Sie alle Namen in eckige Klammern ([ ]).
+* Schließen Sie jeden dieser Namen in doppelte Anführungszeichen (" ").
+* Trennen Sie jede der Namen mit einem Leerzeichen.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Dieser Parameter gibt eine Liste der Gesamtzahl der SNMP-Benutzer und der Gesamtzahl der SNMP-Trap-Ziele zurück. Wenn Sie diesen Parameter verwenden, werden alle Detailinformationen nicht angezeigt.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8.72

@@ -1,0 +1,149 @@
+---
+permalink: commands-a-z/create-snapshot-volume.html 
+sidebar: sidebar 
+keywords: create, snapshot, volume 
+summary: Der Befehl create SnapVolume erstellt ein Snapshot Volume mit Lese-/Schreibfunktionen für Snapshot Images eines Basis-Volumes. 
+---
+= Erstellen eines Snapshot Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create snapVolume` Befehl erstellt ein Snapshot Volume mit Lese-/Schreibfunktionen für Snapshot Images eines Basis-Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können das Snapshot-Volume einem Host zuordnen und alle Hostschreibvorgänge befinden sich im Repository-Volume, das dem Snapshot-Volume zugeordnet ist. Sie können das neue Snapshot Volume einem vorhandenen Repository Volume zuweisen oder ein neues Repository Volume in einer Volume-Gruppe oder einem Laufwerk-Pool erstellen.
+
+[NOTE]
+====
+Dieser Befehl kann nicht für ein Snapshot-Image verwendet werden, das in der Online-Volume-Kopie verwendet wird.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create snapVolume userLabel=pass:quotes[_"snapVolumeName_" snapImageID="_snapCGID:imageID_"]
+[(repositoryVolume="repos_xxxx"]
+[repositoryVolume=pass:quotes[_(volumeGroupName_]pass:quotes[[capacity=_capacityValue_]]]
+[repositoryVolume=pass:quotes[(_diskPoolName_]pass:quotes[[capacity=_capacityValue_])]]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie einem Snapshot-Volume geben möchten. Schließen Sie den Namen des Snapshot-Volumes in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Die alphanumerische Kennung eines Snapshot-Images, das Sie dem neuen Snapshot-Volume hinzufügen möchten. Die Kennung eines Snapshot-Images besteht aus zwei Teilen:
+
+* Der Name der Snapshot-Gruppe
+* Eine Kennung für das Snapshot-Image in der Snapshot-Gruppe
+
+
+Die Kennung für das Snapshot-Image kann eine der folgenden sein:
+
+* Ein Integer-Wert, der die Sequenznummer des Snapshots in der Snapshot-Gruppe ist.
+* `NEWEST` - Verwenden Sie diese Option, wenn Sie das neueste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+* `OLDEST` - Verwenden Sie diese Option, wenn Sie das früheste Snapshot-Image anzeigen möchten, das in der Snapshot-Gruppe erstellt wurde.
+
+
+Schließen Sie den Namen des Snapshot-Bildes in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Der Name des Repository-Volumes, das geänderte Daten aus dem Snapshot-Image enthält.
+
+Es stehen zwei Optionen zur Verfügung, um den Namen eines Repository-Volumes festzulegen:
+
+* Verwenden Sie einen vorhandenen Repository-Volume-Namen
+* Erstellen Sie ein neues Repository-Volume, wenn Sie diesen Befehl ausführen
+
+
+Der Name eines vorhandenen Repository-Volumes besteht aus zwei Teilen:
+
+* Der Begriff „Repos“
+* Eine vierstellige numerische Kennung, die die Speicherverwaltungssoftware dem Namen des Repository-Volumes zuweist
+
+
+Schließen Sie den Namen des vorhandenen Repository-Volumes in doppelte Anführungszeichen (" ").
+
+Wenn Sie bei Ausführung dieses Befehls ein neues Repository-Volume erstellen möchten, müssen Sie entweder den Namen einer Volume-Gruppe oder eines Laufwerk-Pools eingeben, in dem das Repository-Volume erstellt werden soll. Optional können Sie auch die Kapazität des Repository-Volumes festlegen. Wenn Sie die Kapazität definieren möchten, können Sie die folgenden Werte verwenden:
+
+* Ein ganzzahliger Wert, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Ein Dezimaltrennzeichen, der einen Prozentsatz der Basis-Volume-Kapazität darstellt
+* Eine bestimmte Größe für das Repository-Volume erhalten. Größe ist in Einheiten von definiert `bytes`, `KB`, `MB`, `GB`, Oder `TB`.
+
+
+Wenn Sie die Kapazitätsoption nicht nutzen, setzt die Storage-Managementsoftware die Kapazität auf 20 Prozent der Kapazität des Basis-Volume.
+
+Bei Ausführung dieses Befehls erstellt die Speichermanagementsoftware das Repository-Volume für das Snapshot-Volume.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Der Prozentsatz der Repository-Kapazität, mit der Sie eine Warnung erhalten, dass das Snapshot-Repository-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Der Standardwert ist 75.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Die Kennung eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt getrennt sind (:):
+
+* Der Name der Snapshot-Gruppe
+* Die Kennung des Snapshot-Images
+
+
+Wenn Sie beispielsweise ein Snapshot-Volume mit dem Namen SnapData1 erstellen möchten, das das neueste Snapshot-Image in einer Snapshot-Gruppe verwendet, die den Namen SnapGrousnapp1 mit einer maximalen Füllgrenze von 80 Prozent für das Repository-Volume hat, verwenden Sie diesen Befehl:
+
+[listing]
+----
+create snapVolume userLabel="snapData1" snapImageID="snapGroup1:newest"
+repositoryVolume="repos_1234" repositoryFullLimit=80;
+----
+Die Kennung des Repository-Volumes wird automatisch von der Speichermanagementsoftware und der Firmware beim Erstellen einer neuen Snapshot-Gruppe erstellt. Sie können das Repository-Volume nicht umbenennen, da durch das Umbenennen des Repository-Volumes die Verknüpfung mit den Snapshot-Images unterbrochen wird.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

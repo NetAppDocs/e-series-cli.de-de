@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/create-mapping-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: create, consistency, group, snapshot, volume, map 
+summary: Der Befehl create Mapping cgSnapVolume erstellt eine logische Zuordnung von einem Snapshot-Volume der Konsistenzgruppe zu einem Host oder einer Host-Gruppe. 
+---
+= Erstellen einer Volume-Zuordnung von Konsistenzgruppen für Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create mapping cgSnapVolume` Befehl erstellt eine logische Zuordnung von einem Snapshot Volume einer Konsistenzgruppe zu einem Host oder einer Host-Gruppe.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create mapping cgSnapVolume=pass:quotes[_"snapVolumeName"_
+(host="_hostName_" | hostGroup=("_hostGroupName_" | defaultGroup))]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Der Name des Snapshot-Volumes der Konsistenzgruppe, für das Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Namen des Snapshot-Volumes der Konsistenzgruppe in doppelte Anführungszeichen (“ „).
+
+
+
+ a| 
+`host`
+ a| 
+Der Name eines Hosts, auf den Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Der Name einer Host-Gruppe, der Sie eine logische Zuordnung erstellen möchten. Schließen Sie den Namen der Host-Gruppe in doppelte Anführungszeichen (" "). Wenn Sie den verwenden `defaultGroup` Schlüsselwort: Schließen Sie es nicht in Anführungszeichen ein.
+
+|===
+
+
+== Hinweise
+
+Ein Host ist ein Computer, der mit dem Speicherarray verbunden ist und über die Host-Ports auf die Volumes auf dem Speicher-Array zugreift. Sie können spezifische Zuordnungen zu einem einzelnen Host definieren. Sie können den Host auch einer Host-Gruppe zuweisen, die den Zugriff auf ein oder mehrere Volumes freigibt.
+
+Eine Host-Gruppe ist ein optionales topologisches Element, das Sie definieren können, ob Sie eine Sammlung von Hosts bestimmen möchten, die Zugriff auf dieselben Volumes haben. Die Host-Gruppe ist eine logische Einheit. Definieren Sie eine Host-Gruppe nur, wenn Sie über zwei oder mehr Hosts verfügen, die sich auf dieselben Volumes zugreifen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

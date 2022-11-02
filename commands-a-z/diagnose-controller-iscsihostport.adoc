@@ -1,0 +1,163 @@
+---
+permalink: commands-a-z/diagnose-controller-iscsihostport.html 
+sidebar: sidebar 
+keywords: diagnose, controller, hostport, command, diagnostic, tests, copper, cable, host, interface, cards, support, roles 
+summary: Mit dem Befehl Diagnosis Controller iscsiHostPort werden Diagnosetests auf den Kupferkabeln zwischen den iSCSI-Host-Schnittstellenkarten und einem Controller durchgeführt. 
+---
+= Diagnose des iSCSI-Hostkabels des Controllers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `diagnose controller iscsiHostPort` Mit dem Befehl werden Diagnosetests auf den Kupferkabeln zwischen den iSCSI-Host-Schnittstellenkarten und einem Controller ausgeführt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können eine Diagnose an einem ausgewählten Port oder allen Ports ausführen. Die Ports müssen die Kabeldiagnose unterstützen können. Wenn die Ports keine Kabeldiagnose unterstützen, wird ein Fehler zurückgegeben.
+
+
+
+== Syntax
+
+[listing]
+----
+diagnose controller [(a|b)]
+iscsiHostPort ([all] | [portLabel])
+testID=cableDiagnostics
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller, auf dem Sie den Kabeldiagnosetest ausführen möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+
+
+ a| 
+`iscsiHostPort`
+ a| 
+Der iSCSI-Host-Port, auf dem die Diagnosetests ausgeführt werden sollen. Sie können die Diagnose auf allen iSCSI-Host-Ports ausführen oder die Diagnose an einem bestimmten iSCSI-Host-Port ausführen.
+
+Weitere Informationen finden Sie im Folgenden:
+
+ an iSCSI host port label,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“
+
+
+
+ a| 
+`testID`
+ a| 
+Die Kennung für den Diagnosetest, den Sie ausführen möchten. Für diesen Diagnosetest ist die einzige Option `cableDiagnostics`.
+
+|===
+
+
+== Identifizieren einer iSCSI-Host-Port-Bezeichnung
+
+Sie müssen eine Bezeichnung für den Host-Port angeben. Führen Sie die folgenden Schritte aus, um die Bezeichnung für den Host-Port anzugeben:
+
+. Wenn Sie die Portbezeichnung für den iSCSI-Host-Port nicht kennen, führen Sie den aus `show controller` Befehl.
+. Suchen Sie im Abschnitt Host-Schnittstelle der Ergebnisse den Host-Port, den Sie auswählen möchten.
++
+[NOTE]
+====
+Der Port-Name ist der komplette Wert, der für den zurückgegeben wird `Port` Feld.
+
+====
+. Schließen Sie den gesamten Wert des Port-Labels sowohl in Anführungszeichen als auch in eckigen Klammern an: ["portLabel"]. Wenn beispielsweise die Port-Bezeichnung lautet `Ch 2`, Geben Sie den iSCSI-Host-Port wie folgt an:
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Wenn Sie eine Windows-Befehlszeile verwenden und das Etikett eine Pipe enthält, sollte das Zeichen (mit {caret}) entgangen werden. Andernfalls wird es als Befehl interpretiert. Wenn beispielsweise die Port-Bezeichnung lautet `e0b|0b`, Geben Sie den iSCSI-Host-Port wie folgt an:
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Zur Rückwärtskompatibilität kann die iscsiPortNumber, umgeben von geschweiften Klammern [ ] und nicht für Angebote und geschweifte Klammern [“], noch für E2700, E5600 oder EF560 Controller (und andere vorherige Generationen von E-Series oder EF-Series Controllern) verwendet werden. Für diese Controller gelten die gültigen Werte für iscsiPortNumber:
+
+* Für Controller mit integrierten Host Ports ist die Nummerierung 3, 4, 5 oder 6.
+* Bei Controllern mit Host-Ports nur auf einer Host-Schnittstellenkarte beträgt die Nummerierung 1, 2, 3 oder 4.
+
+
+Ein Beispiel für die vorherige Syntax ist wie folgt:
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Hinweise
+
+Wenn Sie den Kabeldiagnosetest ausführen, gibt die Firmware folgende Informationen zurück:
+
+* *Host-Port*: Der Port, auf dem der Diagnosetest ausgeführt wurde.
+* *HIC*: Die dem Port zugeordnete Host-Schnittstellenkarte.
+* Datum und Uhrzeit der Testdurchlauf.
+* *Status*:
++
+** *OK*: Alle Kabelpaare sind gut und haben keine Fehler.
+** *Offen*: Ein oder mehrere der vier Kabelpaare sind offen.
+** *Kurz*: Ein oder mehrere der vier Kabelpaare sind kurzgeschlossen.
+** *Unvollständig*: Ein oder mehrere der vier Paare haben unvollständige oder ungültige Testergebnisse zurückgegeben.
+
+
+* *Länge*: Die Länge der Kabel ist in Metern angegeben und die folgenden Informationen über die Kabel werden zurückgegeben:
++
+** Wenn der Kabelstatus in Ordnung ist, werden die ungefähren Längen der Kabelpaare zurückgegeben. Die Länge der Kabelpaare wird als Bereich (L1-L2) angezeigt, der die kürzesten und längsten Längen der Kabelpaare ist.
+** Wenn der Kabelstatus „Offen“ oder „kurz“ lautet, liegt der ungefähre Abstand zum Fehler in den Kabelpaaren. Bei einem Ausfall wird die Länge dieses Kabelpaares gemeldet. Wenn mehrere Fehler auftreten, sind die zurückgegebenen Informationen sowohl die kürzeste als auch die längste Länge der Fehler. Die Längen sind als Bereich (L1-L2) mit L1L2 aufgeführt.
+** Wenn der Kabelstatus unvollständig ist, werden die zurückgegebenen Informationen als Längen für die kürzesten und längsten Kabelpaare zurückgegeben, die die Firmware erfolgreich testen kann. Die Längen sind für die gültigen Kabelpaare als Bereich (L1-L2) aufgeführt, in dem L1L2 verwendet wird.
+
+
+* Werte für die Kabeldiagnoseregister registrieren. Die Werte befinden sich im hexadezimalen Format:
++
+** Zwei Byte zeigen den kombinierten Kabelstatus an (vier Bits pro Port).
+** Vier zwei-Byte-Nummern zeigen die Länge jedes Kanals an.
+
+
+
+
+
+
+== Minimale Firmware-Stufe
+
+7.77
+
+8.10 überarbeitet das Nummerierungssystem für iSCSI-Host-Ports.

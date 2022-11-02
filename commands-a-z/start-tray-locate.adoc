@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-tray-locate.html 
+sidebar: sidebar 
+keywords: start, tray, locate 
+summary: Mit dem Befehl Start Tray Locate wird ein Fach durch Einschalten der Anzeigeleuchte lokalisiert. 
+---
+= Start Fach suchen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start tray locate` Befehl sucht ein Fach, indem die Kontrollleuchte eingeschaltet wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Verwenden Sie die `stop tray locate` Befehl zum Ausschalten der Kontrollleuchte für das Fach
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start tray [_trayID_]] locate
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`tray`
+ a| 
+Das Fach, das Sie suchen möchten. Die Werte für Fach-ID sind `0` Bis `99`. Legen Sie den Wert für die Fach-ID in eckige Klammern ([ ]) ein.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

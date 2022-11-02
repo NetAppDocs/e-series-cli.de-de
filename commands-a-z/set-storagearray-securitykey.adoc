@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: set, internal, storage, array, security key 
+summary: Der Befehl Set storageArray securityKey legt den Sicherheitsschlüssel fest, der im gesamten Speicher-Array zur Implementierung der Laufwerkssicherheitsfunktion verwendet wird. 
+---
+= Legen Sie den Sicherheitsschlüssel für das interne Speicher-Array fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray securityKey` Befehl legt den Sicherheitsschlüssel fest, der im Speicher-Array zur Implementierung der Laufwerkssicherheitsfunktion verwendet wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Wenn jedes sicherheitsfähige Laufwerk im Speicher-Array einer gesicherten Volume-Gruppe oder einem Laufwerk-Pool zugewiesen ist, ist dieses Laufwerk mit dem Sicherheitsschlüssel sicher aktiviert. Bevor Sie den Sicherheitsschlüssel festlegen können, müssen Sie den verwenden `create storageArray securityKey` Befehl zum Erstellen des Sicherheitsschlüssels.
+
+[NOTE]
+====
+Dieser Befehl gilt nur für das interne Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+set storageArray securityKey
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Sicherheitsfähige Laufwerke verfügen über eine Hardware, die die kryptografische Verarbeitung beschleunigt und jeder über einen einzigartigen Laufwerksschlüssel. Ein sicherheitsfähiges Laufwerk verhält sich wie jedes andere Laufwerk, bis es einer gesicherten Volume-Gruppe hinzugefügt wird. Zu diesem Zeitpunkt wird das sicherheitsfähige Laufwerk aktiviert.
+
+Wenn ein sicherheitsfähiges Laufwerk eingeschaltet ist, muss es den korrekten Sicherheitsschlüssel des Controllers benötigen, bevor Daten gelesen oder geschrieben werden können. So verwendet ein sicherheitsfähiges Laufwerk zwei Schlüssel: Den Laufwerkschlüssel, der die Daten verschlüsselt und entschlüsselt, sowie den Sicherheitsschlüssel, der die Ver- und Entschlüsselungsprozesse autorisiert. Der `set storageArray securityKey` Befehl verpflichtet den Sicherheitsschlüssel auf alle Controller und sicherheitsaktivierten Laufwerke im Speicher-Array. Die vollständige Festplattenverschlüsselung stellt sicher, dass wenn ein sicherheitsfähiges Laufwerk physisch aus einem Speicher-Array entfernt wird, seine Daten von keinem anderen Gerät gelesen werden können, es sei denn, der Sicherheitsschlüssel ist bekannt.
+
+
+
+== Minimale Firmware-Stufe
+
+7.50

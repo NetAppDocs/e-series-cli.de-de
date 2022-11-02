@@ -1,0 +1,24 @@
+---
+section: commands-category
+title: Befehle nach Kategorie
+entries:
+- title: Administratorbefehle ausführen
+  url: "/commands-category/administrator-commands.html"
+- title: Befehle für die Meldungskonfiguration
+  url: "/commands-category/alert-configuration-commands.html"
+- title: Befehle für die Array-Konfiguration
+  url: "/commands-category/array-configuration-commands.html"
+- title: Auto-Support-Befehle
+  url: "/commands-category/auto-support-commands.html"
+- title: Spiegelungsbefehle
+  url: "/commands-category/mirroring-commands.html"
+- title: Befehle zur Performance-Optimierung
+  url: "/commands-category/performance-tuning-commands.html"
+- title: Replikationsbefehle
+  url: "/commands-category/replication-commands.html"
+- title: Sicherheitsbefehle
+  url: "/commands-category/security-commands.html"
+- title: Personalbefehle für die Speicherüberwachung
+  url: "/commands-category/storage-monitor-personal-commands.html"
+- title: Befehle für die Volume-Konfiguration
+  url: "/commands-category/volume-configuration-commands.html"

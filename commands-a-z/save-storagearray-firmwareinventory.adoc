@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/save-storagearray-firmwareinventory.html 
+sidebar: sidebar 
+keywords: save, storage, array, firmware, inventory 
+summary: Der Befehl storageArray firmwareInventory speichern speichert einen Bericht in einer Datei aller Firmware, die derzeit auf dem Speicher-Array ausgeführt wird. 
+---
+= Speicherarray-Firmware-Inventar speichern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save storageArray firmwareInventory` Befehl speichert einen Bericht in einer Datei der gesamten Firmware, die derzeit auf dem Speicher-Array ausgeführt wird.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Im Bericht wird die Firmware für diese Komponenten aufgeführt:
+
+* Controller
+* Laufwerke
+* Schubladen (falls zutreffend)
+* Module für Umweltservices (ESMs)
+* Netzteile
+
+
+Sie können anhand der Informationen veraltete Firmware oder Firmware ermitteln, die nicht mit der anderen Firmware im Storage Array übereinstimmt. Sie können den Bericht auch an den technischen Support senden, um die Prüfung zu besprechen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save storageArray firmwareInventory file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, zu dem Sie den Firmware-Bestand speichern möchten. Schließen Sie den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+`file="C:\Program Files\CLI\logs\fwinvent.txt"`
+
+Der Standardname der Datei, die den Firmwarebestand enthält, lautet `firmware-inventory.txt`. Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte Datei an. Beim Eingeben des Dateinamens müssen Sie eine Dateierweiterung angeben.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.70

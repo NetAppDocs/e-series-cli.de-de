@@ -1,0 +1,143 @@
+---
+permalink: commands-a-z/clear-storagearray-configuration.html 
+sidebar: sidebar 
+keywords: clear, storage array, configuration 
+summary: Mit dem Befehl „Clear storageArray Configuration“ wird eine vollständige Konfiguration des Storage Arrays oder ein Teil einer Storage Array-Konfiguration gelöscht oder nur die Volume-Gruppe und -Volume-Konfiguration gelöscht. 
+---
+= Löschen Sie die Konfiguration des Speicherarrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `clear storageArray configuration` Der Befehl löscht eine vollständige Konfiguration des Storage Arrays oder einen Teil einer Storage Array-Konfiguration. Er löscht nur die Konfiguration der Volume-Gruppe und des Volumes.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Verwenden Sie diesen Befehl, um eine der folgenden Vorgänge auszuführen:
+
+* Löschen Sie die gesamte Konfiguration des Storage Arrays und kehren Sie zurück zum Installationsstatus.
+* Löschen Sie die Konfiguration mit Ausnahme von Sicherheitsinformationen und Identifikationsinformationen.
+* Löschen Sie nur Konfigurationsinformationen für die Volume-Gruppe und Informationen zur Volume-Konfiguration.
+
+
+[NOTE]
+====
+*Mögliche Schäden an der Speicher-Array-Konfiguration* -- Sobald Sie diesen Befehl ausführen, wird die vorhandene Speicher-Array-Konfiguration gelöscht.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+clear storageArray configuration (all | volumeGroups)
+----
+[listing]
+----
+clear storageArray configuration factoryReset
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+*Keine*
+ a| 
+Wenn Sie keinen Parameter eingeben, entfernt dieser Befehl alle Konfigurationsinformationen für das Speicherarray, mit Ausnahme der Sicherheits- und Identifizierungsdaten.
+
+
+
+ a| 
+`all`
+ a| 
+Die Einstellung zum Entfernen der gesamten Konfiguration des Speicher-Arrays, einschließlich Sicherheitsinformationen und Identifikationsinformationen. Durch das Entfernen aller Konfigurationsinformationen wird der ursprüngliche Status des Speicherarrays zurückgegeben.
+
+
+
+ a| 
+`volumeGroups`
+ a| 
+Die Einstellung zum Entfernen der Volume-Konfiguration und der Konfiguration der Volume-Gruppe. Die restliche Konfiguration bleibt erhalten.
+
+
+
+ a| 
+`factoryReset`
+ a| 
+Mit dieser Einstellung wird die gesamte Konfiguration des Speicher-Arrays entfernt (die gleiche Funktion wie die `all` Parameter), aber auch die Netzwerkkonfiguration und die im Controller gespeicherten Passwortinformationen werden zurückgesetzt.
+
+
+
+ a| 
+`supportReset`
+ a| 
+[NOTE]
+====
+Dieser Befehl dient nur zur Verwendung durch den technischen Support.
+
+====
+Diese Einstellung verhält sich wie der `factoryReset` Parameter, aber auch löscht alle Bundle-Schlüssel.
+
+|===
+
+
+== Hinweise
+
+Mit diesem Befehl können Sie die Konfiguration des Speicher-Arrays auf verschiedene Weise löschen. Wenn Sie das Speicher-Array für Volume-Gruppen löschen, wird der Wiederherstellungsmodus automatisch gestartet. Im Recovery-Modus werden integrierte (Cache) Backups aufbewahrt (wenn sie auf der Plattform vorhanden sind). Wenn sich das Speicher-Array im Wiederherstellungsmodus befindet, können Sie optional die Speicherarray-Konfiguration aus einer Host-basierten Backup-Datei oder aus einem der integrierten (Cache) Backups wiederherstellen.
+
+Mit diesem Befehl wird auch die Speicher-Array-ID zurückgesetzt. Alle Premium-Funktionen, die mit einer Schlüsseldatei aktiviert werden, sind ungültig, und neue Premium-Funktionstasten müssen erstellt und angewendet werden. Wenden Sie sich an den technischen Support.
+
+Wenn Sie diesen Befehl ausführen, reagiert das Storage-Array nicht mehr und alle Skriptverarbeitung wird abgebrochen. Sie müssen das Speicher-Array entfernen und erneut hinzufügen, um die Kommunikation mit dem Host fortzusetzen. Verwenden Sie den folgenden SMcli-Wrapper-Befehl, um ein nicht antwortendes Speicher-Array zu entfernen:
+
+[listing, subs="+macros"]
+----
+SMcli -X -n pass:quotes[_storageArrayName_]
+----
+Der `X` Ist ein eindeutiger SMcli-Terminal und muss groß sein.
+
+Um das Speicher-Array erneut hinzuzufügen, verwenden Sie den SMcli Wrapper-Befehl:
+
+[listing, subs="+macros"]
+----
+SMcli -A -n pass:quotes[_storageArrayName_]
+----
+Der `A` Ist ein eindeutiger SMcli-Terminal und muss groß sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10 fügt folgende Parameter hinzu:
+
+* `all`
+* `volumeGroups`
+
+
+7.83 fügt die Fähigkeit zum Wiederherstellungsmodus hinzu.
+
+11.41 fügt folgende Parameter hinzu:
+
+* `factoryReset`
+* `supportReset`
+

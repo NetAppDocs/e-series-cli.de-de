@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/download-storagearray-keymanagementcertificate.html 
+sidebar: sidebar 
+keywords: download, storage, array, management, key, certificate, command, intall, external, support, role 
+summary: Der Befehl herunterlad storageArray keyManagementCertificate installiert die Zertifikate für das externe Verschlüsselungsmanagement auf dem Speicher-Array. 
+---
+= Externes Verschlüsselungsmanagementzertifikat für das Speicher-Array installieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `download storageArray keyManagementCertificate` Befehl installiert die Zertifikate für das externe Verschlüsselungsmanagement auf dem Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[download storageArray keyManagementClientCertificate certificateType=(client|server) file="_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`certificateType`
+ a| 
+Ermöglicht die Angabe des Zertifikatdatentyps. Gültige Auswahlmöglichkeiten sind `client` Oder `server`.
+
+
+
+ a| 
+`file`
+ a| 
+Ermöglicht die Angabe des vom Client signierten Zertifikats oder des Server Root-/Intermediate-CA-Zertifikats. Die Datei muss im PEM/DER-Format vorliegen.
+
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "download storageArray keyManagementClientCertificate certificateType=client
+   file="C:\serverSignedKeyMgmtClientCert.cer";"
+
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

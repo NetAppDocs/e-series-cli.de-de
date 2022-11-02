@@ -1,0 +1,294 @@
+---
+permalink: get-started/synopsis-of-the-script-commands.html 
+sidebar: sidebar 
+keywords: synopsis, script commands 
+summary: 'Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arrays definiert und gemanagt werden können (z. B. Host-Topologie, Festplattenkonfiguration, Controller-Konfiguration, Volume-Definitionen und Volume-Gruppen), ist die tatsächliche Anzahl an Befehlen umfangreich.' 
+---
+= Übersicht der Skriptbefehle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arrays definiert und gemanagt werden können (z. B. Host-Topologie, Festplattenkonfiguration, Controller-Konfiguration, Volume-Definitionen und Volume-Gruppen), ist die tatsächliche Anzahl an Befehlen umfangreich. Die Befehle fallen jedoch in allgemeine Kategorien, die wiederverwendet werden, wenn Sie die Befehle zum Konfigurieren oder Warten eines Speicher-Arrays anwenden. Die folgende Tabelle enthält die allgemeine Form der Skriptbefehle und eine Definition jedes Befehls.
+
+[cols="2*"]
+|===
+| Syntax | Beschreibung 
+
+
+ a| 
+[listing]
+----
+accept object
+{statement-data}
+---- a| 
+Führt den ausstehenden Vorgang aus.
+
+
+
+ a| 
+[listing]
+----
+activate object
+{statement-data}
+---- a| 
+Einrichtung der Umgebung, damit ein Vorgang ausgeführt oder ausgeführt werden kann, wenn die Umgebung bereits korrekt eingerichtet ist.
+
+
+
+ a| 
+[listing]
+----
+autoConfigure storageArray
+{statement-data}
+---- a| 
+Erstellt automatisch eine Konfiguration, die auf den Parametern basiert, die im Befehl angegeben werden.
+
+
+
+ a| 
+[listing]
+----
+check object
+{statement-data}
+---- a| 
+Startet eine Operation, um über Fehler im Objekt, d. h. einen synchronen Vorgang, zu berichten.
+
+
+
+ a| 
+[listing]
+----
+clear object
+{statement-data}
+---- a| 
+Entweist den Inhalt einiger Attribute eines Objekts. Diese Operation ist destruktiv und kann nicht rückgängig gemacht werden.
+
+
+
+ a| 
+[listing]
+----
+create object
+{statement-data}
+---- a| 
+Erstellt ein Objekt des angegebenen Typs.
+
+
+
+ a| 
+[listing]
+----
+deactivate object
+{statement-data}
+---- a| 
+Entfernt die Umgebung für einen Vorgang.
+
+
+
+ a| 
+[listing]
+----
+delete object
+---- a| 
+Löscht ein zuvor erstelltes Objekt.
+
+
+
+ a| 
+[listing]
+----
+diagnose object
+{statement-data}
+---- a| 
+Führt einen Test aus und zeigt die Ergebnisse an.
+
+
+
+ a| 
+[listing]
+----
+disable object {statement-data}
+---- a| 
+Verhindert, dass eine Funktion ausgeführt wird.
+
+
+
+ a| 
+[listing]
+----
+download object
+{statement-data}
+---- a| 
+Überträgt Daten an das Storage-Array oder an die Hardware, die dem Storage-Array zugeordnet ist.
+
+
+
+ a| 
+[listing]
+----
+enable object
+{statement-data}
+---- a| 
+Legt eine Funktion für die Funktion fest.
+
+
+
+ a| 
+[listing]
+----
+load object
+{statement-data}
+---- a| 
+Überträgt Daten an das Storage-Array oder an die Hardware, die dem Storage-Array zugeordnet ist. Dieser Befehl ähnelt der Funktion des `download` Befehl.
+
+
+
+ a| 
+[listing]
+----
+recopy object
+{statement-data}
+---- a| 
+Startet einen Vorgang zur Volume-Kopie mit einem vorhandenen Volume-Copy-Paar neu. Sie können die Parameter ändern, bevor der Vorgang neu gestartet wird.
+
+
+
+ a| 
+[listing]
+----
+recover object
+{statement-data}
+---- a| 
+Erstellt ein Objekt aus gespeicherten Konfigurationsdaten und den Anweisungsparametern neu. (Dieser Befehl ähnelt dem `create` Befehl.)
+
+
+
+ a| 
+[listing]
+----
+remove object
+{statement-data}
+---- a| 
+Entfernt eine Beziehung zwischen Objekten.
+
+
+
+ a| 
+[listing]
+----
+repair object
+{statement-data}
+---- a| 
+Repariert Fehler, die vom gefunden wurden `check` Befehl.
+
+
+
+ a| 
+[listing]
+----
+replace object
+{statement-data}
+---- a| 
+Das angegebene Objekt ersetzt ein vorhandenes Objekt im Speicher-Array.
+
+
+
+ a| 
+[listing]
+----
+reset object
+{statement-data}
+---- a| 
+Gibt die Hardware oder ein Objekt in einen Ausgangszustand zurück.
+
+
+
+ a| 
+[listing]
+----
+resume object
+---- a| 
+Startet einen unterbrochenen Vorgang. Die Operation beginnt dort, wo sie aufging, wenn sie unterbrochen wurde.
+
+
+
+ a| 
+[listing]
+----
+revive object
+---- a| 
+Erzwingt das Objekt vom Status „Fehlgeschlagen“ in den optimalen Zustand. Verwenden Sie diesen Befehl nur im Rahmen einer Fehlerwiederherstellung.
+
+
+
+ a| 
+[listing]
+----
+save object
+{statement-data}
+---- a| 
+Schreibt Informationen über das Objekt in eine Datei.
+
+
+
+ a| 
+[listing]
+----
+set object
+{statement-data}
+---- a| 
+Ändert Objektattribute. Alle Änderungen werden abgeschlossen, wenn der Befehl wieder verfügbar ist.
+
+
+
+ a| 
+[listing]
+----
+show object
+{statement-data}
+---- a| 
+Zeigt Informationen zum Objekt an.
+
+
+
+ a| 
+[listing]
+----
+start object
+{statement-data}
+---- a| 
+Startet einen asynchronen Vorgang. Sie können einige Vorgänge nach dem Start unterbrechen. Sie können den Status einiger Vorgänge abfragen.
+
+
+
+ a| 
+[listing]
+----
+stop object
+{statement-data}
+---- a| 
+Stoppt einen asynchronen Vorgang.
+
+
+
+ a| 
+[listing]
+----
+suspend object
+{statement-data}
+---- a| 
+Stoppt einen Vorgang. Anschließend können Sie den unterbrochenen Vorgang neu starten und den Vorgang an dem Punkt fortsetzen, an dem er unterbrochen wurde.
+
+
+
+ a| 
+[listing]
+----
+validate object
+{statement-data}
+---- a| 
+Validiert einen Sicherheitsschlüssel.
+
+|===

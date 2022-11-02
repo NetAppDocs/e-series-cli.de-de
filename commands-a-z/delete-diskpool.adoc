@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/delete-diskpool.html 
+sidebar: sidebar 
+keywords: delete, disk pool 
+summary: Mit dem Befehl DiskPool löschen wird ein Laufwerk-Pool gelöscht. 
+---
+= Laufwerk-Pool löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete diskPool` Befehl löscht einen Laufwerk-Pool.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+*Mögliche Beschädigung der Speicher-Array-Konfiguration* -- Alle Daten im Disk-Pool gehen verloren, sobald Sie diesen Befehl ausführen.
+
+====
+Je nach der Version der Speicherverwaltungssoftware löscht der Befehl auch alle Volumes im Laufwerk-Pool. Wenn Ihre Version der Speicherverwaltungssoftware das automatische Löschen der Volumes nicht unterstützt, können Sie das Löschen des Festplatten-Pools und der Volumes erzwingen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete diskPool pass:quotes[[_diskPoolName_]]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`diskPoolName`
+ a| 
+Der Name des Laufwerk-Pools, den Sie löschen möchten. Schließen Sie den Namen des Disk-Pools in eckige Klammern ([ ]). Wenn der Disk-Pool-Name Sonderzeichen enthält oder nur aus Ziffern besteht, müssen Sie den Namen in doppelte Anführungszeichen („ “) in eckigen Klammern setzen.
+
+
+
+ a| 
+`force`
+ a| 
+Dieser Parameter erzwingt das Löschen von Volumes, wenn Ihre Speicherverwaltungssoftware das automatische Löschen der Volumes im Disk-Pool nicht unterstützt. Um das Löschen eines Laufwerkpools und der darin enthaltenen Volumes zu erzwingen, setzen Sie diesen Parameter auf `TRUE`. Die Standardeinstellung lautet `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich(-) und Pfund (#) für das Benutzungsetikett verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

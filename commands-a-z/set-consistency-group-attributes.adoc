@@ -1,0 +1,111 @@
+---
+permalink: commands-a-z/set-consistency-group-attributes.html 
+sidebar: sidebar 
+keywords: set, consistency, group, attributes 
+summary: Der Befehl Set Consistency Group definiert die Eigenschaften für eine Snapshot Consistency Group. 
+---
+= Legen Sie die Attribute für Konsistenzgruppen fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set consistencyGroup` Mit dem Befehl werden die Eigenschaften für eine Snapshot-Konsistenzgruppe definiert.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+[userLabel=pass:quotes["_consistencyGroupName_"]]
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages)]
+[repositoryFullLimit=pass:quotes[_percentValue_]]
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]]
+[rollbackPriority=(lowest | low | medium | high | highest)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroupName`
+ a| 
+Der Name der Konsistenzgruppe, für die Sie Eigenschaften festlegen. Schließen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen („ ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Den neuen Namen, den Sie der Snapshot Konsistenzgruppe geben möchten. Schließen Sie den neuen Namen der Konsistenzgruppe in doppelte Anführungszeichen (“ „).
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Wie soll die Snapshot-Verarbeitung fortgesetzt werden, wenn die Snapshot-Repository-Volumen voll sind? Sie können festlegen, dass Schreibzugriffe auf das Basis-Volume fehlschlagen (`failBaseWrites`) Oder löschen Sie die Snapshot-Bilder  `purgeSnapImages`). Die Standardaktion ist `purgeSnapImages`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+Der Prozentsatz der Repository-Kapazität, mit der Sie eine Warnung erhalten, dass das Snapshot-Repository-Volume sich dem vollen Volumen nähert. Ganzzahlwerte verwenden. Beispielsweise bedeutet ein Wert von 70 70 Prozent. Der Standardwert ist 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Jede Konsistenzgruppe kann so konfiguriert werden, dass sie ihre Snapshot-Images automatisch löscht, um die Gesamtanzahl der Snapshot-Images in der Snapshot-Gruppe auf einer oder unter einer bestimmten Ebene zu speichern. Wenn diese Option aktiviert ist, wird jedes Mal, wenn ein neues Snapshot-Image in der Snapshot-Gruppe erstellt wird, automatisch das älteste Snapshot-Image in der Gruppe gelöscht, um dem Grenzwert zu entsprechen. Durch diese Aktion wird die Repository-Kapazität frei, sodass sie zur Erfüllung der fortlaufenden Anforderungen an das Copy-on-Write für die verbleibenden Snapshot-Images verwendet werden kann.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+Priorität für Rollback-Vorgänge für eine Konsistenzgruppe, während das Speicher-Array betriebsbereit ist Gültige Werte sind `highest`, `high`, `medium`, `low`, Oder `lowest`.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere Parameter angeben. Sie müssen jedoch nicht alle Parameter verwenden.
+
+Die Rollback-Priorität definiert die Anzahl der Systemressourcen, die auf Kosten der Systemleistung dem Rollback-Vorgang zugewiesen werden sollen. Der Wert von `high` Zeigt an, dass der Rollback-Vorgang über alle anderen Host-I/O-Operationen priorisiert wird Der Wert von `low` Zeigt an, dass der Rollback-Vorgang mit minimalen Auswirkungen auf den Host-I/O durchgeführt werden sollte
+
+
+
+== Automatisches Löschen
+
+Sie können jede Snapshot-Gruppe so konfigurieren, dass sie die Snapshot-Images automatisch löscht, um die Gesamtanzahl der Snapshot-Images in der Snapshot-Gruppe auf oder unter einer maximalen Anzahl von Bildern zu speichern. Wenn die Anzahl der Snapshot-Images in der Snapshot-Gruppe die Höchstgrenze erreicht, wird das angezeigt `autoDeleteLimit` Der Parameter löscht Snapshot-Images automatisch, wenn ein neues Snapshot-Image in der Snapshot-Gruppe erstellt wird. Der `autoDeleteLimit` Der Parameter löscht die ältesten Snapshot-Images der Snapshot-Gruppe, bis die maximale Anzahl von Bildern, die mit dem Parameter definiert wurden, erreicht ist. Durch das Löschen von Snapshot Images auf diese Weise wird die Repository-Kapazität frei, sodass diese für die verbleibenden Snapshot-Images verwendet werden kann, um den fortlaufenden Bedarf an Kopien beim Schreiben zu erfüllen.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

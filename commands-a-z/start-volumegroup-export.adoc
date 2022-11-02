@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/start-volumegroup-export.html 
+sidebar: sidebar 
+keywords: start, volume, group, export 
+summary: Mit dem Befehl „Export von VolumeGruppen starten“ wird eine Volume-Gruppe in einen exportierten Status verschoben. 
+---
+= Starten des Volume-Gruppenexports
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `start volumeGroup export` Der Befehl verschiebt eine Volume-Gruppe in einen exportierten Status.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Anschließend können Sie die Laufwerke, die die Volume-Gruppe enthalten, entfernen und die Laufwerke in einem anderen Speicher-Array neu installieren.
+
+[CAUTION]
+====
+Führen Sie diese Schritte nicht aus, ohne zuerst die in aufgeführten Schritte auszuführen xref:../get-started/learn-about-volume-group-migration.html[Erfahren Sie mehr über die Migration von Volume-Gruppen.]
+
+====
+[NOTE]
+====
+Innerhalb der Volume-Gruppe können Sie keine Volumes verschieben, die den Funktionen zugeordnet sind, von einem Speicher-Array zu einem anderen Speicher-Array.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] export
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Der Name der Volume-Gruppe, die exportiert werden soll. Umschließen Sie den Namen der Volume-Gruppe in eckige Klammern ([ ]).
+
+|===
+
+
+== Hinweise
+
+Wenn dieser Befehl erfolgreich ist, können Sie den ausführen `start volumeGroup import` Befehl zum Abschließen des Verschiebens der Volume-Gruppe in einen vollständigen Zustand, der die Volume-Gruppe für das neue Storage-Array verfügbar macht.
+
+Wenn dieser Befehl nicht erfolgreich ist, da Hardwareprobleme den Abschluss des Exports verhindert haben, verwenden Sie den `set volumeGroup forceState` Befehl. Der `set volumeGroup forceState` Mit dem Befehl können Sie den verwenden `start volumeGroup import` Befehl zum Importieren einer Volume-Gruppe.
+
+Nachdem sich die Volume-Gruppe in einem exportierten Status oder „Forced“ befindet, können Sie die Laufwerke, die die Volume-Gruppe enthalten, aus dem Storage-Array entfernen. Sie können die Laufwerke in einem anderen Speicher-Array neu installieren.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

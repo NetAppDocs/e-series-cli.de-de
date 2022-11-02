@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/show-alldrives-downloadprogress.html 
+sidebar: sidebar 
+keywords: show, drive, download, progress 
+summary: Der Befehl show allDrives downloadProgress gibt den Status von Firmware-Downloads für die Laufwerke zurück, die durch den Befehl heruntergeladene Laufwerk-Firmware oder den Befehl storageArray driveFirmware herunterladen gerichtet werden. 
+---
+= Fortschritt des Laufwerks-Downloads anzeigen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `show allDrives downloadProgress` Der Befehl gibt den Status von Firmware-Downloads für die Laufwerke zurück, die vom ausgerichtet werden `download drive firmware` Befehl oder das `download storageArray driveFirmware` Befehl.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing]
+----
+show allDrives downloadProgress
+----
+
+
+== Parameter
+
+Keine.
+
+
+
+== Hinweise
+
+Wenn alle Firmware-Downloads erfolgreich abgeschlossen wurden, gibt dieser Befehl einen guten Status aus. Wenn ein Firmware-Download fehlschlägt, zeigt dieser Befehl den Firmware-Download-Status jedes zielgerichteten Laufwerks an. Dieser Befehl gibt die in dieser Tabelle aufgeführten Status zurück.
+
+[cols="2*"]
+|===
+| Status | Definition 
+
+
+ a| 
+`Successful`
+ a| 
+Die Downloads wurden fehlerfrei beendet.
+
+
+
+ a| 
+`Not Attempted`
+ a| 
+Die Downloads wurden nicht gestartet.
+
+
+
+ a| 
+`Partial Download`
+ a| 
+Die Downloads werden ausgeführt.
+
+
+
+ a| 
+`Failed`
+ a| 
+Die Downloads wurden mit Fehlern abgeschlossen.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+6.10

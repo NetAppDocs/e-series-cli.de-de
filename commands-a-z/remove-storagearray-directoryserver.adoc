@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/remove-storagearray-directoryserver.html 
+sidebar: sidebar 
+keywords: remove, storage array, directory, server, role, mapping 
+summary: Mit dem Befehl storageArray directoryServer entfernen werden die definierten Rollenzuordnungen für den angegebenen Verzeichnisserver entfernt. 
+---
+= Entfernen Sie die Rollenzuordnung des Verzeichnisservers des Speicherarrays
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `remove storageArray directoryServer` Mit dem Befehl werden die definierten Rollenzuordnungen für den angegebenen Verzeichnisserver entfernt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+remove storageArray directoryServer pass:quotes[[_domainId_]]
+    (allGroupDNs | groupDNs=pass:quotes[(_groupDN1 ... groupDNN_))]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`directoryServer`
+ a| 
+Hier können Sie die Domäne mithilfe der Domänen-ID angeben, für die die Zuordnung entfernt werden soll.
+
+
+
+ a| 
+`allGroupDNs`
+ a| 
+Ermöglicht es Ihnen, alle Gruppen Distinguished Name Mappings aus der Domäne zu entfernen.
+
+
+
+ a| 
+`groupDNs`
+ a| 
+Ermöglicht Ihnen, die zu entfernenden Gruppen`' Distinguished Name (DN) anzugeben.
+
+[NOTE]
+====
+Wenn Sie mehrere Gruppen eingeben, trennen Sie die Werte mit einem Leerzeichen.
+
+====
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "remove storageArray directoryServer ["domain1"]
+                    groupDNs=("CN=company-distlist,OU=Managed,
+                    OU=MyCompanyGroups,DC=hq,DC=mycompany,DC=com");"
+
+SMcli -n Array1 -c "remove storageArray directoryServer ["domain1"]
+                    allGroupDNs;"
+
+SMcli completed successfully.
+----

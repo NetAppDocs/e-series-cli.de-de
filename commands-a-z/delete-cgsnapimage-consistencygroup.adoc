@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/delete-cgsnapimage-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group, snapshot, image 
+summary: Der Befehl delete cgSnapImage konsequente Group löscht die Snapshot Images in einer Konsistenzgruppe. 
+---
+= Löschen des Snapshot Images der Konsistenzgruppe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `delete cgSnapImage consistencyGroup` Mit dem Befehl werden die Snapshot Images in einer Konsistenzgruppe gelöscht.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+delete cgSnapImage consistencyGroup=pass:quotes[_"consistencyGroupName"_]
+pass:quotes[[deleteCount=_numberOfSnapImages_]
+[retainCount=pass:quotes[_numberOfSnapImages_]
+[ignoreSnapVolume=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Konsistenzgruppe, aus der Sie die Snapshot Images löschen möchten. Schließen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen (“ „) ein.
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Die Anzahl der Snapshot Images, die Sie aus der Konsistenzgruppe löschen möchten. Ganzzahlwerte verwenden.
+
+Mit diesem Parameter wird zuerst das älteste Snapshot-Image gelöscht und die ältesten Snapshot-Images gelöscht, bis die von Ihnen eingegebenen Nummer erreicht wird.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Die Anzahl der Snapshot Images, die Sie in der Konsistenzgruppe aufbewahren möchten. Ganzzahlwerte verwenden.
+
+Mit diesem Parameter werden die letzten Snapshot Images in der Konsistenzgruppe aufbewahrt.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Legt fest, ob das zugehörige Snapshot Volume der Konsistenzgruppe aufbewahrt oder gelöscht wird. Dieser Parameter gilt nur, wenn das Snapshot Image der Konsistenzgruppe einem Snapshot Volume der Konsistenzgruppe zugeordnet ist. Um das Snapshot-Volume zu behalten, setzen Sie diesen Parameter auf `TRUE`. Um das Snapshot-Volume zu löschen, setzen Sie diesen Parameter auf `FALSE`. Der Standardwert ist `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Wenn die Snapshot Images nicht für alle relevanten Member Volumes der Konsistenzgruppe gelöscht werden können, schlägt der Vorgang fehl und keines der Snapshot-Images wird gelöscht.
+
+Wenn Sie ein Snapshot Image für die Konsistenzgruppe löschen, das einem Snapshot Volume der Konsistenzgruppe zugeordnet ist, wird das entsprechende Snapshot Volume-Mitglied im Snapshot Volume der Konsistenzgruppe in den Status „angehalten“ versetzt. Ein Snapshot-Volume-Mitglied im Status „angehalten“ verfügt nicht mehr über eine Beziehung zur Snapshot-Gruppe des gelöschten Snapshot-Images. Ein Snapshot-Volume-Mitglied im Status „angehalten“ behält jedoch seine Beziehung zu seinem Snapshot-Volume für die Konsistenzgruppe bei.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83

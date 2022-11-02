@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/set-storagearray-isnsipv6address.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, ipv6, address 
+summary: Mit dem Befehl Set storageArray isnses6Address wird die IPv6-Adresse für den iSNS-Server festgelegt. 
+---
+= IPv6-Adresse des Speicher-Array iSNS-Servers festlegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray isnsIPv6Address` Mit dem Befehl wird die IPv6-Adresse für den iSNS-Server festgelegt.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray isnsIPv6Address=pass:quotes[_ipAddress_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`isnsIPv6Address`
+ a| 
+Die IPv6-Adresse, die Sie für den iSNS-Server verwenden möchten.
+
+|===
+
+
+== Hinweise
+
+Das iSNS-Protokoll erleichtert die automatische Erkennung, Verwaltung und Konfiguration von iSCSI-Geräten und Fibre-Channel-Geräten in einem TCP/IP-Netzwerk. ISNS bietet intelligente Storage-Erkennungs- und -Management-Services, die mit denen in Fibre-Channel-Netzwerken vergleichbar sind. So kann ein Standard-IP-Netzwerk mit einer ähnlichen Kapazität wie ein Storage Area Network funktionieren. ISNS erleichtert außerdem die nahtlose Integration von IP-Netzwerken und Fibre-Channel-Netzwerken, da es Fibre-Channel-Fabric-Services emulieren kann und sowohl iSCSI-Geräte als auch Fibre-Channel-Geräte managen kann. ISNS bietet Wert in jedem Speichernetzwerk mit iSCSI-Geräten, Fibre-Channel-Geräten oder einer beliebigen Kombination.
+
+
+
+== Minimale Firmware-Stufe
+
+7.10

@@ -1,0 +1,123 @@
+---
+permalink: commands-a-z/save-auditlog.html 
+sidebar: sidebar 
+keywords: save, audit log, records 
+summary: Mit dem Befehl AuditLog speichern werden die Prüfprotokolldatensätze abgerufen. 
+---
+= Speichern Sie Audit-Log-Datensätze
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save auditLog` Befehl ruft die Datensätze des Prüfprotokolls ab.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+
+save auditLog (all | (beginDate=pass:quotes[_date_ | endDate=_date_)]
+|(beginRecord=pass:quotes[_timestamp_] | endRecord=pass:quotes[_timestamp_))] file=pass:quotes["_filename_"]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`all`
+ a| 
+Ermöglicht das Abrufen aller Audit-Log-Datensätze.
+
+
+
+ a| 
+`beginDate`
+ a| 
+Ermöglicht das Festlegen des Anfangsdatums für den Abruf. Das Format zur Eingabe des Datums ist MM:TT:YY in der Client-Zeitzone. Der erste abgerufene Prüfprotokoll ist der erste Datensatz, der am oder nach dem angegebenen Datum veröffentlicht wurde.
+
+[NOTE]
+====
+Der Bereich zwischen Mitternacht und Mitternacht hängt von der Zeitzone des Kunden ab.
+
+====
+
+
+ a| 
+`endDate`
+ a| 
+Ermöglicht das Festlegen des Enddatum für den Abruf. Wenn nicht angegeben, wird der letzte Datensatz im Protokoll abgerufen. Das Format zur Eingabe des Datums ist MM:TT:YY in der Client-Zeitzone. Der letzte abgerufene Audit-Log-Datensatz ist der letzte Datensatz, der am oder vor dem angegebenen Datum veröffentlicht wurde.
+
+[NOTE]
+====
+Der Bereich zwischen Mitternacht und Mitternacht hängt von der Zeitzone des Kunden ab.
+
+====
+
+
+ a| 
+`beginRecord`
+ a| 
+Ermöglicht die Angabe des zu abrufenden Anfangsdatenstrags. Der Wert ist der Integralwert, der den Zeitstempel des ersten Prüfprotokolls einschließlich darstellt. Wenn nicht angegeben, wird der erste Datensatz im Protokoll abgerufen.
+
+
+
+ a| 
+`endRecord`
+ a| 
+Ermöglicht die Angabe des zum Abrufen abrufenden Datensatzes. Der Wert ist der integrale Wert, der den Zeitstempel des letzten Prüfprotokolls einschließlich darstellt. Wenn nicht angegeben, wird der letzte Datensatz im Protokoll abgerufen.
+
+
+
+ a| 
+`file`
+ a| 
+Hier können Sie den Ausgabedateinamen des Überwachungsprotokolls festlegen.
+
+[NOTE]
+====
+Die Audit-Log-Datensätze werden in absteigender Reihenfolge von neuestem bis ältestem in der Datei gespeichert.
+
+====
+|===
+
+
+== Beispiele
+
+[listing]
+----
+
+SMcli -n Array1 -c "save auditLog all file="myAuditLog.txt";"
+
+SMcli -n Array1 -c "save auditLog endRecord=1493070393313 file="myAuditLog.txt";"
+
+SMcli -n Array1 -c "save auditLog beginDate=12:12:16 endDate=04:01:17 file="myAuditLog.txt";"
+
+
+SMcli completed successfully.
+----
+
+
+== Minimale Firmware-Stufe
+
+8.40

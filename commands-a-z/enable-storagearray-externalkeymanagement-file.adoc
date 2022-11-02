@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/enable-storagearray-externalkeymanagement-file.html 
+sidebar: sidebar 
+keywords: enable, storage, array, external, key, management, file, command, security, disk, encryption, initial, roles, context, support 
+summary: Der Befehl storageArray externen Schlüsselmanagement-Datei aktivieren ermöglicht externes Sicherheitsschlüsselmanagement für ein Speicher-Array mit vollständigen Festplatten-Verschlüsselung und erstellt den ursprünglichen Sicherheitsschlüssel des Laufwerks. 
+---
+= Externes Sicherheits-Verschlüsselungsmanagement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `enable storageArray externalKeyManagement file` Befehl aktiviert die externe Sicherheitsschlüsselverwaltung für ein Speicher-Array mit vollständigen Festplatten-Verschlüsselung und erstellt den ersten Sicherheitsschlüssel des Laufwerks.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
+
+====
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+enable storageArray externalKeyManagement
+pass:quotes[file="_fileName_"]
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[saveFile=_(TRUE | FALSE)_]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in dem der neue Sicherheitsschlüssel gespeichert wird. Schließen Sie den Dateipfad und den Dateinamen in doppelte Anführungszeichen (" "). Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können. Schließen Sie die Zeichenfolge für den Durchlauf in doppelte Anführungszeichen (" ") ein.
+
+
+
+ a| 
+`saveFile`
+ a| 
+Überprüft und speichert den Sicherheitsschlüssel in einer Datei. Auf einstellen `FALSE` So speichern und überprüfen Sie den Sicherheitsschlüssel nicht in einer Datei. Der Standardwert ist `TRUE`.
+
+|===
+
+
+== Hinweise
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Muss zwischen acht und 32 Zeichen lang sein.
+* Muss mindestens einen Großbuchstaben enthalten.
+* Muss mindestens einen Kleinbuchstaben enthalten.
+* Muss mindestens eine Zahl enthalten.
+* Muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+8.40
+
+8.70 fügt die hinzu `_saveFile_` Parameter.

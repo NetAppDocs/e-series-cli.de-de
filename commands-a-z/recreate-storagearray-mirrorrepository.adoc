@@ -1,0 +1,227 @@
+---
+permalink: commands-a-z/recreate-storagearray-mirrorrepository.html 
+sidebar: sidebar 
+keywords: recreate, synchronous, mirror, repository, volume 
+summary: 'Mit dem Befehl „reproduzieren storageArray mirrorRepository“ wird ein neues Synchronous Mirroring Repository Volume (auch als Spiegelarchiv-Volume bezeichnet) erstellt, indem die Parameter verwendet werden, die für ein vorheriges Mirror-Repository Volume definiert wurden.' 
+---
+= Synchrones Spiegeln bei Repository Volume neu erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `recreate storageArray mirrorRepository` Befehl erstellt ein neues Synchronous Mirroring Repository Volume (auch als Spiegelarchiv-Volume bezeichnet) unter Verwendung der Parameter, die für ein vorheriges Mirror-Repository-Volume definiert wurden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Mit der Firmware-Version 7.80 wird das `recreate storageArray mirrorRepository` Befehl ist veraltet. Dieser Befehl wird entweder in der GUI oder in der CLI nicht mehr unterstützt. Wenn Sie versuchen, diesen Befehl auszuführen, wird eine Fehlermeldung angezeigt, die angibt, dass diese Funktion nicht mehr unterstützt wird und dass keine Änderungen an den angegebenen Remote-Spiegelungs-Repositorys vorgenommen werden.
+
+====
+Die zugrunde liegende Anforderung besteht darin, dass Sie zuvor ein Spiegel-Repository Volume erstellt haben. Mit diesem Befehl können Sie das Mirror-Repository-Volume auf eine von drei Arten definieren: Benutzerdefinierte Laufwerke, benutzerdefinierte Volume-Gruppen oder benutzerdefinierte Anzahl von Laufwerken für das Mirror-Repository Volume. Wenn Sie sich für eine Reihe von Laufwerken entscheiden, wählt die Controller-Firmware, welche Laufwerke für das Mirror-Repository Volume verwendet werden sollen.
+
+
+
+== Syntax (benutzerdefinierte Laufwerke)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1
+... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN_])
+[trayLossProtect=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+----
+
+
+== Syntax (benutzerdefinierte Volume-Gruppe)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryVolumeGroup=pass:quotes[_volumeGroupName_
+[freeCapacityArea=pass:quotes[_freeCapacityIndexNumber_]]
+----
+
+
+== Syntax (benutzerdefinierte Anzahl von Laufwerken)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDriveCount=pass:quotes[_numberOfDrives_]
+(
+  [driveMediaType=(HDD | SSD | unknown | allMedia)] |
+  [driveType=(SAS | NVMe4K)]
+)
+[repositoryVolumeGroupUserLabel="userLabel"] |
+[trayLossProtect=(TRUE | FALSE)] |
+[drawerLossProtect=(true|false)] |
+[dataAssurance=(none | enabled)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`repositoryRAIDLevel`
+ a| 
+RAID-Level für das Mirror-Repository-Volume Gültige Werte sind `1`, `3`, `5`, Oder `6`.
+
+
+
+ a| 
+`repositoryDrives`
+ a| 
+Die Laufwerke, die Sie für das Mirror-Repository-Volume verwenden möchten. Werte für Schublade-ID sind `1` Bis `5`. Die Steckplatz-ID-Werte sind `1` Bis `24`. Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an. Geben Sie die Namen der Repository-Volumes unter Verwendung folgender Regeln ein:
+
+Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
+
+Alle maximale Steckplatz-ID sind 24. Die Steckplatz-ID-Werte beginnen je nach Fachmodell bei 0 oder 1. Die Laufwerksfächer sind mit E2800 und E5700 Controllern kompatibel und besitzen die Steckplatz-ID-Nummern ab 0. Die Laufwerksfächer sind mit E2700 und E5600 Controllern kompatibel und verfügen ab 1 über die Steckplatz-ID.
+
+Schließen Sie den Wert für Fach-ID, die Fach-ID und den Wert für die Steckplatz-ID in eckigen Klammern ([ ]) an.
+
+* Schließen Sie alle Werte für die Fach-ID, die Werte für die Fach-ID und den Steckplatz-ID-Wert in eckigen Klammern ([ ]) ein.
+* Trennen Sie den Fach-ID-Wert, den Fach-ID-Wert und den Steckplatz-ID-Wert mit Kommas.
+* Trennen Sie jede der Laufwerkpositionen mit einem Platz.
+
+
+
+
+ a| 
+`repositoryVolumeGroup`
+ a| 
+Der Name der Volume-Gruppe, in der sich das Mirror-Repository-Volume befindet.
+
+
+
+ a| 
+`repositoryVolumeGroupUserLabel`
+ a| 
+Den Namen, den Sie der neuen Volume-Gruppe angeben möchten, in der sich das Mirror-Repository Volume befinden soll. Schließen Sie den Namen der Volume-Gruppe in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`freeCapacityArea`
+ a| 
+Die Indexnummer des freien Speicherplatzes in einer vorhandenen Volume-Gruppe, die Sie zum erneuten Erstellen des Mirror-Repository-Volumes verwenden möchten. Freie Kapazität wird als freie Kapazität zwischen vorhandenen Volumes in einer Volume-Gruppe definiert. Eine Volume-Gruppe kann zum Beispiel die folgenden Bereiche haben: Volume 1, freie Kapazität, Volume 2, freie Kapazität, Volume 3, Freie Kapazität: Um die freie Kapazität nach Volume 2 zu nutzen, geben Sie an:
+
+[listing]
+----
+freeCapacityArea=2
+----
+Führen Sie die aus `show volumeGroup` Befehl, um zu bestimmen, ob ein freier Speicherplatz vorhanden ist.
+
+
+
+ a| 
+`repositoryDriveCount`
+ a| 
+Die Anzahl der nicht zugewiesenen Laufwerke, die für das Mirror-Repository-Volume verwendet werden sollen.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Der Laufwerkstyp, für den Sie Informationen abrufen möchten. Die folgenden Werte sind gültige Laufwerktypen:
+
+* `HDD` Zeigt an, dass Sie Festplattenlaufwerke im Laufwerksfach haben
+* `SSD` Zeigt an, dass Solid State Disks im Laufwerksfach vorhanden sind
+* `unknown` Zeigt an, dass Sie sich über den Laufwerkstyp im Laufwerksfach sicher sind
+* `allMedia` Zeigt an, dass alle Medientypen im Laufwerksfach vorhanden sind
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Der Laufwerkstyp, den Sie für das Mirror-Repository-Volume verwenden möchten. Sie können keine unterschiedlichen Laufwerkstypen verwenden.
+
+Sie müssen diesen Parameter verwenden, wenn Sie mehr als einen Laufwerkstyp im Speicher-Array haben.
+
+Gültige Laufwerkstypen:
+
+* `SAS`
+* `NVMe4K`
+
+
+Wenn Sie keinen Laufwerkstyp angeben, wird standardmäßig mit dem Befehl ein beliebiger Typ festgelegt.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+Die Einstellung zum erzwingen des Ablagefach-Verlustschutzes, wenn Sie das Spiegelarchiv-Volume erstellen. Um den Schutz gegen den Verlust des Fachs durchzusetzen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+Die Einstellung zum Schutz vor Schubladenverlust beim Erstellen des Spiegelarchiv-Volumes. Um den Schutz vor Schubladenverlust durchzusetzen, setzen Sie diesen Parameter auf `TRUE`. Der Standardwert ist `FALSE`.
+
+|===
+
+
+== Hinweise
+
+Wenn Sie einen Wert für den Speicherplatz des zu kleinen Spiegelarchiv-Volumes eingeben, gibt die Controller-Firmware eine Fehlermeldung aus, in der die Menge an Speicherplatz angegeben wird, die für das Mirror-Repository-Volume benötigt wird. Der Befehl versucht nicht, das Mirror-Repository-Volume zu ändern. Sie können den Befehl erneut eingeben, indem Sie den Wert aus der Fehlermeldung für den Speicherplatz des gespiegelten Repository-Volumes verwenden.
+
+Der `repositoryDrives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
+
+Wenn Sie die Laufwerke zuweisen, stellen Sie das ein `trayLossProtect` Parameter an `TRUE` Und mehrere Laufwerke aus einem Fach ausgewählt haben, gibt das Speicherarray einen Fehler zurück. Wenn Sie die einstellen `trayLossProtect` Parameter an `FALSE`, Das Speicherarray führt zwar Vorgänge aus, aber das von Ihnen erstellte Spiegelarchiv-Volume verfügt möglicherweise nicht über einen Ablageschutz.
+
+Wenn die Controller-Firmware die Laufwerke zuweist, wenn Sie den festlegen `trayLossProtect` Parameter an `TRUE`, Das Speicher-Array gibt einen Fehler aus, wenn die Controller-Firmware keine Laufwerke bereitstellen kann, die zu einem Verlust des Fachs für das neue Spiegelarchiv-Volume führen. Wenn Sie die einstellen `trayLossProtect` Parameter an `FALSE`, Das Speicherarray führt den Vorgang durch, selbst wenn es bedeutet, dass das Spiegelarchiv-Volume möglicherweise keinen Ablageschutz hat.
+
+
+
+== Data Assurance Management
+
+Die Data Assurance (da)-Funktion erhöht die Datenintegrität im gesamten Storage-System. DA ermöglicht es dem Storage-Array, nach Fehlern zu suchen, die auftreten können, wenn Daten zwischen Hosts und Laufwerken verschoben werden. Wenn diese Funktion aktiviert ist, hängt das Speicherarray die Fehlerprüfungscodes (auch zyklische Redundanzprüfungen oder CRCs genannt) an jeden Datenblock im Volume an. Nach dem Verschieben eines Datenblocks ermittelt das Speicher-Array anhand dieser CRC-Codes, ob während der Übertragung Fehler aufgetreten sind. Potenziell beschädigte Daten werden weder auf Festplatte geschrieben noch an den Host zurückgegeben.
+
+Wenn Sie die da-Funktion verwenden möchten, beginnen Sie mit einem Pool oder einer Volume-Gruppe, der nur Laufwerke enthält, die da unterstützen. Erstellen Sie dann da-fähige Volumes. Ordnen Sie diese da-fähigen Volumes schließlich dem Host mithilfe einer E/A-Schnittstelle zu, die für da geeignet ist. Zu den I/O-Schnittstellen, die da unterstützen, gehören Fibre Channel, SAS und iSER over InfiniBand (iSCSI-Erweiterungen für RDMA/IB). DA wird nicht durch iSCSI über Ethernet oder durch die SRP über InfiniBand unterstützt.
+
+[NOTE]
+====
+Wenn alle Laufwerke für die da-Fähigkeit geeignet sind, können Sie die einstellen `dataAssurance` Parameter an `enabled` Und dann mit bestimmten Operationen da verwenden. Sie können beispielsweise eine Volume-Gruppe mit da-fähigen Laufwerken erstellen und anschließend ein Volume in dieser Volume-Gruppe erstellen, die für da aktiviert ist. Andere Vorgänge, bei denen ein DA-fähiges Volume verwendet wird, verfügen über Optionen zur Unterstützung der da-Funktion.
+
+====
+Wenn der `dataAssurance` Parameter ist auf festgelegt `enabled`, Nur Data Assurance-fähige Laufwerke werden für Volume-Kandidaten in Betracht gezogen werden. Anderenfalls werden sowohl Data Assurance-fähige als auch nicht Data Assurance-fähige Laufwerke berücksichtigt. Sind nur Data Assurance Drives verfügbar, wird die neue Volume-Gruppe mit den aktivierten Data Assurance-Laufwerken erstellt.
+
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+7.10 fügt RAID Level 6-Fähigkeit hinzu
+
+7.75 fügt die hinzu `dataAssurance` Parameter.
+
+8.60 fügt die hinzu `driveMediaType`, `repositoryVolumeGroupUserLabel`, und `drawerLossProtect` Parameter.

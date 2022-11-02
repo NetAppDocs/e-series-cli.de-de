@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/set-storagearray-traypositions.html 
+sidebar: sidebar 
+keywords: set, storage, array, tray, positions 
+summary: Der Befehl Set storageArray TrayPositions definiert die Position der Fächer in einem Speicherarray. Sie müssen alle Fächer im Speicher-Array enthalten, wenn Sie diesen Befehl eingeben. 
+---
+= Stellen Sie die Positionen der Speicherarrays ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set storageArray trayPositions` Der Befehl definiert die Position der Fächer in einem Speicher-Array. Sie müssen alle Fächer im Speicher-Array enthalten, wenn Sie diesen Befehl eingeben.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)]
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`trayPositions`
+ a| 
+Eine Liste aller Fach-IDs. Die Reihenfolge der Fach-IDs in der Liste definiert die Positionen für das Controller-Fach und die Laufwerksfächer in einem Speicher-Array. Gültige Werte sind `0` Bis `99`. Geben Sie die Werte für die Fach-ID ein, die durch ein Leerzeichen getrennt sind. Schließen Sie die Liste der Fach-ID-Werte in Klammern an. Verwenden Sie für Speicher-Arrays, bei denen das Controller-Fach eine vordefinierte Kennung hat, die sich nicht im Bereich der gültigen Werte für die Fachposition befindet `controller` Wert:
+
+|===
+
+
+== Hinweise
+
+Mit diesem Befehl wird die Position eines Fachs in einem Speicher-Array anhand der Position der Fach-ID im definiert `trayPositions` Liste. Wenn Sie zum Beispiel ein Controller-Fach mit einer ID auf 84 und Laufwerksfächer mit IDs auf 1, 12 und 50 eingestellt haben, wird das angezeigt `trayPositions` Sequenz (`84 1 12 50`) Setzt das Controller-Fach in die erste Position, das Laufwerksfach 1 in die zweite Position, das Laufwerksfach 12 in die dritte Position und das Laufwerksfach 50 in die vierte Position. Der `trayPositions` Sequenz (`1 84 50 12`) Positioniert das Controller-Fach in die zweite Position, Laufwerksfach 1 in die erste Position, Laufwerksfach 50 in die dritte Position und Laufwerksfach 12 in die vierte Position.
+
+[NOTE]
+====
+Sie müssen alle Fächer in das Speicher-Array in der von definierten Liste aufnehmen `trayPositions` Parameter. Wenn die Anzahl der Fächer in der Liste nicht mit der Gesamtzahl der Fächer im Speicher-Array übereinstimmt, wird eine Fehlermeldung angezeigt.
+
+====
+[NOTE]
+====
+Die Management-Software zeigt die erste Position oben und die anderen Positionen in relativer Reihenfolge unten mit der letzten Position unten.
+
+====
+
+
+== Minimale Firmware-Stufe
+
+6.10
+
+Für 6.14 und 6.16 `controller` Ist kein gültiger Wert.

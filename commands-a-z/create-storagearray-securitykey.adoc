@@ -1,0 +1,138 @@
+---
+permalink: commands-a-z/create-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: create, storage, array, security, key 
+summary: 'Der Befehl create storageArray securityKey erstellt oder ändert einen neuen Sicherheitsschlüssel für ein Storage Array mit vollständiger Festplattenverschlüsselung (Full Disk Encryption, FDE).' 
+---
+= Sicherheitsschlüssel für Speicher-Array erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create storageArray securityKey` Befehl erstellt oder ändert einen neuen Sicherheitsschlüssel für ein Storage Array mit vollständiger Festplattenverschlüsselung (Full Disk Encryption, FDE).
+
+
+
+== Unterstützte Arrays
+
+Wenn das externe Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die E2800, E5700, EF600 und EF300 Arrays. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+
+
+
+== Kontext
+
+Für die interne Schlüsselverwaltung aktiviert dieser Befehl die Funktion „Internal Key Management“ und erstellt den Sicherheitsschlüssel. Verwenden Sie nach dem Erstellen des Schlüssels die `set storageArray securityKey` Befehl zum Verwenden des Schlüssels. Mit diesem Befehl kann auch der Sicherheitsschlüssel geändert werden.
+
+Für die Verwaltung externer Schlüssel erstellt dieser Befehl einen anderen Schlüssel, um den ursprünglich erstellten Schlüssel zu ersetzen, wenn Sie die Funktion aktiviert haben. Verwenden Sie die `enable storageArray externalKeyManagement` Befehl zum Aktivieren der Funktion External Key Management und Erstellen des ursprünglichen Sicherheitsschlüssels. Mit diesem Befehl kann auch der Sicherheitsschlüssel geändert werden.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create storageArray securityKey
+[keyIdentifier=pass:quotes[_"keyIdentifierString"_]]
+passPhrase=pass:quotes[_"passPhraseString"_
+file=_"fileName"_]
+[commitSecurityKey=(TRUE | FALSE)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`keyIdentifier` - Nur für internes Verschlüsselungsmanagement anwendbar
+ a| 
+Eine Zeichenkette, die Sie lesen können, ist ein Wrapper um einen Sicherheitsschlüssel. Schließen Sie die Schlüsselkennung in doppelte Anführungszeichen (" ").
+
+Sie können Zeichen für die Schlüsselkennung für interne Sicherheitsschlüssel eingeben, damit Sie den Schlüssel später identifizieren können. Dies sind die Formatierungsregeln:
+
+* Sie können bis zu 189 alphanumerische Zeichen für eine Schlüsselkennung eingeben. Die Schlüsselkennung darf die folgenden Zeichen nicht haben:
++
+** Leerzeichen
+** Satzzeichen
+** Symbole
+
+
+* Wenn Sie den nicht eingeben `keyIdentifer` Parameter für interne Schlüssel generiert der Controller automatisch den `keyIdentifer` Parameter.
+
+
+Zusätzliche Zeichen werden automatisch generiert und an das Ende der Zeichenfolge angehängt, die Sie für die Schlüsselkennung eingeben. Wenn Sie keine Zeichenfolge für das eingeben `keyIdentifier` Parameter, die Schlüsselkennung besteht nur aus den Zeichen, die automatisch generiert werden.
+
+[NOTE]
+====
+Dieser Parameter wird für die externe Schlüsselverwaltung ignoriert, da die Schlüsselkennung komplett automatisch generiert wird. Wenn das Speicher-Array über eine Benutzerbezeichnung verfügt, besteht diese automatisch generierte Zeichenfolge aus den Zeichen `sa.`, Gefolgt von der Benutzerbezeichnung des Speicherarrays, der Speicher-Array-Kennung und einer zufällig generierten Zeichenfolge. Alle Zeichen in der Benutzerbeschriftung, die keine alphanumerischen Zeichen enthalten, werden in einen Unterstrich umgewandelt (`_`) Zeichen. So wird beispielsweise eine Benutzungsbezeichnung von abc#8 in konvertiert `sa.abc_8` Bevor Sie auf den Rest der Schlüsselkennung voreingestellt werden. Bei Speicher-Arrays ohne Benutzeretikett besteht die Schlüsselkennung aus der Kennung des Speicherarrays und einer zufällig generierten Zeichenfolge.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den Sicherheitsschlüssel in einer externen Datei speichern können. Schließen Sie den Passphrase in doppelte Anführungszeichen (" ").
+
+Informationen zum richtigen Formular zum Erstellen eines gültigen Passphrase finden Sie in den Notizen in dieser Befehlsbeschreibung.
+
+Ihr Passphrase muss folgende Kriterien erfüllen:
+
+* Muss zwischen acht und 32 Zeichen lang sein.
+* Darf kein Leerzeichen enthalten.
+* Muss mindestens einen Großbuchstaben enthalten.
+* Muss mindestens einen Kleinbuchstaben enthalten.
+* Muss mindestens eine Zahl enthalten.
+* Muss mindestens ein nicht-alphanumerisches Zeichen enthalten, z. B. @ +.
+
+
+[NOTE]
+====
+Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeldung und werden aufgefordert, den Befehl erneut zu versuchen.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Der Dateipfad und der Dateiname, in den Sie den Sicherheitsschlüssel speichern möchten. Beispiel:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Der Dateiname muss über eine Erweiterung von verfügen `.slk` .
+
+====
+Schließen Sie den Dateipfad und den Namen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`commitSecurityKey` - Nur für internes Verschlüsselungsmanagement anwendbar
+ a| 
+Dieser Parameter verpflichtet den Sicherheitsschlüssel für alle FDE-Laufwerke sowie die Controller in das Speicher-Array. Nach dem Sicherheitsschlüssel ist ein Schlüssel erforderlich, um auf sicherheitsfähigen Laufwerken im Speicher-Array auf Daten zuzugreifen. Die Daten können nur mit einem Schlüssel gelesen oder geändert werden und das Laufwerk kann niemals in einem nicht sicheren Modus verwendet werden, ohne die Daten nutzlos oder völlig löschen das Laufwerk.
+
+Der Standardwert ist FALSE. Wenn dieser Parameter auf FALSE gesetzt ist, senden Sie einen separaten Parameter `set storageArray securityKey` Befehl zum Übergeben des Sicherheitsschlüssels an das Speicher-Array.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+7.40, eingeführt für internes Verschlüsselungsmanagement
+
+8.40, eingeführt für externes Verschlüsselungsmanagement

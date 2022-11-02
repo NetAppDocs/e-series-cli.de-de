@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/reset-controller.html 
+sidebar: sidebar 
+keywords: reset, controller 
+summary: Der Reset-Controller-Befehl setzt einen Controller zurück und führt zu I/O-Vorgängen. 
+---
+= Controller zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `reset controller` Befehl setzt einen Controller zurück und führt zu I/O-Vorgängen.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+[NOTE]
+====
+Wenn Sie einen Controller zurücksetzen, wird der Controller aus dem Datenpfad entfernt und ist erst nach Abschluss des Reset-Vorgangs für I/O-Vorgänge verfügbar. Wenn ein Host Volumes verwendet, die Eigentum des Controllers sind, der zurückgesetzt wird, wird der an den Controller gerichtete I/O abgelehnt. Stellen Sie vor dem Zurücksetzen des Controllers sicher, dass die Volumes, die sich im Besitz des Controllers befinden, nicht verwendet werden, oder stellen Sie sicher, dass ein Multi-Path-Treiber auf allen Hosts installiert ist, die diese Volumes verwenden.
+
+====
+[CAUTION]
+====
+Wenn Sie die in-Band-Verwaltung verwenden, können Sie nicht steuern, an welchen Controller ein Befehl gesendet wird, und dieser Befehl kann unerwartete Ergebnisse haben.
+
+====
+
+
+== Syntax
+
+[listing]
+----
+reset controller [(a|b)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`controller`
+ a| 
+Der Controller, den Sie zurücksetzen möchten. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Schließen Sie die Controller-Kennung in eckige Klammern ([ ]). Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
+
+|===
+
+
+== Hinweise
+
+Der Controller, der den Befehl zum Zurücksetzen des Controllers erhält, wird der angegebene Controller zurückgesetzt. Wenn beispielsweise der Befehl RESET-Controller an Controller A gesendet wird, um ein Zurücksetzen von Controller A anzufordern, startet Controller A durch einen weichen Neustart des Controllers selbst. Wenn der Reset-Controller-Befehl an Controller A gesendet wird, um ein Zurücksetzen von Controller B anzufordern, hält Controller A den Reset von Controller B und gibt dann Controller B aus dem Reset frei, bei dem es sich um einen Hardeboot handelt. Ein Soft-Reboot in einigen Produkten setzt nur den IOC-Chip zurück. Ein harter Neustart setzt sowohl die IOC- als auch die Expander-Chips im Controller zurück.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20

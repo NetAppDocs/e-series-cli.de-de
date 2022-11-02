@@ -1,0 +1,35 @@
+---
+permalink: get-started/formatting-cli-commands-in-windows-powershell.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands, windows, powershell 
+summary: Windows PowerShell ist eine interaktive Scripting Shell, die Zugriff auf Befehlszeilen-Tools bietet. 
+---
+= Formatieren von Regeln für CLI-Befehle in Windows PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Windows PowerShell ist eine interaktive Scripting Shell, die Zugriff auf Befehlszeilen-Tools bietet. Windows PowerShell verbessert die Windows Befehlsaufforderung mit einem stabileren Satz von Befehlen und Scripting-Funktion. In Windows PowerShell können Sie alle CLI- und Skriptbefehle ausführen. Die Windows PowerShell umfasst jedoch einige besondere Formatierungsanforderungen. Die Anforderungen sind:
+
+* Beginnen Sie alle SMcli-Befehle mit einem Punkt und einem Schrägstrich (./)
+* SMcli Wrapper muss als ausführbarer Befehl mit der Erweiterung .exe (SMcli.exe) identifiziert werden.
+* Skript-Befehl in einzelne Anführungszeichen einschließen (' ')
+* Doppelte Anführungszeichen, die Teil eines Namens, Dateipfads oder Werts sind, müssen vor jedem doppelten Anführungszeichen (\") einen umgekehrten Schrägstrich aufweisen.
+
+
+Nachfolgend ein Beispiel eines CLI-Befehls zum Erstellen eines Speicher-Array-Namens in Windows PowerShell. Beachten Sie, dass die einzelnen Anführungszeichen für den Skriptbefehl als Trennzeichen und die doppelten Anführungszeichen um den Namen des Speicher-Arrays, der als identifiziert wurde, Backslash verwendet werden `userLabel` In der Befehlssyntax.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’set storageArray userLabel=\"Engineering\";’
+----
+Dies ist ein Beispiel für einen CLI-Befehl zur Aktivierung einer Premium-Funktion in Windows PowerShell. Beachten Sie die Verwendung der doppelten Anführungszeichen für Backslash vor dem Dateipfad zum Premium Feature Key.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’enable storageArray feature file=\"C:\licenseKey.bin\";’
+----
+In den vorherigen Beispielen werden sowohl Großbuchstaben als auch Kleinbuchstaben verwendet. Diese Verwendung soll klarmachen, wie die Befehle formatiert werden. Windows PowerShell ist jedoch nicht zwischen Groß- und Kleinschreibung zu beachten und erfordert keine speziellen Anwendungsfälle.

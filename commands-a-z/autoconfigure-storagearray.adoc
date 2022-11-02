@@ -1,0 +1,385 @@
+---
+permalink: commands-a-z/autoconfigure-storagearray.html 
+sidebar: sidebar 
+keywords: autoconfigure storage array,supported, roles, syntax, parameters, minimum firmware level 
+summary: Mit dem Befehl autoConfigure storageArray wird ein Storage-Array automatisch konfiguriert. 
+---
+= Speicher-Array automatisch konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `autoConfigure storageArray` Befehl konfiguriert automatisch ein Speicher-Array.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Bevor Sie das aufrufen `autoConfigure storageArray` Führen Sie den Befehl aus `show storageArray autoConfiguration` Befehl. Der `show storageArray autoConfiguration` Befehl gibt Konfigurationsinformationen in Form einer Liste gültiger Laufwerkstypen, RAID Level, Volume-Informationen und Hot-Spare-Informationen zurück. (Diese Liste entspricht den Parametern für das `autoConfigure storageArray` Befehl.) Die Controller prüfen das Storage Array und ermitteln dann das höchste RAID-Level, das das Storage Array unterstützen kann, sowie die effizienteste Volume-Definition für das RAID-Level. Wenn die von der zurückgegebenen Liste beschriebene Konfiguration akzeptabel ist, können Sie das eingeben `autoConfigure storageArray` Befehl ohne Parameter. Wenn Sie die Konfiguration ändern möchten, können Sie die Parameter entsprechend Ihren Konfigurationsanforderungen ändern. Sie können einen einzelnen Parameter oder alle Parameter ändern. Nach der Eingabe des `autoConfigure storageArray` Befehl: Die Controller richten das Storage-Array unter Verwendung der Standardparameter oder der von Ihnen ausgewählten ein.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+autoConfigure storageArray
+[driveType=(SAS | NVMe4K)]
+[driveMediaType=(hdd | ssd | allMedia | unknown)]
+[raidLevel=(0 | 1 | 3 | 5 | 6)]
+pass:quotes[[volumeGroupWidth=_numberOfDrives_]]
+pass:quotes[[volumeGroupCount=_numberOfVolumeGroups_]]
+pass:quotes[[volumesPerGroupCount=_numberOfVolumesPerGroup_]]
+pass:quotes[[hotSpareCount=_numberOfHotSpares_]]
+pass:quotes[[segmentSize=_segmentSizeValue_]]
+[cacheReadPrefetch=(TRUE | FALSE)]
+pass:quotes[[readAheadMultiplier=_multiplierValue_]]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde)]
+[dataAssurance=(none | enabled)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`driveType`
+ a| 
+Den Typ der Laufwerke, die für das Speicher-Array verwendet werden sollen.
+
+Sie müssen diesen Parameter verwenden, wenn Sie mehr als einen Laufwerkstyp im Speicher-Array haben.
+
+Diese Laufwerkstypen sind gültig:
+
+* `SAS`
+* `NVMe4K`
+
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Der Laufwerkstyp, den Sie für das Speicher-Array verwenden möchten.
+
+Sie müssen diesen Parameter verwenden, wenn Sie mehr als einen Laufwerkstyp im Speicher-Array haben.
+
+Die folgenden Laufwerktypen sind gültig:
+
+* `hdd` -- Verwenden Sie diese Option, wenn Sie Festplatten haben.
+* `ssd` -- Verwenden Sie diese Option, wenn Sie Solid State Disks haben.
+* `unknown` -- Verwenden Sie, wenn Sie nicht sicher sind, welche Arten von Laufwerkmedien in der Laufwerksschublade sind
+
+
+
+
+ a| 
+`raidLevel`
+ a| 
+RAID-Level der Volume-Gruppe, die die Laufwerke im Storage-Array enthält. Gültige RAID-Level sind `0`, `1`, `3`, `5`, Oder `6`.
+
+
+
+ a| 
+`volumeGroupWidth`
+ a| 
+Die Anzahl der Laufwerke in einer Volume-Gruppe im Speicher-Array.
+
+
+
+ a| 
+`volumeGroupCount`
+ a| 
+Die Anzahl der Volume-Gruppen im Speicher-Array. Ganzzahlwerte verwenden.
+
+
+
+ a| 
+`volumesPerGroupCount`
+ a| 
+Die Anzahl der Volumes mit gleicher Kapazität pro Volume-Gruppe. Ganzzahlwerte verwenden.
+
+
+
+ a| 
+`hotSpareCount`
+ a| 
+Die Anzahl der Hot Spares, die Sie im Speicher-Array wünschen. Ganzzahlwerte verwenden.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+Die Menge der Daten (in KB), die der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor er Daten auf das nächste Laufwerk schreibt. Gültige Werte sind `4 (SSD only)``8`, `16`, `32`, `64`, `128`, `256`, Oder `512`.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+Die Einstellung zum ein- oder Ausschalten des Cache Read Prefetch. Um den Cache-Lesevorabruf zu deaktivieren, setzen Sie diesen Parameter auf `FALSE`. Um den Cache-Lese-Prefetch zu aktivieren, setzen Sie diesen Parameter auf `TRUE`.
+
+
+
+ a| 
+`readAheadMultiplier`
+ a| 
+Dieser Parameter definiert, wie viele zusätzliche Datenblöcke in den Cache eingelesen werden. Gültige Werte reichen von `0` Bis `65535`.
+
+[NOTE]
+====
+Dieser Parameter ist veraltet und wird in einer zukünftigen Version der Storage-Management-Software entfernt. Für den optimalen Betrieb verwenden Sie die `cacheReadPrefetch` Parameter.
+
+====
+
+
+ a| 
+`securityType`
+ a| 
+Die Einstellung zum Festlegen des Sicherheitsniveaus beim Erstellen der Volume-Gruppen und aller zugehörigen Volumes. Diese Einstellungen sind gültig:
+
+* `none` -- die Volume-Gruppe und die Volumen sind nicht sicher.
+* `capable` -- die Volume-Gruppe und die Volumes sind in der Lage, die Sicherheit einzustellen, aber die Sicherheit wurde nicht aktiviert.
+* `enabled` -- die Volume-Gruppe und die Volumes haben die Sicherheit aktiviert.
+
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Der Typ der sicheren Laufwerke, die in der Volume-Gruppe verwendet werden sollen. Diese Einstellungen sind gültig:
+
+* `fips` -- nur Laufwerke mit FIPS-2-konform zu verwenden.
+* `fde` - Zur Verwendung von FDE-konformen Laufwerken.
+
+
+[NOTE]
+====
+Verwenden Sie diesen Parameter zusammen mit dem `securityType` Parameter. Wenn Sie angeben `none` Für das `securityType` Parameter, der Wert des `secureDrives` Parameter wird ignoriert, da nicht sichere Volume-Gruppen keine sicheren Laufwerkstypen angegeben werden müssen.
+
+====
+|===
+
+
+== Laufwerke und Volume-Gruppen
+
+Eine Volume-Gruppe ist ein Satz von Laufwerken, die logisch durch die Controller im Storage-Array gruppiert werden. Die Anzahl der Laufwerke in einer Volume-Gruppe beschränkt sich auf die RAID-Ebene und die Controller-Firmware. Wenn Sie eine Volume-Gruppe erstellen, befolgen Sie die folgenden Richtlinien:
+
+* Ab der Firmware-Version 7.10 können Sie eine leere Volume-Gruppe erstellen, sodass Sie die Kapazität für eine spätere Verwendung reservieren können.
+* Sie können Laufwerktypen nicht innerhalb einer einzelnen Volume-Gruppe kombinieren.
+* Es ist nicht möglich, HDD- und SSD-Laufwerke innerhalb einer einzelnen Volume-Gruppe miteinander zu kombinieren.
+* Die maximale Anzahl von Laufwerken in einer Volume-Gruppe hängt von folgenden Bedingungen ab:
++
+** Der Typ des Controllers
+** RAID-Level
+
+
+* Die RAID Level umfassen 0, 1, 3, 5 und 6.
++
+** Eine Volume-Gruppe mit RAID-Level 3, RAID Level 5 oder RAID-Level 6 darf nicht mehr als 30 Laufwerke haben und muss mindestens drei Laufwerke haben.
+** Eine Volume-Gruppe mit RAID-Level 6 muss mindestens fünf Laufwerke aufweisen.
+** Wenn eine Volume-Gruppe mit RAID Level 1 vier oder mehr Laufwerke hat, konvertiert die Storage-Managementsoftware die Volume-Gruppe automatisch in eine RAID-Level 10, also RAID Level 1 + RAID Level 0.
+
+
+* Weitere Kriterien sind in den folgenden Tabellen zu finden, um den Schutz vor Schubladenverlusten zu aktivieren:
+
+
+|===
+| Ebene | Kriterien für den Schutz vor Verlust des Fachs | Mindestanzahl der benötigten Fächer 
+
+
+ a| 
+Disk-Pool
+ a| 
+Der Laufwerk-Pool enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+6
+
+
+
+ a| 
+RAID 6
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzelnen Fach
+ a| 
+3
+
+
+
+ a| 
+RAID 3 oder RAID 5
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Fach
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Jedes Laufwerk in einem RAID 1-Paar muss in einem separaten Fach untergebracht sein
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Der Schutz vor Laufwerksverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+|===
+| Ebene | Kriterien für den Schutz vor Schubladenverlust | Mindestanzahl der benötigten Schubladen 
+
+
+ a| 
+Disk-Pool
+ a| 
+Der Pool umfasst Laufwerke aus allen fünf Schubladen und in jeder Schublade befindet sich eine gleiche Anzahl von Laufwerken. Ein Fach mit 60 Laufwerken kann einen Schubladenschutz erreichen, wenn der Laufwerk-Pool 15, 20, 25, 30, 35, 40, 45, 50, 55 oder 60 Laufwerke.
+ a| 
+5
+
+
+
+ a| 
+RAID 6
+ a| 
+Die Volume-Gruppe enthält nicht mehr als zwei Laufwerke in einem einzigen Einschub.
+ a| 
+3
+
+
+
+ a| 
+RAID 3 oder RAID 5
+ a| 
+Jedes Laufwerk in der Volume-Gruppe befindet sich in einem separaten Einschub.
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Jedes Laufwerk in einem gespiegelten Paar muss sich in einem separaten Fach befinden.
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Der Schutz vor Schubladenverlust kann nicht erreicht werden.
+ a| 
+Keine Angabe
+
+|===
+
+
+== Hot Spares
+
+Bei Volume-Gruppen ist die Sicherung von Daten eine wertvolle Strategie, verfügbare Laufwerke im Storage Array als Hot Spare-Laufwerke zuzuweisen. Ein Hot Spare ist ein Laufwerk ohne Daten, das im Speicher-Array als Standby fungiert, falls ein Laufwerk in einer RAID 1-, RAID 3-, RAID 5- oder RAID 6-Volume-Gruppe ausfällt. Das Hot Spare fügt dem Speicher-Array eine weitere Ebene an Redundanz hinzu.
+
+Im Allgemeinen müssen Hot-Spare-Laufwerke die Kapazitäten haben, die der verwendeten Kapazität auf den Laufwerken entsprechen oder größer sind, die sie sichern. Hot-Spare-Festplatten müssen vom gleichen Medientyp, vom selben Schnittstellentyp und von der gleichen Kapazität wie die Laufwerke sein, die sie sichern.
+
+Wenn ein Laufwerk im Speicher-Array ausfällt, wird das Hot Spare normalerweise automatisch durch das ausgefallene Laufwerk ersetzt, ohne dass ein Eingreifen erforderlich ist. Wenn ein Hot Spare verfügbar ist, wenn ein Laufwerk ausfällt, verwendet der Controller Redundanzdatenparität, um die Daten auf dem Hot Spare zu rekonstruieren. Die Unterstützung für die Evakuierung von Daten ermöglicht außerdem das Kopieren von Daten auf ein Hot Spare, bevor die Software das Laufwerk als „ausgefallen“ markiert.
+
+Nachdem das ausgefallene Laufwerk physisch ersetzt wurde, können Sie eine der folgenden Optionen zum Wiederherstellen der Daten nutzen:
+
+Wenn Sie das ausgefallene Laufwerk ausgetauscht haben, werden die Daten aus dem Hot Spare wieder auf das Ersatzlaufwerk kopiert. Diese Aktion wird Copyback genannt.
+
+Wenn Sie das Hot-Spare-Laufwerk als dauerhaftes Mitglied einer Volume-Gruppe angeben, ist der Copyback-Vorgang nicht erforderlich.
+
+Die Verfügbarkeit von Ablagefach-Verlustschutz und Schubladenschutz für eine Volume-Gruppe hängt von der Position der Laufwerke ab, aus denen die Volume-Gruppe besteht. Der Schutz vor Verlust des Fachs und der Schutz vor Schubladenverlust können aufgrund eines ausgefallenen Laufwerks und der Position des Hot-Spare-Laufwerks verloren gehen. Um sicherzustellen, dass der Schutz vor Verlust des Fachs und der Schutz vor Schubladenverlust nicht beeinträchtigt werden, müssen Sie ein ausgefallenes Laufwerk austauschen, um den Kopiervorgang zu initiieren.
+
+Das Speicher-Array wählt automatisch Data Assurance (da)-fähige Laufwerke für Hot-Spare-Abdeckung von da-fähigen Volumes aus.
+
+Stellen Sie sicher, dass Sie im Speicher-Array über da-fähige Laufwerke verfügen, damit Hot-Spare-fähige Volumes abgedeckt werden können. Weitere Informationen zu da-fähigen Laufwerken finden Sie in der Data Assurance-Funktion.
+
+Secure-fähige Laufwerke (FIPS und FDE) können als Hot Spare für sichere und nicht sichere Laufwerke verwendet werden. Nicht sichere Laufwerke können für andere nicht sichere Laufwerke und für sichere Laufwerke sorgen, wenn die Volume-Gruppe die Sicherheit nicht aktiviert hat. Eine FIPS-Volume-Gruppe kann nur ein FIPS-Laufwerk als Hot Spare verwenden. Sie können jedoch ein FIPS-Hot-Spare für nicht sichere, sichere und sichere Volume-Gruppen verwenden, die nicht sicher sind.
+
+Wenn Sie kein Hot Spare besitzen, können Sie weiterhin ein ausgefallenes Laufwerk austauschen, während das Speicher-Array in Betrieb ist. Wenn das Laufwerk Teil einer RAID 1-, RAID 3-, RAID 5- oder RAID 6-Volume-Gruppe ist, verwendet der Controller Redundanzdatenparität, um die Daten automatisch auf dem Ersatzlaufwerk zu rekonstruieren. Diese Aktion wird Rekonstruktion genannt.
+
+
+
+== Segmentgröße
+
+Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
+
+Wenn Sie einen Wert für die Segmentgröße eingeben, wird der Wert anhand der unterstützten Werte geprüft, die der Controller zur Laufzeit zur Verfügung stellt. Wenn der eingegebene Wert ungültig ist, gibt der Controller eine Liste mit gültigen Werten zurück. Wenn Sie ein einzelnes Laufwerk für eine einzelne Anforderung verwenden, können andere Laufwerke gleichzeitig für die Bedienung anderer Anfragen verwendet werden. Befindet sich ein Volume in einer Umgebung, in der ein einzelner Benutzer große Dateneinheiten (wie Multimedia) überträgt, so wird die Performance maximiert, wenn eine einzelne Datentransferanfrage über ein einziges Daten-Stripe bedient wird. (Ein Daten-Stripe ist die Segmentgröße, die mit der Anzahl der Laufwerke in der Volume-Gruppe multipliziert wird, die für den Datentransfer verwendet werden.) In diesem Fall werden mehrere Laufwerke für dieselbe Anfrage genutzt, allerdings wird auf jedes Laufwerk nur einmal zugegriffen.
+
+Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern oder Dateisystemen zu erzielen, legen Sie die Segmentgröße so fest, dass die Anzahl der Laufwerke minimiert wird, die zur Erfüllung einer Datentransferanfrage erforderlich sind.
+
+
+
+== Cache-Lese-Prefetch
+
+Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
+
+
+
+== Sicherheitstyp
+
+Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
+
+Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müssen einen Sicherheitsschlüssel für das Speicher-Array erstellen. Verwenden Sie die `create storageArray securityKey` Befehl zum Erstellen eines Speicherarray-Sicherheitsschlüssels. Diese Befehle beziehen sich auf den Sicherheitsschlüssel:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Sichere Laufwerke
+
+Sichere Laufwerke können entweder vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) oder FIPS-Laufwerke (Federal Information Processing Standard) sein. Verwenden Sie die `secureDrives` Parameter, um den Typ der zu verwendenden sicheren Laufwerke anzugeben. Die Werte, die Sie verwenden können, sind `fips` Und `fde`.
+
+
+
+== Beispielbefehl
+
+[listing]
+----
+autoConfigure storageArray securityType=capable secureDrives=fips;
+----
+
+
+== Minimale Firmware-Stufe
+
+7.10 bietet zusätzliche RAID Level 6-Funktionalität und beseitigt Hot-Spare-Grenzen.
+
+7.50 fügt die hinzu `securityType` Parameter.
+
+7.75 fügt die hinzu `dataAssurance` Parameter.
+
+8.25 fügt die hinzu `secureDrives` Parameter.

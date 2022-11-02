@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-hostport.html 
+sidebar: sidebar 
+keywords: create, host, port 
+summary: 'Der Befehl Create hostPort erstellt eine neue Host-Port-Identifikation auf einem Host Bus Adapter (HBA) oder auf einem Host Channel Adapter (HCA).' 
+---
+= Erstellen Sie den Host Port
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `create hostPort` Befehl erstellt eine neue Host-Port-Kennung auf einem Host Bus Adapter (HBA) oder auf einem Host Channel Adapter (HCA).
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Die Identifizierung des Host-Ports ist ein Softwarewert, der den physischen HBA oder den HCA-Host-Port für den Controller darstellt. Ohne die korrekte Identifizierung des Host-Ports kann der Controller keine Anweisungen oder Daten vom Host-Port erhalten.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+create hostPort identifier=pass:quotes[_("wwID"_ | "_gid"_)
+userLabel="_portLabel"_]
+[host=pass:quotes[_"hostName"_]]
+[interfaceType=(FC | SAS | IB)]
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`identifier`
+ a| 
+Die 8-Byte-World Wide Identifier (WWID) oder die 16-Byte-Gruppen-ID (GID) des HBA- oder HCA-Host-Ports. Schließen Sie die WWID oder die GID in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Der Name, den Sie dem neuen HBA oder HCA-Host-Port geben möchten. Schließen Sie das Host-Port-Label in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Der Name des Hosts, für den Sie einen HBA- oder HCA-Host-Port definieren. Schließen Sie den Hostnamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Die Kennung des Schnittstellentyps für den Host-Port.
+
+Folgende Optionen sind für die Typen von Host-Port-Schnittstellen verfügbar:
+
+* `FC` -- Fibre Channel
+* `SAS` -- Serial-Attached SCSI
+* `IB` -- InfiniBand
+
+
+Eine FC oder eine SAS Auswahl erfordert eine 8 Byte WWID. Für eine IB-Auswahl ist eine 16-Byte-Gruppen-ID (GID) erforderlich.
+
+Wenn Sie den Schnittstellentyp nicht angeben, `FC` Wird als Standardschnittstelle für den Host-Port verwendet.
+
+|===
+
+
+== Hinweise
+
+Ein HBA-Host-Port oder ein HCA-Host-Port ist eine physische Verbindung auf einem Hostbus-Adapter oder auf einem Hostkanaladapter, der sich in einem Hostcomputer befindet. Ein HBA-Host-Port oder ein HCA-Host-Port bietet Host-Zugriff auf die Volumes in einem Speicher-Array. Wenn HBA oder HCA nur über eine physische Verbindung verfügt (ein Host Port), stehen die Begriffe Host-Port und Host Bus Adapter oder Host Channel Adapter gleichbedeutend.
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+
+
+== Minimale Firmware-Stufe
+
+5.20
+
+7.10 depretiert das `hostType` Parameter. Der `hostType` Der Parameter wurde dem hinzugefügt `create host` Befehl.
+
+7.32 fügt die hinzu `interfaceType` Parameter.

@@ -1,0 +1,160 @@
+---
+permalink: commands-a-z/set-consistencygroup-addcgmembervolume.html 
+sidebar: sidebar 
+keywords: add, member, consistency, group 
+summary: Der Befehl set ConsistencyGroup addCGMemberVolume fügt einer vorhandenen Consistency Group ein neues Basis-Volume als Mitglied hinzu. 
+---
+= Mitglied der Konsistenzgruppe hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `set consistencyGroup addCGMemberVolume` Befehl fügt ein neues Basis-Volume als Mitglied einer vorhandenen Konsistenzgruppe hinzu.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+
+
+
+== Kontext
+
+Sie können ein vorhandenes Repository-Volume für das neue Mitglied der Konsistenzgruppe angeben oder ein neues Repository-Volume erstellen. Wenn Sie ein neues Repository-Volume erstellen, identifizieren Sie eine vorhandene Volume-Gruppe oder einen vorhandenen Laufwerk-Pool, in dem das Repository-Volume gespeichert werden soll.
+
+
+
+== Syntax für die Verwendung mit einem vorhandenen Repository Volume
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup ["consistencyGroupName"]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes["_volumeGroupName_"]
+----
+
+
+== Syntax für die Erstellung eines neuen Repository Volumes in einer Volume-Gruppe
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Syntax für die Erstellung eines neuen Repository-Volumes in einem Laufwerk-Pool
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Der Name der Konsistenzgruppe, der Sie ein neues Mitglied-Volume hinzufügen möchten. Das neue Member Volume ist das Basis-Volume für Snapshot-Vorgänge. Schließen Sie den Namen der Konsistenzgruppe in doppelte Anführungszeichen („ ") in eckigen Klammern ([ ]) ein.
+
+
+
+ a| 
+`addCGMemberVolume`
+ a| 
+Der Name eines Basis-Volumes, das Sie hinzufügen möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+Wenn das angegebene Volume ein vorhandenes Repository-Volume oder ein vorhandenes Snapshot-Volume ist, schlägt der Befehl fehl.
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Dieser Parameter führt zwei Funktionen aus:
+
+* In einer vorhandenen Konsistenzgruppe mit einem Repository-Volume identifiziert dieser Parameter das Repository-Volume.
+* Bei der Erstellung eines neuen Repository-Volumes identifiziert dieser Parameter entweder eine Volume-Gruppe oder einen Datenträgerpool, in dem das neue Repository-Volume erstellt werden soll.
+
+
+Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+Die Größe eines neuen Repository Volumes entweder in einer Volume-Gruppe oder in einem Laufwerk-Pool. Die Größe wird in Einheiten von Byte, KB, MB, GB oder TB definiert.
+
+|===
+
+
+== Hinweise
+
+Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+
+Eine Konsistenzgruppe ist eine Sammlung von Basis-Volumes, die die Quell-Volumes für Snapshots sind. Sie erfassen die Basis-Volumes in einer Konsistenzgruppe, sodass Sie auf jedem Basis-Volume dieselben Snapshot-Vorgänge durchführen können. Im Zusammenhang mit diesem Befehl bedeutet der Begriff_Member_ ein Basis-Volume für Snapshot-Vorgänge. Sie können Snapshot-Images, die Mitgliedern einer Konsistenzgruppe zugeordnet sind, durch Vorgänge im Batch-Stil manipulieren und gleichzeitig die Konsistenz der Snapshot-Images gewährleisten.
+
+Jedes Mitglied-Volume muss über ein entsprechendes Repository-Volume verfügen. Sie können die Beziehung zwischen dem Mitglied-Volume und dem Repository-Volume mit definieren `repositoryVolume` Parameter. Der `repositoryVolume` Parameter kann eine der folgenden Aktionen ausführen:
+
+* Identifizieren Sie ein vorhandenes Repository-Volume, das mit der Konsistenzgruppe verbunden ist.
+* Identifizieren Sie entweder eine Volume-Gruppe oder einen Laufwerk-Pool, in dem ein neues Repository Volume erstellt werden soll.
+
+
+Das Hinzufügen eines Mitglieds zu einer Konsistenzgruppe mit einem vorhandenen Repository hat zwei Zwecke:
+
+* Sie können ein komplett neues Repository Volume erstellen, indem Sie den Befehl ohne den ausführen `repositoryVolume` Parameter. Wenn Sie den Befehl ohne ausführen `repositoryVolume` Parameter: Mit dem Befehl wird ein neues Repository-Volume in der Volume-Gruppe oder im Festplatten-Pool erstellt, in dem alle anderen Repository-Volumes gespeichert werden. Ein Beispiel für diese Befehlsverwendung:
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+----
+* Sie können ein vorhandenes Repository-Volume wiederverwenden, wenn dieses Repository-Volume leer ist und nicht mit einem anderen Mitglied-Volume verknüpft ist. Dies ist möglich, wenn Sie eine bestimmte Sequenz oder Beziehung für die Repository-Volumes beibehalten möchten. Um ein vorhandenes leeres Repository-Volume wiederverwenden zu können, müssen Sie den Namen des Repository-Volumes kennen. Um den Namen des Repository-Volumes zu bestimmen, verwenden Sie den `show allVolumes summary` Befehl. Alle Repository-Volume-Namen haben das Formular `repos_XXXX` Wo `XXXX` Ist eine eindeutige Kennung, die von der Storage-Managementsoftware generiert wird. Ein Beispiel für diese Befehlsverwendung:
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume="repos_0011"
+----
+
+
+Sie können das Repository-Volume in eine Volume-Gruppe oder einen Laufwerk-Pool Ihrer Wahl platzieren. Das Repository-Volume muss sich nicht am selben Speicherort wie andere Repository Volumes befinden. Verwenden Sie das, um das Repository-Volume in eine Volume-Gruppe oder einen Laufwerk-Pool Ihrer Wahl zu platzieren `repositoryVolume` Parameter und geben Sie die Volume-Gruppe oder den Laufwerk-Pool und eine Größe für das Repository-Volume an. Ein Beispiel für diese Befehlsverwendung:
+
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume=("12" capacity=2 GB)
+----
+In diesem Beispiel „[.code]``12``" Ist der Name einer vorhandenen Volume-Gruppe oder eines vorhandenen Laufwerk-Pools. Der Kapazitätsparameter definiert die Größe, die für die Repository-Volume-Gruppe benötigt wird.
+
+Wenn Sie ein neues Repository-Volume entweder in einer Volume-Gruppe oder in einem Laufwerk-Pool erstellen, müssen Sie Klammern um den Namen und die Kapazität der Volume-Gruppe oder den Namen und die Kapazität des Laufwerk-Pools enthalten.
+
+
+
+== Minimale Firmware-Stufe
+
+7.83
