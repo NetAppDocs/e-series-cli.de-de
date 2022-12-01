@@ -31,7 +31,7 @@ Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen S
 
 [listing, subs="+macros"]
 ----
-set ssdCache pass:quotes[[_old_ssdCacheName_] userLabel=pass:quotes[_"new_ssdCacheName_"]
+set ssdCache pass:quotes[[_old_ssdCacheName_]] userLabel=pass:quotes[_"new_ssdCacheName_"]
 ----
 
 

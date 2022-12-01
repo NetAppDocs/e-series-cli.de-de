@@ -31,6 +31,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 Mit diesem Befehl können Sie auch alle Zeitpläne für das Volume löschen. Wenn Sie den Zeitplan löschen, wird das Volume nicht gelöscht.
 
+[]
 ====
 *Mögliche Schäden an der Speicher-Array-Konfiguration* -- Alle Daten im Volume gehen verloren, sobald Sie diesen Befehl ausführen.
 
