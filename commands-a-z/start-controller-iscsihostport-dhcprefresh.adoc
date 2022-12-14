@@ -62,7 +62,7 @@ Das Host-Port-Label oder die Nummer des iSCSI-Host-Ports, für den Sie die DHCP-
 
 Weitere Informationen finden Sie im Folgenden:
 
- an iSCSI host port label,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“
+<<Identifizieren einer iSCSI-Host-Port-Bezeichnung,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“>>
 
 |===
 

@@ -104,7 +104,7 @@ Wenn Sie das Out-of-Band-Storage-Management über die Ethernet-Verbindung auf je
 Dieses optionale Argument ermöglicht ein `*https*` Der Client muss im unsicheren Modus arbeiten. Das bedeutet, dass das Zertifikat des Speicher-Arrays nicht validiert wird. Wenn diese Option nicht angegeben ist, wird die korrekte Validierung durchgeführt.
 
 
-NOTE: Weitere Informationen zum Verwalten von Zertifikaten für Speicherarrays finden Sie unter ,Verwalten von Befehlszeilenparametern für gespeicherte Zertifikate.
+NOTE: Weitere Informationen zum Verwalten von Zertifikaten für Speicherarrays finden Sie unter <<storedcertificates,Verwalten von Befehlszeilenparametern für gespeicherte Zertifikate>>.
 
 
 
@@ -128,7 +128,7 @@ Zeigt die rechtlichen Hinweise für herunterladbare SMcli an.
 Gibt die lokal gespeicherte Bezeichnung an, auf der die Skriptbefehle ausgeführt werden sollen. Dies ist bei Verwendung optional `_host-name-or-IP-address_`. Das lokal gespeicherte Etikett ist erforderlich, wenn der `_host-name-or-IP-address_` Wird nicht verwendet.
 
 
-NOTE: Weitere Informationen zur Verwendung lokal gespeicherter Etiketten zum Managen von Storage-Arrays finden Sie unter ,Verwalten von Befehlszeilenparametern für gespeicherte Arrays.
+NOTE: Weitere Informationen zur Verwendung lokal gespeicherter Etiketten zum Managen von Storage-Arrays finden Sie unter <<managearrays,Verwalten von Befehlszeilenparametern für gespeicherte Arrays>>.
 
 
 

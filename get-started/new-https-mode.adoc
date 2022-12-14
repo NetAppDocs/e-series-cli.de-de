@@ -35,7 +35,7 @@ Dieses Thema enthält mehrere Beispiele zur Veranschaulichung der neuen Befehlsz
 
 
 
-== Vorgänge, für die ein Passwort erforderlich ist, der HTTPS-Client-Modus und ein vertrauenswürdiges Zertifikat sind, werden auf dem Array installiert
+== Vorgänge, die ein Passwort erfordern, `https` Client-Modus, vertrauenswürdiges Zertifikat wird auf dem Array installiert
 
 Im folgenden Beispiel werden sowohl die Optionen für Benutzername als auch Kennwort angegeben, und auf dem Array wird ein vertrauenswürdiges Zertifikat installiert.
 
@@ -53,7 +53,7 @@ SMcli completed successfully.
 ----
 
 
-== Vorgänge, die ein Passwort, einen HTTPS-Client-Modus und kein vertrauenswürdiges Zertifikat erfordern, werden auf dem Array installiert
+== Vorgänge, die ein Passwort erfordern, `https` Client-Modus, kein vertrauenswürdiges Zertifikat ist auf dem Array installiert
 
 Im folgenden Beispiel werden sowohl der Benutzername als auch die Kennwortoptionen angegeben, auf dem Array wird jedoch kein vertrauenswürdiges Zertifikat installiert, und der `-k` Option wurde nicht verwendet. Das Beispiel zeigt die Ausgabe, die zurückgegeben wird.
 
@@ -68,7 +68,7 @@ SMcli failed.
 ----
 
 
-== Vorgänge, die ein Passwort, einen https-Client-Modus und kein vertrauenswürdiges Zertifikat benötigen, jedoch für selbstsigniertes Zertifikat -k verwenden
+== Vorgänge, die ein Passwort erfordern, `https` Client-Modus, kein vertrauenswürdiges Zertifikat installiert, jedoch mit -k für selbstsigniertes Zertifikat
 
 Im folgenden Beispiel, wie im vorhergehenden Beispiel, werden sowohl die Optionen für Benutzername als auch Kennwort angegeben, es wird jedoch kein vertrauenswürdiges Zertifikat auf dem Array installiert. In diesem Fall jedoch die `-k` Die Option wurde verwendet, um ein selbstsigniertes Zertifikat zu verwenden.
 
@@ -100,7 +100,7 @@ SMcli completed successfully.
 ----
 
 
-== Schreibgeschützten Betrieb, Symbol-Client-Modus
+== Schreibgeschützte Vorgänge, `symbol` Client-Modus
 
 In diesem Beispiel in `*symbol*` Client-Modus, kein Benutzername oder Passwort angegeben. Dies ist nur erfolgreich für schreibgeschützte Vorgänge abgeschlossen.
 

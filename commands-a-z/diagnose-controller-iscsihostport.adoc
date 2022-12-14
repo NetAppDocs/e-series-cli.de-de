@@ -64,7 +64,7 @@ Der iSCSI-Host-Port, auf dem die Diagnosetests ausgeführt werden sollen. Sie k�
 
 Weitere Informationen finden Sie im Folgenden:
 
- an iSCSI host port label,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“
+<<Identifizieren einer iSCSI-Host-Port-Bezeichnung,„Identifizierung einer iSCSI-Host-Port-Bezeichnung“>>
 
 
 
