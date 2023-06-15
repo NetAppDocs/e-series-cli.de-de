@@ -25,6 +25,12 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
+== SANtricity 11.70.5
+
+Für Version 11.70.5 gibt es keine Änderungen an CLI- oder Skriptbefehlen.
+
+
+
 == SANtricity 11.70.4
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.4 aufgeführt.
