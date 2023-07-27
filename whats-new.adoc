@@ -89,13 +89,15 @@ xref:./commands-a-z/check-volume-parity.adoc[Prüfen Sie die Volume-Parität]
 Verschreibter Befehl.
 
 |===
-[]
-====
-== SANtricity 11.70.5
 
-Für Version 11.70.5 gibt es keine Änderungen an CLI- oder Skriptbefehlen.
 
-== SANtricity 11.70.4
+== 4d73148eba8bbf93563afef1a810a39e
+
+Für Version 11.70.5 gibt es keine Änderungen an CLI- und Skriptbefehlen.
+
+
+
+== 06d2539958ee4762f25ee6e06e44b9f1
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.4 aufgeführt.
 
@@ -110,7 +112,9 @@ xref:./get-started/downloadable-smcli-parameters.adoc[Herunterladenbare SMcli-Be
 Hinzugefügt `-t` Und `-T` Lesen Sie die Parameterbeschreibungen für die Multi-Faktor-Authentifizierung.
 
 |===
-== SANtricity 11.70.3
+
+
+== e5b376b9bdbfe1612d578d30462ed6ff
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.3 aufgeführt.
 
@@ -160,7 +164,9 @@ xref:./commands-a-z/create-diskpool.html[Erstellen Sie einen Laufwerkspool]
 Aktualisiert `driveCount` Parameterbeschreibung.
 
 |===
-== SANtricity 11.70.2
+
+
+== 3cffe633df330392f4d88b8478c9390b
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.2 aufgeführt.
 
@@ -217,7 +223,9 @@ xref:./commands-a-z/start-snmptrapdestination.adoc[Testen Sie das SNMP-Trap-Ziel
 Hinzugefügt `userName` Und `engineid` Parameter.
 
 |===
-== SANtricity 11.70.1
+
+
+== cfafd61e53ff8b90ff59654a31683d33
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.1 aufgeführt.
 
@@ -281,7 +289,9 @@ xref:./commands-a-z/recover-volume.adoc[RAID-Volume wiederherstellen]
 Hinzugefügt `blockSize` Parameter.
 
 |===
-== SANtricity 11.70
+
+
+== 474034f7e02f357e3878ae2514a2b3fd
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70 aufgeführt.
 
@@ -324,4 +334,3 @@ xref:./commands-a-z/recover-volume.adoc[RAID-Volume wiederherstellen]
 Hinzugefügt `hostUnmapEnabled` Parameter.
 
 |===
-====
