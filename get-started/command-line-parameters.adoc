@@ -346,6 +346,13 @@ Unterdrückt informative Meldungen, die den Fortschritt des Befehls beschreiben,
 
 
  a| 
+`-useLegacyTransferPort`
+ a| 
+Wird verwendet, um den Übertragungsport auf zu setzen `8443` Anstelle des Standardmodus `443`.
+
+
+
+ a| 
 `-v`
  a| 
 Zeigt den aktuellen globalen Status der bekannten Geräte in einer Konfigurationsdatei an, wenn sie mit dem verwendet werden `-d` Parameter.

@@ -31,7 +31,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 Dieser Befehl gibt diese Informationen über einen Laufwerk-Pool zurück:
 
-* Der Status (z. B. optimal, online, offline)
+* Der Status (z. B. optimal, degraded, failed, missing)
 * Die Gesamtkapazität
 * Die unveränderbare Kapazität, nutzbare Kapazität und nicht nutzbare Kapazität
 * Die genutzte Kapazität, freie Kapazität und Prozentsatz voll

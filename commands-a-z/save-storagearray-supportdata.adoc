@@ -516,7 +516,7 @@ Dieser Parameter erzwingt die Erfassung von Supportdaten, wenn bei der Sicherung
 
 == Hinweise
 
-Ab Firmware Level 7.86 muss die Dateinamenerweiterung lauten `.7z` Auf Systemen, die Windows ausführen. Wenn Sie eine Firmware-Version vor 7.86 auf einem Windows-System ausführen, muss die Dateierweiterung sein `.zip`. Auf Systemen, die nicht Windows ausführen, können Sie jede Dateiendung tragen, die für Ihr System funktioniert.
+Ab Firmware Level 7.86 muss die Dateinamenerweiterung lauten `.7z`. Wenn Sie eine Firmware-Version vor 7.86 ausführen, muss die Dateierweiterung lauten `.zip`.
 
 
 

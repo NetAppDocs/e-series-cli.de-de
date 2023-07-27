@@ -368,6 +368,8 @@ link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Speicher
 
 link:../commands-a-z/save-auditlog.html["Speichern von Audit-Protokolldatensätzen"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Speicherung Von Paritätsfehlern Bei Der Volumenüberprüfung"]
+
 link:../commands-a-z/save-controller-nvsram-file.html["Controller NVSRAM speichern"]
 
 link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Diagnosestatus des Laufwerkanals für die Fehlereingrenzung speichern"]
@@ -582,6 +584,8 @@ link:../commands-a-z/show-storagearray-revocationchecksettings.html["Zeigen Sie 
 
 link:../commands-a-z/show-array-label.html["Array-Beschriftung anzeigen"]
 
+link:../commands-a-z/show-check-vol-parity-jobs.html["Check Volume Parity Jobs Anzeigen"]
+
 link:../commands-a-z/show-consistencygroup.html["Zeigt die Konsistenzgruppe an"]
 
 link:../commands-a-z/show-cgsnapimage.html["Zeigt das Snapshot Image für Konsistenzgruppen an"]
@@ -698,6 +702,8 @@ link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Ang
 
 link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Starten Sie den OCSP-Server-URL-Test"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Starten Sie die Überprüfung des Volume Parity Jobs"]
+
 link:../commands-a-z/start-cgsnapimage-rollback.html["Starten Sie das Rollback von Consistency Group Snapshot"]
 
 link:../commands-a-z/start-controller.html["Controller-Trace starten"]
@@ -755,6 +761,8 @@ link:../commands-a-z/start-volumegroup-import.html["Starten Sie den Import der V
 link:../commands-a-z/start-volumegroup-locate.html["Starten Sie die Volume-Gruppe lokalisieren"]
 
 link:../commands-a-z/start-volume-initialization.html["Starten Sie die Volume-Initialisierung"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Volume-Parity-Job-Prüfung Stoppen"]
 
 link:../commands-a-z/stop-cgsnapimage-rollback.html["Anhalten des Rollbacks von Snapshots der Konsistenzgruppe"]
 

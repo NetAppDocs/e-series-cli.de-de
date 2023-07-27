@@ -67,22 +67,7 @@ capacity=_volumeCapacity_]
 [(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
 [newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
 [repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
-[repositoryExpansionPolicy=(automatic|manual)]
-[cacheReadPrefetch=(TRUE | FALSE)]
-----
-[listing, subs="+macros"]
-----
-create volume diskPool=pass:quotes[_"diskPoolName"_
-userLabel="_volumeName_"
-capacity=_volumeCapacity_]
-[thinProvisioned=(TRUE | FALSE)]
-[owner=(a|b)]
-[mapping=(none|default)]
-[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
-[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
-[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[warningThresholdPercent=pass:quotes][_warningThresholdPercentValue_]
 [repositoryExpansionPolicy=(automatic|manual)]
 [cacheReadPrefetch=(TRUE | FALSE)]
 ----
@@ -235,6 +220,8 @@ Für Thin Volumes, die `capacity` Der Parameter gibt die virtuelle Kapazität de
 Die besten Ergebnisse bei der Erstellung eines Thin-Volumes sind zu erzielen, wenn das Repository-Volume bereits in einem vorhandenen Laufwerk-Pool vorhanden oder erstellt werden muss. Wenn Sie beim Erstellen von Thin Volumes keine optionalen Parameter angeben, versucht die Speicherverwaltungssoftware, das Repository-Volume zu erstellen. Das erstrebenswerteste Kandidaten-Volume ist ein Repository Volume, das bereits vorhanden ist und das sich innerhalb der Größenanforderungen befindet. Das nächste wünschenswerteste Kandidaten-Volume ist ein neues Repository-Volume, das im freien Umfang des Festplattenpools erstellt wird.
 
 Repository-Volumes für Thin Volumes können nicht in Volume-Gruppen erstellt werden.
+
+Volumes mit Thin Provisioning werden auf EF300 oder EF600 nicht unterstützt.
 
 
 

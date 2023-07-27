@@ -108,3 +108,9 @@ Die Einstellung zum Erfassen von Fortschrittsdetails, z. B. „Fertigstellungsgr
 == Hinweise
 
 Die erste logische Blockadresse und die endliche logische Blockadresse sind für sehr große LUNs oder Namespaces mit einem einzigen Volume nützlich. Die Durchführung einer Volume-Paritätsprüfung auf einem sehr großen einzelnen Volume LUN oder Namespace kann sehr viel Zeit in Anspruch nehmen. Durch die Definition der Anfangsadresse und der Endadresse der Datenblöcke lässt sich die Zeit verkürzen, die eine Volume-Paritätsprüfung erforderlich ist.
+
+
+
+== Minimale Firmware-Stufe
+
+11.80 - dieser Befehl ist veraltet.

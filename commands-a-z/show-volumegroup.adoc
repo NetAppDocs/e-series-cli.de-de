@@ -31,7 +31,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 Dieser Befehl gibt diese Informationen zu einer Volume-Gruppe zurück:
 
-* Der Status (Online oder Offline)
+* Der Status (z. B. optimal, degraded, failed, missing)
 * Der Kapazität
 * Der aktuelle Besitzer (die Steuerung in Steckplatz A oder die Steuerung in Steckplatz B)
 * RAID-Level

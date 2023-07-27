@@ -17,13 +17,13 @@ Der `resume asyncMirrorGroup` Mit dem Befehl wird die Datenübertragung zwischen
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
 
 
 
@@ -67,4 +67,6 @@ Der Parameter zum Löschen des Wiederherstellungspunkts, wenn die wiederherstell
 
 7.84
 
-8.10 fügt die hinzu `deleteRecoveryPointIfNecessary` Parameter.
+8.10 fügt die hinzu `deleteRecoveryPointIfNecessary` Parameter
+
+11.80 bietet Unterstützung für EF600 und EF300 Arrays

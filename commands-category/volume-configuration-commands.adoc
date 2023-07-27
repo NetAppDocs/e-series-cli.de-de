@@ -30,6 +30,8 @@ link:../commands-a-z/show-diskpool.html["Zeigen Sie den Festplattenpool an"]
 
 link:../commands-a-z/start-diskpool-fullprovisioning.html["Starten Sie Disk Pool Full Provisioning"]
 
+link:../commands-a-z/start-diskpool-resourceprovisioning.html["Starten Sie Disk Pool Resource Provisioning"]
+
 link:../commands-a-z/start-diskpool-locate.html["Starten Sie den Datenträgerpool suchen"]
 
 link:../commands-a-z/stop-diskpool-locate.html["Halten Sie den Laufwerk-Pool auf"]
@@ -154,6 +156,8 @@ link:../commands-a-z/repair-volume-parity.html["Reparatur-Volume-Parität"]
 
 link:../commands-a-z/repair-data-parity.html["Datenparität Reparieren"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Speicherung Von Paritätsfehlern Bei Der Volumenüberprüfung"]
+
 link:../commands-a-z/set-thin-volume-attributes.html["Legen Sie Attribute für Thin Volumes fest"]
 
 link:../commands-a-z/set-volumes.html["Legen Sie Volume-Attribute für ein Volume in einem Laufwerk-Pool fest..."]
@@ -161,6 +165,8 @@ link:../commands-a-z/set-volumes.html["Legen Sie Volume-Attribute für ein Volum
 link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Volume-Attribute für ein Volume in einer Volume-Gruppe festlegen..."]
 
 link:../commands-a-z/set-volume-logicalunitnumber.html["Legen Sie die Volume-Zuordnung fest"]
+
+link:../commands-a-z/show-check-vol-parity-jobs.html["Check Volume Parity Jobs Anzeigen"]
 
 link:../commands-a-z/show-volume.html["Thin Volume anzeigen"]
 
@@ -172,7 +178,11 @@ link:../commands-a-z/show-volume-performancestats.html["Zeigt Statistiken zur Vo
 
 link:../commands-a-z/show-volume-reservations.html["Zeigen Sie Volume-Reservierungen an"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Starten Sie die Überprüfung des Volume Parity Jobs"]
+
 link:../commands-a-z/start-volume-initialization.html["Starten Sie die Volume-Initialisierung"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Volume-Parity-Job-Prüfung Stoppen"]
 
 
 
@@ -201,6 +211,8 @@ link:../commands-a-z/start-volumegroup-defragment.html["Defragmentieren der Volu
 link:../commands-a-z/start-volumegroup-export.html["Starten des Volume-Gruppenexports"]
 
 link:../commands-a-z/start-volumegroup-fullprovisioning.html["Starten Sie Vollprovisionierung Von Volume-Gruppen"]
+
+link:../commands-a-z/start-volumegroup-resourceprovisioning.html["Starten Sie Die Ressourcenbereitstellung Der Volume-Gruppe"]
 
 link:../get-started/learn-about-volume-group-migration.html["Informationen über die Migration von Volume-Gruppen (nur CLI)"]
 

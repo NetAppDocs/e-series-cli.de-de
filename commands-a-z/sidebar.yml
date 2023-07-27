@@ -352,6 +352,8 @@ entries:
       url: "/commands-a-z/save-alltrays-logfile.html"
     - title: Speichern Sie auditlog
       url: "/commands-a-z/save-auditlog.html"
+    - title: Speichern Sie Paritätsfehler bei der Volume-Paritätsprüfung
+      url: "/commands-a-z/save-check-vol-parity-job-errors.html"
     - title: Controller-Arraymanagementcsr speichern
       url: "/commands-a-z/save-controller-arraymanagementcsr.html"
     - title: Controller arraymanagementsigneedzertifikat speichern
@@ -633,6 +635,8 @@ entries:
       url: "/commands-a-z/show-certificates.html"
     - title: Cgsnapimage anzeigen
       url: "/commands-a-z/show-cgsnapimage.html"
+    - title: Zeigt Check Volume-Paritätsjobs an
+      url: "/commands-a-z/show-check-vol-parity-jobs.html"
     - title: Konsistente Gruppe anzeigen
       url: "/commands-a-z/show-consistencygroup.html"
     - title: Zeigt die Zusammenfassung des Controller-arraymanagementsignedzertifikats
@@ -768,6 +772,8 @@ entries:
       url: "/commands-a-z/start-asyncmirrorgroup-synchronize.html"
     - title: Starten Sie cgsnapimage Rollback
       url: "/commands-a-z/start-cgsnapimage-rollback.html"
+    - title: Starten Sie die Überprüfung des Volume Parity Jobs
+      url: "/commands-a-z/start-check-vol-parity-job.html"
     - title: Starten Sie Controller iscsihostport dhcprefresh
       url: "/commands-a-z/start-controller-iscsihostport-dhcprefresh.html"
     - title: Starten Sie den Controller
@@ -856,6 +862,8 @@ entries:
       url: "/commands-a-z/stop-cgsnapimage-rollback.html"
     - title: Stoppen Sie cgsnapvolume
       url: "/commands-a-z/stop-cgsnapvolume.html"
+    - title: Stoppen Sie die Überprüfung des Volume Parity Jobs
+      url: "/commands-a-z/stop-check-vol-parity-job.html"
     - title: Stoppen Sie die konsequente Gruppe hängenSnapimagesreation
       url: "/commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html"
     - title: Halten Sie den Diskpool auf dem Laufwerk

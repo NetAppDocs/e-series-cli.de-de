@@ -21,14 +21,14 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+Wenn Sie den Befehl auf dem E2800, E5700, EF600 oder EF300 Array ausführen, muss der Client-Typ auf festgelegt werden `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
 
 ====
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
 
 
 
@@ -187,3 +187,5 @@ Die Einstellungen für die automatische Neusynchronisierung zwischen den primär
 == Minimale Firmware-Stufe
 
 7.84
+
+11.80 bietet Unterstützung für EF600 und EF300 Arrays

@@ -774,6 +774,8 @@ link:../commands-a-z/recover-sasport-miswire.html["Fehlerhafte Verbindung des SA
 
 link:../commands-a-z/create-snmpcommunity.html["Registrieren Sie die SNMP Community"]
 
+link:../commands-a-z/create-snmpuser-username.html["SNMPv3-USM-Benutzer registrieren"]
+
 link:../commands-a-z/create-snmptrapdestination.html["SNMP-Trap-Ziel registrieren"]
 
 link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zurücksetzen des AutoSupport Nachrichtenüberfassungszeitplans (für einzelne E2800 oder E5700 Arrays)"]
@@ -816,6 +818,8 @@ link:../commands-a-z/show-allsnmpcommunities.html["Zeigen Sie SNMP-Communitys an
 
 link:../commands-a-z/show-snmpsystemvariables.html["Zeigt SNMP MIB II-Systemgruppenvariablen an"]
 
+link:../commands-a-z/show-allsnmpusers.html["Zeigt den SNMPv3-USM-Benutzer an"]
+
 link:../commands-a-z/show-syslog-summary.html["Zeigt die Syslog-Konfiguration an"]
 
 link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Festlegen der Bereitstellungsmethode für die E-Mail (SMTP) (für einzelne E2800 oder E5700 Arrays)"]
@@ -830,7 +834,11 @@ link:../commands-a-z/start-snmptrapdestination.html["Testen Sie das SNMP-Trap-Zi
 
 link:../commands-a-z/start-syslog-test.html["Testen Sie die Syslog-Konfiguration"]
 
+link:../commands-a-z/delete-snmpuser-username.html["Aufheben der Registrierung von SNMPv3 USM-Benutzern"]
+
 link:../commands-a-z/set-snmpcommunity.html["SNMP-Community aktualisieren"]
+
+link:../commands-a-z/set-snmpuser-username.html["SNMPv3 USM-Benutzer aktualisieren"]
 
 link:../commands-a-z/set-snmpsystemvariables.html["Aktualisieren Sie SNMP MIB II Systemgruppenvariablen"]
 

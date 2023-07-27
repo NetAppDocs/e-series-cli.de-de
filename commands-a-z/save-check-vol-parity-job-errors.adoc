@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/save-check-vol-parity-job-errors.html 
+sidebar: sidebar 
+keywords: save, check, volume, parity, job, errors 
+summary: Der Befehl zum Speichern von Volume-Paritätsprüfung speichert die Paritätsfehler, die von einem Check Volume Parity Job in der angegebenen Datei protokolliert wurden. 
+---
+= Speichern Sie Paritätsfehler bei der Volume-Paritätsprüfung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der `save check volume parity job parity errors` Befehl speichert die von einem Check Volume Parity Job protokollierten Paritätsfehler in der angegebenen Datei. Die Ausgabedatei wird im gleichen Format wie der Befehl „deprecated Check Volume Parity“ geschrieben und kann daher als Eingabe für den vorhandenen Paritätsbefehl für Reparaturvolumes verwendet werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+
+
+
+== Syntax
+
+[listing, subs="+macros"]
+----
+save check volume parity job parityErrors jobId=<job_id> parityErrorFile=<parity_error_file>;
+----
+
+
+== Parameter
+
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`jobId`
+ a| 
+Die Job-id, für die protokollierte Paritätsfehler abgerufen und gespeichert werden sollen. Dieser Wert ist erforderlich.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Die vom Benutzer angegebene Datei, die angibt, wo die protokollierten Paritätsfehler gespeichert werden sollen. Dieser Wert ist erforderlich.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+11.80

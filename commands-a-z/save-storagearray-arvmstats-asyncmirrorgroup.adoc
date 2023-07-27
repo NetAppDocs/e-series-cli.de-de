@@ -17,13 +17,13 @@ Der `save storageArray arvmStats asyncMirrorGroup` Der Befehl speichert die Sync
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
 
 
 
@@ -133,3 +133,5 @@ Die Synchronisierungsstatistiken sind im Support Bundle enthalten.
 == Minimale Firmware-Stufe
 
 7.84
+
+11.80 bietet Unterstützung für EF600 und EF300 Arrays
