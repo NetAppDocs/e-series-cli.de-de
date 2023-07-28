@@ -35,7 +35,7 @@ Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Vers
 
 
  a| 
-xref:./commands-a-z/save-check-vol-parity-job-errors.adoc[Fehler beim Speichern der Paritätsprüfung für Volume Carity Job]
+xref:./commands-a-z/save-check-vol-parity-job-errors.adoc[Speichern Sie Paritätsfehler bei der Volume-Paritätsprüfung]
  a| 
 Befehl hinzugefügt
 
@@ -91,13 +91,13 @@ Verschreibter Befehl.
 |===
 
 
-== 4d73148eba8bbf93563afef1a810a39e
+== SANtricity 11.70.5
 
 Für Version 11.70.5 gibt es keine Änderungen an CLI- und Skriptbefehlen.
 
 
 
-== 06d2539958ee4762f25ee6e06e44b9f1
+== SANtricity 11.70.4
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.4 aufgeführt.
 
@@ -114,7 +114,7 @@ Hinzugefügt `-t` Und `-T` Lesen Sie die Parameterbeschreibungen für die Multi-
 |===
 
 
-== e5b376b9bdbfe1612d578d30462ed6ff
+== SANtricity 11.70.3
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.3 aufgeführt.
 
@@ -166,7 +166,7 @@ Aktualisiert `driveCount` Parameterbeschreibung.
 |===
 
 
-== 3cffe633df330392f4d88b8478c9390b
+== SANtricity 11.70.2
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.2 aufgeführt.
 
@@ -225,7 +225,7 @@ Hinzugefügt `userName` Und `engineid` Parameter.
 |===
 
 
-== cfafd61e53ff8b90ff59654a31683d33
+== SANtricity 11.70.1
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70.1 aufgeführt.
 
@@ -291,7 +291,7 @@ Hinzugefügt `blockSize` Parameter.
 |===
 
 
-== 474034f7e02f357e3878ae2514a2b3fd
+== SANtricity 11.70
 
 In der folgenden Tabelle werden Änderungen an den CLI- und Skript-Befehlen für Release 11.70 aufgeführt.
 
