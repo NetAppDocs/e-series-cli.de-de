@@ -54,7 +54,7 @@ start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID
 
 
  a| 
-`drive` Oder `drives`
+`drive`
  a| 
 Geben Sie bei Laufwerksfächern mit hoher Kapazität den Wert für Fach-ID, die Fach-ID und den Wert für Steckplatz-ID für das Laufwerk an. Geben Sie für Laufwerksfächer mit geringer Kapazität den Wert für die Fach-ID und den Wert für die Steckplatz-ID für das Laufwerk an. Die Werte für Fach-ID sind `0` Bis `99`. Werte für Schublade-ID sind `1` Bis `5`.
 
