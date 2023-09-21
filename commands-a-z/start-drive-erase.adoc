@@ -17,7 +17,7 @@ Der `start drive erase` Durch Befehl werden alle Daten von einem oder mehreren L
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Array. Das System läuft mit E2700 und E5600Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.
 
 
 
