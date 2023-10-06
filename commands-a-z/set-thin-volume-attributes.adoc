@@ -93,7 +93,7 @@ Mit diesem Parameter wird die virtuelle Kapazität des Thin-Volumes erhöht. Die
 
 Die minimale virtuelle Kapazität beträgt 32 MB.
 
-Die maximale virtuelle Kapazität beträgt 63 TB.
+Die maximale virtuelle Kapazität beträgt 256 TB.
 
 
 
@@ -168,7 +168,7 @@ Minimale virtuelle Kapazität
  a| 
 Maximale virtuelle Kapazität
  a| 
-63 TB
+256 TB
 
 
 
@@ -182,7 +182,7 @@ Minimale physische Kapazität
  a| 
 Maximale physische Kapazität
  a| 
-64 TB
+257 TB
 
 |===
 Thin Volumes unterstützen alle Operationen der Standard-Volumes mit folgenden Ausnahmen:
