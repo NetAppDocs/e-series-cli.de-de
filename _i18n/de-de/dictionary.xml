@@ -7544,4 +7544,5 @@
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="f31b4701e236492b39f4226355cb1d49" category="paragraph">Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.</block>
   <block id="9c224ec894ababac5f928548e584eb45" category="paragraph">Die maximale virtuelle Kapazität beträgt 256 TB.</block>
+  <block id="85e8092ad24869d134ad6af40b479c96" category="sidebar">Willkommen bei der integrierten CLI-Benutzerunterstützung von SANtricity System Manager. Hier erfahren Sie, wie Sie Ihr Storage-Array über die Befehlszeilenschnittstelle (CLI) konfigurieren, überwachen und optimieren.“</block>
 </blocks>

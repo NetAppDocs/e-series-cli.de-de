@@ -22,32 +22,6 @@ sidebar:
   - section: commands-a-z
   - title: Rechtliche Hinweise
     url: "/legal-notices.html"
-homepage:
-  tiles:
-  - title: Los geht's
-    links:
-    - title: Übersicht über CLI
-      url: get-started/overview-format-commands.html
-    - title: CLI-Befehlsstruktur
-      url: get-started/structure-of-a-cli-command.html
-  - title: E-Series Dokumentation
-    links:
-    - title: E-Series Systemdokumentation
-      url: https://docs.netapp.com/us-en/e-series/index.html
-    - title: SANtricity System Manager 11.8
-      url: https://docs.netapp.com/us-en/e-series-santricity/system-manager/index.html
-    - title: SANtricity Unified Manager 6
-      url: https://docs.netapp.com/us-en/e-series-santricity/unified-manager/index.html
-  - title: Tools-Support
-    links:
-    - title: NetApp Interoperabilitätsmatrix
-      url: http://mysupport.netapp.com/matrix/
-    - title: NetApp Knowledge Base
-      url: https://kb.netapp.com/
-    - title: Active IQ (Anmeldung erforderlich)
-      url: https://activeiq.netapp.com/?source=aiqnsspage
-    - title: E-Series/SANtricity Downloads (Anmeldung erforderlich)
-      url: https://mysupport.netapp.com/site/downloads#E
 product-family:
   name: E-Series
   repo: e-series-family
