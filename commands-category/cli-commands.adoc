@@ -270,7 +270,7 @@ link:../commands-a-z/recover-volume.html["RAID-Volume wiederherstellen"]
 
 link:../commands-a-z/recover-sasport-miswire.html["Fehlerhafte Verbindung des SAS-Ports wiederherstellen"]
 
-link:../commands-a-z/recreate-storagearray-securitykey.adocV879933["Externen Sicherheitsschlüssel neu erstellen"]
+link:../commands-a-z/recreate-storagearray-securitykey.html["Externen Sicherheitsschlüssel neu erstellen"]
 
 link:../commands-a-z/recreate-storagearray-mirrorrepository.html["Synchrones Spiegeln bei Repository Volume neu erstellen"]
 

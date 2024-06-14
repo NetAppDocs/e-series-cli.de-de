@@ -25,6 +25,23 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
+== SANtricity 11.81
+
+Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.81 auf.
+
+[cols="2*"]
+|===
+| Befehl | Beschreibung der Änderung 
+
+
+ a| 
+xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Geräte identifizieren]
+ a| 
+Hinzugefügt `identifyDevices` Parameter.
+
+|===
+
+
 == SANtricity 11.80
 
 Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.80 auf.

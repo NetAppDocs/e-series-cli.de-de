@@ -424,7 +424,6 @@
   <block id="b6c9cb32de0a61002f039efec80a465c" category="paragraph">Die Version SANtricity OS 11.60 bietet die Möglichkeit, die http-basierte Version von CLI (auch als „Sichere CLI“ oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren. Diese SMcli-Version kann als Download heruntergeladen werden und ist auf EF600, EF300, E5700, EF570, E2800, Und EF280 Controller. Um den SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* &gt; *System* und *Add-ons* &gt; *Befehlszeilenschnittstelle*.</block>
   <block id="75842716a65060950b20cba161cbac95" category="admonition">Eine Java Runtime Environment (JRE), Version 8 und höher, muss auf dem Managementsystem verfügbar sein, auf dem Sie die CLI-Befehle ausführen möchten.</block>
   <block id="c3369045597873cd151e0a9b94edab23" category="inline-xref-macro">Parameter der Legacy-Kommandozeile</block>
-  <block id="720d9a5bd635c70358cdcb41b1eaefaf" category="paragraph">Wie bei früheren Versionen der SMcli verfügt der SMcli, der über den SANtricity System Manager heruntergeladen werden kann, über einen einzigartigen Satz an Parametern. Informationen zur Verwendung von Befehlszeilenparametern für SANtricity OS 11.53 und ältere Versionen finden Sie unter <block ref="55493e98e602a03e07f56f1acb2fb353" category="inline-xref-macro-rx"></block></block>
   <block id="1a98f49f191845835d6fd3e13eb29812" category="section-title">Multi-Faktor-Authentifizierung</block>
   <block id="e228e60d948488385c1b528cc75ed77d" category="paragraph">Wenn SAML (Security Assertion Markup Language) aktiviert ist, können nur Access Tokens mit der CLI verwendet werden. Wenn SAML nicht aktiviert ist, können Benutzername/Passwort oder Access Token verwendet werden. Access Tokens können über den SANtricity System Manager generiert werden.</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">Parameter</block>
@@ -1767,7 +1766,6 @@
   <block id="397fc97bb6efdad0616e29cbdbfd76e1" category="paragraph"><block ref="397fc97bb6efdad0616e29cbdbfd76e1" category="inline-link-macro-rx"></block></block>
   <block id="de042c6e9339ad5e11dbef3eba62d68f" category="inline-link-macro">Aktivieren oder Deaktivieren der AutoSupport Remote-Diagnosefunktion (für einzelne E2800 oder E5700 Arrays)</block>
   <block id="89b91b07adb5a3dcfb3ec3c5ceeb9d68" category="paragraph"><block ref="89b91b07adb5a3dcfb3ec3c5ceeb9d68" category="inline-link-macro-rx"></block></block>
-  <block id="2703ec3e21c52f00ef1fdb6211a17fb5" category="paragraph"><block ref="2703ec3e21c52f00ef1fdb6211a17fb5" category="inline-link-macro-rx"></block></block>
   <block id="7568cafbcf2dc358e542e2b8edbdb6eb" category="paragraph"><block ref="7568cafbcf2dc358e542e2b8edbdb6eb" category="inline-link-macro-rx"></block></block>
   <block id="f1d30742e45c732a9b780da88d3719bd" category="summary">Befehle für die Meldungskonfiguration</block>
   <block id="e39f33589e4c9190d3dfff7da8e8cf94" category="section-title">Eingebettete SNMP-Konfiguration</block>
@@ -3147,11 +3145,6 @@
   <block id="aa10cbdddfaa9b241492306fc663004c" category="paragraph"><block ref="dd7bf230fde8d4836917806aff6a6b27" prefix="" category="inline-code"></block></block>
   <block id="81467412741bcb83b3995cc18b1516d9" category="paragraph">„Domainname“ und IPv6 4Adresse</block>
   <block id="d0ddb28e638271963e281c74aa6164ff" category="paragraph">Wenn ein Domänenname angegeben wird, muss auch ein DNS-Server konfiguriert werden, damit der Controller die Server-IP-Adresse auflösen kann.</block>
-  <block id="5f13d4f79dcde55f34ef328e9338aba4" category="paragraph"><block ref="9f0dd5628b477ca3a412bd884083c065" prefix="" category="inline-code"></block><block ref="056e0360b75d77ece0ae955fe59bf15d" prefix=" " category="inline-code"></block></block>
-  <block id="764c2b587e12f15a3e09f6b9eac104d7" category="paragraph">Optional stellen diese Parameter die Schlüsselanmeldeinformationen für die Aktivierung der NTP-Authentifizierung bereit:</block>
-  <block id="29bb257c3542b33e69d33ea7fc33c433" category="list-text"><block ref="333be298e4b59f81f3a3b965415c97d6" prefix="" category="inline-code"></block> Ist eine Ganzzahl zwischen 0 und 65535.</block>
-  <block id="01e68e6855a7e29f6658f124c09009fd" category="list-text"><block ref="056e0360b75d77ece0ae955fe59bf15d" prefix="" category="inline-code"></block> Ist eine der folgenden: Keine, sha1, sh224, sha256, she384 oder sha512.</block>
-  <block id="f6434eb840c71208dfb72ef5c786d39e" category="list-text"><block ref="c6cec8c6caa9a579644664f0575db2f5" prefix="" category="inline-code"></block> Ist entweder eine Hex-Ziffer (0-9, mit A-f zulässig), die genau 40 Ziffern lang als stringLiteral eingegeben ist, oder eine alphanumerische Zeichenkette bis zu 20 Bytes lang.</block>
   <block id="a1f3afaef8deadb0480d323937491c5a" category="paragraph">8.42 fügt die wichtigsten Anmeldeinformationsparameter für die NTP-Authentifizierung hinzu.</block>
   <block id="2704c1d4b7e26a3cf5cc746382f4916e" category="summary">Der Befehl zum Starten von storageArray ocspResponderUrl Test prüft auf eine offene Verbindung zur angegebenen URL des OCSP-Servers (Online Certificate Status Protocol).</block>
   <block id="2e503cc44e8889a78b5b8ff6b66e968c" category="paragraph">Der<block ref="d508de27adcb6527614195692148172a" prefix=" " category="inline-code"></block> Befehl überprüft auf eine offene Verbindung zur angegebenen URL des OCSP-Servers (Online Certificate Status Protocol).</block>
@@ -7545,4 +7538,23 @@
   <block id="f31b4701e236492b39f4226355cb1d49" category="paragraph">Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.</block>
   <block id="9c224ec894ababac5f928548e584eb45" category="paragraph">Die maximale virtuelle Kapazität beträgt 256 TB.</block>
   <block id="85e8092ad24869d134ad6af40b479c96" category="sidebar">Willkommen bei der integrierten CLI-Benutzerunterstützung von SANtricity System Manager. Hier erfahren Sie, wie Sie Ihr Storage-Array über die Befehlszeilenschnittstelle (CLI) konfigurieren, überwachen und optimieren.“</block>
+  <block id="c4f2e9f91e3e5a0d9fb8f8728ed63376" category="paragraph">Wie bei früheren Versionen der SMcli verfügt der SMcli, der über den SANtricity System Manager heruntergeladen werden kann, über einen einzigartigen Satz an Parametern. Informationen zur Verwendung von Befehlszeilenparametern für SANtricity OS 11.53 und ältere Versionen finden Sie unter <block ref="f6644819b412d8968161178a2ccec029" category="inline-link-macro-rx"></block>.</block>
+  <block id="2115a9072c5575f3300b4b18e5722de6" category="section-title">Geräte identifizieren</block>
+  <block id="90f4cf9a1fcd3d43e57768f9bb55bbfb" category="paragraph">Mit dem folgenden Befehlszeilenparameter können Sie Informationen für alle relevanten Geräte anzeigen, die für den Host sichtbar sind.</block>
+  <block id="222ae10a38daa5038e857b83e1adb270" category="admonition">Ab der Version SANtricity 11.81 ist die SMcli<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Parameter ersetzt die zuvor über das SMDevices-Tool verfügbare Funktionalität.</block>
+  <block id="64ce8fcd5ac05bd3132098b5581a2dcf" category="paragraph"><block ref="35d5ed698aa483d3174ea619db10c0ac" prefix="" category="inline-code"></block></block>
+  <block id="f53cecbe90c0e9f04dc66481adf123c6" category="paragraph">Sucht nach allen nativen SCSI-Blockgeräten, die mit unseren Speicher-Arrays verbunden sind. Für jedes gefundene Gerät werden verschiedene Informationen wie der native OS-spezifische Gerätename, das zugehörige Speicher-Array, der Volume-Name, LUN-Informationen usw. angezeigt</block>
+  <block id="312574efd0c8e7ddeea92ab871822aed" category="paragraph">Im Folgenden finden Sie Beispiele für die<block ref="14993f95e0d6fc04f9966b0c368a7ed6" prefix=" " category="inline-code"></block> Parameter innerhalb der Betriebssysteme Linux und Windows.</block>
+  <block id="edc9f0a5a5d57797bf68e37364743831" category="listing-title">Linux</block>
+  <block id="aea23489ce3aa9b6406ebb28e0cda430" category="listing-title">Windows</block>
+  <block id="94f04537971d7a4a561c607ec55952a2" category="section-title">Zusätzliche Anmerkungen</block>
+  <block id="ba151d8fe1acd0cb9eca1b6945962e62" category="list-text">Nur kompatibel mit Linux- und Windows-Betriebssystemen, auf denen x86-64-Plattformen mit SCSI-basierten Host-Schnittstellen ausgeführt werden.</block>
+  <block id="aaeaddd5c8faa1ad9f766c53197d7ab2" category="list-text">NVMe-basierte Host-Schnittstellen werden nicht unterstützt.</block>
+  <block id="fb52873edf9c97b7281409c640b5ed20" category="list-text">Der<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Der Parameter führt nicht zu einem erneuten Scan auf Betriebssystemebene. Es iteriert über die vorhandenen Geräte, die vom Betriebssystem erkannt werden.</block>
+  <block id="9c4b22635677ff419bec86d3f3219927" category="list-text">Sie müssen über ausreichende Benutzerberechtigungen verfügen, um den ausführen zu können<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Befehl.</block>
+  <block id="dbb8d2fd09a59e1ab8494de138ceffdb" category="list-text">Dazu gehört die Möglichkeit, von systemeigenen Blockgeräten des Betriebssystems zu lesen und SCSI-Inquiry-Befehle auszuführen.</block>
+  <block id="5b1cc65d11915b727018c6056792dcef" category="section-title">SANtricity 11.81</block>
+  <block id="a92322756f07d387c173b27babcdad72" category="paragraph">Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.81 auf.</block>
+  <block id="559b1de3f22ee41aed01495562ee7836" category="paragraph"><block ref="559b1de3f22ee41aed01495562ee7836" category="inline-xref-macro-rx"></block></block>
+  <block id="5fe9c86e85a56fcbfe366c1ef482deb0" category="paragraph">Hinzugefügt<block ref="35d5ed698aa483d3174ea619db10c0ac" prefix=" " category="inline-code"></block> Parameter.</block>
 </blocks>
