@@ -29,7 +29,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 == Kontext
 
-Controller werden als „a“ oder „b“ bezeichnet. Jeder Controller kann bis zu vier Hostkanäle haben; jeder Kanal ist eindeutig durch eine Zahl von 1 bis 4 gekennzeichnet.
+Controller werden als „a“ oder „b“ bezeichnet. Jeder Controller kann bis zu vier Hostkanäle haben; jeder Kanal ist eindeutig durch eine Zahl von 1 bis 8 gekennzeichnet.
 
 
 
@@ -37,7 +37,7 @@ Controller werden als „a“ oder „b“ bezeichnet. Jeder Controller kann bis
 
 [listing]
 ----
-start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
+start IOCLog [(a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | b1 | b2 | b3 | b4 | b5 | b6 | b7 | b8)]
 [overwrite=(TRUE | FALSE)]
 ----
 
@@ -54,7 +54,7 @@ start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
  a| 
 Dieser Parameter gibt den Controller und den Host-Kanal an, von dem aus der IOC-Dump erstellt werden soll. Gültige Controller-IDs sind `a` Oder `b`, Wo `a` Ist der Controller in Steckplatz A, und `b` Ist der Controller in Steckplatz B. Host-Kanäle haben numerische Kennungen. Schließen Sie die Controller-Kennung und die Host-Kanal-ID in eckige Klammern ([ ]).
 
-Gültige Controller-Kennung und Host-Kanal-Werte sind `a1`, `a2`, `a3`, `a4`, `b1`, `b2`, `b3`, `b4`.
+Gültige Controller-ID- und Host-Kanal-Werte sind `a1`, `a2` `a3` `a4` `a5`, , , `a6` `a7`, , `a8`, `b1`, `b2`, `b3` `b4`, , `b5`, `b6`, `b7`, `b8`oder .
 
 Wenn Sie keinen Controller angeben, gibt die Storage-Managementsoftware einen Syntaxfehler aus.
 
