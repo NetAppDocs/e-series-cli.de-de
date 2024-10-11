@@ -21,7 +21,7 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Wenn Sie den Befehl in dem E2800 oder E5700 Array ausführen, muss der Client-Typ auf festgelegt sein `symbol`. Dieser Befehl wird nicht ausgeführt, wenn der Clienttyp auf festgelegt ist `https`.
+Dieser Befehl wird auf den Plattformen E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
