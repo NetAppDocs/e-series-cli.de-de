@@ -7,9 +7,10 @@ summary: Die Syntax, die für einen bestimmten Skriptbefehl eindeutig ist, wird 
 = Formatregeln für Skriptbefehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 Die Syntax, die für einen bestimmten Skriptbefehl eindeutig ist, wird im Abschnitt Hinweise am Ende der Befehlsbeschreibung jedes Skripts erläutert.
 
 *Groß-/Kleinschreibung* -- die Skriptbefehle sind nicht von Groß- und Kleinschreibung abhängig. Sie können die Skriptbefehle in Kleinbuchstaben, Großbuchstaben oder gemischten Groß-/Kleinschreibung eingeben. (In den folgenden Befehlsbeschreibungen kann der gemischte Fall als Hilfe beim Lesen der Befehlsnamen und bei der Erläuterung des Zwecks des Befehls verwendet werden.)

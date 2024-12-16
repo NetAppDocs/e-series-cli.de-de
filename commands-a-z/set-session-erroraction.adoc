@@ -7,7 +7,7 @@ summary: Der Befehl Session errorAction festlegen legt fest, wie die aktuelle Sk
 = Sitzung einstellen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set session errorAction` Der Befehl legt fest, wie die aktuelle Skript-Engi
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin, Support-Admin, Sicherheitsadministrator oder Storage-Monitor verfügen.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Admin, Support-Admin, Sicherheitsadministrator oder Storage-Monitor verfügen.
 
 
 
@@ -35,7 +35,7 @@ Für diesen Befehl stellt eine Sitzung die Dauer für das Ausführen der Befehle
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 set session errorAction=(stop | continue)
 password="storageArrayPassword"

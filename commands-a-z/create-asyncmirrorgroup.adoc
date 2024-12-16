@@ -7,7 +7,7 @@ summary: Mit dem Befehl create async MirrorGroup wird eine neue, leere asynchron
 = Asynchrone Spiegelgruppe erstellen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Dieser Befehl wird auf den Plattformen E2800, E5700, EF600 und EF300 nicht unterstützt.
+Dieser Befehl wird auf Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+K. A.
 
 
 
@@ -44,7 +44,7 @@ Stellen Sie sicher, dass Sie die ausführen `Create Asynchronous Mirror Group` B
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create asyncMirrorGroup userLabel=pass:quotes[_"asyncMirrorGroupName"_]
 (remoteStorageArrayName=pass:quotes[_"storageArrayName"_] | remoteStorageArrayWWN=pass:quotes[_"wwID"_])

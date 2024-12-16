@@ -7,7 +7,7 @@ summary: Der Befehl show storageArray dbmDatabase ruft ab und zeigt Metadaten f�
 = Zeigen Sie die DBM-Datenbank des Speicherarrays an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `show storageArray dbmDatabase` Befehl ruft Metadaten für die integrierten 
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Admin oder Storage-Monitor verfügen.
 
 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 show storageArray dbmDatabase
 ----

@@ -7,7 +7,7 @@ summary: Mit dem Befehl Add Certificate from Array können Sie ein Zertifikat au
 = Fügen Sie Zertifikat aus dem Array hinzu
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 pass:quotes[_ipAddress1 ipAddress2_  trust localCertificate]

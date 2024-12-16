@@ -7,7 +7,7 @@ summary: Der Befehl SMcli alertTest sendet eine Testwarnung an das Windows-Ereig
 = Testalarme
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -32,7 +32,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 SMcli -alertTest
 ----

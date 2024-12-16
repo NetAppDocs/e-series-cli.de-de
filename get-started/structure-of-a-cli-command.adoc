@@ -7,10 +7,13 @@ summary: Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, d
 = Struktur der CLI-Befehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, die in den Wrapper integriert sind. Ein CLI-Befehl besteht aus den folgenden Elementen:
+[role="lead"]
+Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, die in den Wrapper integriert sind.
+
+Ein CLI-Befehl besteht aus folgenden Elementen:
 
 * Ein durch den Begriff identifizierter Befehlwrapper `SMcli`
 * Die Kennung des Speicherarrays

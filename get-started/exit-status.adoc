@@ -2,15 +2,20 @@
 permalink: get-started/exit-status.html 
 sidebar: sidebar 
 keywords: exit, status 
-summary: In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt. 
+summary: Bei ausgeführten Befehlen werden Exit-Status zurückgegeben. In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt. 
 ---
 = Exit-Status
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt.
+[role="lead"]
+Bei ausgeführten Befehlen werden Exit-Status zurückgegeben. In der folgenden Tabelle sind die Ausgabestatus aufgeführt, die zurückgegeben werden können, sowie die Bedeutung der einzelnen Status.
+
+
+
+== Statusdefinitionen beenden
 
 [cols="3*"]
 |===

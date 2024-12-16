@@ -7,7 +7,7 @@ summary: 'Der Befehl „Start storageArray External Key Management Test“ verwe
 = Testen der Kommunikation zum externen Verschlüsselungsmanagement
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `start storageArray externalKeyManagement test` Mit dem Befehl werden die ko
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
@@ -38,7 +38,7 @@ Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 start storageArray externalKeyManagement test
 ----

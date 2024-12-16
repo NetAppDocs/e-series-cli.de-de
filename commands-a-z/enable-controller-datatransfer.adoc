@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Controller dataTransfer aktivieren“ wird ein Contro
 = Controller-Datentransfer aktivieren
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `enable controller dataTransfer` Befehl gibt einen Controller wieder, der w�
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 enable controller [(a|b)] dataTransfer
 ----

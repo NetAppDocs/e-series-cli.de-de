@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Reset storageArray ibStatsBaseline“ wird die Infini
 = Zurücksetzen der Baseline-InfiniBand-Statistiken für das Speicher-Array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `reset storageArray ibStatsBaseline` Der Befehl setzt die Baseline der Infin
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
 
 [NOTE]
 ====
@@ -34,7 +34,7 @@ Dieser Befehl ist veraltet und wird von ersetzt xref:reset-storagearray-hostport
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 reset storageArray ibStatsBaseline
 ----

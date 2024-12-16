@@ -7,7 +7,7 @@ summary: Der Befehl Create Volume diskPool erstellt ein neues Standard-RAID-Volu
 = Erstellen Sie ein Volume im Festplatten-Pool
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `create volume diskPool` Befehl erstellt ein neues Standard-RAID-Volume oder
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -38,7 +38,7 @@ Einige Parameter zur Erstellung eines Standard-RAID-Volumes in einer Volume-Grup
 
 == Syntax zum Erstellen eines Standard-Volumes
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create volume diskPool=pass:quotes[_"diskPoolName"_
 userLabel="_volumeName_"
@@ -55,7 +55,7 @@ capacity=_volumeCapacity_]
 
 == Syntax für die Erstellung eines Thin Provisioning Volume
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create volume diskPool=pass:quotes[_"diskPoolName"_
 userLabel="_volumeName_"

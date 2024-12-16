@@ -7,7 +7,7 @@ summary: Der Parity-Befehl zum Reparieren des Volume repariert die Paritätsfehl
 = Reparatur-Volume-Parität
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `repair volume parity` Befehl repariert die Paritätsfehler auf einem Volume
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -38,7 +38,7 @@ Wenn Volume-Paritäts- und Volume-Daten nicht übereinstimmen, sind Volume-Daten
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 repair volume pass:quotes[[_volumeName_]] parity
 parityErrorFile=pass:quotes[_"filename"_]

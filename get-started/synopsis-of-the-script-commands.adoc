@@ -7,10 +7,13 @@ summary: 'Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arra
 = Übersicht der Skriptbefehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arrays definiert und gemanagt werden können (z. B. Host-Topologie, Festplattenkonfiguration, Controller-Konfiguration, Volume-Definitionen und Volume-Gruppen), ist die tatsächliche Anzahl an Befehlen umfangreich. Die Befehle fallen jedoch in allgemeine Kategorien, die wiederverwendet werden, wenn Sie die Befehle zum Konfigurieren oder Warten eines Speicher-Arrays anwenden. Die folgende Tabelle enthält die allgemeine Form der Skriptbefehle und eine Definition jedes Befehls.
+[role="lead"]
+Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arrays definiert und gemanagt werden können (z. B. Host-Topologie, Festplattenkonfiguration, Controller-Konfiguration, Volume-Definitionen und Volume-Gruppen), ist die tatsächliche Anzahl an Befehlen umfangreich.
+
+Die Befehle fallen in allgemeine Kategorien, die wiederverwendet werden, wenn Sie die Befehle zum Konfigurieren oder Verwalten eines Speicher-Arrays anwenden. Die folgende Tabelle enthält die allgemeine Form der Skriptbefehle und eine Definition jedes Befehls.
 
 [cols="2*"]
 |===

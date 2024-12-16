@@ -2,21 +2,22 @@
 permalink: get-started/learn-about-volume-group-migration.html 
 sidebar: sidebar 
 keywords: volume, group, migration, learn, data, access, export, import, component 
-summary: Erfahren Sie mehr über die Migration von Volume-Gruppen 
+summary: Bei der Volume-Gruppenmigration können Sie eine Volume-Gruppe exportieren, sodass Sie die Volume-Gruppe in ein anderes Storage-Array importieren können. Sie können auch eine Volume-Gruppe exportieren, sodass Sie die Daten offline speichern können. 
 ---
 = Erfahren Sie mehr über die Migration von Volume-Gruppen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Bei der Volume-Gruppenmigration können Sie eine Volume-Gruppe exportieren, sodass Sie die Volume-Gruppe in ein anderes Storage-Array importieren können. Sie können auch eine Volume-Gruppe exportieren, sodass Sie die Daten offline speichern können.
 
 [CAUTION]
 ====
 Wenn die Volume-Gruppe aus NVMe- oder FIPS-fähigen Laufwerken besteht, müssen der Sicherheitsschlüssel und der Passphrase vom Quell-Array aufgezeichnet/gespeichert werden, um die Laufwerke freizuschalten, bevor die Migration zum Ziel-Array beginnen kann. Wenn der Sicherheitsschlüssel und der Passphrase nicht bekannt sind und/oder die Datenintegrität nicht erforderlich ist, kann eine Sicherheitslöschung durchgeführt werden. Unterschiedliche Verschlüsselungssicherheitslaufwerke werden auf E-Series Storage-Systemen nicht unterstützt. Weitere Informationen zum Entsperren von Laufwerken mit einem Sicherheitsschlüssel, zum Löschen von FIPS-Laufwerken und zum Entsperren oder Zurücksetzen von gesperrten NVMe-Laufwerken finden Sie in der Online-Hilfe von SANtricity System Manager.
 
 ====
-Bei der Volume-Gruppenmigration können Sie eine Volume-Gruppe exportieren, sodass Sie die Volume-Gruppe in ein anderes Storage-Array importieren können. Sie können auch eine Volume-Gruppe exportieren, sodass Sie die Daten offline speichern können.
-
 [NOTE]
 ====
 *Möglicher Verlust des Datenzugriffs* -- Sie müssen eine Volume-Gruppe exportieren, bevor Sie die Volume-Gruppe verschieben oder die Volume-Gruppe importieren.

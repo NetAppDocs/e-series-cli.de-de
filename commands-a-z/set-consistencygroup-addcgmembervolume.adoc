@@ -7,7 +7,7 @@ summary: Der Befehl set ConsistencyGroup addCGMemberVolume fügt einer vorhanden
 = Mitglied der Konsistenzgruppe hinzufügen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set consistencyGroup addCGMemberVolume` Befehl fügt ein neues Basis-Volume
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -35,7 +35,7 @@ Sie können ein vorhandenes Repository-Volume für das neue Mitglied der Konsist
 
 == Syntax für die Verwendung mit einem vorhandenen Repository Volume
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 set consistencyGroup ["consistencyGroupName"]
@@ -46,7 +46,7 @@ repositoryVolume=pass:quotes["_volumeGroupName_"]
 
 == Syntax für die Erstellung eines neuen Repository Volumes in einer Volume-Gruppe
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
@@ -57,7 +57,7 @@ repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacit
 
 == Syntax für die Erstellung eines neuen Repository-Volumes in einem Laufwerk-Pool
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 set consistencyGroup pass:quotes[["_consistencyGroupName_"]]

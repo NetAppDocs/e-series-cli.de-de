@@ -2,13 +2,20 @@
 permalink: get-started/formatting-cli-commands.html 
 sidebar: sidebar 
 keywords: format, rules, cli, commands 
-summary: Doppelte Anführungszeichen, die als Teil eines Namens oder Etiketts verwendet werden, müssen bei der Ausführung der CLI-Befehle und der Skriptbefehle auf einem Windows-, Linux- oder Solaris-Betriebssystem besonders berücksichtigt werden. 
+summary: Basierend auf dem eingegebenen Wert oder Namen werden bestimmte Formatregeln für CLI-Befehle erzwungen. 
 ---
 = Formatieren von Regeln für CLI-Befehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Basierend auf dem eingegebenen Wert oder Namen werden bestimmte Formatregeln für CLI-Befehle erzwungen.
+
+
+
+== Formatregeln für CLI
 
 Doppelte Anführungszeichen („ “), die als Teil eines Namens oder Labels verwendet werden, müssen bei der Ausführung der CLI-Befehle und der Skriptbefehle auf einem Windows-, Linux- oder Solaris-Betriebssystem besonders berücksichtigt werden.
 

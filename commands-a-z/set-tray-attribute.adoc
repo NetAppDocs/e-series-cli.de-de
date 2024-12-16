@@ -7,7 +7,7 @@ summary: Mit dem Befehl Fach einstellen werden benutzerdefinierte Attribute für
 = Legen Sie das Fach-Attribut fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `set tray` Mit Befehl werden benutzerdefinierte Attribute für ein Fach fest
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"]
 ----

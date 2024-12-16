@@ -7,10 +7,13 @@ summary: Windows PowerShell ist eine interaktive Scripting Shell, die Zugriff au
 = Formatieren von Regeln für CLI-Befehle in Windows PowerShell
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Windows PowerShell ist eine interaktive Scripting Shell, die Zugriff auf Befehlszeilen-Tools bietet. Windows PowerShell verbessert die Windows Befehlsaufforderung mit einem stabileren Satz von Befehlen und Scripting-Funktion. In Windows PowerShell können Sie alle CLI- und Skriptbefehle ausführen. Die Windows PowerShell umfasst jedoch einige besondere Formatierungsanforderungen. Die Anforderungen sind:
+[role="lead"]
+Windows PowerShell ist eine interaktive Scripting Shell, die Zugriff auf Befehlszeilen-Tools bietet.
+
+Windows PowerShell verbessert die Windows Befehlsaufforderung mit einem stabileren Satz von Befehlen und Scripting-Funktion. In Windows PowerShell können Sie alle CLI- und Skriptbefehle ausführen. Die Windows PowerShell umfasst jedoch einige besondere Formatierungsanforderungen. Die Anforderungen sind:
 
 * Beginnen Sie alle SMcli-Befehle mit einem Punkt und einem Schrägstrich (./)
 * SMcli Wrapper muss als ausführbarer Befehl mit der Erweiterung .exe (SMcli.exe) identifiziert werden.

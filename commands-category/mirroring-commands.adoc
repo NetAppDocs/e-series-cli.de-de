@@ -7,8 +7,11 @@ summary: Spiegelungsbefehle
 = Spiegelungsbefehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste mit Spiegelungsbefehlen steht für Ihr Storage-System der E-Series zur Verfügung.
 
 
 

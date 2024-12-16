@@ -7,7 +7,7 @@ summary: Der Befehl set Disk Pool reduziert die Kapazität des Disk Pools, indem
 = Die Kapazität im Laufwerk-Pool wird gesenkt
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set diskPool` Befehl reduziert die Kapazität des Disk Pools, indem die Lau
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -37,7 +37,7 @@ Die maximale Anzahl von Laufwerken, die Sie in einem einzigen DCR-Vorgang aus ei
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set diskPool pass:quotes[[_diskPoolName_]]
 removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1

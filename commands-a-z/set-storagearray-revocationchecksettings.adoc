@@ -7,7 +7,7 @@ summary: 'Mit dem Befehl Set storageArray revocationCheckSettings können Sie di
 = Legen Sie die Einstellungen für die Überprüfung des Zertifikatsperrufs
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set storageArray revocationCheckSettings` Mit dem Befehl können Sie die Ü
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
@@ -42,7 +42,7 @@ Nachdem Sie die Überprüfung des Widerrufs aktiviert haben, weist das Speicher-
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 set storageArray revocationCheckSettings ([revocationCheckEnable = boolean] &| [ocspResponderUrl=stringLiteral])
 ----

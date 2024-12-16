@@ -7,8 +7,11 @@ summary: Befehle zur Performance-Optimierung
 = Befehle zur Performance-Optimierung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste mit Befehlen zur Performance-Optimierung steht für Ihr E-Series Storage-System zur Verfügung.
 
 
 

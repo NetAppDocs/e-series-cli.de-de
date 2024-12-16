@@ -7,7 +7,7 @@ summary: Mit dem Befehl SMcli -autoSupportConfig wird die Bereitstellungsmethode
 = Geben Sie die AutoSupport-Bereitstellungsmethode an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `SMcli -autoSupportConfig` Mit dem Befehl wird die Bereitstellungsmethode f�
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
@@ -38,7 +38,7 @@ Sie können zwei Hauptarten von Bereitstellungsmethoden für das Senden von Auto
 
 == Syntax für SMTP-Bereitstellungsmethode
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig deliveryMethod=SMTP
 mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>

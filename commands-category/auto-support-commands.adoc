@@ -7,8 +7,11 @@ summary: Auto-Support-Befehle
 = Auto-Support-Befehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Auto-Support-Befehlen steht für Ihr E-Series Storage-System zur Verfügung.
 
 
 
@@ -44,24 +47,26 @@ link:../commands-a-z/save-storagearray-supportdata.html["Speichern Sie die Suppo
 
 
 
-== AutoSupport-Befehle für E2800, E5700
+== AutoSupport-Befehle für E4000, EF300, EF400, E2800 und E5700
 
-link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Aktivieren oder Deaktivieren des AutoSupport Wartungsfensters (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-autosupport-dispatch-limit.html["Legen Sie die maximale AutoSupport-Entsendungsgröße fest"]
 
-link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Aktivieren oder deaktivieren Sie das AutoSupport-Wartungsfenster"]
 
-link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport Remote Diagnostics Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder deaktivieren Sie die AutoSupport OnDemand-Funktion"]
 
-link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder deaktivieren Sie die AutoSupport-Funktion für die Ferndiagnose"]
 
-link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zurücksetzen des AutoSupport Nachrichtenüberfassungszeitplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls"]
+
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen"]
 
 link:../commands-a-z/show-storagearray-autosupport.html["Zeigen der AutoSupport Konfiguration (für E2800 oder E5700 Storage-Arrays)"]
 
-link:../commands-a-z/set-storagearray-autosupport-schedule.html["Festlegen eines AutoSupport Nachrichtenüberfassungsplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Legen Sie den Zeitplan für die Erfassung von AutoSupport-Nachrichten fest"]
 
-link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Angabe der AutoSupport HTTP(S)-Bereitstellungsmethode (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-autosupport-https-delivery-method.html["Geben Sie die AutoSupport-HTTP(S)-Bereitstellungsmethode an"]
 
-link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Festlegen der Bereitstellungsmethode für die E-Mail (SMTP) (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-email-smtp-delivery-method.html["Geben Sie die SMTP-Bereitstellungsmethode (E-Mail) an"]
 
-link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen von AutoSupport-Bereitstellungseinstellungen (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen Sie die AutoSupport-Bereitstellungseinstellungen"]

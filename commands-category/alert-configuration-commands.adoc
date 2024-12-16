@@ -7,8 +7,11 @@ summary: Befehle für die Meldungskonfiguration
 = Befehle für die Meldungskonfiguration
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Warnmeldungen Konfigurationsbefehlen ist für Ihr E-Series Storage-System verfügbar.
 
 
 

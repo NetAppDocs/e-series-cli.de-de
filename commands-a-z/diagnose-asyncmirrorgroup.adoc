@@ -7,7 +7,7 @@ summary: Der Befehl Diagnose Async MirrorGroup testet mögliche Kommunikationspr
 = Testen Sie die Konnektivität der asynchronen Spiegelgruppe
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,20 +21,20 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Dieser Befehl wird auf den Plattformen E2800, E5700, EF600 und EF300 nicht unterstützt.
+Dieser Befehl wird auf Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+K. A.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[diagnose asyncMirrorGroup [_asyncMirrorGroupName_]]
 testID=(all | connectivity | latency | bandwidth | portConnections)

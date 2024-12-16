@@ -7,7 +7,7 @@ summary: 'Der Befehl create SyncMirror erstellt sowohl das primäre Volume als a
 = Synchrones Spiegeln erstellen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Dieser Befehl wird auf den Plattformen E2800, E5700, EF600 und EF300 nicht unterstützt.
+Dieser Befehl wird auf Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
 == Rollen
 
-Um diesen Befehl auf einem E2800 oder E5700Storage Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+K. A.
 
 
 
@@ -43,7 +43,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create syncMirror primary=pass:quotes[_"primaryVolumeName_"
 secondary="_secondaryVolumeName_"

@@ -7,7 +7,7 @@ summary: Der Befehl storageArray arvmStats async cMirrorGroup setzt die Synchron
 = Statistiken für asynchrone Spiegelgruppen werden zurückgesetzt
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `reset storageArray arvmStats asyncMirrorGroup` Mit dem Befehl werden die Sy
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 reset storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
 volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTime | errors)

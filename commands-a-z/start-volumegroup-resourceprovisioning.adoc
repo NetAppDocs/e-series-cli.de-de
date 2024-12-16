@@ -7,7 +7,7 @@ summary: Der Befehl „Start VolumeGroup resourceProvisioning“ ermöglicht die
 = Starten Sie Die Ressourcenbereitstellung Der Volume-Gruppe
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Um die Ressourcenbereitstellung für eine Volume-Gruppe zu deaktivieren, verwend
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[start volumeGroup[_volumeGroupName_]] resourceProvisioning
 ----

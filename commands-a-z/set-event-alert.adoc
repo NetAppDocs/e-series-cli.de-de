@@ -7,7 +7,7 @@ summary: Über die Befehle für die festgelegte Ereigniswarnung wird die Ereigni
 = Filter für Ereignisbenachrichtigung einstellen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -55,7 +55,7 @@ Nicht alarmbare Ereignisse können mit diesem Befehl nicht alertable ausgeführt
 
 == Syntax zum Blockieren einer Ereigniswarnung
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set blockEventAlert pass:quotes[_eventType_]
 ----
@@ -63,7 +63,7 @@ set blockEventAlert pass:quotes[_eventType_]
 
 == Syntax zum Entsperren einer Ereigniswarnung
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set unBlockEventAlert pass:quotes[_eventType_]
 ----

@@ -7,7 +7,7 @@ summary: Der Befehl show Controller gibt den Status der Controller-Diagnose zur√
 = Zeigt den Controller-Diagnosestatus an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -19,7 +19,7 @@ Wenn die Diagnose abgeschlossen ist, werden alle Ergebnisse der Diagnosetests an
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
 ----

@@ -6,9 +6,14 @@ summary: Befehle der E2700 und E5600
 ---
 = Befehle der E2700 und E5600
 :allow-uri-read: 
-:icons: font
-:imagesdir: ./media/
 
+
+[role="lead"]
+Für Ihr E2700 und E5600 System stehen die folgenden Befehle zur Verfügung:
+
+
+
+= Befehle der E2700 und E5600
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Aktivieren Sie die asynchrone Spiegelung"]
 

@@ -7,7 +7,7 @@ summary: Der Befehl Show blockedEventAlertList gibt eine Liste von Ereignissen z
 = Blockierte Ereignisse anzeigen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -32,7 +32,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 show blockedEventAlertList
 ----

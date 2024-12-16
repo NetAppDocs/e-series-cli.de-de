@@ -7,7 +7,7 @@ summary: Der Befehl SyncMirror primaries suspendieren unterbricht einen synchron
 = Unterbrechen Sie die synchrone Spiegelung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `suspend syncMirror primaries` Befehl unterbricht einen synchronen Spiegelun
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
+Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
 
 
 
@@ -38,7 +38,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 suspend syncMirror (primary pass:quotes[[_primaryVolumeName_]]

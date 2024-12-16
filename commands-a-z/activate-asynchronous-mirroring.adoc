@@ -7,7 +7,7 @@ summary: Mit dem Befehl activate storageArray Feature wird die Funktion Asynchro
 = Aktivieren Sie die asynchrone Spiegelung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `activate storageArray feature` Befehl aktiviert die Funktion Asynchronous M
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 [NOTE]
 ====
@@ -28,7 +28,7 @@ Dieser Befehl ist nur für die asynchrone Spiegelung über Fibre Channel verfüg
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E400-, E2800-, E5700-, EF600- oder EF300-Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -40,7 +40,7 @@ Nachdem Sie die Funktion zur asynchronen Spiegelung aktiviert haben, müssen Sie
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 activate storageArray feature=asyncRemoteMirror
 ----

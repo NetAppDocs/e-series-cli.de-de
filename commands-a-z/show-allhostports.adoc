@@ -7,7 +7,7 @@ summary: Der Befehl show allHostPorts gibt Informationen über konfigurierte Hos
 = Zeigen Sie Host-Ports an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `show allHostPorts` Befehl gibt Informationen zu konfigurierten Host-Ports z
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -40,7 +40,7 @@ Bei allen Host-Ports, die mit einem Speicher-Array verbunden sind, gibt dieser B
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 show allHostPorts
 ----

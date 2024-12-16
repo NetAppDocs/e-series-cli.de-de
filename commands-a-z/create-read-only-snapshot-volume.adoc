@@ -7,7 +7,7 @@ summary: Der Befehl create SnapVolume erstellt ein schreibgeschütztes Snapshot 
 = Erstellen eines schreibgeschützten Snapshot-Volumes
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `create snapVolume` Befehl erstellt ein schreibgeschütztes Snapshot-Volumen
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -38,7 +38,7 @@ Dieser Befehl kann nicht für ein Snapshot-Image verwendet werden, das in der On
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create snapVolume userLabel=pass:quotes[_"snapVolumeName"_
 snapImageID="_snapCGID:imageID"_]

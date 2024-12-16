@@ -7,9 +7,10 @@ summary: Wiederkehrende Syntaxelemente sind eine allgemeine Kategorie von Parame
 = Wiederholte Syntaxelemente
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 Wiederkehrende Syntaxelemente sind eine allgemeine Kategorie von Parametern und Optionen, die Sie in den Skriptbefehlen verwenden können. In der folgenden Tabelle sind die Konventionen aufgeführt, die in den wiederkehrenden Syntaxelementen verwendet werden.
 
 [cols="2*"]

@@ -7,7 +7,7 @@ summary: Der Befehl Speicherarray-Konfiguration speichern erstellt eine Skriptda
 = Speicherarray-Konfiguration speichern
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `save storageArray configuration` Befehl erstellt eine Skriptdatei, mit der 
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein. Die Verwendung dieses Befehls mit dem LDAP-Parameter ist jedoch auf solche mit der Rolle Security Admin beschränkt.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen. Die Verwendung dieses Befehls mit dem LDAP-Parameter ist jedoch auf solche mit der Rolle Security Admin beschränkt.
 
 
 
@@ -38,7 +38,7 @@ Dieser Befehl speichert keine Konfigurationsdaten für die Remote-Spiegelung ode
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 save storageArray configuration file=pass:quotes["_filename_"]
 (allconfig|[globalSettings=(TRUE | FALSE)]

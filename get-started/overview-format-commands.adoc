@@ -7,10 +7,13 @@ summary: 'Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mi
 = Übersicht über CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mit der Storage Arrays konfiguriert und überwacht werden können. Mit der CLI können Sie Befehle von einer Betriebssystemaufforderung wie DOS ausführen `C:` Eingabeaufforderung, ein Linux-Betriebssystempfad oder ein Solaris-Betriebssystem-Pfad.
+[role="lead"]
+Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mit der Storage Arrays konfiguriert und überwacht werden können.
+
+Mithilfe der CLI können Sie Befehle von einer Eingabeaufforderung des Betriebssystems ausführen, z. B. von der DOS- `C:`Eingabeaufforderung, einem Pfad des Linux-Betriebssystems oder einem Pfad des Solaris-Betriebssystems.
 
 Die CLI ermöglicht Ihnen direkten Zugriff auf eine Skript-Engine, die in der Storage Management Software ein Dienstprogramm ist. Die Skript-Engine führt Befehle aus, die die Speicher-Arrays konfigurieren und verwalten. Die Skript-Engine liest die Befehle entweder über eine Skriptdatei oder direkt über die Befehlszeile aus und führt die von den Befehlen angegebenen Vorgänge aus.
 

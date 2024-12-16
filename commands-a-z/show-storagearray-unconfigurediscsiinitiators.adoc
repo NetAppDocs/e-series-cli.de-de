@@ -7,7 +7,7 @@ summary: Der Befehl show storageArray unconfiguredIscsiInitiatoren gibt eine Lis
 = Zeigt nicht konfigurierte iSCSI-Initiatoren des Speicherarrays an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `show storageArray unconfiguredIscsiInitiators` Der Befehl gibt eine Liste d
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Admin oder Storage-Monitor verfügen.
 
 Dieser Befehl ist veraltet. Der Befehl, der ihn ersetzt, ist link:show-storagearray-unconfiguredinitiators.html["Storage Array ohne KonfigurationsInitiatoren anzeigen"].
 
@@ -31,7 +31,7 @@ Dieser Befehl ist veraltet. Der Befehl, der ihn ersetzt, ist link:show-storagear
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 show storageArray unconfiguredIscsiInitiators
 ----

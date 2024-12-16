@@ -7,7 +7,7 @@ summary: Mit dem Befehl Set storageArray resourceProvisionedVolumes wird die DUL
 = Legen Sie Volumes Fest, Die Mit Storage Array-Ressourcen Bereitgestellt Werden
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -39,7 +39,7 @@ Ein bereitgestellter Ressourcen-Volume ist ein Thick Volume in einer SSD-Volume-
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 set storageArray resourceProvisionedVolumes=(enable|disable)
 ----

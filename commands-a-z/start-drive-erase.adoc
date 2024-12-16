@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Start Drive Lösch“ werden alle Daten von einem ode
 = Starten Sie das Löschen des Laufwerks
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `start drive erase` Durch Befehl werden alle Daten von einem oder mehreren L
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.
+Dieser Befehl gilt für ein individuelles E4000-, E2800-, E5700-, EF600- oder EF300-Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
@@ -40,7 +40,7 @@ Der Löschvorgang kann nicht rückgängig gemacht werden. Stellen Sie sicher, da
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
 ----

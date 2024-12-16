@@ -7,7 +7,7 @@ summary: Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren L
 = Erste Schritte mit internem Verschlüsselungsmanagement
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -7,7 +7,7 @@ summary: Mit dem Befehl Show AuditLog Summary werden die Zusammenfassungsdaten d
 = Zeigt die Zusammenfassung des Prüfprotokolls an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,21 +17,20 @@ Der `show auditLog summary` Befehl zeigt die Zusammenfassungsinformationen des P
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
-
 show auditLog summary
 ----
 

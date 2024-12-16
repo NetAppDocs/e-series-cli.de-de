@@ -7,7 +7,7 @@ summary: 'Der Befehl zum Starten von storageArray ocspResponderUrl Test prüft a
 = Starten Sie den OCSP-Server-URL-Test
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `start storageArray ocspResponderUrl test` Befehl überprüft auf eine offen
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
@@ -49,7 +49,7 @@ Wenn Sie keine URL angeben, verwendet der Befehl die OCSP Responder URL, die in 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 start storageArray ocspResponderUrl test (url=stringLiteral)
 ----

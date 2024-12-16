@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Start diskPool fullProvisioning“ wird ein voller Be
 = Starten Sie Disk Pool Full Provisioning
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -39,7 +39,7 @@ Bei vollständiger Bereitstellung wird sichergestellt, dass alle von den Volumes
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 start diskPool[diskPoolName] fullProvisioning [disableResourceProvisioning=(TRUE | FALSE)]
 ----

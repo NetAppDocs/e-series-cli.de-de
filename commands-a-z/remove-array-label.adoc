@@ -7,7 +7,7 @@ summary: Mit dem Befehl Array-Beschriftung entfernen können Sie eine benutzerde
 = Entfernen Sie die Array-Beschriftung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 delete storageArrayLabel label pass:quotes[_userDefinedString_]
 delete storageArrayLabel all

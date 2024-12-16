@@ -7,7 +7,7 @@ summary: Der Befehl Set Initiator aktualisiert das Initiatorobjekt.
 = Legt den Initiator fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set initiator` Mit dem Befehl wird das Initiator-Objekt aktualisiert.
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -43,9 +43,8 @@ Dieser Befehl ist nur für iSCSI, iSER, NVMe over RoCE, NVMe over InfiniBand und
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
-
 set initiator (["initiatorName"] | <"initiatorQualifiedName">) ([userLabel="newInitiatorName"] |
 [host="newHostName"] | [chapSecret="newSecurityKey"])
 ----

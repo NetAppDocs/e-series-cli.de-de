@@ -7,7 +7,7 @@ summary: Der Befehl show allDrives gibt Informationen über die Laufwerke im Spe
 = Laufwerk anzeigen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `show allDrives` Der Befehl gibt Informationen zu den Laufwerken im Speicher
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -43,7 +43,7 @@ Dieser Befehl gibt für jedes Laufwerk im Speicher-Array die folgenden Informati
 ** Die Firmware-Version
 
 
-* Informationen über den Verschleiß von SSD-Laufwerken (diese Informationen gelten nur für E2800 und E5700/EF570 und werden nicht angezeigt, wenn das Array keine SSD-Laufwerke enthält):
+* Informationen zum Verschleiß von SSD-Laufwerken (diese Informationen werden nicht angezeigt, wenn das Array keine SSD-Laufwerke enthält):
 +
 ** Die durchschnittliche Löschanzahl.
 ** Die freien Blöcke.
@@ -71,7 +71,7 @@ Für NVMe-Laufwerke ist das Datum der Herstellung nicht verfügbar.
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show ((allDrives
 [driveMediaType=(HDD | SSD | unknown | allMedia)] |

@@ -7,7 +7,7 @@ summary: Mit dem Befehl set ssdCache wird der Name des SSD-Caches geändert.
 = Umbenennen des SSD-Caches
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `set ssdCache` Mit Befehl wird der Name des SSD-Caches geändert.
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Sie müssen über die Rolle Support Admin verfügen, um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array ausführen zu können.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Support Admin verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set ssdCache pass:quotes[[_old_ssdCacheName_]] userLabel=pass:quotes[_"new_ssdCacheName_"]
 ----

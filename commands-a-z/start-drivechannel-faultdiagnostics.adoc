@@ -7,7 +7,7 @@ summary: Mit dem Befehl driveChannel faultDiagnostics starten werden die Fehlerd
 = Diagnose der Fehlereingrenzung des Antriebskanals starten
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `start driveChannel faultDiagnostics` Mit dem Befehl wird die Fehlerdiagnose
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -38,7 +38,7 @@ Mit der Firmware-Version 8.10 wird das `start driveChannel faultDiagnostics` Bef
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
 controller [(a|b)] faultDiagnostics

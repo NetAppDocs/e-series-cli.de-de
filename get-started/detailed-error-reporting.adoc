@@ -7,10 +7,13 @@ summary: Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine D
 = Detaillierte Fehlerberichterstellung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine Datei geschrieben. Eine detaillierte Fehlerberichterstellung unter der CLI funktioniert wie folgt:
+[role="lead"]
+Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine Datei geschrieben.
+
+Eine detaillierte Fehlerberichterstellung unter der CLI funktioniert wie folgt:
 
 * Wenn die CLI die Ausführung von CLI-Befehlen und Skriptbefehlen beenden muss, werden Fehlerdaten erfasst und gespeichert, bevor die CLI beendet wird.
 * Die CLI speichert die Fehlerdaten, indem die Daten in einen Standarddateinamen geschrieben werden.

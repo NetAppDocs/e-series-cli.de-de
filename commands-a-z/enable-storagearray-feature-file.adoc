@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Storage Array Feature File“ aktivieren wird eine Fu
 = Aktivieren Sie Storage Array-Funktion
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `enable storageArray feature file` Mit dem Befehl wird eine Funktion für ei
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
@@ -46,7 +46,7 @@ Um festzustellen, welche Funktionen auf dem Speicher-Array geladen sind, führen
 
 == Syntax zum Aktivieren eines Feature-Schlüssels
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature file="_filename_"]
 ----
@@ -64,7 +64,7 @@ Für jedes Feature, das Sie aktivieren möchten, benötigen Sie eine Feature Key
 
 == Syntax zum Aktivieren eines Funktionspacks
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray featurePack file="_filename_"]
 ----
@@ -80,7 +80,7 @@ Gültige Dateinamen für Feature-Key-Dateien enden mit einem `.key` Erweiterung.
 
 == Syntax, um eine Funktion für einen Testzeitraum zu aktivieren
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature=_featureAttributeList_]
 ----

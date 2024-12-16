@@ -7,7 +7,7 @@ summary: Mit dem Befehl Storage Array AutoSupport log speichern können Sie eine
 = Abrufen eines AutoSupport-Protokolls
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `save storageArray autoSupport log` Mit dem Befehl können Sie eine AutoSupp
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
@@ -39,7 +39,7 @@ Mit diesem Befehl können Sie zwei Protokolltypen anzeigen:
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 save storageArray autoSupport log [inputArchive=n]
 file=pass:quotes["_filename_"]

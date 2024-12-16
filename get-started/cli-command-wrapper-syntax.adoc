@@ -7,10 +7,15 @@ summary: In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlssc
 = Wrapper-Syntax für den CLI-Befehl
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlsschlüssel aufgeführt. Die in der Wrapper-Syntax für den CLI-Befehl verwendeten Konventionen werden in der folgenden Tabelle aufgeführt.
+
+
+
+== Konventionen für CLI-Befehlssyntax
 
 [cols="2*"]
 |===

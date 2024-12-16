@@ -7,7 +7,7 @@ summary: Der Befehl zum Speichern von Volume-Paritätsprüfung speichert die Par
 = Speichern Sie Paritätsfehler bei der Volume-Paritätsprüfung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -29,7 +29,7 @@ Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 save check volume parity job parityErrors jobId=<job_id> parityErrorFile=<parity_error_file>;
 ----

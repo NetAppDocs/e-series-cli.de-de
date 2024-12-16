@@ -7,7 +7,7 @@ summary: Der Befehl Array-Bezeichnung anzeigen gibt Informationen darüber zurü
 = Array-Beschriftung anzeigen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `Show array label` Der Befehl gibt Informationen darüber zurück, ob ein St
 
 == Unterstützte Arrays
 
-Dieser Befehl bezieht sich auf die EF600 Storage-Arrays.
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[show storageArrayLabel label _userDefinedString_]
 show storageArrayLabel all

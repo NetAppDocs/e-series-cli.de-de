@@ -7,7 +7,7 @@ summary: Der Befehl „Start diskPool resourceProvisioning“ ermöglicht die Re
 = Starten Sie Disk Pool Resource Provisioning
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Um die Ressourcenbereitstellung auf einem Laufwerk-Pool zu deaktivieren, verwend
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 start diskPoolpass:quotes[[_diskPoolName_]] resourceProvisioning
 ----

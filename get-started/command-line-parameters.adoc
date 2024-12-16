@@ -7,14 +7,17 @@ summary: SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Control
 = Parameter der Legacy-Kommandozeile
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit integrierten Web-Services ist die Möglichkeit zur Interaktion über die Befehlszeile mithilfe eines sicheren HTTPS-Protokolls verfügbar. Diese Controller können stattdessen optional das Symbolprotokoll für Befehlszeileninteraktionen verwenden.
 
 
 
 == 11.53 und ältere Befehlszeilenparameter
 
-SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit integrierten Web-Services ist die Möglichkeit zur Interaktion über die Befehlszeile mithilfe eines sicheren HTTPS-Protokolls verfügbar. Diese Controller können stattdessen optional das Symbolprotokoll für Befehlszeileninteraktionen verwenden. Das Symbolprotokoll ist das einzige unterstützte Protokoll für die E2700 und E5600 Controller. Um vorhandene Skripte zu erhalten und die Übergangszeit zu minimieren, bleiben die CLI-Optionen und Grammatik so weit wie möglich erhalten. Allerdings gibt es einige Unterschiede in den Funktionen der E2800 und E5700 Controller in Bezug auf Sicherheit, Authentifizierung, AutoSupport und Hinweis, die zu einer veralteten CLI-Grammatik für diese Controller führen. In einigen Fällen ist die Grammatik jedoch nur bei Verwendung des neuen HTTPS-Protokolls auf der E2800 oder E5700 veraltet.
+Das Symbolprotokoll ist das einzige unterstützte Protokoll für die E2700 und E5600 Controller. Um vorhandene Skripte zu erhalten und die Übergangszeit zu minimieren, bleiben die CLI-Optionen und Grammatik so weit wie möglich erhalten. Allerdings gibt es einige Unterschiede in den Funktionen der E2800 und E5700 Controller in Bezug auf Sicherheit, Authentifizierung, AutoSupport und Hinweis, die zu einer veralteten CLI-Grammatik für diese Controller führen. In einigen Fällen ist die Grammatik jedoch nur bei Verwendung des neuen HTTPS-Protokolls auf der E2800 oder E5700 veraltet.
 
 Für die neuen Parameter, die nur für das gelten `*https*` Client-Typ. Diese Werte gelten jedoch auch nur für die E2800 oder E5700 Controller.
 

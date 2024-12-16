@@ -7,7 +7,7 @@ summary: Mit dem Befehl activate storageArray Firmware wird die Firmware aktivie
 = Aktivieren der Speicher-Array-Firmware
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `activate storageArray firmware` Mit dem Befehl wird die Firmware aktiviert,
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 activate storageArray firmware
 [healthCheckMelOverride=(TRUE | FALSE)]

@@ -7,7 +7,7 @@ summary: Mit dem Befehl „deactivate storageArray Feature“ wird die Funktion 
 = Deaktivieren Sie die synchrone Spiegelung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `deactivate storageArray feature` Befehl deaktiviert die Funktion für die s
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Admin“ oder „Support-Admin“ verfügen.
+Um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
@@ -40,7 +40,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 deactivate storageArray feature=syncMirror
 ----

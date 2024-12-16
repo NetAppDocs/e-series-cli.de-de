@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Volume erstellen“ wird eine Volume-Gruppe über die
 = Erstellen von RAID-Volumes (automatische Laufwerkauswahl)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `create volume` Befehl erstellt eine Volume-Gruppe über die Laufwerke im Sp
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -38,7 +38,7 @@ Wenn Laufwerke mit unterschiedlichen Kapazitäten vorhanden sind, können Sie Vo
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create volume driveCount=pass:quotes[_numberOfDrives_]
 [volumeGroupUserLabel=pass:quotes[_"volumeGroupUserLabel"_]]
@@ -46,29 +46,6 @@ raidLevel=(0 | 1 | 3 | 5 | 6)
 userLabel=pass:quotes[_"userLabel"_]
 driveMediaType=(HDD | SSD | unknown | allMedia)
 [driveType=(SAS | NVMe4K)]
-[capacity=pass:quotes[_volumeCapacity_]]
-[owner=(a|b)]
-[mapping=(none | default)]
-[cacheReadPrefetch=(TRUE | FALSE)]
-[segmentSize=pass:quotes[_segmentSizeValue_]]
-[usageHint=(fileSystem | dataBase | multiMedia)]
-[trayLossProtect=(TRUE | FALSE)]
-[drawerLossProtect=(TRUE | FALSE)]
-[dssPreAllocate=(TRUE | FALSE)]
-[securityType=(none | capable | enabled)]
-[secureDrives=(fips | fde )]
-[dataAssurance=(none | enabled)]
-[resourceProvisioningCapable=(TRUE | FALSE)]
-[blockSize=blockSizeValue]
-----
-[listing, subs="+macros"]
-----
-create volume driveCount=pass:quotes[_numberOfDrives_]
-[volumeGroupUserLabel=pass:quotes[_"volumeGroupName"_]]
-raidLevel=(0 | 1 | 5 | 6)
-userLabel=pass:quotes[_"volumeName"_]
-driveMediaType=(HDD | SSD | unknown | allMedia)
-[driveType=SAS]
 [capacity=pass:quotes[_volumeCapacity_]]
 [owner=(a|b)]
 [mapping=(none | default)]

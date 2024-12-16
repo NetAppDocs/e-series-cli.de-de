@@ -7,7 +7,7 @@ summary: Mit dem Befehl Fach einstellen wird die Fach-ID eines Controller-Fachs,
 = Legen Sie die Tray-ID fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Dieser Befehl ist nur für Controller-Fächer, Controller-Laufwerksfächer oder 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----

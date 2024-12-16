@@ -2,13 +2,16 @@
 permalink: get-started/naming-conventions.html 
 sidebar: sidebar 
 keywords: name, conventions 
-summary: Namen können maximal 30 Zeichen lang sein. 
+summary: Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Regeln eingehalten werden. 
 ---
 = Namenskonventionen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Regeln eingehalten werden.
 
 * Namen können maximal 30 Zeichen lang sein.
 * Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen der folgenden Komponenten verwenden:

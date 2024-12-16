@@ -7,7 +7,7 @@ summary: Mit dem Befehl show ssdCache werden Daten zur SSD-Cache-Nutzung angezei
 = Zeigt SSD-Cache-Statistiken an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `show ssdCache` Befehl zeigt Daten zur SSD-Cache-Nutzung an.
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Sie müssen über die Rolle Support Admin verfügen, um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array ausführen zu können.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Support Admin verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show ssdCache pass:quotes[[_ssdCacheName_]] [ssdCacheStatistics]
 [controller=(a|b|both)]

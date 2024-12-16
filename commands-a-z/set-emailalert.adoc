@@ -7,7 +7,7 @@ summary: Mit dem Befehl set emailAlert wird die E-Mail so konfiguriert, dass sie
 = Konfigurieren Sie Einstellungen für E-Mail-Warnmeldungen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,15 +17,14 @@ Der `set emailAlert` Der Befehl konfiguriert die E-Mail zum Senden einer E-Mail 
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für die E2800, E5700, EF600 und EF300 Storage-Arrays. Der Befehl kann jedoch für E2700 oder E5600 Arrays als SMcli-Befehl und nicht als Skript-Befehl verwendet werden. In diesem Fall gilt der Befehl für alle Arrays in der Management-Domäne.
+Dieser Befehl gilt für die Storage-Arrays E4000, E2800, E5700, EF600 und EF300. Der Befehl kann jedoch für E2700 oder E5600 Arrays als SMcli-Befehl und nicht als Skript-Befehl verwendet werden. In diesem Fall gilt der Befehl für alle Arrays in der Management-Domäne.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 set emailAlert
     serverAddress=pass:quotes["_serverAddress_"] |
     serverEncryption=pass:quotes[_none_ | _smtps_ | _starttls_ |]

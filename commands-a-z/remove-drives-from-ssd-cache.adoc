@@ -7,7 +7,7 @@ summary: 'Der Befehl set ssdCache verringert die Kapazität des SSD-Caches durch
 = Entfernen Sie Laufwerke aus dem SSD-Cache
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Der `set ssdCache` Befehl verringert die Kapazität des SSD-Caches durch Entfern
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Sie müssen über die Rolle Support Admin verfügen, um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array ausführen zu können.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Support Admin verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set ssdCache pass:quotes[[_ssdCacheName_]]
 removeDrives=pass:quotes[(_trayID1_,]pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn_],pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_])

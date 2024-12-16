@@ -7,7 +7,7 @@ summary: Mit dem Befehl Revive Drive wird das angegebene Laufwerk in den optimal
 = Fahren Sie erneut beleben
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `revive drive` Der Befehl zwingt das angegebene Laufwerk zum optimalen Statu
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
@@ -38,7 +38,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 revive drive pass:quotes[[_trayID_],pass:quotes[[_drawerID,_]]pass:quotes[_slotID_]]
 ----

@@ -7,8 +7,11 @@ summary: Personalbefehle für die Speicherüberwachung
 = Personalbefehle für die Speicherüberwachung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste der Personalbefehle für die Storage-Überwachung steht für das Storage-System der E-Series zur Verfügung.
 
 link:../commands-a-z/show-storagearray-usersession.html["Anzeige der Benutzersitzung des Speicher-Arrays"]
 

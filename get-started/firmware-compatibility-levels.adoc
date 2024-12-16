@@ -2,15 +2,18 @@
 permalink: get-started/firmware-compatibility-levels.html 
 sidebar: sidebar 
 keywords: firmware, compatibility, levels 
-summary: Die Skriptbefehle und die Befehlsparameter werden nicht unter allen Versionen der Controller-Firmware ausgeführt. 
+summary: Die Skriptbefehle in den folgenden Abschnitten enthalten die Mindestanforderungen an die Firmware, unter denen die Skriptbefehle ausgeführt werden können. 
 ---
 = Firmware-Kompatibilitätsstufen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Die Skriptbefehle und die Befehlsparameter werden nicht unter allen Versionen der Controller-Firmware ausgeführt. Die Skriptbefehle in den folgenden Abschnitten enthalten die Mindestanforderungen an die Firmware, unter denen die Skriptbefehle ausgeführt werden können. In den Skriptbefehlen sind die Firmware-Ebenen unter der Überschrift "`Minimum Firmware Level`" aufgelistet. In dieser Liste wird beschrieben, wie die Informationen über die Firmware-Level interpretiert werden.
+[role="lead"]
+Die Skriptbefehle in den folgenden Abschnitten enthalten die Mindestanforderungen an die Firmware, unter denen die Skriptbefehle ausgeführt werden können.
+
+Die Skriptbefehle und die Befehlsparameter werden nicht unter allen Versionen der Controller-Firmware ausgeführt. In den Skriptbefehlen sind die Firmware-Ebenen unter der Überschrift "`Minimum Firmware Level`" aufgelistet. In dieser Liste wird beschrieben, wie die Informationen über die Firmware-Level interpretiert werden.
 
 * Wenn ein Skript-Befehl keine minimale Controller-Firmware-Ebene aufführt, können der Befehl Skript und alle mit diesem Skript verknüpften Parameter unter einer beliebigen Ebene der Controller-Firmware ausgeführt werden.
 * Eine Controller-Firmware-Nummer ohne erklärende Informationen gibt an, dass sich die Firmware-Ebene des Controllers auf den gesamten Skriptbefehl und alle Parameter für diesen Skriptbefehl bezieht.

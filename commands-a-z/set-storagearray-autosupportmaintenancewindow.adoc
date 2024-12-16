@@ -4,10 +4,10 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, maintenance, window, individual, E2800, E5700, arrays 
 summary: Mit dem Befehl „Set storageArray autoSupportInstandhaltungWindows“ wird die Funktion für das AutoSupport-Wartungsfenster aktiviert oder deaktiviert. 
 ---
-= Aktivieren oder Deaktivieren des AutoSupport Wartungsfensters (für einzelne E2800 oder E5700 Arrays)
+= Aktivieren oder deaktivieren Sie das AutoSupport-Wartungsfenster
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -19,19 +19,19 @@ Verwenden Sie ein Wartungsfenster, um die automatische Ticketerstellung bei Fehl
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 set storageArray autoSupportMaintenanceWindow (enable | disable)
     emailAddresses=("emailAddress1" "emailAddress2" ...)

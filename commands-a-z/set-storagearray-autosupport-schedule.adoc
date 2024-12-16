@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Set storageArray AutoSupport Schedule“ werden die t
 = Legen Sie den Zeitplan für die Erfassung von AutoSupport-Nachrichten fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set storageArray autoSupport schedule` Mit dem Befehl werden die täglichen
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
@@ -38,7 +38,7 @@ Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszufüh
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set storageArray autoSupport schedule dailyTime=pass:quotes[_startTime-endTime_]
  [dayOfWeek=(Sunday Monday Tuesday Wednesday Thursday Friday Saturday)]

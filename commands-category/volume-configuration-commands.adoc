@@ -7,8 +7,11 @@ summary: Befehle für die Volume-Konfiguration
 = Befehle für die Volume-Konfiguration
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Volume-Konfigurationsbefehlen steht für Ihr E-Series Storage-System zur Verfügung.
 
 
 

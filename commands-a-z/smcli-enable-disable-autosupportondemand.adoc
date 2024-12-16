@@ -7,7 +7,7 @@ summary: Der SMcli enable deaktivierenSupport OnDemand-Befehl schaltet die AutoS
 = Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion auf Ebene der EMW-Verwaltungsdomäne (nur SMcli)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `SMcli enable|disable autoSupportOnDemand` Befehl schaltet die AutoSupport O
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
@@ -34,7 +34,7 @@ Bevor Sie diese Funktion aktivieren, müssen Sie zuerst die AutoSupport-Funktion
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 SMcli enable|disable autoSupportOnDemand
 ----

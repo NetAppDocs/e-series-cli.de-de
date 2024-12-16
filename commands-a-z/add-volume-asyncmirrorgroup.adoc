@@ -7,7 +7,7 @@ summary: Mit dem Befehl add Volume async MirrorGroup wird eine primäre Volume z
 = Fügen Sie ein Volume zur asynchronen Spiegelgruppe hinzu
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkung
 
 [NOTE]
 ====
-Dieser Befehl wird auf den Plattformen E2800, E5700, EF600 und EF300 nicht unterstützt.
+Dieser Befehl wird auf Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+K. A.
 
 
 
@@ -40,7 +40,7 @@ Dieser Befehl ist nur für das lokale Speicher-Array gültig, das die asynchrone
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[add volume="_volumeName_" asyncMirrorGroup="_asyncMirrorGroupName_"
 remotePassword="_password_"

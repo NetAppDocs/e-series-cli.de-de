@@ -1,5 +1,5 @@
 ---
-permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+permalink: commands-a-z/set-email-smtp-delivery-method.html 
 sidebar: sidebar 
 keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
 summary: 'Mit dem Befehl Set storageArray AutoSupport deliveryMethod wird die Bereitstellungsmethode für das Senden von AutoSupport-Nachrichten an E-Mail (SMTP) eingerichtet.' 
@@ -7,7 +7,7 @@ summary: 'Mit dem Befehl Set storageArray AutoSupport deliveryMethod wird die Be
 = Geben Sie die SMTP-Bereitstellungsmethode (E-Mail) an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,22 +17,22 @@ Der `set storageArray autoSupport deliveryMethod` Mit dem Befehl wird die Bereit
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage-Admin“ oder „Support-Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set storageArray autoSupport deliveryMethod=email
-mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"] destinationAddress="destination1@example.com" destinationAddress="destination2@example.com";
 ----
 
 
@@ -49,7 +49,6 @@ mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
 Ermöglicht dem Benutzer, die Bereitstellungsmethode für die AutoSupport-Sammlung festzulegen. Gültige Auswahlmöglichkeiten:
 
 * E-Mail
-* HTTP
 * HTTPS
 
 
@@ -71,6 +70,13 @@ Ermöglicht dem Benutzer, den Mail-Relay-Server für die AutoSupport-Sammlung an
 `senderEmail`
  a| 
 Ermöglicht dem Benutzer die Angabe der E-Mail-Adresse für die AutoSupport-Sammlung.
+
+
+
+ a| 
+`destinationAddress`
+ a| 
+E-Mail-Adresse, an die AutoSupport-Dispatches gesendet werden. Dieser Parameter kann mehrmals bereitgestellt werden, um das Senden von Dispatches an mehrere Adressen zu ermöglichen.
 
 |===
 

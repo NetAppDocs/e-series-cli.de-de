@@ -7,7 +7,7 @@ summary: 'Der SMcli Befehl autoSupportFeature aktivieren aktiviert die AutoSuppo
 = Aktivieren oder Deaktivieren von AutoSupport auf der Ebene der EMW-Verwaltungsdomain (nur SMcli)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `SMcli enable autoSupportFeature` Mit dem Befehl wird die AutoSupport-Funkti
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
@@ -53,7 +53,7 @@ Sie müssen die drei Funktionen in der folgenden Reihenfolge aktivieren:
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 SMcli enable|disable autoSupportFeature
 ----

@@ -7,7 +7,7 @@ summary: Der Befehl SMcli -autoSupportSchedule show zeigt den Zeitplan für die 
 = Zeigen Sie den Zeitplan für die Erfassung von AutoSupport-Meldungen an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `SMcli -autoSupportSchedule show` Der Befehl zeigt den Zeitplan für die Erf
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
@@ -40,7 +40,7 @@ Beachten Sie Folgendes bei der Planung der automatischen Support Bundle-Sammlung
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportSchedule show
 ----

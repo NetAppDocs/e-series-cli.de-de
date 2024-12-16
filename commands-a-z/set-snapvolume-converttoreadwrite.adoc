@@ -7,7 +7,7 @@ summary: Der Befehl set SnapVolume convertToReadWrite ändert ein Snapshot-Volum
 = Legen Sie den schreibgeschützten Snapshot-Datenträger auf Lese-/Schreib-Volumen fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `set snapVolume convertToReadWrite` Befehl ändert ein Snapshot-Volumen, das
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -35,12 +35,12 @@ Mit diesem Befehl können Sie auch ein neues Repository-Volume für das Lese-/Sc
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set snapVolume pass:quotes[["_snapImageVolumeName_"]] convertToReadWrite
 [(repositoryVolume="repos_xxxx" |
-repositoryVolume=pass:quotes[(_volumeGroupName_] [capacity=pass:quotes[_capacityValue_]])
-repositoryVolume=pass:quotes[(_diskPoolName_] [capacity=pass:quotes[_capacityValue_]))]]
+repositoryVolume=pass:quotes[(_volumeGroupName_)] [capacity=pass:quotes[_capacityValue_]])
+repositoryVolume=pass:quotes[(_diskPoolName_)] [capacity=pass:quotes[_capacityValue_]]]
 [repositoryFullLimit=pass:quotes[_percentValue_]]
 ----
 

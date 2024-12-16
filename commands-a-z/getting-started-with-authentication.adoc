@@ -7,7 +7,7 @@ summary: Zur Authentifizierung müssen Benutzer mit zugewiesenen Anmeldedaten au
 = Erste Schritte mit der Authentifizierung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -7,7 +7,7 @@ summary: Der Befehl save storageArray iserStatistics speichert die iSER-Leistung
 = ISER-Statistiken des Speicher-Arrays speichern
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `save storageArray iserStatistics` Befehl speichert die iSER-Leistungsstatis
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 [NOTE]
 ====
@@ -34,7 +34,7 @@ Dieser Befehl ist veraltet und wird von ersetzt xref:save-storagearray-hostports
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 save storageArray iserStatistics [(raw | baseline)] file=pass:quotes["_filename_"]
 ----

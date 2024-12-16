@@ -7,7 +7,7 @@ summary: Mit dem Befehl delete Initiator wird das Initiator-Objekt gelöscht.
 = Initiator löschen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `delete initiator` Mit dem Befehl wird das Initiator-Objekt gelöscht.
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -43,9 +43,8 @@ Dieser Befehl ist nur für iSCSI, iSER, NVMe over RoCE, NVMe over InfiniBand und
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
-
 delete initiator (["initiatorName"] | <"initiatorQualifiedName">)
 ----
 

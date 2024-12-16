@@ -7,7 +7,7 @@ summary: Der neue SMcli kann im HTTPS-Modus mit zusätzlichen Sicherheitsfunktio
 = SMcli HTTPS-Modus
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

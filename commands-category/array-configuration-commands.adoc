@@ -7,8 +7,11 @@ summary: Befehle für die Array-Konfiguration
 = Befehle für die Array-Konfiguration
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Array-Konfigurationsbefehlen ist für Ihr E-Series Storage-System verfügbar.
 
 
 

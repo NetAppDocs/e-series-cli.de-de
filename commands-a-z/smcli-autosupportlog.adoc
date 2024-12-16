@@ -7,7 +7,7 @@ summary: Mit dem Befehl SMcli -autoSupportLog können Sie eine AutoSupport-Proto
 = Erfassen oder Anzeigen eines AutoSupport-Protokolls
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `SMcli -autoSupportLog` Mit dem Befehl können Sie eine AutoSupport-Protokol
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
+Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
@@ -38,7 +38,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -autoSupportLog pass:quotes[(all|-n "_storageArrayName_" | -w "_wwID_")]
 pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]

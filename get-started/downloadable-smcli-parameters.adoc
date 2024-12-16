@@ -2,19 +2,22 @@
 permalink: get-started/downloadable-smcli-parameters.html 
 sidebar: sidebar 
 keywords: downloadable, smcli, command line, parameters, identify, devices, SAML, multifactor, authentication, https, certificate, array, 
-summary: 'Die Version SANtricity OS 11.60 beinhaltet die Möglichkeit, die http-basierte Version von CLI (auch als sichere CLI oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.' 
+summary: 'SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basierte Version der CLI (auch als sichere CLI oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.' 
 ---
 = Herunterladbare SMcli-Befehlszeilenparameter
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basierte Version der CLI (auch als „sichere CLI“ oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.
 
 
 
 == 11.60 und neuere herunterladbare SMcli-Befehlszeilenparameter
 
-Die Version SANtricity OS 11.60 bietet die Möglichkeit, die http-basierte Version von CLI (auch als „Sichere CLI“ oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren. Diese SMcli-Version kann als Download heruntergeladen werden und ist auf EF600, EF300, E5700, EF570, E2800, Und EF280 Controller. Um den SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* > *System* und *Add-ons* > *Befehlszeilenschnittstelle*.
+Die Version SMcli kann von den Controllern E4000, EF600, EF300, E5700, EF570, E2800 und EF280 heruntergeladen werden. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .
 
 
 NOTE: Eine Java Runtime Environment (JRE), Version 8 und höher, muss auf dem Managementsystem verfügbar sein, auf dem Sie die CLI-Befehle ausführen möchten.

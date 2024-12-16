@@ -7,7 +7,7 @@ summary: Mit dem Befehl Set Controller wird die Anzeigeleuchte Service Action al
 = Die Anzeige für die zulässige Controllerwartung einstellen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Dieser Befehl gilt nur für die E2700, E5600 oder EF560 (und andere Vorgängerge
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 set controller [(a| b)]
 serviceAllowedIndicator=(on | off)

@@ -7,7 +7,7 @@ summary: Mit dem Befehl stop ssdCache performanceModeling wird der Betrieb der L
 = Stoppen Sie die Performance-Modellierung des SSD-Caches
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `stop ssdCache performanceModeling` Mit dem Befehl wird der Performance-Mode
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E2700, E5600, E2800, E5700, EF600- und EF300-Arrays, sofern alle SMcli-Pakete installiert sind
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Sie müssen über die Rolle Support Admin verfügen, um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array ausführen zu können.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Support Admin verfügen.
 
 
 
@@ -35,7 +35,7 @@ Bevor Sie diesen Befehl ausführen, müssen Sie den Vorgang zur Leistungsmodelli
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 pass:quotes[stop ssdCache [_ssdCacheName_]] performanceModeling pass:quotes[[file="_filename_"]]

@@ -7,7 +7,7 @@ summary: Mit dem Befehl SMcli -supportBundle Schedule wird ein Zeitplan zum Spei
 = Planen der Konfiguration für die automatische Support-Bundle-Sammlung
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -28,7 +28,7 @@ Sie können zwei Arten von Zeitplänen erstellen:
 
 == Syntax zum Erstellen eines Tages-/Wochenplans
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -42,7 +42,7 @@ pass:quotes[data=_pathName_]
 
 == Syntax zum Erstellen eines monatlichen/jährlichen Zeitplans
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -65,7 +65,7 @@ pass:quotes[data=_pathName_]
 Mit diesem Befehl wird der Zeitplan für das Speicher-Array vollständig entfernt. Um die Informationen zu Supportbündeln erneut zu speichern, müssen Sie einen neuen Zeitplan erstellen.
 
 ====
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule disable
 pass:quotes[(all|_storageArrayName_)]

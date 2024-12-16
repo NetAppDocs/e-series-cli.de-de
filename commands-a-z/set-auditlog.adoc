@@ -7,7 +7,7 @@ summary: Mit dem Befehl AuditLog festlegen werden die Einstellungen für das Pr�
 = Legen Sie die Einstellungen für das Prüfprotokoll fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,21 +17,20 @@ Der `set auditLog` Befehl konfiguriert die Einstellungen für das Prüfprotokoll
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Security Admin“ vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
 
 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 set auditLog (logLevel={all | writeOnly} |
     fullPolicy={overwrite | preventSystemAccess} |
     pass:quotes[maxRecords=_n_] | pass:quotes[warningThreshold=_n_)]

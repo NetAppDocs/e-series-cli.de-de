@@ -7,7 +7,7 @@ summary: Mit dem Befehl „SnapImage erstellen“ wird ein neues Snapshot-Image 
 = Erstellen von Snapshot Images
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `create snapImage` Befehl erstellt ein neues Snapshot-Image in einer oder me
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Storage-Administratorrolle vorhanden sein.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
@@ -35,7 +35,7 @@ Bevor Sie ein Snapshot-Image erstellen können, müssen Sie zunächst mindestens
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create snapImage (snapGroup=pass:quotes[_"snapGroupName" |
 snapGroups=("_snapGroupName1"... "snapGroupNamen_"))]

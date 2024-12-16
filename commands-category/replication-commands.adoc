@@ -7,8 +7,11 @@ summary: Replikationsbefehle
 = Replikationsbefehle
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Replizierungsbefehlen steht für Ihr E-Series Storage-System zur Verfügung.
 
 
 

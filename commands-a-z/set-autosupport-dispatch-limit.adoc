@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-autosupport-dispatch-limit.html 
+sidebar: sidebar 
+keywords: Autosupport, bundle, dispatch, delivery type, size 
+summary: Legt die maximale Größe von AutoSupport Bundles und Dispatches für verschiedene Bereitstellungstypen fest. 
+---
+= Legen Sie die maximale AutoSupport-Entsendungsgröße fest
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das `set storageArray autoSupport dispatchSizeLimit` legt die maximale Größe von AutoSupport Bundles und Dispatches für verschiedene Bereitstellungstypen fest.
+
+Mit diesem Befehl können Benutzer die E-Mail-Größe basierend auf den unterstützten E-Mail-Servern konfigurieren. Größere Größen verringern die Wahrscheinlichkeit, dass das Support-Paket gekürzt wird.
+
+
+NOTE: Benutzer sollten in der Regel HTTPS-Größen nur dann konfigurieren, wenn sie vom NetApp-Support angewiesen werden.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+
+
+
+== Rollen
+
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Administrator oder Support-Administrator verfügen.
+
+
+
+== Syntax
+
+[source, cli, subs="+macros"]
+----
+
+set storageArray autoSupport dispatchSizeLimit (https=(<sizeInBytes>|unlimited)|email=(<sizeInBytes>|unlimited));
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`https`
+ a| 
+Die maximale HTTPS-Versandgröße in Byte. Wenn die maximale Größe nicht konfiguriert ist, ist die Standardeinstellung 50 MiB. Ein Wert von „unbegrenzt“ oder 0 erlaubt keine Größenbeschränkung. Die zulässige Mindestgröße beträgt 2 MiB.
+
+
+
+ a| 
+`email`
+ a| 
+Die maximale E-Mail-Bereitstellungsgröße (SMTP) in Byte. Wenn die maximale Größe nicht konfiguriert ist, ist die Standardeinstellung 5 MiB. Ein Wert von „unbegrenzt“ oder 0 erlaubt keine Größenbeschränkung. Die zulässige Mindestgröße beträgt 2 MiB.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+8,90

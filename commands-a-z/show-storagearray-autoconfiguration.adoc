@@ -7,7 +7,7 @@ summary: Der Befehl show storageArray autoConfiguration zeigt die standardmäßi
 = Automatische Konfiguration des Speicherarrays anzeigen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `show storageArray autoConfiguration` Der Befehl zeigt die standardmäßige 
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800, E5700 EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein E2800, E5700, EF600 oder EF300 Storage-Array auszuführen, muss die Rolle „Storage Admin“ oder „Storage Monitor“ lauten.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle Storage-Admin oder Storage-Monitor verfügen.
 
 
 
@@ -35,7 +35,7 @@ Wenn Sie feststellen möchten, ob das Speicherarray bestimmte Eigenschaften unte
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show storageArray autoConfiguration
 [driveType=(SAS | NVMe4K)

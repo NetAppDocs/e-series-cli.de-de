@@ -2,13 +2,16 @@
 permalink: get-started/structure-of-a-script-command.html 
 sidebar: sidebar 
 keywords: structure, script command 
-summary: Alle Skriptbefehle haben die folgende Struktur. 
+summary: Um eine erfolgreiche Ausführung zu gewährleisten, müssen Skriptbefehle in der richtigen Struktur geschrieben werden. 
 ---
 = Struktur eines Skriptbefehls
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Um eine erfolgreiche Ausführung zu gewährleisten, müssen Skriptbefehle in der richtigen Struktur geschrieben werden.
 
 Alle Skriptbefehle haben die folgende Struktur:
 

@@ -7,7 +7,7 @@ summary: Der Befehl show Check Volume Parity Job zeigt einen angegebenen Check V
 = Zeigt den Job zur Überprüfung von Volume-Parität an
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -29,7 +29,7 @@ Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen 
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 show check volume parity job jobId=<job_id>;
 ----

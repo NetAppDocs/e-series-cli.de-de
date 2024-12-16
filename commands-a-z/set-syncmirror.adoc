@@ -7,7 +7,7 @@ summary: Der Befehl Set SyncMirror definiert die Eigenschaften für ein Remote-g
 = Legt synchrones Spiegeln fest
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `set syncMirror` Der Befehl definiert die Eigenschaften für ein Remote-gesp
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für alle einzelnen Storage-Arrays, einschließlich E2700, E5600, E2800 und E5700 Arrays. Solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
@@ -38,7 +38,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 
 == Syntax
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set syncMirror (localVolume pass:quotes[[_volumeName_]] |
 localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])

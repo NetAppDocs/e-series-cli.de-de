@@ -7,7 +7,7 @@ summary: Mit dem Befehl Zertifikate anzeigen können Sie die Zertifikate anzeige
 = Zertifikate anzeigen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Der `Show certificates` Mit dem Befehl können Sie die Zertifikate anzeigen, die
 
 == Unterstützte Arrays
 
-Dieser Befehl bezieht sich auf die EF600 Storage-Arrays.
+Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
 
 
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 show localCertificate all | alias alias
 ----

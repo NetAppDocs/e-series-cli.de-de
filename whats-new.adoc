@@ -25,6 +25,51 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
+== SANtricity 11.90
+
+Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.90 auf.
+
+[cols="2*"]
+|===
+| Befehl | Beschreibung der Änderung 
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-autosupport-dispatch-limit.html["Legen Sie die maximale AutoSupport-Entsendungsgröße fest"]
+ a| 
+Befehl hinzugefügt
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/save-controller-arraymanagementcsr.html["Speichern Sie die ControllerarrayManagementCSR"]
+ a| 
+Parameter hinzugefügt `KeySize`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-email-smtp-delivery-method.html["Legen Sie die E-Mail-Bereitstellungsmethode (SMTP) fest"]
+ a| 
+Parameter hinzugefügt `destinationAddress`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/show-storagearray-autosupport.html#examples["AutoSupport-Einstellungen anzeigen"]
+ a| 
+Größenbeschränkungen für Entsendung und Ziel-E-Mail-Adressen wurden der Beispielausgabe für den Befehl hinzugefügt.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/download-storagearray-keymanagementcertificate.html["Laden Sie storageArray keyManagementCertificate herunter"]
+ a| 
+Parameter hinzugefügt `privateKeyFile`.
+
+|===
+
+
 == SANtricity 11.81
 
 Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.81 auf.
@@ -35,7 +80,7 @@ Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Vers
 
 
  a| 
-xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Geräte identifizieren]
+https://docs.netapp.com/us-en/e-series-cli/get-started/downloadable-smcli-parameters.html#identify-devices["Geräte identifizieren"]
  a| 
 Hinzugefügt `identifyDevices` Parameter.
 

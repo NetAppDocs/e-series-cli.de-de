@@ -2,15 +2,18 @@
 permalink: get-started/interactive-mode.html 
 sidebar: sidebar 
 keywords: interactive mode 
-summary: 'Wenn Sie eingeben `SMcli` Und ein Speicher-Array-Name, aber keine CLI-Parameter, Skriptbefehle oder eine Skriptdatei angeben, wird die Befehlszeilenschnittstelle im interaktiven Modus ausgeführt.' 
+summary: 'Im interaktiven Modus können Sie einzelne Befehle ausführen, ohne die Befehle mit voreinstellen `SMcli` zu müssen.' 
 ---
 = Interaktiver Modus
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Wenn Sie eingeben `SMcli` Und ein Speicher-Array-Name, aber keine CLI-Parameter, Skriptbefehle oder eine Skriptdatei angeben, wird die Befehlszeilenschnittstelle im interaktiven Modus ausgeführt. Im interaktiven Modus können Sie einzelne Befehle ausführen, ohne die Befehle mit vorher zu fixieren `SMcli`.
+[role="lead"]
+Im interaktiven Modus können Sie einzelne Befehle ausführen, ohne die Befehle mit voreinstellen `SMcli` zu müssen.
+
+Wenn Sie eingeben `SMcli` Und ein Speicher-Array-Name, aber keine CLI-Parameter, Skriptbefehle oder eine Skriptdatei angeben, wird die Befehlszeilenschnittstelle im interaktiven Modus ausgeführt.
 
 Im interaktiven Modus können Sie einen einzelnen Befehl eingeben, die Ergebnisse anzeigen und den nächsten Befehl eingeben, ohne den vollständigen Befehl eingeben zu müssen `SMcli` Zeichenfolge. Der interaktive Modus eignet sich zur Bestimmung von Konfigurationsfehlern und zum schnellen Testen von Konfigurationsänderungen.
 

@@ -7,8 +7,11 @@ summary: Befehle für Storage-, Sicherheits- und Support-Administratoren
 = Administratorbefehle ausführen
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Die folgende Liste von Administratorbefehlen steht für das Storage-System der E-Series zur Verfügung.
 
 
 
@@ -192,15 +195,15 @@ link:../commands-a-z/smcli-enable-autosupportfeature.html["Aktivieren oder Deakt
 
 link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Aktivieren oder Deaktivieren von AutoSupport (alle einzelnen Arrays)"]
 
-link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Aktivieren oder Deaktivieren des AutoSupport Wartungsfensters (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Aktivieren oder deaktivieren Sie das AutoSupport-Wartungsfenster"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion im EMW..."]
 
-link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder deaktivieren Sie die AutoSupport OnDemand-Funktion"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand-Ferndiagnosefunktion bei..."]
 
-link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport Remote Diagnostics Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder deaktivieren Sie die AutoSupport-Funktion für die Ferndiagnose"]
 
 link:../commands-a-z/set-storagearray-hostconnectivityreporting.html["Aktiviert oder deaktiviert die Berichterstellung für Hostkonnektivität"]
 
@@ -258,7 +261,7 @@ link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Statist
 
 link:../commands-a-z/smcli-autosupportschedule-reset.html["Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen"]
 
-link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zurücksetzen des AutoSupport Nachrichtenüberfassungszeitplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen"]
 
 link:../commands-a-z/reset-controller.html["Controller zurücksetzen"]
 
@@ -296,7 +299,7 @@ link:../commands-a-z/resume-ssdcache.html["Setzen Sie den SSD-Cache wieder ein"]
 
 link:../commands-a-z/resume-syncmirror.html["Wiederaufnahme der synchronen Spiegelung"]
 
-link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls"]
 
 link:../commands-a-z/revive-drive.html["Fahren Sie erneut beleben"]
 
@@ -356,7 +359,9 @@ link:../commands-a-z/smcli-supportbundle-schedule.html["Planen der Konfiguration
 
 link:../commands-a-z/set-asyncmirrorgroup.html["Legen Sie die asynchrone Spiegelgruppe fest"]
 
-link:../commands-a-z/set-storagearray-autosupport-schedule.html["Festlegen eines AutoSupport Nachrichtenüberfassungsplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-autosupport-dispatch-limit.html["Legen Sie die maximale AutoSupport-Entsendungsgröße fest"]
+
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Legen Sie den Zeitplan für die Erfassung von AutoSupport-Nachrichten fest"]
 
 link:../commands-a-z/set-consistency-group-attributes.html["Legen Sie die Attribute für Konsistenzgruppen fest"]
 
@@ -596,9 +601,9 @@ link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Starten Sie die as
 
 link:../commands-a-z/smcli-autosupportconfig.html["Geben Sie die AutoSupport-Bereitstellungsmethode an"]
 
-link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Festlegen der Bereitstellungsmethode für die E-Mail (SMTP) (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-email-smtp-delivery-method.html["Geben Sie die SMTP-Bereitstellungsmethode (E-Mail) an"]
 
-link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Angabe der AutoSupport HTTP(S)-Bereitstellungsmethode (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-autosupport-https-delivery-method.html["Geben Sie die AutoSupport-HTTP(S)-Bereitstellungsmethode an"]
 
 link:../commands-a-z/start-cgsnapimage-rollback.html["Starten Sie das Rollback von Consistency Group Snapshot"]
 
@@ -702,7 +707,7 @@ link:../commands-a-z/diagnose-asyncmirrorgroup.html["Testen Sie die Konnektivit�
 
 link:../commands-a-z/smcli-autosupportconfig-test.html["Testen Sie die AutoSupport-Konfiguration"]
 
-link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen von AutoSupport-Bereitstellungseinstellungen (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen Sie die AutoSupport-Bereitstellungseinstellungen"]
 
 link:../commands-a-z/start-emailalert-test.html["Konfiguration von E-Mail-Warnmeldungen testen"]
 
@@ -762,11 +767,11 @@ link:../commands-a-z/set-storagearray-odxenabled.html["Aktivieren oder Deaktivie
 
 link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion im EMW..."]
 
-link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Aktivieren oder deaktivieren Sie die AutoSupport OnDemand-Funktion"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport OnDemand-Ferndiagnosefunktion bei..."]
 
-link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder Deaktivieren der AutoSupport Remote Diagnostics Funktion (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupportremotediag.html["Aktivieren oder deaktivieren Sie die AutoSupport-Funktion für die Ferndiagnose"]
 
 link:../commands-a-z/enable-storagearray-feature-file.html["Aktivieren Sie Storage Array-Funktion"]
 
@@ -778,9 +783,9 @@ link:../commands-a-z/create-snmpuser-username.html["SNMPv3-USM-Benutzer registri
 
 link:../commands-a-z/create-snmptrapdestination.html["SNMP-Trap-Ziel registrieren"]
 
-link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zurücksetzen des AutoSupport Nachrichtenüberfassungszeitplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen"]
 
-link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/save-storagearray-autosupport-log.html["Abrufen eines AutoSupport-Protokolls"]
 
 link:../commands-a-z/revive-drive.html["Fahren Sie erneut beleben"]
 
@@ -794,7 +799,7 @@ link:../commands-a-z/save-controller-nvsram-file.html["Controller NVSRAM speiche
 
 link:../commands-a-z/set-asyncmirrorgroup.html["Legen Sie die asynchrone Spiegelgruppe fest"]
 
-link:../commands-a-z/set-storagearray-autosupport-schedule.html["Festlegen eines AutoSupport Nachrichtenüberfassungsplans (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Legen Sie den Zeitplan für die Erfassung von AutoSupport-Nachrichten fest"]
 
 link:../commands-a-z/set-controller-ntpservers.html["Legen Sie die Controller-NTP-Einstellungen fest"]
 
@@ -808,7 +813,7 @@ link:../commands-a-z/set-storagearray-localusername.html["Lokales Benutzerpasswo
 
 link:../commands-a-z/set-tray-serviceallowedindicator.html["Legen Sie die Anzeige für die zulässige Aktion für die Fachwartung fest"]
 
-link:../commands-a-z/show-storagearray-autosupport.html["Zeigen der AutoSupport Konfiguration (für E2800 oder E5700 Storage-Arrays)"]
+link:../commands-a-z/show-storagearray-autosupport.html["Zeigt die AutoSupport-Konfiguration an"]
 
 link:../commands-a-z/show-blockedeventalertlist.html["Blockierte Ereignisse anzeigen"]
 
@@ -822,11 +827,11 @@ link:../commands-a-z/show-allsnmpusers.html["Zeigt den SNMPv3-USM-Benutzer an"]
 
 link:../commands-a-z/show-syslog-summary.html["Zeigt die Syslog-Konfiguration an"]
 
-link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Festlegen der Bereitstellungsmethode für die E-Mail (SMTP) (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-email-smtp-delivery-method.html["Geben Sie die SMTP-Bereitstellungsmethode (E-Mail) an"]
 
-link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Angabe der AutoSupport HTTP(S)-Bereitstellungsmethode (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/set-autosupport-https-delivery-method.html["Geben Sie die AutoSupport-HTTP(S)-Bereitstellungsmethode an"]
 
-link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen von AutoSupport-Bereitstellungseinstellungen (für einzelne E2800 oder E5700 Arrays)"]
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Testen Sie die AutoSupport-Bereitstellungseinstellungen"]
 
 link:../commands-a-z/start-emailalert-test.html["Konfiguration von E-Mail-Warnmeldungen testen"]
 

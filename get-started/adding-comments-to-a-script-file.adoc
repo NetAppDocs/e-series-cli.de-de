@@ -7,10 +7,15 @@ summary: Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Ze
 = Fügen Sie Kommentare zu einer Skriptdatei hinzu
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen oder einem Befehl. Sie können Kommentare zu einer Skriptdatei auf drei Arten hinzufügen:
+[role="lead"]
+Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen oder einem Befehl. Sie können auf drei Arten Kommentare zu einer Skriptdatei hinzufügen.
+
+
+
+== Methoden zum Hinzufügen von Kommentaren zu einer Skriptdatei
 
 * Text nach zwei Schrägstrichen hinzufügen (`//` ) Als Kommentar, bis ein Zeilenende erreicht ist. Wenn die Skript-Engine nach der Verarbeitung eines Kommentars kein Zeilenende im Skript findet, wird eine Fehlermeldung angezeigt und der Skriptvorgang beendet. Dieser Fehler tritt normalerweise auf, wenn ein Kommentar am Ende eines Skripts platziert wird und Sie vergessen haben, die *Enter*-Taste zu drücken.
 +

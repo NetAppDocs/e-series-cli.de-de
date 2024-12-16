@@ -7,7 +7,7 @@ summary: Mit dem Befehl „Storage Array loginBanner speichern“ können Sie ei
 = Anmeldebanner für Storage Array speichern
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Der `save storageArray loginBanner` Mit Befehl können Sie ein Anmeldebanner auf
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für ein einzelnes E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
 
 
 
@@ -29,7 +29,7 @@ Ein Benutzer mit einer beliebigen Rolle kann diesen Befehl ausführen.
 
 == Syntax
 
-[listing]
+[source, cli]
 ----
 save storageArray loginBanner file="file_name"
 ----
