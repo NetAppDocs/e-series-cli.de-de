@@ -2,16 +2,16 @@
 permalink: commands-category/auto-support-commands.html 
 sidebar: sidebar 
 keywords: support, commands, bundle, collection, autosupport 
-summary: Auto-Support-Befehle 
+summary: AutoSupport-Befehle 
 ---
-= Auto-Support-Befehle
+= AutoSupport-Befehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Die folgende Liste von Auto-Support-Befehlen steht für Ihr E-Series Storage-System zur Verfügung.
+Die folgende Liste von AutoSupport Befehlen steht für Ihr E-Series Storage-System zur Verfügung.
 
 
 

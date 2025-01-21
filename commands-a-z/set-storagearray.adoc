@@ -436,7 +436,7 @@ Mit Ausnahme des `isnsRegistration`, Wenn Sie diesen Befehl verwenden, können S
 
 
 
-== Auto Support-Daten
+== AutoSupport-Daten
 
 [NOTE]
 ====
