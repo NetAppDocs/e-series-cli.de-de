@@ -47,7 +47,7 @@ link:../commands-a-z/save-storagearray-supportdata.html["Speichern Sie die Suppo
 
 
 
-== AutoSupport-Befehle für E4000, EF300, EF400, E2800 und E5700
+== AutoSupport-Befehle für E4000, EF300, EF600, E2800 und E5700
 
 link:../commands-a-z/set-autosupport-dispatch-limit.html["Legen Sie die maximale AutoSupport-Entsendungsgröße fest"]
 

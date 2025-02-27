@@ -7573,7 +7573,6 @@
   <block id="0c691b598eb5dcf4dbe4aee57abd7fce" category="paragraph">Eine detaillierte Fehlerberichterstellung unter der CLI funktioniert wie folgt:</block>
   <block id="7ab16c582be12bf2ea6a9bcbf26ef849" category="summary">SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basierte Version der CLI (auch als sichere CLI oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.</block>
   <block id="3bcaed463dcace2a5d7df8ac788e2faa" category="paragraph">SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basierte Version der CLI (auch als „sichere CLI“ oder SMcli bezeichnet) direkt über den SANtricity System Manager herunterzuladen und zu installieren.</block>
-  <block id="326cbd85dc5f285361de38f20d31c9df" category="paragraph">Die Version SMcli kann von den Controllern E4000, EF600, EF300, E5700, EF570, E2800 und EF280 heruntergeladen werden. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .</block>
   <block id="afbe36b824d95e989a52e9001491c721" category="summary">Bei ausgeführten Befehlen werden Exit-Status zurückgegeben. In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt.</block>
   <block id="4e0440694d3b4fa172c69a3cac707e21" category="paragraph">Bei ausgeführten Befehlen werden Exit-Status zurückgegeben. In der folgenden Tabelle sind die Ausgabestatus aufgeführt, die zurückgegeben werden können, sowie die Bedeutung der einzelnen Status.</block>
   <block id="20b10ae58c66c5b5927a513b2111c0c0" category="section-title">Statusdefinitionen beenden</block>
@@ -7615,5 +7614,6 @@
   <block id="d0a774826d0463e72211475dbf19c749" category="section-title">AutoSupport-Daten</block>
   <block id="e12f84520db4494b5d41a3376aaf2efe" category="summary">AutoSupport-Befehle</block>
   <block id="f92f6d9fbe12679709b79badc45794e4" category="paragraph">Die folgende Liste von AutoSupport Befehlen steht für Ihr E-Series Storage-System zur Verfügung.</block>
-  <block id="3668b2be3ec33e7453152c010b5ad26a" category="section-title">AutoSupport-Befehle für E4000, EF300, EF400, E2800 und E5700</block>
+  <block id="7cfe927cc93acde3fd26ff2626d6a30c" category="section-title">AutoSupport-Befehle für E4000, EF300, EF600, E2800 und E5700</block>
+  <block id="4446202efb248928e4f489743b194e56" category="paragraph">Die SMcli kann heruntergeladen werden und ist für die Controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C und EF600C erhältlich. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .</block>
 </blocks>

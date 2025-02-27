@@ -17,7 +17,7 @@ SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basie
 
 == 11.60 und neuere herunterladbare SMcli-Befehlszeilenparameter
 
-Die Version SMcli kann von den Controllern E4000, EF600, EF300, E5700, EF570, E2800 und EF280 heruntergeladen werden. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .
+Die SMcli kann heruntergeladen werden und ist für die Controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C und EF600C erhältlich. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .
 
 
 NOTE: Eine Java Runtime Environment (JRE), Version 8 und höher, muss auf dem Managementsystem verfügbar sein, auf dem Sie die CLI-Befehle ausführen möchten.
