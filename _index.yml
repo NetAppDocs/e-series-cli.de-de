@@ -4,8 +4,8 @@ indexpage:
   summary: Beschreibt die Syntax und die Verwendung von SANtricity-Befehlen.
   keywords: santricity, syntax, commands, user assistance
   lead: Willkommen bei der integrierten CLI-Benutzerunterstützung von SANtricity System
-    Manager. Hier erfahren Sie, wie Sie Ihr Storage-Array über die Befehlszeilenschnittstelle
-    (CLI) konfigurieren, überwachen und optimieren.“
+    Manager. Hier erhalten Sie Informationen zur Konfiguration, Überwachung und Optimierung
+    Ihres Speicher-Arrays über die Befehlszeilenschnittstelle (CLI).
   tiles:
   - title: Los geht's
     links:

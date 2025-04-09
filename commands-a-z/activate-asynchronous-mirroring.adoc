@@ -28,7 +28,7 @@ Dieser Befehl ist nur für die asynchrone Spiegelung über Fibre Channel verfüg
 
 == Rollen
 
-Zur Ausführung dieses Befehls auf einem E400-, E2800-, E5700-, EF600- oder EF300-Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
+Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
 
 
 
