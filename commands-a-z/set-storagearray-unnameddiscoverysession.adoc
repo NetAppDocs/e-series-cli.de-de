@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, unnamed, discovery, session 
 summary: Mit dem Befehl Set storageArray unnameDiscoverySession kann das Storage Array an nicht genannten Discovery Sessions teilnehmen. 
 ---
-= Legen Sie die nicht benannte Ermittlungssitzung für das Speicher-Array fest
+= Unbenannte Erkennungssitzung für Speicherarray festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

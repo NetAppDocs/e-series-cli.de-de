@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, volume, parity 
 summary: Mit dem Befehl zum Überprüfen der Volume-Parität wird ein Volume auf Paritäts- und Medienfehler geprüft und anschließend die Ergebnisse der Prüfung in eine Datei geschrieben. 
 ---
-= Prüfen Sie die Volume-Parität
+= Volume-Parität prüfen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

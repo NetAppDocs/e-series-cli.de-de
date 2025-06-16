@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, disk pool 
 summary: Der Befehl show diskPool gibt Informationen zu einem Laufwerk-Pool zurück. 
 ---
-= Zeigen Sie den Festplattenpool an
+= Datenträgerpool anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

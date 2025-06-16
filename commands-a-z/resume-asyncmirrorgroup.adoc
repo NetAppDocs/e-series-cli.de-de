@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, asynchronous, mirror, group 
 summary: Mit dem Befehl „Async MirrorGroup“ wird die Datenübertragung zwischen allen gespiegelten Paaren in einer asynchronen Spiegelgruppe fortgesetzt. 
 ---
-= Setzen Sie die asynchrone Spiegelgruppe fort
+= Asynchrone Spiegelgruppe fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

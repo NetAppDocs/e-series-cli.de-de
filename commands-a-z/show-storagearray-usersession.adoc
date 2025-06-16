@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, storage, array, user, session 
 summary: Mit dem Befehl show storageArray userSession können Sie den Sitzungszeitzeitraum für System Manager anzeigen. 
 ---
-= Anzeige der Benutzersitzung des Speicher-Arrays
+= Speicherarray-Benutzersitzung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

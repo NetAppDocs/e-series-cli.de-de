@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, asynchronous, mirror group 
 summary: Mit dem Befehl delete async MirrorGroup werden eine oder mehrere asynchrone Spiegelgruppen aus dem lokalen Storage-Array und dem Remote-Storage-Array gelöscht. 
 ---
-= Asynchrone Spiegelgruppe löschen
+= Asynchrone Spiegelgruppe löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

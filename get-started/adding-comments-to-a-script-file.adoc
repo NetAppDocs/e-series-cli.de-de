@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add, comments, script file 
 summary: Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen oder einem Befehl. Sie können auf drei Arten Kommentare zu einer Skriptdatei hinzufügen. 
 ---
-= Fügen Sie Kommentare zu einer Skriptdatei hinzu
+= Kommentare zu einer SANtricity CLI-Skriptdatei hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

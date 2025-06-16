@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, state, capture 
 summary: Mit dem Befehl Storage Array stateCapture speichern wird die Statuserfassung eines Speicherarrays in einer Datei gespeichert. 
 ---
-= Speicherarray-Statuserfassung speichern
+= Speichern der Speicherarray-Statuserfassung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

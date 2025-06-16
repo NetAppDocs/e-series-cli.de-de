@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, image, rollback 
 summary: Mit dem Befehl „Stopp SnapImage Rollback“ wird ein Rollback-Vorgang für Snapshot Images angehalten, der durch den Befehl „Start SnapImage Rollback“ initiiert wurde. 
 ---
-= Stoppen Sie das Rollback von Snapshot-Bildern
+= Rollback des Snapshot-Images stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, asynchronous mirror group, consistency 
 summary: Der Befehl Check async cMirrorGroup recoryConsistency erzeugt einen Bericht, der auf der Analyse der Daten im zugrunde liegenden Repository-Volume der angegebenen asynchronen Spiegelgruppe basiert. 
 ---
-= Überprüfen Sie die Konsistenz der asynchronen Spiegelgruppe
+= Konsistenz der asynchronen Spiegelgruppe prüfen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, host, port 
 summary: 'Der Befehl Create hostPort erstellt eine neue Host-Port-Identifikation auf einem Host Bus Adapter (HBA) oder auf einem Host Channel Adapter (HCA).' 
 ---
-= Erstellen Sie den Host Port
+= Host-Port erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

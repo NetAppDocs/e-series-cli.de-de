@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, controller, trusted, certificate, command, install, web, servers, validate, array, roles, context 
 summary: Der Download-Controller TrustedCertificate Befehl installiert die vertrauenswürdigen CA-Zertifikate auf den Web-Servern der Controller, um das von LDAP-Server signiertes Zertifikat zu validieren. 
 ---
-= Installieren Sie vertrauenswürdige CA-Zertifikate
+= Installieren Sie vertrauenswürdige CA-Zertifikate – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

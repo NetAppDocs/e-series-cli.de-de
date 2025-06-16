@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, firmware, inventory 
 summary: Der Befehl storageArray firmwareInventory speichern speichert einen Bericht in einer Datei aller Firmware, die derzeit auf dem Speicher-Array ausgeführt wird. 
 ---
-= Speicherarray-Firmware-Inventar speichern
+= Speichern des Firmware-Inventars des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

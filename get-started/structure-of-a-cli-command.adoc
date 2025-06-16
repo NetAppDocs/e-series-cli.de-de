@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: structure, cli, commands 
 summary: Die CLI-Befehle bestehen in Form eines Befehls Wrapper und Elementen, die in den Wrapper integriert sind. 
 ---
-= Struktur der CLI-Befehle
+= Erfahren Sie mehr über die Struktur der SANtricity CLI-Befehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, state 
 summary: Mit dem Befehl Laufwerk operationalState festlegen wird ein Laufwerk auf den Fehlerzustand gesetzt. 
 ---
-= Legen Sie den Laufwerksstatus fest
+= Laufwerksstatus festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: activate, asynchronous, mirroring 
 summary: Mit dem Befehl activate storageArray Feature wird die Funktion Asynchronous Mirroring aktiviert. 
 ---
-= Aktivieren Sie die asynchrone Spiegelung
+= Asynchrone Spiegelung aktivieren - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

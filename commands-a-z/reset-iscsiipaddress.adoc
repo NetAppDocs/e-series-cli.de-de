@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, iscsi, ip address 
 summary: Mit dem Befehl Reset iscsiIpAddress wird die IP-Adresse des Remote-Speicher-Arrays zurückgesetzt, um die Verbindung zum lokalen Speicher-Array wiederherzustellen. 
 ---
-= ISCSI-IP-Adresse zurücksetzen
+= iSCSI-IP-Adresse zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

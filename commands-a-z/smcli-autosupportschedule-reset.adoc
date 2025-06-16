@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, autosupport, message, collection, schedule 
 summary: Mit dem Befehl SMcli autoSupportSchedule RESET werden die täglichen und wöchentlichen Zeiten und Wochentage, an denen AutoSupport Meldungen gesendet werden, zurückgesetzt. Sie können zufällige Standardwerte akzeptieren, die von der Verwaltungssoftware generiert wurden, oder Sie können Werte mit diesem Befehl angeben. 
 ---
-= Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen
+= Zeitplan für die Nachrichtenerfassung von AutoSupport zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

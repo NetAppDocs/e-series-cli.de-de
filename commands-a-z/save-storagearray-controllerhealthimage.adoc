@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, controller, health, image 
 summary: Der Befehl Storage Array ControllerHealthImage speichern speichert ein Controller-Zustandsabbild in einer bestimmten Datei auf einem Host für Storage-Arrays, die die Funktion für das Controller-Zustandsabbild unterstützen. 
 ---
-= Speichern des Storage Array Controller-Zustandsabbilds
+= Integritätsabbild des Speicherarray-Controllers speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

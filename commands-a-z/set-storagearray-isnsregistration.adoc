@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, registration 
 summary: 'Mit dem Befehl Set storageArray isnsRegistration können Sie ein Speicher-Array entweder auf einem IPv4- oder auf einem IPv6 Internet Storage Name Service (iSNS)-Server auflisten.' 
 ---
-= ISNS-Registrierung für Speicher-Array festlegen
+= iSNS-Registrierung des Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

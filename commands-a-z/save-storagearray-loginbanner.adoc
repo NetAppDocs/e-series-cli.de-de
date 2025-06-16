@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, login, banner 
 summary: Mit dem Befehl „Storage Array loginBanner speichern“ können Sie ein Anmeldebanner auf Ihrem lokalen Computer speichern. Der Bannertext kann eine Benachrichtigung und eine Einwilligungsmeldung enthalten, die Benutzern vor der Einrichtung von Sitzungen angezeigt wird. 
 ---
-= Anmeldebanner für Storage Array speichern
+= Anmeldebanner für Speicherarray speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, syslog, test 
 summary: Mit dem Befehl „Syslog-Test starten“ von storageArray starten können Sie die Kommunikation zwischen dem Storage-Array und einem Syslog-Server testen. 
 ---
-= Starten des Syslog-Tests des Storage-Arrays
+= Starten Sie den Syslog-Test des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

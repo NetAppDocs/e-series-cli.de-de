@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, directory server 
 summary: Mit dem Befehl create storageArray directoryServer können Sie einen neuen Verzeichnisserver hinzufügen, der zur Authentifizierung und Autorisierung von Benutzern verwendet werden soll. 
 ---
-= Verzeichnisserver für Speicher-Array erstellen
+= Speicherarray-Verzeichnisserver erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

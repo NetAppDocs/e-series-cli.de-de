@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename, snapshot, volume 
 summary: Der Befehl set SnapVolume benennt ein vorhandenes Snapshot-Volume neu. 
 ---
-= Benennen Sie das Snapshot-Volume um
+= Snapshot-Volume umbenennen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

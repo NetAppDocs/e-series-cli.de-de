@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, vaai 
 summary: 'Der Befehl Set storageArray vaaiEnabled aktiviert oder deaktiviert die VMware vStorage API Array-Architektur (VAAI) für ein Storage-Array.' 
 ---
-= VAAI aktivieren oder deaktivieren
+= VAAI aktivieren oder deaktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

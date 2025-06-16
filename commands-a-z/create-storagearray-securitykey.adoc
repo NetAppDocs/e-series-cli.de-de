@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, security, key 
 summary: 'Der Befehl create storageArray securityKey erstellt oder ändert einen neuen Sicherheitsschlüssel für ein Storage Array mit vollständiger Festplattenverschlüsselung (Full Disk Encryption, FDE).' 
 ---
-= Sicherheitsschlüssel für Speicher-Array erstellen
+= Sicherheitsschlüssel für Speicherarrays erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

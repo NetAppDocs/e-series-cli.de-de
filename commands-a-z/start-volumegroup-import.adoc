@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, import 
 summary: Mit dem Befehl „Start Volume Volume Group Import“ wird eine Volume-Gruppe in einen vollständigen Zustand verschoben, um eine neu eingeführte Volume-Gruppe dem neuen Storage Array zur Verfügung zu stellen. 
 ---
-= Starten Sie den Import der Volume-Gruppe
+= Importieren von Volumegruppen starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

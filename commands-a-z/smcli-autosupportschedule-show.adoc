@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, autosupport, message, collection, schedule 
 summary: Der Befehl SMcli -autoSupportSchedule show zeigt den Zeitplan für die Erfassung und Verarbeitung von täglichen und wöchentlichen AutoSupport Meldungen an. 
 ---
-= Zeigen Sie den Zeitplan für die Erfassung von AutoSupport-Meldungen an
+= Zeitplan für die Nachrichtenerfassung von AutoSupport anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

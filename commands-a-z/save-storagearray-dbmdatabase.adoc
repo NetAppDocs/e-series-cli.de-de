@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, dbm, database 
 summary: Der Befehl save storageArray dbmDatabase sichert RAID-Konfigurationsdaten oder alle Daten in einer Datei auf dem Host. Sie können mehrere Datenstandorte und Controller angeben. 
 ---
-= Speicher-Array-DBM-Datenbank speichern
+= Speicherarray-DBM-Datenbank speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

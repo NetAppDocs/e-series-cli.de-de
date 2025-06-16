@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, member, volume, consistency group 
 summary: Mit dem Befehl set Consistency Group wird ein Mitglied-Volume aus einer vorhandenen Snapshot Consistency Group entfernt. 
 ---
-= Entfernen Sie das Mitglied-Volume aus der Konsistenzgruppe
+= Mitgliedsvolume aus Konsistenzgruppe entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

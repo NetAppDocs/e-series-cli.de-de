@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, ca, certificates 
 summary: Der Befehl „Controller speichern caCertificate“ ruft die installierten CA-Zertifikate vom angegebenen Controller ab. In den abgerufenen Zertifikaten enthalten sind alle angeforderten CA-Zertifikate vom Web-Server des Controllers. 
 ---
-= Abrufen der installierten CA-Zertifikate
+= Installierte CA-Zertifikate abrufen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

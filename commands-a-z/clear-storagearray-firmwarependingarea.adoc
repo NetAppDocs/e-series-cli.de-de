@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, firmware, pending, area 
 summary: Der Befehl clear storageArray firmwarePendingArea löscht ein Firmware-Image oder NVSRAM-Werte, die Sie zuvor aus dem ausstehenden Area Buffer heruntergeladen haben. 
 ---
-= Löschen Sie den ausstehenden Bereich der Speicher-Array-Firmware
+= Ausstehender Bereich der Speicherarray-Firmware löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

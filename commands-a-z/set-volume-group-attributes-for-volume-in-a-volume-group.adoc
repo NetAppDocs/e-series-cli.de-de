@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, attributes, group 
 summary: Mit dem Befehl Set Volume werden die Eigenschaften für Volumes in einer Volume-Gruppe definiert. 
 ---
-= Legen Sie Volume-Attribute für ein Volume in einer Volume-Gruppe fest
+= Volumeattribute für ein Volume in einer Volumegruppe festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

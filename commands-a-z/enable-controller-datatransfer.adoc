@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, controller, datatransfer, command, revive, quiesced, running, diagnostics, role, syntax, parameter, firmware level 
 summary: Mit dem Befehl „Controller dataTransfer aktivieren“ wird ein Controller wiederbelebt, der während der Ausführung der Diagnose stillgelegt wurde. 
 ---
-= Controller-Datentransfer aktivieren
+= Controller-Datenübertragung aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

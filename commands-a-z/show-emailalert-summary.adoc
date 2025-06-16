@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, email, alert, configuration 
 summary: Mit dem Befehl show emailAlert summary werden die Konfigurationsinformationen für E-Mail-Warnmeldungen angezeigt. 
 ---
-= Konfiguration von E-Mail-Warnmeldungen anzeigen
+= Konfiguration für E-Mail-Benachrichtigungen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

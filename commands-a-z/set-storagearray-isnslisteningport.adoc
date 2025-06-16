@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, server, listen, port 
 summary: Der Befehl Set storageArray isnsListeningPort setzt den iSNS Server Listening Port. 
 ---
-= Stellen Sie den iSNS-Server-Listening-Port des Speicherarrays ein
+= Abhörport des iSNS-Servers des Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

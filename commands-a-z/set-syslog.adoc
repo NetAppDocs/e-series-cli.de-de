@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure, syslog, set 
 summary: Der Befehl set syslog konfiguriert die Syslog-Alarminformationen. Sie können den Ereignismonitor so konfigurieren, dass Alarme an den Syslog-Server gesendet werden, wenn ein alertabbares Ereignis auftritt. 
 ---
-= Konfigurieren Sie die Syslog-Einstellungen
+= Syslog-Einstellungen konfigurieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configuration, commands, alert, embedded 
 summary: Befehle für die Meldungskonfiguration 
 ---
-= Befehle für die Meldungskonfiguration
+= SANtricity CLI-Befehle zur Alarmkonfiguration
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

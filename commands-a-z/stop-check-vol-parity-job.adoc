@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, check, volume, parity, job, 
 summary: Der Befehl stop Check Volume Parity Job stoppt eine laufende Volume-Paritätsprüfung. 
 ---
-= Stoppen Sie die Überprüfung des Volume Parity Jobs
+= Stoppen Sie den Job zur Überprüfung der Volumeparität – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

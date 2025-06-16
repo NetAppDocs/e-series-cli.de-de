@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, key, management, certificate, command, remove, install, external 
 summary: Der Befehl delete storageArray keyManagementCertificate entfernt das installierte externe Schlüsselverwaltungs-Zertifikat aus dem Speicher-Array. 
 ---
-= Entfernen des installierten externen Verschlüsselungsmanagementzertifikats
+= Installiertes externes Schlüsselverwaltungszertifikat entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

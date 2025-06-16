@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, service, action, allowed, indicator 
 summary: Mit dem Befehl Laufwerk einstellen serviceAllowedIndicator wird die Anzeigeleuchte Wartungsmaßnahme zulässig an einem Laufwerk oder Laufwerken in Laufwerksfächern, die die Funktion Wartungszuzulassen unterstützen, ein- oder ausgeschaltet. 
 ---
-= Legen Sie die Anzeige für die zulässige Laufwerkswartung fest
+= Indikator für zulässige Laufwerksdienstaktion festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, login, banner 
 summary: Mit dem Befehl set storageArray loginBanner können Sie eine Textdatei hochladen, die als Anmeldebanner verwendet werden soll. Der Bannertext kann eine Empfehlung und eine Einwilligungsmeldung enthalten, die Benutzern angezeigt wird, bevor sie Sitzungen in SANtricity System Manager einrichten oder bevor sie Befehle ausführen. 
 ---
-= Anmeldebanner für Storage-Arrays festlegen
+= Anmeldebanner für Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

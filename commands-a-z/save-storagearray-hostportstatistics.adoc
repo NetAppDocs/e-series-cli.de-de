@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, host, port, statistics 
 summary: Mit dem Befehl save storageArray hostPortStatistics werden die Host-Port-Statistiken des Speicherarrays gespeichert. 
 ---
-= Speichern Sie die Host-Port-Statistiken des Speicher-Arrays
+= Speicherarray-Hostportstatistiken speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

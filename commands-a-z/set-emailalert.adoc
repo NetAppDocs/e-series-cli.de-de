@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure, email, alert, set 
 summary: Mit dem Befehl set emailAlert wird die E-Mail so konfiguriert, dass sie eine E-Mail an einen bestimmten technischen Support oder eine bestimmte Organisation sendet. Die E-Mail-Benachrichtigung enthält eine Zusammenfassung des Ereignisses, detaillierte Informationen über den betroffenen Speicher und Kontaktinformationen des Kunden. 
 ---
-= Konfigurieren Sie Einstellungen für E-Mail-Warnmeldungen
+= E-Mail-Benachrichtigungseinstellungen konfigurieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

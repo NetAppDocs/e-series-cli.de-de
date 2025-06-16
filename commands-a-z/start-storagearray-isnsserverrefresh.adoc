@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, isns, server, refresh 
 summary: Mit dem Befehl „Storage Array starten“ isnsServerRefresh wird eine Aktualisierung der Netzwerkaddress-Informationen für den iSNS-Server initiiert. 
 ---
-= Starten Sie die Aktualisierung des Speicher-Array-iSNS-Servers
+= Starten Sie die Aktualisierung des Speicherarray-iSNS-Servers – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

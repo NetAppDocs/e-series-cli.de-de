@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, ssd cache 
 summary: Mit dem Befehl ssdCache suspendieren wird die Zwischenspeicherung für alle Volumes, die den SSD-Cache nutzen, vorübergehend angehalten. 
 ---
-= Unterbrechen Sie den SSD-Cache
+= SSD-Cache anhalten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

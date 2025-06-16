@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, tray, locate 
 summary: Mit dem Befehl Start Tray Locate wird ein Fach durch Einschalten der Anzeigeleuchte lokalisiert. 
 ---
-= Start Fach suchen
+= Tray-Suche starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add array label, supported, syntax, parameters, minimum firmware level 
 summary: Mit dem Befehl Array-Bezeichnung hinzufügen können Sie der Konfiguration ein Speicher-Array mit einer benutzerdefinierten Bezeichnung hinzufügen. Auf diese Weise können spätere Befehle das Speicher-Array anhand der benutzerdefinierten Bezeichnung und nicht anhand von IP-Adresse oder Hostname adressieren. 
 ---
-= Fügen Sie eine Array-Bezeichnung hinzu
+= Array-Beschriftung hinzufügen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

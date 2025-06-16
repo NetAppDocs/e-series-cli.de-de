@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, attribute 
 summary: Mit dem Befehl Fach einstellen werden benutzerdefinierte Attribute für ein Fach festgelegt 
 ---
-= Legen Sie das Fach-Attribut fest
+= Tray-Attribut festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

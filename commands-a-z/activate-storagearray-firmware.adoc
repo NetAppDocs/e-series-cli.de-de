@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: activate, storage array, firmware, syntax, parameter, minimum, level 
 summary: Mit dem Befehl activate storageArray Firmware wird die Firmware aktiviert, die Sie zuvor in den ausstehenden Konfigurationsbereich auf den Controllern im Speicher-Array heruntergeladen haben. 
 ---
-= Aktivieren der Speicher-Array-Firmware
+= Speicherarray-Firmware aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

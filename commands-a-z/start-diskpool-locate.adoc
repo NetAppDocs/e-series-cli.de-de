@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, locate 
 summary: Der Befehl „Start diskPool Locate“ identifiziert die Laufwerke, die logisch gruppiert sind, um den angegebenen Laufwerk-Pool zu bilden, indem die Kontrollleuchten auf den Laufwerken blinkt. 
 ---
-= Starten Sie den Datenträgerpool suchen
+= Starten Sie die Datenträgerpoolsuche – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

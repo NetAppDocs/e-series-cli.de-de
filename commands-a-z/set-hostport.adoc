@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, port 
 summary: Der Befehl set hostPort ändert die Eigenschaften für einen Host-Port. 
 ---
-= Legen Sie den Host-Port fest
+= Host-Port festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

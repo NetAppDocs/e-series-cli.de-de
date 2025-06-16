@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: repair, data, parity 
 summary: Der Befehl Reparieren Data Parity repariert Datenparitätsfehler. 
 ---
-= Datenparität Reparieren
+= Datenparität reparieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

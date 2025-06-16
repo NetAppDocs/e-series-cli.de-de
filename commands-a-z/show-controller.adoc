@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, controller 
 summary: Der Befehl show Controller gibt Informationen zu einem Controller aus. 
 ---
-= Zeigen Sie den Controller an
+= Controller anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

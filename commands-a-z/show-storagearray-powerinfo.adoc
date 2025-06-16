@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, power, information 
 summary: Der Befehl show storageArray powerInfo gibt Informationen über den Energieverbrauch des gesamten Speicher-Arrays und jedes Tray im Speicher-Array zurück. 
 ---
-= Zeigt Informationen zur Stromversorgung des Speicherarrays an
+= Strominformationen zum Speicherarray anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

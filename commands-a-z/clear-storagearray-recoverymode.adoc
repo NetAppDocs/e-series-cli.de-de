@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, recovery, mode 
 summary: Der Befehl „RecoveryMode löschen“ zwingt ein Storage-Array dazu, den Wiederherstellungsmodus zu beenden. 
 ---
-= Löschen Sie den Wiederherstellungsmodus für Speicher-Arrays
+= Wiederherstellungsmodus des Speicherarrays löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

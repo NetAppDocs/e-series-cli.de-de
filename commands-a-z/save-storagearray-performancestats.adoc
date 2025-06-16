@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, performance, statistics 
 summary: Der Befehl „Save storageArray performceStats“ speichert die Leistungsstatistiken in einer Datei. 
 ---
-= Speichern Sie Performance-Statistiken für das Storage Array
+= Leistungsstatistiken für Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

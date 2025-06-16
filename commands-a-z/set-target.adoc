@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, target, properties 
 summary: Der Befehl set target ändert die Eigenschaften für ein iSCSI/iSER-Ziel, einschließlich Authentifizierungsmethode und Alias-Name. 
 ---
-= Legen Sie die Zieleigenschaften fest
+= Zieleigenschaften festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

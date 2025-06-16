@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, array, label 
 summary: Mit dem Befehl Array-Beschriftung entfernen können Sie eine benutzerdefinierte Bezeichnung für ein Speicher-Array entfernen. 
 ---
-= Entfernen Sie die Array-Beschriftung
+= Array-Bezeichnung entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

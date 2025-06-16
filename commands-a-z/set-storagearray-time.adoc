@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, time 
 summary: Mit dem Befehl Set storageArray Time werden die Uhren auf beiden Controllern in einem Storage Array festgelegt, indem die Controller-Uhren mit der Uhr des Hosts synchronisiert werden, von dem Sie diesen Befehl ausführen. 
 ---
-= Legen Sie die Zeit für das Storage-Array fest
+= Speicherarray-Zeit festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

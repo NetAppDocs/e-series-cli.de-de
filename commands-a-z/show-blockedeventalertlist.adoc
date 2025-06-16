@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, blocked, events 
 summary: Der Befehl Show blockedEventAlertList gibt eine Liste von Ereignissen zurück, die derzeit durch den Befehl set blockEventAlert blockiert sind. Bei den Ereignissen in dieser Liste handelt es sich um Ereignisse, die keine Benachrichtigungen senden, die Sie mit den Alarmterminals und -Parametern konfiguriert haben, d. h. E-Mail-, Syslog- und Trap-Benachrichtigungen. 
 ---
-= Blockierte Ereignisse anzeigen
+= Blockierte Ereignisse anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, events 
 summary: Mit dem Befehl „Speicherarray warningEvents speichern“ werden Ereignisse aus dem großen Ereignisprotokoll in einer Datei gespeichert. 
 ---
-= Speichern von Speicher-Array-Ereignissen
+= Speicherarray-Ereignisse speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, tray, locate 
 summary: Mit dem Befehl zum Suchen von Ablagefach wird die Anzeigeleuchte auf dem Fach ausgeschaltet, das durch den Befehl zum Suchen in der Startablage eingeschaltet wurde. 
 ---
-= Stellen Sie die Position des Fachs ein
+= Tray-Lokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

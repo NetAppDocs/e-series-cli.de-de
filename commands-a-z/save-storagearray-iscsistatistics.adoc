@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, iscsi, statistics 
 summary: Der Befehl „Save storageArray iscsiStatistics“ speichert die iSCSI-Leistungsstatistiken des Speicherarrays in einer Datei. 
 ---
-= Speichern Sie iSCSI-Statistiken für Speicher-Arrays
+= Speichern von iSCSI-Statistiken des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

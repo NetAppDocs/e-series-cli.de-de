@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, attributes 
 summary: Der Befehl set snapGroup definiert die Eigenschaften für eine Snapshot-Gruppe. 
 ---
-= Legen Sie die Attribute für Snapshot-Gruppen fest
+= Snapshot-Gruppenattribute festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

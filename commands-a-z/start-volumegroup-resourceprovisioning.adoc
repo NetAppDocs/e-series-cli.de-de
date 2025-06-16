@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, resource, provision 
 summary: Der Befehl „Start VolumeGroup resourceProvisioning“ ermöglicht die Ressourcenbereitstellung für eine bestimmte Volume-Gruppe und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume der Volume-Gruppe. Für die Ressourcenbereitstellung müssen alle Laufwerke in der Volume-Gruppe die DELBE-Funktion von NVMe unterstützen. 
 ---
-= Starten Sie Die Ressourcenbereitstellung Der Volume-Gruppe
+= Starten Sie die Bereitstellung von Volume-Gruppenressourcen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

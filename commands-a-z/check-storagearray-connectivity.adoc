@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, storage array, connectivity 
 summary: Der Befehl „Check storageArray Connectivity“ überprüft, ob das lokale Speicher-Array und das Remote-Speicher-Array über einen Kommunikationspfad verfügen und zeigt die Verbindungsdetails zwischen dem lokalen und dem Remote-Speicher-Array an. 
 ---
-= Prüfen Sie die Verbindung zum Speicher-Array
+= Überprüfen der Speicherarray-Konnektivität – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

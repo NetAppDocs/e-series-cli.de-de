@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, snapshot, volumes 
 summary: Der Befehl show SnapVolume gibt Informationen über ein oder mehrere Snapshot-Volumes zurück. 
 ---
-= Zeigen Sie Snapshot Volumes an
+= Snapshot-Volumes anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

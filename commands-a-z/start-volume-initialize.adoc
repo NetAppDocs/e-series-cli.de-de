@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: initialize, thin volume 
 summary: Der Befehl Start Volume Initialize initialisiert oder initialisiert ein Thin Volume neu. 
 ---
-= Thin Volume initialisieren
+= Thin Volume initialisieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

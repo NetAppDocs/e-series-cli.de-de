@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, repository, consistency 
 summary: Der Befehl Check repositoryConsistency erzeugt einen Bericht, der auf der Analyse der Daten im zugrunde liegenden Repository-Volume eines bestimmten Objekts basiert. 
 ---
-= Prüfen Sie die Repository-Konsistenz
+= Repository-Konsistenz prüfen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

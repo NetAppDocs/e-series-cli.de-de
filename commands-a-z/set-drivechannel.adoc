@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, channel, status 
 summary: Der Befehl set driveChannel definiert die Leistung des Antriebskanals. 
 ---
-= Den Status des Antriebskanals festlegen
+= Laufwerkskanalstatus festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

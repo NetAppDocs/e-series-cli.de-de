@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive, download, progress 
 summary: Der Befehl show allDrives downloadProgress gibt den Status von Firmware-Downloads für die Laufwerke zurück, die durch den Befehl heruntergeladene Laufwerk-Firmware oder den Befehl storageArray driveFirmware herunterladen gerichtet werden. 
 ---
-= Fortschritt des Laufwerks-Downloads anzeigen
+= Download-Fortschritt des Laufwerks anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

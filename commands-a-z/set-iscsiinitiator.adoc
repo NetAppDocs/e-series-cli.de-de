@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iscsi, initiator 
 summary: Der Befehl set iscsiInitiator setzt die Attribute für einen iSCSI-Initiator. 
 ---
-= Setzen Sie den iSCSI-Initiator
+= iSCSI-Initiator festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

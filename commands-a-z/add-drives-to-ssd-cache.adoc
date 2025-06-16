@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add drives ssd cache, supported arrays, syntax, parameters, minimum firmware level 
 summary: 'Der Befehl set ssdCache erhöht die Kapazität eines vorhandenen SSD-Caches durch Hinzufügen weiterer Solid State Disks (SSDs).' 
 ---
-= Fügen Sie Laufwerke zum SSD-Cache hinzu
+= Laufwerke zum SSD-Cache hinzufügen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

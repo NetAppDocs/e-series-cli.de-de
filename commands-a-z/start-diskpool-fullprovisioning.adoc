@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, full, provision 
 summary: Mit dem Befehl „Start diskPool fullProvisioning“ wird ein voller Bereitstellungsvorgang für alle Volumes im Disk Pool gestartet und die Ressourcenbereitstellung im Disk Pool wird optional deaktiviert. 
 ---
-= Starten Sie Disk Pool Full Provisioning
+= Vollständige Bereitstellung des Datenträgerpools starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

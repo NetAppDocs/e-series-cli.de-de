@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, certificates 
 summary: Mit dem Befehl Zertifikate löschen können Sie ein Zertifikat aus dem CLI-Paket-Vertrauensspeicher löschen. 
 ---
-= Löschen von Zertifikaten
+= Zertifikate löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

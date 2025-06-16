@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iscsi, target, properties 
 summary: Der Befehl set iscsiTarget definiert Eigenschaften für ein iSCSI-Ziel. 
 ---
-= Legen Sie die iSCSI-Zieleigenschaften fest
+= iSCSI-Zieleigenschaften festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

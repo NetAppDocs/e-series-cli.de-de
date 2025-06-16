@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, thin, volume 
 summary: Der Befehl show Volume gibt den Erweiterungsverlauf bzw. die verbrauchte Kapazität für das angegebene Thin-Volume oder die angegebenen Volumes zurück. 
 ---
-= Thin Volume anzeigen
+= Dünnes Volumen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

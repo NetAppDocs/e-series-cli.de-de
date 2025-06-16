@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, drive, firmware, download 
 summary: Mit dem Befehl stoppspeicherArray driveFirmwareDownload wird ein Firmware-Download auf die Laufwerke in einem Speicher-Array gestoppt, das mit dem Befehl herunterladenstorageArray driveFirmware gestartet wurde. 
 ---
-= Beenden Sie den Download der Speicher-Array-Laufwerk-Firmware
+= Download der Firmware für Speicher-Array-Laufwerke stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

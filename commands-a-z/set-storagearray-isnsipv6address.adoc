@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, server, ipv6, address 
 summary: Mit dem Befehl Set storageArray isnses6Address wird die IPv6-Adresse für den iSNS-Server festgelegt. 
 ---
-= IPv6-Adresse des Speicher-Array iSNS-Servers festlegen
+= IPv6-Adresse des iSNS-Servers des Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

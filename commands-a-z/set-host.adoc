@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host 
 summary: Der Befehl Set Host weist einen Host einer Host-Gruppe zu oder verschiebt einen Host zu einer anderen Hostgruppe. 
 ---
-= Legen Sie den Host fest
+= Host festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, controller, health, image 
 summary: Der Befehl „Storage Array ControllerHealthImage Controller starten“ erstellt ein Storage-Array Controller-Zustandsabbild auf Storage Arrays, die das Controller-Zustandsabbild unterstützen. 
 ---
-= Starten des Storage-Array-Controller-Integritätsabbilds
+= Starten Sie das Integritätsimage des Speicherarray-Controllers – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

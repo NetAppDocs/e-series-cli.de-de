@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: load, storage array, database, command, management 
 summary: 'Der Befehl Load storageArray dbmDatabase stellt ein Datenbank-Management (DBM)-Datenbank-Image wieder her, indem das Image aus einer Datei oder aus dem Cache abgerufen wird.' 
 ---
-= Laden der Speicher-Array-DBM-Datenbank
+= Speicherarray DBM-Datenbank laden – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, volume, group, locate 
 summary: Mit dem Befehl „Stop volumeGroup Locate“ werden die Anzeigeleuchten an den Laufwerken ausgeschaltet, die durch den Befehl „Start VolumeGroup Locate“ aktiviert wurden. 
 ---
-= Stoppen Sie die Suche der Volume-Gruppe
+= Volume-Gruppenlokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

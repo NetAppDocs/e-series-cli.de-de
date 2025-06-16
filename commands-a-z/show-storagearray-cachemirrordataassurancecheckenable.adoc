@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, cache, mirror, data, assurance, check, enable 
 summary: Der Befehl show storageArray cacheMirrorDataAssuranceCheckEnable gibt den Enablement-Status der Funktion zur Prüfung der Data Assurance von Cache Mirror zurück. 
 ---
-= Zeigen Sie die Data Assurance-Überprüfung der Cache-Spiegelung des Storage Arrays an
+= Aktivieren der Datensicherungsprüfung für den Cache-Spiegel des Speicherarrays anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

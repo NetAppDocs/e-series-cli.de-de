@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, channel, locate 
 summary: Der Befehl Start driveChannel Locate identifiziert die Laufwerksfächer, die mit einem bestimmten Laufwerkskanal verbunden sind, indem die Anzeigeleuchten für das Laufwerksfach eingeschaltet werden, das mit dem Laufwerkskanal verbunden ist. 
 ---
-= Starten Sie den Laufwerkskanal suchen
+= Starten Sie die Laufwerkskanalsuche – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

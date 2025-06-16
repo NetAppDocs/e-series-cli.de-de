@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, automatic, load, balance 
 summary: Der Befehl Set storageArray autoLoadBalancingEnable aktiviert oder deaktiviert die Funktion Automatic Load Balancing. 
 ---
-= Stellen Sie das Speicherarray auf Aktivieren oder Deaktivieren des automatischen Lastausgleichs ein
+= Speicherarray festlegen, um den automatischen Lastenausgleich zu aktivieren oder zu deaktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

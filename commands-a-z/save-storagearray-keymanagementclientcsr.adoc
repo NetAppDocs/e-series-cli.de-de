@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: generate, key, management, certificate, sign, request, csr 
 summary: Der Befehl Storage Array keyManagementClientCSR fordert eine generierte CSR für das Speicherarray an, das Sie in einer Datei speichern können. 
 ---
-= Signaturanforderung für das Schlüsselmanagement-Zertifikat (CSR) generieren
+= Generieren einer Zertifikatsignieranforderung (CSR) für die Schlüsselverwaltung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

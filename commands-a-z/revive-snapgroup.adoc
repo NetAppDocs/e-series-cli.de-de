@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, snapshot, group 
 summary: Der Befehl „Revive SnapGroup“ zwingt die angegebene Snapshot-Gruppe zum optimalen Status. 
 ---
-= Snapshot-Gruppe neu beleben
+= Snapshot-Gruppe wiederbeleben – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

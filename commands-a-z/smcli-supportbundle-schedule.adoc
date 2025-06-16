@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: schedule, automatic, support, bundle, collection, configuration 
 summary: Mit dem Befehl SMcli -supportBundle Schedule wird ein Zeitplan zum Speichern eines Supportpakets auf einem oder mehreren Speicherarrays erstellt oder entfernt. Sie erfassen System- und Konfigurationsdaten in den Support-Paketen, um die Informationen an den technischen Support für Analyse und Diagnose zu übermitteln. 
 ---
-= Planen der Konfiguration für die automatische Support-Bundle-Sammlung
+= Planen Sie die automatische Konfiguration der Support-Bundle-Sammlung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

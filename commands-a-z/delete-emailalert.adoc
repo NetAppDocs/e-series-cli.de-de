@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, email, alert, recipient 
 summary: Mit dem Befehl „emailAlert löschen“ werden E-Mail-Adressen der Empfänger aus der Konfiguration für E-Mail-Warnungen gelöscht. 
 ---
-= E-Mail-Empfänger löschen
+= Empfänger von E-Mail-Benachrichtigungen löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

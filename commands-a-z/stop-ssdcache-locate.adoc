@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, ssd, cache, locate 
 summary: 'Mit dem Befehl STOP ssdCache Locate werden die Anzeigeleuchten auf den Solid State Disks (SSDs) ausgeschaltet, die durch den Befehl ssdCache locate starten aktiviert wurden.' 
 ---
-= Stoppen Sie die Suche im SSD-Cache
+= SSD-Cache-Lokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, snapgroup, command, entire, snapshot, group, option, associate, repository, volume 
 summary: Der Befehl delete snapGroup löscht eine ganze Snapshot-Gruppe und optional die zugeordneten Repository Volumes. 
 ---
-= Snapshot-Gruppe löschen
+= Snapshot-Gruppe löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

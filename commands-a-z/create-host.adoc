@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, host 
 summary: Der Befehl zum Erstellen eines Hosts erstellt einen neuen Host. 
 ---
-= Host erstellen
+= Host erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

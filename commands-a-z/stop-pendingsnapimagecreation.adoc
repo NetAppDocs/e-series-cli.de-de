@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, group, snapshot, images 
 summary: Mit dem Befehl „stop pendingSnapImageCreation“ werden alle ausstehenden Snapshot-Images abgebrochen, die auf einem Snapshot oder einer Snapshot-Konsistenzgruppe erstellt werden sollen. 
 ---
-= Beenden Sie die Snapshot-Gruppe, bis Snapshot-Images nicht mehr verfügbar sind
+= Stoppen Sie die Snapshot-Gruppe mit ausstehenden Snapshot-Bildern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

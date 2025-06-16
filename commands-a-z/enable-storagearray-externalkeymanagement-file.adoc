@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, storage, array, external, key, management, file, command, security, disk, encryption, initial, roles, context, support 
 summary: Der Befehl storageArray externen Schlüsselmanagement-Datei aktivieren ermöglicht externes Sicherheitsschlüsselmanagement für ein Speicher-Array mit vollständigen Festplatten-Verschlüsselung und erstellt den ursprünglichen Sicherheitsschlüssel des Laufwerks. 
 ---
-= Externes Sicherheits-Verschlüsselungsmanagement
+= Externe Sicherheitsschlüsselverwaltung aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, initialization 
 summary: Der Befehl Start Volume Initialize startet die Formatierung eines Volumes in einem Speicher-Array. 
 ---
-= Starten Sie die Volume-Initialisierung
+= Volume-Initialisierung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

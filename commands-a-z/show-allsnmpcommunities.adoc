@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, snmp, communities 
 summary: 'Der Befehl show allSnmpCommunities gibt Informationen über die für das Speicher-Array definierten Simple Network Management Protocol (SNMP)-Communities zurück. SNMP-Communitys sind Sammlungen von Geräten wie Routern, Switches, Druckern, Speichergeräten, Gruppiert, um die Geräte zu verwalten und zu überwachen.' 
 ---
-= Zeigen Sie SNMP-Communitys an
+= SNMP-Communitys anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

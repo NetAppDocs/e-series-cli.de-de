@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, diskpool, security, command, convert, non secure, diskpool, support, arrays, role, context 
 summary: Mit dem Sicherheitsbefehl Enable diskPool wird ein nicht sicherer Laufwerk-Pool in einen sicheren Laufwerk-Pool umgewandelt. 
 ---
-= Aktivieren der Festplattenpool-Sicherheit
+= Datenträgerpool-Sicherheit aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

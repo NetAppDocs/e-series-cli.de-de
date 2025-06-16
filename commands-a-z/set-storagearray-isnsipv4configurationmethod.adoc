@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, server, ipv4, address 
 summary: 'Der Befehl Set storageArray isnsGf4ConfigurationMethod legt die Konfigurationsmethode und Adresse für einen IPv4 Internet Storage Name Service (iSNS) fest.' 
 ---
-= Legen Sie die IP-Server-IPv4-Adresse des Speicher-Arrays fest
+= IPv4-Adresse des iSNS-Servers des Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

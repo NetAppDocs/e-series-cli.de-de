@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, incomplete, asynchronous, mirror, pair, group 
 summary: Mit dem Befehl async MirrorGroup entfernen wird ein verwaister gespiegeltes Paar-Volume auf dem Storage-Array entfernt. 
 ---
-= Entfernen Sie ein unvollständiges, asynchrones gespiegeltes Paar aus asynchroner Spiegelgruppe
+= Unvollständiges asynchrones Spiegelpaar aus asynchroner Spiegelgruppe entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume 
 summary: Der Befehl show Volume summary gibt Informationen zu einem Volume zurück. 
 ---
-= Volumen anzeigen
+= Lautstärke anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

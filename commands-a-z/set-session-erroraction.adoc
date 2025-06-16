@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, session 
 summary: Der Befehl Session errorAction festlegen legt fest, wie die aktuelle Skript-Engine-Sitzung ausgeführt werden soll. 
 ---
-= Sitzung einstellen
+= Sitzung festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

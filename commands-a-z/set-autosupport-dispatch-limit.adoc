@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Autosupport, bundle, dispatch, delivery type, size 
 summary: Legt die maximale Größe von AutoSupport Bundles und Dispatches für verschiedene Bereitstellungstypen fest. 
 ---
-= Legen Sie die maximale AutoSupport-Entsendungsgröße fest
+= Festlegen der AutoSupport-Versandgrößenbeschränkung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

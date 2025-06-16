@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, group 
 summary: Der Befehl „Create VolumeGroup“ erstellt entweder eine Volume-Gruppe mit freier Kapazität oder eine Volume-Gruppe mit einem Volume, wenn Sie einen Satz nicht zugewiesener Laufwerke eingeben. 
 ---
-= Volume-Gruppe erstellen
+= Volume-Gruppe erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

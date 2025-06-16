@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, host 
 summary: Mit dem Befehl delete Host wird ein oder mehrere Hosts gelöscht. 
 ---
-= Host löschen
+= Host löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

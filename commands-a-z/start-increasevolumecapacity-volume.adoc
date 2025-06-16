@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: increase, capacity, volume, disk pool, volume, group 
 summary: Der Befehl „Start increaveVolumeCapacity Volume“ erhöht die Kapazität eines Standard-Volumes oder eines Repository-Volumes in einem Laufwerk-Pool oder einer Volume-Gruppe. 
 ---
-= Höhere Kapazität von Volume im Disk-Pool oder Volume-Gruppe
+= Kapazität des Volumes im Diskpool oder in der Volumegruppe erhöhen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

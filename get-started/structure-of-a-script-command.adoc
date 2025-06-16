@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: structure, script command 
 summary: Um eine erfolgreiche Ausführung zu gewährleisten, müssen Skriptbefehle in der richtigen Struktur geschrieben werden. 
 ---
-= Struktur eines Skriptbefehls
+= Erfahren Sie mehr über die Struktur eines SANtricity CLI-Skriptbefehls
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

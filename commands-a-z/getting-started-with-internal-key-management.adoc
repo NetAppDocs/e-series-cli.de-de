@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security key, string, characters, secure enabled, drive, controllers, storage, array, internal, key, management, create, maintain, persistent, memory 
 summary: Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei der Verwendung der internen Schlüsselverwaltung erstellen und pflegen Sie Sicherheitsschlüssel auf dem persistenten Speicher des Controllers. 
 ---
-= Erste Schritte mit internem Verschlüsselungsmanagement
+= Erste Schritte mit der internen Schlüsselverwaltung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

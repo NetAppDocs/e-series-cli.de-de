@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, schedule 
 summary: Mit dem Befehl set snapGroup enableSchedule wird der Zeitplan für die Erstellung von Snapshot-Images für eine Snapshot-Gruppe festgelegt. 
 ---
-= Legen Sie den Zeitplan für Snapshot-Gruppen fest
+= Zeitplan für Snapshot-Gruppen festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

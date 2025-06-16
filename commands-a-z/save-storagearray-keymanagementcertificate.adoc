@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, external, key management, certificate 
 summary: Der Befehl save storageArray keyManagementCertificate ruft das installierte Zertifikat ab. 
 ---
-= Abrufen des installierten externen Verschlüsselungsmanagementzertifikats
+= Installiertes externes Schlüsselverwaltungszertifikat abrufen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

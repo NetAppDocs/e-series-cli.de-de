@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, loginbanner, command, allow, login, banner, text, file, upload, save, role 
 summary: Mit dem Befehl „Storage Array loginBanner löschen“ können Sie die zuvor hochgeladene und gespeicherte Anmeldebanner-Textdatei löschen. 
 ---
-= Anmeldebanner für Speicher-Array löschen
+= Anmeldebanner für Speicherarrays löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

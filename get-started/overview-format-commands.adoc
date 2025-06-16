@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview, cli 
 summary: 'Die Befehlszeilenschnittstelle (CLI) ist eine Software-Applikation, mit der Storage Arrays konfiguriert und überwacht werden können.' 
 ---
-= Übersicht über CLI
+= Erfahren Sie mehr über die SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, thin, volume, attributes 
 summary: Der Befehl Set Volume definiert die Eigenschaften für ein Thin Volume. 
 ---
-= Legen Sie Attribute für Thin Volumes fest
+= Thin-Volume-Attribute festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive, performance, statistics 
 summary: Der Befehl show allDrives performanceStats gibt Informationen zur Laufwerksleistung zurück. 
 ---
-= Zeigt Statistiken zur Laufwerk-Performance an
+= Laufwerksleistungsstatistiken anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

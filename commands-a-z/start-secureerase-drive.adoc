@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, fde, secure, drive, erase 
 summary: 'Mit dem Befehl „Start secureErase“ werden alle Daten von einem oder mehreren Full Disk Encryption (FDE) Laufwerken gelöscht, sodass sie als FDE-Laufwerke wiederverwendet werden können.' 
 ---
-= Starten Sie das Löschen des sicheren FDE-Laufwerks
+= Starten Sie die sichere FDE-Laufwerklöschung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, soc, counts 
 summary: Mit dem Befehl storageArray SOCChales speichern werden die SOC-Fehlerstatistiken in einer Datei gespeichert. 
 ---
-= Speicherarray-SOC-Anzahl speichern
+= SOC-Zählungen des Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

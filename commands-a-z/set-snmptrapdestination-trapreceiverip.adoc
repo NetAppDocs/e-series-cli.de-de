@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, snmp, trap, destination 
 summary: Der Befehl set snmpTrapReceiverIP aktiviert oder deaktiviert das Senden von Authentifizierungsfehlern für ein SNMP-Trap-Ziel. Ein Fehler tritt auf, wenn der SNMP-Agent eine Nachricht von einem SNMP-Manager empfangen hat, aber die Nachricht einen ungültigen Community-Namen oder Benutzernamen enthielt. 
 ---
-= Aktualisieren Sie das SNMP-Trap-Ziel
+= SNMP-Trap-Ziel aktualisieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

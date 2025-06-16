@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add volume, asynchronous, mirror group, supported arrays, roles, context, syntax, parameter, minimum firmware level 
 summary: Mit dem Befehl add Volume async MirrorGroup wird eine primäre Volume zu einer asynchronen Spiegelgruppe hinzugefügt. 
 ---
-= Fügen Sie ein Volume zur asynchronen Spiegelgruppe hinzu
+= Volume zur asynchronen Spiegelgruppe hinzufügen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, trusted, ca, certificates 
 summary: Der Befehl „Save storageArray TrustedCertificate“ ruft die installierten vertrauenswürdigen CA-Zertifikate für das Array ab. In den abgerufenen Dateien enthalten sind alle angeforderten CA-Zertifikate von den Web-Servern des Arrays. 
 ---
-= Abrufen der installierten vertrauenswürdigen CA-Zertifikate
+= Installierte vertrauenswürdige CA-Zertifikate abrufen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

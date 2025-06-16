@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, volume 
 summary: Der Befehl create SnapVolume erstellt ein Snapshot Volume mit Lese-/Schreibfunktionen für Snapshot Images eines Basis-Volumes. 
 ---
-= Erstellen eines Snapshot Volume
+= Snapshot-Volume erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

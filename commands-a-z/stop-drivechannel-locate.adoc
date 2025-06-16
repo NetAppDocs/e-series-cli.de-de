@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, locate 
 summary: Mit dem Befehl „Stop driveChannel Locate“ werden die Anzeigeleuchten an den Laufwerksfächern ausgeschaltet, die durch den Befehl „Start driveChannel Locate“ eingeschaltet wurden. 
 ---
-= Stoppen Sie die Position des Laufwerkskanals
+= Stoppen Sie die Kanalsuche des Laufwerks – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

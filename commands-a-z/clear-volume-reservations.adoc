@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, volume, reservations 
 summary: Mit dem Befehl Reservierungen löschen werden persistente Volume-Reservierungen gelöscht. 
 ---
-= Löschen Sie Volume-Reservierungen
+= Volumenreservierungen löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

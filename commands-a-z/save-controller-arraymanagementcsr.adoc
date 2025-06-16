@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: generate, web server, certificate, sign, request, csr 
 summary: 'Der Befehl SAVE Controller arrayManagementCSR erzeugt eine Zertifikatsignierungsanforderung (CSR) für den Controller.' 
 ---
-= Zertifikatssignierungsanforderung für Webserver generieren (CSR)
+= Erstellen einer Zertifikatsignieranforderung (CSR) für den Webserver – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

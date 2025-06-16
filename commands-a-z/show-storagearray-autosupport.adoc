@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, autosupport, configuration, e2800, e5700, storage, arrays 
 summary: Mit dem Befehl show storageArray AutoSupport werden die AutoSupport Bundle Erfassungseinstellungen für das Speicher-Array angezeigt. 
 ---
-= Zeigt die AutoSupport-Konfiguration an
+= AutoSupport-Konfiguration anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

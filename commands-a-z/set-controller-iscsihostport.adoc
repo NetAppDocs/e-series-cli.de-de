@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iscsi, host, port, network, properties 
 summary: Mit dem Befehl Set Controller iscsiHostPort werden die Netzwerkeigenschaften für einen Host-Port geändert, einschließlich IPv4- und IPv6-Eigenschaften, Portgeschwindigkeit und maximaler Frame-Nutzlast. 
 ---
-= Legen Sie die Netzwerkeigenschaften für den iSCSI-Host-Port fest
+= Netzwerkeigenschaften des iSCSI-Host-Ports festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

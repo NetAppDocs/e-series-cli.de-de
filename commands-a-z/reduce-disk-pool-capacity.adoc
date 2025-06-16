@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reduce, disk pool, capacity 
 summary: Der Befehl set Disk Pool reduziert die Kapazität des Disk Pools, indem die Laufwerke logisch aus dem Pool entfernt werden. 
 ---
-= Die Kapazität im Laufwerk-Pool wird gesenkt
+= Reduzieren Sie die Kapazität des Datenträgerpools – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

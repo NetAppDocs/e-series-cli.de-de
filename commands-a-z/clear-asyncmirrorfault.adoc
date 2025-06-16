@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, asynchronous mirroring, fault 
 summary: Der Befehl clear async MirrorFault löscht einen „Tickky“-Fehler bei der asynchronen Spiegelung von einer oder mehreren asynchronen Spiegelgruppen und von einem oder mehreren asynchronen Spiegelgruppenmitgliedern-Volumes. 
 ---
-= Löschen Sie den asynchronen Spiegelungsfehler
+= Asynchronen Spiegelungsfehler beheben – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

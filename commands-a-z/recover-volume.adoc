@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, raid, volume 
 summary: Mit dem Befehl „Datenträger wiederherstellen“ wird ein RAID-Volume mit den angegebenen Eigenschaften erstellt, ohne dass eine der Benutzerdatenbereiche auf den Laufwerken initialisiert werden muss. 
 ---
-= RAID-Volume wiederherstellen
+= RAID-Volume wiederherstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, images, consistency, group 
 summary: Der Befehl „stop konsistent“ Group pendeningSnapImageCreation stoppt alle ausstehenden Snapshot-Images, die auf einer Snapshot-Konsistenzgruppe erstellt werden sollen. 
 ---
-= Beenden Sie ausstehende Snapshot Images auf Konsistenzgruppe
+= Stoppen Sie ausstehende Snapshot-Bilder in der Konsistenzgruppe – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

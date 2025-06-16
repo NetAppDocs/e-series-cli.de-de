@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, local, user, password, symbol 
 summary: Mit dem Befehl set storageArray localUsername und dem Befehl set storageArray Symbol können Sie ein Passwort für einen lokalen Benutzernamen oder ein Symbol-Passwort für eine bestimmte Rolle festlegen. 
 ---
-= Lokales Benutzerpasswort oder Symbolkennwort für das Speicher-Array festlegen
+= Lokales Benutzerkennwort oder SYMbol-Kennwort für Speicherarray festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

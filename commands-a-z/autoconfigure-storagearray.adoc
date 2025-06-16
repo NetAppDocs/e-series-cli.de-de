@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autoconfigure storage array,supported, roles, syntax, parameters, minimum firmware level 
 summary: Mit dem Befehl autoConfigure storageArray wird ein Storage-Array automatisch konfiguriert. 
 ---
-= Speicher-Array automatisch konfigurieren
+= Speicherarray automatisch konfigurieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

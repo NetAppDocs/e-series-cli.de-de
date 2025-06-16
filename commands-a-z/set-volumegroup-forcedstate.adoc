@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, group, forced, state 
 summary: Der Befehl Set volumeGroup forceedState verschiebt eine Volume-Gruppe in einen Forced-Zustand. 
 ---
-= Erzwungener Status der Volume-Gruppe festlegen
+= Erzwungenen Status der Volume-Gruppe festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

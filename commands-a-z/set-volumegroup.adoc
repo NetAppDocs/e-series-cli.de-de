@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, group 
 summary: Der Befehl Set VolumeGroup definiert die Eigenschaften für eine Volume-Gruppe. 
 ---
-= Legen Sie die Volume-Gruppe fest
+= Volume-Gruppe festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

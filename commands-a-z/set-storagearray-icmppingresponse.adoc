@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, icmp, response 
 summary: Der Befehl Set storageArray icmpPingResponse gibt die Standardwerte für verhandelbare Einstellungen für Sitzungen und Verbindungen zurück, die den Ausgangspunkt für die Verhandlungen des Speicher-Arrays darstellen. 
 ---
-= Festlegen der ICMP-Antwort für das Speicherarray
+= ICMP-Antwort des Speicherarrays festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, foreign, drive, native 
 summary: 'Mit dem Befehl set Drive NativeState werden die fehlenden (ausländischen) Laufwerke wieder in ihre ursprüngliche Volume-Gruppe aufgenommen und in die Volume-Gruppe im neuen Storage Array integriert.' 
 ---
-= Fremdlaufwerk auf nativ einstellen
+= Fremdes Laufwerk auf natives Laufwerk setzen - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

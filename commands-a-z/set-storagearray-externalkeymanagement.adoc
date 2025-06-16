@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, external, key, management, set 
 summary: Der Befehl Set storageArray externaliKeyManagement konfiguriert die Adresse und Port-Nummer des externen Schlüsselverwaltungsservers. 
 ---
-= Einstellungen für die externe Schlüsselverwaltung festlegen
+= Einstellungen für die externe Schlüsselverwaltung festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

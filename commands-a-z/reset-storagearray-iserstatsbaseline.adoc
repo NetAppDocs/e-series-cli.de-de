@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, iser, baseline 
 summary: Mit dem Befehl „Reset storageArray iserStatsBaseline“ wird die iSER-Baseline für das Speicher-Array auf 0 zurückgesetzt. 
 ---
-= Zurücksetzen des Speicher-Array iSER-Basisplans
+= iSER-Basislinie des Speicherarrays zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

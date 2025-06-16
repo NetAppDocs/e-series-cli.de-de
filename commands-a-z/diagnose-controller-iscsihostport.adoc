@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, controller, hostport, command, diagnostic, tests, copper, cable, host, interface, cards, support, roles 
 summary: Mit dem Befehl Diagnosis Controller iscsiHostPort werden Diagnosetests auf den Kupferkabeln zwischen den iSCSI-Host-Schnittstellenkarten und einem Controller durchgeführt. 
 ---
-= Diagnose des iSCSI-Hostkabels des Controllers
+= Diagnose des Controller-iSCSI-Hostkabels – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

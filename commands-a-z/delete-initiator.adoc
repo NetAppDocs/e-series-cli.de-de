@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, initiator, command, object, supported, array, role 
 summary: Mit dem Befehl delete Initiator wird das Initiator-Objekt gelöscht. 
 ---
-= Initiator löschen
+= Initiator löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

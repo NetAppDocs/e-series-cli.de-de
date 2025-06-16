@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, auto-load, balance, statistics 
 summary: Der Befehl save storageArray autoLoadBalance Statistics file ermöglicht einen automatisierten I/O Workload-Ausgleich und sorgt dafür, dass eingehender I/O-Datenverkehr von den Hosts dynamisch verwaltet und auf beiden Controllern ausgeglichen wird. 
 ---
-= Statistiken zum automatischen Lastenausgleich speichern
+= Statistiken zum automatischen Lastenausgleich speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

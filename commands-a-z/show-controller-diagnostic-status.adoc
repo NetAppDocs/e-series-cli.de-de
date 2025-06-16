@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, controller, diagnostic, status 
 summary: Der Befehl show Controller gibt den Status der Controller-Diagnose zurück, die mit dem Diagnosebefehl „Start“ gestartet wurde. 
 ---
-= Zeigt den Controller-Diagnosestatus an
+= Controller-Diagnosestatus anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

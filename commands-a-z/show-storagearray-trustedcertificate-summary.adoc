@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, installed, trusted, ca, certificates, summary 
 summary: Der Befehl show storageArray TrustedCertificate Summary zeigt die Zusammenfassung der vertrauenswürdigen installierten CA-Zertifikate aus dem Array an. Dieser Befehl ist nützlich, bevor Sie den Befehl delete storageArray TrustedCertificate ausführen, damit Sie die Aliasnamen der zu löschenden Zertifikate kennen. 
 ---
-= Zusammenfassung der installierten vertrauenswürdigen CA-Zertifikate anzeigen
+= Übersicht der installierten vertrauenswürdigen CA-Zertifikate anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, performance, statistics 
 summary: Der Befehl show Volume performanceStats gibt Informationen zur Volume-Performance zurück. 
 ---
-= Zeigt Statistiken zur Volume-Performance an
+= Volume-Leistungsstatistiken anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

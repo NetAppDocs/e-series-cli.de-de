@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, auto, configuration 
 summary: Der Befehl show storageArray autoConfiguration zeigt die standardmäßige Autokonfiguration, die das Storage-Array erstellt, wenn Sie den Befehl autoConfigure storageArray ausführen. 
 ---
-= Automatische Konfiguration des Speicherarrays anzeigen
+= Automatische Speicherarraykonfiguration anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

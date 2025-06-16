@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, dbm, validator, information, file 
 summary: Mit dem Befehl speicherungArray dbmValidatorInfo speichern werden die Validierungsinformationen für ein Speicherarray in einer XML-Datei gespeichert. 
 ---
-= Speicherarray DBM Validator Information file speichern
+= Speichern der DBM-Validator-Informationsdatei des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

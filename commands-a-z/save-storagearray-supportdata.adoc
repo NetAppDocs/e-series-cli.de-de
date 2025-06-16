@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, support, data 
 summary: Mit dem Befehl „Save storageArray supportData“ werden die Support-bezogenen Informationen des Speicherarrays in einer Datei gespeichert. 
 ---
-= Speichern Sie die Supportdaten für das Storage-Array
+= Speicherarray-Supportdaten speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recreate, external, security key 
 summary: Der Befehl reproduzieren storageArray securityKey erzeugt einen Storage Array-Sicherheitsschlüssel für die Verwendung mit der externen Sicherheitsschlüsselverwaltungsfunktion. 
 ---
-= Externen Sicherheitsschlüssel neu erstellen
+= Externen Sicherheitsschlüssel neu erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

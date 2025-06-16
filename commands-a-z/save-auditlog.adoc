@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, audit log, records 
 summary: Mit dem Befehl AuditLog speichern werden die Prüfprotokolldatensätze abgerufen. 
 ---
-= Speichern Sie Audit-Log-Datensätze
+= Audit-Log-Datensätze speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

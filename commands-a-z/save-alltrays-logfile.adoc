@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, tray log 
 summary: Mit dem Befehl „allTrays logfile speichern“ werden die Protokollsensdaten in einer Datei gespeichert. 
 ---
-= Fach-Protokoll speichern
+= Tray-Protokoll speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

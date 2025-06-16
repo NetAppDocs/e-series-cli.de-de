@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, map 
 summary: 'Mit dem Befehl Set Volume logicalUnitNumber wird die Zuordnung der Logical Unit Number (LUN) oder Namespace ID (NSID) zwischen einem Volume und einer Host- oder Host-Gruppe definiert.' 
 ---
-= Legen Sie die Volume-Zuordnung fest
+= Volume-Zuordnung festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

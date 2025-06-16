@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, hot spare 
 summary: Der Befehl Laufwerk Hotspare festlegen weist ein oder mehrere Laufwerke als Hot Spare zu. 
 ---
-= Setzen Sie das Laufwerk-Hot-Spare ein
+= Laufwerk als Hotspare festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

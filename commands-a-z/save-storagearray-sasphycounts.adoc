@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, sas, phy, counts 
 summary: 'Mit dem Befehl save storageArray SASPHYCounts werden die SAS Physical Layer (SAS PHY) Zähler in einer Datei gespeichert.' 
 ---
-= Speichern Sie die Anzahl der SAS-PHY-Speicher-Arrays
+= Speichern der SAS-PHY-Zählungen des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, initialize 
 summary: Mit dem Befehl Laufwerk starten wird eine Laufwerkinitialisierung gestartet. 
 ---
-= Starten Sie die Laufwerkinitialisierung
+= Laufwerksinitialisierung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, autosupport, bundle, collection, set 
 summary: Mit dem Befehl SMcli -autoSupportConfig show werden die Einstellungen zur AutoSupport Bundle-Sammlung für die Management-Domäne angezeigt. Diese Einstellungen gelten für alle Storage Arrays in Ihrer Management-Domäne, für die Sie AutoSupport aktiviert haben. 
 ---
-= Zeigen Sie die Einstellungen für die AutoSupport Bundle-Sammlung an
+= Einstellungen für die AutoSupport-Bundle-Sammlung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

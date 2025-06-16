@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, drive 
 summary: Der Befehl zum Zurücksetzen des Laufwerks schaltet ein Laufwerk in einer Volume-Gruppe oder einem Festplatten-Pool aus, um die Wiederherstellung eines Laufwerks zu unterstützen, das inkonsistent oder nicht optimal verhält. 
 ---
-= Antrieb zurücksetzen
+= Laufwerk zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

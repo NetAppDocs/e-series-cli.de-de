@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, input, output, controller, ioc, dump 
 summary: Der Befehl Start IOCLog erzeugt einen Dump des IOC-Protokolls der Datenübertragung zwischen einem Host und einem Controller. 
 ---
-= Starten Sie den I/O-Dump (Input Output Controller)
+= Starten Sie den Input-Output-Controller (IOC)-Dump – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

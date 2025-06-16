@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, export 
 summary: Mit dem Befehl „Export von VolumeGruppen starten“ wird eine Volume-Gruppe in einen exportierten Status verschoben. 
 ---
-= Starten des Volume-Gruppenexports
+= Volumegruppenexport starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

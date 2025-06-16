@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, configuration, database, diagnostic 
 summary: Mit dem Befehl „Start storageArray configDbDiagnostic“ wird eine Konsistenzprüfung für eine Konfigurationsdatenbank ausgeführt. 
 ---
-= Starten Sie die Diagnose der Konfigurationsdatenbank des Speicher-Arrays
+= Diagnose der Speicherarray-Konfigurationsdatenbank starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

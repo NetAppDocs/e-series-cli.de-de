@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, ssd, cache 
 summary: Mit dem Befehl „ssdCache fortsetzen“ wird das Caching für alle Volumes mit dem SSD-Cache neu gestartet, der mit dem Befehl „ssdCache suspendieren“ vorübergehend angehalten wurde. 
 ---
-= Setzen Sie den SSD-Cache wieder ein
+= SSD-Cache fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

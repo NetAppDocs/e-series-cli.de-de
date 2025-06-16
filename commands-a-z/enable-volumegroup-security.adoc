@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, volumegroup, security, command, non secure, volume, group 
 summary: Mit dem Sicherheitsbefehl Enable VolumeGroup wird eine nicht sichere Volume-Gruppe in eine sichere Volume-Gruppe konvertiert. 
 ---
-= Aktivieren der Sicherheit von Volume-Gruppen
+= Volumegruppensicherheit aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

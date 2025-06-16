@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, snapshot, image, rollback 
 summary: Mit dem Befehl „SnapImage Rollback“ wird ein Rollback-Vorgang fortgesetzt, der in den Status „Pause“ versetzt wurde. 
 ---
-= Setzen Sie das Rollback von Snapshot-Bildern fort
+= Rollback des Snapshot-Images fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

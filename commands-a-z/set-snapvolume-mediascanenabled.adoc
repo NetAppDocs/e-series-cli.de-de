@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, media, scan 
 summary: Mit dem Befehl sSet SnapVolume mediaScanEnabled wird ein Medien-Scan auf den Laufwerken ausgeführt, die für ein Snapshot-Volume verwendet wurden. 
 ---
-= Legen Sie den Datenträger-Scan für Snapshot-Volumes fest
+= Snapshot-Volume-Medienscan festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

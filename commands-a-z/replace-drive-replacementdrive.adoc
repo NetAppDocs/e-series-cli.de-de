@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace, drive 
 summary: Mit dem Befehl Ersatzlaufwerk ersetzen wird ein Laufwerk in einer Laufwerksgruppe ersetzt. 
 ---
-= Laufwerk austauschen
+= Laufwerk ersetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

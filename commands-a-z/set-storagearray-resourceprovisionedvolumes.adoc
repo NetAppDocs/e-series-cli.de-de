@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, resource, provisioned, volumes 
 summary: Mit dem Befehl Set storageArray resourceProvisionedVolumes wird die DULBE-Funktion deaktiviert. 
 ---
-= Legen Sie Volumes Fest, Die Mit Storage Array-Ressourcen Bereitgestellt Werden
+= Bereitgestellte Volumes für Speicherarrayressourcen festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

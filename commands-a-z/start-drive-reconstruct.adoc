@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, reconstruction 
 summary: Der Befehl Start Drive reconstruct beginnt mit der Wiederherstellung eines Laufwerks. 
 ---
-= Starten Sie die Rekonstruktion des Laufwerks
+= Laufwerksrekonstruktion starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

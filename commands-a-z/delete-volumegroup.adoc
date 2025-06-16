@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, volume, group, command, entire, associated, support, role 
 summary: Mit dem Befehl „Volume-Gruppe löschen“ wird eine gesamte Volume-Gruppe und ihre zugehörigen Volumes gelöscht. 
 ---
-= Volume-Gruppe löschen
+= Volume-Gruppe löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

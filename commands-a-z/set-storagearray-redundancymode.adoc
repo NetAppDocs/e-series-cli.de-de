@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, redundancy, mode 
 summary: Der Befehl Set storageArray redundant setzt den Redundanzmodus des Speicherarrays auf Simplex oder Duplex. 
 ---
-= Legen Sie den Redundanzmodus für das Storage Array fest
+= Speicherarray-Redundanzmodus festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

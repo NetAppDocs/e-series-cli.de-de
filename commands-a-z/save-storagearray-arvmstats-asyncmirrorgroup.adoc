@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, asynchronous, mirror, group, statistics 
 summary: Der Befehl save storageArray arvmStats async cMirrorGroup speichert die Synchronisierungsstatistiken in eine Datei für ein oder mehrere Mitglied-Volumes in einer asynchronen Spiegelgruppe. 
 ---
-= Speichern Sie die Statistiken der asynchronen Spiegelgruppe
+= Asynchrone Spiegelgruppenstatistiken speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

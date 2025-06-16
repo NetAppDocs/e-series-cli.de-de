@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive channel, fault, isolation, diagnostics 
 summary: Mit dem Befehl driveChannel faultDiagnostics starten werden die Fehlerdiagnose für den Laufwerkskanal ausgeführt und die Ergebnisse gespeichert. 
 ---
-= Diagnose der Fehlereingrenzung des Antriebskanals starten
+= Starten Sie die Diagnose der Laufwerkkanal-Fehlerisolierung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

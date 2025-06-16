@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, host group 
 summary: Mit dem Befehl „HostGroup erstellen“ wird eine neue Host-Gruppe erstellt. 
 ---
-= Hostgruppe erstellen
+= Hostgruppe erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

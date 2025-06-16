@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, controller, battery, learn, cycle 
 summary: Mit dem Befehl Set storageArray learnCycleDate Controller wird der Lernzyklus für den Controller-Akku eingestellt. 
 ---
-= Lernzyklus für Speicher-Array-Controller einstellen
+= Lernzyklus der Batterie des Speicherarray-Controllers festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

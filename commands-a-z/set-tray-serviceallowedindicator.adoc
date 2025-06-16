@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, service, action, allowed, indicator 
 summary: 'Der Befehl Set Tray serviceAllowedIndicator schaltet die Kontrollleuchte Service Action AllowedIndicator an einem Power-Fan-Behälter, einem Interconnect-Batterie-Behälter oder einem Environmental Services Module (ESM) Behälter ein oder aus.' 
 ---
-= Legen Sie die Anzeige für die zulässige Aktion für die Fachwartung fest
+= Indikator für zulässige Tray-Service-Aktionen festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

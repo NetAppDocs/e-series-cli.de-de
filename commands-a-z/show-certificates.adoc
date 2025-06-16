@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, certificates 
 summary: Mit dem Befehl Zertifikate anzeigen können Sie die Zertifikate anzeigen, die im CLI-Paket Trust Store installiert sind. 
 ---
-= Zertifikate anzeigen
+= Zertifikate anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

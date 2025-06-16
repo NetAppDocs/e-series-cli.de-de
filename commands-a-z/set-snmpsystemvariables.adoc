@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, snmp, mib, system, group, variables 
 summary: 'Der Befehl set snmpSystemVariables ändert die Systemvariablen für das Simple Network Management Protocol (SNMP).' 
 ---
-= Aktualisieren Sie SNMP MIB II Systemgruppenvariablen
+= SNMP MIB II-Systemgruppenvariablen aktualisieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

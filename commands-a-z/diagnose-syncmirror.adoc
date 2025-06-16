@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, syncmirror, command, test, connection, specified, primary, volumes, mirror, storage, array, synchronous, feature, enabled 
 summary: Über den Befehl Diagnosis SyncMirror wird die Verbindung zwischen den angegebenen primären Volumes und den Spiegelvolumes auf einem Storage Array getestet, wobei die Funktion zur synchronen Spiegelung aktiviert ist. 
 ---
-= Diagnose des synchronen Spiegelns
+= Synchrone Spiegelung diagnostizieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

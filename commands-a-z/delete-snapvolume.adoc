@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, snapvolume, command, snapshot, volume, optionally, associate, repository, members 
 summary: Mit dem Befehl delete SnapVolume werden ein Snapshot Volume und optional die zugehörigen Snapshot Repository-Mitglieder gelöscht. 
 ---
-= Snapshot Volume löschen
+= Snapshot-Volume löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

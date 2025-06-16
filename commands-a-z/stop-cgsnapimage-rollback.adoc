@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, consistency, group, snapshot, rollback 
 summary: Mit dem Befehl „STOP cgSnapImage Rollback“ wird ein Rollback-Vorgang auf Basis-Volumes in einer Snapshot-Consistency Group beendet. 
 ---
-= Anhalten des Rollbacks von Snapshots der Konsistenzgruppe
+= Rollback des Konsistenzgruppen-Snapshots stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

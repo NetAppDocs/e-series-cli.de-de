@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: register, snmp, trap, destination 
 summary: 'Der Befehl create snmpTrapDestination erstellt ein neues SNMP-Trap-Ziel (Simple Network Management Protocol). Ein Trap-Ziel ist der SNMP-Manager, der die Trap-Meldungen empfängt.' 
 ---
-= SNMP-Trap-Ziel registrieren
+= SNMP-Trap-Ziel registrieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

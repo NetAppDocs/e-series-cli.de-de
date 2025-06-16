@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive 
 summary: Der Befehl show allDrives gibt Informationen über die Laufwerke im Speicher-Array zurück. 
 ---
-= Laufwerk anzeigen
+= Laufwerk anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

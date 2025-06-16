@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, ssd, cache, performance, model 
 summary: Mit dem Befehl stop ssdCache performanceModeling wird der Betrieb der Leistungsmodellierung gestoppt und die Daten zur Leistungsmodellierung für den SSD-Cache angezeigt. 
 ---
-= Stoppen Sie die Performance-Modellierung des SSD-Caches
+= SSD-Cache-Leistungsmodellierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

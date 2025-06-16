@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: new, smcli, https mode 
 summary: Der neue SMcli kann im HTTPS-Modus mit zusätzlichen Sicherheitsfunktionen betrieben werden. 
 ---
-= SMcli HTTPS-Modus
+= Erfahren Sie mehr über SANtricity Secure CLI (SMcli) im https-Modus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, synchronous, mirroring 
 summary: Mit dem Befehl „Resume SyncMirror“ wird ein synchroner Spiegelungsvorgang fortgesetzt. 
 ---
-= Wiederaufnahme der synchronen Spiegelung
+= Synchrone Spiegelung fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

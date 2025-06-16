@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, unreadable, sectors 
 summary: Der Befehl show storageArray unreadableSectors gibt eine Tabelle mit den Adressen aller Sektoren im Speicher-Array zurück, die nicht gelesen werden können. 
 ---
-= Speicherarray unlesbare Sektoren anzeigen
+= Nicht lesbare Sektoren des Speicherarrays anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

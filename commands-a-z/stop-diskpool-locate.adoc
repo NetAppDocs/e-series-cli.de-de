@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, disk pool, locate 
 summary: Mit dem Befehl stop diskPool locate werden die Anzeigeleuchten an den Laufwerken ausgeschaltet, die durch den Befehl „Start diskPool locate“ aktiviert wurden. 
 ---
-= Halten Sie den Laufwerk-Pool auf
+= Disk-Pool-Lokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

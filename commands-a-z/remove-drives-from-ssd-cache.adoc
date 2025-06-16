@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, drives, ssd, cache 
 summary: 'Der Befehl set ssdCache verringert die Kapazität des SSD-Caches durch Entfernen von Solid State Disks (SSDs).' 
 ---
-= Entfernen Sie Laufwerke aus dem SSD-Cache
+= Laufwerke aus dem SSD-Cache entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

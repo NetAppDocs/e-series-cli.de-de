@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, erase 
 summary: Mit dem Befehl „Start Drive Lösch“ werden alle Daten von einem oder mehreren Laufwerken gelöscht. 
 ---
-= Starten Sie das Löschen des Laufwerks
+= Laufwerklöschung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -42,7 +42,7 @@ Der Löschvorgang kann nicht rückgängig gemacht werden. Stellen Sie sicher, da
 
 [source, cli, subs="+macros"]
 ----
-start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
+start (drive [trayID,[drawerID,]slotID] | drives[trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn]) erase
 ----
 
 

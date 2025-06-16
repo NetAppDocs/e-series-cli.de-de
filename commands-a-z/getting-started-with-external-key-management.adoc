@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
 summary: Ein Sicherheitsschlüssel ist eine Zeichenkette, die von den sicheren Laufwerken und Controllern in einem Speicher-Array gemeinsam genutzt wird. Bei Verwendung der externen Schlüsselverwaltung erstellen und warten Sie Sicherheitsschlüssel auf einem Schlüsselverwaltungsserver 
 ---
-= Erste Schritte mit externem Verschlüsselungsmanagement
+= Erste Schritte mit der externen Schlüsselverwaltung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

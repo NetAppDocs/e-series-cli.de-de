@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firmware, compatibility, levels 
 summary: Die Skriptbefehle in den folgenden Abschnitten enthalten die Mindestanforderungen an die Firmware, unter denen die Skriptbefehle ausgeführt werden können. 
 ---
-= Firmware-Kompatibilitätsstufen
+= Erfahren Sie mehr über die Kompatibilitätsstufen der SANtricity CLI-Firmware
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

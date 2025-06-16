@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, consistency, group, snapshot, rollback 
 summary: Mit dem Befehl cgSnapImage Rollback starten wird ein Rollback-Vorgang für die Mitgliederbasis-Volumes in einer Snapshot-Consistency Group gestartet. 
 ---
-= Starten Sie das Rollback von Consistency Group Snapshot
+= Starten Sie das Rollback des Konsistenzgruppen-Snapshots – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

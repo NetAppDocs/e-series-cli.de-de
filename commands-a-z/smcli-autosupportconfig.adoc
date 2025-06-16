@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: specify, autosupport, delivery, method 
 summary: Mit dem Befehl SMcli -autoSupportConfig wird die Bereitstellungsmethode für das Senden von AutoSupport-Meldungen eingerichtet. 
 ---
-= Geben Sie die AutoSupport-Bereitstellungsmethode an
+= Geben Sie die AutoSupport-Liefermethode an - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, snapshot, image, rollback 
 summary: Mit dem Befehl „SnapImage Rollback starten“ wird ein Rollback-Vorgang für eine Reihe von Snapshot-Images gestartet. 
 ---
-= Starten Sie das Rollback von Snapshot Image
+= Rollback des Snapshot-Images starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

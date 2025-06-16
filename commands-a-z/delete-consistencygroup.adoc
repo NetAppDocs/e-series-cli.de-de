@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, consistency, group 
 summary: Mit dem Befehl delete ConsistencyGroup wird eine Snapshot Consistency Group gelöscht. 
 ---
-= Löschen der Konsistenzgruppe
+= Konsistenzgruppe löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

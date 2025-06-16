@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, synchronous, mirroring 
 summary: 'Der Befehl create SyncMirror erstellt sowohl das primäre Volume als auch das sekundäre Volume für ein synchrones Remote gespiegeltes Paar. Mit diesem Befehl wird außerdem der Schreibmodus (Synchronous Write Mode oder Asynchronous Write Mode) und die Synchronisationspriorität festgelegt.' 
 ---
-= Synchrones Spiegeln erstellen
+= Synchrone Spiegelung erstellen - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

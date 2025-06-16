@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, consistency, group 
 summary: Der Befehl show konsequente Group gibt Informationen über eine oder mehrere Konsistenzgruppen zurück. 
 ---
-= Zeigt die Konsistenzgruppe an
+= Konsistenzgruppe anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

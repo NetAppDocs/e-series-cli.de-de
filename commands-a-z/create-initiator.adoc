@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, initiator 
 summary: Der Befehl „Create Initiator“ erstellt das Initiatorobjekt. 
 ---
-= Erstellen des Initiators
+= Initiator erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

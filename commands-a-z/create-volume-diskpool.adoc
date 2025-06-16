@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, disk pool 
 summary: Der Befehl Create Volume diskPool erstellt ein neues Standard-RAID-Volume oder ein Thin-Volume in einem vorhandenen Laufwerk-Pool. 
 ---
-= Erstellen Sie ein Volume im Festplatten-Pool
+= Volume im Datenträgerpool erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

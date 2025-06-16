@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, syslog, configuration 
 summary: 'Mit dem Befehl show syslog summary (Syslog summary) werden die Konfigurationsinformationen für Syslog' 
 ---
-= Zeigt die Syslog-Konfiguration an
+= Syslog-Konfiguration anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

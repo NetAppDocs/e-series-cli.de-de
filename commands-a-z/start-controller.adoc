@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, controller, trace 
 summary: Der Befehl Start Controller startet eine Operation, die Debug-Trace-Informationen in einer komprimierten Datei speichert. 
 ---
-= Controller-Trace starten
+= Controller-Trace starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

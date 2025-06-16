@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: capture, view, autosupport, log 
 summary: Mit dem Befehl SMcli -autoSupportLog können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar. 
 ---
-= Erfassen oder Anzeigen eines AutoSupport-Protokolls
+= Erfassen oder Anzeigen eines AutoSupport-Protokolls – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

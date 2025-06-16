@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, rls, baseline 
 summary: 'Mit dem Befehl „Reset storageArray RLSBaseline“ wird die Referenz zum Leselink (RLS) für alle Geräte zurückgesetzt, indem alle RLS-Werte auf 0 gesetzt werden.' 
 ---
-= RLS-Basisplan für Speicher-Array zurücksetzen
+= RLS-Basislinie des Speicherarrays zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

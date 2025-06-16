@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: interactive mode 
 summary: 'Im interaktiven Modus können Sie einzelne Befehle ausführen, ohne die Befehle mit voreinstellen `SMcli` zu müssen.' 
 ---
-= Interaktiver Modus
+= Erfahren Sie mehr über den interaktiven SANtricity CLI-Modus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, controller, health, image, allow, overwrite 
 summary: Der Befehl Set storageArray ControllerHealthImageAllowOverWrite setzt ein Flag auf einen Controller, um ein vorhandenes Controller-Zustandsabbild auf Storage Arrays zu überschreiben, die die Funktion des Controller-Zustandsabbilds unterstützen. 
 ---
-= Festlegen des Integritätsabbilds des Speicher-Array-Controllers für Überschreibung
+= Festlegen des Integritätsimages des Speicherarray-Controllers, das Überschreiben zulässt – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, synchronous, mirror, synchronization 
 summary: Der Befehl SyncMirror Primary Sync starten startet die Synchronisierung der synchronen Spiegelung. 
 ---
-= Synchronisierung der synchronen Spiegelung starten
+= Synchrone Spiegelungssynchronisierung starten - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

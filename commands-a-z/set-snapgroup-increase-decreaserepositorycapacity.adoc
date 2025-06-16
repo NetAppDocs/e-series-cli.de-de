@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, repository, volume, capacity 
 summary: Der Befehl set SnapGroup ense/DecreaeRepositoryCapacität erhöht oder verringert die Kapazität eines Snapshot Group Repository Volumes. 
 ---
-= Legen Sie die Kapazität des Volume für das Snapshot-Gruppen-Repository fest
+= Festlegen der Volumekapazität des Snapshot-Gruppen-Repositorys – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

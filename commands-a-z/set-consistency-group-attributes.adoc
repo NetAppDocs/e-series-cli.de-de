@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, consistency, group, attributes 
 summary: Der Befehl Set Consistency Group definiert die Eigenschaften für eine Snapshot Consistency Group. 
 ---
-= Legen Sie die Attribute für Konsistenzgruppen fest
+= Konsistenzgruppenattribute festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

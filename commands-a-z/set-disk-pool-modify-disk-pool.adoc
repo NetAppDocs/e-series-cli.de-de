@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, disk pool, modify 
 summary: 'Mit dem Befehl set Disk Pool wird der Speicherplatz zu einem Disk Pool (Dynamic Capacity Expansion oder DCE) erweitert oder der Controller-Eigentumsrechte für den gesamten Disk Pool geändert.' 
 ---
-= Legen Sie den Laufwerk-Pool fest (ändern Sie den Laufwerk-Pool).
+= Datenträgerpool festlegen (Datenträgerpool ändern) – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

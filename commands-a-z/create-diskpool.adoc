@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, disk pool 
 summary: Der Befehl Create diskPool erstellt basierend auf den angegebenen Parametern einen neuen Laufwerk-Pool. 
 ---
-= Erstellen Sie einen Laufwerkspool
+= Datenträgerpool erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

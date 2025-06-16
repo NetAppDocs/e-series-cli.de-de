@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, internal, storage, array, security key 
 summary: Der Befehl Set storageArray securityKey legt den Sicherheitsschlüssel fest, der im gesamten Speicher-Array zur Implementierung der Laufwerkssicherheitsfunktion verwendet wird. 
 ---
-= Legen Sie den Sicherheitsschlüssel für das interne Speicher-Array fest
+= Sicherheitsschlüssel für internes Speicherarray festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

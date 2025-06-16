@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, external key, management, communication 
 summary: 'Der Befehl „Start storageArray External Key Management Test“ verwendet die konfigurierten Anmeldedaten (Zertifikate, Adresse des KMIP-Servers und KMIP-Portnummer), um zu überprüfen, ob das Storage-Array mit dem externen KMIP-Server kommunizieren kann.' 
 ---
-= Testen der Kommunikation zum externen Verschlüsselungsmanagement
+= Testen der externen Schlüsselverwaltungskommunikation – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

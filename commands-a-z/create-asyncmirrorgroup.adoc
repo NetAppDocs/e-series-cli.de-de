@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, asynchronous, mirror, group 
 summary: Mit dem Befehl create async MirrorGroup wird eine neue, leere asynchrone Spiegelgruppe sowohl auf dem lokalen Storage-Array als auch im Remote-Storage-Array erstellt. 
 ---
-= Asynchrone Spiegelgruppe erstellen
+= Asynchrone Spiegelgruppe erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, iscsi session 
 summary: Mit dem Befehl stop storageArray iscsiSession wird das Beenden einer iSCSI-Sitzung des Speicherarrays erzwingt. 
 ---
-= Beenden Sie die iSCSI-Sitzung des Speicherarrays
+= Stoppen Sie die iSCSI-Sitzung des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

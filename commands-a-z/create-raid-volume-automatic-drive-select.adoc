@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, raid, volume, automatic, drive, select 
 summary: Mit dem Befehl „Volume erstellen“ wird eine Volume-Gruppe über die Laufwerke im Storage Array und ein neues Volume in der Volume-Gruppe erstellt. Die Speicher-Array-Controller wählen die Laufwerke aus, die in das Volume aufgenommen werden sollen. 
 ---
-= Erstellen von RAID-Volumes (automatische Laufwerkauswahl)
+= RAID-Volume erstellen (automatische Laufwerksauswahl) – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

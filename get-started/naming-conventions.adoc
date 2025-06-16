@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: name, conventions 
 summary: Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Regeln eingehalten werden. 
 ---
-= Namenskonventionen
+= Erfahren Sie mehr über die Namenskonventionen der SANtricity-CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

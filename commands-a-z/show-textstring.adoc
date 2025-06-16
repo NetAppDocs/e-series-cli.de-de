@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, str 
 summary: Der Befehl show textstring zeigt eine Textzeichenfolge aus einer Skriptdatei an. Dieser Befehl ähnelt dem Echo-Befehl in MS-DOS und UNIX. 
 ---
-= Zeichenfolge anzeigen
+= Zeichenfolge anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: performance, tuning, commands, automatic, load balance, cache commands 
 summary: Befehle zur Performance-Optimierung 
 ---
-= Befehle zur Performance-Optimierung
+= SANtricity CLI-Befehle zur Leistungsoptimierung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

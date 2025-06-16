@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, command, snmptrapdestination, existing, simple, network, management, protocol, trap, destination, previous, create, registered 
 summary: 'Der Befehl delete snmpTrapDestination löscht ein vorhandenes SNMP-Trap-Ziel (Simple Network Management Protocol), das Sie zuvor mit dem Befehl create snmpTrapDestination erstellt und registriert haben.' 
 ---
-= Deaktivieren Sie das SNMP-Trap-Ziel
+= SNMP-Trap-Ziel aufheben – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

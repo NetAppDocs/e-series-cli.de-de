@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: detailed, error, report 
 summary: Die von einem CLI aufgetretenen Fehler erfassten Daten werden in eine Datei geschrieben. 
 ---
-= Detaillierte Fehlerberichterstellung
+= Erfahren Sie mehr über die detaillierte Fehlerberichterstattung von SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

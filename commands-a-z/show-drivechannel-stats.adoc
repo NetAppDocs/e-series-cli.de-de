@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive channel, statistics 
 summary: Der Befehl show driveChannel stats zeigt die kumulative Datenübertragung für den Laufwerkskanal und Fehlerinformationen an. 
 ---
-= Zeigen Sie die Drive-Channel-Statistiken an
+= Laufwerkskanalstatistiken anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

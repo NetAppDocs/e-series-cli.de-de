@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, locate 
 summary: Mit dem Befehl „Volume-Gruppe starten“ werden die Laufwerke identifiziert, die logisch gruppiert sind, um die angegebene Volume-Gruppe zu bilden, indem die Anzeigeleuchten auf den Laufwerken blinkt. 
 ---
-= Starten Sie die Volume-Gruppe lokalisieren
+= Volume-Gruppensuche starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

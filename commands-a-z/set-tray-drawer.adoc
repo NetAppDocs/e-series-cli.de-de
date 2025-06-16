@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drawer, service, action, allowed, indicator 
 summary: Mit dem Befehl Fach einstellen wird die Anzeigeleuchte Wartungsmaßnahme zulässig an einem Fach, in dem Laufwerke eingelegt sind, ein- oder ausgeschaltet. 
 ---
-= Anzeige für zulässige Aktion für Schubladendienst einstellen
+= Indikator für zulässige Drawer-Serviceaktion festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

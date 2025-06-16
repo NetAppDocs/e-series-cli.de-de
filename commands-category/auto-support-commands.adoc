@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: support, commands, bundle, collection, autosupport 
 summary: AutoSupport-Befehle 
 ---
-= AutoSupport-Befehle
+= SANtricity AutoSupport-Befehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

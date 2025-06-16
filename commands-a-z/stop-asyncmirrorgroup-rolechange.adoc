@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cancel, asynchronous, mirror, group, role, reversal 
 summary: Der Befehl stop Async MirrorGroup Rolechange bricht eine ausstehende Rollenumkehrung zwischen asynchronen Spiegelgruppen ab. 
 ---
-= Abbrechen der Umkehrung der asynchronen Spiegelgruppe
+= Asynchrone Spiegelgruppen-Rollenumkehr abbrechen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

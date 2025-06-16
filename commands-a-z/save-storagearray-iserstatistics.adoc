@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, iser, statistics 
 summary: Der Befehl save storageArray iserStatistics speichert die iSER-Leistungsstatistiken des Speicherarrays in einer Datei. 
 ---
-= ISER-Statistiken des Speicher-Arrays speichern
+= iSER-Statistiken des Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

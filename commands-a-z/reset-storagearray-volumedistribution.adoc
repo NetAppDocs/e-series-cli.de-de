@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, volume, distribution 
 summary: 'Der Befehl „Reset storageArray VolumeDistribution“ weist alle Volumes dem bevorzugten Controller neu zu (verschiebt).' 
 ---
-= Volume-Verteilung des Speicherarrays zurücksetzen
+= Speicherarray-Volumeverteilung zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

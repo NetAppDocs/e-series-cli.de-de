@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, input, output, controller, ioc, dump 
 summary: Mit dem Befehl „IOCLog speichern“ werden die IOC Dumps von den Controllern in einem Speicher-Array in eine Datei auf einem Host gespeichert. 
 ---
-= Speichern Sie den I/O-Dump (Input Output Controller)
+= IOC-Dump (Input Output Controller) speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

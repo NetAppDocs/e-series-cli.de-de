@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, alerts 
 summary: Der Befehl SMcli alertTest sendet eine Testwarnung an das Windows-Ereignisprotokoll und alle konfigurierten Syslog-Empfänger. 
 ---
-= Testalarme
+= Testwarnungen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

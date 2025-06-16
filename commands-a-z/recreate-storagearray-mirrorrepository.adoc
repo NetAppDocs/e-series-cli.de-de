@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recreate, synchronous, mirror, repository, volume 
 summary: 'Mit dem Befehl „reproduzieren storageArray mirrorRepository“ wird ein neues Synchronous Mirroring Repository Volume (auch als Spiegelarchiv-Volume bezeichnet) erstellt, indem die Parameter verwendet werden, die für ein vorheriges Mirror-Repository Volume definiert wurden.' 
 ---
-= Synchrones Spiegeln bei Repository Volume neu erstellen
+= Synchrones Spiegelungs-Repository-Volume neu erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

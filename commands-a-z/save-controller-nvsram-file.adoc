@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, controller, nvsram 
 summary: Mit dem Befehl Save Controller NVSRAM file wird ein ausgewählter Satz von NVSRAM-Controllerbereichen in einer Datei gespeichert. 
 ---
-= Controller NVSRAM speichern
+= Controller-NVSRAM speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

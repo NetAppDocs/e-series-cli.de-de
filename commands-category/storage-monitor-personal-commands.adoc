@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage, monitor, personnel, commands, asynchronous, autosupport, cache, array, synchronous 
 summary: Personalbefehle für die Speicherüberwachung 
 ---
-= Personalbefehle für die Speicherüberwachung
+= SANtricity CLI-Speichermonitor-Personalbefehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

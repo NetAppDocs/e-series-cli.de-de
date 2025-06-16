@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, drive, firmware, command, images, roles, supported 
 summary: Mit dem Befehl herunterlad storageArray driveFirmware file werden Firmware-Images auf alle Laufwerke im Speicher-Array heruntergeladen. 
 ---
-= Firmware des Speicherarrays herunterladen
+= Firmware für Speicher-Array-Laufwerke herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

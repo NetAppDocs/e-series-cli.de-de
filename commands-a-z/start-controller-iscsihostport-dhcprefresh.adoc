@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, iscsi, dhcp, refresh 
 summary: Der Befehl Controller starten iscsiHostPort dhcpRefresh initiiert eine Aktualisierung der DHCP-Parameter für die iSCSI-Schnittstelle. 
 ---
-= Starten Sie die iSCSI-DHCP-Aktualisierung
+= iSCSI DHCP-Aktualisierung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

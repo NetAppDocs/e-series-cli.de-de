@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add, member, consistency, group 
 summary: Der Befehl set ConsistencyGroup addCGMemberVolume fügt einer vorhandenen Consistency Group ein neues Basis-Volume als Mitglied hinzu. 
 ---
-= Mitglied der Konsistenzgruppe hinzufügen
+= Mitglied zur Konsistenzgruppe hinzufügen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, array, label 
 summary: Der Befehl Array-Bezeichnung anzeigen gibt Informationen darüber zurück, ob ein Speicher-Array-Label definiert wurde oder alle vorhandenen Speicher-Array-Labels. 
 ---
-= Array-Beschriftung anzeigen
+= Array-Bezeichnung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, volume, unreadable, sectors 
 summary: Der Befehl Clear Volume unreadableSectors löscht unlesbare Sektorinformationen von einem oder mehreren Bänden. 
 ---
-= Volumen unlesbare Sektoren löschen
+= Nicht lesbare Sektoren des Volumes löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

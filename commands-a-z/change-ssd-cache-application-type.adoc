@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ssd cache application type 
 summary: Mit dem Befehl Set ssdCache wird der Anwendungstyp geändert, der dem SSD-Cache zugeordnet ist. Der Applikationstyp kann Web-Server, Datenbank oder Multimedia sein. Durch die Änderung des Applikationstyps werden die Blockgröße, die Größe des Unterblocks geändert, der Schwellenwert für das Lesen befüllt und der Schreibschwellenwert für die Volumes, die dem SSD-Cache zugrunde liegen, befüllt. 
 ---
-= Ändern Sie den Applikationstyp für den SSD-Cache
+= SSD-Cache-Anwendungstyp ändern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

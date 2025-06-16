@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, event, alert, filter 
 summary: Über die Befehle für die festgelegte Ereigniswarnung wird die Ereignisbenachrichtigung verwaltet, indem sie die Benachrichtigung deaktiviert oder aktivieren, die in Bezug auf ein bestimmtes alertable Ereignis zusammenhängt. Um eine Benachrichtigung über ein bestimmtes alertable Ereignis zu verhindern, blockieren Sie es. Um die Benachrichtigung über ein bestimmtes alertable Ereignis zu aktivieren, heben Sie die Sperrung des Ereignisses auf. 
 ---
-= Filter für Ereignisbenachrichtigung einstellen
+= Festlegen der Ereigniswarnungsfilterung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

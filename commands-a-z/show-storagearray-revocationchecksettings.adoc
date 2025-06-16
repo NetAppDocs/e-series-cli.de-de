@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, certificate, revocation, check, set 
 summary: Mit dem Befehl show storageArray revocationCheckSettings können Sie die Einstellungen für den Zertifikatsannullierung des Speicherarrays anzeigen. 
 ---
-= Zeigen Sie die Einstellungen für die Überprüfung des Zertifikatsannulfs
+= Einstellungen für die Zertifikatssperrprüfung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

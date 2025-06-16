@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, audit log 
 summary: Mit dem Befehl AuditLog festlegen werden die Einstellungen für das Prüfprotokoll konfiguriert. 
 ---
-= Legen Sie die Einstellungen für das Prüfprotokoll fest
+= Einstellungen für das Überwachungsprotokoll festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

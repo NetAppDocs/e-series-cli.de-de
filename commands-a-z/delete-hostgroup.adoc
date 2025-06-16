@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, hostgroup, command, support, role 
 summary: Mit dem Befehl „hostGroup löschen“ wird eine Host-Gruppe gelöscht. 
 ---
-= Host-Gruppe löschen
+= Hostgruppe löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

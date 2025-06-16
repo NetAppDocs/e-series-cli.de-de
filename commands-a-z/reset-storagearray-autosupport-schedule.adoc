@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, autosupport, message, collection, schedule 
 summary: Mit dem Befehl „Reset storageArray AutoSupport Schedule“ werden die täglichen und wöchentlichen Zeiten und Wochentage zurückgesetzt, an die AutoSupport Meldungen an die von der Management Software erzeugten zufälligen Werte gesendet werden. 
 ---
-= Zeitplan für die Erfassung von AutoSupport-Meldungen zurücksetzen
+= Zeitplan für die Nachrichtenerfassung von AutoSupport zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

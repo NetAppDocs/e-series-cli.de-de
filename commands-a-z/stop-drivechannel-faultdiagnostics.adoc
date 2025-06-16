@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, fault, isolation, diagnostics 
 summary: Mit dem Befehl driveChannel faultDiagnostics wird die Diagnose der Festplattenkanal-Fehlereingrenzung angehalten, durch die der Befehl „Diagnose der Laufwerkanalfehler starten“ angehalten wird, bevor die Diagnose abgeschlossen wird. 
 ---
-= Diagnose der Fehlereingrenzung des Antriebskanals stoppen
+= Diagnose der Laufwerkkanal-Fehlerisolierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

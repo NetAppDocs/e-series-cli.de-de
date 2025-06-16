@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, identification 
 summary: Mit dem Befehl Fach einstellen wird die Fach-ID eines Controller-Fachs, eines Controller-Laufwerksfachs oder eines Laufwerksfachs in einem Speicher-Array festgelegt. 
 ---
-= Legen Sie die Tray-ID fest
+= Tray-Identifikation festlegen - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, raid, volume, manual, drive, select 
 summary: Mit dem Befehl „Create Volume“ werden eine neue Volume-Gruppe und ein neues Volume erstellt und die Laufwerke für das Volume festgelegt. 
 ---
-= Erstellen von RAID-Volumes (Auswahl manueller Laufwerke)
+= RAID-Volume erstellen (manuelle Laufwerksauswahl) – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

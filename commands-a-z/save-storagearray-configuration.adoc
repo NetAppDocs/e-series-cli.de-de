@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, configuration 
 summary: Der Befehl Speicherarray-Konfiguration speichern erstellt eine Skriptdatei, mit der Sie die aktuelle Speicherarray-Volume-Konfiguration neu erstellen können. 
 ---
-= Speicherarray-Konfiguration speichern
+= Speicherarray-Konfiguration speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

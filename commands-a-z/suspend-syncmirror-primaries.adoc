@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, synchronous, mirror 
 summary: Der Befehl SyncMirror primaries suspendieren unterbricht einen synchronen Spiegelungsvorgang. 
 ---
-= Unterbrechen Sie die synchrone Spiegelung
+= Synchrone Spiegelung aussetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

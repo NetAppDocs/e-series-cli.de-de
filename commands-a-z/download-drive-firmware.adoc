@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, drive, firmware, array, support, role, context, level 
 summary: Mit dem Befehl der Laufwerk-Firmware wird ein Firmware-Image auf ein Laufwerk heruntergeladen. 
 ---
-= Laden Sie die Laufwerk-Firmware herunter
+= Laufwerksfirmware herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -47,8 +47,8 @@ Dieser Befehl dient zum Herunterladen eines Firmware-Images auf jeweils nur ein 
 
 [source, cli, subs="+macros"]
 ----
-pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
- [online|offline] firmware file="filename"
+download (drive [trayID,[drawerID,]slotID] | drives [trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn])
+[online|offline] firmware file="filename"
 ----
 
 

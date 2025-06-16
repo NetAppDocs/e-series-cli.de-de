@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: legacy, command line, parameters 
 summary: SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit integrierten Web-Services ist die Möglichkeit zur Interaktion über die Befehlszeile mithilfe eines sicheren HTTPS-Protokolls verfügbar. Diese Controller können stattdessen optional das Symbolprotokoll für Befehlszeileninteraktionen verwenden. 
 ---
-= Parameter der Legacy-Kommandozeile
+= Erfahren Sie mehr über ältere SANtricity CLI-Befehlszeilenparameter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

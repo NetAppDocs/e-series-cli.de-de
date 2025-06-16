@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, management, key, certificate, command, intall, external, support, role 
 summary: Der Befehl herunterlad storageArray keyManagementCertificate installiert die Zertifikate für das externe Verschlüsselungsmanagement auf dem Speicher-Array. 
 ---
-= Externes Verschlüsselungsmanagementzertifikat für das Speicher-Array installieren
+= Installieren Sie das externe Schlüsselverwaltungszertifikat des Speicherarrays – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

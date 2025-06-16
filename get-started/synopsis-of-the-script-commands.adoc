@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: synopsis, script commands 
 summary: 'Da mit den Skriptbefehlen die verschiedenen Aspekte eines Storage Arrays definiert und gemanagt werden können (z. B. Host-Topologie, Festplattenkonfiguration, Controller-Konfiguration, Volume-Definitionen und Volume-Gruppen), ist die tatsächliche Anzahl an Befehlen umfangreich.' 
 ---
-= Übersicht der Skriptbefehle
+= Erfahren Sie mehr über SANtricity CLI-Skriptbefehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

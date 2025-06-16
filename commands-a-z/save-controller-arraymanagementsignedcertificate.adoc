@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, server, certificate, sign, request, csr 
 summary: 'Der Befehl Save Controller arrayManagementCSR ruft die installierte Server Certificate Signing Request (CSR) für den Controller ab, sodass Sie Zertifikatdetails anzeigen können.' 
 ---
-= Abrufen des installierten Serverzertifikats
+= Installiertes Serverzertifikat abrufen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, autosupport, configuration 
 summary: Verwenden Sie den Testbefehl SMcli -autoSupportConfig, um die AutoSupport-Konfiguration zu testen, indem Sie eine Testmeldung senden. Dieser Befehl wird in der Management-Domäne ausgeführt. Die Storage-Management-Software wählt ein Auto-Support-fähiges Array in der Management-Domäne, das Beispieldaten für die Testmeldung enthält. 
 ---
-= Testen Sie die AutoSupport-Konfiguration
+= Testen Sie die AutoSupport-Konfiguration - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, resource, provision 
 summary: Der Befehl „Start diskPool resourceProvisioning“ ermöglicht die Ressourcenbereitstellung auf einem bestimmten Laufwerk-Pool und startet einen asynchronen Vorgang zur Ressourcenbereitstellung auf jedem Volume im Laufwerk-Pool. Für die Ressourcenbereitstellung müssen alle Laufwerke im Festplatten-Pool die NVMe-DULBE-Funktion unterstützen. 
 ---
-= Starten Sie Disk Pool Resource Provisioning
+= Starten Sie die Bereitstellung von Datenträgerpool-Ressourcen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

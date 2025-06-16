@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
 summary: Mit dem Befehl „reciopy VolumeCopy“ wird ein Kopiervorgang mit einem vorhandenen Volume-Copy-Paar neu gestartet. 
 ---
-= Volume-Kopie erneut kopieren
+= Volumekopie erneut kopieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

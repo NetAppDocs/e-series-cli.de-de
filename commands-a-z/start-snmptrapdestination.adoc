@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, snmp, trap, destination 
 summary: 'Der Befehl Start snmpTrapDestination testet die Verbindung und Identifizierung des Trap-Receivers für eine bestimmte SNMP-Community (Simple Network Management Protocol) oder einen bestimmten Benutzer. Mit diesem Befehl wird das Trap-Ziel getestet, indem eine Trap-Nachricht an den Trap-Empfänger gesendet wird.' 
 ---
-= Testen Sie das SNMP-Trap-Ziel
+= SNMP-Trap-Ziel testen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

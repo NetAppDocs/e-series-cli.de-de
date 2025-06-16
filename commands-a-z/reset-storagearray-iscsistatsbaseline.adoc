@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, iscsi, baseline 
 summary: Mit dem Befehl „Reset storageArray iscsiStatsBaseline“ wird die iSCSI-Baseline für das Speicher-Array auf 0 zurückgesetzt. 
 ---
-= ISCSI-Basisplan für Speicher-Array zurücksetzen
+= iSCSI-Basislinie des Speicherarrays zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, emw, management, domain, level, smcli 
 summary: 'Der SMcli Befehl autoSupportFeature aktivieren aktiviert die AutoSupport (ASUP) Funktion für alle verwalteten Storage Arrays und ermöglicht die Übertragung von Meldungen an die technische Support-Website. Nach Aktivierung der ASUP Funktion wird jedes ASUP-fähige Storage-Array automatisch bereit, Support-bezogene Daten zu sammeln und an den technischen Support zu senden. Die Daten können dann für Remote-Fehlerbehebung und Problemanalysen genutzt werden.' 
 ---
-= Aktivieren oder Deaktivieren von AutoSupport auf der Ebene der EMW-Verwaltungsdomain (nur SMcli)
+= Aktivieren oder deaktivieren Sie AutoSupport auf der Ebene der EMW-Verwaltungsdomäne (nur SMcli) – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, dbm, database 
 summary: Der Befehl show storageArray dbmDatabase ruft ab und zeigt Metadaten für die integrierten Backup-Standorte eines Storage-Arrays an. Wenn mehrere Backup-Standorte vorhanden sind, werden Metadaten an jedem Standort angezeigt. 
 ---
-= Zeigen Sie die DBM-Datenbank des Speicherarrays an
+= Speicherarray-DBM-Datenbank anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, negotiation, defaults 
 summary: Der Befehl show storageArray iscsiNegotiationDefaults gibt Informationen zu Einstellungen auf Verbindungsebene zurück, die einer Verhandlung von Initiator-Ziel unterliegen. 
 ---
-= Zeigen Sie Standards für die Verhandlung von Storage-Arrays an
+= Standardwerte für die Speicherarray-Aushandlung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

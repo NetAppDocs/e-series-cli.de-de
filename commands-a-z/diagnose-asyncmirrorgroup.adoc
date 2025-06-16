@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, command, tests, possible, communication, problems, local, storage, array, remote, asynchronous, mirror, group 
 summary: Der Befehl Diagnose Async MirrorGroup testet mögliche Kommunikationsprobleme zwischen dem lokalen Speicher-Array und dem Remote-Speicher-Array, das mit einer asynchronen Spiegelgruppe verknüpft ist. 
 ---
-= Testen Sie die Konnektivität der asynchronen Spiegelgruppe
+= Testen der asynchronen Spiegelgruppenkonnektivität – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

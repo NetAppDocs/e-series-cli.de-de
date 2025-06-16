@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, controller, nvsram 
 summary: Der Befehl show Controller NVSRAM gibt Informationen über NVSRAM-Byte-Werte zurück. 
 ---
-= Zeigt den Controller-NVSRAM
+= Controller NVSRAM anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

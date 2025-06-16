@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, copy 
 summary: Der Befehl Set VolumeCopy Target definiert die Eigenschaften für ein Volume-Copy-Paar. 
 ---
-= Legen Sie die Volume-Kopie fest
+= Volumekopie festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

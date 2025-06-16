@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, initiator 
 summary: Der Befehl Set Initiator aktualisiert das Initiatorobjekt. 
 ---
-= Legt den Initiator fest
+= Initiator festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

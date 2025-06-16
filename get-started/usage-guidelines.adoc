@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: script command, guidelines 
 summary: Beachten Sie beim Schreiben von Skriptbefehlen die folgenden Richtlinien. 
 ---
-= Befehlsrichtlinien für Skript
+= Erfahren Sie mehr über die Richtlinien für SANtricity CLI-Skriptbefehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

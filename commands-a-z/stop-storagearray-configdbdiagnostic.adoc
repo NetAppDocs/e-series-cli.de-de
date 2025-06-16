@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, configuration, database, diagnostic 
 summary: Mit dem Befehl „stop storageArray configDbDiagnostic“ wird der Diagnosetest angehalten, um die Konfigurationsdatenbank in der Controller-Firmware zu validieren, die mit dem Befehl „Start storageArray config DbDiagnostic“ gestartet wurde. 
 ---
-= Die Diagnose der Konfigurationsdatenbank für das Speicher-Array wird angehalten
+= Diagnose der Speicherarray-Konfigurationsdatenbank stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

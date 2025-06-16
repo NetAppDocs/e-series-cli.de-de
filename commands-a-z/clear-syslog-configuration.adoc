@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, syslog, configuration 
 summary: Der Befehl „Clear syslog Configuration“ löscht die Syslog-Alarminformationen. 
 ---
-= Löschen der Syslog-Konfiguration
+= Syslog-Konfiguration löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

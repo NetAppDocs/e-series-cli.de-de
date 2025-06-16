@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: repair, volume, parity 
 summary: Der Parity-Befehl zum Reparieren des Volume repariert die Paritätsfehler auf einem Volume. 
 ---
-= Reparatur-Volume-Parität
+= Volumeparität reparieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

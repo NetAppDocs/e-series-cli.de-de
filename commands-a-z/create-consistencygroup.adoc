@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency, group 
 summary: Der Befehl create consistencyGroup erstellt eine neue, leere Konsistenzgruppe, die Snapshot-Gruppen enthalten kann. Sie müssen die Snapshot-Gruppen mit dem Befehl Set konsistent Group addCGMember hinzufügen. 
 ---
-= Erstellen einer Konsistenzgruppe
+= Konsistenzgruppe erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

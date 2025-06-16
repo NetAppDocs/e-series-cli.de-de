@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, attributes, disk pool 
 summary: Der Befehl Set Volumes definiert die Eigenschaften für ein Volume in einem Laufwerk-Pool. 
 ---
-= Legen Sie Volume-Attribute für ein Volume in einem Festplatten-Pool fest
+= Volumeattribute für ein Volume in einem Diskpool festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

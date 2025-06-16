@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, volume, command, one, standard, volume, supported, array, role 
 summary: Mit dem Befehl delete Volume wird ein oder mehrere Standard-Volumes gelöscht. 
 ---
-= Volume löschen
+= Volume löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

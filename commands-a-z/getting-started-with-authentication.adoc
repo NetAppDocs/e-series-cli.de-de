@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: authentication, users, access, system, assign, login credentials, associated, profile, include, specific, role, access, permissions, start 
 summary: Zur Authentifizierung müssen Benutzer mit zugewiesenen Anmeldedaten auf das System zugreifen. Jede Benutzeranmeldung ist einem Benutzerprofil zugeordnet, das bestimmte Rollen und Zugriffsberechtigungen enthält. 
 ---
-= Erste Schritte mit der Authentifizierung
+= Erste Schritte mit der Authentifizierung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

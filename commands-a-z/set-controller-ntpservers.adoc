@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, ntp 
 summary: 'Mit dem Befehl set Controller NTPServers werden die NTP-Einstellungen für den Controller festgelegt, sodass der Controller die Uhren automatisch mit einem externen Host mit SNTP (Simple Network Time Protocol) synchronisieren kann.' 
 ---
-= Legen Sie die Controller-NTP-Einstellungen fest
+= NTP-Einstellungen des Controllers festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, replace 
 summary: Der Befehl zum Ersetzen des Laufwerks stoppen stoppt einen Vorgang der Datenkopie, der entweder durch einen Befehl Set Drive oder durch einen Befehl replace Drive mit der Benutzereingabe des CopyDrive gestartet wurde. 
 ---
-= Antrieb stoppen Austauschen
+= Laufwerksaustausch stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

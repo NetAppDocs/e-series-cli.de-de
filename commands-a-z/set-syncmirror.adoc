@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, synchronous, mirror 
 summary: Der Befehl Set SyncMirror definiert die Eigenschaften für ein Remote-gespiegeltes Paar. 
 ---
-= Legt synchrones Spiegeln fest
+= Synchrone Spiegelung einstellen - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

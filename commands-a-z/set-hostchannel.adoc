@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, channel 
 summary: Der Befehl set hostChannel definiert die Loop-ID für den Host-Kanal. 
 ---
-= Hostkanal festlegen
+= Hostkanal festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

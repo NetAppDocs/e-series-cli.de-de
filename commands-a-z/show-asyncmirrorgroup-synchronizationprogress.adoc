@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, asynchronous, mirror, group, synchronization, progress 
 summary: Der Befehl show async cMirrorGroup SynchronisationProgress zeigt den Fortschritt der periodischen Synchronisierung der asynchronen Spiegelgruppe zwischen dem lokalen und dem Remote-Speicher-Array an. 
 ---
-= Fortschritt der Synchronisierung der asynchronen Spiegelgruppe anzeigen
+= Fortschritt der asynchronen Spiegelgruppensynchronisierung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

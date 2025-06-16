@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, email, alert, configuration 
 summary: Mit dem Befehl „emailAlert-Test starten“ können Sie die Warnungskonfiguration durch Senden einer Beispielnachricht per E-Mail testen. 
 ---
-= Konfiguration von E-Mail-Warnmeldungen testen
+= Testen der E-Mail-Benachrichtigungskonfiguration – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

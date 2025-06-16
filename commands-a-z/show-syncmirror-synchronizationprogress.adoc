@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, synchronous, mirror, volume, synchronization, progress 
 summary: Der Befehl show SyncMirror SynchronisationProgress gibt den Fortschritt der Datensynchronisierung zwischen dem primären Volume und dem sekundären Volume in einer Konfiguration mit synchronem Spiegeln zurück. 
 ---
-= Synchronous Mirroring Volume Synchronisation anzeigen
+= Fortschritt der Synchronisierung des synchronen Spiegelungsvolumes anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, replaceable, drives 
 summary: Mit dem Befehl ErsatzlaufeLaufwerke anzeigen werden alle austauschbaren Laufwerke in einem Storage-Array angezeigt. 
 ---
-= Zeigt austauschbare Laufwerke an
+= Austauschbare Laufwerke anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

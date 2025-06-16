@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, volume, copy 
 summary: Mit dem Befehl stop VolumeCopy Zielquelle wird ein Kopiervorgang angehalten. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare. 
 ---
-= Stoppen Sie die Volume-Kopie
+= Volumekopie stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

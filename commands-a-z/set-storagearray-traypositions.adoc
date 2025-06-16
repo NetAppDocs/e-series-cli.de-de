@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, tray, positions 
 summary: Der Befehl Set storageArray TrayPositions definiert die Position der Fächer in einem Speicherarray. Sie müssen alle Fächer im Speicher-Array enthalten, wenn Sie diesen Befehl eingeben. 
 ---
-= Stellen Sie die Positionen der Speicherarrays ein
+= Speicher-Array-Tray-Positionen festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

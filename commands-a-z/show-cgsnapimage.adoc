@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, consistency, group, snapshot, image 
 summary: Der Befehl show CGSnapImage zeigt ein Snapshot-Image oder mehrere Snapshot-Images an, die sich in einer oder mehreren Snapshot-Konsistenzgruppen befinden. 
 ---
-= Zeigt das Snapshot Image für Konsistenzgruppen an
+= Snapshot-Bild der Konsistenzgruppe anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

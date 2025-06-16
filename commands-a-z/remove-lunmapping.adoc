@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, volume, lun map 
 summary: 'Mit dem Befehl „lunMapping entfernen“ wird die Zuordnung der Logical Unit Number (LUN) oder Namespace ID (NSID) von einem oder mehreren Volumes entfernt.' 
 ---
-= Entfernen der Volume-LUN-Zuordnung
+= Volume-LUN-Zuordnung entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

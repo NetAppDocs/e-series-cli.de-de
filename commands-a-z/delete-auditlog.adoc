@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, audit, log, records 
 summary: Mit dem Befehl AuditLog löschen werden einige oder alle Datensätze im Prüfprotokoll gelöscht. 
 ---
-= Löschen von Audit-Log-Datensätzen
+= Audit-Log-Datensätze löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

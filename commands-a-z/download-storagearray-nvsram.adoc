@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storagearray, down, values, controller, support, role, command, array 
 summary: Der Befehl storageArray NVSRAM herunterladen lädt die NVSRAM-Werte für den Speicher-Array-Controller herunter. 
 ---
-= NVSRAM des Storage-Arrays herunterladen
+= Speicherarray NVSRAM herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

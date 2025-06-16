@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, storage, array, feature, file, command, permanent, upgrade, trial period 
 summary: Mit dem Befehl „Storage Array Feature File“ aktivieren wird eine Funktion für ein permanentes Upgrade auf das Speicher-Array oder einen Testzeitraum aktiviert. 
 ---
-= Aktivieren Sie Storage Array-Funktion
+= Speicherarray-Funktion aktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

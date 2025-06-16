@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency group, snapshot image 
 summary: Er erstellt den Befehl cgSnapImage Consistency Group und erstellt ein neues Snapshot Image für jedes Basis-Volume, das Mitglied einer Snapshot Consistency Group ist. 
 ---
-= Erstellen des Snapshot Images von Konsistenzgruppen
+= Snapshot-Image einer Konsistenzgruppe erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

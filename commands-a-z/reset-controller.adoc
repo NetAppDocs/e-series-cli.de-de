@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, controller 
 summary: Der Reset-Controller-Befehl setzt einen Controller zurück und führt zu I/O-Vorgängen. 
 ---
-= Controller zurücksetzen
+= Controller zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

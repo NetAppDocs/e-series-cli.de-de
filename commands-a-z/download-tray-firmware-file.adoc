@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, firmware, file, command, environmental, service, module, array, role, context 
 summary: 'Mit dem Befehl der Download Tray Firmware File wird die Firmware des Environmental Services Module (ESM) heruntergeladen.' 
 ---
-= Laden Sie die Firmware von Umweltkarten herunter
+= Firmware für Umweltkarten herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

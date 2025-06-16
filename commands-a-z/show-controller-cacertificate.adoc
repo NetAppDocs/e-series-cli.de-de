@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, installed, root, intermediate, ca, certificates, summary 
 summary: Mit dem Befehl show Controller caCertificate wird die Zusammenfassung der installierten CA-Zertifikate vom angegebenen Controller angezeigt. Dieser Befehl ist nützlich, bevor Sie den Befehl delete Controller caCertificate ausführen, damit Sie die Alias-Namen der zu löschenden Zertifikate kennen. 
 ---
-= Zusammenfassung der installierten Root-/Intermediate-CA-Zertifikate anzeigen
+= Übersicht der installierten Stamm-/Zwischen-CA-Zertifikate anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

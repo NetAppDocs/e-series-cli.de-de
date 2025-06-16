@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, synchronous, mirror, volume, candidates 
 summary: Der Befehl show SyncMirror Candidate gibt Informationen über die Kandidaten-Volumes auf einem Remote-Speicher-Array zurück, die Sie als sekundäre Volumes in einer Konfiguration mit synchronous Mirroring verwenden können. 
 ---
-= Anzeige der Kandidaten für synchrones Spiegeln von Volumes
+= Kandidaten für synchrone Spiegelungsvolumes anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

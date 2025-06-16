@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, diagnostic, data 
 summary: 'Mit dem Befehl „Save storageArray DiagnosticData“ werden die Diagnosedaten des Speicher-Arrays entweder von den Controllern oder von den Umgebungsdienstmodulen (ESMs) in einer Datei gespeichert.' 
 ---
-= Speichern von Diagnosedaten des Storage-Arrays
+= Diagnosedaten des Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

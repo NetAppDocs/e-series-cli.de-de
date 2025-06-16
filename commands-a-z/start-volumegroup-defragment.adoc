@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, defragment 
 summary: Mit dem Befehl „DatenträgerGroup defragment starten“ wird ein Defragment-Vorgang für die angegebene Volume-Gruppe gestartet. 
 ---
-= Defragmentieren der Volume-Gruppe starten
+= Defragmentierung der Volumegruppe starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

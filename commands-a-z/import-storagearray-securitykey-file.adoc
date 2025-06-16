@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
 summary: 'Der Befehl Import storageArray securityKey File entsperrt ein oder mehrere Full Disk Encryption (FDE)-Laufwerke, die Sie von einem Storage Array auf ein anderes Storage Array verschoben haben.' 
 ---
-= Importieren des Sicherheitsschlüssels für das Storage-Array
+= Sicherheitsschlüssel für Speicherarrays importieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

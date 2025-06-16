@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
 summary: Mit dem Befehl zum Herunterladen von Tray ConfigurationSettings werden die werkseitigen Standardeinstellungen auf alle Laufwerksfächer in einem Speicher-Array oder in ein bestimmtes Laufwerksfach in einem Speicher-Array heruntergeladen. 
 ---
-= Laden Sie die Einstellungen für die Fachkonfiguration herunter
+= Tray-Konfigurationseinstellungen herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

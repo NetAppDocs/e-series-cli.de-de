@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, group, export, dependencies 
 summary: Der Befehl Show VolumeGroup ExportAbhängigkeiten zeigt eine Liste der Abhängigkeiten für die Laufwerke in einer Volume-Gruppe an, die von einem Storage Array zu einem zweiten Storage Array verschoben werden sollen. 
 ---
-= Zeigen Sie die Exportabhängigkeiten der Volume-Gruppen an
+= Exportabhängigkeiten von Volumegruppen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

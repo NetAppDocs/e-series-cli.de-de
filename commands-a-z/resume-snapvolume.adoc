@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, snapshot, volume 
 summary: Der Befehl snapVolume fortsetzen setzt einen Snapshot Volume-Vorgang fort, der angehalten wurde. 
 ---
-= Setzen Sie das Snapshot-Volumen wieder ein
+= Snapshot-Volume fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

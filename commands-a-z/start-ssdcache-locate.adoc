@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, ssd, cache, locate 
 summary: 'Der Befehl Start ssdCache Locate identifiziert die Solid State Disks (SSDs), die logisch gruppiert sind, um den SSD-Cache zu bilden, indem die Kontrollleuchten auf den SSDs blinken.' 
 ---
-= Starten Sie die SSD-Cache-Suche
+= SSD-Cache-Lokalisierung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

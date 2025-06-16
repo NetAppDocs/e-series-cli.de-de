@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, host, topology 
 summary: Der Befehl show storageArray hostTopology gibt die Topologie der Speicherpartition, die Etiketten des Hosttyps und den Hosttype-Index für das Host-Speicher-Array zurück. 
 ---
-= Zeigt die Host-Topologie des Storage-Arrays an
+= Speicherarray-Hosttopologie anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

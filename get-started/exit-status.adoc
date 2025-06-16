@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: exit, status 
 summary: Bei ausgeführten Befehlen werden Exit-Status zurückgegeben. In dieser Tabelle werden die Status der Ausgangs-Status, die zurückgegeben werden können, und die Bedeutung jedes Status aufgeführt. 
 ---
-= Exit-Status
+= Erfahren Sie mehr über den Exit-Status der SANtricity-CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

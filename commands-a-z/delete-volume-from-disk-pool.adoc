@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, volume, command, normal, thin, disk pool, roles, support 
 summary: Mit dem Befehl delete Volume werden entweder normale oder Thin Volumes aus einem Laufwerk-Pool gelöscht. 
 ---
-= Löschen des Volumes aus dem Disk-Pool
+= Volume aus dem Datenträgerpool löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

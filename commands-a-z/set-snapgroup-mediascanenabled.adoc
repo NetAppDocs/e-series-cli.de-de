@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, media, scan 
 summary: Mit dem Befehl sSet snapGroup mediaScanEnabled wird ein Medien-Scan auf einer Snapshot-Gruppe ausgeführt. 
 ---
-= Legen Sie den Medienscan für Snapshot-Gruppen fest
+= Snapshot-Gruppen-Medienscan festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

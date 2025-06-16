@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, copy, source, candidates 
 summary: Der Befehl show VolumeCopy SourceCandidates gibt Informationen zu den Kandidatenvolumes zurück, die Sie als Quelle für einen Kopiervorgang verwenden können. Dieser Befehl gilt für Snapshot-Volume-Kopierpaare. 
 ---
-= Kandidaten für Volume-Kopien anzeigen
+= Kandidaten für Volume-Kopierquellen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

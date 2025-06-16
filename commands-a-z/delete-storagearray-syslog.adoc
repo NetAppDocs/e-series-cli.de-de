@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, syslog, command, allow, delete, specified, configuration, storing, audit, logs, role 
 summary: Mit dem Befehl delete storageArray syslog können Sie die angegebene Syslog-Konfiguration löschen, die zum Speichern von Audit-Protokollen verwendet wird. 
 ---
-= Löschen der Syslog-Konfiguration des Storage-Arrays
+= Syslog-Konfiguration des Speicherarrays löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

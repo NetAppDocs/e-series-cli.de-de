@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iser, target 
 summary: Der Befehl set iserTarget definiert Eigenschaften für ein iSER-Ziel. 
 ---
-= ISER-Ziel festlegen
+= iSER-Ziel festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

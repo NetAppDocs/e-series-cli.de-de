@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, controller, array, management, server, certificate, command, install 
 summary: Der Download-Controller arrayManagementServerCertificate Befehl installiert das Serverzertifikat auf dem Controller. 
 ---
-= Vom Server signiertes Zertifikat installieren
+= Serversigniertes Zertifikat installieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

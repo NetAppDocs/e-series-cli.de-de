@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, event log 
 summary: Der Befehl storageArray eventlog löschen löscht das Ereignisprotokoll im Speicher-Array, indem die Daten im Ereignisprotokollpuffer gelöscht werden. 
 ---
-= Löschen Sie das Ereignisprotokoll des Speicher-Arrays
+= Ereignisprotokoll des Speicherarrays löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

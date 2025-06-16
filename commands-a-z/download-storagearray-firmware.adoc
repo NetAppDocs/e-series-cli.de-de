@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, firmware, command, downloads, optionally, values, controllers, role, context, parameter 
 summary: Mit dem Befehl storageArray Firmware herunterladen werden Firmware und optional NVSRAM-Werte für den Storage Array Controller heruntergeladen. 
 ---
-= Laden Sie die Speicher-Array-Firmware/NVSRAM herunter
+= Speicherarray-Firmware/NVSRAM herunterladen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

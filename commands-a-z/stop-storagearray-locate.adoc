@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, locate 
 summary: Mit dem Befehl „stop storageArray Locate“ werden die Kontrollleuchten auf dem Speicher-Array deaktiviert, das durch den Befehl „Start storageArray Locate“ aktiviert wurde. 
 ---
-= Halten Sie die Position des Speicherarrays an
+= Speicherarray-Lokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

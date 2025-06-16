@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, consistency, group, snapshot, volume 
 summary: Mit dem Befehl cgSnapVolume fortsetzen wird ein Copy-on-Write-Vorgang neu gestartet, um ein Snapshot-Volumen von Konsistenzgruppen zu erstellen, das Sie mit dem Befehl stop cgSnapVolume angehalten haben. 
 ---
-= Setzen Sie das Snapshot-Volumen der Konsistenzgruppe fort
+= Konsistenzgruppen-Snapshot-Volume fortsetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

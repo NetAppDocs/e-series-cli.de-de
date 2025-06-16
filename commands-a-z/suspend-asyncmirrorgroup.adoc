@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, asynchronous, mirror, group 
 summary: Der Befehl suspendieren async cMirrorGroup unterbricht die Synchronisierung von Daten auf allen gespiegelten Paaren auf der Ebene der asynchronen Spiegelgruppe. 
 ---
-= Unterbrechen Sie die asynchrone Spiegelgruppe
+= Asynchrone Spiegelgruppe anhalten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

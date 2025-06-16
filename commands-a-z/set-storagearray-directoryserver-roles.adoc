@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, directory, server, role, map 
 summary: Mit dem Befehl Set storageArray directoryServer roles können Sie Rollenzuordnungen für einen bestimmten Verzeichnisserver definieren. Mit diesen Rollenzuordnungen werden Benutzer authentifiziert, die versuchen, verschiedene SMcli-Befehle auszuführen. 
 ---
-= Legen Sie die Rollenzuordnung für den Verzeichnisserver des Speicherarrays fest
+= Rollenzuordnung des Speicherarray-Verzeichnisservers festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

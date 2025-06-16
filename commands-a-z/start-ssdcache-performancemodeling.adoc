@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, ssd, cache, performance, model 
 summary: Der Befehl „Start ssdCache Performance ceModeling“ startet die Leistungsmodellierung für den SSD-Cache. 
 ---
-= Start der SSD-Cache-Performance-Modellierung
+= Starten Sie die SSD-Cache-Leistungsmodellierung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, configuration 
 summary: Mit dem Befehl „Clear storageArray Configuration“ wird eine vollständige Konfiguration des Storage Arrays oder ein Teil einer Storage Array-Konfiguration gelöscht oder nur die Volume-Gruppe und -Volume-Konfiguration gelöscht. 
 ---
-= Löschen Sie die Konfiguration des Speicherarrays
+= Speicherarray-Konfiguration löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

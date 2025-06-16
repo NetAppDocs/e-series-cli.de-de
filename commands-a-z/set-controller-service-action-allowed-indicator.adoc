@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, service, action, allowed, indicator 
 summary: Mit dem Befehl Set Controller wird die Anzeigeleuchte Service Action allowed an einem Controller in einem Controller-Fach oder in einem Controller-Laufwerksfach ein- oder ausgeschaltet 
 ---
-= Die Anzeige für die zulässige Controllerwartung einstellen
+= Indikator für zulässige Controller-Dienstaktion festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

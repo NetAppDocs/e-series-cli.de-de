@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, map 
 summary: Mit dem Befehl Create Mapping Volume wird eine logische Zuordnung von einem Volume zu einem Host oder einer Host-Gruppe erstellt. 
 ---
-= Volume-Zuordnung Erstellen
+= Volume-Zuordnung erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, locate 
 summary: Mit dem Befehl „Start Drive Locate“ wird ein Laufwerk durch Einschalten einer Kontrollleuchte auf dem Laufwerk lokalisiert. 
 ---
-= Starten Sie die Laufwerklokalisiert
+= Laufwerkssuche starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

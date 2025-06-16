@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, certificate, revocation, check, set 
 summary: 'Mit dem Befehl Set storageArray revocationCheckSettings können Sie die Überprüfung von Annullierungen aktivieren oder deaktivieren und einen OCSP-Server (Online Certificate Status Protocol) konfigurieren.' 
 ---
-= Legen Sie die Einstellungen für die Überprüfung des Zertifikatsperrufs
+= Einstellungen für die Zertifikatssperrprüfung festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

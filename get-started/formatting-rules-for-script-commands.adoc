@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: format, rules, script, commands 
 summary: Die Syntax, die für einen bestimmten Skriptbefehl eindeutig ist, wird im Abschnitt Hinweise am Ende der Befehlsbeschreibung jedes Skripts erläutert. 
 ---
-= Formatregeln für Skriptbefehle
+= Formatregeln für SANtricity CLI-Skriptbefehle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, asynchronous, mirror, group 
 summary: Der Befehl set async MirrorGroup ändert die Synchronisierungseinstellungen und Warnschwellenwerte, die der Controller-Eigentümer der primären Seite der asynchronen Spiegelgruppe bei der ersten Synchronisierung oder Neusynchronisierung verwendet. 
 ---
-= Legen Sie die asynchrone Spiegelgruppe fest
+= Asynchrone Spiegelgruppe festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

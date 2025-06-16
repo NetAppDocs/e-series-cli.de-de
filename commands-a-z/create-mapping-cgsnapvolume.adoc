@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency, group, snapshot, volume, map 
 summary: Der Befehl create Mapping cgSnapVolume erstellt eine logische Zuordnung von einem Snapshot-Volume der Konsistenzgruppe zu einem Host oder einer Host-Gruppe. 
 ---
-= Erstellen einer Volume-Zuordnung von Konsistenzgruppen für Snapshot
+= Erstellen einer Konsistenzgruppen-Snapshot-Volume-Zuordnung – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

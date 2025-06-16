@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: export, storage, array, security, key, command, save, drive, securitykey, file, context, role 
 summary: Der Befehl Export storageArray securityKey speichert einen Laufwerksicherheitsschlüssel in eine Datei. 
 ---
-= Sicherheitsschlüssel für Speicher-Array exportieren
+= Sicherheitsschlüssel für Speicherarrays exportieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, lun, map 
 summary: 'Der Befehl show storageArray lunMappings gibt Informationen aus dem Speicher-Array-Profil über die LUN (Logical Unit Number) oder Namespace ID (NSID)-Zuordnungen im Speicher-Array zurück.' 
 ---
-= Anzeigen der LUN-Zuordnungen des Speicherarrays
+= Speicherarray-LUN-Zuordnungen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, storage, array, syslog, configuration 
 summary: Mit dem Befehl show storageArray syslog können Sie die Konfiguration eines Syslog-Servers anzeigen, der zum Speichern von Audit-Protokollen verwendet wird. Zu den Konfigurationsinformationen gehört eine Server-ID sowie Adresse, Protokoll und Portnummer. 
 ---
-= Anzeige der Syslog-Konfiguration des Speicherarrays
+= Syslog-Konfiguration des Speicherarrays anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, initiator, command, specific, object, supported, array, role 
 summary: Der Befehl delete iscsiInitiator löscht ein bestimmtes iSCSI-Initiator-Objekt. 
 ---
-= ISCSI-Initiator löschen
+= iSCSI-Initiator löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, audit, log, summary 
 summary: Mit dem Befehl Show AuditLog Summary werden die Zusammenfassungsdaten des Prüfprotokolls angezeigt. 
 ---
-= Zeigt die Zusammenfassung des Prüfprotokolls an
+= Audit-Protokollzusammenfassung anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

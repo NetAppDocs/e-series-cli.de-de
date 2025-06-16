@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: validate, storage array, security key 
 summary: Mit dem Befehl „Validierung von storageArray securityKey“ wird der Sicherheitsschlüssel für ein Storage-Array mit sicherheitsfähigen Laufwerken validiert, um sicherzustellen, dass die Sicherungsdatei des Sicherheitsschlüssels nicht beschädigt ist. 
 ---
-= Validierung des Sicherheitsschlüssels des Storage Arrays
+= Sicherheitsschlüssel des Speicherarrays validieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

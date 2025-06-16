@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, synchronous, mirroring status 
 summary: Der Befehl Check SyncMirror gibt den Status eines Remote-Mirror-Volumes zurück. Mithilfe dieses Befehls können Sie bestimmen, wann der Status des Remote-Mirror-Volumes optimal lautet. 
 ---
-= Überprüfen Sie den Status der synchronen Spiegelung
+= Überprüfen des synchronen Spiegelungsstatus – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, locate 
 summary: Mit dem Befehl zum Suchen von Stopp-Laufwerken wird die Anzeigeleuchte auf dem Laufwerk ausgeschaltet, das durch den Befehl zum Suchen des Startlaufwerks eingeschaltet wurde. 
 ---
-= Halten Sie die Fahrt auf der Suche
+= Laufwerkslokalisierung stoppen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

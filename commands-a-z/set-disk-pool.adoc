@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, disk pool 
 summary: Mit dem Befehl Set diskPool werden die Attribute festgelegt, die einem Laufwerk-Pool auf der Grundlage der angegebenen Parameter zugeordnet sind. 
 ---
-= Legen Sie den Laufwerk-Pool fest
+= Datenträgerpool festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

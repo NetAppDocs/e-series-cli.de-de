@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, current, iscsi, sessions 
 summary: Der Befehl Show iscsiSessions gibt Informationen zu einer iSCSI-Sitzung für einen iSCSI-Initiator oder ein iSCSI-Ziel zurück. 
 ---
-= Zeigt aktuelle iSCSI-Sitzungen an
+= Aktuelle iSCSI-Sitzungen anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

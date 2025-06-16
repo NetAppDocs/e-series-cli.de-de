@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, drive log 
 summary: Der Befehl „Logfile speichern“ speichert die Laufwerksprotokolle in einer Datei. 
 ---
-= Laufwerksprotokoll speichern
+= Laufwerksprotokoll speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

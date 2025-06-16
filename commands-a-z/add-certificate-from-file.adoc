@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add certificate file, supported arrays, syntax, parameters, minimum firmware level 
 summary: Mit dem Befehl Zertifikat aus Datei hinzufügen können Sie ein Zertifikat aus der Datei nehmen und es dem Vertrauensspeicher des CLI-Pakets hinzufügen. Das hinzugefügte Zertifikat wird nur vom CLI-Paket verwendet. 
 ---
-= Zertifikat aus Datei hinzufügen
+= Zertifikat aus Datei hinzufügen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

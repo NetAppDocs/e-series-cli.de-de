@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, check, volume, parity, job, errors 
 summary: Der Befehl zum Speichern von Volume-Paritätsprüfung speichert die Paritätsfehler, die von einem Check Volume Parity Job in der angegebenen Datei protokolliert wurden. 
 ---
-= Speichern Sie Paritätsfehler bei der Volume-Paritätsprüfung
+= Paritätsfehler beim Überprüfen der Volumeparität beim Job speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

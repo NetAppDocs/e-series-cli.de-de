@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, full provision 
 summary: Mit dem Befehl „Start volumeGroup fullProvisioning“ wird ein voller Bereitstellungsvorgang für alle Volumes im Disk-Pool gestartet und optional die Ressourcenbereitstellung auf der Volume-Gruppe deaktiviert. 
 ---
-= Starten Sie Vollprovisionierung Von Volume-Gruppen
+= Vollständige Bereitstellung der Volume-Gruppe starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

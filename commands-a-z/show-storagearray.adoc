@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array 
 summary: Der Befehl show storageArray gibt Konfigurationsinformationen zum Speicher-Array zurück. 
 ---
-= Zeigen Sie das Speicher-Array an
+= Speicherarray anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array 
 summary: Der Befehl Set storageArray definiert die Eigenschaften des Speicherarrays. 
 ---
-= Legen Sie das Speicher-Array fest
+= Speicherarray festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

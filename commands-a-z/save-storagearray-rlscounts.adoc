@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, rls, counts 
 summary: 'Mit dem Befehl „Storage Array RLSChales speichern“ werden die Zähler für den Leseverbindungsstatus (RLS) in einer Datei gespeichert.' 
 ---
-= RLS-Anzahl des Speicher-Arrays speichern
+= RLS-Zählungen des Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

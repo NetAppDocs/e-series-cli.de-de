@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable, storage, array, command, storage, feature 
 summary: Mit dem Befehl „deaktivier storageArray“ wird eine Speicherarray-Funktion deaktiviert. 
 ---
-= Deaktivieren der Speicher-Array-Funktion
+= Speicherarray-Funktion deaktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

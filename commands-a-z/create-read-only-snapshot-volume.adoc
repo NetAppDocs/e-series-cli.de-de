@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, read only, snapshot, volume 
 summary: Der Befehl create SnapVolume erstellt ein schreibgeschütztes Snapshot Volume für die Snapshot Images eines Basis-Volumes. Um ein schreibgeschütztes Snapshot-Volumen in ein Lese-/Schreibvolume zu ändern, verwenden Sie den Befehl set SnapVolume convertToReadWrite. 
 ---
-= Erstellen eines schreibgeschützten Snapshot-Volumes
+= Schreibgeschütztes Snapshot-Volume erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

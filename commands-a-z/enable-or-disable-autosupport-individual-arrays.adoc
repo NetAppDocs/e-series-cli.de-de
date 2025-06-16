@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: command, enable, disable, autosupport, feature, storage, array, possible, transit, messages, technical, support, site, capable, automatically, prepare, collect, data, remote, troubleshooting, problem, analysis 
 summary: 'Mit diesem Befehl wird die AutoSupport (ASUP)-Funktion für das Storage Array aktiviert oder deaktiviert und Meldungen können an den technischen Support-Standort übertragen werden. Nach Aktivierung der ASUP Funktion wird das ASUP-fähige Storage-Array automatisch bereit, Support-bezogene Daten zu sammeln und an den technischen Support zu senden. Die Daten können dann für Remote-Fehlerbehebung und Problemanalysen genutzt werden.' 
 ---
-= Aktivieren oder Deaktivieren von AutoSupport (alle einzelnen Arrays)
+= AutoSupport aktivieren oder deaktivieren (alle einzelnen Arrays) – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

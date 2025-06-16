@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, controller, health, image 
 summary: Der Befehl show storageArray ControllerHealthImage zeigt Details des Controller-Zustandsabbilds im Controller-Cache an, sofern ein Controller-Zustandsabbild verfügbar ist, auf Storage-Arrays, die das Controller-Zustandsabbild unterstützen. 
 ---
-= Zeigt das Storage-Array-Controller-Zustandsabbild an
+= Zustandsabbild des Speicherarray-Controllers anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, repository, capacity 
 summary: Der Befehl set SnapVolume enceise/DecreadeRepositoryCapacität erhöht oder verringert die Kapazität eines Snapshot Volume Repository Volumes. 
 ---
-= Legen Sie die Kapazität des Snapshot Volume-Repository fest
+= Festlegen der Kapazität des Snapshot-Volume-Repository-Volumes – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

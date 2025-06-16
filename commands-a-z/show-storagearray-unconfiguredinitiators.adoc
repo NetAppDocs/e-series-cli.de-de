@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, unconfigured, initiators 
 summary: Der Befehl show storageArray unconfiguredInitiatoren gibt eine Liste von Initiatoren zurück, die vom Storage Array erkannt wurden, aber noch nicht in der Topologie des Storage-Arrays konfiguriert sind. 
 ---
-= Zeigt nicht konfigurierte Initiatoren an
+= Nicht konfigurierte Initiatoren anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

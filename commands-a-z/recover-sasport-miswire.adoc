@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, sas, port, mis-wire 
 summary: Der Befehl sasPort miswire wiederherstellen teilt einem Controller mit, dass eine Korrektur erfolgt ist, um eine Fehlverbindung wiederherzustellen. 
 ---
-= Fehlerhafte Verbindung des SAS-Ports wiederherstellen
+= Fehlerhafte SAS-Port-Verdrahtung wiederherstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

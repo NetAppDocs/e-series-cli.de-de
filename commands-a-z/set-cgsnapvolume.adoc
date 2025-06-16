@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, consistency, group, snapshot, volume 
 summary: Der Befehl set cgSnapVolume erstellt einen eindeutigen Namen für ein Snapshot Volume einer Konsistenzgruppe. 
 ---
-= Legen Sie das Snapshot Volume für Konsistenzgruppen fest
+= Snapshot-Volume der Konsistenzgruppe festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

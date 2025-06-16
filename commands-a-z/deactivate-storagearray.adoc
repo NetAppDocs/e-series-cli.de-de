@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deactivate, asynchronous, mirroring 
 summary: Mit der Funktion „Storage Array deaktivieren“ wird die Funktion „Asynchronous Mirroring“ deaktiviert. 
 ---
-= Deaktivieren Sie die asynchrone Spiegelung
+= Asynchrone Spiegelung deaktivieren - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

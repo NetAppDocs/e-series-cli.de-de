@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, cache, mirror, data, assurance, check 
 summary: Mit dem Befehl set storageArray cacheMirrorDataAssuranceCheckEnable können Sie die Prüfung der Data Assurance von Cache Mirror aktivieren oder deaktivieren. 
 ---
-= Legen Sie das Speicher-Array fest, um die Data Assurance-Prüfung für Cache-Spiegelungen zu aktivieren oder zu deaktivieren
+= Speicherarray festlegen, um die Datensicherungsprüfung des Cache-Mirrors zu aktivieren oder zu deaktivieren – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

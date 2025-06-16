@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, image 
 summary: Mit dem Befehl „SnapImage erstellen“ wird ein neues Snapshot-Image in einer oder mehreren bestehenden Snapshot-Gruppen erstellt. 
 ---
-= Erstellen von Snapshot Images
+= Snapshot-Image erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

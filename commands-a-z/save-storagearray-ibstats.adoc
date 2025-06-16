@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, infiniband, statistics 
 summary: Mit dem Befehl „Save storageArray ibStats“ werden die InfiniBand-Performancestatistiken des Speicherarrays in einer Datei gespeichert. 
 ---
-= Speichern Sie InfiniBand-Statistiken für das Speicher-Array
+= InfiniBand-Statistiken des Speicherarrays speichern – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

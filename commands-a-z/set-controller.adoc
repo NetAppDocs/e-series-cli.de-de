@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller 
 summary: Der Befehl set Controller definiert die Attribute für die Controller. 
 ---
-= Stellen Sie den Controller ein
+= Controller festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

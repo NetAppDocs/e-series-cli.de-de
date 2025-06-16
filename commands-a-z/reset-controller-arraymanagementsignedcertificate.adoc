@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, installed, signed, certificate 
 summary: Der Befehl Reset Controller arrayManagementSignedCertificate setzt das installierte unterzeichnete Zertifikat und die Root/Intermediate Zertifikate auf dem Controller zurück. Alle Root- und Zwischenzertifikate sowie alle signierten Zertifikate werden durch ein einziges selbstsigniertes Zertifikat ersetzt. 
 ---
-= Installiertes signiertes Zertifikat zurücksetzen
+= Installiertes signiertes Zertifikat zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

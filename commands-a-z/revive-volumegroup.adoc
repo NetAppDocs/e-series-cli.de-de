@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, volume, group 
 summary: Der Befehl „VolumeGroup neu beleben“ zwingt die angegebene Volume-Gruppe und die zugehörigen ausgefallenen Laufwerke auf den optimalen Zustand. 
 ---
-= Volume-Gruppe neu beleben
+= Volume-Gruppe wiederbeleben – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

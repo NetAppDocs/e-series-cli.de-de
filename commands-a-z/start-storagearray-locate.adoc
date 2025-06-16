@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, locate 
 summary: Mit dem Befehl „Speicherarray starten“ wird ein Speicherarray durch Einschalten der Anzeigeleuchten für das Speicherarray lokalisiert. 
 ---
-= Starten Sie die Speicherarray-Suche
+= Speicherarray-Lokalisierung starten – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

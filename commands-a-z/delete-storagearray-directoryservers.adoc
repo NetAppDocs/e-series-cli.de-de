@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, directory, servers, command, allow, directory, role 
 summary: Mit dem Befehl delete storageArray DirectoryServers können Sie einen oder mehrere Verzeichnisserver löschen. 
 ---
-= Verzeichnisserver des Speicher-Arrays löschen
+= Speicherarray-Verzeichnisserver löschen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

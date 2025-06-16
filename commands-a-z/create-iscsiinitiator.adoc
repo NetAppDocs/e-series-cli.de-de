@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, iscsi, initiator 
 summary: Der Befehl „Create iscsiInitiator“ erstellt ein neues iSCSI-Initiator-Objekt. 
 ---
-= ISCSI-Initiator erstellen
+= iSCSI-Initiator erstellen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

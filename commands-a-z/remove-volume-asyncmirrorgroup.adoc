@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, volume, asynchronous, mirror, group 
 summary: Mit dem Befehl „Volume async cMirrorGroup“ wird ein Mitglied-Volume aus einer vorhandenen asynchronen Spiegelgruppe entfernt. 
 ---
-= Entfernen Sie ein Volume aus der asynchronen Spiegelgruppe
+= Volume aus asynchroner Spiegelgruppe entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

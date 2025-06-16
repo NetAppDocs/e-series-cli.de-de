@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset ,storage, array, diagnostic, data 
 summary: Mit dem Befehl „Reset storageArray DiagnosticData“ wird der NVSRAM zurückgesetzt, der die Diagnosedaten für das Speicher-Array enthält. 
 ---
-= Diagnosedaten des Speicher-Arrays zurücksetzen
+= Diagnosedaten des Speicherarrays zurücksetzen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

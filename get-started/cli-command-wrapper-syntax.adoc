@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cli, command, wrapper, syntax 
 summary: In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlsschlüssel aufgeführt. 
 ---
-= Wrapper-Syntax für den CLI-Befehl
+= Erfahren Sie mehr über die SANtricity CLI-Befehls-Wrapper-Syntax
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

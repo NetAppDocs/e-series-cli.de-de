@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, syslog, configuration 
 summary: Mit dem Befehl create storageArray syslog können Sie Audit-Protokolle auf einem externen Syslog-Server archivieren. Nachdem eine Verbindung zwischen dem Speicher-Array und dem Syslog-Server hergestellt wurde, werden Audit-Protokolle automatisch auf dem Syslog-Server gespeichert. 
 ---
-= Erstellen der Syslog-Konfiguration des Storage-Arrays
+= Erstellen einer Speicherarray-Syslog-Konfiguration – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, dns 
 summary: 'Der Befehl Set Controller DNSServers aktualisiert die DNS-Einstellungen (Domain Name System) für einen Controller. Mit DNS werden vollständig qualifizierte Domain-Namen für die Controller und ein NTP-Server (Network Time Protocol) aufgelöst.' 
 ---
-= Legen Sie die Controller-DNS-Einstellungen fest
+= DNS-Einstellungen des Controllers festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
