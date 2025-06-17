@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
 summary: Mit dem Befehl Storage Array AutoSupport log speichern können Sie eine AutoSupport-Protokolldatei anzeigen. Diese Datei enthält Informationen zum Status, zum Verlauf der Übertragungsaktivität und zu Fehlern, die bei der Lieferung der AutoSupport Meldungen auftreten. Das Protokoll ist für alle AutoSupport-fähigen und AutoSupport-fähigen Storage-Arrays verfügbar. 
 ---
-= Abrufen eines AutoSupport-Protokolls
+= Abrufen eines AutoSupport-Protokolls – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

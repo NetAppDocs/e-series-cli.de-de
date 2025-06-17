@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, disable, autosupport, ondemand, feature, individual, E2800, E5700, arrays 
 summary: Der Befehl Set storageArray autoSupportOnDemand schaltet die AutoSupport OnDemand Funktion ein oder aus. Mit dieser Funktion kann der technische Support die AutoSupport-Datenübertragung koordinieren und die erneute Übermittlung fehlender Support-Daten anfordern. 
 ---
-= Aktivieren oder deaktivieren Sie die AutoSupport OnDemand-Funktion
+= Aktivieren oder Deaktivieren der AutoSupport OnDemand-Funktion – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

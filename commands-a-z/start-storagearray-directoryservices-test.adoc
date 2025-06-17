@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, storage, array, directory, server 
 summary: Der Testbefehl „Storage Array DirectoryServices starten“ überprüft die Kommunikation mit allen konfigurierten Verzeichnisservern und validiert die Server-Domänenkonfigurationen. 
 ---
-= Testen Sie den Verzeichnisserver des Storage Array
+= Testen des Speicherarray-Verzeichnisservers – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, storage array, directory, server, role, mapping 
 summary: Mit dem Befehl storageArray directoryServer entfernen werden die definierten Rollenzuordnungen für den angegebenen Verzeichnisserver entfernt. 
 ---
-= Entfernen Sie die Rollenzuordnung des Verzeichnisservers des Speicherarrays
+= Rollenzuordnung des Speicherarray-Verzeichnisservers entfernen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

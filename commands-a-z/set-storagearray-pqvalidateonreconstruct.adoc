@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, pq validation, reconstruct 
 summary: Der Befehl Set storageArray pqValidateOnReconstruct setzt den P/Q-Validierungsstatus des Speicherarrays auf die Rekonstruktion. Wenn diese Funktion aktiviert ist, werden die Daten sowohl mit Data+P als auch mit Data+Q rekonstruiert und die Ergebnisse auf Konsistenz geprüft, bevor das weitere Vorgehen bestimmt wird. 
 ---
-= PQ-Validierung des Speicher-Arrays bei rekonstruieren festlegen
+= PQ-Validierung des Speicherarrays bei Rekonstruktion festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

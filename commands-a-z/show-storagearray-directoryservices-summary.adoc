@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, directory, services, summary 
 summary: Mit dem Befehl show storageArray DirectoryServices summary wird die Konfigurationsübersicht für Verzeichnisdienste angezeigt. 
 ---
-= Zusammenfassung der Verzeichnisdienste des Speicherarrays anzeigen
+= Übersicht der Verzeichnisdienste des Speicherarrays anzeigen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

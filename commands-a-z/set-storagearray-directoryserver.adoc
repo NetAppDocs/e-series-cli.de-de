@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, directory, server 
 summary: Der Befehl Set storageArray DirectoryServer aktualisiert die Konfiguration des Verzeichnisservers. 
 ---
-= Verzeichnisserver für Speicher-Array festlegen
+= Speicherarray-Verzeichnisserver festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

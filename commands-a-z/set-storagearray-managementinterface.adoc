@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, management, interface 
 summary: Der Befehl Set storageArray ManagementInterface ändert die Managementoberfläche des Controllers. Ändern Sie den Typ der Managementoberfläche, um die Vertraulichkeit zwischen dem Storage-Array und seiner Managementsoftware durchzusetzen oder um auf externe Tools zuzugreifen. 
 ---
-= Legen Sie die Managementoberfläche für das Storage Array fest
+= Speicherarray-Verwaltungsschnittstelle festlegen – SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
