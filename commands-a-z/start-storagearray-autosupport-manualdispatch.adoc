@@ -17,13 +17,13 @@ Der `start storageArray autoSupport manualDispatch` Befehl initiiert ein vollst�
 
 == Unterst체tzte Arrays
 
-Dieser Befehl gilt f체r ein einzelnes E4000, E2800, E5700, EF600 oder EF300 Storage-Array. Der Betrieb erfolgt nicht auf E2700 oder E5600 Storage-Arrays.
+Dieser Befehl gilt f체r einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
 == Rollen
 
-Zur Ausf체hrung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array m체ssen Sie 체ber die Storage-Administratorrolle verf체gen.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuf체hren, m체ssen Sie die Storage Admin-Rolle haben.
 
 
 

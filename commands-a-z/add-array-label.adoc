@@ -22,7 +22,7 @@ Der `Add array label` Mit dem Befehl können Sie der Konfiguration ein Speicher-
 Die angegebene benutzerdefinierte Bezeichnung muss nicht mit dem Namen des Speicher-Arrays übereinstimmen, der in System Manager angezeigt wird. Dies ist ein lokales Etikett, das ausschließlich zur Verweisen auf das Speicher-Array über die CLI verwendet wird.
 
 ====
-Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 

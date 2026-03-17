@@ -17,7 +17,7 @@ Der `Show array label` Der Befehl gibt Informationen darüber zurück, ob ein St
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 

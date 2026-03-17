@@ -21,4 +21,4 @@ Mit den Skriptbefehlen wird ein Speicher-Array konfiguriert und verwaltet. Die S
 
 Einige in diesem Dokument beschriebene Softwarefunktionen sind für Ihr E-Series Storage-System möglicherweise nicht verfügbar. Wenn Sie Fragen zu verfügbaren Funktionen haben, wenden Sie sich an Ihren Account-Ansprechpartner.
 
-Die CLI ist eine Funktion der SANtricity Storage Manager-Software.
+Die CLI ist eine Funktion der SANtricity System Manager Software.

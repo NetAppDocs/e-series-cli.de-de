@@ -17,13 +17,13 @@ Der `set storageArray autoLoadBalancingEnable` Befehl aktiviert oder deaktiviert
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
 == Rollen
 
-Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Storage-Administratorrolle verfügen.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
@@ -80,8 +80,6 @@ Aus den folgenden Gründen möchten Sie den automatischen Lastausgleich auf Ihre
 * Sie möchten die Controller-Eigentumsrechte eines bestimmten Volumes nicht automatisch ändern, um einen Workload-Ausgleich zu schaffen.
 * Sie arbeiten in einer hoch abgestimmten Umgebung, in der die Lastverteilung gezielt eingerichtet ist, um eine bestimmte Verteilung zwischen den Controllern zu erreichen.
 
-
-Wählen Sie im SANtricity Storage Manager die Menüoption *Speicherarray* *Konfiguration* *Automatischer Lastenausgleich* aus, um die Funktion Automatischer Lastenausgleich für ein einzelnes Speicherarray zu aktivieren oder zu deaktivieren.
 
 Wählen Sie im SANtricity System Manager *Einstellungen* *System* aus, scrollen Sie nach unten zum Abschnitt *zusätzliche Einstellungen*, klicken Sie auf den Link E**nable/Disable Automatic Load Balancing** und wählen Sie das Kontrollkästchen**Automatic Load Balancing* aktivieren/deaktivieren**, um die Funktion für ein einzelnes Speicher-Array zu aktivieren bzw. zu deaktivieren.
 

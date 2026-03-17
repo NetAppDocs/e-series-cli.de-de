@@ -17,13 +17,13 @@ Der `create storageArray securityKey` Befehl erstellt oder ändert einen neuen S
 
 == Unterstützte Arrays
 
-Wenn externes Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die Arrays E4000, E2800, E5700, EF600 und EF300. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
+Wenn die externe Schlüsselverwaltung aktiviert ist, gilt dieser Befehl nur für die E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays. Wenn die interne Schlüsselverwaltung aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli Pakete installiert sind.
 
 
 
 == Rollen
 
-Zur Ausführung dieses Befehls auf einem E4000, E2800, E5700, EF600 oder EF300 Storage-Array müssen Sie über die Rolle „Security Admin“ verfügen.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 

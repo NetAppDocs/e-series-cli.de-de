@@ -17,13 +17,13 @@ Der `save check volume parity job parity errors` Befehl speichert die von einem 
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der EF600 und EF300 Arrays, solange alle SMcli-Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der EF600, EF300, EF50 und EF80 Systeme; sofern alle SMcli Pakete installiert sind.
 
 
 
 == Rollen
 
-Um diesen Befehl für ein EF600- und EF300-Speicher-Array auszuführen, müssen Sie über die Storage-Administratorrolle verfügen.
+Um diesen Befehl auf einem EF600-, EF300-, EF50- und EF80-Speicherarray auszuführen, müssen Sie die Rolle Storage Admin haben.
 
 
 

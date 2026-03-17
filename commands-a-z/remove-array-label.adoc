@@ -17,7 +17,7 @@ Der `Remove array label` Mit diesem Befehl können Sie eine benutzerdefinierte B
 
 == Unterstützte Arrays
 
-Dieser Befehl gilt für die EF600 und EF300 Storage-Arrays.
+Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 

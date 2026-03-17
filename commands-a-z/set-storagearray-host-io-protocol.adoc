@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/set-storagearray-host-io-protocol.html 
+sidebar: sidebar 
+keywords: set, storage, array, host, io, protocol 
+summary: Der Befehl storageArray hostIoProtocol „set“ konfiguriert das Host-I/O-Protokoll auf der Ebene des Speicherarrays 
+---
+= Host-I/O-Protokoll für Storage Array festlegen – SANtricity CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der  `set storageArray hostIoProtocol` Befehl konfiguriert das Host-E/A-Protokoll auf der Ebene des Speicherarrays.
+
+
+
+== Unterstützte Arrays
+
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+
+
+
+== Rollen
+
+Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
+
+
+
+== Syntax
+
+[source, cli, subs="+macros"]
+----
+set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "SAS" | "SRP"}
+----
+
+
+== Parameter
+
+[cols="2*"]
+|===
+| Parameter | Beschreibung 
+
+
+ a| 
+`set storageArray hostIoProtocol`
+ a| 
+Hiermit können Sie angeben, welches Host-E/A-Protokoll für Ihr Speichersystem verwendet werden soll. Gültige Optionen sind: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS oder SRP.
+
+|===
+
+
+== Minimale Firmware-Stufe
+
+12,0

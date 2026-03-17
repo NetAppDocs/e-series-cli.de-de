@@ -25,6 +25,44 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
+== SANtricity 12.0
+
+Die folgende Tabelle listet Änderungen an den CLI- und Skriptbefehlen für Release 12.0 auf.
+
+[cols="2*"]
+|===
+| Befehl | Beschreibung der Änderung 
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-storagearray-host-io-protocol.html["Speicherarray-Host-I/O-Protokoll festlegen"]
+ a| 
+Befehl hinzugefügt.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/show-storage-array-host-io-protocol.html["Host-I/O-Protokollinformationen des Speicherarrays anzeigen"]
+ a| 
+Befehl hinzugefügt.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/start-storagearray-externalkeymanagement-test.html["Testen der Kommunikation zum externen Verschlüsselungsmanagement"]
+ a| 
+Testergebnisse der KMS-Kommunikation zur Befehlsausgabe hinzugefügt.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-storagearray-managementinterface.html["Legen Sie die Managementoberfläche für das Storage Array fest"]
+ a| 
+Befehl entfernt.
+
+|===
+
+
 == SANtricity 11.90
 
 Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.90 auf.
@@ -214,14 +252,14 @@ Aktualisiert `disableResourceProvisioning` Parameterbeschreibung.
 
 
  a| 
-xref:./commands-a-z/recreate-storagearray-securitykey.html[Externen Sicherheitsschlüssel neu erstellen]
+xref:./commands-a-z/recreate-storagearray-securitykey.adoc[Externen Sicherheitsschlüssel neu erstellen]
  a| 
 Hinzugefügt `deleteOldKey` Parameter.
 
 
 
  a| 
-xref:./commands-a-z/create-diskpool.html[Erstellen Sie einen Laufwerkspool]
+xref:./commands-a-z/create-diskpool.adoc[Erstellen Sie einen Laufwerkspool]
  a| 
 Aktualisiert `driveCount` Parameterbeschreibung.
 
