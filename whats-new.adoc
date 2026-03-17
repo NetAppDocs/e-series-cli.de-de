@@ -25,9 +25,9 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
-== SANtricity 12.0
+== SANtricity 12.00
 
-Die folgende Tabelle listet Änderungen an den CLI- und Skriptbefehlen für Release 12.0 auf.
+Die folgende Tabelle listet Änderungen an den CLI- und Skriptbefehlen für Release 12.00 auf.
 
 [cols="2*"]
 |===

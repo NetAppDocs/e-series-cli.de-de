@@ -14,7 +14,7 @@ summary: Der Befehl Set storageArray ManagementInterface ändert die Managemento
 Der `set storageArray managementInterface` Mit dem Befehl wird die Managementoberfläche des Controllers geändert. Ändern Sie den Typ der Managementoberfläche, um die Vertraulichkeit zwischen dem Storage-Array und seiner Managementsoftware durchzusetzen oder um auf externe Tools zuzugreifen.
 
 
-NOTE: Ab SANtricity 12.0 wird dieser Befehl entfernt, da das Speichersystem immer im  `restOnly=true` Modus arbeitet.
+NOTE: Ab SANtricity 12.00 wird dieser Befehl entfernt, da das Speichersystem immer im  `restOnly=true` Modus arbeitet.
 
 
 

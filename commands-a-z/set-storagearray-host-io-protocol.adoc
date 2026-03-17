@@ -52,4 +52,4 @@ Hiermit können Sie angeben, welches Host-E/A-Protokoll für Ihr Speichersystem 
 
 == Minimale Firmware-Stufe
 
-12,0
+12,00

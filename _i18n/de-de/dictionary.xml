@@ -7532,7 +7532,6 @@
   <block id="9206a3c52cc374d2c4bcd4c2435f0a4c" category="paragraph">Um eine erfolgreiche Ausführung zu gewährleisten, müssen Skriptbefehle in der richtigen Struktur geschrieben werden.</block>
   <block id="969c9aafd3ad326a73ec93408a332797" category="paragraph">Die Befehle fallen in allgemeine Kategorien, die wiederverwendet werden, wenn Sie die Befehle zum Konfigurieren oder Verwalten eines Speicher-Arrays anwenden. Die folgende Tabelle enthält die allgemeine Form der Skriptbefehle und eine Definition jedes Befehls.</block>
   <block id="9f83268e1b8fb56b39b289fd0b017d6d" category="summary">Beachten Sie beim Schreiben von Skriptbefehlen die folgenden Richtlinien.</block>
-  <block id="5e40a8e83b3a3f822534bef7faa8799b" category="paragraph"><block ref="5e40a8e83b3a3f822534bef7faa8799b" category="inline-link-rx"></block></block>
   <block id="11b408e3275d65fef594050a844c8104" category="section-title">SANtricity 11.90</block>
   <block id="bb368ace2c104ebc1936c99e46744a7d" category="paragraph">Die folgende Tabelle führt Änderungen an den CLI- und Skriptbefehlen für Version 11.90 auf.</block>
   <block id="277f6129cc659f62a7535c5645940126" category="paragraph"><block ref="277f6129cc659f62a7535c5645940126" category="inline-link-rx"></block></block>
@@ -8057,8 +8056,6 @@
   <block id="d13da51d358cffe624beb9300684e1e6" category="paragraph">Der <block ref="777e8152565ada0c3a16a8b8868d3bc6" prefix=" " category="inline-code"></block> Befehl konfiguriert das Host-E/A-Protokoll auf der Ebene des Speicherarrays.</block>
   <block id="36212b3014245fb1e729ddc31e4ff763" category="paragraph"><block ref="777e8152565ada0c3a16a8b8868d3bc6" prefix="" category="inline-code"></block></block>
   <block id="aff266832a5aa34647a402c2095b347f" category="paragraph">Hiermit können Sie angeben, welches Host-E/A-Protokoll für Ihr Speichersystem verwendet werden soll. Gültige Optionen sind: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS oder SRP.</block>
-  <block id="195863009ffa903e83ad7fd7e7db63b1" category="paragraph">12,0</block>
-  <block id="18cec728afa90cbfc8c9587fe229cdc9" category="admonition">Ab SANtricity 12.0 wird dieser Befehl entfernt, da das Speichersystem immer im <block ref="a8172f9966e53474dd873f0dbdf427b2" prefix=" " category="inline-code"></block> Modus arbeitet.</block>
   <block id="1727ed989c7f4287136d81d78aeb960e" category="paragraph">Nicht zutreffend.</block>
   <block id="dd91b573b380dac94dc1f2ddbc34f95e" category="paragraph">ODX bietet eine Möglichkeit, Daten zu übertragen, ohne gepufferte Lese- und Schreibvorgänge zu verwenden, und erfordert keine direkte Beteiligung des Hosts am Datentransfer. Wenn ODX nicht aktiviert ist, werden die Daten vom Quellspeicher zum Host gelesen und dann vom Host zum Zielspeicher geschrieben. Mit aktiviertem ODX werden die Datentransfer-Operationen direkt von der Speicherinfrastruktur verwaltet. Die Daten werden direkt vom Quellspeicher zum Zielspeicher innerhalb desselben Arrays verschoben, wobei der Host umgangen wird.</block>
   <block id="f52bb2576426b38ae1623297e50f54fb" category="paragraph">Um diesen Befehl auf einem E4000, 2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.</block>
@@ -8076,8 +8073,6 @@
   <block id="baa909145cb669e385ef78f654ff4722" category="inline-link-macro">Host-I/O-Protokoll des Speicherarrays anzeigen</block>
   <block id="58530a0009c8cc999005ce98a138d938" category="paragraph"><block ref="58530a0009c8cc999005ce98a138d938" category="inline-link-macro-rx"></block></block>
   <block id="eb20bd68d51ddb7d412e8786688d5d9e" category="paragraph">Die CLI ist eine Funktion der SANtricity System Manager Software.</block>
-  <block id="be43ea6917c922321b76286fc855b28a" category="section-title">SANtricity 12.0</block>
-  <block id="160e51ef785e785be752dfd8326b229a" category="paragraph">Die folgende Tabelle listet Änderungen an den CLI- und Skriptbefehlen für Release 12.0 auf.</block>
   <block id="91211127bc342537dd67ab9a6314a5a6" category="inline-link">Speicherarray-Host-I/O-Protokoll festlegen</block>
   <block id="52655bee7facdcf1b5306b5469555402" category="paragraph"><block ref="52655bee7facdcf1b5306b5469555402" category="inline-link-rx"></block></block>
   <block id="4dec79ab819ec52648ee90d15be1f390" category="paragraph">Befehl hinzugefügt.</block>
@@ -8091,4 +8086,9 @@
   <block id="9e0e2266a81338fbfaf354427a1629c8" category="paragraph"><block ref="9e0e2266a81338fbfaf354427a1629c8" category="inline-xref-macro-rx"></block></block>
   <block id="777e8152565ada0c3a16a8b8868d3bc6" category="sidebar">set storageArray hostIoProtocol</block>
   <block id="a308c90c11e9795c80746daf2f7fe34d" category="sidebar">show storageArray hostIoProtocolInformation</block>
+  <block id="91818c8862cc977fdb69af565f33e9e2" category="paragraph">12,00</block>
+  <block id="50679f564ac56d24bc5e67dce7a938f9" category="admonition">Ab SANtricity 12.00 wird dieser Befehl entfernt, da das Speichersystem immer im <block ref="a8172f9966e53474dd873f0dbdf427b2" prefix=" " category="inline-code"></block> Modus arbeitet.</block>
+  <block id="c9f4c41100461402ef108c1e6ccc6adf" category="paragraph"><block ref="c9f4c41100461402ef108c1e6ccc6adf" category="inline-link-rx"></block></block>
+  <block id="aff9d49ee54e3ad13ffa0735d2a02e5a" category="section-title">SANtricity 12.00</block>
+  <block id="84dbef0be771e89569bcfffb6b44a589" category="paragraph">Die folgende Tabelle listet Änderungen an den CLI- und Skriptbefehlen für Release 12.00 auf.</block>
 </blocks>

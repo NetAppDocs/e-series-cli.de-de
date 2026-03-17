@@ -43,4 +43,4 @@ Keine.
 
 == Minimale Firmware-Stufe
 
-12,0
+12,00
