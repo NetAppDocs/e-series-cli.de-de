@@ -15,18 +15,21 @@ Der `validate storageArray securityKey` Befehl überprüft den Sicherheitsschlü
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Wenn externes Verschlüsselungsmanagement aktiviert ist, gilt dieser Befehl nur für die Arrays E4000, E2800 und E5700. Wenn das interne Verschlüsselungsmanagement aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Überprüfung des Sicherheitsschlüssels verwendet den Passphrase, mit dem die Datei generiert wird, um den Schlüssel zu entschlüsseln und mit dem im Controller-Speicher (für interne Schlüssel) oder auf dem externen Server (für externe Schlüssel) gewarteten Wert abzugleichen.
@@ -38,6 +41,7 @@ Dieser Befehl gilt sowohl für das interne als auch für das externe Verschlüss
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ pass:quotes[validate storageArray securityKey file="_fileName_" passPhrase="_pas
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den 
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.70

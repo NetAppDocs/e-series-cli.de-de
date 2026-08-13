@@ -15,18 +15,21 @@ Der `download tray firmware file` Mit dem Befehl wird die ESM-Firmware (Environm
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 [IMPORTANT]
@@ -36,6 +39,7 @@ Auf von System Manager gemanagten Duplex-Systemen (z. B. E2800) wird ein IOM-Aut
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ pass:quotes[firmware file="_filename_"]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -83,12 +88,14 @@ Gültige Dateinamen haben ein `.esm` Erweiterung.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der `tray` Parameter lädt neue Firmware in ein bestimmtes Laufwerksfach Wenn Sie die neue Firmware auf mehr als ein Laufwerksfach herunterladen müssen, aber nicht auf alle Laufwerksfächer, müssen Sie diesen Befehl für jedes Laufwerksfach eingeben
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.20

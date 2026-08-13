@@ -15,24 +15,28 @@ Der `set storageArray isnsServerRefresh` Mit dem Befehl werden die Netzwerkaddre
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl ist nur für IPv4 gültig.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -41,12 +45,14 @@ set storageArray isnsServerRefresh
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Wenn der DHCP-Server nicht voll in Betrieb ist oder wenn der DHCP-Server nicht reagiert, kann die Aktualisierung zwei bis drei Minuten dauern.
@@ -55,6 +61,7 @@ Der `set storageArray isnsServerRefresh` Befehl gibt einen Fehler aus, wenn Sie 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

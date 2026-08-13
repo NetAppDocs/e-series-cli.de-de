@@ -15,24 +15,28 @@ Der `save storageArray SOCCounts` Befehl speichert die SOC-Fehlerstatistiken in 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl gilt nur für Fibre Channel-Geräte in einer Arbitrated Loop-Topologie.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ save storageArray SOCCounts file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -60,6 +65,7 @@ Der Standardname der Datei, der die SOC-Fehlerstatistiken enthält, ist `soc-sta
 |===
 
 
+[[notes]]
 == Hinweise
 
 Führen Sie die folgenden Schritte aus, um SOC-Fehlerstatistiken effektiver in einer Datei zu speichern:
@@ -71,6 +77,7 @@ Führen Sie die folgenden Schritte aus, um SOC-Fehlerstatistiken effektiver in e
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.16

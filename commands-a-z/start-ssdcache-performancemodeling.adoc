@@ -15,24 +15,28 @@ Der `start ssdCache performanceModeling` Befehl startet die Performance-Modellie
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Performance-Modellierung überwacht und misst I/O-Aktivitäten für einen Zeitraum und schätzt die Performance für verschiedene SSD-Cache-Größen. Die Performance wird anhand von zwei Metriken geschätzt: Cache-Trefferquote und durchschnittliche Reaktionszeit. Die Daten zur Leistungsmodellierung stehen erst zur Verfügung, wenn Sie den Vorgang mit dem beenden `stop ssdCache performanceModeling` Befehl.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ start ssdCache pass:quotes[[_ssdCacheName_]] performanceModeling
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Der Name des SSD-Caches, für den Sie die Performance modellieren möchten Schli
 |===
 
 
+[[notes]]
 == Hinweise
 
 Die Leistungsmodellierung endet und die Daten zur Leistungsmodellierung stehen zur Verfügung, wenn eine der folgenden Bedingungen eintritt:
@@ -73,6 +79,7 @@ Die Leistungsmodellierung endet, aber es stehen keine Daten zur Verfügung, wenn
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

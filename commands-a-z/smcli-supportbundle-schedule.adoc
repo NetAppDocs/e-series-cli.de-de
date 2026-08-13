@@ -26,6 +26,7 @@ Sie können zwei Arten von Zeitplänen erstellen:
 
 
 
+[[syntax-for-creating-a-dailyweekly-schedule]]
 == Syntax zum Erstellen eines Tages-/Wochenplans
 
 [source, cli, subs="+macros"]
@@ -40,6 +41,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-creating-a-monthlyyearly-schedule]]
 == Syntax zum Erstellen eines monatlichen/jährlichen Zeitplans
 
 [source, cli, subs="+macros"]
@@ -58,6 +60,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-removing-a-schedule]]
 == Syntax zum Entfernen eines Zeitplans
 
 [NOTE]
@@ -72,6 +75,7 @@ pass:quotes[(all|_storageArrayName_)]
 ----
 
 
+[[parameters]]
 == Parameter
 
 In der folgenden Tabelle sind die Parameter für einen Tages-/Wochenplan aufgeführt.
@@ -332,6 +336,7 @@ Der Name eines bestimmten Speicherarrays, für das Sie einen Zeitplan festlegen 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie das verwenden `all` Parameter um einen gemeinsamen Zeitplan für alle Speicher-Arrays festzulegen, werden die Zeitpläne für einzelne Speicher-Arrays gelöscht. Wenn für alle Speicher-Arrays ein Zeitplan festgelegt ist, folgen neu erkannte Speicher-Arrays demselben Zeitplan. Wenn ein Zeitplan für alle Speicher-Arrays festgelegt ist und ein Zeitplan für ein einzelnes Speicher-Array festgelegt ist, haben neu erkannte Speicher-Arrays keinen Zeitplan definiert.
@@ -383,6 +388,7 @@ weekNumber=First dayOfWeek=Friday
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

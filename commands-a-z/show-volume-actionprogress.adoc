@@ -15,18 +15,21 @@ Der `show volume actionProgress` Befehl gibt Informationen zur Volume-Aktion und
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +41,7 @@ Die Höhe des Langlaufvorgangs, der abgeschlossen ist, wird als Prozentsatz ange
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ show volume pass:quotes[[_volumeName_]] actionProgress
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -61,6 +66,7 @@ Der Name eines Volumes, für das Sie Informationen über einen langen laufenden 
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.43

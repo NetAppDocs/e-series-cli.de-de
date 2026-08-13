@@ -15,12 +15,14 @@ Der `reset storageArray iscsiStatsBaseline` Der Befehl setzt die iSCSI-Baseline 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
@@ -32,6 +34,7 @@ Dieser Befehl ist veraltet und wird von ersetzt xref:reset-storagearray-hostport
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -40,18 +43,21 @@ reset storageArray iscsiStatsBaseline
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Mit diesem Befehl wird die Baseline für beide Controller im Speicher-Array auf 0 zurückgesetzt. Der Zweck des Rücksetzens beider Controller-Baselines besteht darin, sicherzustellen, dass die Anzahl der Controller zwischen den Controllern synchronisiert wird. Wenn ein Controller zurückgesetzt wird, aber der zweite Controller nicht zurückgesetzt wird, wird dem Host mitgeteilt, dass die Controller nicht synchronisiert sind. Der Gastgeber wird über die Zeitstempel informiert, die mit der Statistik gemeldet werden.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

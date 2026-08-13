@@ -15,18 +15,21 @@ Der `delete diskPool` Befehl löscht einen Laufwerk-Pool.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +41,7 @@ Je nach der Version der Speicherverwaltungssoftware löscht der Befehl auch alle
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ delete diskPool pass:quotes[[_diskPoolName_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -68,12 +73,14 @@ Dieser Parameter erzwingt das Löschen von Volumes, wenn Ihre Speicherverwaltung
 |===
 
 
+[[notes]]
 == Hinweise
 
 Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich(-) und Pfund (#) für das Benutzungsetikett verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

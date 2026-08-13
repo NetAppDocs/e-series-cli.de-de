@@ -15,18 +15,21 @@ Der `activate storageArray feature` Befehl aktiviert die Funktion Synchronous Mi
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
 
 
 
+[[context]]
 == Kontext
 
 Mit diesem Befehl können Sie das Mirror-Repository-Volume auf eine der drei Arten definieren:
@@ -45,6 +48,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 ====
 
 
+[[syntax-user-defined-drives]]
 == Syntax (benutzerdefinierte Laufwerke)
 
 [source, cli, subs="+macros"]
@@ -71,6 +75,7 @@ repositoryDrives=pass:quotes[_(trayID1,_]pass:quotes[[_drawerID1_,]]pass:quotes[
 ----
 
 
+[[syntax-user-defined-volume-group]]
 == Syntax (benutzerdefinierte Volume-Gruppe)
 
 [source, cli, subs="+macros"]
@@ -81,6 +86,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_]
 ----
 
 
+[[syntax-user-defined-number-of-drives]]
 == Syntax (benutzerdefinierte Anzahl von Laufwerken)
 
 [source, cli, subs="+macros"]
@@ -105,6 +111,7 @@ repositoryDriveCount=pass:quotes[_numberOfDrives_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -195,6 +202,7 @@ Die Einstellung zum Schutz vor Schubladenverlust beim Erstellen des Spiegelarchi
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der `repositoryDrives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
@@ -211,6 +219,7 @@ Der `drawerLossProtect` Mit dem Parameter wird festgelegt, ob bei Ausfall einer 
 
 
 
+[[data-assurance-management]]
 == Data Assurance Management
 
 Die Data Assurance (da)-Funktion erhöht die Datenintegrität im gesamten Storage-System. DA ermöglicht es dem Storage-Array, nach Fehlern zu suchen, die auftreten können, wenn Daten zwischen Hosts und Laufwerken verschoben werden. Wenn diese Funktion aktiviert ist, hängt das Speicherarray die Fehlerprüfungscodes (auch zyklische Redundanzprüfungen oder CRCs genannt) an jeden Datenblock im Volume an. Nach dem Verschieben eines Datenblocks ermittelt das Speicher-Array anhand dieser CRC-Codes, ob während der Übertragung Fehler aufgetreten sind. Potenziell beschädigte Daten werden weder auf Festplatte geschrieben noch an den Host zurückgegeben.
@@ -226,6 +235,7 @@ Wenn der `dataAssurance` Parameter ist auf festgelegt `enabled`, Nur Data Assura
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10 fügt RAID Level 6-Fähigkeit hinzu.

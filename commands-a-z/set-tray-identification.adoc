@@ -15,24 +15,28 @@ Der `set tray` Mit Befehl wird die Fach-ID eines Controller-Fachs, eines Control
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E2800, E5700, EF600, EF300, EF50 oder EF80 Speicherarray auszuführen, müssen Sie die Storage Admin Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl ist nur für Controller-Fächer, Controller-Laufwerksfächer oder Laufwerksfächer gültig, für die Sie über die Controller-Firmware festlegen können. Sie können diesen Befehl nicht für Controller-Fächer, Controller-Laufwerksfächer oder Laufwerksfächer mit Fach-ID verwenden, die Sie mit einem Switch festgelegt haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Fachwerte von `00` Bis `09` Werden vom Verantwortlichen abgelehnt. Nutzung `0` B
 |===
 
 
+[[notes]]
 == Hinweise
 
 Mit diesem Befehl wurde das CE6998-Controller-Fach ursprünglich unterstützt Die Controller-Fächer der Serie CE6998 können mit einer Vielzahl von Laufwerksfächern verbunden werden, einschließlich derjenigen, deren Fach-IDs durch Switches festgelegt sind. Beim Anschließen eines Controller-Fachs der Serie CE6998 an Laufwerksfächer, deren Fach-IDs durch Switches festgelegt sind, sind die gültigen Werte für Fach-IDs für das Controller-Fach `80` Bis `99`. In diesem Bereich werden Konflikte mit Fach-IDs vermieden, die für die angeschlossenen Laufwerksfächer verwendet werden.

@@ -15,24 +15,28 @@ Der `set storageArray vaaiEnabled` Befehl aktiviert oder deaktiviert die VMware 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Beim Speicher-Array ist VAAI aktiviert. Verwenden Sie diesen Befehl, um VAAI zu deaktivieren, wenn Sie VAAI nicht ausführen möchten oder wenn VAAI Probleme mit dem Speicher-Array verursacht. Das einzige betroffene Storage Array ist das Storage Array, auf dem der Befehl ausgeführt wird.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -41,6 +45,7 @@ set storageArray vaaiEnabled=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Die Einstellung zum ein- oder Ausschalten von VAAI. Um VAAI zu aktivieren, setze
 |===
 
 
+[[notes]]
 == Hinweise
 
 [NOTE]
@@ -70,6 +76,7 @@ Zeigen Sie die VAAI-Einstellung mit dem an `show storageArray odxSetting` Name:
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20

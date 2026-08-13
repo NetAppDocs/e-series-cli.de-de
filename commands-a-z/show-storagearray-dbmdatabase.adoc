@@ -15,18 +15,21 @@ Der `show storageArray dbmDatabase` Befehl ruft Metadaten für die integrierten 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,12 +38,14 @@ show storageArray dbmDatabase
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt die Informationen der Konfigurationsdatenbank in einem Format zurück, das diesem Beispiel ähnelt.
@@ -104,6 +109,7 @@ Optimal
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

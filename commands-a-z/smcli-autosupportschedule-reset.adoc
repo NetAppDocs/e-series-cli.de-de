@@ -15,12 +15,14 @@ Der `SMcli autoSupportSchedule reset` Durch Befehl werden die täglichen und wö
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +38,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -46,6 +49,7 @@ SMcli -autoSupportSchedule reset | (dailyTime=<startTime>-<endTime>
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -82,12 +86,14 @@ Setzt neue Zeitpläne zurück und generiert diese mit einem 24-Stunden-Tag und 7
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -99,6 +105,7 @@ dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am
 
 
 
+[[verification]]
 == Verifizierung
 
 Verwenden Sie die `SMcli -autoSupportSchedule show` Befehl, um die daraus resultierende Änderung am Zeitplan in der Management-Domäne anzuzeigen.

@@ -15,18 +15,21 @@ Der `reset controller` Befehl setzt einen Controller zurück und führt zu I/O-V
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -41,6 +44,7 @@ Wenn Sie die in-Band-Verwaltung verwenden, können Sie nicht steuern, an welchen
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -49,6 +53,7 @@ reset controller [(a|b)]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -63,12 +68,14 @@ Der Controller, den Sie zurücksetzen möchten. Gültige Controller-IDs sind `a`
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der Controller, der den Befehl zum Zurücksetzen des Controllers erhält, wird der angegebene Controller zurückgesetzt. Wenn beispielsweise der Befehl RESET-Controller an Controller A gesendet wird, um ein Zurücksetzen von Controller A anzufordern, startet Controller A durch einen weichen Neustart des Controllers selbst. Wenn der Reset-Controller-Befehl an Controller A gesendet wird, um ein Zurücksetzen von Controller B anzufordern, hält Controller A den Reset von Controller B und gibt dann Controller B aus dem Reset frei, bei dem es sich um einen Hardeboot handelt. Ein Soft-Reboot in einigen Produkten setzt nur den IOC-Chip zurück. Ein harter Neustart setzt sowohl die IOC- als auch die Expander-Chips im Controller zurück.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.20

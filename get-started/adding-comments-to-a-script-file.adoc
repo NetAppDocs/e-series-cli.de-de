@@ -15,6 +15,7 @@ Die Skript-Engine sucht zum Anzeigen von Kommentaren nach bestimmten Zeichen ode
 
 
 
+[[methods-for-adding-comments-to-a-script-file]]
 == Methoden zum Hinzufügen von Kommentaren zu einer Skriptdatei
 
 * Text nach zwei Schrägstrichen hinzufügen (`//` ) Als Kommentar, bis ein Zeilenende erreicht ist. Wenn die Skript-Engine nach der Verarbeitung eines Kommentars kein Zeilenende im Skript findet, wird eine Fehlermeldung angezeigt und der Skriptvorgang beendet. Dieser Fehler tritt normalerweise auf, wenn ein Kommentar am Ende eines Skripts platziert wird und Sie vergessen haben, die *Enter*-Taste zu drücken.

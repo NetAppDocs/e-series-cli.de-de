@@ -15,18 +15,21 @@ Der `set controller NTPServers` Mit dem Befehl werden die NTP-Einstellungen für
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 Wenn diese Funktion aktiviert ist, fragt der Controller regelmäßig den konfigurierten NTP-Server ab und verwendet dann die Ergebnisse, um seine interne Uhrzeit zu aktualisieren. Wenn nur ein Controller NTP aktiviert ist, synchronisiert der alternative Controller regelmäßig seine Uhr mit dem Controller, auf dem NTP aktiviert ist. Wenn auf keinem der Controller NTP aktiviert ist, synchronisieren die Controller regelmäßig ihre Uhren miteinander.
@@ -43,6 +46,7 @@ Wenn Sie NTP mit einem vollqualifizierten Domänennamen konfigurieren, müssen S
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -51,6 +55,7 @@ set controller(a|b) NTPServers=(disabled|auto|(Address1 [Address2]))
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -101,6 +106,7 @@ Wenn ein Domänenname angegeben wird, muss auch ein DNS-Server konfiguriert werd
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -113,6 +119,7 @@ set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334);
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25

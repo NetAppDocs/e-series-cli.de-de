@@ -15,18 +15,21 @@ Der `set storageArray` Befehl definiert die Eigenschaften des Speicherarrays.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Mit der Firmware-Version 8.10 der `cacheFlushStop` Der Parameter ist veraltet un
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -84,6 +88,7 @@ set storageArray
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -430,12 +435,14 @@ Aktiviert oder deaktiviert die VMware vStorage API Array-Architektur (VAAI) für
 |===
 
 
+[[notes]]
 == Hinweise
 
 Mit Ausnahme des `isnsRegistration`, Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
 
 
 
+[[autosupport-data]]
 == AutoSupport-Daten
 
 [NOTE]
@@ -456,6 +463,7 @@ Sie können die ausführen `set storageArray autoSupportConfig` Mehr als ein Spe
 
 
 
+[[cache-block-size]]
 == Cache-Blockgröße
 
 Bei der Definition von Cache-Blockgrößen verwenden Sie die Cache-Blockgröße von 4 KB für Storage Arrays, die I/O-Streams benötigen, die normalerweise klein und zufällig sind. Verwenden Sie die 8-KB-Cache-Blockgröße, wenn der Großteil Ihrer I/O-Datenströme größer als 4 KB, aber kleiner als 8 KB ist. Verwenden Sie die Cache-Blockgröße von 16 KB oder die 32-KB-Cache-Blockgröße für Storage Arrays, die Anwendungen mit großer Datenübertragung, sequenzieller oder hoher Bandbreite benötigen.
@@ -464,24 +472,28 @@ Der `cacheBlockSize` Parameter definiert die unterstützte Cache-Blockgröße f�
 
 
 
+[[cache-flush-start]]
 == Cache-Flush wird gestartet
 
 Wenn Sie Werte definieren, um einen Cache-Flush zu starten, erhöht ein zu geringer Wert die Wahrscheinlichkeit, dass die für einen Host-Lesevorgang benötigten Daten nicht im Cache liegen. Auf einen niedrigen Wert erhöht sich darüber hinaus die Anzahl der Laufwerkschreibvorgänge, die zur Aufrechterhaltung des Cache-Levels erforderlich sind. Dies erhöht den System-Overhead und verringert die Performance.
 
 
 
+[[default-host-type]]
 == Standard-Hosttyp
 
 Wenn Sie Host-Typen definieren, wirkt sich der standardmäßige Host-Typ bei aktivierter Storage-Partitionierung nur auf die Volumes aus, die in der Standardgruppe zugeordnet sind. Wenn die Speicherpartitionierung nicht aktiviert ist, müssen alle Hosts, die mit dem Speicher-Array verbunden sind, dasselbe Betriebssystem ausführen und mit dem Standardhosttyp kompatibel sein.
 
 
 
+[[media-scan-rate]]
 == Medien-Scan-Rate
 
 Der Medien-Scan wird auf allen Volumes im Storage-Array ausgeführt, die den optimalen Status aufweisen, keine Änderungs-Operationen ausführen und über den verfügen `mediaScanRate` Parameter aktiviert. Verwenden Sie die `set volume` Befehl zum Aktivieren oder Deaktivieren des `mediaScanRate` Parameter.
 
 
 
+[[password]]
 == Passwort
 
 Passwörter werden auf jedem Speicher-Array gespeichert. Für einen optimalen Schutz muss das Passwort die folgenden Kriterien erfüllen:
@@ -505,6 +517,7 @@ Sie müssen ein Kennwort für Ihr Speicherarray festlegen, bevor Sie einen Siche
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.00 fügt die hinzu `defaultHostType` Parameter.

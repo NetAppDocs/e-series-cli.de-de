@@ -15,18 +15,21 @@ Der `start volume initialize` Befehl initialisiert oder initialisiert ein Thin V
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Aktion hängt von den verwendeten Parametern ab:
@@ -42,6 +45,7 @@ Durch das Initialisieren eines Thin-Volumes wird ein lang laufender Vorgang gest
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ pass:quotes[[diskPool=_diskPoolName_ capacity=_capacityValue_]]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -111,6 +116,7 @@ Wenn dieser Parameter auf festgelegt ist `TRUE`, Das alte Projektarchiv bleibt e
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie kein Volume mit angeben `volume` Parameter: Dieser Befehl setzt die Metadaten im Repository zurück und bewirkt, dass das Thin Volume für den Host leer angezeigt wird. Wenn Sie ein Volume mit angeben `*volume*` Parameter: Dieses Volume wird entweder durch ein neu erstelltes Volume oder durch ein vorhandenes Volume ersetzt, wenn Sie ein Volume mit angeben `existingRepositoryLabel` Parameter. Wenn Sie ein vorhandenes Volume mit angeben `existingRepositoryLabel` Parameter, der sich in einem anderen Laufwerk-Pool befindet, ändert das Thin Volume die Eigentümerschaft in den neuen Laufwerk-Pool.
@@ -168,6 +174,7 @@ Wenn Sie ein Thin Volume zu einem Standard-Volume ändern möchten, erstellen Si
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

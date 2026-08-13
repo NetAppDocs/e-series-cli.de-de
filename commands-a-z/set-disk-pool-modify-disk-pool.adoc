@@ -15,24 +15,28 @@ Der `set diskPool` Mit Befehl werden einem Disk Pool (Dynamic Capacity Expansion
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Diese beiden Vorgänge schließen sich gegenseitig aus.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ addCapacity=pass:quotes[(_diskPoolCapacity_))]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -85,6 +90,7 @@ Dem Controller, der den Disk-Pool besitzt. Gültige Controller-IDs sind `a` Oder
 |===
 
 
+[[notes]]
 == Hinweise
 
 Volumes, die sich bereits im Festplatten-Pool befinden, bleiben online und für I/O-Vorgänge verfügbar, während Sie neue Laufwerke hinzufügen. Der Laufwerk-Pool muss vollständig sein, bevor Sie die Kapazität hinzufügen. Wenn der Laufwerk-Pool nicht vollständig ist, führen Sie den aus `set diskPool complete` Befehl, bevor Sie neue Laufwerke hinzufügen.
@@ -95,6 +101,7 @@ Mit diesem Befehl können Sie auch die Eigentumsrechte an einem Laufwerk-Pool vo
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

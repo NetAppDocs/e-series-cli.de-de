@@ -15,18 +15,21 @@ Der `set storageArray revocationCheckSettings` Mit dem Befehl können Sie die Ü
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Der OCSP-Server prüft, ob Zertifikate, die die Zertifizierungsstelle (CA) vor ihrem geplanten Ablaufdatum widerrufen hat. Möglicherweise möchten Sie die Überprüfung des Widerrufs aktivieren, wenn die CA ein Zertifikat nicht ordnungsgemäß ausgestellt hat oder wenn ein privater Schlüssel gefährdet ist.
@@ -40,6 +43,7 @@ Nachdem Sie die Überprüfung des Widerrufs aktiviert haben, weist das Speicher-
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -48,6 +52,7 @@ set storageArray revocationCheckSettings ([revocationCheckEnable = boolean] &| [
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -75,6 +80,7 @@ Wenn Sie eine OCSP-Antwortadresse angeben, wird die OCSP-Adresse, die in der Zer
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.42

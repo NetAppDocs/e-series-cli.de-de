@@ -15,18 +15,21 @@ Der `recopy volumeCopy target` Der Befehl initiiert einen Vorgang der Volume-Kop
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -45,6 +48,7 @@ Beim Starten eines Vorgangs für eine Volume-Kopie werden alle vorhandenen Daten
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -56,6 +60,7 @@ recopy volumeCopy target [targetName]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -91,12 +96,14 @@ Die Einstellung, damit Sie auf das Zielvolume schreiben oder nur vom Zielvolume 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Die Kopierpriorität definiert die Menge der Systemressourcen, die zum Kopieren der Daten zwischen dem Quell-Volume und dem Ziel-Volume eines Volume-Kopiepaars verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Kopie die meisten Systemressourcen, um die Volume-Kopie durchzuführen. Dadurch verringert sich die Performance bei der Übertragung von Host-Daten.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

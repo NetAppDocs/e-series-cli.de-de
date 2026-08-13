@@ -15,18 +15,21 @@ Der `create volume` Mit dem Befehl werden eine neue Volume-Gruppe und ein neues 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -51,6 +54,7 @@ userLabel=pass:quotes[_"volumeName"_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -189,6 +193,7 @@ Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Ei
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der `drives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
@@ -208,6 +213,7 @@ Wenn Sie mit dem keine Kapazität angeben `capacity` Parameter verwendet wird di
 
 
 
+[[tray-loss-protection-and-drawer-loss-protection]]
 == Schutz vor Verlust des Fachs und Schutz vor Schubladenverlust
 
 Damit der Schutz vor Verlust des Fachs funktioniert, muss Ihre Konfiguration die folgenden Richtlinien einhalten:
@@ -312,6 +318,7 @@ Keine Angabe
 |===
 
 
+[[segment-size]]
 == Segmentgröße
 
 Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
@@ -322,6 +329,7 @@ Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern od
 
 
 
+[[usage-hint]]
 == Verwendungshinweis
 
 [NOTE]
@@ -361,6 +369,7 @@ Aktiviert
 |===
 
 
+[[cache-read-prefetch]]
 == Cache-Lese-Prefetch
 
 Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
@@ -369,6 +378,7 @@ Sie müssen keinen Wert für das eingeben `cacheReadPrefetch` Parameter oder der
 
 
 
+[[security-type]]
 == Sicherheitstyp
 
 Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
@@ -385,6 +395,7 @@ Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müs
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10 fügt RAID Level 6-Fähigkeit und den hinzu `dssPreAllocate` Parameter.

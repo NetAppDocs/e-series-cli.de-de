@@ -15,18 +15,21 @@ Der `show syncMirror synchronizationProgress` Der Befehl gibt den Fortschritt de
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle Storage-Admin oder Storage-Monitor verfügen.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl zeigt den Fortschritt als Prozentsatz der abgeschlossenen Datensynchronisierung an.
@@ -38,6 +41,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ localVolumes pass:quotes[[_volumeName1_... _volumeNameN_]]) synchronizationProgr
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -80,6 +85,7 @@ Wenn die Volume-Namen Sonderzeichen haben oder nur aus Ziffern bestehen, geben S
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.40

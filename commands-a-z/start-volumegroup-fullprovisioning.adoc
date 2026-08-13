@@ -15,18 +15,21 @@ Der `start volumeGroup fullProvisioning` Der Befehl startet einen vollständigen
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der EF600, EF300, EF50 und EF80 Systeme; sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem EF600-, EF300-, EF50- und EF80-Speicherarray auszuführen, müssen Sie die Rolle Storage Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Funktion Resource Provisioning verbessert den SSD-Verschleiß und erhöht die Schreib-Performance, da einen größeren Teil der Laufwerksblöcke in einem nicht zugewiesenen Zustand als ein Standard-Volume verbleiben. Ein vom Ressourcen bereitgestelltes Volume ist ein Thick Volume in einer SSD-Volume-Gruppe oder einem Pool, wobei die Laufwerkskapazität zugewiesen (dem Volume zugewiesen) wird, die Laufwerksblöcke bei der Erstellung eines Volumes jedoch wieder aufgehoben (nicht zugewiesen) werden. Die Laufwerksblöcke werden nach Bedarf zugewiesen, um die Schreib-I/OS des Hosts zu vervollständigen. Host-Prozesse zur Zuordnung können Laufwerkblöcke wieder in den nicht zugewiesenen Status zurückversetzen. Die Ressourcen-Bereitstellung eliminiert außerdem die Zeit-gebundene Hintergrundinitialisierung, sodass große Volumes schnell initialisiert werden können.
@@ -37,6 +40,7 @@ Das vollständige Bereitstellungsformat stellt sicher, dass alle von den Volumes
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -45,6 +49,7 @@ start volumeGroup[volumeGroupName] fullProvisioning [disableResourceProvisioning
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -72,6 +77,7 @@ Um die Ressourcenbereitstellung in einer Volume-Gruppe und allen zugehörigen Vo
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 11.72

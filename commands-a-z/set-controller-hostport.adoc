@@ -15,18 +15,21 @@ Der `set controller hostPort` Durch Befehl werden die Netzwerkeigenschaften für
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Mit diesem Befehl wird die veraltete Version ersetzt xref:set-controller-iscsiho
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -71,6 +75,7 @@ set controller [(a|b)] hostPort ["portLabel"[, "physical"|"virtual"]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -303,6 +308,7 @@ Dieser Parameter wird nur von einer iSCSI-Host-Schnittstellenkarte mit 25 Gbit/s
 |===
 
 
+[[parameter-support-by-host-port-type]]
 == Parameterunterstützung nach Host-Port-Typ
 
 Die Parameterunterstützung variiert nach Host-Port-Typ (iSCSI, iSER, NVMe over InfiniBand oder NVMe over RoCE), wie in der folgenden Tabelle beschrieben:
@@ -595,6 +601,7 @@ Ja.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.41

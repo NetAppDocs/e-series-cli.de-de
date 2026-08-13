@@ -15,18 +15,21 @@ Der `reset storageArray diagnosticData` Mit dem Befehl wird der NVSRAM zurückge
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Durch diesen Befehl werden die Diagnosedaten nicht gelöscht. Mit diesem Befehl wird der Status „Aufmerksamkeit erforderlich“ durch den Status „Verfügbare Diagnosedaten“ ersetzt. Die alten Diagnosedaten werden automatisch überschrieben, sobald neue Daten erfasst werden. Auch der Speicher mit den Diagnosedaten wird gelöscht, wenn die Controller neu gebootet werden. Verwenden Sie vor dem Zurücksetzen der Diagnosedaten den `save storageArray diagnosticData` Befehl zum Speichern der Diagnosedaten in einer Datei.
@@ -38,6 +41,7 @@ Führen Sie diesen Befehl nur mit Unterstützung des technischen Supports aus.
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -46,12 +50,14 @@ reset storageArray diagnosticData
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.16

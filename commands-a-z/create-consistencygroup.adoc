@@ -15,18 +15,21 @@ Der `create consistencyGroup` Befehl erstellt eine neue, leere Konsistenzgruppe,
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ create consistencyGroup userLabel=pass:quotes[_"consistencyGroupName"_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -90,6 +94,7 @@ Legt fest, ob Systemressourcen auf Kosten der Systemleistung dem Rollback-Vorgan
 |===
 
 
+[[notes]]
 == Hinweise
 
 Eine Konsistenzgruppe ist eine logische Einheit, mit der Sie alle Snapshot-Images, die Sie der Sammlung hinzufügen, in Batch-Form verwalten können. Die Konsistenzgruppe ist eine Sammlung von Snapshot Gruppen, die für ihre Snapshot Images gemeinsame Konsistenzanforderungen oder Abhängigkeiten haben. Alle Snapshot-Images, die Sie für diese Sammlung erstellen und verwenden, müssen entsprechend den Konsistenzabhängigkeiten verwaltet werden.
@@ -104,12 +109,14 @@ Basierend auf diesem Verhalten haben alle Mitglieder für eine Konsistenzgruppe 
 
 
 
+[[auto-delete]]
 == Automatisches Löschen
 
 Sie können jede Snapshot-Gruppe so konfigurieren, dass die Snapshot-Images automatisch gelöscht werden, damit die Gesamtanzahl der Snapshot-Images in der Snapshot-Gruppe bei oder unter einer maximalen Anzahl von Bildern bleibt. Wenn die Anzahl der Snapshot-Images in der Snapshot-Gruppe die Höchstgrenze erreicht, wird das angezeigt `autoDeleteLimit` Der Parameter löscht Snapshot-Images automatisch, wenn ein neues Snapshot-Image in der Snapshot-Gruppe erstellt wird. Der `autoDeleteLimit` Der Parameter löscht die ältesten Snapshot-Images der Snapshot-Gruppe, bis die maximale Anzahl von Bildern, die mit dem Parameter definiert wurden, erreicht ist. Dies wirkt sich auf die Freigabe der Repository-Kapazität aus, sodass diese zur Erfüllung der fortlaufenden Anforderungen an das Copy-on-Write für die verbleibenden Snapshot-Images genutzt werden kann.
 
 
 
+[[scheduling-snapshot-images-in-a-consistency-group]]
 == Planen von Snapshot Images in einer Konsistenzgruppe
 
 Der `enableSchedule` Und das `schedule` Parameter bieten eine Möglichkeit, Snapshots zu planen. Mithilfe dieser Parameter können Sie Snapshots täglich, wöchentlich oder monatlich (nach Tag oder nach Datum) planen. Der `enableSchedule` Der Parameter aktiviert oder deaktiviert die Möglichkeit, Snapshots zu planen. Wenn Sie die Planung aktivieren, verwenden Sie das `schedule` Parameter, der definiert werden soll, wann die Snapshots ausgeführt werden sollen.
@@ -972,6 +979,7 @@ Wenn Sie ein Rollback in einer Konsistenzgruppe durchführen, besteht der Standa
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

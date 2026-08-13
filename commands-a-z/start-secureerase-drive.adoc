@@ -15,18 +15,21 @@ Der `start secureErase drive` Durch den Befehl werden alle Daten von einem oder 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Führen Sie diesen Befehl nur aus, wenn die FDE-Laufwerke nicht mehr zu einer sicheren Volume-Gruppe oder einem Laufwerk-Pool gehören oder wenn der Sicherheitsschlüssel unbekannt ist.
@@ -38,6 +41,7 @@ Um ein FIPS-Laufwerk zu löschen, wenn das Laufwerk gesperrt ist und der Sicherh
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ Um ein FIPS-Laufwerk zu löschen, wenn das Laufwerk gesperrt ist und der Sicherh
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -70,12 +75,14 @@ Die Laufwerksliste kann nicht alle Laufwerke im Speicher-Array enthalten, oder d
 |===
 
 
+[[notes]]
 == Hinweise
 
 Durch die Controller-Firmware wird eine Sperre erstellt, durch die der Zugriff auf FDE-Laufwerke eingeschränkt wird. FDE-Laufwerke weisen einen Zustand auf, der als „Security-fähig“ bezeichnet wird. Wenn Sie einen Sicherheitsschlüssel erstellen, wird der Status auf „aktiviert“ gesetzt, was den Zugriff auf alle im Speicher-Array vorhandenen FDE-Laufwerke einschränkt.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.40

@@ -15,18 +15,21 @@ Der `set diskPool` Mit dem Befehl werden die Attribute festgelegt, die einem Lau
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -43,6 +46,7 @@ diskPools pass:quotes[[_diskPoolName1_ ... _diskPoolNameN_]] | allDiskPools)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -154,6 +158,7 @@ Der neue Name, den Sie den Laufwerk-Pool angeben möchten. Schließen Sie den Di
 |===
 
 
+[[notes]]
 == Hinweise
 
 Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
@@ -164,6 +169,7 @@ Wenn Sie keinen Wert für einen optionalen Parameter angeben, wird ein Standardw
 
 
 
+[[disk-pool-alert-thresholds]]
 == Schwellenwerte für Disk Pool-Warnmeldungen
 
 Jeder Disk Pool verfügt über zwei nach und nach schwerwiegende Alarmstufen, mit denen Sie die Benutzer informieren, wenn die Speicherkapazität des Disk Pools voll ist. Der Schwellenwert für eine Warnmeldung ist ein Prozent der genutzten Kapazität zur gesamten nutzbaren Kapazität im Laufwerk-Pool. Folgende Meldungen sind zu beachten:
@@ -176,6 +182,7 @@ Um wirksam zu sein, muss der Wert für eine Warnmeldung immer kleiner als der We
 
 
 
+[[disk-pool-background-operations]]
 == Hintergrundvorgänge für den Disk Pool
 
 Disk-Pools unterstützen die folgenden Hintergrundvorgänge:
@@ -198,6 +205,7 @@ Disk Pools müssen keine Hintergrundbefehle in die Warteschlange stellen. Sie k�
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

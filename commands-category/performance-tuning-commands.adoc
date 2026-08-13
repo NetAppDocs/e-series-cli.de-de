@@ -15,6 +15,7 @@ Die folgende Liste mit Befehlen zur Performance-Optimierung steht für Ihr E-Ser
 
 
 
+[[automatic-load-balancing-commands]]
 == Befehle für automatischen Lastausgleich
 
 link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Statistiken zum automatischen Lastenausgleich speichern"]
@@ -23,6 +24,7 @@ link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Legen Sie fe
 
 
 
+[[ssd-cache-commands]]
 == SSD-Cache-Befehle
 
 link:../commands-a-z/add-drives-to-ssd-cache.html["Fügen Sie Laufwerke zum SSD-Cache hinzu"]

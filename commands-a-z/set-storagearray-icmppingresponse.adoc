@@ -15,18 +15,21 @@ Der `set storageArray icmpPingResponse` Befehl gibt die Standardwerte für die v
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray icmpPingResponse=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -50,12 +54,14 @@ Dieser Parameter schaltet Echoanforderungsmeldungen ein oder aus. Setzen Sie den
 |===
 
 
+[[notes]]
 == Hinweise
 
 Das Internet Control Message Protocol (ICMP) wird von Betriebssystemen in einem Netzwerk verwendet, um Fehlermeldungen, Testpakete und Informationsmeldungen im Zusammenhang mit der IP zu senden, z. B. ein angeforderter Dienst ist nicht verfügbar oder ein Host oder Router konnte nicht erreicht werden. Der ICMP-Antwortbefehl sendet ICMP Echo Request-Meldungen und erhält ICMP Echo Response-Meldungen, um zu ermitteln, ob ein Host erreichbar ist und welche Zeit es dauert, bis Pakete von und zu diesem Host gelangen.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

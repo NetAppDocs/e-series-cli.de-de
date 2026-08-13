@@ -25,12 +25,14 @@ Wenn die Volume-Gruppe aus NVMe- oder FIPS-fähigen Laufwerken besteht, müssen 
 ====
 
 
+[[export-volume-group]]
 == Volume-Gruppe exportieren
 
 Der Vorgang „Volume-Gruppe exportieren“ bereitet die Laufwerke in der Volume-Gruppe auf das Entfernen vor. Sie können die Laufwerke für Offline-Speicher entfernen oder die Volume-Gruppe in ein anderes Speicher-Array importieren. Nachdem Sie die Volume-Gruppe für den Export abgeschlossen haben, sind alle Laufwerke offline. Alle zugehörigen Volumes oder Nodes mit freier Kapazität werden nicht mehr in der Storage-Managementsoftware angezeigt.
 
 
 
+[[non-exportable-components]]
 == Nicht exportierbare Komponenten
 
 Sie müssen alle nicht exportierbaren Komponenten entfernen, bevor Sie den Vorgang für die Gruppe des Exportvolumes abschließen können. Sie müssen diese Komponenten entfernen:
@@ -44,6 +46,7 @@ Sie müssen alle nicht exportierbaren Komponenten entfernen, bevor Sie den Vorga
 
 
 
+[[basic-export-steps-for-a-volume-group]]
 == Grundlegende Exportschritte für eine Volume-Gruppe
 
 Der Export einer Volume-Gruppe umfasst diese Schritte auf dem Speicher-Array _source_.
@@ -70,12 +73,14 @@ Der Export einer Volume-Gruppe umfasst diese Schritte auf dem _Target_ Storage A
 
 
 
+[[import-volume-group]]
 == Volume-Gruppe importieren
 
 Der Vorgang „Volume-Gruppe importieren“ fügt die importierte Volume-Gruppe dem Ziel-Speicher-Array hinzu. Nach Abschluss des Vorgangs „Volume-Gruppe importieren“ verfügen alle Laufwerke über den optimalen Status. Alle zugehörigen Volumes oder Nodes mit freier Kapazität werden nun in der Storage-Managementsoftware angezeigt, die auf dem Ziel-Storage-Array installiert ist.
 
 
 
+[[basic-import-steps-for-a-volume-group]]
 == Grundlegende Importschritte für eine Volume-Gruppe
 
 [NOTE]
@@ -93,6 +98,7 @@ Der Import einer Volume-Gruppe umfasst die folgenden Schritte auf dem _Target_ S
 
 
 
+[[non-importable-components]]
 == Nicht importierbare Komponenten
 
 Einige Komponenten können während des Vorgangs „Volume-Gruppe importieren“ nicht importiert werden. Diese Komponenten werden während des Verfahrens entfernt:

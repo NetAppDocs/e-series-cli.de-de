@@ -15,12 +15,14 @@ Verwenden Sie die `SMcli -autoSupportConfig test` Befehl zum Testen der AutoSupp
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -35,6 +37,7 @@ Der Persistent Monitor sollte auf der Management Station ausgeführt werden, um 
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -43,6 +46,7 @@ SMcli -autoSupportConfig test reply-toEmail<address>
 ----
 
 
+[[parameters]]
 == Parameter
 
 In der folgenden Tabelle werden die Parameter zum Senden einer AutoSupport-Testmeldung aufgeführt.
@@ -67,12 +71,14 @@ Ermöglicht dem Benutzer, die Antwort-an-E-Mail-Adresse für die AutoSupport-Mel
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[example-of-testing-using-httphttps-delivery]]
 == Beispiel für Tests mit HTTP/HTTPS-Bereitstellung
 
 Im Folgenden finden Sie Beispiele für die Verwendung dieses Befehls bei Verwendung eines HTTP- oder HTTPS-Bereitstellungstyps, bei dem Sie keine E-Mail-Adresse für die Zustellung angeben.
@@ -86,6 +92,7 @@ SMcli completed successfully.
 ----
 
 
+[[example-of-testing-using-smtp-delivery]]
 == Beispiel für Tests mit SMTP-Übertragung
 
 Im Folgenden finden Sie Beispiele für die Verwendung dieses Befehls. Wenn Sie eine SMTP-Bereitstellungsmethode verwenden, können Sie die verwenden `reply-toEmail` Parameter zum Angeben der Zieladresse.

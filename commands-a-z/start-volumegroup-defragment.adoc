@@ -15,18 +15,21 @@ Der `start volumeGroup defragment` Der Befehl startet einen Defragment-Vorgang i
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Durch das Defragmentieren einer Volume-Gruppe wird ein lang laufender Vorgang ge
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] defragment
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -59,12 +64,14 @@ Der Name der Volume-Gruppe, die defragmentieren soll. Umschließen Sie den Namen
 |===
 
 
+[[notes]]
 == Hinweise
 
 Host-I/O-Fehler können zu den Volume-Gruppen mit mehr als 32 Volumes führen. Dieser Vorgang kann auch zum Neustart des internen Controllers führen, da die Zeitüberschreitungsdauer vor Festlegung der Volume-Gruppe endet. Wenn dieses Problem auftritt, setzen Sie den Host-I/O-Betrieb aus und versuchen Sie es erneut.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

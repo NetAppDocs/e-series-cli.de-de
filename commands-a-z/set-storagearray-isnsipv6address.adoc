@@ -15,18 +15,21 @@ Der `set storageArray isnsIPv6Address` Mit dem Befehl wird die IPv6-Adresse für
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ set storageArray isnsIPv6Address=pass:quotes[_ipAddress_]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -50,12 +54,14 @@ Die IPv6-Adresse, die Sie für den iSNS-Server verwenden möchten.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Das iSNS-Protokoll erleichtert die automatische Erkennung, Verwaltung und Konfiguration von iSCSI-Geräten und Fibre-Channel-Geräten in einem TCP/IP-Netzwerk. ISNS bietet intelligente Storage-Erkennungs- und -Management-Services, die mit denen in Fibre-Channel-Netzwerken vergleichbar sind. So kann ein Standard-IP-Netzwerk mit einer ähnlichen Kapazität wie ein Storage Area Network funktionieren. ISNS erleichtert außerdem die nahtlose Integration von IP-Netzwerken und Fibre-Channel-Netzwerken, da es Fibre-Channel-Fabric-Services emulieren kann und sowohl iSCSI-Geräte als auch Fibre-Channel-Geräte managen kann. ISNS bietet Wert in jedem Speichernetzwerk mit iSCSI-Geräten, Fibre-Channel-Geräten oder einer beliebigen Kombination.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

@@ -15,24 +15,28 @@ Der `suspend ssdCache` Befehl stoppt das Caching für alle Volumes, die den SSD-
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Während das Caching angehalten wird, werden Lesevorgänge auf dem Host über die Basis-Volumes anstatt über den SSD Cache ausgeführt.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ pass:quotes[suspend ssdCache [_ssdCacheName_]]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -56,12 +61,14 @@ Der Name des SSD-Caches, den Sie aussetzen möchten. Schließen Sie den SSD-Cach
 |===
 
 
+[[notes]]
 == Hinweise
 
 Um das Caching neu zu starten, verwenden Sie den `resume ssdCache` Befehl.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

@@ -15,18 +15,21 @@ Der `show allDrives downloadProgress` Der Befehl gibt den Status von Firmware-Do
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,12 +38,14 @@ show allDrives downloadProgress
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Wenn alle Firmware-Downloads erfolgreich abgeschlossen wurden, gibt dieser Befehl einen guten Status aus. Wenn ein Firmware-Download fehlschlägt, zeigt dieser Befehl den Firmware-Download-Status jedes zielgerichteten Laufwerks an. Dieser Befehl gibt die in dieser Tabelle aufgeführten Status zurück.
@@ -79,6 +84,7 @@ Die Downloads wurden mit Fehlern abgeschlossen.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

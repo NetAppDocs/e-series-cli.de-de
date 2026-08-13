@@ -15,18 +15,21 @@ Der `delete hostPort` Befehl löscht eine Host-Port-ID.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Identifizierung ist ein Software-Wert, der den physischen Host-Port zum Controller darstellt. Durch Löschen der Identifizierung erkennt der Controller keine Anweisungen und Daten mehr vom Host-Port.
@@ -38,6 +41,7 @@ Dieser Befehl funktioniert in einer iSCSI-Umgebung nicht, in der die Host-Ports 
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -46,6 +50,7 @@ delete hostPort [hostPortName]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -61,12 +66,14 @@ Der Name des Host-Ports, den Sie löschen möchten. Schließen Sie den Namen des
 |===
 
 
+[[notes]]
 == Hinweise
 
 Ein Host-Port ist eine physische Verbindung auf einem Hostadapter, der sich auf einem Hostcomputer befindet. Ein Host-Port bietet einen Host-Zugriff auf die Volumes in einem Speicher-Array.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.20

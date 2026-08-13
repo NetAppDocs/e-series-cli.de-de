@@ -15,18 +15,21 @@ Der `set storageArray trayPositions` Der Befehl definiert die Position der Fäch
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Eine Liste aller Fach-IDs. Die Reihenfolge der Fach-IDs in der Liste definiert d
 |===
 
 
+[[notes]]
 == Hinweise
 
 Mit diesem Befehl wird die Position eines Fachs in einem Speicher-Array anhand der Position der Fach-ID im definiert `trayPositions` Liste. Wenn Sie zum Beispiel ein Controller-Fach mit einer ID auf 84 und Laufwerksfächer mit IDs auf 1, 12 und 50 eingestellt haben, wird das angezeigt `trayPositions` Sequenz (`84 1 12 50`) Setzt das Controller-Fach in die erste Position, das Laufwerksfach 1 in die zweite Position, das Laufwerksfach 12 in die dritte Position und das Laufwerksfach 50 in die vierte Position. Der `trayPositions` Sequenz (`1 84 50 12`) Positioniert das Controller-Fach in die zweite Position, Laufwerksfach 1 in die erste Position, Laufwerksfach 50 in die dritte Position und Laufwerksfach 12 in die vierte Position.
@@ -66,6 +71,7 @@ Die Management-Software zeigt die erste Position oben und die anderen Positionen
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

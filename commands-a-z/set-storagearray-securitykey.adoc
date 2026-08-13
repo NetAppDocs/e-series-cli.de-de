@@ -15,18 +15,21 @@ Der `set storageArray securityKey` Befehl legt den Sicherheitsschlüssel fest, d
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Wenn jedes sicherheitsfähige Laufwerk im Speicher-Array einer gesicherten Volume-Gruppe oder einem Laufwerk-Pool zugewiesen ist, ist dieses Laufwerk mit dem Sicherheitsschlüssel sicher aktiviert. Bevor Sie den Sicherheitsschlüssel festlegen können, müssen Sie den verwenden `create storageArray securityKey` Befehl zum Erstellen des Sicherheitsschlüssels.
@@ -38,6 +41,7 @@ Dieser Befehl gilt nur für das interne Verschlüsselungsmanagement.
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -46,12 +50,14 @@ set storageArray securityKey
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Sicherheitsfähige Laufwerke verfügen über eine Hardware, die die kryptografische Verarbeitung beschleunigt und jeder über einen einzigartigen Laufwerksschlüssel. Ein sicherheitsfähiges Laufwerk verhält sich wie jedes andere Laufwerk, bis es einer gesicherten Volume-Gruppe hinzugefügt wird. Zu diesem Zeitpunkt wird das sicherheitsfähige Laufwerk aktiviert.
@@ -60,6 +66,7 @@ Wenn ein sicherheitsfähiges Laufwerk eingeschaltet ist, muss es den korrekten S
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.50

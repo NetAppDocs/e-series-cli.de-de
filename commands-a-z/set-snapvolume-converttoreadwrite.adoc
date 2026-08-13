@@ -15,24 +15,28 @@ Der `set snapVolume convertToReadWrite` Befehl ändert ein Snapshot-Volumen, das
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Mit diesem Befehl können Sie auch ein neues Repository-Volume für das Lese-/Schreib-Volume identifizieren oder ein Warnniveau für das Repository-Volume mit vollem Limit festlegen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ repositoryVolume=pass:quotes[(_diskPoolName_)] [capacity=pass:quotes[_capacityVa
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -99,6 +104,7 @@ Der Prozentsatz der Kapazität des Repository-Volumes, mit der Sie eine Warnung 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
@@ -117,6 +123,7 @@ Die minimale Kapazität wird durch die Controller-Firmware und die Storage-Manag
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

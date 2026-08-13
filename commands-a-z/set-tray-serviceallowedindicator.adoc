@@ -15,18 +15,21 @@ Der `set tray serviceAllowedIndicator` Befehl schaltet die Kontrollleuchte „Se
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus.
@@ -35,6 +38,7 @@ Zum ein- oder Ausschalten der Kontrollleuchte „Serviceaktion zulässig“ am C
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -114,12 +119,14 @@ Die Einstellung zum ein- und Ausschalten der Kontrollleuchte Serviceaktion zulä
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl wurde ursprünglich für die Verwendung mit dem CE6998-Controller-Fach definiert Dieser Befehl wird nicht von Controller-Fächern unterstützt, die vor der Einführung des CE6998-Controller-Fachs geliefert wurden
 
 
 
+[[example]]
 == Beispiel
 
 Mit diesem Befehl wird die Anzeigeleuchte „Serviceaktion zulässig“ für das linke ESM in Fach 5 mit der IP-Adresse 155.155.155.155 eingeschaltet.
@@ -131,6 +138,7 @@ ESM [left] serviceAllowedIndicator=on;"
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.14 fügt folgende Parameter hinzu:

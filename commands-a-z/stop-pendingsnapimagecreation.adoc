@@ -15,24 +15,28 @@ Der `stop pendingSnapImageCreation` Durch den Befehl werden alle ausstehenden Sn
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Wenn für die Snapshot-Gruppe keine ausstehenden Snapshot-Images verfügbar sind, wird von der Firmware eine Fehlermeldung angezeigt, und der Befehl wird nicht ausgeführt. Sie können diesen Befehl auf einer Snapshot-Gruppe oder einer Snapshot-Konsistenzgruppe ausführen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ pendingSnapImageCreation
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -65,6 +70,7 @@ Der Name der Snapshot Konsistenzgruppe, für die Sie ausstehende Snapshot Images
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

@@ -15,18 +15,21 @@ Der `show volumeGroup importDependencies` Der Befehl zeigt eine Liste der Abhän
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[show volumeGroup [_volumeGroupName_]] importDependencies
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -58,6 +62,7 @@ Die Einstellung zum Hochfahren der Laufwerke nach dem Lesen der Volume-Gruppenab
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt die Abhängigkeiten einer bestimmten Volume-Gruppe zurück, die sich in einem exportierten Zustand oder in einem Forced-Status befinden muss. Wenn eine Entscheidung getroffen wird, die aufgeführten Abhängigkeiten beizubehalten, dann die `cancelImport` Parameter können durchgesetzt werden, um die Laufwerke wieder nach unten zu schalten.
@@ -66,6 +71,7 @@ Sie müssen den ausführen `show volumeGroup importDependencies` Befehl vor dem 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

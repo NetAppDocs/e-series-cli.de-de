@@ -15,6 +15,7 @@ SANtricity OS 11.60 und neuere Versionen bieten die Möglichkeit, die http-basie
 
 
 
+[[11-60-and-newer-downloadable-smcli-command-line-parameters]]
 == 11.60 und neuere herunterladbare SMcli-Befehlszeilenparameter
 
 Die SMcli kann heruntergeladen werden und ist für die Controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C und EF600C erhältlich. Um die SMcli im SANtricity System Manager herunterzuladen, wählen Sie *Einstellungen* *System* und *Add-ons* *Kommandozeilenschnittstelle* .
@@ -26,6 +27,7 @@ Wie bei früheren Versionen der SMcli verfügt der SMcli, der über den SANtrici
 
 
 
+[[multifactor-authentication]]
 === Multi-Faktor-Authentifizierung
 
 Wenn SAML (Security Assertion Markup Language) aktiviert ist, können nur Access Tokens mit der CLI verwendet werden. Wenn SAML nicht aktiviert ist, können Benutzername/Passwort oder Access Token verwendet werden. Access Tokens können über den SANtricity System Manager generiert werden.
@@ -83,6 +85,7 @@ Dieses Argument erfordert eines von zwei Argumenten:
 |===
 
 
+[[general-https-mode-command-line-parameters]]
 === Allgemeine Befehlszeilenparameter des HTTPS-Modus
 
 Der herunterladbare SMcli unterstützt nur den HTTPS-Modus. Im Folgenden finden Sie häufig verwendete Befehlszeilenparameter für den HTTPS-Modus.
@@ -177,6 +180,7 @@ Zeigt Verwendungsinformationen zu den CLI-Befehlen an.
 |===
 
 
+[[managing-stored-arrays]]
 === Managen von gespeicherten Arrays
 
 Mit den folgenden Befehlszeilenparametern können Sie gespeicherte Arrays über Ihre lokal gespeicherte Bezeichnung verwalten.
@@ -184,6 +188,7 @@ Mit den folgenden Befehlszeilenparametern können Sie gespeicherte Arrays über 
 
 NOTE: Die lokal gespeicherte Bezeichnung stimmt möglicherweise nicht mit dem tatsächlichen Speicher-Array-Namen überein, der im SANtricity-System-Manager angezeigt wird.
 
+[[managearrays]]
 [cols="2*"]
 |===
 | Parameter | Definition 
@@ -228,6 +233,7 @@ Löscht die lokal gespeicherte Bezeichnung mit dem Namen `<LABEL>`
 NOTE: Der SMcli kontaktiert nicht das Speicherarray, wenn ein lokal gespeicherter Etikett hinzugefügt wird.
 
 |===
+[[storedcertificates]]
 [cols="2*"]
 |===
 | Parameter | Definition 
@@ -282,6 +288,7 @@ Löscht ein lokal gespeichertes vertrauenswürdiges Zertifikat mit dem Alias `<A
 |===
 
 
+[[identify-devices]]
 === Geräte identifizieren
 
 Mit dem folgenden Befehlszeilenparameter können Sie Informationen für alle relevanten Geräte anzeigen, die für den Host sichtbar sind.
@@ -289,6 +296,7 @@ Mit dem folgenden Befehlszeilenparameter können Sie Informationen für alle rel
 
 NOTE: Ab der Version SANtricity 11.81 ist die SMcli `identifyDevices` Parameter ersetzt die zuvor über das SMDevices-Tool verfügbare Funktionalität.
 
+[[identifyDevices]]
 [cols="2*"]
 |===
 | Parameter | Definition 

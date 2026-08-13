@@ -15,24 +15,28 @@ Der `set tray drawer` Mit dem Befehl wird die Anzeigeleuchte Serviceaktion zulä
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Schubladen werden in Laufwerksfächern mit hoher Kapazität verwendet. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Verwenden Sie diesen Befehl nur für Laufwerksfächer, die Schubladen verwenden. Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ serviceAllowedIndicator=(on | off | forceOnWarning)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -73,6 +78,7 @@ Weitere Informationen zur Verwendung von `forceOnWarning`, Siehe Hinweise.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Bevor Sie diesen Befehl eingeben können, muss das Laufwerksfach die folgenden Bedingungen erfüllen:
@@ -96,6 +102,7 @@ Zum ein- oder Ausschalten der Anzeigeleuchte „Serviceaktion zulässig“ für 
 
 
 
+[[use-of-the-forceonwarning-parameter]]
 == Verwendung des Parameters forceOnWarning
 
 Wenn Sie eine Komponente zum Entfernen vorbereiten und die Warnung überschreiben möchten, dass die Volumes keinen Schubladenschutz haben, geben Sie diesen Parameter ein:
@@ -113,6 +120,7 @@ Dieser Parameter markiert alle Laufwerke in der Schublade, auf die nicht zugegri
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.60

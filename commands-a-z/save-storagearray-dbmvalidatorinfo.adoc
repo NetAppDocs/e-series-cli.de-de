@@ -15,24 +15,28 @@ Der `save storageArray dbmValidatorInfo` Mit dem Befehl werden die Datenbankmana
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Der technische Support kann diese XML-Datei verwenden, um eine gültige Zeichenfolge (einen Sicherheitscode) zu generieren. Der Validierer-String muss in enthalten sein `load storageArray dbmDatabase` Befehl beim Wiederherstellen eines Speicher-Arrays zurück in eine bereits vorhandene Konfiguration.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ save storageArray dbmValidatorInfo file=pass:quotes["_filename_"] dbmDatabase=pa
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -67,6 +72,7 @@ Der Dateipfad und der Dateiname der DBM-Datenbank, aus der Sie die XML-Informati
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie die XML-Informationsdatei generieren, um eine gültige Zeichenfolge zu erhalten, müssen Sie diesen Befehl ausführen, während Sie mit dem Controller verbunden sind, in dem Sie die Datenbank wiederherstellen möchten. Im folgenden Beispiel wird das Format der XML-Datei angezeigt:
@@ -90,6 +96,7 @@ Wenn Sie die XML-Informationsdatei generieren, um eine gültige Zeichenfolge zu 
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.75

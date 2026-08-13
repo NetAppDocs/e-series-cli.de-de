@@ -15,18 +15,21 @@ Der `start storageArray autoSupport deliveryTest` Befehl sendet eine Beispiel-Me
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ start storageArray autoSupport deliveryTest pass:quotes[[replyToEmail="_address_
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Ermöglicht dem Benutzer, die Antwort-auf-E-Mail-Adresse für die AutoSupport-Te
 |===
 
 
+[[examples]]
 === Beispiele
 
 [listing]
@@ -65,6 +70,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

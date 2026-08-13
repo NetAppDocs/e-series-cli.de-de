@@ -15,18 +15,21 @@ Der `set consistencyGroup` Mit dem Befehl werden die Eigenschaften für eine Sna
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -40,6 +43,7 @@ set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -90,6 +94,7 @@ Priorität für Rollback-Vorgänge für eine Konsistenzgruppe, während das Spei
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -100,12 +105,14 @@ Die Rollback-Priorität definiert die Anzahl der Systemressourcen, die auf Koste
 
 
 
+[[auto-delete]]
 == Automatisches Löschen
 
 Sie können jede Snapshot-Gruppe so konfigurieren, dass sie die Snapshot-Images automatisch löscht, um die Gesamtanzahl der Snapshot-Images in der Snapshot-Gruppe auf oder unter einer maximalen Anzahl von Bildern zu speichern. Wenn die Anzahl der Snapshot-Images in der Snapshot-Gruppe die Höchstgrenze erreicht, wird das angezeigt `autoDeleteLimit` Der Parameter löscht Snapshot-Images automatisch, wenn ein neues Snapshot-Image in der Snapshot-Gruppe erstellt wird. Der `autoDeleteLimit` Der Parameter löscht die ältesten Snapshot-Images der Snapshot-Gruppe, bis die maximale Anzahl von Bildern, die mit dem Parameter definiert wurden, erreicht ist. Durch das Löschen von Snapshot Images auf diese Weise wird die Repository-Kapazität frei, sodass diese für die verbleibenden Snapshot-Images verwendet werden kann, um den fortlaufenden Bedarf an Kopien beim Schreiben zu erfüllen.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

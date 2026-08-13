@@ -15,18 +15,21 @@ Der `set snapVolume increase/decreaseRepositoryCapacity` Befehl erhöht oder ver
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax-for-increasing-capacity]]
 == Syntax für Vergrößerung der Kapazität
 
 [source, cli, subs="+macros"]
@@ -38,6 +41,7 @@ repositoryVolumes=pass:quotes[(_diskPoolName_)] [capacity=pass:quotes[_capacityV
 ----
 
 
+[[syntax-for-decreasing-capacity]]
 == Syntax für die Reduzierung der Kapazität
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ count=pass:quotes[_numberOfVolumes_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -101,6 +106,7 @@ Die Anzahl der Volumes, die Sie entfernen möchten. Ganzzahlwerte verwenden.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -117,6 +123,7 @@ Die minimale Kapazität wird durch die Controller-Firmware und die Storage-Manag
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

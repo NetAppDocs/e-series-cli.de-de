@@ -15,12 +15,14 @@ Der `SMcli alertTest` Befehl sendet eine Testwarnung an das Windows-Ereignisprot
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt nur für die E2700 und E5600 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -30,6 +32,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -38,12 +41,14 @@ SMcli -alertTest
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

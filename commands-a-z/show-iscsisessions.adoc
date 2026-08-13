@@ -15,18 +15,21 @@ Der `show iscsiSessions` Der Befehl gibt Informationen zu einer iSCSI-Sitzung f�
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -39,6 +42,7 @@ show iscsiTarget pass:quotes[["_targetName_"] | <"iqn">] iscsiSessions
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -69,6 +73,7 @@ Wenn das iSCSI-Ziel einen iSCSI-qualifizierten Namen (IQN) verwendet, schließen
 |===
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -94,6 +99,7 @@ SMcli -n Array1 -u admin@local -p adminPassword -k -c "show iscsiInitiator <\"iq
 ----
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie diesen Befehl eingeben, ohne Argumente zu definieren, gibt dieser Befehl Informationen über alle aktuell ausgeführten iSCSI-Sessions aus. Mit dem folgenden Befehl werden Informationen zu allen aktuellen iSCSI-Sitzungen angezeigt:
@@ -112,6 +118,7 @@ iqn.yyyy-mm.naming-authority:unique name
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

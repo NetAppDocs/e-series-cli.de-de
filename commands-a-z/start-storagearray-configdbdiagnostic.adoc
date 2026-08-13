@@ -15,18 +15,21 @@ Der `start storageArray configDbDiagnostic` Mit dem Befehl wird eine Konsistenzp
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -38,6 +41,7 @@ controller[(a|b)]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -88,6 +92,7 @@ Der Controller mit der Datenbank, auf der Sie die Diagnosetests ausführen möch
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl führt eine Konsistenzprüfung für eine Konfigurationsdatenbank aus. Alle Datenbankdatensätze werden überprüft. Fehlerdaten werden automatisch in eine Datei im Datenordner auf dem Datenträger geschrieben. Sie müssen keine Ausgabedatei angeben.
@@ -124,6 +129,7 @@ Zudem können Sie den Diagnosetest für die Datenbankkonfiguration über die Sto
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.75

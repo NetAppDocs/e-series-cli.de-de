@@ -15,18 +15,21 @@ Der `stop cgSnapImage rollback` Befehl stoppt einen Rollback-Vorgang auf Basis-V
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Wenn ein Snapshot-Rollback-Vorgang für Konsistenzgruppen abgebrochen wird, blei
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ memberVolumeSet pass:quotes[("_memberVolumeName1_" ... "_memberVolumeNamen_")]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -84,6 +89,7 @@ Wenn der `memberVolumeSet` Parameter wird nicht verwendet, wenn der Rollback-Pro
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der Name eines Snapshot-Bildes hat zwei Teile, die durch einen Doppelpunkt (:) getrennt sind:
@@ -106,6 +112,7 @@ stop cgSnapImage ["CG2:12345"] rollback memberVolumeset=("memVol1 memVol2 memVol
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

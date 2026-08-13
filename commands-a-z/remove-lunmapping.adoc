@@ -15,18 +15,21 @@ Der `remove lunMapping` Mit dem Befehl wird die Zuordnung der Logical Unit Numbe
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 ----
 
 
+[[syntax-for-removing-lun-or-nsid-mapping-from-more-than-one-volume-lun-or-nsid-mapping]]
 == Syntax für das Entfernen einer LUN oder NSID-Zuordnung von mehreren Volume-LUNs oder NSID-Zuordnungen
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ lunMapping
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -109,6 +114,7 @@ Dieser Parameter funktioniert nur, wenn Sie die LUN- oder NSID-Zuordnung von ein
 |===
 
 
+[[notes]]
 == Hinweise
 
 Das Zugriffs-Volume ist das Volume in einer SAN-Umgebung, das für die Kommunikation zwischen der Storage-Managementsoftware und dem Storage-Array-Controller verwendet wird. Das Zugriffs-Volume verwendet eine LUN- oder NSID-Adresse und verbraucht 20 MB Speicherplatz, der nicht zur Speicherung von Anwendungsdaten verfügbar ist. Ein Zugriffs-Volume ist nur für bandinterne gemanagte Storage-Arrays erforderlich.
@@ -122,6 +128,7 @@ Sie müssen den verwenden `host` Und das `hostGroup` Parameter, wenn Sie ein Vol
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

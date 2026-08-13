@@ -15,18 +15,21 @@ Der `revive volumeGroup` Der Befehl erzwingt die angegebene Volume-Gruppe und di
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Spe
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ revive volumeGroup pass:quotes[[_volumeGroupName_]]
 ----
 
 
+[[parameter]]
 == Parameter
 
 |===
@@ -58,6 +63,7 @@ Der Name der Volume-Gruppe, die auf den optimalen Status eingestellt werden soll
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

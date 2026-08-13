@@ -15,6 +15,7 @@ Die folgende Liste mit Spiegelungsbefehlen steht für Ihr Storage-System der E-S
 
 
 
+[[asynchronous-mirroring-commands]]
 == Befehle für asynchrone Spiegelung
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Aktivieren Sie die asynchrone Spiegelung"]
@@ -61,6 +62,7 @@ link:../commands-a-z/diagnose-asyncmirrorgroup.html["Testen Sie die Konnektivit�
 
 
 
+[[synchronous-mirroring-commands]]
 == Befehle für synchrones Spiegeln
 
 link:../commands-a-z/activate-synchronous-mirroring.html["Aktivieren Sie Synchronous Mirroring"]

@@ -15,12 +15,14 @@ Der `SMcli -autoSupportLog` Mit dem Befehl können Sie eine AutoSupport-Protokol
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 Mit diesem Befehl können Sie zwei Protokolltypen anzeigen:
@@ -36,6 +38,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +48,7 @@ pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 In der folgenden Tabelle werden die Befehlsparameter aufgeführt.
@@ -100,12 +104,14 @@ Dieser Parameter ist erforderlich.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -114,6 +120,7 @@ SMcli -autosupportLog -n StorageArrayName inputArchive=0 outputLog=ASUPTransmiss
 ----
 
 
+[[verification]]
 == Verifizierung
 
 Zeigen Sie das angeforderte AutoSupport-Protokoll an. Dies befindet sich im Client-Verzeichnis, in dem die Speicherverwaltungssoftware installiert wurde.

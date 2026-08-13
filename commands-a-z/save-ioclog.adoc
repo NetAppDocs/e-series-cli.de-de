@@ -15,18 +15,21 @@ Der `save IOCLog` Der Befehl speichert die IOC Dumps von den Controllern in eine
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ save IOCLog [file=pass:quotes["_filename_"]]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -56,6 +60,7 @@ Dieser Befehl speichert die Daten in einer komprimierten Datei und fügt die Dat
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl ruft von beiden Controllern die IOC Dump-Protokolldaten und die IOC Dump-Metadaten ab. Mit einem 7zip-Dateiformat werden die abgerufenen Daten archiviert und in einer einzigen Datei mit einem gewünschten Dateinamen komprimiert. Die Archivdatei 7zip enthält Folgendes:
@@ -74,6 +79,7 @@ Die komprimierten Protokolle befinden sich nicht in einem vom Menschen lesbaren 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20

@@ -15,24 +15,28 @@ Der `set host` Der Befehl weist einen Host einer Host-Gruppe zu oder verschiebt 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können auch eine neue Host-Gruppe erstellen und den Host mit diesem Befehl der neuen Host-Gruppe zuweisen. Die von diesem Befehl durchgeführten Aktionen hängen davon ab, ob der Host über individuelle Zuordnungen verfügt oder keine individuellen Zuordnungen enthält.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ hostType=pass:quotes[(_hostTypeIndexLabel_ | _hostTypeIndexNumber_)]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -111,6 +116,7 @@ Der Host wird aus der aktuellen Host-Gruppe entfernt und wird unter die Standard
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
@@ -119,6 +125,7 @@ Für die Namen können Sie eine beliebige Kombination aus alphanumerischen Zeich
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

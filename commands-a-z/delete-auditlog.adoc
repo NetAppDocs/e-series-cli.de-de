@@ -15,18 +15,21 @@ Der `delete auditLog` Befehl löscht einige oder alle Datensätze im Prüfprotok
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ delete auditLog (all | (endRecord=pass:quotes[_timestamp_ | endDate=_date_) |
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -76,6 +80,7 @@ Hier können Sie die Anzahl der neuesten Datensätze für das Prüfprotokoll ang
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -93,6 +98,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

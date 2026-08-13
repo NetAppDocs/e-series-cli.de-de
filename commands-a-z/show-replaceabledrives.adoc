@@ -15,18 +15,21 @@ Der `show replaceableDrives` Mit dem Befehl werden alle austauschbaren Laufwerke
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Der Befehl gibt für jedes austauschbare Laufwerk im Speicher-Array die folgenden Informationen zurück:
@@ -39,6 +42,7 @@ Der Befehl gibt für jedes austauschbare Laufwerk im Speicher-Array die folgende
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -47,6 +51,7 @@ show replaceableDrives
 ----
 
 
+[[example-output]]
 == Beispielausgabe
 
 [listing]
@@ -66,6 +71,7 @@ Replaceable drive at Tray 0, Slot 24
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

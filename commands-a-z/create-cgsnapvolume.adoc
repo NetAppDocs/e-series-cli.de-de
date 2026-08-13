@@ -15,24 +15,28 @@ Der `create cgSnapVolume` Befehl erstellt ein Snapshot-Volume von spezifischen I
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können ein Basis-Volume oder mehrere Basisvolumes aus der Konsistenzgruppe auswählen, die in das Snapshot-Volume aufgenommen werden soll. Wenn Sie ein Snapshot-Volume einer Konsistenzgruppe erstellen, erstellen Sie ein Volume mit Inhalten, die Sie anzeigen können.
 
 
 
+[[syntax-with-user-specified-base-volumes]]
 == Syntax mit benutzerspezifizierten Basis-Volumes
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ members=pass:quotes[_(baseVolume1:repos_XXXX ... baseVolumen:repos_YYYY)_]
 ----
 
 
+[[syntax-when-setting-the-consistency-group-snapshot-volume-to-read-only]]
 == Syntax bei Einstellung des Snapshot- Volumens der Konsistenzgruppe auf „schreibgeschützt“
 
 [source, cli, subs="+macros"]
@@ -53,6 +58,7 @@ readOnly
 ----
 
 
+[[syntax-when-setting-the-repository-full-limit]]
 == Syntax beim Festlegen der vollen Repository-Grenze
 
 [source, cli, subs="+macros"]
@@ -69,6 +75,7 @@ repositoryFullLimit=pass:quotes[_percentValue_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -159,6 +166,7 @@ Die Einstellung, um zu bestimmen, ob Sie auf das Snapshot-Volumen schreiben kön
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -224,6 +232,7 @@ cgSnapImageID="snapCG1:oldest";
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

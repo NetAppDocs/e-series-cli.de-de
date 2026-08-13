@@ -15,18 +15,21 @@ Der `delete initiator` Mit dem Befehl wird das Initiator-Objekt gelöscht.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [IMPORTANT]
@@ -41,6 +44,7 @@ Dieser Befehl ist nur für iSCSI, iSER, NVMe over RoCE, NVMe over InfiniBand und
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -49,6 +53,7 @@ delete initiator (["initiatorName"] | <"initiatorQualifiedName">)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -64,6 +69,7 @@ Ermöglicht Ihnen die Angabe der Initiator-ID, für die Sie löschen möchten. S
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.41

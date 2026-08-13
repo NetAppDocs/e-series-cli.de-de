@@ -15,18 +15,21 @@ Der `clear storageArray configuration` Der Befehl löscht eine vollständige Kon
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Verwenden Sie diesen Befehl, um eine der folgenden Vorgänge auszuführen:
@@ -43,6 +46,7 @@ Verwenden Sie diesen Befehl, um eine der folgenden Vorgänge auszuführen:
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -55,6 +59,7 @@ clear storageArray configuration factoryReset
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -102,6 +107,7 @@ Diese Einstellung verhält sich wie der `factoryReset` Parameter, aber auch lös
 |===
 
 
+[[notes]]
 == Hinweise
 
 Mit diesem Befehl können Sie die Konfiguration des Speicher-Arrays auf verschiedene Weise löschen. Wenn Sie das Speicher-Array für Volume-Gruppen löschen, wird der Wiederherstellungsmodus automatisch gestartet. Im Recovery-Modus werden integrierte (Cache) Backups aufbewahrt (wenn sie auf der Plattform vorhanden sind). Wenn sich das Speicher-Array im Wiederherstellungsmodus befindet, können Sie optional die Speicherarray-Konfiguration aus einer Host-basierten Backup-Datei oder aus einem der integrierten (Cache) Backups wiederherstellen.
@@ -126,6 +132,7 @@ Der `A` Ist ein eindeutiger SMcli-Terminal und muss groß sein.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10 fügt folgende Parameter hinzu:

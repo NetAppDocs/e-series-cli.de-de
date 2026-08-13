@@ -15,24 +15,28 @@ Der `set volumeGroup forcedState` Befehl verschiebt eine Volume-Gruppe in einen 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Verwenden Sie diesen Befehl, wenn das ausgeführt wird `start volumeGroup import` Der Befehl verschiebt die Volume-Gruppe nicht in einen importierten Status oder wenn der Importvorgang aufgrund von Hardwarefehlern nicht funktioniert. Im Status „erzwungen“ kann die Volume-Gruppe importiert werden, und Sie können die Hardwarefehler erkennen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set volumeGroup pass:quotes[[_volumeGroupName_]] forcedState
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Der Name der Volume-Gruppe, die Sie in den Status „gezwungen“ setzen möchte
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können die Laufwerke, die eine Volume-Gruppe umfassen, von einem Speicher-Array zu einem anderen Speicher-Array verschieben. Die CLI bietet drei Befehle, mit denen Sie die Laufwerke verschieben können. Die Befehle lauten `start volumeGroup export`, `start volumeGroup import`, und `set volumeGroup forcedState`.
@@ -64,6 +70,7 @@ Im Status „erzwungen“ können Sie einen Importvorgang für die Volume-Gruppe
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

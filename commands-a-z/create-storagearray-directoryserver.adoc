@@ -15,18 +15,21 @@ Der `create storageArray directoryServer` Mit Befehl können Sie einen neuen Ver
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -43,6 +46,7 @@ create storageArray directoryServer
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -123,6 +127,7 @@ Ermöglicht ihnen, den Konfigurationstest zu überspringen, bevor die Konfigurat
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing]

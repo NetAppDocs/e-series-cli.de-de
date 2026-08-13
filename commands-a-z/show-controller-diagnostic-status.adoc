@@ -17,6 +17,7 @@ Wenn die Diagnose abgeschlossen ist, werden alle Ergebnisse der Diagnosetests an
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -25,6 +26,7 @@ show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -47,6 +49,7 @@ Der Name der Datei, die die Ergebnisse der Diagnosetests enthält. Dieser Befehl
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.70 fügt die Fähigkeit für den Diagnosestatus des Controllers hinzu.

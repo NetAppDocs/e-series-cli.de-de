@@ -15,18 +15,21 @@ Der `save auditLog` Befehl ruft die Datensätze des Prüfprotokolls ab.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -37,6 +40,7 @@ save auditLog (all | (beginDate=pass:quotes[_date_ | endDate=_date_)]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -102,6 +106,7 @@ Die Audit-Log-Datensätze werden in absteigender Reihenfolge von neuestem bis ä
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -118,6 +123,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

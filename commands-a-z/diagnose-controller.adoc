@@ -15,24 +15,28 @@ Der `diagnose controller` Mit dem Befehl werden Diagnosetests auf dem Controller
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Diagnosetests bestehen aus Loopback-Tests, bei denen Daten auf die Laufwerke geschrieben und von den Laufwerken gelesen werden.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[[patternFile="_filename_"]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -88,6 +93,7 @@ Der Dateipfad und der Dateiname, der ein Datenmuster enthält, das Sie als Testd
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie einen Datenschleifentest ausführen, können Sie optional eine Datei mit einem Datenmuster angeben. Wenn Sie keine Datei angeben, stellt die Controller-Firmware ein Standardmuster bereit.
@@ -112,6 +118,7 @@ One or more controller discrete lines failed the diagnostic test.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10 fügt den Lesetest, den Schreibtest und den Datenschleifentest hinzu.

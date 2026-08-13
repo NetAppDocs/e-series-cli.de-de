@@ -15,24 +15,28 @@ Der `autoConfigure storageArray` Befehl konfiguriert automatisch ein Speicher-Ar
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Bevor Sie das aufrufen `autoConfigure storageArray` Führen Sie den Befehl aus `show storageArray autoConfiguration` Befehl. Der `show storageArray autoConfiguration` Befehl gibt Konfigurationsinformationen in Form einer Liste gültiger Laufwerkstypen, RAID Level, Volume-Informationen und Hot-Spare-Informationen zurück. (Diese Liste entspricht den Parametern für das `autoConfigure storageArray` Befehl.) Die Controller prüfen das Storage Array und ermitteln dann das höchste RAID-Level, das das Storage Array unterstützen kann, sowie die effizienteste Volume-Definition für das RAID-Level. Wenn die von der zurückgegebenen Liste beschriebene Konfiguration akzeptabel ist, können Sie das eingeben `autoConfigure storageArray` Befehl ohne Parameter. Wenn Sie die Konfiguration ändern möchten, können Sie die Parameter entsprechend Ihren Konfigurationsanforderungen ändern. Sie können einen einzelnen Parameter oder alle Parameter ändern. Nach der Eingabe des `autoConfigure storageArray` Befehl: Die Controller richten das Storage-Array unter Verwendung der Standardparameter oder der von Ihnen ausgewählten ein.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -55,6 +59,7 @@ pass:quotes[[readAheadMultiplier=_multiplierValue_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -189,6 +194,7 @@ Die Blockgröße der erstellten Volumes in Byte. Die unterstützten Werte sind `
 |===
 
 
+[[drives-and-volume-groups]]
 == Laufwerke und Volume-Gruppen
 
 Eine Volume-Gruppe ist ein Satz von Laufwerken, die logisch durch die Controller im Storage-Array gruppiert werden. Die Anzahl der Laufwerke in einer Volume-Gruppe beschränkt sich auf die RAID-Ebene und die Controller-Firmware. Wenn Sie eine Volume-Gruppe erstellen, befolgen Sie die folgenden Richtlinien:
@@ -310,6 +316,7 @@ Keine Angabe
 |===
 
 
+[[hot-spares]]
 == Hot Spares
 
 Bei Volume-Gruppen ist die Sicherung von Daten eine wertvolle Strategie, verfügbare Laufwerke im Storage Array als Hot Spare-Laufwerke zuzuweisen. Ein Hot Spare ist ein Laufwerk ohne Daten, das im Speicher-Array als Standby fungiert, falls ein Laufwerk in einer RAID 1-, RAID 3-, RAID 5- oder RAID 6-Volume-Gruppe ausfällt. Das Hot Spare fügt dem Speicher-Array eine weitere Ebene an Redundanz hinzu.
@@ -336,6 +343,7 @@ Wenn Sie kein Hot Spare besitzen, können Sie weiterhin ein ausgefallenes Laufwe
 
 
 
+[[segment-size]]
 == Segmentgröße
 
 Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
@@ -346,12 +354,14 @@ Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern od
 
 
 
+[[cache-read-prefetch]]
 == Cache-Lese-Prefetch
 
 Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
 
 
 
+[[security-type]]
 == Sicherheitstyp
 
 Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
@@ -368,12 +378,14 @@ Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müs
 
 
 
+[[secure-drives]]
 == Sichere Laufwerke
 
 Sichere Laufwerke können entweder vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) oder FIPS-Laufwerke (Federal Information Processing Standard) sein. Verwenden Sie die `secureDrives` Parameter, um den Typ der zu verwendenden sicheren Laufwerke anzugeben. Die Werte, die Sie verwenden können, sind `fips` Und `fde`.
 
 
 
+[[example-command]]
 == Beispielbefehl
 
 [listing]
@@ -382,6 +394,7 @@ autoConfigure storageArray securityType=capable secureDrives=fips;
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10 bietet zusätzliche RAID Level 6-Funktionalität und beseitigt Hot-Spare-Grenzen.

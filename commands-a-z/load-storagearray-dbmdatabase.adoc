@@ -15,18 +15,21 @@ Der `load storageArray dbmDatabase` Mit Befehl wird ein Datenbank-Management (DB
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl stellt eine Speicher-Array-DBM-Datenbank auf die genaue Konfiguration wieder her, die existierte, als das Datenbank-Image mit erfasst wurde `save storageArray dbmDatabase` Befehl. Die Daten in einer Datei enthalten Daten für die RAID-Konfiguration, Volume-Gruppen und Festplatten-Pools.
@@ -35,6 +38,7 @@ Bevor Sie diesen Befehl mit dem verwenden `file` Option: Sie müssen zuerst eine
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[((file="_filename_" validator="_validatorValue_") | sourceLocation=o
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -99,12 +104,14 @@ Dieser Parameter ist auf festgelegt `all` Standardmäßig werden alle Daten eins
 |===
 
 
+[[notes]]
 == Hinweise
 
 Je nach Größe des Datenbank-Images kann die Wiederherstellung der Datenbank bis zu 30 Minuten dauern. Die Host-Software zeigt die Controller erst dann in einem optimalen Zustand an, wenn alle Aktionen zum Laden des Datenbank-Images auf den Controllern abgeschlossen sind.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.75

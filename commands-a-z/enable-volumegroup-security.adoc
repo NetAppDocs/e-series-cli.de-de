@@ -15,18 +15,21 @@ Der `enable volumeGroup security` Befehl konvertiert eine nicht sichere Volume-G
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ pass:quotes[enable volumeGroup [_volumeGroupName_]] security
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Der Name der Volume-Gruppe, die Sie in den Status „Security Enabled“ einfüg
 |===
 
 
+[[notes]]
 == Hinweise
 
 Diese Bedingungen müssen erfüllt sein, damit dieser Befehl erfolgreich ausgeführt wird.
@@ -64,6 +69,7 @@ Durch die Controller-Firmware wird eine Sperre erstellt, durch die der Zugriff a
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.40

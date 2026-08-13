@@ -15,24 +15,28 @@ Der `set session errorAction` Der Befehl legt fest, wie die aktuelle Skript-Engi
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin, Support Admin, Security Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Für diesen Befehl stellt eine Sitzung die Dauer für das Ausführen der Befehle dar. Dieser Befehl stellt die Parameter für das Speicher-Array nicht dauerhaft fest.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -52,6 +56,7 @@ performanceMonitorIterations=iterationValue
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -103,6 +108,7 @@ Wenn der Clienttyp auf festgelegt ist `https`Dieser Parameter ist veraltet. Verw
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
@@ -113,6 +119,7 @@ Das Abrufintervall und die Anzahl der Iterationen, die Sie angeben, bleiben bis 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.20

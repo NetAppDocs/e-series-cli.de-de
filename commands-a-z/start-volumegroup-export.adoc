@@ -15,18 +15,21 @@ Der `start volumeGroup export` Der Befehl verschiebt eine Volume-Gruppe in einen
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Anschließend können Sie die Laufwerke, die die Volume-Gruppe enthalten, entfernen und die Laufwerke in einem anderen Speicher-Array neu installieren.
@@ -43,6 +46,7 @@ Innerhalb der Volume-Gruppe können Sie keine Volumes verschieben, die den Funkt
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] export
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -66,6 +71,7 @@ Der Name der Volume-Gruppe, die exportiert werden soll. Umschließen Sie den Nam
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn dieser Befehl erfolgreich ist, können Sie den ausführen `start volumeGroup import` Befehl zum Abschließen des Verschiebens der Volume-Gruppe in einen vollständigen Zustand, der die Volume-Gruppe für das neue Storage-Array verfügbar macht.
@@ -76,6 +82,7 @@ Nachdem sich die Volume-Gruppe in einem exportierten Status oder „Forced“ be
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

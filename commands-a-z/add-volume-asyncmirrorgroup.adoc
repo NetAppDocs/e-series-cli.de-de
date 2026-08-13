@@ -15,29 +15,33 @@ Der `add volume asyncMirrorGroup` Befehl fügt ein primäres Volume zu einer asy
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
 
 [NOTE]
 ====
-Dieser Befehl wird auf E4000-, E2800-, E5700-, EF600-, EF300-, EF50- und EF80-Plattformen nicht unterstützt.
+Dieser Befehl wird auf den Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
+[[roles]]
 == Rollen
 
 K. A.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl ist nur für das lokale Speicher-Array gültig, das die asynchrone Spiegelgruppe enthält, der Sie das primäre Volume hinzufügen möchten. Eine asynchrone Spiegelgruppe verfügt über ein Repository-Volume, mit dem Daten aller zeitpunktgenauen Images gespeichert werden, die Teil der asynchronen Spiegelgruppe sind. Jedes primäre Volume in der asynchronen Spiegelgruppe verfügt über ein entsprechendes Spiegelvolume auf einem Remote Storage Array.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityVal
 ----
 
 
+[[parameter]]
 == Parameter
 
 |===
@@ -110,6 +115,7 @@ Die Storage-Managementsoftware erstellt das Repository-Volume und verknüpft das
 |===
 
 
+[[notes]]
 == Hinweise
 
 * Die Funktion zur asynchronen Spiegelung muss auf den lokalen und Remote Storage-Arrays aktiviert sein, die für Spiegelaktivitäten verwendet werden.
@@ -119,6 +125,7 @@ Die Storage-Managementsoftware erstellt das Repository-Volume und verknüpft das
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

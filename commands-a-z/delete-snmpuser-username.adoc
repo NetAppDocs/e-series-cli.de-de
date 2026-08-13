@@ -15,18 +15,21 @@ Der `delete snmpUser userName` Befehl löscht einen vorhandenen einfachen Networ
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ pass:quotes[delete snmpUser userName="_snmpUserName_" [engineId=(local | engineI
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -57,6 +61,7 @@ Die Engine-ID des SNMP USM-Benutzers, den Sie aktualisieren möchten. Die Engine
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.72

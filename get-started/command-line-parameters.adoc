@@ -15,6 +15,7 @@ SANtricity OS 11.40 wurde eingeführt. Für die E2800 und E5700 Controller mit i
 
 
 
+[[11-53-and-older-command-line-parameters]]
 == 11.53 und ältere Befehlszeilenparameter
 
 Das Symbolprotokoll ist das einzige unterstützte Protokoll für die E2700 und E5600 Controller. Um vorhandene Skripte zu erhalten und die Übergangszeit zu minimieren, bleiben die CLI-Optionen und Grammatik so weit wie möglich erhalten. Allerdings gibt es einige Unterschiede in den Funktionen der E2800 und E5700 Controller in Bezug auf Sicherheit, Authentifizierung, AutoSupport und Hinweis, die zu einer veralteten CLI-Grammatik für diese Controller führen. In einigen Fällen ist die Grammatik jedoch nur bei Verwendung des neuen HTTPS-Protokolls auf der E2800 oder E5700 veraltet.
@@ -68,6 +69,7 @@ Dieses optionale Argument ermöglicht ein `*https*` Der Client muss im unsichere
 |===
 
 
+[[command-line-parameters-that-only-apply-to-e2700-or-e5600-controllers]]
 == Befehlszeilenparameter, die nur für E2700 oder E5600 Controller gelten
 
 Da die E2700 und E5600 Controller keine integrierten Alert-Management-Funktionen verfügen, sind diese Befehlszeilenparameter relevant. Diese Parameter gelten nicht für die E2800 oder E5700 Controller.
@@ -130,6 +132,7 @@ Diese Befehlszeilenoption ist für E2800 und E5700 Storage-Arrays veraltet. Verw
 |===
 
 
+[[command-line-parameters-that-apply-to-all-controllers-running-with-a-symbol-client-type]]
 == Befehlszeilenparameter, die sich auf alle Controller beziehen, die mit einem Symbol-Client-Typ ausgeführt werden
 
 [cols="2*"]
@@ -157,6 +160,7 @@ Der `*-R*` Parameter ist nur erforderlich, wenn die Funktion mit zwei Kennwörte
 |===
 
 
+[[command-line-parameters-applicable-to-all-controllers-and-all-client-types]]
 == Befehlszeilenparameter, die sich für alle Controller und alle Client-Typen anwenden lassen
 
 [cols="2*"]

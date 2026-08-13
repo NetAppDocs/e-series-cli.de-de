@@ -15,12 +15,14 @@ Der `set event alert` Befehle verwalten die Meldungsbenachrichtigung durch Deakt
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt nur für die E2700 und E5600 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -30,6 +32,7 @@ Dieser Befehl ist ein SMcli-Befehl und kein Skript-Befehl. Sie müssen diesen Be
 ====
 
 
+[[context]]
 == Kontext
 
 Wenn Sie ein Storage-Array definieren, können Sie Alarme konfigurieren und das Management der Ereignismeldungen festlegen. Wenn Sie das Speicher-Array so konfiguriert haben, dass Warnungen gesendet werden, wird eine Benachrichtigung an einen bestimmten Empfänger gesendet, wenn ein alertabbares Ereignis auftritt. Diese Benachrichtigung kann eine oder alle der folgenden Arten sein:
@@ -53,6 +56,7 @@ Nicht alarmbare Ereignisse können mit diesem Befehl nicht alertable ausgeführt
 ====
 
 
+[[syntax-to-block-an-event-alert]]
 == Syntax zum Blockieren einer Ereigniswarnung
 
 [source, cli, subs="+macros"]
@@ -61,6 +65,7 @@ set blockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[syntax-to-unblock-an-event-alert]]
 == Syntax zum Entsperren einer Ereigniswarnung
 
 [source, cli, subs="+macros"]
@@ -69,6 +74,7 @@ set unBlockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -86,6 +92,7 @@ Wenn Sie ein ungültiges Ereignis eingeben, wird ein Fehler angezeigt.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.10

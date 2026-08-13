@@ -15,24 +15,28 @@ Der `set storageArray odxEnabled` Befehl schaltet den Offloaded Data Transfer (O
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 Im Storage-Array ist ODX aktiviert. Verwenden Sie diesen Befehl, um ODX zu deaktivieren, wenn Sie ODX nicht ausführen möchten oder wenn ODX Probleme im Storage-Array verursacht. Das einzige betroffene Storage Array ist das Storage Array, auf dem der Befehl ausgeführt wird.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -41,6 +45,7 @@ set storageArray odxEnabled=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -56,12 +61,14 @@ Die Einstellung zum ein- oder Ausschalten von ODX. Um ODX zu aktivieren, setzen 
 |===
 
 
+[[notes]]
 == Hinweise
 
 ODX bietet eine Möglichkeit, Daten zu übertragen, ohne gepufferte Lese- und Schreibvorgänge zu verwenden, und erfordert keine direkte Beteiligung des Hosts am Datentransfer. Wenn ODX nicht aktiviert ist, werden die Daten vom Quellspeicher zum Host gelesen und dann vom Host zum Zielspeicher geschrieben. Mit aktiviertem ODX werden die Datentransfer-Operationen direkt von der Speicherinfrastruktur verwaltet. Die Daten werden direkt vom Quellspeicher zum Zielspeicher innerhalb desselben Arrays verschoben, wobei der Host umgangen wird.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20

@@ -15,6 +15,7 @@ Die folgende Liste von Administratorbefehlen steht für das Storage-System der E
 
 
 
+[[storage-administrators-commands]]
 == Befehle für Storage-Administratoren
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Aktivieren Sie die asynchrone Spiegelung"]
@@ -727,6 +728,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Aktualisieren 
 
 
 
+[[support-administrators-commands]]
 == Unterstützen Sie Administratorbefehle
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Aktivieren Sie die asynchrone Spiegelung"]
@@ -851,6 +853,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Aktualisieren 
 
 
 
+[[security-administrators-commands]]
 == Befehle von Sicherheitsadministratoren
 
 link:../commands-a-z/create-storagearray-directoryserver.html["Verzeichnisserver für Speicher-Array erstellen"]

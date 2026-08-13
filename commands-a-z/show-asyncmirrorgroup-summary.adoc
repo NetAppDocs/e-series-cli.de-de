@@ -15,18 +15,21 @@ Der `show asyncMirrorGroup summary` Mit dem Befehl werden Konfigurationsinformat
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600 und EF300 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600 oder EF300 Storage Array auszuführen, ist die Rolle Storage Admin erforderlich.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl zeigt auch die asynchronen gespiegelten Paare an, die mit jeder asynchronen Spiegelgruppe verbunden sind, einschließlich unvollständiger asynchroner gespiegelter Paare.
@@ -35,6 +38,7 @@ Mit diesem Befehl können Sie den Fortschritt der periodischen Datensynchronisie
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ asyncMirrorGroups pass:quotes[[_asyncMirrorGroupName1_ ... _asyncMirrorGroupName
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -93,6 +98,7 @@ Mit diesem Parameter wird eine kurze Liste von Informationen zum Synchronisierun
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

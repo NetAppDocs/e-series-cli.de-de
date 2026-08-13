@@ -15,18 +15,21 @@ Der `set storageArray autoLoadBalancingEnable` Befehl aktiviert oder deaktiviert
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray autoLoadBalancingEnable=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -57,6 +61,7 @@ Dieser Parameter schaltet den automatischen Lastausgleich am Controller ein oder
 |===
 
 
+[[what-is-automatic-load-balancing]]
 == Was ist der automatische Lastausgleich?
 
 Die Funktion Automatic Load Balancing bietet ein verbessertes I/O-Ressourcenmanagement, das dynamisch auf Laständerungen im Laufe der Zeit reagiert und die Eigentümerschaft der Volume-Controller automatisch angepasst wird, um Probleme bei der Lastverteilung, die zwischen den Controllern verschoben werden, zu beheben.
@@ -71,6 +76,7 @@ Wenn der automatische Lastenausgleich aktiviert ist, führt er folgende Funktion
 
 
 
+[[enabling-and-disabling-automatic-load-balancing]]
 == Aktivieren und Deaktivieren des automatischen Lastauswuchtes
 
 Der automatische Lastausgleich ist auf allen Storage-Arrays, die mit SANtricity OS (Controller-Software) 8.30 oder höher ausgeliefert werden, standardmäßig aktiviert. Linux-, Windows- und VMware Multipath-Treiber können die Funktion Automatischer Lastausgleich verwenden. Wenn Sie Ihren Controller von SANtricity OS (Controller-Software) 8.25 oder früher auf 8.30 oder höher aktualisieren, ist der automatische Lastausgleich standardmäßig auf dem Speicher-Array deaktiviert.
@@ -85,6 +91,7 @@ Wählen Sie im SANtricity System Manager *Einstellungen* *System* aus, scrollen 
 
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -100,6 +107,7 @@ Eine aktive Bedingung „Drive Lost Primary Path“ führt dazu, dass der automa
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.30

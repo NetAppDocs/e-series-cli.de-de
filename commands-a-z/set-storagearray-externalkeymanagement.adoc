@@ -15,18 +15,21 @@ Der `set storageArray externalKeyManagement` Mit dem Befehl werden die Adresse u
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ serverPort=pass:quotes[_portNumber_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -67,6 +72,7 @@ Ermöglicht die Angabe der Portnummer des externen Schlüsselverwaltungsservers.
 |===
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -77,6 +83,7 @@ SMcli -n Array1 -c "set storageArray externalKeyManagement serverAddress=192.0.2
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

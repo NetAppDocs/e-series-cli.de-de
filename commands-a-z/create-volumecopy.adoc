@@ -15,18 +15,21 @@ Der `create volumeCopy` Befehl erstellt eine Volume-Kopie und startet den Vorgan
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -51,6 +54,7 @@ Sie können maximal acht Volume-Kopien gleichzeitig erstellen. Wenn Sie versuche
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -65,6 +69,7 @@ target="_targetName_"]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -134,6 +139,7 @@ Sie müssen den verwenden `copyType` Parameter mit `repositoryGroupPreference` P
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen verwenden, geschieht und Unterstriche für die Namen. Namen können maximal 30 Zeichen lang sein.

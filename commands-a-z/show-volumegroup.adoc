@@ -15,18 +15,21 @@ Der `show volumeGroup` Befehl gibt Informationen zu einer Volume-Gruppe zurück.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl gibt diese Informationen zu einer Volume-Gruppe zurück:
@@ -48,6 +51,7 @@ Dieser Befehl gibt diese Informationen zu einer Volume-Gruppe zurück:
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -56,6 +60,7 @@ pass:quotes[show volumeGroup [_volumeGroupName_]]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -71,6 +76,7 @@ Der Name der Volume-Gruppe, für die Informationen angezeigt werden sollen. Umsc
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt Informationen zu den Volume-Gruppen zurück, wie im folgenden Beispiel gezeigt:
@@ -113,6 +119,7 @@ Name:              SecureGroup
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

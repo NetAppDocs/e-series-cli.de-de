@@ -15,24 +15,28 @@ Der `start controller` Befehl startet eine Operation, die Debug-Trace-Informatio
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Debug-Trace-Informationen können vom technischen Support verwendet werden, um zu analysieren, wie gut ein Speicher-Array ausgeführt wird.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[file="_fileName_]"
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -100,6 +105,7 @@ Informationen zum Benennen der Dateien finden Sie im Abschnitt Hinweise.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Die DQ-Trace-Informationen werden in eine komprimierte Datei mit einer Erweiterung von .zip geschrieben. Der Dateiname ist eine Kombination aus einem benutzerdefinierten Dateinamen und der Speicher-Array-Kennung (BESAGTE). Dem Dateinamen wird auch eine Konstante von "dq" hinzugefügt. Der vollständige Dateiname enthält das folgende Formular:
@@ -143,6 +149,7 @@ Die Beschreibungsdatei in einem XML-Format, das die DQ-Dateiattribute für zukü
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.75

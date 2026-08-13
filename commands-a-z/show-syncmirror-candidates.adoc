@@ -15,23 +15,26 @@ Der `show syncMirror candidates` Der Befehl gibt Informationen zu den Kandidaten
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
 
 [NOTE]
 ====
-Dieser Befehl wird auf E4000-, E2800-, E5700-, EF600-, EF300-, EF50- und EF80-Plattformen nicht unterstützt.
+Dieser Befehl wird auf den Plattformen E4000, E2800, E5700, EF600 und EF300 nicht unterstützt.
 
 ====
 
 
+[[roles]]
 == Rollen
 
 K. A.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -41,6 +44,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ remoteStorageArrayName="_storageArrayName_"]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -72,6 +77,7 @@ Das Remote-Storage-Array, das mögliche Volumes für ein sekundäres Volume enth
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.40

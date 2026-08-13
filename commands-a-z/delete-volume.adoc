@@ -15,18 +15,21 @@ Der `delete volume` Befehl löscht ein oder mehrere Standard-Volumes.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -41,6 +44,7 @@ Wenn ein Volume eine bestimmte Größe überschreitet (derzeit 128 TB), wird das
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -53,6 +57,7 @@ volumes [volumeName1 ... volumeNameN]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -107,6 +112,7 @@ Mit diesem Parameter können Sie das sofortige Löschen eines Volumes erzwingen,
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie das verwenden `allVolumes` Parameter: Dieser Befehl löscht Volumes, bis alle Volumes entfernt wurden oder bis ein Fehler aufgetreten ist. Wenn ein Fehler auftritt, wird mit diesem Befehl nicht versucht, die verbleibenden Volumes zu löschen. Das Löschen von Volumes aus verschiedenen Volume-Gruppen ist möglich. Alle leeren Volume-Gruppen werden gelöscht, wenn Sie das festlegen `removeVolumeGroup` Parameter an `TRUE`.
@@ -115,6 +121,7 @@ Wenn Sie eine gesamte Volume-Gruppe löschen möchten, können Sie auch den verw
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

@@ -15,24 +15,28 @@ Der `show storageArray lunMappings` Der Befehl gibt Informationen aus dem Speich
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Es werden immer standardmäßige Gruppen-LUN oder NSID-Zuordnungen angezeigt. Wenn Sie diesen Befehl ohne Parameter ausführen, gibt dieser Befehl alle LUN- oder NSID-Zuordnungen zurück.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ hostgroup pass:quotes[["_hostGroupName_"]])
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -64,6 +69,7 @@ Der Name einer bestimmten Host-Gruppe, für die die LUN- oder NSID-Zuordnungen a
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt Informationen zur Hosttopologie zurück, die diesem Beispiel ähnlich sind.
@@ -78,6 +84,7 @@ Access Volume 7   A,B         Default Group  Optimal
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

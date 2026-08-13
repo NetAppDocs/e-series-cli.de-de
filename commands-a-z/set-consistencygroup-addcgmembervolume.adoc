@@ -15,24 +15,28 @@ Der `set consistencyGroup addCGMemberVolume` Befehl fügt ein neues Basis-Volume
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können ein vorhandenes Repository-Volume für das neue Mitglied der Konsistenzgruppe angeben oder ein neues Repository-Volume erstellen. Wenn Sie ein neues Repository-Volume erstellen, identifizieren Sie eine vorhandene Volume-Gruppe oder einen vorhandenen Laufwerk-Pool, in dem das Repository-Volume gespeichert werden soll.
 
 
 
+[[syntax-for-use-with-an-existing-repository-volume]]
 == Syntax für die Verwendung mit einem vorhandenen Repository Volume
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ repositoryVolume=pass:quotes["_volumeGroupName_"]
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-volume-group]]
 == Syntax für die Erstellung eines neuen Repository Volumes in einer Volume-Gruppe
 
 [source, cli, subs="+macros"]
@@ -55,6 +60,7 @@ repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacit
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-disk-pool]]
 == Syntax für die Erstellung eines neuen Repository-Volumes in einem Laufwerk-Pool
 
 [source, cli, subs="+macros"]
@@ -66,6 +72,7 @@ repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityVa
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -110,6 +117,7 @@ Die Größe eines neuen Repository Volumes entweder in einer Volume-Gruppe oder 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -155,6 +163,7 @@ Wenn Sie ein neues Repository-Volume entweder in einer Volume-Gruppe oder in ein
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

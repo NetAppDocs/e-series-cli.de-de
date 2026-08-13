@@ -15,18 +15,21 @@ Der `create snapVolume` Befehl erstellt ein Snapshot Volume mit Lese-/Schreibfun
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können das Snapshot-Volume einem Host zuordnen und alle Hostschreibvorgänge befinden sich im Repository-Volume, das dem Snapshot-Volume zugeordnet ist. Sie können das neue Snapshot Volume einem vorhandenen Repository Volume zuweisen oder ein neues Repository Volume in einer Volume-Gruppe oder einem Laufwerk-Pool erstellen.
@@ -38,6 +41,7 @@ Dieser Befehl kann nicht für ein Snapshot-Image verwendet werden, das in der On
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ create snapVolume userLabel=pass:quotes[_"snapVolumeName_" snapImageID="_snapCGI
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -123,6 +128,7 @@ Der Prozentsatz der Repository-Kapazität, mit der Sie eine Warnung erhalten, da
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -144,6 +150,7 @@ Die Kennung des Repository-Volumes wird automatisch von der Speichermanagementso
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

@@ -15,18 +15,21 @@ Der `start drive erase` Durch Befehl werden alle Daten von einem oder mehreren L
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für ein individuelles E4000-, E2800-, E5700-, EF600- oder EF300-Array. Auf E2700 und E5600 Storage-Arrays wird es nicht ausgeführt.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Führen Sie diesen Befehl nur aus, wenn Sie alle Daten auf einem Laufwerk dauerhaft entfernen möchten. Wenn das Laufwerk sicher aktiviert ist, wird das angezeigt `start drive erase` Die Befehlsoption führt ein kryptografisches Löschen aus und setzt die Sicherheitsattribute des Laufwerks wieder auf sicher-fähig zurück.
@@ -38,6 +41,7 @@ Der Löschvorgang kann nicht rückgängig gemacht werden. Stellen Sie sicher, da
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ start (drive [trayID,[drawerID,]slotID] | drives[trayID1,[drawerID1,]slotID1 ...
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -70,6 +75,7 @@ Die Laufwerksliste kann nicht alle Laufwerke im Speicher-Array enthalten, oder d
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 11.70.1

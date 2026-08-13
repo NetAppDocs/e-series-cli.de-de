@@ -15,18 +15,21 @@ Der `set volume ssdCacheEnabled` Befehl schaltet das Caching mithilfe der SSD-Ca
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Das Volume kann eine davon sein:
@@ -38,6 +41,7 @@ Das Volume kann eine davon sein:
 
 
 
+[[syntax-applicable-to-a-standard-volume]]
 == Syntax gültig für ein Standard-Volume
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ set volume (pass:quotes[[_volumeName_]] | <"WWID">) ssdCacheEnabled=(TRUE | FALS
 ----
 
 
+[[syntax-applicable-to-a-snapshot-volume]]
 == Syntax, die auf ein Snapshot-Volume anwendbar ist
 
 [source, cli, subs="+macros"]
@@ -54,6 +59,7 @@ set snapVolume pass:quotes[["_snapVolumeName_"]] ssdCacheEnabled=(TRUE | FALSE)
 ----
 
 
+[[syntax-applicable-to-a-consistency-group-snapshot-volume]]
 == Syntax, die sich auf ein Snapshot Volume einer Konsistenzgruppe ausgibt
 
 [source, cli, subs="+macros"]
@@ -62,6 +68,7 @@ set cgSnapVolume pass:quotes[["_cgSnapVolumeName_"]] ssdCacheEnabled=(TRUE | FAL
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -105,6 +112,7 @@ Um den SSD-Cache zu aktivieren, setzen Sie diesen Parameter auf `TRUE`. Um den S
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können den SSD-Cache für nur ein Volume gleichzeitig ein- oder ausschalten.
@@ -113,6 +121,7 @@ Wenn Sie den SSD-Cache für ein Volume deaktivieren, wird der SSD-Cache für die
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

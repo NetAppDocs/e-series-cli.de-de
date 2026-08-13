@@ -15,12 +15,14 @@ Der `SMcli -autoSupportSchedule show` Der Befehl zeigt den Zeitplan für die Erf
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +40,7 @@ Beachten Sie Folgendes bei der Planung der automatischen Support Bundle-Sammlung
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -46,18 +49,21 @@ SMcli -autoSupportSchedule show
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[example]]
 == Beispiel
 
 Die Ausgabe zeigt sowohl die bevorzugten Zeitbereiche, gefolgt vom täglichen und wöchentlichen Zeitplan.

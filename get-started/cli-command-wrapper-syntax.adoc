@@ -15,6 +15,7 @@ In diesem Abschnitt werden allgemeine Syntaxformulare der CLI-Befehlsschlüssel 
 
 
 
+[[conventions-for-cli-command-wrapper-syntax]]
 == Konventionen für CLI-Befehlssyntax
 
 [cols="2*"]
@@ -70,6 +71,7 @@ Um alle CLI-Befehle auszuführen, müssen Sie über Administratorrechte verfüge
 ====
 
 
+[[example-in-https-client-mode]]
 == Beispiel im HTTPS-Client-Modus
 
 Die folgenden Beispiele veranschaulichen das `https` Die Befehlszeilenparameter des Client-Modus werden in beschrieben xref:command-line-parameters.adoc[Befehlszeilenparameter].
@@ -86,6 +88,7 @@ Wenn Sie keinen angeben `clientType`, Aber schließen Sie die ein `-u` Option un
 ====
 
 
+[[examples-in-symbol-client-mode]]
 == Beispiele im Symbol-Client-Modus
 
 Die folgenden Beispiele veranschaulichen das `symbol` Die Befehlszeilenparameter des Client-Modus werden in beschrieben xref:command-line-parameters.adoc[Befehlszeilenparameter].

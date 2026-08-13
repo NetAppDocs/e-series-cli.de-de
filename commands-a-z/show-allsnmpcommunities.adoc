@@ -15,18 +15,21 @@ Der `show allSnmpCommunities` Der Befehl gibt Informationen zu den für das Stor
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Rolle Storage Admin, Support Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Die zurückgegebenen Informationen umfassen Folgendes:
@@ -38,6 +41,7 @@ Die zurückgegebenen Informationen umfassen Folgendes:
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ snmpCommunities pass:quotes[[_snmpCommunityName1_ ... _snmpCommunityNameN_]])
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -90,6 +95,7 @@ Dieser Parameter gibt eine Liste der Gesamtzahl der SNMP-Communitys und der Gesa
 |===
 
 
+[[notes]]
 == Hinweise
 
 SNMP unterstützt eine oder mehrere _Communities_ zu denen Manager und verwaltete Geräte gehören. SNMP-Anforderungen enthalten eine _Community-Zeichenfolge_ in den Datenpaketen, die über das Netzwerk übergeben werden und als Rohkennwort fungieren. SNMP-Agenten können GET- oder SET-Anforderungen mit einer nicht erkannten Community-Zeichenfolge ablehnen. Eine Community-Zeichenfolge ist auch in TRAP-Benachrichtigungen enthalten, die ebenfalls vom Agenten an den Manager gesendet werden.
@@ -116,6 +122,7 @@ DETAILS
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.30

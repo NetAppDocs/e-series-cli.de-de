@@ -15,18 +15,21 @@ Der `start driveChannel faultDiagnostics` Mit dem Befehl wird die Fehlerdiagnose
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Mit der Firmware-Version 8.10 wird das `start driveChannel faultDiagnostics` Bef
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -54,6 +58,7 @@ pass:quotes[timeout=_timeInterval_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -128,6 +133,7 @@ Die Zeitspanne in Minuten, die Sie den Test ausführen möchten.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können mehrere Gerätetypen eingeben, die getestet werden sollen, und Sie können mehrere Testtypen eingeben, die ausgeführt werden sollen.
@@ -140,6 +146,7 @@ Sie können diesen Befehl auch jederzeit beenden, indem Sie auf drücken `Ctrl+C
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.15

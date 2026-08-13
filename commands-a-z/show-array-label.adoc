@@ -15,12 +15,14 @@ Der `Show array label` Der Befehl gibt Informationen darüber zurück, ob ein St
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -30,6 +32,7 @@ show storageArrayLabel all
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -45,6 +48,7 @@ Ermöglicht die Angabe einer benutzerdefinierten Bezeichnung für das Speicher-A
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.60

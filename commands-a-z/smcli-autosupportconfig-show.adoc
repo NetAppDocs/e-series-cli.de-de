@@ -15,12 +15,14 @@ Der `SMcli -autoSupportConfig show` Mit dem Befehl werden die AutoSupport Bundle
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Dies gilt nicht für E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 Mit der Ausgabe des Befehls über diesen Befehl werden die folgenden Konfigurationsinformationen angezeigt:
@@ -43,6 +45,7 @@ Mit der Ausgabe des Befehls über diesen Befehl werden die folgenden Konfigurati
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -57,6 +60,7 @@ Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der 
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -65,18 +69,21 @@ SMcli -autoSupportConfig show
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[example-output-for-the-activation-statuses]]
 == Beispielausgabe für den Aktivierungsstatus
 
 [listing]
@@ -87,6 +94,7 @@ The AutoSupport Remote Diagnostics feature is de-activated on this storage manag
 ----
 
 
+[[example-output-for-the-smtp-delivery-method]]
 == Beispielausgabe für die SMTP-Bereitstellungsmethode
 
 [listing]
@@ -98,6 +106,7 @@ Sender email address:  user@netapp.com
 ----
 
 
+[[example-output-for-the-http-or-https-delivery-method-with-a-direct-connection]]
 == Beispielausgabe für die HTTP- oder HTTPS-Ausgabemethode mit direkter Verbindung
 
 [listing]
@@ -108,6 +117,7 @@ Connection:  Direct
 ----
 
 
+[[example-output-for-the-http-delivery-method-with-a-proxy-connection]]
 == Beispielausgabe für die HTTP-Bereitstellungsmethode mit Proxy-Verbindung
 
 [listing]
@@ -121,6 +131,7 @@ Password: **********
 ----
 
 
+[[example-output-for-the-http-delivery-method-with-an-automatic-proxy-configuration-script-pac]]
 == Beispielausgabe für die HTTP-Bereitstellungsmethode mit einem automatischen Proxy-Konfigurationsskript (PAC)
 
 [listing]
@@ -130,6 +141,7 @@ Script location: http://esgweb.eng.netapp.com/~user/proxy.pac
 ----
 
 
+[[example-output-for-array-table-all-delivery-methods]]
 == Beispielausgabe für Array-Tabelle (alle Bereitstellungsmethoden)
 
 [listing]

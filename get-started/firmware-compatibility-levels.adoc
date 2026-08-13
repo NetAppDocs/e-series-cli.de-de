@@ -27,6 +27,7 @@ Die minimale Controller-Firmware-Ebene gibt an, dass die Software den Befehl fre
 ====
 
 
+[[examples-of-firmware-compatibility-levels]]
 == Beispiele für Firmware-Kompatibilitätsstufen
 
 Der `create hostGroup` Der Befehl hat den folgenden Abschnitt.

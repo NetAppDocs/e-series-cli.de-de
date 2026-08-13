@@ -15,18 +15,21 @@ Der `start increaseVolumeCapacity volume` Mit Befehl wird die Kapazität eines S
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 In diesem Befehl wird ein Standard-Volume auch als Thick Volume bezeichnet.
@@ -38,6 +41,7 @@ Sie können diesen Befehl nicht verwenden, um die Kapazität eines Thin-Volumes 
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ incrementalCapacity=_volumeCapacity_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -86,6 +91,7 @@ Der `addDrives` Parameter kann nur verwendet werden, um die Kapazität einer Vol
 |===
 
 
+[[notes]]
 == Hinweise
 
 In einigen Fällen A `drive` Der Parameter wird möglicherweise als gültige Eingabe für die Befehlssyntax angezeigt. Sie können jedoch das nicht verwenden `drive` Parameter mit diesem Befehl.
@@ -96,6 +102,7 @@ Der `addDrives` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kap
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

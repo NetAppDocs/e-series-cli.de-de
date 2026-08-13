@@ -15,18 +15,21 @@ Der `create volume` Befehl erstellt eine Volume-Gruppe über die Laufwerke im Sp
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Wenn Laufwerke mit unterschiedlichen Kapazitäten vorhanden sind, können Sie Vo
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -63,6 +67,7 @@ driveMediaType=(HDD | SSD | unknown | allMedia)
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -227,6 +232,7 @@ Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Ei
 |===
 
 
+[[notes]]
 == Hinweise
 
 Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
@@ -239,6 +245,7 @@ Wenn Sie mit dem keine Kapazität angeben `capacity` Parameter verwendet wird di
 
 
 
+[[segment-size]]
 == Segmentgröße
 
 Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
@@ -249,6 +256,7 @@ Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern od
 
 
 
+[[usage-hint]]
 == Verwendungshinweis
 
 [NOTE]
@@ -288,12 +296,14 @@ Aktiviert
 |===
 
 
+[[cache-read-prefetch]]
 == Cache-Lese-Prefetch
 
 Mit dem Cache-Lese-Prefetch kann der Controller zusätzliche Datenblöcke in den Cache kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host von dem Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`. Die Standardeinstellung lautet `TRUE`.
 
 
 
+[[security-type]]
 == Sicherheitstyp
 
 Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
@@ -310,12 +320,14 @@ Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müs
 
 
 
+[[secure-drives]]
 == Sichere Laufwerke
 
 Sichere Laufwerke können entweder vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) oder FIPS-Laufwerke (Federal Information Processing Standard) sein. Verwenden Sie die `secureDrives` Parameter, um den Typ der zu verwendenden sicheren Laufwerke anzugeben. Die Werte, die Sie verwenden können, sind `fips` Und `fde`.
 
 
 
+[[tray-loss-protection-and-drawer-loss-protection]]
 == Schutz vor Verlust des Fachs und Schutz vor Schubladenverlust
 
 Weitere Kriterien sind in den folgenden Tabellen zu finden, um den Schutz vor Schubladenverlusten zu aktivieren:
@@ -418,6 +430,7 @@ Keine Angabe
 |===
 
 
+[[example-command]]
 == Beispielbefehl
 
 [listing]
@@ -430,6 +443,7 @@ driveMediaType=HDD securityType=capable secureDrives=fips
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10 fügt RAID Level 6-Fähigkeit und den hinzu `dssPreAllocate` Parameter.

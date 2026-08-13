@@ -15,18 +15,21 @@ Der `enable storageArray externalKeyManagement file` Befehl aktiviert die extern
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ Dieser Befehl gilt nur für externes Verschlüsselungsmanagement.
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ pass:quotes[saveFile=_(TRUE | FALSE)_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -85,6 +90,7 @@ Eine Zeichenkette, die den Sicherheitsschlüssel verschlüsselt, sodass Sie den 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Ihr Passphrase muss folgende Kriterien erfüllen:
@@ -103,6 +109,7 @@ Wenn Ihr Passphrase diese Kriterien nicht erfüllt, erhalten Sie eine Fehlermeld
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

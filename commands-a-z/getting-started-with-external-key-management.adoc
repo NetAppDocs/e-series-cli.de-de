@@ -28,6 +28,7 @@ Im Folgenden finden Sie den grundlegenden Workflow zur Implementierung externer 
 
 
 
+[[workflow-steps]]
 == Workflow-Schritte
 
 Sowohl das Zertifikatsmanagement als auch das externe Verschlüsselungsmanagement sind neue Sicherheitsfunktionen mit der Version SANtricity11.40. Nutzen Sie folgende grundlegende Schritte für den Einstieg:

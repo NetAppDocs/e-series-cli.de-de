@@ -15,24 +15,28 @@ Der `suspend asyncMirrorGroup` Befehl unterbricht die Synchronisation der Daten 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600 und EF300 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600 oder EF300 Storage Array auszuführen, ist die Rolle Storage Admin erforderlich.
 
 
 
+[[context]]
 == Kontext
 
 Das `suspend` Durch Befehl können Performance-Beeinträchtigungen der Host-Applikation reduziert werden, die auftreten können, während geänderte Daten des lokalen Storage-Arrays in das Remote Storage Array kopiert werden.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -57,12 +62,14 @@ Der Name der asynchronen Spiegelgruppe, für die die Synchronisierung der Daten 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn sich eine asynchrone Spiegelgruppe in einem ausgehängten Zustand befindet, wird nicht versucht, Daten von den primären Volumes in die sekundären Volumes der gespiegelten Paare zu kopieren. Alle Schreibvorgänge auf der primären Seite der asynchronen Spiegelgruppe werden dauerhaft in ihren verbundenen Spiegelarchiv-Volumes protokolliert. Nachdem die asynchrone Spiegelgruppe wieder aufgenommen wurde, werden nur die geänderten Bereiche der primären Volumes auf die sekundären Volumes geschrieben.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

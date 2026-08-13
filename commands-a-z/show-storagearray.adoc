@@ -15,24 +15,28 @@ Der `show storageArray` Befehl gibt Konfigurationsinformationen zum Speicher-Arr
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Parameter geben Wertelisten für die Komponenten und Features im Speicher-Array zurück. Sie können den Befehl mit einem einzelnen Parameter oder mit mehreren Parametern eingeben. Wenn Sie den Befehl ohne Parameter eingeben, wird das gesamte Storage Array-Profil angezeigt (dies sind die gleichen Informationen, wie wenn Sie das eingeben `*profile*` Parameter).
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -47,6 +51,7 @@ cacheMirrorDataAssuranceCheckEnable | hostConnectivityReporting]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -235,6 +240,7 @@ Der Parameter, der den aktuellen Controller-Eigentümer für jedes Volume im Sto
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der `profile` Parameter zeigt detaillierte Informationen zum Storage-Array an. Die Informationen werden auf mehreren Bildschirmen auf einem Bildschirm angezeigt. Möglicherweise müssen Sie die Größe Ihres Anzeigepuffers erhöhen, um alle Informationen anzuzeigen. Da diese Informationen so detailliert sind, sollten Sie die Ausgabe dieses Parameters möglicherweise in einer Datei speichern. Um die Ausgabe in einer Datei zu speichern, führen Sie den aus `show storageArray` Befehl, der wie dieses Beispiel aussieht.
@@ -376,6 +382,7 @@ volume name: JCG_Remote_MirrorMenuTests
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.00 fügt die hinzu `defaultHostType` Parameter.

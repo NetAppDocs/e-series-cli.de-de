@@ -15,18 +15,21 @@ Der `set storageArray isnsRegistration` Mit dem Befehl können Sie ein Speicher-
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax-for-ipv4]]
 == Syntax für IPv4
 
 [source, cli, subs="+macros"]
@@ -38,6 +41,7 @@ isnsIPv4Address=pass:quotes[_ipAddress_]
 ----
 
 
+[[syntax-for-ipv6]]
 == Syntax für IPv6
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ isnsIPv6Address=pass:quotes[_ipAddress_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -114,6 +119,7 @@ Wenn ein Client eine Netzwerksitzung mit einem Server anfordert, erhält der Lis
 |===
 
 
+[[notes]]
 == Hinweise
 
 Das iSNS-Protokoll erleichtert die automatische Erkennung, Verwaltung und Konfiguration von iSCSI-Geräten und Fibre-Channel-Geräten in einem TCP/IP-Netzwerk. ISNS bietet intelligente Storage-Erkennungs- und -Management-Services, die mit denen in Fibre-Channel-Netzwerken vergleichbar sind. Dadurch kann ein Standard-IP-Netzwerk mit einer ähnlichen Kapazität wie ein Storage Area Network funktionieren. ISNS erleichtert außerdem die nahtlose Integration von IP-Netzwerken und Fibre-Channel-Netzwerken, da es Fibre Channel Fabric Services emulieren und sowohl iSCSI-Geräte als auch Fibre-Channel-Geräte managen kann.
@@ -122,6 +128,7 @@ Der DHCP-Server leitet Konfigurationsparameter, z. B. Netzwerkadressen, an IP-Kn
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

@@ -15,18 +15,21 @@ Der `save storageArray loginBanner` Mit Befehl können Sie ein Anmeldebanner auf
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarrays. Er funktioniert nicht auf E2700- oder E5600-Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Ein Benutzer mit einer beliebigen Rolle kann diesen Befehl ausführen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,6 +38,7 @@ save storageArray loginBanner file="file_name"
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Der Name der Anmeldebannerdatei.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.41

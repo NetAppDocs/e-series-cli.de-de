@@ -15,12 +15,14 @@ Der `set controller` Mit Befehl wird die Anzeigeleuchte „Service Action allowe
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle einzelnen Storage Arrays – einschließlich der E2700 und E5600 Arrays.
 
 
 
+[[context]]
 == Kontext
 
 Wenn das Speicherarray die Funktion „Anzeige für Serviceaktion zulässig“ nicht unterstützt, gibt dieser Befehl einen Fehler aus. Wenn das Speicher-Array den Befehl unterstützt, die Kontrollleuchte jedoch nicht einschalten oder ausschalten kann, gibt dieser Befehl einen Fehler aus. (Zum ein- oder Ausschalten der Kontrollleuchte „Wartungsmaßnahme zulässig“ am Lüfter-Behälter oder am Behälter mit der Verbindungsbatterie verwenden Sie den `set tray serviceAllowedIndicator` Befehl.)
@@ -32,6 +34,7 @@ Dieser Befehl gilt nur für die E2700, E5600 oder EF560 (und andere Vorgängerge
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -41,6 +44,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -63,6 +67,7 @@ Die Einstellung zum ein- und Ausschalten der Kontrollleuchte Serviceaktion zulä
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.14

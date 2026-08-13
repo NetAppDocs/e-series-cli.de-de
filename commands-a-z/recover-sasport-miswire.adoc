@@ -15,18 +15,21 @@ Der `recover sasPort miswire` Der Befehl teilt einem Controller mit, dass eine B
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[context]]
 == Kontext
 
 Der Controller kann dann alle deaktivierten SAS-Ports wieder aktivieren, da eine fehlerhafte Leitung erkannt wurde. Führen Sie diesen Befehl aus, nachdem Sie alle SAS-falsch-Kabel-Bedingungen korrigiert haben.
@@ -41,6 +44,7 @@ SAS-Fehldrahtbedingungen können eine der folgenden sein:
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -49,12 +53,14 @@ recover sasPort miswire
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Wenn ein Fehldrahtzustand erkannt wird, meldet die Controller-Firmware Folgendes:
@@ -82,6 +88,7 @@ Wenn der Controller einen oder mehrere SAS-Ports deaktiviert, um die Integrität
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.10

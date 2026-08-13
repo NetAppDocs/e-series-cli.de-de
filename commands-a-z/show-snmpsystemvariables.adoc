@@ -15,18 +15,21 @@ Der `show snmpSystemVariables` Der Befehl gibt Informationen zu den SNMP-Systemv
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Rolle Storage Admin, Support Admin oder Storage Monitor haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -35,12 +38,14 @@ show snmpSystemVariables
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt Informationen zu SNMP-Systemvariablen zurück, die diesem Beispiel ähnlich sind.
@@ -54,6 +59,7 @@ SYSTEM VARIABLES
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.30

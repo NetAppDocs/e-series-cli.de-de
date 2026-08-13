@@ -15,18 +15,21 @@ Der `show ssdCache` Befehl zeigt Daten zur SSD-Cache-Nutzung an.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -37,6 +40,7 @@ pass:quotes[[file="_filename_"]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -79,6 +83,7 @@ Sie können einen beliebigen Dateinamen verwenden, aber Sie müssen den verwende
 |===
 
 
+[[notes]]
 == Hinweise
 
 Die folgenden Statistiken werden auf dem Bildschirm angezeigt:
@@ -161,6 +166,7 @@ Die verfügbaren Bytes, zugewiesenen Bytes und Benutzerdaten Bytes werden zur Be
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

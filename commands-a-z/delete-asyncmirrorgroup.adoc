@@ -15,24 +15,28 @@ Der `delete asyncMirrorGroup` Befehl löscht eine oder mehrere asynchrone Spiege
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600 und EF300 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600 oder EF300 Storage Array auszuführen, ist die Rolle Storage Admin erforderlich.
 
 
 
+[[context]]
 == Kontext
 
 Die asynchrone Spiegelgruppe muss leer sein, bevor sie erfolgreich gelöscht werden kann. Sie müssen alle asynchronen gespiegelten Paare aus der asynchronen Spiegelgruppe entfernen, bevor Sie diesen Befehl verwenden.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName_1" ... "asyncMirrorGroupNa
 ----
 
 
+[[parameter]]
 == Parameter
 
 |===
@@ -75,6 +80,7 @@ Die Namen mehrerer asynchroner Spiegelgruppen, die Sie löschen möchten. Geben 
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

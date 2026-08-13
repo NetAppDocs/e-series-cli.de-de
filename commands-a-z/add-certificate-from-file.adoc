@@ -15,12 +15,14 @@ Der `Add certificate from file` Mit dem Befehl können Sie ein Zertifikat aus de
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -29,6 +31,7 @@ pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -50,6 +53,7 @@ Ermöglicht die Angabe eines Zertifikats über den benutzerdefinierten Alias.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.60

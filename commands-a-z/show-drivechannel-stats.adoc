@@ -15,24 +15,28 @@ Der `show driveChannel stats` Der Befehl zeigt die kumulative Datenübertragung 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Wenn der Controller einen Laufwerkskanal automatisch beeinträchtigt hat, wird mit diesem Befehl auch die Intervallstatistiken angezeigt. Wenn Sie diesen Befehl verwenden, können Sie Informationen zu einem bestimmten Laufwerkskanal, mehreren Laufwerkskanälen oder allen Laufwerkskanälen anzeigen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -43,6 +47,7 @@ show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -76,12 +81,14 @@ Die Kennung, die alle Laufwerkskanäle auswählt.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

@@ -15,18 +15,21 @@ Der `set syslog` Befehl konfiguriert die Syslog-Warnungsinformationen. Sie könn
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für einzelne E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Speicherarrays. Er funktioniert nicht auf E2700 oder E5600 Speicherarrays.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 * Die Syslog-Serveradresse muss verfügbar sein. Bei dieser Adresse kann es sich um einen vollständig qualifizierten Domänennamen, eine IPv4-Adresse oder eine IPv6-Adresse handeln.
@@ -35,6 +38,7 @@ Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Sto
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ set syslog [defaultFacility=pass:quotes[_facilityNumber_]]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -94,6 +99,7 @@ Ermöglicht das Hinzufügen einer oder mehrerer Syslog-Serveradressen zu den zug
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -108,6 +114,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

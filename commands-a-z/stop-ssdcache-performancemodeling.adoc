@@ -15,24 +15,28 @@ Der `stop ssdCache performanceModeling` Mit dem Befehl wird der Performance-Mode
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Bevor Sie diesen Befehl ausführen, müssen Sie den Vorgang zur Leistungsmodellierung mit dem starten `start ssdCache performanceModeling` Befehl. Optional können Sie die Daten in einer Datei speichern.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ pass:quotes[stop ssdCache [_ssdCacheName_]] performanceModeling pass:quotes[[fil
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -68,6 +73,7 @@ Sie können jeden beliebigen Dateinamen verwenden, aber Sie müssen den verwende
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt die Informationen zur Performance-Modellierung zurück, die diesem Beispiel ähnlich sind. Die Größe des Monitors bestimmt, wie die Informationen umschließt und wie die Informationen angezeigt werden.
@@ -118,6 +124,7 @@ Cache Capacity    Cache Hit %
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

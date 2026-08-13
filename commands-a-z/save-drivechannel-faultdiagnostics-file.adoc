@@ -15,18 +15,21 @@ Der `save driveChannel faultDiagnostics file` Durch den Befehl werden die Diagno
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +41,7 @@ Sie können die Diagnosedaten als Standardtext oder als XML-Datei speichern.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -65,12 +70,14 @@ Dieser Befehl fügt nicht automatisch eine Dateierweiterung an die gespeicherte 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Eine Dateierweiterung wird nicht automatisch an die gespeicherte Datei angehängt. Sie müssen die entsprechende Formatdateierweiterung für die Datei angeben. Wenn Sie eine Dateierweiterung von angeben `.txt`, Die Ausgabe wird in einem Textdateiformat. Wenn Sie eine Dateierweiterung von angeben `.xml` , Die Ausgabe wird in einem XML-Dateiformat.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.15 ermöglicht die Einführung dieser neuen Funktion für veraltete Controller-Fächer.

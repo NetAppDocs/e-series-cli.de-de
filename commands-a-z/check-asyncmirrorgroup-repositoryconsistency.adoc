@@ -15,18 +15,21 @@ Der `check asyncMirrorGroup repositoryConsistency` Befehl erstellt einen Bericht
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600 und EF300 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600 oder EF300 Storage Array auszuführen, ist die Rolle Storage Admin erforderlich.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -37,6 +40,7 @@ file=pass:quotes[_"filePath"_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -74,12 +78,14 @@ Der Dateipfad und der Dateiname, in den Sie den Bericht speichern möchten, der 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der mit diesem Befehl erzeugte Bericht dient der technischen Unterstützung zur Analyse von Problemen.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

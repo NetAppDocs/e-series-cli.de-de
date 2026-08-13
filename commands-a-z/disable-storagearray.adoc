@@ -15,24 +15,28 @@ Der `disable storageArray` Der Befehl deaktiviert eine Speicherarray-Funktion.
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Führen Sie die aus `show storageArray` Befehl, um eine Liste der Feature-IDs für alle aktivierten Funktionen im Storage Array anzuzeigen.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,12 +50,14 @@ Bestanden:Angebote[der `_featureAttributeList_`] Kann eine oder mehrere dieser A
 
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20 fügt die hinzu `driveSecurity` Alle anderen Attribute zuordnen und entfernen.

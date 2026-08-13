@@ -15,18 +15,21 @@ Der `create storageArray securityKey` Befehl erstellt oder ändert einen neuen S
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Wenn die externe Schlüsselverwaltung aktiviert ist, gilt dieser Befehl nur für die E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays. Wenn die interne Schlüsselverwaltung aktiviert ist, gilt der Befehl für jedes einzelne Storage-Array, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Für die interne Schlüsselverwaltung aktiviert dieser Befehl die Funktion „Internal Key Management“ und erstellt den Sicherheitsschlüssel. Verwenden Sie nach dem Erstellen des Schlüssels die `set storageArray securityKey` Befehl zum Verwenden des Schlüssels. Mit diesem Befehl kann auch der Sicherheitsschlüssel geändert werden.
@@ -35,6 +38,7 @@ Für die Verwaltung externer Schlüssel erstellt dieser Befehl einen anderen Sch
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ file=_"fileName"_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -131,6 +136,7 @@ Der Standardwert ist FALSE. Wenn dieser Parameter auf FALSE gesetzt ist, senden 
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.40, eingeführt für internes Verschlüsselungsmanagement

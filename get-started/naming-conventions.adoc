@@ -45,6 +45,7 @@ Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Regeln eingeh
 
 
 
+[[entering-numerical-names]]
 == Eingabe numerischer Namen
 
 Wenn die Speicherverwaltungssoftware ein Speicher-Array automatisch konfiguriert, weist die Speicherverwaltungssoftware Namen zu, die aus numerischen Zeichen bestehen. Namen, die nur aus numerischen Zeichen bestehen, sind gültige Namen. Numerische Zeichennamen müssen jedoch anders behandelt werden als Namen, die mit alphabetischen Zeichen beginnen.

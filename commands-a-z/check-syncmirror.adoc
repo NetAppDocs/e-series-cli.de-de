@@ -15,18 +15,21 @@ Der `check syncMirror` Befehl gibt den Status eines Remote-Mirror-Volumes zurüc
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=p
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -65,6 +70,7 @@ Das Zeitintervall, in dem die Software den Status des Volumes der Remote-Spiegel
 |===
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl wartet, bis der Status optimal wird oder das Timeout-Intervall abläuft. Verwenden Sie diesen Befehl, wenn Sie das Dienstprogramm Asynchronous Synchronous Mirroring ausführen.

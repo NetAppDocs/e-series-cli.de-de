@@ -15,18 +15,21 @@ Der `save check volume parity job parity errors` Befehl speichert die von einem 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der EF600, EF300, EF50 und EF80 Systeme; sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem EF600-, EF300-, EF50- und EF80-Speicherarray auszuführen, müssen Sie die Rolle Storage Admin haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ save check volume parity job parityErrors jobId=<job_id> parityErrorFile=<parity
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -56,6 +60,7 @@ Die vom Benutzer angegebene Datei, die angibt, wo die protokollierten Paritätsf
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 11.80

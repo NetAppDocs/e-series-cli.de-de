@@ -15,18 +15,21 @@ Der `establish asyncMirror volume` Der Befehl schließt ein asynchrones gespiege
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600 und EF300 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, E2800, E5700, EF600 oder EF300 Storage Array auszuführen, ist die Rolle Storage Admin erforderlich.
 
 
 
+[[context]]
 == Kontext
 
 Bevor Sie diesen Befehl ausführen, muss die asynchrone Spiegelgruppe vorhanden sein und das primäre Volume in der asynchronen Spiegelgruppe vorhanden sein. Wenn dieser Befehl erfolgreich abgeschlossen ist, wird die asynchrone Spiegelung zwischen dem primären Volume und dem sekundären Volume gestartet.
@@ -35,6 +38,7 @@ Die beiden Volumes, die ein asynchrones gespiegeltes Paar umfassen, funktioniere
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ pass:quotes[primaryVolume="_primaryVolumeName_"]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -74,6 +79,7 @@ Der Name eines vorhandenen Volumes auf dem lokalen Speicher-Array, das Sie für 
 |===
 
 
+[[notes]]
 == Hinweise
 
 Ein asynchrones gespiegeltes Paar besteht aus zwei Volumes, einem primären Volume und einem sekundären Volume, die identische Kopien derselben Daten enthalten. Das gespiegelte Paar ist Teil einer asynchronen Spiegelgruppe, die es dem gespiegelten Paar ermöglicht, gleichzeitig mit allen anderen gespiegelten Paaren innerhalb der asynchronen Spiegelgruppe zu synchronisieren.
@@ -84,6 +90,7 @@ Bei Auswahl des primären Volume und des sekundären Volumes muss das sekundäre
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

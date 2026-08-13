@@ -15,18 +15,21 @@ Der `set drive securityID` Mit dem Befehl wird ein FIPS-Laufwerk auf die ursprü
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Security Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +41,7 @@ Verwenden Sie zum Löschen eines FDE-Laufwerks den `start secureErase` Befehl.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ set drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -77,12 +82,14 @@ Um die Sicherheits-ID zu finden, entfernen Sie das Laufwerk und lesen Sie die Si
 |===
 
 
+[[notes]]
 == Hinweise
 
 Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazität als auch Laufwerksfächer mit geringer Kapazität. Ein Laufwerksfach mit hoher Kapazität verfügt über Schubladen, die die Laufwerke halten. Die Schubladen ziehen aus dem Laufwerksfach, um Zugriff auf die Laufwerke zu ermöglichen. Ein Laufwerksfach mit geringer Kapazität verfügt nicht über Schubladen. Bei einem Laufwerksfach mit hoher Kapazität müssen Sie die Kennung (ID) des Laufwerksfachs, die ID des Fachs und die ID des Steckplatzes, in dem sich ein Laufwerk befindet, angeben. Bei einem Laufwerksfach mit niedriger Kapazität müssen Sie nur die ID des Laufwerksfachs und die ID des Steckplatzes angeben, in dem sich ein Laufwerk befindet. Bei einem Laufwerksfach mit geringer Kapazität kann die ID des Laufwerksfachs auf festgelegt werden, um einen Speicherort für ein Laufwerk zu ermitteln `0`, Und geben Sie die ID des Steckplatzes an, in dem sich ein Laufwerk befindet.
 
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -91,6 +98,7 @@ set drive [1,31,4] securityID="V2zdvLTdGWdWyTALGHns";
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25

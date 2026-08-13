@@ -15,6 +15,7 @@ Der `set tray` Mit Befehl werden benutzerdefinierte Attribute für ein Fach fest
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -23,6 +24,7 @@ set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -52,6 +54,7 @@ Asset-Tag-Name oder -Nummer, um das neue Gehäuse anzugeben. Asset-Tags können 
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.16

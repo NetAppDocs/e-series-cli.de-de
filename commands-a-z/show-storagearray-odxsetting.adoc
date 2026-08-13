@@ -15,18 +15,21 @@ Der `show storageArray odxsetting` Der Befehl gibt die aktuellen Einstellungen f
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage Array auszuführen, müssen Sie die Rolle Storage Admin oder Storage Monitor haben.
 
 
 
+[[context]]
 == Kontext
 
 Für diesen Befehl können die Einstellungen wie folgt lauten:
@@ -39,6 +42,7 @@ Für diesen Befehl können die Einstellungen wie folgt lauten:
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -47,12 +51,14 @@ show storageArray odxsetting
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl gibt die ODX- und VAAI-Informationen zurück, die dem vorliegenden Beispiel ähnlich sind.
@@ -65,6 +71,7 @@ vaaiEnabled True | False | Inconsistent | Unknown
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20

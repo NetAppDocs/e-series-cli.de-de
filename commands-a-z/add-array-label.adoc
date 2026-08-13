@@ -15,6 +15,7 @@ Der `Add array label` Mit dem Befehl können Sie der Konfiguration ein Speicher-
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 [NOTE]
@@ -26,6 +27,7 @@ Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -35,6 +37,7 @@ pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -61,6 +64,7 @@ Ermöglicht die Angabe einer Bezeichnung für das Speicherarray.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.60

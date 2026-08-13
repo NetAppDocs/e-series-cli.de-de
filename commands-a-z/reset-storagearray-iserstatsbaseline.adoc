@@ -15,12 +15,14 @@ Der `reset storageArray iserStatsBaseline` Der Befehl setzt den iSER-Basisplan f
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Sie müssen über die Rolle Storage-Administrator verfügen, um diesen Befehl für ein E4000, E2800 oder E5700 Storage-Array auszuführen.
@@ -32,6 +34,7 @@ Dieser Befehl ist veraltet und wird von ersetzt xref:reset-storagearray-hostport
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -40,18 +43,21 @@ reset storageArray iserStatsBaseline
 ----
 
 
+[[parameters]]
 == Parameter
 
 Keine.
 
 
 
+[[notes]]
 == Hinweise
 
 Dieser Befehl setzt nicht die in der Hardware und Firmware erhalten gewartete RAW-Anzahl zurück. Stattdessen erstellt die Firmware einen Snapshot der aktuellen Zählerwerte und verwendet diese Werte, um beim Abrufen der Statistiken Unterschiede in den Zählungen zu melden. Die neue Baseline-Zeit wird auf beide Controller angewendet, so dass die Anzahl der Controller miteinander synchronisiert wird. Wenn ein Controller zurückgesetzt wird, ohne dass der andere Controller zurückgesetzt wird, werden die Zähler nicht mehr synchronisiert. Der Client erkennt, dass die Controller nicht synchronisiert werden, da die Zeitstempeldaten, die zusammen mit den Statistiken gemeldet werden, für beide Controller nicht identisch sind.
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.20

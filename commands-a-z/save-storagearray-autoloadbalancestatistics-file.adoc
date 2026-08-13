@@ -15,18 +15,21 @@ Der `save storageArray autoLoadBalanceStatistics file` Befehl bietet einen autom
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Dieser Befehl speichert die Statistiken zum automatischen Lastausgleich des Speicherarrays in einer Datei. Diese Statistiken zeigen den Änderungsverlauf der Eigentumsrechte für jedes Volume im Array an.
@@ -38,6 +41,7 @@ Senden Sie diese Datei zur Interpretation an den technischen Support.
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ Senden Sie diese Datei zur Interpretation an den technischen Support.
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -76,6 +81,7 @@ Die Anzahl der zu speicherenden Tage. Dieser Parameter ist optional und der Stan
 |===
 
 
+[[example]]
 == Beispiel
 
 [listing]
@@ -89,6 +95,7 @@ Eine aktive Bedingung „Drive Lost Primary Path“ führt dazu, dass der automa
 ====
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.30

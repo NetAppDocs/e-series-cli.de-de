@@ -15,12 +15,14 @@ Der `Show certificates` Mit dem Befehl können Sie die Zertifikate anzeigen, die
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli]
@@ -29,6 +31,7 @@ show localCertificate all | alias alias
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -44,6 +47,7 @@ Ermöglicht die Angabe eines Zertifikats über den benutzerdefinierten Alias.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.60

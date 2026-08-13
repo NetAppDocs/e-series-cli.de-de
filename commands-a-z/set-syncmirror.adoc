@@ -15,18 +15,21 @@ Der `set syncMirror` Der Befehl definiert die Eigenschaften für ein Remote-gesp
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich E4000, E2700, E5600, E2800 und E5700 Arrays, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl für ein E2800 oder E5700 Storage-Array auszuführen, müssen Sie über die Rolle „Storage-Administrator“ verfügen.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +39,7 @@ In früheren Versionen dieses Befehls war die Feature-ID `remoteMirror`. Diese F
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -135,6 +140,7 @@ Verwenden Sie die `force` Parameter nur bei Verwendung des `role` Parameter.
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn Sie diesen Befehl verwenden, können Sie einen oder mehrere der optionalen Parameter angeben.
@@ -145,6 +151,7 @@ Der `writeOrder` Parameter gilt nur für asynchronen Schreibmodus und macht sie 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

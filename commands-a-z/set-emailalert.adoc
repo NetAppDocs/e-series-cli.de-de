@@ -15,12 +15,14 @@ Der `set emailAlert` Der Befehl konfiguriert die E-Mail zum Senden einer E-Mail 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für die Speicher-Arrays E4000, E2800, E5700, EF600, EF300, EF50 und EF80. Sie können den Befehl jedoch als SMcli-Befehl und nicht als Skriptbefehl für E2700- oder E5600-Arrays verwenden. In diesem Fall gilt der Befehl für alle Arrays in der Verwaltungsdomäne.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -38,6 +40,7 @@ set emailAlert
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -119,6 +122,7 @@ Ermöglicht das Hinzufügen einer oder mehrerer Empfänger-E-Mail-Adressen zur v
 |===
 
 
+[[examples]]
 == Beispiele
 
 [listing, subs="+macros"]
@@ -140,6 +144,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.40

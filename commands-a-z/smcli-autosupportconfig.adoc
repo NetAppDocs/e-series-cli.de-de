@@ -15,12 +15,14 @@ Der `SMcli -autoSupportConfig` Mit dem Befehl wird die Bereitstellungsmethode f�
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für alle E2700 und E5600 Storage-Arrays gleichzeitig in der Management-Domäne. Sie gilt nicht für E4000, E2800 oder E5700 Storage-Arrays.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -36,6 +38,7 @@ Sie können zwei Hauptarten von Bereitstellungsmethoden für das Senden von Auto
 
 
 
+[[syntax-for-smtp-delivery-method]]
 == Syntax für SMTP-Bereitstellungsmethode
 
 [source, cli]
@@ -45,6 +48,7 @@ mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>
 ----
 
 
+[[parameters-for-the-smtp-delivery-method]]
 == Parameter für die SMTP-Bereitstellungsmethode
 
 [cols="2*"]
@@ -74,6 +78,7 @@ Ermöglicht die Angabe der Absender-E-Mail-Adresse für die AutoSupport-Nachrich
 |===
 
 
+[[syntax-for-httphttps-delivery-methods]]
 == Syntax für HTTP/HTTPS-Bereitstellungsmethoden
 
 [listing]
@@ -84,6 +89,7 @@ hostAddress:<address>portNumber=<portNumber> [userName=<userName>password=<passw
 ----
 
 
+[[parameters-for-the-httphttps-delivery-methods]]
 == Parameter für die HTTP/HTTPS-Bereitstellungsmethoden
 
 In der folgenden Tabelle sind die Parameter für die HTTP/HTTPS-Bereitstellungsmethoden aufgeführt.
@@ -150,12 +156,14 @@ Das Authentifizierungspasswort. Dieser Parameter ist erforderlich.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.25
 
 
 
+[[examples]]
 == Beispiele
 
 [listing]
@@ -172,6 +180,7 @@ userName=user password=0987654321
 ----
 
 
+[[verification]]
 == Verifizierung
 
 Senden Sie mit dem eine Testmeldung `SMcli -autoSupportConfig test` Befehl, um zu überprüfen, ob Ihre Bereitstellungsmethoden korrekt eingerichtet sind.

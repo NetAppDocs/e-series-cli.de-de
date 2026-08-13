@@ -15,18 +15,21 @@ Der `start volumeGroup import` Der Befehl verschiebt eine Volume-Gruppe in einen
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Die Volume-Gruppe muss sich in einem exportierten Status oder in einem Forced-Status befinden, bevor Sie diesen Befehl ausführen. Wenn der Befehl erfolgreich ausgeführt wurde, ist die Volume-Gruppe funktionsfähig.
@@ -38,6 +41,7 @@ Innerhalb der Volume-Gruppe können Sie keine Volumes verschieben, die den Funkt
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] import
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -61,6 +66,7 @@ Der Name der Volume-Gruppe, die Sie importieren möchten. Umschließen Sie den N
 |===
 
 
+[[notes]]
 == Hinweise
 
 Volumes auf höherer Ebene, die sich speziell auf Funktionen (synchrone Spiegelung, Volume-Kopie, Zuordnung und persistente Reservierungen) beziehen, werden im Rahmen des Importvorgangs entfernt.
@@ -69,6 +75,7 @@ Sie müssen den ausführen `show volumeGroup importDependencies` Befehl vor dem 
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.10

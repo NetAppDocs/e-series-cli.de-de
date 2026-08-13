@@ -15,12 +15,14 @@ Der `Add certificate from array` Mit dem Befehl können Sie ein Zertifikat aus d
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für die EF600-, EF300-, EF50- und EF80-Speicherarrays.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -30,6 +32,7 @@ pass:quotes[_ipAddress1 ipAddress2_  trust localCertificate]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -44,6 +47,7 @@ Ermöglicht die Angabe der IP-Adresse für das Speicherarray.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 8.60

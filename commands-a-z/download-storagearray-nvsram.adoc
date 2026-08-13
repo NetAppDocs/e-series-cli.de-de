@@ -15,18 +15,21 @@ Der `download storageArray NVSRAM` Mit dem Befehl werden die NVSRAM-Werte für d
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Speichersystem auszuführen, müssen Sie die Rolle Storage Admin oder Support Admin haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[download storageArray NVSRAM file="_filename_"]
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -66,6 +70,7 @@ Mit diesem Parameter wird der Controller gezwungen, neue NVSRAM herunterzuladen.
 |===
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 6.10

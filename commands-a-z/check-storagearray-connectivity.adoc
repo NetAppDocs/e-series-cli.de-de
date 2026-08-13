@@ -15,6 +15,7 @@ Der `check storageArray connectivity` Mit dem Befehl wird sichergestellt, dass d
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage Array, mit einigen Einschränkungen. Wenn Sie den Befehl im E2700 oder E5600 Array ausführen, gelten keine Einschränkungen.
@@ -26,12 +27,14 @@ Dieser Befehl wird auf E4000-, E2800-, E5700-, EF600-, EF300-, EF50- und EF80-Pl
 ====
 
 
+[[roles]]
 == Rollen
 
 K. A.
 
 
 
+[[context]]
 == Kontext
 
 Bevor Sie eine asynchrone Spiegelgruppe erstellen, sollten Sie prüfen, ob das lokale Speicher-Array und das Remote-Speicher-Array miteinander kommunizieren können. Wenn Sie diesen Befehl ausführen, fragt das System auf allen geeigneten Host-Ports nach dem Remote-Speicher-Array ab, welche Ports mit dem Remote-Speicher-Array verbunden sind. Das Ergebnis des Tests ist eine Liste aller Ports im lokalen Speicher-Array sowie eine Liste der Port-Adressen für Remote-Speicher-Arrays, auf die über diesen Port zugegriffen werden kann.
@@ -43,6 +46,7 @@ Die Konnektivität wird über alle möglichen Kanäle getestet, und wenn es sich
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -74,6 +79,7 @@ Der World Wide Identifier (WWID) des Speicherarrays, für das Sie die Konnektivi
 |===
 
 
+[[notes]]
 == Hinweise
 
 Bevor eine Spiegelung zwischen zwei Storage Arrays hergestellt werden kann, müssen sie über eine Fibre Channel-Verbindung oder eine iSCSI-Verbindung angeschlossen werden.
@@ -84,6 +90,7 @@ Wenn das lokale Speicher-Array iSCSI unterstützt, ist die Verbindung über iSCS
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.84

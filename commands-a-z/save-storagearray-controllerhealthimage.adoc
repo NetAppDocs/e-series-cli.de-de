@@ -15,18 +15,21 @@ Der `save storageArray controllerHealthImage` Der Befehl speichert ein Controlle
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 [NOTE]
@@ -38,6 +41,7 @@ Wenn das Storage-Array die Funktion für das Integritätsabbild des Controllers 
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ save storageArray controllerHealthImage file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parameter
 
 [cols="2*"]
@@ -65,6 +70,7 @@ file="C:\Array Backups\DBMbackup_03302010.core"
 |===
 
 
+[[notes]]
 == Hinweise
 
 Eine Zustand-Image-Datei des Controllers kann ein bis zwei Gigabyte groß sein und das Speichern dauert mehrere Minuten. Neben dem Speichern des Zustandsabbilds des Controllers generiert dieser Befehl eine XML-Deskriptordatei, die auf den Metadaten des Controller-Integritätsabbilds basiert. Diese Deskriptordatei wird im ZIP-Dateiformat auf demselben Pfad wie das Integritätsbild des Controllers gespeichert. Im folgenden Beispiel wird das XML-Format für die Deskriptordatei gezeigt.
@@ -102,6 +108,7 @@ Wenn Sie ein Controller-Zustandsabbild aus dem Controller-Cache zu einem Host ab
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

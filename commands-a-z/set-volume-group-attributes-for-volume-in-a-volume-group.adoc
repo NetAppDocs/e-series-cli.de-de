@@ -15,18 +15,21 @@ Der `set volume` Mit dem Befehl werden die Eigenschaften für Volumes in einer V
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können die meisten Parameter verwenden, um Eigenschaften für ein oder mehrere Volumes zu definieren. Sie können auch einige Parameter verwenden, um Eigenschaften für nur ein Volume zu definieren. Die Syntaxdefinitionen sind voneinander getrennt, um anzuzeigen, welche Parameter auf mehrere Volumes angewendet werden und welche nur auf ein Volume gelten.
@@ -38,6 +41,7 @@ Bei Konfigurationen, bei denen Volume-Gruppen aus mehr als 32 Volumes bestehen, 
 ====
 
 
+[[syntax-applicable-to-one-or-more-volumes]]
 == Syntax gültig für ein oder mehrere Volumes
 
 [source, cli, subs="+macros"]
@@ -135,6 +139,7 @@ reservedFutureOption1=(TRUE | FALSE)
 ----
 
 
+[[syntax-applicable-to-only-one-volume]]
 == Syntax gültig für nur ein Volume
 
 [source, cli, subs="+macros"]
@@ -170,6 +175,7 @@ preReadRedundancyCheck=(TRUE | FALSE)
 ----
 
 
+[[parameters]]
 == Parameter
 
 [cols="2*"]
@@ -375,6 +381,7 @@ Einstellung zur Überprüfung der Konsistenz von RAID-Redundanzdaten auf den Str
 |===
 
 
+[[notes]]
 == Hinweise
 
 Host-I/O-Fehler können zu Volume-Gruppen mit mehr als 32 Volumes führen. Dieser Vorgang kann auch zum Neustart des internen Controllers führen, da die Zeitüberschreitung vor dem Vorgang abgelaufen ist. Wenn dieses Problem auftritt, legen Sie den Host I/O still und versuchen Sie es erneut.
@@ -391,12 +398,14 @@ Sie können diese Parameter auf jeweils nur ein Volume anwenden:
 
 
 
+[[add-capacity-add-drives-and-segment-size]]
 == Kapazitäten hinzufügen, Laufwerke hinzufügen und Segmentgröße erweitern
 
 Einstellen des `addCapacity` Parameter, das `addDrives` Parameter oder der `segmentSize` Parameter startet einen lang ausgeführten Vorgang, dessen Vorgang nicht beendet werden kann. Diese Vorgänge, die lange laufen, werden im Hintergrund ausgeführt und verhindern nicht, dass Sie andere Befehle ausführen. Um den Fortschritt von lang laufenden Vorgängen anzuzeigen, verwenden Sie den `show volume actionProgress` Befehl.
 
 
 
+[[cache-flush-modifier]]
 == Modifikator für Cachespülung
 
 In dieser Tabelle sind gültige Werte für den Modifikator Cache Flush aufgeführt.
@@ -524,24 +533,28 @@ Stellen Sie den Wert des nicht ein `cacheFlushModifier` Parameter über 10 Sekun
 ====
 
 
+[[cache-without-battery-enabled]]
 == Cache ohne Akku aktiviert
 
 Schreib-Cache ohne Batterien ermöglicht die Fortsetzung des Schreib-Caching, wenn die Controller-Batterien vollständig entladen, nicht vollständig geladen oder nicht vorhanden sind. Wenn Sie diesen Parameter auf einstellen `TRUE` Ohne unterbrechungsfreie Stromversorgung (USV) oder andere Backup-Stromversorgung können Daten verloren gehen, wenn die Stromversorgung des Speicher-Arrays ausfällt. Dieser Parameter hat keine Auswirkung, wenn die Schreibzwischenspeicherung deaktiviert ist.
 
 
 
+[[modification-priority]]
 == Priorität für Änderungen
 
 Die Änderungspriorität definiert die Anzahl der Systemressourcen, die beim Ändern der Volume-Eigenschaften verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Änderung die meisten Systemressourcen, was die Performance für die Übertragung von Hostdaten verringert.
 
 
 
+[[cache-read-prefetch]]
 == Cache-Lese-Prefetch
 
 Der `cacheReadPrefetch` Parameter ermöglicht es dem Controller, zusätzliche Datenblöcke in den Cache zu kopieren, während der Controller Datenblöcke liest und kopiert, die vom Host vom Laufwerk in den Cache angefordert werden. Dadurch erhöht sich die Wahrscheinlichkeit, dass zukünftige Datenanfragen aus dem Cache bedient werden können. Cache-Lese-Prefetch ist für Multimedia-Anwendungen, die sequenzielle Datentransfers verwenden, wichtig. Die Konfigurationseinstellungen für das Storage Array, das Sie verwenden, bestimmen die Anzahl der zusätzlichen Datenblöcke, die der Controller in den Cache liest. Gültige Werte für das `cacheReadPrefetch` Parameter sind `TRUE` Oder `FALSE`.
 
 
 
+[[segment-size]]
 == Segmentgröße
 
 Die Größe eines Segments bestimmt, wie viele Datenblöcke der Controller auf ein einzelnes Laufwerk in einem Volume schreibt, bevor Daten auf das nächste Laufwerk geschrieben werden. Jeder Datenblock speichert 512 Bytes an Daten. Ein Datenblock ist die kleinste Storage-Einheit. Die Größe eines Segments bestimmt, wie viele Datenblöcke er enthält. Ein 8-KB-Segment umfasst beispielsweise 16 Datenblöcke. Ein 64-KB-Segment umfasst 128 Datenblöcke.
@@ -554,6 +567,7 @@ Um eine optimale Performance in einer Storage-Umgebung mit mehreren Benutzern od
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 5.00 fügt die hinzu `addCapacity` Parameter.

@@ -15,18 +15,21 @@ Der `delete cgSnapImage consistencyGroup` Mit dem Befehl werden die Snapshot Ima
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -38,6 +41,7 @@ pass:quotes[[deleteCount=_numberOfSnapImages_]
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -77,6 +81,7 @@ Legt fest, ob das zugehörige Snapshot Volume der Konsistenzgruppe aufbewahrt od
 |===
 
 
+[[notes]]
 == Hinweise
 
 Wenn die Snapshot Images nicht für alle relevanten Member Volumes der Konsistenzgruppe gelöscht werden können, schlägt der Vorgang fehl und keines der Snapshot-Images wird gelöscht.
@@ -85,6 +90,7 @@ Wenn Sie ein Snapshot Image für die Konsistenzgruppe löschen, das einem Snapsh
 
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83

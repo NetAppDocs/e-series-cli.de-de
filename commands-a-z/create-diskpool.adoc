@@ -15,18 +15,21 @@ Der `create diskPool` Befehl erstellt auf Basis der angegebenen Parameter einen 
 
 
 
+[[supported-arrays]]
 == Unterstützte Arrays
 
 Dieser Befehl gilt für jedes einzelne Storage-Array, einschließlich der Arrays E4000, E2700, E5600, E2800, E5700, EF600 und EF300, sofern alle SMcli-Pakete installiert sind.
 
 
 
+[[roles]]
 == Rollen
 
 Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Storage-Array auszuführen, müssen Sie die Storage Admin-Rolle haben.
 
 
 
+[[context]]
 == Kontext
 
 Sie können den Laufwerk-Pool erstellen, indem Sie entweder eine Liste von Laufwerken oder einen Laufwerkstyp eingeben, den Sie für den Laufwerk-Pool verwenden möchten.
@@ -38,6 +41,7 @@ Wenn Sie eine Liste der Laufwerke eingeben, stellen Sie sicher, dass alle Laufwe
 ====
 
 
+[[syntax]]
 == Syntax
 
 [source, cli, subs="+macros"]
@@ -62,6 +66,7 @@ driveType=(fibre | SATA | SAS | NVMe4K))
 ----
 
 
+[[parameters]]
 == Parameter
 
 |===
@@ -222,6 +227,7 @@ Wenn dieser Parameter auf  `TRUE` gesetzt ist, werden nur DULBE-fähige Laufwerk
 |===
 
 
+[[notes]]
 == Hinweise
 
 Jeder Disk Pool-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
@@ -232,6 +238,7 @@ Wenn Sie keinen Wert für einen optionalen Parameter angeben, wird ein Standardw
 
 
 
+[[drives]]
 == Laufwerke
 
 Wenn Sie das verwenden `driveType` Parameter: Alle nicht zugewiesenen Laufwerke, die von diesem Laufwerkstyp sind, werden zum Erstellen des Festplattenpools verwendet. Wenn Sie die Anzahl der vom gefundenen Laufwerke begrenzen möchten `driveType` Parameter im Disk-Pool können Sie die Anzahl der Laufwerke mit angeben `driveCount` Parameter. Sie können das verwenden `driveCount` Parameter nur dann, wenn Sie den verwenden `driveType` Parameter.
@@ -242,6 +249,7 @@ Wenn Sie Spezifikationen für ein Laufwerksfach mit hoher Kapazität eingeben, j
 
 
 
+[[disk-pool-alert-thresholds]]
 == Schwellenwerte für Disk Pool-Warnmeldungen
 
 Jeder Disk Pool verfügt über zwei nach und nach schwerwiegende Alarmstufen, mit denen Sie die Benutzer informieren, wenn die Speicherkapazität des Disk Pools voll ist. Der Schwellenwert für eine Warnmeldung ist ein Prozent der genutzten Kapazität zur gesamten nutzbaren Kapazität im Laufwerk-Pool. Die Warnmeldungen lauten wie folgt:
@@ -254,6 +262,7 @@ Um effektiv zu sein, muss der Wert für eine Warnmeldung immer kleiner als der W
 
 
 
+[[disk-pool-background-operations]]
 == Hintergrundvorgänge für den Disk Pool
 
 Disk-Pools unterstützen die folgenden Hintergrundvorgänge:
@@ -275,6 +284,7 @@ Disk Pools müssen keine Hintergrundbefehle in die Warteschlange stellen. Sie k�
 
 
 
+[[security-type]]
 == Sicherheitstyp
 
 Verwenden Sie die `securityType` Parameter zum Festlegen der Sicherheitseinstellungen für das Speicher-Array.
@@ -291,12 +301,14 @@ Bevor Sie den einstellen können `securityType` Parameter an `enabled`, Sie müs
 
 
 
+[[secure-drives]]
 == Sichere Laufwerke
 
 Sichere Laufwerke können entweder vollständige Festplattenverschlüsselung (Full Disk Encryption, FDE) oder FIPS-Laufwerke (Federal Information Processing Standard) sein. Verwenden Sie die `secureDrives` Parameter, um den Typ der zu verwendenden sicheren Laufwerke anzugeben. Die Werte, die Sie verwenden können, sind `fips` Und `fde`.
 
 
 
+[[example-command]]
 == Beispielbefehl
 
 [listing]
@@ -305,6 +317,7 @@ create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=c
 ----
 
 
+[[minimum-firmware-level]]
 == Minimale Firmware-Stufe
 
 7.83
