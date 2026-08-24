@@ -18,14 +18,14 @@ Der  `show storageArray hostIoProtocolInformation` Befehl zeigt Informationen ü
 [[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für jedes einzelne Speichersystem, einschließlich der E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 und EF80 Arrays, sofern alle SMcli Pakete installiert sind.
+Dieser Befehl gilt für ein E4000, EF50 oder EF80 Speicherarray, sofern alle SMcli Pakete installiert sind.
 
 
 
 [[roles]]
 == Rollen
 
-Um diesen Befehl auf einem E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarray auszuführen, müssen Sie die Support Admin-Rolle haben.
+Um diesen Befehl auf einem E4000, EF50 oder EF80 Speicherarray auszuführen, muss die Rolle Support Admin vorhanden sein.
 
 
 
