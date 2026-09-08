@@ -2,7 +2,7 @@
 permalink: commands-a-z/set-controller-hostport.html 
 sidebar: sidebar 
 keywords: set, controller, host, port, properties 
-summary: 'Der Befehl set Controller hostPort ändert die Netzwerkeigenschaften für die folgenden Typen von Host-Ports: ISCSI, iSER, NVMe over InfiniBand und NVMe over RoCE. Zu den Objektänderungen gehören IPv4- und IPv6-Eigenschaften, Port-Geschwindigkeit und maximale Frame-Nutzlast.' 
+summary: 'Der Befehl „set controller hostPort“ ändert die Netzwerkeigenschaften für die folgenden Typen von Host-Ports: iSCSI, iSER, NVMe over InfiniBand und NVMe over RoCE. Zu den Eigenschaftsänderungen gehören IPv4- und IPv6-Eigenschaften, die Port-Geschwindigkeit und die maximale Frame-Nutzlast.' 
 ---
 = Controller-Host-Port-Eigenschaften festlegen – SANtricity CLI
 :allow-uri-read: 

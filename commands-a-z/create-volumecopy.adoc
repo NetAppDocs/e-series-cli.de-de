@@ -142,6 +142,6 @@ Sie müssen den verwenden `copyType` Parameter mit `repositoryGroupPreference` P
 [[notes]]
 == Hinweise
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen verwenden, geschieht und Unterstriche für die Namen. Namen können maximal 30 Zeichen lang sein.
+Für die Namen können beliebige alphanumerische Zeichen, Bindestriche und Unterstriche verwendet werden. Standard- und Thin-Volume-Namen dürfen maximal 60 Zeichen lang sein.
 
 Die Kopierpriorität definiert die Menge der Systemressourcen, die zum Kopieren der Daten zwischen dem Quell-Volume und dem Ziel-Volume eines Volume-Kopiepaars verwendet werden. Wenn Sie die höchste Prioritätsstufe auswählen, verwendet die Volume-Kopie die meisten Systemressourcen für das Kopieren von Volumes. Dadurch verringert sich die Performance bei der Übertragung von Host-Daten.

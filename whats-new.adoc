@@ -25,6 +25,74 @@ Wenn Sie derzeit SANtricity 11.52 oder eine frühere Version verwenden, können 
 ====
 
 
+[[santricity-12-10]]
+== SANtricity 12.10
+
+Die folgende Tabelle listet die Änderungen an den CLI- und Skriptbefehlen für Release 12.10 auf.
+
+[cols="2*"]
+|===
+| Befehl | Beschreibung der Änderung 
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-storagearray-host-io-protocol.html["Speicherarray-Host-I/O-Protokoll festlegen"]
+ a| 
+Option `nvmeTcp` zum Befehl hinzugefügt.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/create-raid-volume-automatic-drive-select.html["Erstellen von RAID-Volumes (automatische Laufwerkauswahl)"]
+ a| 
+Die maximale Zeichenanzahl für den  `userLabel` Parameter wurde von 30 auf 60 Zeichen erhöht.
+
+
+NOTE: Ein Downgrade von SANtricity 12.10 auf frühere Versionen wird nicht unterstützt, wenn der  `userLabel` Parameter mehr als 30 Zeichen umfasst.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/create-raid-volume-free-extent-based-select.html["RAID-Volume erstellen (freie Erweiterungsauswahl)"]
+ a| 
+Die maximale Zeichenanzahl für den  `userLabel` Parameter wurde von 30 auf 60 Zeichen erhöht.
+
+
+NOTE: Ein Downgrade von SANtricity 12.10 auf frühere Versionen wird nicht unterstützt, wenn der  `userLabel` Parameter mehr als 30 Zeichen umfasst.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/create-raid-volume-manual-drive-select.html["Erstellen von RAID-Volumes (Auswahl manueller Laufwerke)"]
+ a| 
+Die maximale Zeichenanzahl für den  `userLabel` Parameter wurde von 30 auf 60 Zeichen erhöht.
+
+
+NOTE: Ein Downgrade von SANtricity 12.10 auf frühere Versionen wird nicht unterstützt, wenn der  `userLabel` Parameter mehr als 30 Zeichen umfasst.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/create-volume-diskpool.html["Erstellen Sie ein Volume im Festplatten-Pool"]
+ a| 
+Die maximale Zeichenanzahl für den  `userLabel` Parameter wurde von 30 auf 60 Zeichen erhöht.
+
+
+NOTE: Ein Downgrade von SANtricity 12.10 auf frühere Versionen wird nicht unterstützt, wenn der  `userLabel` Parameter mehr als 30 Zeichen umfasst.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/recover-volume.html["RAID-Volume wiederherstellen"]
+ a| 
+Die maximale Zeichenanzahl für den  `userLabel` Parameter wurde von 30 auf 60 Zeichen erhöht.
+
+
+NOTE: Ein Downgrade von SANtricity 12.10 auf frühere Versionen wird nicht unterstützt, wenn der  `userLabel` Parameter mehr als 30 Zeichen umfasst.
+
+|===
+
+
 [[santricity-12-00]]
 == SANtricity 12.00
 

@@ -75,6 +75,9 @@ Dieser Parameter ist erforderlich.
 
 ====
 
+NOTE: Die maximale Länge für Standard- und Thin Volume-Namen beträgt 60 Zeichen. Der Volume-Name kann beliebige Kombinationen aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) enthalten.
+
+
 
  a| 
 `freeCapacityArea`
@@ -168,7 +171,7 @@ Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. Ei
 [[notes]]
 == Hinweise
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+Sie können für die Namen beliebige Kombinationen aus alphanumerischen Zeichen, Bindestrichen und Unterstrichen verwenden. Namen für Standard und Thin Volumes dürfen maximal 60 Zeichen lang sein, alle anderen Komponentennamen maximal 30 Zeichen.
 
 Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
 

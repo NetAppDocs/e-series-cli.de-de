@@ -13,7 +13,7 @@ summary: Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Rege
 [role="lead"]
 Bei Namen, die in CLI-Befehlen verwendet werden, müssen bestimmte Regeln eingehalten werden.
 
-* Namen können maximal 30 Zeichen lang sein.
+* Standard und Thin Volume Namen können maximal 60 Zeichen lang sein. Alle anderen Komponentennamen können maximal 30 Zeichen lang sein.
 * Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen der folgenden Komponenten verwenden:
 +
 ** Storage-Arrays durchführt

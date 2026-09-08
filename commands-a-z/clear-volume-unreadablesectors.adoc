@@ -76,4 +76,4 @@ Die Namen mehrerer Volumes, für die Sie unlesbare Sektorinformationen löschen.
 [[notes]]
 == Hinweise
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Bindestriche und Unterstrichen für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+Für die Namen können beliebige alphanumerische Zeichen, Bindestriche und Unterstriche verwendet werden. Standard- und Thin-Volume-Namen dürfen maximal 60 Zeichen lang sein.

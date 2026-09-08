@@ -119,6 +119,9 @@ userLabel="engdata"
 volumeWWN=60080E500017B4320000000049887D77
 ----
 
+NOTE: Die maximale Länge für Standard- und Thin Volume-Namen beträgt 60 Zeichen. Der Volume-Name kann beliebige Kombinationen aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) enthalten.
+
+
 
  a| 
 `capacity`
@@ -200,7 +203,7 @@ Der `drive` Der Parameter unterstützt sowohl Laufwerksfächer mit hoher Kapazit
 
 Wenn Sie versuchen, ein Volume mit wiederherzustellen `drive` Parameter oder der `drives` Parameter und die Laufwerke sind nicht zugewiesen. Der Controller erstellt automatisch eine neue Volume-Gruppe. Verwenden Sie die `newVolumeGroup` Parameter zur Angabe eines Namens für die neue Volume-Gruppe.
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+Für die Namen kann jede Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) verwendet werden. Standard- und Thin-Volume-Namen dürfen maximal 60 Zeichen enthalten, alle anderen Komponentennamen maximal 30 Zeichen.
 
 Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
 

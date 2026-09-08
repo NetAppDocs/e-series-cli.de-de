@@ -102,6 +102,9 @@ Dieser Parameter ist erforderlich.
 
 ====
 
+NOTE: Die maximale Länge für Standard- und Thin Volume-Namen beträgt 60 Zeichen. Der Volume-Name kann beliebige Kombinationen aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) enthalten.
+
+
 
  a| 
 `capacity`
@@ -205,7 +208,7 @@ Wenn Sie die einstellen `raidLevel` Parameter auf RAID-Ebene 1:
 * Die zweite Hälfte der Gruppe, in aufgelisterter Reihenfolge (und in Streifenreihenfolge), sind die entsprechenden Spiegellaufwerke
 
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+Für die Namen kann jede Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) verwendet werden. Standard- und Thin-Volume-Namen dürfen maximal 60 Zeichen enthalten, alle anderen Komponentennamen maximal 30 Zeichen.
 
 Der `owner` Parameter definiert, welcher Controller das Volume besitzt. Der Controller, der derzeit Eigentümer der Volume-Gruppe ist, ist das bevorzugte Controller-Eigentum.
 

@@ -98,6 +98,9 @@ Der Name des Laufwerk-Pools, in dem das neue Volume erstellt werden soll. Schlie
 Der Name, den Sie dem neuen Volume geben möchten. Schließen Sie den Volumennamen in doppelte Anführungszeichen (" ").
 
 
+NOTE: Die maximale Länge für Standard- und Thin Volume-Namen beträgt 60 Zeichen. Der Volume-Name kann beliebige Kombinationen aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) enthalten.
+
+
 
  a| 
 `capacity`
@@ -220,7 +223,7 @@ Mit diesem Parameter wird die Blockgröße des erstellten Volumes festgelegt. De
 [[notes]]
 == Hinweise
 
-Jeder Volume-Name muss eindeutig sein. Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Benutzerbezeichnung verwenden. Benutzeretiketten können maximal 30 Zeichen lang sein.
+Jeder Bandname muss eindeutig sein. Für die Benutzerbezeichnung sind beliebige Kombinationen aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) zulässig. Standard und Thin Volume Namen dürfen maximal 60 Zeichen lang sein.
 
 Für Thin Volumes, die `capacity` Der Parameter gibt die virtuelle Kapazität des Volume und das an `repositoryCapacity` Parameter gibt die Kapazität des als Repository-Volume erstellten Volumes an. Verwenden Sie die `existingRepositoryLabel` Parameter, um ein vorhandenes, nicht verwendetes Repository-Volume anzugeben, anstatt ein neues Volume zu erstellen.
 

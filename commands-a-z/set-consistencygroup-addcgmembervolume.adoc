@@ -120,7 +120,7 @@ Die Größe eines neuen Repository Volumes entweder in einer Volume-Gruppe oder 
 [[notes]]
 == Hinweise
 
-Sie können eine beliebige Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Pfund (#) für die Namen verwenden. Namen können maximal 30 Zeichen lang sein.
+Für die Namen kann jede Kombination aus alphanumerischen Zeichen, Unterstrich (_), Bindestrich (-) und Raute (#) verwendet werden. Standard- und Thin-Volume-Namen dürfen maximal 60 Zeichen enthalten, alle anderen Komponentennamen maximal 30 Zeichen.
 
 Eine Konsistenzgruppe ist eine Sammlung von Basis-Volumes, die die Quell-Volumes für Snapshots sind. Sie erfassen die Basis-Volumes in einer Konsistenzgruppe, sodass Sie auf jedem Basis-Volume dieselben Snapshot-Vorgänge durchführen können. Im Zusammenhang mit diesem Befehl bedeutet der Begriff_Member_ ein Basis-Volume für Snapshot-Vorgänge. Sie können Snapshot-Images, die Mitgliedern einer Konsistenzgruppe zugeordnet sind, durch Vorgänge im Batch-Stil manipulieren und gleichzeitig die Konsistenz der Snapshot-Images gewährleisten.
 

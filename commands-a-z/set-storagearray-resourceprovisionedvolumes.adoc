@@ -67,6 +67,11 @@ Die Einstellung zur Angabe, ob Ressourcen-Provisioning-Funktionen aktiviert sind
 Eine Änderung dieses Wertes gilt nur für Volume-Gruppen und Pools, die zukünftig erstellt werden. Der Wert vorhandener Volume-Gruppen und -Pools wird nicht geändert.
 
 ====
+[NOTE]
+====
+Die Spiegelung eines Volumes kann nicht eingerichtet werden, solange DULBE aktiviert ist. Für die Verwendung der Spiegelung muss  `resourceProvisionedVolumes` auf  `disable` gesetzt werden.
+
+====
 |===
 
 

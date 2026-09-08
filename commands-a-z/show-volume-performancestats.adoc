@@ -35,17 +35,17 @@ Um diesen Befehl auf einem E4000, E2800, E5700, EF600, EF300, EF50 oder EF80 Sto
 Dieser Befehl gibt für jedes Volume im Storage-Array folgende Informationen zurück:
 
 * Storage Arrays
-* Gesamte I/O/s
+* Gesamt-I/O
 * % Lesen
 * Primärer Lese-Cache-Treffer %
 * Primary Write Cache Hit %
 * SSD-Cache-Treffer %
 * Aktuelle MB/s
-* Maximale Anzahl MB/s
-* Aktuelle I/O-Vorgänge
-* Maximale Anzahl an I/O-Vorgängen
-* Minimale I/OS
-* Durchschnittliche I/O/s
+* Maximale MB/s
+* Aktuelle E/A-Operationen/Sekunde
+* Maximale E/A-Operationen/Sekunde
+* Minimale E/A-Operationen/Sekunde
+* Durchschnittliche E/A-Operationen/Sekunde
 * Minimale MB/s
 * Durchschnittliche MB/s
 * Aktuelle I/O-Latenz

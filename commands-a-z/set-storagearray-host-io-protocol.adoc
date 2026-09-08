@@ -34,7 +34,7 @@ Um diesen Befehl auf einem EF50 oder EF80 Storage Array auszuführen, ist die Ro
 
 [source, cli, subs="+macros"]
 ----
-set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "SAS" | "SRP"}
+set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "nvmeTcp" | "SAS" | "SRP"}
 ----
 
 
@@ -49,7 +49,7 @@ set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" |
  a| 
 `set storageArray hostIoProtocol`
  a| 
-Hiermit können Sie angeben, welches Host-E/A-Protokoll für Ihr Speichersystem verwendet werden soll. Gültige Optionen sind: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS oder SRP.
+Ermöglicht die Angabe, welches Host-I/O-Protokoll für Ihr Storage-Array verwendet werden soll. Gültige Optionen sind: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, nvmeTcp, SAS oder SRP.
 
 |===
 

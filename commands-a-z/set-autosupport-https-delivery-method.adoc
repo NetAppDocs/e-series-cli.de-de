@@ -1,7 +1,7 @@
 ---
 permalink: commands-a-z/set-autosupport-https-delivery-method.html 
 sidebar: sidebar 
-keywords: 'Specify AutoSupport HTTP(S) delivery method' 
+keywords: AutoSupport, HTTPS, HTTP, delivery method, 
 summary: 'Mit dem Befehl Set storageArray AutoSupport deliveryMethod wird die Bereitstellungsmethode für das Senden von AutoSupport-Nachrichten an HTTP(S) eingerichtet.' 
 ---
 = AutoSupport-HTTP(S)-Übermittlungsmethode angeben – SANtricity CLI
