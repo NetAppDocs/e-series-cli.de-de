@@ -18,7 +18,7 @@ Der `set storageArray cacheMirrorDataAssuranceCheckEnable` Mit dem Befehl könne
 [[supported-arrays]]
 == Unterstützte Arrays
 
-Dieser Befehl gilt für einzelne E4000-, E2800-, E5700-, EF600-, EF300-, EF50- oder EF80-Speicherarrays. Er funktioniert nicht auf E2700- oder E5600-Speicherarrays.
+Dieser Befehl gilt für ein einzelnes E4000, E2800, E5700, EF600, EF300, EF50 und EF80 Storage Array. Er funktioniert nicht mit E2700 oder E5600 Storage Arrays.
 
 
 
